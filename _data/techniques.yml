@@ -1,0 +1,918 @@
+- short: G1
+  title: Adding a link at the top of each page that goes directly to the main content area
+- short: G4
+  title: Allowing the content to be paused and restarted from where it was paused
+- short: G5
+  title: Allowing users to complete an activity without any time limit
+- short: G8
+  title: Providing a movie with extended audio descriptions
+- short: G9
+  title: Creating captions for live synchronized media
+- short: G10
+  title: Creating components using a technology that supports the accessibility API features of the platforms on which the user agents will be run to expose the names and roles, allow user-settable properties to be directly set, and provide notification of changes
+- short: G11
+  title: Creating content that blinks for less than 5 seconds
+- short: G13
+  title: Describing what will happen before a change to a form control that causes a change of context to occur is made
+- short: G14
+  title: Ensuring that information conveyed by color differences is also available in text
+- short: G15
+  title: Using a tool to ensure that content does not violate the general flash threshold or red flash threshold
+- short: G17
+  title: Ensuring that a contrast ratio of at least 7:1 exists between text (and images of text) and background behind the text
+- short: G18
+  title: Ensuring that a contrast ratio of at least 4.5:1 exists between text (and images of text) and background behind the text
+- short: G19
+  title: Ensuring that no component of the content flashes more than three times in any 1-second period
+- short: G21
+  title: Ensuring that users are not trapped in content
+- short: G53
+  title: Identifying the purpose of a link using link text combined with the text of the enclosing sentence
+- short: G54
+  title: Including a sign language interpreter in the video stream
+- short: G55
+  title: Linking to definitions
+- short: G56
+  title: Mixing audio files so that non-speech sounds are at least 20 decibels lower than the speech audio content
+- short: G57
+  title: Ordering the content in a meaningful sequence
+- short: G58
+  title: Placing a link to the alternative for time-based media immediately next to the non-text content
+- short: G59
+  title: Placing the interactive elements in an order that follows sequences and relationships within the content
+- short: G60
+  title: Playing a sound that turns off automatically within three seconds
+- short: G61
+  title: Presenting repeated components in the same relative order each time they appear
+- short: G62
+  title: Providing a glossary
+- short: G63
+  title: Providing a site map
+- short: G64
+  title: Providing a Table of Contents
+- short: G65
+  title: Providing a breadcrumb trail
+- short: G68
+  title: Providing a short text alternative that describes the purpose of live audio-only and live video-only content
+- short: G69
+  title: Providing an alternative for time based media
+- short: G70
+  title: Providing a function to search an online dictionary
+- short: G71
+  title: Providing a help link on every Web page
+- short: G73
+  title: Providing a long description in another location with a link to it that is immediately adjacent to the non-text content
+- short: G74
+  title: Providing a long description in text near the non-text content, with a reference to the location of the long description in the short description
+- short: G75
+  title: Providing a mechanism to postpone any updating of content
+- short: G76
+  title: Providing a mechanism to request an update of the content instead of updating automatically
+- short: G78
+  title: Providing a second, user-selectable, audio track that includes audio descriptions
+- short: G79
+  title: Providing a spoken version of the text
+- short: G80
+  title: Providing a submit button to initiate a change of context
+- short: G81
+  title: Providing a synchronized video of the sign language interpreter that can be displayed in a different viewport or overlaid on the image by the player
+- short: G82
+  title: Providing a text alternative that identifies the purpose of the non-text content
+- short: G83
+  title: Providing text descriptions to identify required fields that were not completed
+- short: G84
+  title: Providing a text description when the user provides information that is not in the list of allowed values
+- short: G85
+  title: Providing a text description when user input falls outside the required format or values
+- short: G86
+  title: Providing a text summary that can be understood by people with lower secondary education level reading ability
+- short: G87
+  title: Providing closed captions
+- short: G88
+  title: Providing descriptive titles for Web pages
+- short: G89
+  title: Providing expected data format and example
+- short: G90
+  title: Providing keyboard-triggered event handlers
+- short: G91
+  title: Providing link text that describes the purpose of a link
+- short: G92
+  title: Providing long description for non-text content that serves the same purpose and presents the same information
+- short: G93
+  title: Providing open (always visible) captions
+- short: G94
+  title: Providing short text alternative for non-text content that serves the same purpose and presents the same information as the non-text content
+- short: G95
+  title: Providing short text alternatives that provide a brief description of the non-text content
+- short: G96
+  title: Providing textual identification of items that otherwise rely only on sensory information to be understood
+- short: G97
+  title: Providing the first use of an abbreviation immediately before or after the expanded form
+- short: G98
+  title: Providing the ability for the user to review and correct answers before submitting
+- short: G99
+  title: Providing the ability to recover deleted information
+- short: G100
+  title: Providing a short text alternative which is the accepted name or a descriptive name of the non-text content
+- short: G101
+  title: Providing the definition of a word or phrase used in an unusual or restricted way
+- short: G102
+  title: Providing the expansion or explanation of an abbreviation
+- short: G103
+  title: Providing visual illustrations, pictures, and symbols to help explain ideas, events, and processes
+- short: G105
+  title: Saving data so that it can be used after a user re-authenticates
+- short: G107
+  title: Using "activate" rather than "focus" as a trigger for changes of context
+- short: G108
+  title: Using markup features to expose the name and role, allow user-settable properties to be directly set, and provide notification of changes
+- short: G110
+  title: Using an instant client-side redirect
+- short: G111
+  title: Using color and pattern
+- short: G112
+  title: Using inline definitions
+- short: G115
+  title: Using semantic elements to mark up structure
+- short: G117
+  title: Using text to convey information that is conveyed by variations in presentation of text
+- short: G120
+  title: Providing the pronunciation immediately following the word
+- short: G121
+  title: Linking to pronunciations
+- short: G123
+  title: Adding a link at the beginning of a block of repeated content to go to the end of the block
+- short: G124
+  title: Adding links at the top of the page to each area of the content
+- short: G125
+  title: Providing links to navigate to related Web pages
+- short: G126
+  title: Providing a list of links to all other Web pages
+- short: G127
+  title: Identifying a Web page's relationship to a larger collection of Web pages
+- short: G128
+  title: Indicating current location within navigation bars
+- short: G130
+  title: Providing descriptive headings
+- short: G131
+  title: Providing descriptive labels
+- short: G133
+  title: Providing a checkbox on the first page of a multipart form that allows users to ask for longer session time limit or no session time limit
+- short: G134
+  title: Validating Web pages
+- short: G135
+  title: Using the accessibility API features of a technology to expose names and roles, to allow user-settable properties to be directly set, and to provide notification of changes
+- short: G136
+  title: Providing a link at the beginning of a nonconforming Web page that points to a conforming alternate version
+- short: G138
+  title: Using semantic markup whenever color cues are used
+- short: G139
+  title: Creating a mechanism that allows users to jump to errors
+- short: G140
+  title: Separating information and structure from presentation to enable different presentations
+- short: G141
+  title: Organizing a page using headings
+- short: G142
+  title: Using a technology that has commonly-available user agents that support zoom
+- short: G143
+  title: Providing a text alternative that describes the purpose of the CAPTCHA
+- short: G144
+  title: Ensuring that the Web Page contains another CAPTCHA serving the same purpose using a different modality
+- short: G145
+  title: Ensuring that a contrast ratio of at least 3:1 exists between text (and images of text) and background behind the text
+- short: G146
+  title: Using liquid layout
+- short: G148
+  title: Not specifying background color, not specifying text color, and not using technology features that change those defaults
+- short: G149
+  title: Using user interface components that are highlighted by the user agent when they receive focus
+- short: G150
+  title: Providing text based alternatives for live audio-only content
+- short: G151
+  title: Providing a link to a text transcript of a prepared statement or script if the script is followed
+- short: G152
+  title: Setting animated gif images to stop blinking after n cycles (within 5 seconds)
+- short: G153
+  title: Making the text easier to read
+- short: G155
+  title: Providing a checkbox in addition to a submit button
+- short: G156
+  title: Using a technology that has commonly-available user agents that can change the foreground and background of blocks of text
+- short: G157
+  title: Incorporating a live audio captioning service into a Web page
+- short: G158
+  title: Providing an alternative for time-based media for audio-only content
+- short: G159
+  title: Providing an alternative for time-based media for video-only content
+- short: G160
+  title: Providing sign language versions of information, ideas, and processes that must be understood in order to use the content
+- short: G161
+  title: Providing a search function to help users find content
+- short: G162
+  title: Positioning labels to maximize predictability of relationships
+- short: G163
+  title: Using standard diacritical marks that can be turned off
+- short: G164
+  title: Providing a stated time within which an online request (or transaction) may be amended or canceled by the user after making the request
+- short: G165
+  title: Using the default focus indicator for the platform so that high visibility default focus indicators will carry over
+- short: G166
+  title: Providing audio that describes the important video content and describing it as such
+- short: G167
+  title: Using an adjacent button to label the purpose of a field
+- short: G168
+  title: Requesting confirmation to continue with selected action
+- short: G169
+  title: Aligning text on only one side
+- short: G170
+  title: Providing a control near the beginning of the Web page that turns off sounds that play automatically
+- short: G171
+  title: Playing sounds only on user request
+- short: G172
+  title: Providing a mechanism to remove full justification of text
+- short: G173
+  title: Providing a version of a movie with audio descriptions
+- short: G174
+  title: Providing a control with a sufficient contrast ratio that allows users to switch to a presentation that uses sufficient contrast
+- short: G175
+  title: Providing a multi color selection tool on the page for foreground and background colors
+- short: G176
+  title: Keeping the flashing area small enough
+- short: G177
+  title: Providing suggested correction text
+- short: G178
+  title: Providing controls on the Web page that allow users to incrementally change the size of all text on the page up to 200 percent
+- short: G179
+  title: Ensuring that there is no loss of content or functionality when the text resizes and text containers do not change their width
+- short: G180
+  title: Providing the user with a means to set the time limit to 10 times the default time limit
+- short: G181
+  title: Encoding user data as hidden or encrypted data in a re-authorization page
+- short: G182
+  title: Ensuring that additional visual cues are available when text color differences are used to convey information
+- short: G183
+  title: Using a contrast ratio of 3:1 with surrounding text and providing additional visual cues on focus for links or controls where color alone is used to identify them
+- short: G184
+  title: Providing text instructions at the beginning of a form or set of fields that describes the necessary input
+- short: G185
+  title: Linking to all of the pages on the site from the home page
+- short: G186
+  title: Using a control in the Web page that stops moving, blinking, or auto-updating content
+- short: G187
+  title: Using a technology to include blinking content that can be turned off via the user agent
+- short: G188
+  title: Providing a button on the page to increase line spaces and paragraph spaces
+- short: G189
+  title: Providing a control near the beginning of the Web page that changes the link text
+- short: G190
+  title: Providing a link adjacent to or associated with a non-conforming object that links to a conforming alternate version
+- short: G191
+  title: Providing a link, button, or other mechanism that reloads the page without any blinking content
+- short: G192
+  title: Fully conforming to specifications
+- short: G193
+  title: Providing help by an assistant in the Web page
+- short: G194
+  title: Providing spell checking and suggestions for text input
+- short: G195
+  title: Using an author-supplied, highly visible focus indicator
+- short: G196
+  title: Using a text alternative on one item within a group of images that describes all items in the group
+- short: G197
+  title: Using labels, names, and text alternatives consistently for content that has the same functionality
+- short: G198
+  title: Providing a way for the user to turn the time limit off
+- short: G199
+  title: Providing success feedback when data is submitted successfully
+- short: G200
+  title: Opening new windows and tabs from a link only when necessary
+- short: G201
+  title: Giving users advanced warning when opening a new window
+- short: G202
+  title: Ensuring keyboard control for all functionality
+- short: G203
+  title: Using a static text alternative to describe a talking head video
+- short: G204
+  title: Not interfering with the user agent's reflow of text as the viewing window is narrowed
+- short: G205
+  title: Including a text cue for colored form control labels
+- short: G206
+  title: Providing options within the content to switch to a layout that does not require the user to scroll horizontally to read a line of text
+- short: H2
+  title: Combining adjacent image and text links for the same resource
+- short: H4
+  title: Creating a logical tab order through links, form controls, and objects
+- short: H24
+  title: Providing text alternatives for the area elements of image maps
+- short: H25
+  title: Providing a title using the title element
+- short: H28
+  title: Providing definitions for abbreviations by using the abbr element
+- short: H30
+  title: Providing link text that describes the purpose of a link for anchor elements
+- short: H32
+  title: Providing submit buttons
+- short: H33
+  title: Supplementing link text with the title attribute
+- short: H34
+  title: Using a Unicode right-to-left mark (RLM) or left-to-right mark (LRM) to mix text direction inline
+- short: H35
+  title: Providing text alternatives on applet elements
+- short: H36
+  title: Using alt attributes on images used as submit buttons
+- short: H37
+  title: Using alt attributes on img elements
+- short: H39
+  title: Using caption elements to associate data table captions with data tables
+- short: H40
+  title: Using definition lists
+- short: H42
+  title: Using h1-h6 to identify headings
+- short: H43
+  title: Using id and headers attributes to associate data cells with header cells in data tables
+- short: H44
+  title: Using label elements to associate text labels with form controls
+- short: H45
+  title: Using longdesc
+- short: H46
+  title: Using noembed with embed
+- short: H48
+  title: Using ol, ul and dl for lists or groups of links
+- short: H49
+  title: Using semantic markup to mark emphasized or special text
+- short: H51
+  title: Using table markup to present tabular information
+- short: H53
+  title: Using the body of the object element
+- short: H54
+  title: Using the dfn element to identify the defining instance of a word
+- short: H56
+  title: Using the dir attribute on an inline element to resolve problems with nested directional runs
+- short: H57
+  title: Using language attributes on the html element
+- short: H58
+  title: Using language attributes to identify changes in the human language
+- short: H59
+  title: Using the link element and navigation tools
+- short: H60
+  title: Using the link element to link to a glossary
+- short: H62
+  title: Using the ruby element
+- short: H63
+  title: Using the scope attribute to associate header cells and data cells in data tables
+- short: H64
+  title: Using the title attribute of the frame and iframe elements
+- short: H65
+  title: Using the title attribute to identify form controls when the label element cannot be used
+- short: H67
+  title: Using null alt text and no title attribute on img elements for images that AT should ignore
+- short: H69
+  title: Providing heading elements at the beginning of each section of content
+- short: H70
+  title: Using frame elements to group blocks of repeated material
+- short: H71
+  title: Providing a description for groups of form controls using fieldset and legend elements
+- short: H73
+  title: Using the summary attribute of the table element to give an overview of data tables
+- short: H74
+  title: Ensuring that opening and closing tags are used according to specification
+- short: H75
+  title: Ensuring that Web pages are well-formed
+- short: H76
+  title: Using meta refresh to create an instant client-side redirect
+- short: H77
+  title: Identifying the purpose of a link using link text combined with its enclosing list item
+- short: H78
+  title: Identifying the purpose of a link using link text combined with its enclosing paragraph
+- short: H79
+  title: Identifying the purpose of a link in a data table using the link text combined with its enclosing table cell and associated table header cells
+- short: H80
+  title: Identifying the purpose of a link using link text combined with the preceding heading element
+- short: H81
+  title: Identifying the purpose of a link in a nested list using link text combined with the parent list item under which the list is nested
+- short: H83
+  title: Using the target attribute to open a new window on user request and indicating this in link text
+- short: H84
+  title: Using a button with a select element to perform an action
+- short: H85
+  title: Using OPTGROUP to group OPTION elements inside a SELECT
+- short: H86
+  title: Providing text alternatives for ASCII art, emoticons, and leetspeak
+- short: H88
+  title: Using HTML according to spec
+- short: H89
+  title: Using the title attribute to provide context-sensitive help
+- short: H90
+  title: Indicating required form controls using label or legend
+- short: H91
+  title: Using HTML form controls and links
+- short: H93
+  title: Ensuring that id attributes are unique on a Web page
+- short: H94
+  title: Ensuring that elements do not contain duplicate attributes
+- short: H95
+  title: Using the track element to provide captions
+- short: H96
+  title: Using the track element to provide audio descriptions
+- short: H97
+  title: Grouping related links using the nav element
+- short: C6
+  title: Positioning content based on structural markup
+- short: C7
+  title: Using CSS to hide a portion of the link text
+- short: C8
+  title: Using CSS letter-spacing to control spacing within a word
+- short: C9
+  title: Using CSS to include decorative images
+- short: C12
+  title: Using percent for font sizes
+- short: C13
+  title: Using named font sizes
+- short: C14
+  title: Using em units for font sizes
+- short: C15
+  title: Using CSS to change the presentation of a user interface component when it receives focus
+- short: C17
+  title: Scaling form elements which contain text
+- short: C18
+  title: Using CSS margin and padding rules instead of spacer images for layout design
+- short: C19
+  title: Specifying alignment either to the left OR right in CSS
+- short: C20
+  title: Using relative measurements to set column widths so that lines can average 80 characters or less when the browser is resized
+- short: C21
+  title: Specifying line spacing in CSS
+- short: C22
+  title: Using CSS to control visual presentation of text
+- short: C23
+  title: Specifying text and background colors of secondary content such as banners, features and navigation in CSS while not specifying text and background colors of the main content
+- short: C24
+  title: Using percentage values in CSS for container sizes
+- short: C25
+  title: Specifying borders and layout in CSS to delineate areas of a Web page while not specifying text and text-background colors
+- short: C27
+  title: Making the DOM order match the visual order
+- short: C28
+  title: Specifying the size of text containers using em units
+- short: C29
+  title: Using a style switcher to provide a conforming alternate version
+- short: C30
+  title: Using CSS to replace text with images of text and providing user interface controls to switch
+- short: SCR1
+  title: Allowing the user to extend the default time limit
+- short: SCR2
+  title: Using redundant keyboard and mouse event handlers
+- short: SCR14
+  title: Using scripts to make nonessential alerts optional
+- short: SCR16
+  title: Providing a script that warns the user a time limit is about to expire
+- short: SCR18
+  title: Providing client-side validation and alert
+- short: SCR19
+  title: Using an onchange event on a select element without causing a change of context
+- short: SCR20
+  title: Using both keyboard and other device-specific functions
+- short: SCR21
+  title: Using functions of the Document Object Model (DOM) to add content to a page
+- short: SCR22
+  title: Using scripts to control blinking and stop it in five seconds or less
+- short: SCR24
+  title: Using progressive enhancement to open new windows on user request
+- short: SCR26
+  title: Inserting dynamic content into the Document Object Model immediately following its trigger element
+- short: SCR27
+  title: Reordering page sections using the Document Object Model
+- short: SCR28
+  title: Using an expandable and collapsible menu to bypass block of content
+- short: SCR29
+  title: Adding keyboard-accessible actions to static HTML elements
+- short: SCR30
+  title: Using scripts to change the link text
+- short: SCR31
+  title: Using script to change the background color or border of the element with focus
+- short: SCR32
+  title: Providing client-side validation and adding error text via the DOM
+- short: SCR33
+  title: Using script to scroll content, and providing a mechanism to pause it
+- short: SCR34
+  title: Calculating size and position in a way that scales with text size
+- short: SCR35
+  title: Making actions keyboard accessible by using the onclick event of anchors and buttons
+- short: SCR36
+  title: Providing a mechanism to allow users to display moving, scrolling, or auto-updating text in a static window or area
+- short: SCR37
+  title: Creating Custom Dialogs in a Device Independent Way
+- short: SVR1
+  title: Implementing automatic redirects on the server side instead of on the client side
+- short: SVR2
+  title: Using .htaccess to ensure that the only way to access non-conforming content is from conforming content
+- short: SVR3
+  title: Using HTTP referer to ensure that the only way to access non-conforming content is from conforming content
+- short: SVR4
+  title: Allowing users to provide preferences for the display of conforming alternate versions
+- short: SVR5
+  title: Specifying the default language in the HTTP header
+- short: SM1
+  title: Adding extended audio description in SMIL 1.0
+- short: SM2
+  title: Adding extended audio description in SMIL 2.0
+- short: SM6
+  title: Providing audio description in SMIL 1.0
+- short: SM7
+  title: Providing audio description in SMIL 2.0
+- short: SM11
+  title: Providing captions through synchronized text streams in SMIL 1.0
+- short: SM12
+  title: Providing captions through synchronized text streams in SMIL 2.0
+- short: SM13
+  title: Providing sign language interpretation through synchronized video streams in SMIL 1.0
+- short: SM14
+  title: Providing sign language interpretation through synchronized video streams in SMIL 2.0
+- short: T1
+  title: Using standard text formatting conventions for paragraphs
+- short: T2
+  title: Using standard text formatting conventions for lists
+- short: T3
+  title: Using standard text formatting conventions for headings
+- short: ARIA1
+  title: Using the aria-describedby property to provide a descriptive label for user interface controls
+- short: ARIA2
+  title: Identifying a required field with the aria-required property
+- short: ARIA4
+  title: Using a WAI-ARIA role to expose the role of a user interface component
+- short: ARIA5
+  title: Using WAI-ARIA state and property attributes to expose the state of a user interface component
+- short: ARIA6
+  title: Using aria-label to provide labels for objects
+- short: ARIA7
+  title: Using aria-labelledby for link purpose
+- short: ARIA8
+  title: Using aria-label for link purpose
+- short: ARIA9
+  title: Using aria-labelledby to concatenate a label from several text nodes
+- short: ARIA10
+  title: Using aria-labelledby to provide a text alternative for non-text content
+- short: ARIA11
+  title: Using ARIA landmarks to identify regions of a page
+- short: ARIA12
+  title: Using role=heading to identify headings
+- short: ARIA13
+  title: Using aria-labelledby to name regions and landmarks
+- short: ARIA14
+  title: Using aria-label to provide an invisible label where a visible label cannot be used
+- short: ARIA15
+  title: Using aria-describedby to provide descriptions of images
+- short: ARIA16
+  title: Using aria-labelledby to provide a name for user interface controls
+- short: ARIA17
+  title: Using grouping roles to identify related form controls
+- short: ARIA18
+  title: Using aria-alertdialog to Identify Errors
+- short: ARIA19
+  title: Using ARIA role=alert or Live Regions to Identify Errors
+- short: ARIA20
+  title: Using the region role to identify a region of the page
+- short: ARIA21
+  title: Using Aria-Invalid to Indicate An Error Field
+- short: FLASH1
+  title: Setting the name property for a non-text object
+- short: FLASH2
+  title: Setting the description property for a non-text object in Flash
+- short: FLASH3
+  title: Marking objects in Flash so that they can be ignored by AT
+- short: FLASH4
+  title: Providing submit buttons in Flash
+- short: FLASH5
+  title: Combining adjacent image and text buttons for the same resource
+- short: FLASH6
+  title: Creating accessible hotspots using invisible buttons
+- short: FLASH7
+  title: Using scripting to change control labels
+- short: FLASH8
+  title: Adding a group name to the accessible name of a form control
+- short: FLASH9
+  title: Applying captions to prerecorded synchronized media
+- short: FLASH10
+  title: Indicating required form controls in Flash
+- short: FLASH11
+  title: Providing a longer text description of an object
+- short: FLASH12
+  title: Providing client-side validation and adding error text via the accessible description
+- short: FLASH13
+  title: Using HTML language attributes to specify language in Flash content
+- short: FLASH14
+  title: Using redundant keyboard and mouse event handlers in Flash
+- short: FLASH15
+  title: Using the tabIndex property to specify a logical reading order and a logical tab order in Flash
+- short: FLASH16
+  title: Making actions keyboard accessible by using the click event on standard components
+- short: FLASH17
+  title: Providing keyboard access to a Flash object and avoiding a keyboard trap
+- short: FLASH18
+  title: Providing a control to turn off sounds that play automatically in Flash
+- short: FLASH19
+  title: Providing a script that warns the user a time limit is about to expire and provides a way to extend it
+- short: FLASH20
+  title: Reskinning Flash components to provide highly visible focus indication
+- short: FLASH21
+  title: Using the DataGrid component to associate column headers with cells
+- short: FLASH22
+  title: Adding keyboard-accessible actions to static elements
+- short: FLASH23
+  title: Adding summary information to a DataGrid
+- short: FLASH24
+  title: Allowing the user to extend the default time limit
+- short: FLASH25
+  title: Labeling a form control by setting its accessible name
+- short: FLASH26
+  title: Applying audio descriptions to Flash video
+- short: FLASH27
+  title: Providing button labels that describe the purpose of a button
+- short: FLASH28
+  title: Providing text alternatives for ASCII art, emoticons, and leetspeak in Flash
+- short: FLASH29
+  title: Setting the label property for form components
+- short: FLASH30
+  title: Specifying accessible names for image buttons
+- short: FLASH31
+  title: Specifying caption text for a DataGrid
+- short: FLASH32
+  title: Using auto labeling to associate text labels with form controls
+- short: FLASH33
+  title: Using relative values for Flash object dimensions
+- short: FLASH34
+  title: Turning off sounds that play automatically when an assistive technology is detected
+- short: FLASH35
+  title: Using script to scroll Flash content, and providing a mechanism to pause it
+- short: FLASH36
+  title: Using scripts to control blinking and stop it in five seconds or less
+- short: SL1
+  title: Accessing Alternate Audio Tracks in Silverlight Media
+- short: SL2
+  title: Changing The Visual Focus Indicator in Silverlight
+- short: SL3
+  title: Controlling Silverlight MediaElement Audio Volume
+- short: SL4
+  title: Declaring Discrete Silverlight Objects to Specify Language Parts in the HTML DOM
+- short: SL5
+  title: Defining a Focusable Image Class for Silverlight
+- short: SL6
+  title: Defining a UI Automation Peer for a Custom Silverlight Control
+- short: SL7
+  title: Designing a Focused Visual State for Custom Silverlight Controls
+- short: SL8
+  title: Displaying HelpText in Silverlight User Interfaces
+- short: SL9
+  title: Handling Key Events to Enable Keyboard Functionality in Silverlight
+- short: SL10
+  title: Implementing a Submit-Form Pattern in Silverlight
+- short: SL11
+  title: Pausing or Stopping A Decorative Silverlight Animation
+- short: SL12
+  title: Pausing, Stopping, or Playing Media in Silverlight MediaElements
+- short: SL13
+  title: Providing A Style Switcher To Switch To High Contrast
+- short: SL14
+  title: Providing Custom Control Key Handling for Keyboard Functionality in Silverlight
+- short: SL15
+  title: Providing Keyboard Shortcuts that Work Across the Entire Silverlight Application
+- short: SL16
+  title: Providing Script-Embedded Text Captions for MediaElement Content
+- short: SL17
+  title: Providing Static Alternative Content for Silverlight Media Playing in a MediaElement
+- short: SL18
+  title: Providing Text Equivalent for Nontext Silverlight Controls With AutomationProperties.Name
+- short: SL19
+  title: Providing User Instructions With AutomationProperties.HelpText in Silverlight
+- short: SL20
+  title: Relying on Silverlight AutomationPeer Behavior to Set AutomationProperties.Name
+- short: SL21
+  title: Replacing A Silverlight Timed Animation With a Nonanimated Element
+- short: SL22
+  title: Supporting Browser Zoom in Silverlight
+- short: SL23
+  title: Using A Style Switcher to Increase Font Size of Silverlight Text Elements
+- short: SL24
+  title: Using AutoPlay to Keep Silverlight Media from Playing Automatically
+- short: SL25
+  title: Using Controls and Programmatic Focus to Bypass Blocks of Content in Silverlight
+- short: SL26
+  title: Using LabeledBy to Associate Labels and Targets in Silverlight
+- short: SL27
+  title: Using Language/Culture Properties as Exposed by Silverlight Applications and Assistive Technologies
+- short: SL28
+  title: Using Separate Text-Format Text Captions for MediaElement Content
+- short: SL29
+  title: Using Silverlight "List" Controls to Define Blocks that can be Bypassed
+- short: SL30
+  title: Using Silverlight Control Compositing and AutomationProperties.Name
+- short: SL31
+  title: Using Silverlight Font Properties to Control Text Presentation
+- short: SL32
+  title: Using Silverlight Text Elements for Appropriate Accessibility Role
+- short: SL33
+  title: Using Well-Formed XAML to Define a Silverlight User Interface
+- short: SL34
+  title: Using the Silverlight Default Tab Sequence and Altering Tab Sequences With Properties
+- short: SL35
+  title: Using the Validation and ValidationSummary APIs to Implement Client Side Forms Validation in Silverlight
+- short: PDF1
+  title: Applying text alternatives to images with the Alt entry in PDF documents
+- short: PDF2
+  title: Creating bookmarks in PDF documents
+- short: PDF3
+  title: Ensuring correct tab and reading order in PDF documents
+- short: PDF4
+  title: Hiding decorative images with the Artifact tag in PDF documents
+- short: PDF5
+  title: Indicating required form controls in PDF forms
+- short: PDF6
+  title: Using table elements for table markup in PDF Documents
+- short: PDF7
+  title: Performing OCR on a scanned PDF document to provide actual text
+- short: PDF8
+  title: Providing definitions for abbreviations via an E entry for a structure element
+- short: PDF9
+  title: Providing headings by marking content with heading tags in PDF documents
+- short: PDF10
+  title: Providing labels for interactive form controls in PDF documents
+- short: PDF11
+  title: Providing links and link text using the Link annotation and the /Link structure element in PDF documents
+- short: PDF12
+  title: Providing name, role, value information for form fields in PDF documents
+- short: PDF13
+  title: Providing replacement text using the /Alt entry for links in PDF documents
+- short: PDF14
+  title: Providing running headers and footers in PDF documents
+- short: PDF15
+  title: Providing submit buttons with the submit-form action in PDF forms
+- short: PDF16
+  title: Setting the default language using the /Lang entry in the document catalog of a PDF document
+- short: PDF17
+  title: Specifying consistent page numbering for PDF documents
+- short: PDF18
+  title: Specifying the document title using the Title entry in the document information dictionary of a PDF document
+- short: PDF19
+  title: Specifying the language for a passage or phrase with the Lang entry in PDF documents
+- short: PDF20
+  title: Using Adobe Acrobat Pro's Table Editor to repair mistagged tables
+- short: PDF21
+  title: Using List tags for lists in PDF documents
+- short: PDF22
+  title: Indicating when user input falls outside the required format or values in PDF forms
+- short: PDF23
+  title: Providing interactive form controls in PDF documents
+- short: F1
+  title: Failure of Success Criterion 1.3.2 due to changing the meaning of content by positioning information with CSS
+- short: F2
+  title: Failure of Success Criterion 1.3.1 due to using changes in text presentation to convey information without using the appropriate markup or text
+- short: F3
+  title: Failure of Success Criterion 1.1.1 due to using CSS to include images that convey important information
+- short: F4
+  title: Failure of Success Criterion 2.2.2 due to using text-decoration:blink without a mechanism to stop it in less than five seconds
+- short: F7
+  title: Failure of Success Criterion 2.2.2 due to an object or applet, such as Java or Flash, that has blinking content without a mechanism to pause the content that blinks for more than five seconds
+- short: F8
+  title: Failure of Success Criterion 1.2.2 due to captions omitting some dialogue or important sound effects
+- short: F9
+  title: Failure of Success Criterion 3.2.5 due to changing the context when the user removes focus from a form element
+- short: F10
+  title: Failure of Success Criterion 2.1.2 and Conformance Requirement 5 due to combining multiple content formats in a way that traps users inside one format type
+- short: F12
+  title: Failure of Success Criterion 2.2.5 due to having a session time limit without a mechanism for saving user's input and re-establishing that information upon re-authentication
+- short: F13
+  title: Failure of Success Criterion 1.1.1 and 1.4.1 due to having a text alternative that does not include information that is conveyed by color differences in the image
+- short: F14
+  title: Failure of Success Criterion 1.3.3 due to identifying content only by its shape or location
+- short: F15
+  title: Failure of Success Criterion 4.1.2 due to implementing custom controls that do not use an accessibility API for the technology, or do so incompletely
+- short: F16
+  title: Failure of Success Criterion 2.2.2 due to including scrolling content where movement is not essential to the activity without also including a mechanism to pause and restart the content
+- short: F17
+  title: Failure of Success Criterion 1.3.1 and 4.1.1 due to insufficient information in DOM to determine one-to-one relationships (e.g., between labels with same id) in HTML
+- short: F19
+  title: Failure of Conformance Requirement 1 due to not providing a method for the user to find the alternative conforming version of a non-conforming Web page
+- short: F20
+  title: Failure of Success Criterion 1.1.1 and 4.1.2 due to not updating text alternatives when changes to non-text content occur
+- short: F22
+  title: Failure of Success Criterion 3.2.5 due to opening windows that are not requested by the user
+- short: F23
+  title: Failure of 1.4.2 due to playing a sound longer than 3 seconds where there is no mechanism to turn it off
+- short: F24
+  title: Failure of Success Criterion 1.4.3, 1.4.6 and 1.4.8 due to specifying foreground colors without specifying background colors or vice versa
+- short: F25
+  title: Failure of Success Criterion 2.4.2 due to the title of a Web page not identifying the contents
+- short: F26
+  title: Failure of Success Criterion 1.3.3 due to using a graphical symbol alone to convey information
+- short: F30
+  title: Failure of Success Criterion 1.1.1 and 1.2.1 due to using text alternatives that are not alternatives (e.g., filenames or placeholder text)
+- short: F31
+  title: Failure of Success Criterion 3.2.4 due to using two different labels for the same function on different Web pages within a set of Web pages
+- short: F32
+  title: Failure of Success Criterion 1.3.2 due to using white space characters to control spacing within a word
+- short: F33
+  title: Failure of Success Criterion 1.3.1 and 1.3.2 due to using white space characters to create multiple columns in plain text content
+- short: F34
+  title: Failure of Success Criterion 1.3.1 and 1.3.2 due to using white space characters to format tables in plain text content
+- short: F36
+  title: Failure of Success Criterion 3.2.2 due to automatically submitting a form and presenting new content without prior warning when the last field in the form is given a value
+- short: F37
+  title: Failure of Success Criterion 3.2.2 due to launching a new window without prior warning when the selection of a radio button, check box or select list is changed
+- short: F38
+  title: Failure of Success Criterion 1.1.1 due to not marking up decorative images in HTML in a way that allows assistive technology to ignore them
+- short: F39
+  title: Failure of Success Criterion 1.1.1 due to providing a text alternative that is not null (e.g., alt="spacer" or alt="image") for images that should be ignored by assistive technology
+- short: F40
+  title: Failure of Success Criterion 2.2.1 and 2.2.4 due to using meta redirect with a time limit
+- short: F41
+  title: Failure of Success Criterion 2.2.1, 2.2.4, and 3.2.5 due to using meta refresh with a time-out
+- short: F42
+  title: Failure of Success Criterion 1.3.1 and 2.1.1 due to using scripting events to emulate links in a way that is not programmatically determinable
+- short: F43
+  title: Failure of Success Criterion 1.3.1 due to using structural markup in a way that does not represent relationships in the content
+- short: F44
+  title: Failure of Success Criterion 2.4.3 due to using tabindex to create a tab order that does not preserve meaning and operability
+- short: F46
+  title: Failure of Success Criterion 1.3.1 due to using th elements, caption elements, or non-empty summary attributes in layout tables
+- short: F47
+  title: Failure of Success Criterion 2.2.2 due to using the blink element
+- short: F48
+  title: Failure of Success Criterion 1.3.1 due to using the pre element to markup tabular information
+- short: F49
+  title: Failure of Success Criterion 1.3.2 due to using an HTML layout table that does not make sense when linearized
+- short: F50
+  title: Failure of Success Criterion 2.2.2 due to a script that causes a blink effect without a mechanism to stop the blinking at 5 seconds or less
+- short: F52
+  title: Failure of Success Criterion 3.2.1 and 3.2.5 due to opening a new window as soon as a new page is loaded
+- short: F54
+  title: Failure of Success Criterion 2.1.1 due to using only pointing-device-specific event handlers (including gesture) for a function
+- short: F55
+  title: Failure of Success Criteria 2.1.1, 2.4.7, and 3.2.1 due to using script to remove focus when focus is received
+- short: F58
+  title: Failure of Success Criterion 2.2.1 due to using server-side techniques to automatically redirect pages after a time-out
+- short: F59
+  title: Failure of Success Criterion 4.1.2 due to using script to make div or span a user interface control in HTML without providing a role for the control
+- short: F60
+  title: Failure of Success Criterion 3.2.5 due to launching a new window when a user enters text into an input field
+- short: F61
+  title: Failure of Success Criterion 3.2.5 due to complete change of main content through an automatic update that the user cannot disable from within the content
+- short: F62
+  title: Failure of Success Criterion 1.3.1 and 4.1.1 due to insufficient information in DOM to determine specific relationships in XML
+- short: F63
+  title: Failure of Success Criterion 2.4.4 due to providing link context only in content that is not related to the link
+- short: F65
+  title: Failure of Success Criterion 1.1.1 due to omitting the alt attribute or text alternative on img elements, area elements, and input elements of type "image"
+- short: F66
+  title: Failure of Success Criterion 3.2.3 due to presenting navigation links in a different relative order on different pages
+- short: F67
+  title: Failure of Success Criterion 1.1.1 and 1.2.1 due to providing long descriptions for non-text content that does not serve the same purpose or does not present the same information
+- short: F68
+  title: Failure of Success Criterion 1.3.1 and 4.1.2 due to the association of label and user interface controls not being programmatically determined
+- short: F69
+  title: Failure of Success Criterion 1.4.4 when resizing visually rendered text up to 200 percent causes the text, image or controls to be clipped, truncated or obscured
+- short: F70
+  title: Failure of Success Criterion 4.1.1 due to incorrect use of start and end tags or attribute markup
+- short: F71
+  title: Failure of Success Criterion 1.1.1 due to using text look-alikes to represent text without providing a text alternative
+- short: F72
+  title: Failure of Success Criterion 1.1.1 due to using ASCII art without providing a text alternative
+- short: F73
+  title: Failure of Success Criterion 1.4.1 due to creating links that are not visually evident without color vision
+- short: F74
+  title: Failure of Success Criterion 1.2.2 and 1.2.8 due to not labeling a synchronized media alternative to text as an alternative
+- short: F75
+  title: Failure of Success Criterion 1.2.2 by providing synchronized media without captions when the synchronized media presents more information than is presented on the page
+- short: F77
+  title: Failure of Success Criterion 4.1.1 due to duplicate values of type ID
+- short: F78
+  title: Failure of Success Criterion 2.4.7 due to styling element outlines and borders in a way that removes or renders non-visible the visual focus indicator
+- short: F79
+  title: Failure of Success Criterion 4.1.2 due to the focus state of a user interface component not being programmatically determinable or no notification of change of focus state available
+- short: F80
+  title: Failure of Success Criterion 1.4.4 when text-based form controls do not resize when visually rendered text is resized up to 200%
+- short: F81
+  title: Failure of Success Criterion 1.4.1 due to identifying required or error fields using color differences only
+- short: F82
+  title: Failure of Success Criterion 3.3.2 by visually formatting a set of phone number fields but not including a text label
+- short: F83
+  title: Failure of Success Criterion 1.4.3 and 1.4.6 due to using background images that do not provide sufficient contrast with foreground text (or images of text)
+- short: F84
+  title: Failure of Success Criterion 2.4.9 due to using a non-specific link such as "click here" or "more" without a mechanism to change the link text to specific text.
+- short: F85
+  title: Failure of Success Criterion 2.4.3 due to using dialogs or menus that are not adjacent to their trigger control in the sequential navigation order
+- short: F86
+  title: Failure of Success Criterion 4.1.2 due to not providing names for each part of a multi-part form field, such as a US telephone number
+- short: F87
+  title: Failure of Success Criterion 1.3.1 due to inserting non-decorative content by using :before and :after pseudo-elements and the 'content' property in CSS
+- short: F88
+  title: Failure of Success Criterion 1.4.8 due to using text that is justified (aligned to both the left and the right margins)
+- short: F89
+  title: Failure of Success Criteria 2.4.4, 2.4.9 and 4.1.2 due to using null alt on an image where the image is the only content in a link
+- short: F90
+  title: Failure of Success Criterion 1.3.1 for incorrectly associating table headers and content via the headers and id attributes
+- short: F91
+  title: Failure of Success Criterion 1.3.1 for not correctly marking up table headers
+- short: F92
+  title: Failure of Success Criterion 1.3.1 due to the use of role presentation on content which conveys semantic information
+- short: F93
+  title: Failure of Success Criterion 1.4.2 for absence of a way to pause or stop an HTML5 media element that autoplays

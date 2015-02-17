@@ -1,0 +1,55 @@
+{% assign g = g | plus: 1 %}
+{% assign s = 0 %}
+{% if guideline.principle == principle %}
+	<div class="guideline panel panel-info">
+		<div class="panel-heading">
+			<h3 id="{{guideline.short}}">{{ p }}.{{ g }} {{guideline.title}}</h3>
+			{{guideline.output}}
+		</div>
+		<div class="panel-body">
+			{% if guideline.techniques %}
+				{% if guideline.techniques.sufficient %}
+					<h4>Sufficient Techniques</h4>
+					<ul>
+					{% for technique in guideline.techniques.sufficient %}
+						<li>{{technique}}</li>
+					{% endfor %}
+					</ul>
+				{% endif %}
+				{% if guideline.techniques.advisory %}
+					<h4>Advisory Techniques</h4>
+					<ul>
+					{% for technique in guideline.techniques.advisory %}
+						<li>{{technique}}</li>
+					{% endfor %}
+					</ul>
+				{% endif %}
+				{% if guideline.techniques.failures %}
+					<h4>Failure Techniques</h4>
+					<ul>
+					{% for technique in guideline.techniques.failures %}
+						<li>{{technique}}</li>
+					{% endfor %}
+					</ul>
+				{% endif %}
+			{% endif%}
+			{% if guideline.successcriteria %}
+				{% if guideline.successcriteria.levelA %}
+					{% assign level = "A"%}
+					{% assign items = guideline.successcriteria.levelA %}
+					{% include level.html %}
+				{% endif %}
+				{% if guideline.successcriteria.levelAA %}
+					{% assign level = "AA"%}
+					{% assign items = guideline.successcriteria.levelAA %}
+					{% include level.html %}
+				{% endif %}
+				{% if guideline.successcriteria.levelAAA %}
+					{% assign level = "AAA"%}
+					{% assign items = guideline.successcriteria.levelAAA %}
+					{% include level.html %}
+				{% endif %}
+			{% endif%}
+		</div>
+	</div>
+{% endif%}

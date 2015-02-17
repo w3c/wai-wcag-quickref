@@ -1,0 +1,29 @@
+<button data-target="#pre-{{ p }}{{ g }}{{ s }}" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="pre-{{ p }}{{ g }}{{ s }}">Show RAW</button>
+<pre id="pre-{{ p }}{{ g }}{{ s }}" class="collapse">
+{{currentsc}}
+</pre>
+<div class="row">
+	<div class="col-md-3">
+		<h5>{{ p }}.{{ g }}.{{ s }} {{currentsc.title}} {{level}}</h5>
+	</div>
+	<div class="col-md-9">
+		{{ currentsc.output }}
+    {% if currentsc.techniques %}
+        {% if currentsc.techniques.sufficient %}
+          {% assign techtitle = "Sufficient Techniques" %}
+          {% assign techniques = currentsc.techniques.sufficient  %}
+          {% include techlist.html %}
+        {% endif %}
+        {% if currentsc.techniques.advisory %}
+          {% assign techtitle = "Advisory Techniques" %}
+          {% assign techniques = currentsc.techniques.advisory  %}
+          {% include techlist.html %}
+        {% endif %}
+        {% if currentsc.techniques.failures %}
+          {% assign techtitle = "Failures" %}
+          {% assign techniques = currentsc.techniques.failures  %}
+          {% include techlist.html %}
+        {% endif %}
+      {% endif%}
+	</div>
+</div>

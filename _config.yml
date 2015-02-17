@@ -1,0 +1,20 @@
+# Site settings
+title: How to Meet WCAG 2.0 Preview
+email: ee@w3.org
+description: ""
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://yourdomain.com" # the base hostname & protocol for your site
+twitter_username: yatil
+github_username:  yatil
+
+techniqueurl: http://www.w3.org/TR/WCAG20-TECHS/
+
+safe: true
+lsi: false
+
+# Build settings
+markdown: kramdown
+
+collections:
+- successcriteria
+- guidelines

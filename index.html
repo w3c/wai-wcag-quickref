@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+	{% assign p = 0 %}
+	{% for principle in site.data.principles %}
+		{% assign p = p | plus: 1 %}
+		{% assign g = 0 %}
+		<h2>{{ p }} {{principle}}</h2>
+		{% for guideline in site.guidelines %}
+			{% include guideline.html %}
+		{% endfor %}
+	{% endfor %}
+
+	{% comment %}
+	<ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+	{% endcomment %}

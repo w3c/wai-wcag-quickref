@@ -1,0 +1,55 @@
+<div class="panel panel-default">
+  <div class="panel-heading">{{techtitle}}</div>
+  <div class="panel-body">
+    {% if techniques.situations %}
+      {% for situation in techniques.situations %}
+        <div class="panel panel-default">
+          <div class="panel-heading">{{situation.title}}</div>
+          <div class="panel-body">
+            {% if (situation.techniques) %}
+              {% if situation.techop == "and" %}
+                <p>
+                  {% for technique in situation.techniques %}
+                    {% include techniquelink.html %} {{technique.append}} {% if forloop.last %}{% else %}<strong>AND</strong>{% endif %}
+                  {% endfor %}
+                </p>
+              {% else %}
+                {% if situation.techop == "or" %}
+                  <ol>
+                    {% for technique in situation.techniques %}
+                      <li>{% include techniquelink.html %} {% if forloop.rindex0 > 0 %}<strong>OR</strong>{% endif %}</li>
+                    {% endfor %}
+                  </ol>
+                {% else %}
+                  <ul>
+                    {% for technique in situation.techniques %}
+                      <li>
+                        {% include techniquelink.html %}
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              {% endif %}
+            {% endif %}
+            {% if situation.sections %}
+              {% for section in situation.sections %}
+                <p>{{section.title}}</p>
+                <ul>
+                {% for technique in section.techniques %}
+                  <li>{% include techniquelink.html %}</li>
+                {% endfor %}
+                </ul>
+              {% endfor %}
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+    <ul>
+    {% for technique in techniques %}
+      <li>{% include techniquelink.html %}</li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</div>
