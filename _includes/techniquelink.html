@@ -1,11 +1,39 @@
 {% if technique.short %}
   {% assign currenttechnique = site.data.techniques | where: "short", technique.short | first %}
-  <a href="{{technique.short | append: '.html' | prepend: site.techniqueurl}}">{{technique.short}}: {{currenttechnique.title}}</a> {{ technique.append }}
+  {{ technique.prepend }} <a href="{{technique.short | append: '.html' | prepend: site.techniqueurl}}">{{technique.short}}: {{currenttechnique.title}}</a> {{ technique.append }}
+{% elsif technique.future %}
+  <em>{{technique.future}}</em> (future link)
+{% elsif technique.text %}
+  {{technique.text}}
+{% elsif technique.combined %}
+  {% for t in technique.combined %}
+    {% if t.short %}
+      {% assign currenttechnique = site.data.techniques | where: "short", t.short | first %}
+      {{ t.prepend }} <a href="{{t.short | append: '.html' | prepend: site.techniqueurl}}">{{t.short}}: {{currenttechnique.title}}</a> {{ t.append }}
+    {% else %}
+      {% assign currenttechnique = site.data.techniques | where: "short", t | first %}
+      <a href="{{t | append: '.html' | prepend: site.techniqueurl}}">{{t}}: {{currenttechnique.title}}</a>
+      {% if forloop.rindex0 > 0 %}
+        <strong>AND</strong>
+      {% endif%}
+    {% endif%}
+  {% endfor %}
+{% elsif technique.sub %}
+   {% assign currenttechnique = site.data.techniques | where: "short", technique.sub | first %}
+  <a href="{{technique.sub | append: '.html' | prepend: site.techniqueurl}}">{{technique.sub}}: {{currenttechnique.title}}</a> {{ technique.append }}
+  <ul>
+    {% for t in technique.techniques %}
+      <li>
+        {% if t.text %}
+          {{t.text}}
+        {% else %}
+        {% assign currenttechnique = site.data.techniques | where: "short", t | first %}
+        <a href="{{t | append: '.html' | prepend: site.techniqueurl}}">{{t}}: {{currenttechnique.title}}</a>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
 {% else %}
-  {% if technique.future %}
-    {{technique.future}} (future link)
-  {% else %}
-    {% assign currenttechnique = site.data.techniques | where: "short", technique | first %}
-    <a href="{{technique | append: '.html' | prepend: site.techniqueurl}}">{{technique}}: {{currenttechnique.title}}</a>
-  {% endif %}
+  {% assign currenttechnique = site.data.techniques | where: "short", technique | first %}
+  <a href="{{technique | append: '.html' | prepend: site.techniqueurl}}">{{technique}}: {{currenttechnique.title}}</a>
 {% endif %}
