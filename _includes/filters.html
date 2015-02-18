@@ -1,0 +1,29 @@
+<h2>Fiters:</h2>
+<div class="panel panel-default">
+  <div class="panel-heading"><a href="#filters" class="btn btn-primary" data-toggle="collapse" aria-expanded="false" aria-controls="filters">Show all filters</a></div>
+  <div class="panel-body collapse" id="filters">
+    <div class="row">
+      {% assign filters = site.filters | sort: 'sort' %}
+      {% for filter in filters %}
+        {% if isnewline == 0 %}
+          </div>
+          <div class="row">
+        {% endif %}
+        <div class="col-md-2">
+          <div class="panel panel-default" id="{{filter.title | prepend: 'filter-' | slugify}}">
+            <div class="panel-heading">{{ filter.title }}</div>
+            <div class="panel-body form-group">
+            {% for f in filter.filters %}
+              <div class="checkbox">
+                <label>
+                  <input type="{{filter.type}}" name="{{ 'filter ' | append: filter.short | slugify }}" value="{{ f.short }}"> {{f.title}}
+                </label>
+              </div>
+            {% endfor %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
