@@ -6,7 +6,7 @@ layout: default
 	{% for principle in site.data.principles %}
 		{% assign p = p | plus: 1 %}
 		{% assign g = 0 %}
-		<h2>{{ p }} {{principle}}</h2>
+		<h2>{{ p }}. {{principle}}</h2>
 		{% for guideline in site.guidelines %}
 			{% include guideline.html %}
 		{% endfor %}
