@@ -1,6 +1,13 @@
 <div class="panel panel-default">
   <div class="panel-heading">{{techtitle}}</div>
   <div class="panel-body">
+    {% if techniques.techniques %}
+      <ol>
+        {% for technique in techniques.techniques %}
+          <li>{% include techniquelink.html %}</li>
+        {% endfor %}
+      </ol>
+    {% endif %}
     {% if techniques.situations %}
       {% for situation in techniques.situations %}
         <div class="panel panel-default">
@@ -44,6 +51,8 @@
           </div>
         </div>
       {% endfor %}
+    {% endif %}
+    {% if techniques.situations or techniques.techniques %}
     {% else %}
     <ul>
     {% for technique in techniques %}
