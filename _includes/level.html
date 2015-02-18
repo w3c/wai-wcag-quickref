@@ -1,4 +1,4 @@
-<section class="level-{{include.level}}">
+<section class="levels-{{include.level | downcase }}">
 	{% for criterion in include.items %}
 	{% assign s = s | plus: 1 %}
 		{% assign currentscs = site.successcriteria | where: "short", criterion %}
