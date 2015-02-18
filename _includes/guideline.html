@@ -35,19 +35,13 @@
 			{% endif%}
 			{% if guideline.successcriteria %}
 				{% if guideline.successcriteria.levelA %}
-					{% assign level = "A"%}
-					{% assign items = guideline.successcriteria.levelA %}
-					{% include level.html %}
+					{% include level.html level="A" items=guideline.successcriteria.levelA %}
 				{% endif %}
 				{% if guideline.successcriteria.levelAA %}
-					{% assign level = "AA"%}
-					{% assign items = guideline.successcriteria.levelAA %}
-					{% include level.html %}
+					{% include level.html level="A" items=guideline.successcriteria.levelAA %}
 				{% endif %}
 				{% if guideline.successcriteria.levelAAA %}
-					{% assign level = "AAA"%}
-					{% assign items = guideline.successcriteria.levelAAA %}
-					{% include level.html %}
+					{% include level.html level="A" items=guideline.successcriteria.levelAAA %}
 				{% endif %}
 			{% endif%}
 		</div>

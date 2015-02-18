@@ -1,5 +1,5 @@
-<section class="level-{{level}}">
-	{% for criterion in items %}
+<section class="level-{{include.level}}">
+	{% for criterion in include.items %}
 	{% assign s = s | plus: 1 %}
 		{% assign currentscs = site.successcriteria | where: "short", criterion %}
 			{% for currentsc in currentscs %}
