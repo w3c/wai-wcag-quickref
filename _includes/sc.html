@@ -12,17 +12,19 @@
       <div role="tabpanel">
         <!-- Nav tabs -->
         <ul class="nav nav-pills" role="tablist">
-          {% if currentsc.techniques.size > 1 %}
-          <li role="presentation" class="active"><a href="#all" aria-controls="all" role="tab" data-toggle="pill">All Techniques</a></li>
-          {% endif %}
+          {% comment %}
+            {% if currentsc.techniques.size > 1 %}
+            <li role="presentation" class="active"><a href="#all" aria-controls="all" role="tab" data-toggle="pill">All Techniques</a></li>
+            {% endif %}
+          {% endcomment %}
           {% if currentsc.techniques.sufficient %}
-            <li role="presentation"{% if currentsc.techniques.size == 1 %}  class="active"{% endif %}><a href="#sc-{{ p }}{{ g }}{{ s }}-sufficient" aria-controls="sc-{{ p }}{{ g }}{{ s }}-sufficient" role="tab" data-toggle="pill">Sufficient Techniques</a></li>
+            <li role="presentation" class="active"><a href="#sc-{{ p }}{{ g }}{{ s }}-sufficient" aria-controls="sc-{{ p }}{{ g }}{{ s }}-sufficient" role="tab" data-toggle="pill">Sufficient Techniques</a></li>
           {% endif %}
           {% if currentsc.techniques.advisory %}
-            <li role="presentation"{% if currentsc.techniques.size == 1 %}  class="active"{% endif %}><a href="#sc-{{ p }}{{ g }}{{ s }}-advisory" aria-controls="sc-{{ p }}{{ g }}{{ s }}-advisory" role="tab" data-toggle="pill">Advisory Techniques</a></li>
+            <li role="presentation"{% if currentsc.techniques.size == 1 %} class="active"{% endif %}><a href="#sc-{{ p }}{{ g }}{{ s }}-advisory" aria-controls="sc-{{ p }}{{ g }}{{ s }}-advisory" role="tab" data-toggle="pill">Advisory Techniques</a></li>
           {% endif %}
           {% if currentsc.techniques.failures %}
-            <li role="presentation"{% if currentsc.techniques.size == 1 %}  class="active"{% endif %}><a href="#sc-{{ p }}{{ g }}{{ s }}-failures" aria-controls="sc-{{ p }}{{ g }}{{ s }}-advisory" role="tab" data-toggle="pill">Failures</a></li>
+            <li role="presentation"{% if currentsc.techniques.size == 1 %} class="active"{% endif %}><a href="#sc-{{ p }}{{ g }}{{ s }}-failures" aria-controls="sc-{{ p }}{{ g }}{{ s }}-advisory" role="tab" data-toggle="pill">Failures</a></li>
           {% endif %}
         </ul>
         <div class="tab-content">
@@ -35,7 +37,7 @@
             </div>
           {% endif %}
           {% if currentsc.techniques.advisory %}
-            <div role="tabpanel" class="tab-pane fade in active" id="sc-{{ p }}{{ g }}{{ s }}-advisory">
+            <div role="tabpanel" class="tab-pane fade" id="sc-{{ p }}{{ g }}{{ s }}-advisory">
               {% assign techtitle = "Advisory Techniques" %}
               {% assign techniques = currentsc.techniques.advisory  %}
               {% assign ttype = "advisory" %}
@@ -43,7 +45,7 @@
             </div>
           {% endif %}
           {% if currentsc.techniques.failures %}
-            <div role="tabpanel" class="tab-pane fade in active" id="sc-{{ p }}{{ g }}{{ s }}-failures">
+            <div role="tabpanel" class="tab-pane fade" id="sc-{{ p }}{{ g }}{{ s }}-failures">
               {% assign techtitle = "Failures" %}
               {% assign techniques = currentsc.techniques.failures  %}
               {% assign ttype = "failiure" %}
