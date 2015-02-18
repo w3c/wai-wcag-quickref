@@ -2,6 +2,10 @@
   {% assign currenttechnique = site.data.techniques | where: "short", technique.short | first %}
   <a href="{{technique.short | append: '.html' | prepend: site.techniqueurl}}">{{technique.short}}: {{currenttechnique.title}}</a> {{ technique.append }}
 {% else %}
-  {% assign currenttechnique = site.data.techniques | where: "short", technique | first %}
-  <a href="{{technique | append: '.html' | prepend: site.techniqueurl}}">{{technique}}: {{currenttechnique.title}}</a>
+  {% if technique.future %}
+    {{technique.future}} (future link)
+  {% else %}
+    {% assign currenttechnique = site.data.techniques | where: "short", technique | first %}
+    <a href="{{technique | append: '.html' | prepend: site.techniqueurl}}">{{technique}}: {{currenttechnique.title}}</a>
+  {% endif %}
 {% endif %}
