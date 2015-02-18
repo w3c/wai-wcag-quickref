@@ -1,5 +1,5 @@
 <header>
-
+{% comment %}
     <nav class="site-nav">
       <div class="trigger">
         {% for page in site.pages %}
@@ -9,18 +9,26 @@
         {% endfor %}
       </div>
     </nav>
-
-		<h1>{{site.title}} <span class="label label-danger">Early, unapproved Prototype</span></h1>
+{% endcomment %}
+		<h1>{{site.title}} <span class="label label-danger">Early, unapproved Mockup</span></h1>
 
 	<div class="alert alert-danger" role="alert">
 				<p>
-					<strong>This is a first, unapproved prototype of the new How to Meet WCAG 2.0 page.</strong> Some notes:
+					<strong>This is a first, unapproved mockup of the new How to Meet WCAG 2.0 page.</strong> Some notes:
 				</p>
 				<ul>
-					<li>This is not the final design nor the final functionality. There is content missing.</li>
-					<li>Not all Success Criteria have been imported correctly.</li>
-					<li>Most links are not resolving to their destinations but are placeholders.</li>
-					<li>Customization does not currently allow to mix items of different sections (use case „All mobile AA requirements“).</li>
+					<li>This is not the final design nor the final functionality.</li>
+          <li>There is content missing, for example:
+            <ul>
+              <li>Not all Success Criteria have been imported.</li>
+              <li>Currently only WCAG techniques are present in this mockup, I will add links to other supporting documents in the next few days.</li>
+            </ul>
+          </li>
+					<li>Customization is just shaping up.
+            <ul>
+              <li>Currently only the selection of the Levels is working.</li>
+            </ul>
+          </li>
 				</ul>
 				<p><strong>Please look at</strong> the general impression. Compare with the <a href="http://www.w3.org/WAI/WCAG20/quickref/">current “How to Meet” document</a>, assume that all categories and content are in there. Focus on the customize panel on the top of the page and the general framework.</p>
 			</div>
