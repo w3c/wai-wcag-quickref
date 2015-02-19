@@ -6,16 +6,15 @@ body {
 
 .sc-wrapper {
   border-top: 1px solid #BCE8F1;
+  .panel:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .sc-content {
   a {
     border-bottom: 1px solid #666;
   }
-}
-
-.panel:last-child {
-  margin-bottom: 0;
 }
 
 h5 {
