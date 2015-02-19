@@ -1,14 +1,18 @@
 <div class="form-group">
   <div class="input-group">
-  <label class="input-group-addon" for="search">Search:</label>
-  <input multiple id="search" type="search" class="form-control" placeholder="e.g. Images, Forms, UX" list="searchlist">
-  <datalist id="searchlist">
-    {% assign filters = site.filters | sort: 'sort' %}
-      {% for filter in filters %}
-        {% for f in filter.filters %}
-          <option value="{{f.title}}">
+    <label class="sr-only" for="exampleSearch">Search:</label>
+    <div class="input-group-addon"><span aria-hidden="true" class="glyphicon glyphicon-search"></span></div>
+    <input class="form-control" id="exampleSearch" type="text" placeholder="e.g. Images, Forms, UX"list="searchlist">
+    <span class="input-group-btn">
+      <button type="submit" class="btn btn-success">Search</button>
+    </span>
+    <datalist id="searchlist">
+      {% assign filters = site.filters | sort: 'sort' %}
+        {% for filter in filters %}
+          {% for f in filter.filters %}
+            <option value="{{f.title}}">
+          {% endfor %}
         {% endfor %}
-      {% endfor %}
-  </datalist>
-</div>
+    </datalist>
+  </div>
 </div>
