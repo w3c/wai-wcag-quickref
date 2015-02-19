@@ -1,6 +1,5 @@
-<h2>Fiters:</h2>
 <div class="panel panel-default">
-  <div class="panel-heading"><a href="#filters" class="btn btn-primary" data-toggle="collapse" aria-expanded="false" aria-controls="filters">Show all filters</a></div>
+  <div class="panel-heading"><a href="#filters" class="btn btn-primary" data-toggle="collapse" aria-expanded="false" aria-controls="filters">Show filters</a><span id="filtered"></span></div>
   <div class="panel-body collapse" id="filters">
     <div class="row">
       {% assign filters = site.filters | sort: 'sort' %}
@@ -13,6 +12,7 @@
           <div class="panel panel-default" id="{{filter.title | prepend: 'filter-' | slugify}}">
             <div class="panel-heading">{{ filter.title }}</div>
             <div class="panel-body form-group">
+            <p><small>{{filter.output}}</small></p>
             {% for f in filter.filters %}
               <div class="checkbox">
                 <label>

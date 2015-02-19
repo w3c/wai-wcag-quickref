@@ -1,6 +1,5 @@
 $('#filter-levels input').on('change', function(e) {
   $('#filter-levels input').each(function(){
-    console.log($(this).is(':checked'));
     if ($(this).is(':checked')) {
       $('.levels-' + $(this).val()).each(function() {
         $(this).show();
@@ -10,5 +9,17 @@ $('#filter-levels input').on('change', function(e) {
         $(this).hide();
       });
     }
-  });;
+  });
+});
+
+$('#filters input').on('change', function(e) {
+  var o = "";
+  $('#filters input').each(function(){
+    if ($(this).is(':checked')) {
+      o = o + '<span class="label label-default">' + $(this).parent().text() + '</span>&nbsp;';
+      console.log(o);
+    }
+  });
+  o = ' <strong>Your selection:</strong> ' + o;
+  $('#filtered').html(o);
 });

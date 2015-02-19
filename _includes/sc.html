@@ -6,7 +6,7 @@
 	<div class="col-md-3">
 		<h5>{{ p }}.{{ g }}.{{ s }} {{currentsc.title}} {{level}}</h5>
 	</div>
-	<div class="col-md-9">
+	<div class="col-md-7">
 		{{ currentsc.output }}
     {% if currentsc.techniques %}
       <div role="tabpanel">
@@ -56,4 +56,11 @@
         {% endif%}
       </div>
 	</div>
+  <div class="col-md-2">
+    <h6>Related resources:</h6>
+    <div class="list-unstyled btn-group-vertical">
+      <a href="#" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-link"></span> Understanding <abbr title="Success Criterion">SC</abbr> {{ p }}.{{ g }}.{{ s }}</a>
+      <a href="#" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-link"></span> Images Tutorial</a>
+    </div>
+  </div>
 </div>
