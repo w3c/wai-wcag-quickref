@@ -16,8 +16,7 @@ $('#filters input').on('change', function(e) {
   var o = "";
   $('#filters input').each(function(){
     if ($(this).is(':checked')) {
-      o = o + '<span class="label label-default">' + $(this).parent().text() + '</span>&nbsp;';
-      console.log(o);
+      o = o +' ' + '<span class="label label-default">' + $(this).parent().text() + '</span><span>&nbsp;</span>';
     }
   });
   o = ' <strong>Your selection:</strong> ' + o;
