@@ -1,5 +1,8 @@
 <div class="panel panel-default">
   <div class="panel-heading"><a href="#filters" class="btn btn-primary" data-toggle="collapse" aria-expanded="false" aria-controls="filters">Show filters</a><span id="filtered"></span></div>
+  <div class="panel-body">
+    {% include highlevel.html %}
+  </div>
   <div class="panel-body collapse" id="filters">
     <div class="row">
       {% assign filters = site.filters | sort: 'sort' %}
@@ -8,7 +11,7 @@
           </div>
           <div class="row">
         {% endif %}
-        <div class="col-md-2">
+        <div class="col-sm-3 col-md-2">
           <div class="panel panel-default" id="{{filter.title | prepend: 'filter-' | slugify}}">
             <div class="panel-heading">{{ filter.title }}</div>
             <div class="panel-body form-group">
@@ -16,7 +19,7 @@
             {% for f in filter.filters %}
               <div class="checkbox">
                 <label>
-                  <input type="{{filter.type}}" name="{{ 'filter ' | append: filter.short | slugify }}" value="{{ f.short }}"> {{f.title}}
+                  <input type="{{filter.type}}" name="{{ 'filter ' | append: filter.short | slugify }}" value="{{ f.short }}" checked> {{f.title}}
                 </label>
               </div>
             {% endfor %}
