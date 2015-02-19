@@ -27,13 +27,11 @@
       <div role="tabpanel">
         <!-- Nav tabs -->
         <ul class="nav nav-pills nav-stacked" role="tablist">
-          {% comment %}
-            {% if currentsc.techniques.size > 1 %}
-            <li role="presentation" class="active"><a href="#all" aria-controls="all" role="tab" data-toggle="tab">All Techniques</a></li>
-            {% endif %}
-          {% endcomment %}
+
+          <li role="presentation" class="active"><a href="#all" aria-controls="all" role="tab" data-toggle="tab">All Techniques</a></li>
+
           {% if currentsc.techniques.sufficient %}
-            <li role="presentation" class="active"><a href="#sc-{{ p }}{{ g }}{{ s }}-sufficient" aria-controls="sc-{{ p }}{{ g }}{{ s }}-sufficient" role="tab" data-toggle="tab">Sufficient Techniques</a></li>
+            <li role="presentation"><a href="#sc-{{ p }}{{ g }}{{ s }}-sufficient" aria-controls="sc-{{ p }}{{ g }}{{ s }}-sufficient" role="tab" data-toggle="tab">Sufficient Techniques</a></li>
           {% endif %}
           {% if currentsc.techniques.advisory %}
             <li role="presentation"{% if currentsc.techniques.size == 1 %} class="active"{% endif %}><a href="#sc-{{ p }}{{ g }}{{ s }}-advisory" aria-controls="sc-{{ p }}{{ g }}{{ s }}-advisory" role="tab" data-toggle="tab">Advisory Techniques</a></li>
@@ -55,7 +53,7 @@
             </div>
           {% endif %}
           {% if currentsc.techniques.advisory %}
-            <div role="tabpanel" class="tab-pane fade" id="sc-{{ p }}{{ g }}{{ s }}-advisory">
+            <div role="tabpanel" class="tab-pane fade in active" id="sc-{{ p }}{{ g }}{{ s }}-advisory">
               {% assign techtitle = "Advisory Techniques" %}
               {% assign techniques = currentsc.techniques.advisory  %}
               {% assign ttype = "advisory" %}
@@ -63,7 +61,7 @@
             </div>
           {% endif %}
           {% if currentsc.techniques.failures %}
-            <div role="tabpanel" class="tab-pane fade" id="sc-{{ p }}{{ g }}{{ s }}-failures">
+            <div role="tabpanel" class="tab-pane fade in active" id="sc-{{ p }}{{ g }}{{ s }}-failures">
               {% assign techtitle = "Failures" %}
               {% assign techniques = currentsc.techniques.failures  %}
               {% assign ttype = "failiure" %}
