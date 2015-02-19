@@ -3,7 +3,7 @@
 	{% assign s = s | plus: 1 %}
 		{% assign currentscs = site.successcriteria | where: "short", criterion %}
 			{% for currentsc in currentscs %}
-				{% include sc.html %}
+				{% include sc.html level=include.level %}
 			{% endfor %}
 	{% endfor %}
 </section>
