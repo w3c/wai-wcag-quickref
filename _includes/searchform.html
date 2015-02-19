@@ -1,6 +1,14 @@
 <div class="form-group">
   <div class="input-group">
   <label class="input-group-addon" for="search">Search:</label>
-  <input id="search" type="search" class="form-control" placeholder="e.g. Images, Forms, UX">
+  <input multiple id="search" type="search" class="form-control" placeholder="e.g. Images, Forms, UX" list="searchlist">
+  <datalist id="searchlist">
+    {% assign filters = site.filters | sort: 'sort' %}
+      {% for filter in filters %}
+        {% for f in filter.filters %}
+          <option value="{{f.title}}">
+        {% endfor %}
+      {% endfor %}
+  </datalist>
 </div>
 </div>
