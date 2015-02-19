@@ -1,0 +1,51 @@
+---
+---
+body {
+  margin-top: 4.375em;
+}
+
+.sc-wrapper {
+  border-top: 1px solid #BCE8F1;
+}
+
+.sc-content {
+  a {
+    border-bottom: 1px solid #666;
+  }
+}
+
+.panel:last-child {
+  margin-bottom: 0;
+}
+
+h5 {
+  line-height: 1.5;
+}
+
+.nav-pills > li > a {
+  border: 1px solid #ddd;
+}
+
+/*.sc-content {
+  height: 10em;
+  overflow: hidden;
+  padding-bottom: 3em;
+  position: relative;
+  margin-bottom: 1em;
+  &:after {
+    display: block;
+    content: "";
+    background: linear-gradient(to bottom, rgba(#fff, 0), #fff 60%);
+    height: 3em;
+    position:absolute;
+    bottom:0;
+    left:0;
+    right: 0;
+  }
+  button {
+    position: absolute;
+    bottom: 0;
+    z-index: 100;
+    left: 43%;
+  }
+}*/
