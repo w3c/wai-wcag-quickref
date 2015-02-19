@@ -2,31 +2,49 @@
 <pre id="pre-{{ p }}{{ g }}{{ s }}" class="collapse">
 {{currentsc}}
 </pre>-->
+<div class="sc-wrapper">
 <div class="row">
 	<div class="col-md-3">
-		<h5>{{ p }}.{{ g }}.{{ s }} {{currentsc.title}} {{level}}</h5>
+		<h5><span class="label label-default">{{ p }}.{{ g }}.{{ s }}</span> {{currentsc.title}}</h5>
+    <p><span class="label label-primary">Level {{include.level}}</span>  </p>
 	</div>
-	<div class="col-md-7">
-		{{ currentsc.output }}
+	<div class="col-md-6">
+    <div class="sc-content">
+		  {{ currentsc.output }}
+    </div>
+  </div>
+   <div class="col-md-3">
+    <h6>Related resources:</h6>
+    <div class="list-unstyled btn-group-vertical">
+      <a href="#" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-link"></span> Understanding <abbr title="Success Criterion">SC</abbr> {{ p }}.{{ g }}.{{ s }}</a>
+      <a href="#" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-link"></span> Images Tutorial</a>
+    </div>
+  </div>
+  </div>
     {% if currentsc.techniques %}
+<div class="row">
+      <div class="col-md-2 col-md-offset-1">
       <div role="tabpanel">
         <!-- Nav tabs -->
-        <ul class="nav nav-pills" role="tablist">
+        <ul class="nav nav-pills nav-stacked" role="tablist">
           {% comment %}
             {% if currentsc.techniques.size > 1 %}
-            <li role="presentation" class="active"><a href="#all" aria-controls="all" role="tab" data-toggle="pill">All Techniques</a></li>
+            <li role="presentation" class="active"><a href="#all" aria-controls="all" role="tab" data-toggle="tab">All Techniques</a></li>
             {% endif %}
           {% endcomment %}
           {% if currentsc.techniques.sufficient %}
-            <li role="presentation" class="active"><a href="#sc-{{ p }}{{ g }}{{ s }}-sufficient" aria-controls="sc-{{ p }}{{ g }}{{ s }}-sufficient" role="tab" data-toggle="pill">Sufficient Techniques</a></li>
+            <li role="presentation" class="active"><a href="#sc-{{ p }}{{ g }}{{ s }}-sufficient" aria-controls="sc-{{ p }}{{ g }}{{ s }}-sufficient" role="tab" data-toggle="tab">Sufficient Techniques</a></li>
           {% endif %}
           {% if currentsc.techniques.advisory %}
-            <li role="presentation"{% if currentsc.techniques.size == 1 %} class="active"{% endif %}><a href="#sc-{{ p }}{{ g }}{{ s }}-advisory" aria-controls="sc-{{ p }}{{ g }}{{ s }}-advisory" role="tab" data-toggle="pill">Advisory Techniques</a></li>
+            <li role="presentation"{% if currentsc.techniques.size == 1 %} class="active"{% endif %}><a href="#sc-{{ p }}{{ g }}{{ s }}-advisory" aria-controls="sc-{{ p }}{{ g }}{{ s }}-advisory" role="tab" data-toggle="tab">Advisory Techniques</a></li>
           {% endif %}
           {% if currentsc.techniques.failures %}
-            <li role="presentation"{% if currentsc.techniques.size == 1 %} class="active"{% endif %}><a href="#sc-{{ p }}{{ g }}{{ s }}-failures" aria-controls="sc-{{ p }}{{ g }}{{ s }}-advisory" role="tab" data-toggle="pill">Failures</a></li>
+            <li role="presentation"{% if currentsc.techniques.size == 1 %} class="active"{% endif %}><a href="#sc-{{ p }}{{ g }}{{ s }}-failures" aria-controls="sc-{{ p }}{{ g }}{{ s }}-advisory" role="tab" data-toggle="tab">Failures</a></li>
           {% endif %}
         </ul>
+        </div>
+        </div>
+        <div class="col-md-9">
         <div class="tab-content">
           {% if currentsc.techniques.sufficient %}
             <div role="tabpanel" class="tab-pane fade in active" id="sc-{{ p }}{{ g }}{{ s }}-sufficient">
@@ -53,14 +71,7 @@
             </div>
           {% endif %}
         </div>
+        </div>
+        </div>
         {% endif%}
-      </div>
-	</div>
-  <div class="col-md-2">
-    <h6>Related resources:</h6>
-    <div class="list-unstyled btn-group-vertical">
-      <a href="#" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-link"></span> Understanding <abbr title="Success Criterion">SC</abbr> {{ p }}.{{ g }}.{{ s }}</a>
-      <a href="#" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-link"></span> Images Tutorial</a>
-    </div>
-  </div>
 </div>
