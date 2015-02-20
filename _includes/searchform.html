@@ -2,7 +2,7 @@
   <div class="input-group">
     <label class="sr-only" for="exampleSearch">Search:</label>
     <div class="input-group-addon"><span aria-hidden="true" class="glyphicon glyphicon-search"></span></div>
-    <input class="form-control" id="exampleSearch" type="text" placeholder="e.g. Images, Forms, UX"list="searchlist">
+    <input class="form-control" id="exampleSearch" type="text" placeholder="e.g. Images, Forms, UX" list="searchlist">
     <span class="input-group-btn">
       <button type="submit" class="btn btn-success">Search</button>
     </span>
@@ -10,7 +10,7 @@
       {% assign filters = site.filters | sort: 'sort' %}
         {% for filter in filters %}
           {% for f in filter.filters %}
-            <option value="{{f.title}}">
+            <option value="{{f.title | strip_html}}">
           {% endfor %}
         {% endfor %}
     </datalist>
