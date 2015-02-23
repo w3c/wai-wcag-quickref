@@ -1,7 +1,7 @@
 ---
-title: "Responsibilities"
+title: "Tasks"
 sort: 10
-short: responsibilities
+short: tasks
 type: checkbox
 filters:
 - short: fed
