@@ -2,6 +2,7 @@
 ---
 body {
   margin-top: 4.375em;
+  position: relative;
 }
 
 .sc-wrapper {
@@ -26,6 +27,31 @@ h5 {
 
 .nav-pills > li > a {
   border: 1px solid #ddd;
+}
+
+.navbar-scroll {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    ul ul {
+      display:none;
+    }
+    ul .active ul {
+      display:block;
+    }
+  }
+  .active {
+    border-right: 3px solid #000;
+  }
+}
+
+.navbar-scroll.affix {
+  top: 60px;
+}
+
+.navbar-scroll.affix, .navbar-scroll.affix-bottom {
+    width: 213px;
 }
 
 /*.sc-content {
