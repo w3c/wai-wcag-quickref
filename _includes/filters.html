@@ -1,8 +1,5 @@
 <div class="panel panel-default">
   <div class="panel-heading"><a href="#filters" class="btn btn-primary" data-toggle="collapse" aria-expanded="false" aria-controls="filters">Show filters</a><span id="filtered"></span></div>
-  <div class="panel-body">
-    {% include highlevel.html %}
-  </div>
   <div class="panel-body collapse" id="filters">
     <div class="row">
       {% assign filters = site.filters | sort: 'sort' %}
@@ -30,3 +27,5 @@
     </div>
   </div>
 </div>
+
+{% include highlevel.html %}
