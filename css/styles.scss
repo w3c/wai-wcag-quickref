@@ -34,6 +34,12 @@ h5 {
     margin: 0;
     padding: 0;
     list-style: none;
+    ul {
+      margin-left: 1em;
+      li {
+        line-height: 2;
+      }
+    }
     ul ul {
       display:none;
     }
