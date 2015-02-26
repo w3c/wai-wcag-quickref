@@ -2,6 +2,7 @@
 ---
 body {
   margin-top: 4.375em;
+  position: relative;
 }
 
 .sc-wrapper {
@@ -26,6 +27,55 @@ h5 {
 
 .nav-pills > li > a {
   border: 1px solid #ddd;
+}
+
+.navbar-scroll {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    ul {
+      li {
+        line-height: 2;
+        border-left: 1em solid transparent;
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid transparent;
+        a {
+          padding-left: 1em;
+          display: block;
+        }
+      }
+    }
+    ul ul {
+      display:none;
+    }
+    ul .active ul {
+      display:block;
+    }
+  }
+  .active {
+    border-color: #036;
+    .active:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.navbar-scroll.affix {
+  top: 60px;
+  bottom: 10px;
+  .tab-content {
+    overflow: scroll;
+    position: absolute;
+    bottom: 0;
+    right:0;
+    left:0;
+    top:4em;
+  }
+}
+
+.navbar-scroll.affix, .navbar-scroll.affix-bottom {
+    width: 213px;
 }
 
 /*.sc-content {

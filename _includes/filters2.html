@@ -1,0 +1,16 @@
+{% assign filters = site.filters | sort: 'sort' %}
+{% for filter in filters %}
+  <div class="panel panel-default" id="{{filter.title | prepend: 'filter-' | slugify}}">
+    <div class="panel-heading">{{ filter.title }}</div>
+    <div class="panel-body form-group">
+    <p><small>{{filter.output}}</small></p>
+    {% for f in filter.filters %}
+      <div class="checkbox">
+        <label>
+          <input type="{{filter.type}}" name="{{ 'filter ' | append: filter.short | slugify }}" value="{{ f.short }}" checked> {{f.title}}
+        </label>
+      </div>
+    {% endfor %}
+    </div>
+  </div>
+{% endfor %}

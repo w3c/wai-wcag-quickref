@@ -1,0 +1,74 @@
+<div class="navbar-scroll">
+<div role="tabpanel">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#overview" aria-controls="overview" role="tab" data-toggle="tab">Overview</a></li>
+    <li role="presentation"><a href="#filters" aria-controls="filters" role="tab" data-toggle="tab">Filters</a></li>
+  </ul>
+
+  <div class="tab-content">
+  <div id="overview" role="tabpanel" class="tab-pane active overview">
+  <ul class="nav nav-pills nav-stacked" role="tablist">
+    {% assign p = 0 %}
+    {% for principle in site.data.principles %}
+      {% assign p = p | plus: 1 %}
+      {% assign g = 0 %}
+      <li>
+        <a href="#principle{{ p }}">{{ p }}. {{principle}}</a>
+        <ul>
+          {% for guideline in site.guidelines %}
+            {% assign g = g | plus: 1 %}
+            {% assign s = 0 %}
+            {% if guideline.principle == principle %}
+              <li>
+                <a href="#{{ guideline.short }}">{{ p }}.{{ g }} {{ guideline.title }}</a>
+                  {% if guideline.successcriteria %}
+                  <ul>
+                    {% if guideline.successcriteria.levelA %}
+                        {% for criterion in guideline.successcriteria.levelA %}
+                        {% assign s = s | plus: 1 %}
+                          {% assign currentscs = site.successcriteria | where: "short", criterion %}
+                            {% for currentsc in currentscs %}
+                            <li>
+                              <a href="#{{currentsc.short}}">{{ p }}.{{ g }}.{{ s }} {{currentsc.title}}</a>
+                            </li>
+                            {% endfor %}
+                        {% endfor %}
+                    {% endif %}
+                    {% if guideline.successcriteria.levelAA %}
+                      {% for criterion in guideline.successcriteria.levelAA %}
+                        {% assign s = s | plus: 1 %}
+                          {% assign currentscs = site.successcriteria | where: "short", criterion %}
+                            {% for currentsc in currentscs %}
+                            <li>
+                              <a href="#{{currentsc.short}}">{{ p }}.{{ g }}.{{ s }} {{currentsc.title}}</a>
+                            </li>
+                            {% endfor %}
+                        {% endfor %}
+                    {% endif %}
+                    {% if guideline.successcriteria.levelAAA %}
+                      {% for criterion in guideline.successcriteria.levelAAA %}
+                        {% assign s = s | plus: 1 %}
+                          {% assign currentscs = site.successcriteria | where: "short", criterion %}
+                            {% for currentsc in currentscs %}
+                            <li>
+                              <a href="#{{currentsc.short}}">{{ p }}.{{ g }}.{{ s }} {{currentsc.title}}</a>
+                            </li>
+                            {% endfor %}
+                        {% endfor %}
+                    {% endif %}
+                  </ul>
+                  {% endif%}
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </li>
+{% endfor %}
+  </ul>
+  </div>
+  <div id="filters" role="tabpanel" class="tab-pane">
+    {% include filters2.html %}
+  </div>
+  </div>
+</div>
+</div>
