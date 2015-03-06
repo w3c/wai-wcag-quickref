@@ -86,6 +86,17 @@ h5 {
     width: 213px;
 }
 
+.panel-heading {
+  h3 {
+    margin-top: 0;
+    font-weight: bold;
+  }
+  p {
+    margin-bottom: 0;
+    font-size: 1.25em;
+  }
+}
+
 /*.sc-content {
   height: 10em;
   overflow: hidden;
