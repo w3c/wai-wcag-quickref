@@ -3,6 +3,8 @@
   <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" class="active"><a href="#overview" aria-controls="overview" role="tab" data-toggle="tab">Overview</a></li>
     <li role="presentation"><a href="#filters" aria-controls="filters" role="tab" data-toggle="tab">Filters</a></li>
+    <li role="presentation"><a href="#presets" aria-controls="presets" role="tab" data-toggle="tab">Presets</a></li>
+    <li role="presentation"><a href="#tags" aria-controls="tags" role="tab" data-toggle="tab">Tags</a></li>
   </ul>
 
   <div class="tab-content">
@@ -28,7 +30,7 @@
                         {% assign s = s | plus: 1 %}
                           {% assign currentscs = site.successcriteria | where: "short", criterion %}
                             {% for currentsc in currentscs %}
-                            <li>
+                            <li class="levels-a">
                               <a href="#{{currentsc.short}}">{{ p }}.{{ g }}.{{ s }} {{currentsc.title}}</a>
                             </li>
                             {% endfor %}
@@ -39,7 +41,7 @@
                         {% assign s = s | plus: 1 %}
                           {% assign currentscs = site.successcriteria | where: "short", criterion %}
                             {% for currentsc in currentscs %}
-                            <li>
+                            <li class="levels-aa">
                               <a href="#{{currentsc.short}}">{{ p }}.{{ g }}.{{ s }} {{currentsc.title}}</a>
                             </li>
                             {% endfor %}
@@ -50,7 +52,7 @@
                         {% assign s = s | plus: 1 %}
                           {% assign currentscs = site.successcriteria | where: "short", criterion %}
                             {% for currentsc in currentscs %}
-                            <li>
+                            <li class="levels-aaa">
                               <a href="#{{currentsc.short}}">{{ p }}.{{ g }}.{{ s }} {{currentsc.title}}</a>
                             </li>
                             {% endfor %}
@@ -68,6 +70,12 @@
   </div>
   <div id="filters" role="tabpanel" class="tab-pane">
     {% include filters2.html %}
+  </div>
+  <div id="presets" role="tabpanel" class="tab-pane">
+    {% include highlevel.html %}
+  </div>
+  <div id="tags" role="tabpanel" class="tab-pane">
+    {% include tags.html %}
   </div>
   </div>
 </div>
