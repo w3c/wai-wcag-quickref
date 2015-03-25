@@ -29,7 +29,7 @@
         <!-- Nav tabs -->
         <ul class="nav nav-pills nav-stacked" role="tablist">
 
-          <li role="presentation" class="active"><a href="#all" aria-controls="all" role="tab" data-toggle="tab">All Techniques</a></li>
+          <li role="presentation" class="active"><a onclick="$('#sc-{{ p }}{{ g }}{{ s }}-sufficient').addClass('active').collapse('show');$('#sc-{{ p }}{{ g }}{{ s }}-advisory').addClass('active').collapse('show');$('#sc-{{ p }}{{ g }}{{ s }}-failures').addClass('active').collapse('show');" href="#all" aria-controls="all" role="tab" data-toggle="tab">All Techniques</a></li>
 
           {% if currentsc.techniques.sufficient %}
             <li role="presentation"><a href="#sc-{{ p }}{{ g }}{{ s }}-sufficient" aria-controls="sc-{{ p }}{{ g }}{{ s }}-sufficient" role="tab" data-toggle="tab">Sufficient Techniques</a></li>
@@ -38,7 +38,7 @@
             <li role="presentation"{% if currentsc.techniques.size == 1 %} class="active"{% endif %}><a href="#sc-{{ p }}{{ g }}{{ s }}-advisory" aria-controls="sc-{{ p }}{{ g }}{{ s }}-advisory" role="tab" data-toggle="tab">Advisory Techniques</a></li>
           {% endif %}
           {% if currentsc.techniques.failures %}
-            <li role="presentation"{% if currentsc.techniques.size == 1 %} class="active"{% endif %}><a href="#sc-{{ p }}{{ g }}{{ s }}-failures" aria-controls="sc-{{ p }}{{ g }}{{ s }}-advisory" role="tab" data-toggle="tab">Failures</a></li>
+            <li role="presentation"{% if currentsc.techniques.size == 1 %} class="active"{% endif %}><a href="#sc-{{ p }}{{ g }}{{ s }}-failures" aria-controls="sc-{{ p }}{{ g }}{{ s }}-failures" role="tab" data-toggle="tab">Failures</a></li>
           {% endif %}
         </ul>
         </div>
