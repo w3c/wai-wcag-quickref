@@ -20,13 +20,14 @@
 {% endif %}
 {% case shortname %}
 {% when "H" %}
-html
+{% assign shortname = 'html' %}
 {% when "SM" %}
-smil
+{% assign shortname = 'smil' %}
 {% when "CSS" %}
-css
+{% assign shortname = 'css' %}
 {% when "G" %}
-general
-{% else %}
-{{ shortname | downcase }}
+{% assign shortname = 'general' %}
+{% when "ARIA" %}
+{% assign shortname = 'wai-aria' %}
 {% endcase %}
+{{ shortname | downcase | prepend: "filter-tech-" }}
