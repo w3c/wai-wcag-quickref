@@ -5,6 +5,20 @@
   <em>{{technique.future}}</em> (future link)
 {% elsif technique.text %}
   {{technique.text}}
+  {% if technique.techniques %}
+    <ul>
+      {% for t in technique.techniques %}
+        <li class="{% include techniqueclass.html tech=t %}">
+          {% if t.text %}
+            {{t.text}}
+          {% else %}
+          {% assign currenttechnique = site.data.techniques | where: "short", t | first %}
+          <a href="{{t | append: '.html' | prepend: site.techniqueurl}}">{{t}}: {{currenttechnique.title}}</a>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
 {% elsif technique.combined %}
   {% for t in technique.combined %}
     {% if t.short %}
@@ -19,7 +33,7 @@
     {% endif%}
   {% endfor %}
 {% elsif technique.sub %}
-   {% assign currenttechnique = site.data.techniques | where: "short", technique.sub | first %}
+  {% assign currenttechnique = site.data.techniques | where: "short", technique.sub | first %}
   <a href="{{technique.sub | append: '.html' | prepend: site.techniqueurl}}">{{technique.sub}}: {{currenttechnique.title}}</a> {{ technique.append }}
   <ul>
     {% for t in technique.techniques %}
