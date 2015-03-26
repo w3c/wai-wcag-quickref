@@ -23,7 +23,7 @@
   <a href="{{technique.sub | append: '.html' | prepend: site.techniqueurl}}">{{technique.sub}}: {{currenttechnique.title}}</a> {{ technique.append }}
   <ul>
     {% for t in technique.techniques %}
-      <li>
+      <li class="{% include techniqueclass.html tech=t %}">
         {% if t.text %}
           {{t.text}}
         {% else %}
