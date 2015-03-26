@@ -1,3 +1,7 @@
+<div class="panel panel-default" id="{{filter.title | prepend: 'filter-' | slugify}}">
+    <div class="panel-body" id="filtered"></div>
+  </div>
+
 {% assign filters = site.filters | sort: 'sort' %}
 {% for filter in filters %}
   <div class="panel panel-default" id="{{filter.title | prepend: 'filter-' | slugify}}">

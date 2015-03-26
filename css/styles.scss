@@ -97,6 +97,14 @@ h5 {
   }
 }
 
+.label {
+  display:inline-block;
+}
+
+#filtered:empty {
+  display:none;
+}
+
 /*.sc-content {
   height: 10em;
   overflow: hidden;
