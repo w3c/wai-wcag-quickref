@@ -47,26 +47,17 @@
         <div class="tab-content">
           {% if currentsc.techniques.sufficient %}
             <div role="tabpanel" class="tab-pane fade in active" id="sc-{{ p }}{{ g }}{{ s }}-sufficient">
-              {% assign techtitle = "Sufficient Techniques" %}
-              {% assign techniques = currentsc.techniques.sufficient  %}
-              {% assign ttype = "sufficient" %}
-              {% include techlist.html %}
+              {% include techlist.html techtitle="Sufficient Techniques" techniques=currentsc.techniques.sufficient ttype="sufficient" %}
             </div>
           {% endif %}
           {% if currentsc.techniques.advisory %}
             <div role="tabpanel" class="tab-pane fade in active" id="sc-{{ p }}{{ g }}{{ s }}-advisory">
-              {% assign techtitle = "Advisory Techniques" %}
-              {% assign techniques = currentsc.techniques.advisory  %}
-              {% assign ttype = "advisory" %}
-              {% include techlist.html %}
+              {% include techlist.html techtitle="Advisory Techniques" techniques=currentsc.techniques.advisory ttype="advisory" %}
             </div>
           {% endif %}
           {% if currentsc.techniques.failures %}
             <div role="tabpanel" class="tab-pane fade in active" id="sc-{{ p }}{{ g }}{{ s }}-failures">
-              {% assign techtitle = "Failures" %}
-              {% assign techniques = currentsc.techniques.failures  %}
-              {% assign ttype = "failiure" %}
-              {% include techlist.html %}
+              {% include techlist.html techtitle="Failures" techniques=currentsc.techniques.failures ttype="failiure" %}
             </div>
           {% endif %}
         </div>
