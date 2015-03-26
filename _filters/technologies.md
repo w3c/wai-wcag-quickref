@@ -1,7 +1,7 @@
 ---
 title: "Techniques"
 sort: 1
-short: levels
+short: tech
 type: checkbox
 filters:
 - short: general
