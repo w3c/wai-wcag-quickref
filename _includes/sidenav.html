@@ -30,7 +30,7 @@
                         {% assign s = s | plus: 1 %}
                           {% assign currentscs = site.successcriteria | where: "short", criterion %}
                             {% for currentsc in currentscs %}
-                            <li class="levels-a">
+                            <li class="filter-levels-a">
                               <a href="#{{currentsc.short}}">{{ p }}.{{ g }}.{{ s }} {{currentsc.title}}</a>
                             </li>
                             {% endfor %}
@@ -41,7 +41,7 @@
                         {% assign s = s | plus: 1 %}
                           {% assign currentscs = site.successcriteria | where: "short", criterion %}
                             {% for currentsc in currentscs %}
-                            <li class="levels-aa">
+                            <li class="filter-levels-aa">
                               <a href="#{{currentsc.short}}">{{ p }}.{{ g }}.{{ s }} {{currentsc.title}}</a>
                             </li>
                             {% endfor %}
@@ -52,7 +52,7 @@
                         {% assign s = s | plus: 1 %}
                           {% assign currentscs = site.successcriteria | where: "short", criterion %}
                             {% for currentsc in currentscs %}
-                            <li class="levels-aaa">
+                            <li class="filter-levels-aaa">
                               <a href="#{{currentsc.short}}">{{ p }}.{{ g }}.{{ s }} {{currentsc.title}}</a>
                             </li>
                             {% endfor %}
