@@ -21,15 +21,43 @@
   {% endif %}
 {% elsif technique.combined %}
   {% for t in technique.combined %}
+    {% if t.techniques %}
+      {% assign hastechniques = true %}
+    {% endif %}
+  {% endfor %}
+  {% for t in technique.combined %}
     {% if t.short %}
       {% assign currenttechnique = site.data.techniques | where: "short", t.short | first %}
       {{ t.prepend }} <a href="{{t.short | append: '.html' | prepend: site.techniqueurl}}">{{t.short}}: {{currenttechnique.title}}</a> {{ t.append }}
-    {% else %}
-      {% assign currenttechnique = site.data.techniques | where: "short", t | first %}
-      <a href="{{t | append: '.html' | prepend: site.techniqueurl}}">{{t}}: {{currenttechnique.title}}</a>
-      {% if forloop.rindex0 > 0 %}
+      {% if forloop.rindex0 > 0 and !(forloop.rindex0 > 1 and hastechniques) %}
         <strong>AND</strong>
       {% endif%}
+    {% elsif t.text %}
+      {{t.text}}
+      {% if forloop.rindex0 > 0 and !(forloop.rindex0 > 1 and hastechniques) %}
+        <strong>AND</strong>
+      {% endif%}
+    {% elsif t.techniques %}
+      <ul>
+        {% for t in t.techniques %}
+          <li class="{% include techniqueclass.html tech=t %}">
+            {% if t.text %}
+              {{t.text}}
+            {% else %}
+            {% assign currenttechnique = site.data.techniques | where: "short", t | first %}
+            <a href="{{t | append: '.html' | prepend: site.techniqueurl}}">{{t}}: {{currenttechnique.title}}</a>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      {% assign currenttechnique = site.data.techniques | where: "short", t | first %}
+      <span class="{% include techniqueclass.html tech=t %}">
+      <a href="{{t | append: '.html' | prepend: site.techniqueurl}}">{{t}}: {{currenttechnique.title}}</a>
+      {% if forloop.rindex0 > 0 or !(forloop.rindex0 > 1 and hastechniques) %}
+        <strong>AND</strong>
+      {% endif%}
+      </span>
     {% endif%}
   {% endfor %}
 {% elsif technique.sub %}
