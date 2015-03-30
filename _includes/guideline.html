@@ -12,7 +12,9 @@
 					<h4>Sufficient Techniques</h4>
 					<ul>
 					{% for technique in guideline.techniques.sufficient %}
-						<li>{{technique}}</li>
+						<li class="{% include techniqueclass.html %}">
+              {% include techniquelink.html %}
+            </li>
 					{% endfor %}
 					</ul>
 				{% endif %}
@@ -20,7 +22,9 @@
 					<h4>Advisory Techniques</h4>
 					<ul>
 					{% for technique in guideline.techniques.advisory %}
-						<li>{{technique}}</li>
+						<li class="{% include techniqueclass.html %}">
+              {% include techniquelink.html %}
+            </li>
 					{% endfor %}
 					</ul>
 				{% endif %}
@@ -28,7 +32,9 @@
 					<h4>Failure Techniques</h4>
 					<ul>
 					{% for technique in guideline.techniques.failures %}
-						<li>{{technique}}</li>
+						<li class="{% include techniqueclass.html %}">
+              {% include techniquelink.html %}
+            </li>
 					{% endfor %}
 					</ul>
 				{% endif %}
