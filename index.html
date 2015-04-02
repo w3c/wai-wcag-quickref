@@ -13,17 +13,19 @@ layout: default
   </div>
 </div>
 -->
-<aside class="col-md-3">
-  {% include sidenav.html %}
-</aside>
-<main class="col-md-9">
-	{% assign p = 0 %}
-	{% for principle in site.data.principles %}
-		{% assign p = p | plus: 1 %}
-		{% assign g = 0 %}
-		<h2 id="principle{{ p }}">{{ p }}. {{principle}}</h2>
-		{% for guideline in site.guidelines %}
-			{% include guideline.html %}
-		{% endfor %}
-	{% endfor %}
-</main>
+<div class="row">
+  <aside class="col-md-3">
+    {% include sidenav.html %}
+  </aside>
+  <main class="col-md-9">
+  	{% assign p = 0 %}
+  	{% for principle in site.data.principles %}
+  		{% assign p = p | plus: 1 %}
+  		{% assign g = 0 %}
+  		<h2 id="principle{{ p }}">{{ p }}. {{principle}}</h2>
+  		{% for guideline in site.guidelines %}
+  			{% include guideline.html %}
+  		{% endfor %}
+  	{% endfor %}
+  </main>
+</div>
