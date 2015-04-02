@@ -2,17 +2,14 @@
   <div class="input-group">
     <label class="sr-only" for="exampleSearch">Search:</label>
     <div class="input-group-addon"><span aria-hidden="true" class="glyphicon glyphicon-search"></span></div>
-    <input class="form-control" id="exampleSearch" type="text" placeholder="e.g. Images, Forms, UX" list="searchlist">
+    <input class="form-control" id="exampleSearch" type="text">
     <span class="input-group-btn">
       <button type="submit" class="btn btn-success">Search</button>
     </span>
-    <datalist id="searchlist">
-      {% assign filters = site.filters | sort: 'sort' %}
-        {% for filter in filters %}
-          {% for f in filter.filters %}
-            <option value="{{f.title | strip_html}}">
-          {% endfor %}
-        {% endfor %}
-    </datalist>
   </div>
 </div>
+ <div class="btn-group" role="group">
+    <button type="button" class="btn btn-default" aria-label="Previous search result" id="searchbtnprev"><i class="glyphicon glyphicon-chevron-left"></i></button>
+    <output id="searchnumber" aria-live="polite" class="btn btn-default">0/0</output>
+    <button type="button" class="btn btn-default" aria-label="Next search result" id="searchbtnnext"><i class="glyphicon glyphicon-chevron-right"></i></button>
+  </div>
