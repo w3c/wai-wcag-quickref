@@ -5,6 +5,16 @@ body {
   position: relative;
 }
 
+mark {
+  background-color: #FF0;
+  border: 1px solid #333;
+}
+
+mark.current {
+  background-color: #FF0;
+  border: 1px dashed #333;
+}
+
 .sc-wrapper {
   border-top: 1px solid #BCE8F1;
   padding-top: 1em;
