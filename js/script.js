@@ -50,7 +50,7 @@ $('#exampleSearch').on('keyup', function() {
   if (val.length > 3) {
     search(val);
   } else {
-    $('#searchnumber').val('0/0').attr('data-current-index', 0).attr('data-max-index', 0).attr('disabled', 'disabled');
+    $('#searchnumber').val('0/0').attr('data-current-index', 0).attr('data-max-index', 0).attr('aria-label', "No search results").attr('disabled', 'disabled');
     $('#searchbtnprev, #searchbtnnext').attr('disabled', 'disabled');
     $('#searchbtnfocusresult').hide();
     $('main').removeHighlight();
@@ -63,7 +63,7 @@ $('#searchbtnsubmit').on('click', function(e) {
   if (val.length > 0) {
     search(val);
   } else {
-    $('#searchnumber').val('0/0').attr('data-current-index', 0).attr('data-max-index', 0).attr('disabled', 'disabled');
+    $('#searchnumber').val('0/0').attr('data-current-index', 0).attr('data-max-index', 0).attr('aria-label', "No search results").attr('disabled', 'disabled');
     $('#searchbtnprev, #searchbtnnext').attr('disabled', 'disabled');
     $('#searchbtnfocusresult').hide();
     $('main').removeHighlight();
@@ -77,7 +77,7 @@ $('#searchbtnprev').on('click', function() {
   if (currentindex > 1) {
     var newindex = currentindex - 1;
     scrollto($('mark.highlight:visible').eq(newindex - 1).addClass('current'));
-    $('#searchnumber').val(newindex + '/' + maxindex).attr('data-current-index', newindex);
+    $('#searchnumber').val(newindex + '/' + maxindex).attr('aria-label', "Result" + newindex + ' of ' + maxindex).attr('data-current-index', newindex);
     $('#searchbtnnext').removeAttr('disabled');
     if (newindex == 1) {
       $('#searchbtnprev').attr('disabled', 'disabled');
@@ -92,7 +92,7 @@ $('#searchbtnnext').on('click', function() {
   if (currentindex < maxindex) {
     var newindex = currentindex + 1;
     scrollto($('mark.highlight:visible').eq(newindex -1).addClass('current'));
-    $('#searchnumber').val(newindex + '/' + maxindex).attr('data-current-index', newindex);
+    $('#searchnumber').val(newindex + '/' + maxindex).attr('aria-label', "Result" + newindex + ' of ' + maxindex).attr('data-current-index', newindex);
     $('#searchbtnprev').removeAttr('disabled');
     if (newindex == $('#searchnumber').attr('data-max-index')) {
       $('#searchbtnnext').attr('disabled', 'disabled');
