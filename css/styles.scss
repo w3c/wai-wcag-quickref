@@ -1,5 +1,8 @@
 ---
 ---
+
+@import "bootstrap/variables";
+
 body {
   margin-top: 4.375em;
   position: relative;
@@ -15,12 +18,58 @@ mark.current {
   border: 1px dashed #333;
 }
 
+h1 {
+  line-height: 1;
+  small {
+    font-size: 50%;
+    line-height: 1;
+    display:block;
+  }
+}
+
+.panel-heading > h5 {
+  margin:0;
+  font-weight: bold;
+  font-size: 1em;
+}
+
 .sc-wrapper {
-  border-top: 1px solid #BCE8F1;
+  border-top: 1px solid $brand-primary;
   padding-top: 1em;
   padding-bottom: 1em;
   .panel:last-child {
     margin-bottom: 0;
+  }
+  .row + .row {
+    margin-top: 1em;
+  }
+}
+
+.panel-body section:first-child .sc-wrapper:first-child,
+.panel-body [aria-expanded=false] + section .sc-wrapper:first-child {
+  border-top: none;
+  padding-top:0;
+}
+
+.sc-wrapper header {
+  strong, [class^=level] {
+    display: inline-block;
+    background-color: #ddd;
+    padding: 3px;
+    border-radius:2px;
+    font-weight: normal;
+  }
+  [class^=level] {
+    color: #fff;
+  }
+  .level-a {
+    background-color: lighten($brand-primary, 20%);
+  }
+  .level-aa {
+    background-color: lighten($brand-primary, 10%);
+  }
+  .level-aaa {
+    background-color: lighten($brand-primary, 0%);
   }
 }
 
@@ -90,6 +139,10 @@ h5 {
     left:0;
     top:4em;
   }
+}
+
+.navbar-scroll .nav {
+  margin-bottom: 1em;
 }
 
 .navbar-scroll.affix, .navbar-scroll.affix-bottom {
