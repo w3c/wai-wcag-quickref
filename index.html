@@ -1,11 +1,11 @@
 ---
 layout: default
 ---
-<div class="row">
-  <aside class="col-md-3">
+<div class="row has-leftnav has-filters">
+  <aside class="leftnav col-md-2">
     {% include sidenav.html %}
   </aside>
-  <main class="col-md-9">
+  <main class="main col-md-8">
   	{% assign p = 0 %}
   	{% for principle in site.data.principles %}
   		{% assign p = p | plus: 1 %}
@@ -16,4 +16,7 @@ layout: default
   		{% endfor %}
   	{% endfor %}
   </main>
+  <aside class="filters col-md-2">
+    {% include filters2.html %}
+  </aside>
 </div>

@@ -30,13 +30,15 @@ function search(query, scroll) {
   $('#searchnumber').val('0/0');
   $('main').removeHighlight();
   $('main').highlight(query);
-  var marknum = $('mark.highlight:visible').length;
-  $('#searchnumber').attr('data-current-index', '1').attr('data-max-index', marknum);
+  var total = $('mark.highlight');
+  var marknum = total.filter(":visible").length;
+  var hiddennum = total.length - marknum;
+  $('#searchnumber').attr('data-current-index', '1').attr('data-max-index', marknum).attr('data-hiddennum', hiddennum);
   if (marknum > 0) {
     $('#searchbtnfocusresult').show();
-    $('#searchnumber').val('1/' + marknum).removeAttr('disabled', 'disabled');
+    $('#searchnumber').val('1/' + marknum + '[' + hiddennum + ' invisible]').removeAttr('disabled', 'disabled');
     if (scroll !== false) {
-      scrollto($('mark.highlight:visible').first().addClass('current'));
+      scrollto($('mark.highlight').filter(":visible").first().addClass('current'));
     }
   }
   if (marknum > 1) {
@@ -72,11 +74,12 @@ $('#searchbtnsubmit').on('click', function(e) {
 $('#searchbtnprev').on('click', function() {
   var currentindex = parseInt($('#searchnumber').attr('data-current-index'),10);
   var maxindex = parseInt($('#searchnumber').attr('data-max-index'),10);
+  var hiddennum = parseInt($('#searchnumber').attr('data-hiddennum'),10);
   $('mark.highlight.current').removeClass('current');
   if (currentindex > 1) {
     var newindex = currentindex - 1;
-    scrollto($('mark.highlight:visible').eq(newindex - 1).addClass('current'));
-    $('#searchnumber').val(newindex + '/' + maxindex).attr('aria-label', "Result" + newindex + ' of ' + maxindex).attr('data-current-index', newindex);
+    scrollto($('mark.highlight').filter(":visible").eq(newindex - 1).addClass('current'));
+    $('#searchnumber').val(newindex + '/' + maxindex + ' [' + hiddennum + ' invisible]').attr('aria-label', "Result" + newindex + ' of ' + maxindex).attr('data-current-index', newindex);
     $('#searchbtnnext').removeAttr('disabled');
     if (newindex == 1) {
       $('#searchbtnprev').attr('disabled', 'disabled');
@@ -90,8 +93,8 @@ $('#searchbtnnext').on('click', function() {
   $('mark.highlight.current').removeClass('current');
   if (currentindex < maxindex) {
     var newindex = currentindex + 1;
-    scrollto($('mark.highlight:visible').eq(newindex -1).addClass('current'));
-    $('#searchnumber').val(newindex + '/' + maxindex).attr('aria-label', "Result" + newindex + ' of ' + maxindex).attr('data-current-index', newindex);
+    scrollto($('mark.highlight').filter(":visible").eq(newindex -1).addClass('current'));
+    $('#searchnumber').val(newindex + '/' + maxindex + ' [' + hiddennum + ' invisible]').attr('aria-label', "Result" + newindex + ' of ' + maxindex).attr('data-current-index', newindex);
     $('#searchbtnprev').removeAttr('disabled');
     if (newindex == $('#searchnumber').attr('data-max-index')) {
       $('#searchbtnnext').attr('disabled', 'disabled');

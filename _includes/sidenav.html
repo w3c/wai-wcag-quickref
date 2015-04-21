@@ -1,5 +1,5 @@
 <div class="navbar-scroll">
-<div>
+<!--<div>
   <ul class="nav nav-tabs nav-justified" role="tablist">
     <li role="presentation" class="active"><a href="#overview" aria-controls="overview" role="tab" data-toggle="tab">Overview</a></li>
     <li role="presentation"><a href="#filters" aria-controls="filters" role="tab" data-toggle="tab">Filters</a></li>
@@ -7,7 +7,7 @@
   </ul>
 
   <div class="tab-content">
-  <div id="overview" role="tabpanel" class="tab-pane active overview">
+  --><div class="overview">
   <ul class="nav nav-pills nav-stacked">
     {% assign p = 0 %}
     {% for principle in site.data.principles %}
@@ -66,6 +66,7 @@
       </li>
 {% endfor %}
   </ul>
+  </div><!--
   </div>
   <div id="filters" role="tabpanel" class="tab-pane">
     {% include filters2.html %}
@@ -75,4 +76,5 @@
   </div>
   </div>
 </div>
+-->
 </div>
