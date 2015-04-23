@@ -4,8 +4,6 @@ sort: 1
 short: tech
 type: checkbox
 filters:
-- short: general
-  title: General techniques
 - short: html
   title: <acronym title="Hypertext Markup Language">HTML</acronym>
 - short: css
