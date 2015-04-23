@@ -134,14 +134,21 @@ $('.btn-only').on('click', function(){
   $(this).parent().find("input[type=checkbox]").prop('checked', true).trigger( "change" );
 });
 
-$('.hide-sb').on('click', function(){
+$('.hide-sb').on('click', function(e){
   var sidebar = $(this).parent().parent().parent();
-  sidebar.find('.sidebar-content').toggle();
+  var status = sidebar.find('.sidebar-content').toggle().is(":visible");
   sidebar.find('h6>span:first-child').toggle();
   sidebar.parent().toggleClass('hidden-sb');
   $(this).parent().find('span').prop('hidden', function(idx, oldProp) {
       return !oldProp;
   });
+  var uri = new URI(window.location);
+  if (status) {
+    uri.removeSearch("hide", $(this).parent().parent().attr('class'));
+  } else {
+    uri.addSearch("hide", $(this).parent().parent().attr('class'));
+  }
+  history.replaceState(null, null, uri);
 });
 
 var $sideBar = $('.navbar-scroll');
