@@ -2,17 +2,22 @@ $('#filters input').on('change', function(e) {
   var o = "";
   $('#filters input').each(function(){
     var cinput = $(this);
+    var uri = new URI(window.location);
     if (cinput.is(':checked')) {
       $('.' + cinput.attr('name') + '-' + cinput.val()).each(function () {
         $(this).show();
       });
+      uri.removeSearch(cinput.attr('name') + '[]',cinput.val());
     } else {
       o = o +' ' + '<span class="label label-default">' + cinput.parent().text() + '</span><span>&nbsp;</span>';
       $('.' + cinput.attr('name') + '-' + cinput.val()).each(function () {
         $(this).hide();
       });
+      uri.addSearch(cinput.attr('name') + '[]',cinput.val());
     }
+    history.pushState(null, null, uri);
   });
+
   if (o=="") {
     $('#filtered').html('').hide('slow');
   } else {
@@ -152,7 +157,7 @@ $('.hide-sb').on('click', function(e){
   } else {
     uri.addSearch("hide", $(this).parent().parent().attr('class'));
   }
-  history.replaceState(null, null, uri);
+  history.pushState(null, null, uri);
 });
 
 var $sideBar = $('.navbar-scroll');
