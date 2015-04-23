@@ -70,6 +70,9 @@ h1 {
   .level-aaa {
     background-color: lighten($brand-primary, 0%);
   }
+  p {
+    float: right;
+  }
 }
 
 .sc-content {
