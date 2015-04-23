@@ -8,7 +8,8 @@
 
   <div class="tab-content">
   --><div class="overview" aria-labelledby="overview_heading">
-  <h6 id="overview_heading" class="sidebar-heading">Overview</h6>
+  <h6 id="overview_heading" class="sidebar-heading"><span>Overview</span> <button class="btn btn-primary hide-sb"><span class="glyphicon glyphicon-remove" aria-label="Hide overview sidebar"></span> <span class="glyphicon glyphicon-menu-hamburger" hidden aria-label="Show overview sidebar"></span></button></h6>
+  <div class="sidebar-content">
   <ul class="nav nav-pills nav-stacked">
     {% assign p = 0 %}
     {% for principle in site.data.principles %}
@@ -67,6 +68,7 @@
       </li>
 {% endfor %}
   </ul>
+  </div>
   </div><!--
   </div>
   <div id="filters" role="tabpanel" class="tab-pane">

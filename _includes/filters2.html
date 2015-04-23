@@ -1,9 +1,7 @@
-<div class="navbar-scroll" aria-labelledby="filter_heading">
-<h6 id="filter_heading" class="sidebar-heading">Filters</h6>
-<div class="panel panel-default" id="{{filter.title | prepend: 'filter-' | slugify}}">
-    <div class="panel-body" id="filtered"></div>
-  </div>
-
+<div id="filters" aria-labelledby="filter_heading">
+<div>
+<h6 id="filter_heading" class="sidebar-heading"><span>Filters</span> <button class="btn btn-primary hide-sb" aria-expanded="true" aria-controls="filters"><span class="glyphicon glyphicon-remove" aria-label="Hide filters sidebar"> </span> <span class="glyphicon glyphicon-filter" hidden  aria-label="Show filters sidebar"></span></button></h6>
+<div class="sidebar-content">
 {% assign filters = site.filters | sort: 'sort' %}
 {% for filter in filters %}
   <div class="panel panel-default" id="{{filter.title | prepend: 'filter-' | slugify}}">
@@ -15,9 +13,15 @@
         <label>
           <input type="{{filter.type}}" name="{{ 'filter ' | append: filter.short | slugify }}" value="{{ f.short }}" checked> {{f.title}}
         </label>
+        {% if f.noonly %}
+        {% else %}
+          <button class="btn btn-default btn-xs btn-only" title="Show only {{f.title | strip_html}}" aria-label="Show only {{f.title | strip_html}}" data-value="{{ f.short }}">only</button>
+        {% endif %}
       </div>
     {% endfor %}
     </div>
   </div>
 {% endfor %}
+</div>
+</div>
 </div>

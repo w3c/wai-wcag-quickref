@@ -131,7 +131,7 @@ h5 {
 }
 
 .navbar-scroll.affix {
-  top: 60px;
+  top: 10px;
   bottom: 10px;
   .tab-content {
     overflow: scroll;
@@ -175,6 +175,47 @@ h5 {
   color: #fff;
   padding: 5px;
   font-weight: bold;
+  position: relative;
+  .btn {
+    position: absolute;
+    background: $brand-primary;
+    padding: 5px;
+    line-height: 1.1;
+    top:0;
+    left: 100%;
+  }
+  &#filter_heading .btn {
+    right: 100%;
+    left: auto;
+  }
+}
+
+.checkbox {
+  display:flex;
+  justify-content: space-between;
+}
+
+[hidden] {
+  display: none;
+}
+
+.mainrow {
+  display:flex;
+  aside {
+    transition: all .1s linear;
+    flex: 2;
+    &.hidden-sb {
+      flex:0;
+      h6 {
+        padding:0;
+      }
+    }
+  }
+  main {
+    transition: all .1s linear;
+    flex: 8;
+    padding: 0 30px;
+  }
 }
 
 /*.sc-content {

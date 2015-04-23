@@ -14,7 +14,16 @@ $('#filters input').on('change', function(e) {
     }
   });
   o = ' <strong>Your selection:</strong> ' + o;
-  $('#filtered').html(o);
+  $('#filtered').html(o).parent().show('slow');
+  var val = $('#exampleSearch').val();
+    if (val.length > 0) {
+      search(val, false);
+    } else {
+      $('#searchnumber').val('0/0').attr('data-current-index', 0).attr('data-max-index', 0).attr('aria-label', "No search results").attr('disabled', 'disabled');
+      $('#searchbtnprev, #searchbtnnext').attr('disabled', 'disabled');
+      $('#searchbtnfocusresult').hide();
+      $('main').removeHighlight();
+    }
 });
 
 function scrollto(target) {
@@ -117,6 +126,21 @@ $('[data-toggle]').each(function(e) {
       $('#searchbtnfocusresult').hide();
       $('main').removeHighlight();
     }
+  });
+});
+
+$('.btn-only').on('click', function(){
+  $(this).parents('.form-group').find("input[type=checkbox]").prop('checked', false);
+  $(this).parent().find("input[type=checkbox]").prop('checked', true).trigger( "change" );
+});
+
+$('.hide-sb').on('click', function(){
+  var sidebar = $(this).parent().parent().parent();
+  sidebar.find('.sidebar-content').toggle();
+  sidebar.find('h6>span:first-child').toggle();
+  sidebar.parent().toggleClass('hidden-sb');
+  $(this).parent().find('span').prop('hidden', function(idx, oldProp) {
+      return !oldProp;
   });
 });
 

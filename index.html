@@ -1,11 +1,16 @@
 ---
 layout: default
 ---
-<div class="row has-leftnav has-filters">
-  <aside class="leftnav col-md-2">
+<div class="mainrow">
+  <aside>
     {% include sidenav.html %}
   </aside>
-  <main class="main col-md-8">
+  <main>
+
+    <div class="panel panel-default" id="{{filter.title | prepend: 'filter-' | slugify}}" hidden>
+      <div class="panel-body" id="filtered"></div>
+    </div>
+
   	{% assign p = 0 %}
   	{% for principle in site.data.principles %}
   		{% assign p = p | plus: 1 %}
@@ -16,7 +21,7 @@ layout: default
   		{% endfor %}
   	{% endfor %}
   </main>
-  <aside class="filters col-md-2">
+  <aside>
     {% include filters2.html %}
   </aside>
 </div>
