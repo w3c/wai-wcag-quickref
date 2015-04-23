@@ -3,19 +3,22 @@ $('#filters input').on('change', function(e) {
   $('#filters input').each(function(){
     var cinput = $(this);
     if (cinput.is(':checked')) {
-      o = o +' ' + '<span class="label label-default">' + cinput.parent().text() + '</span><span>&nbsp;</span>';
       $('.' + cinput.attr('name') + '-' + cinput.val()).each(function () {
         $(this).show();
       });
     } else {
+      o = o +' ' + '<span class="label label-default">' + cinput.parent().text() + '</span><span>&nbsp;</span>';
       $('.' + cinput.attr('name') + '-' + cinput.val()).each(function () {
         $(this).hide();
       });
     }
   });
-  o = ' <strong>Your selection:</strong> ' + o;
-  $('#filtered').html(o).parent().show('slow');
-  var val = $('#exampleSearch').val();
+  if (o=="") {
+    $('#filtered').html('').hide('slow');
+  } else {
+    o = ' <strong>Hidden items:</strong> ' + o;
+    $('#filtered').html(o).parent().show('slow');
+    var val = $('#exampleSearch').val();
     if (val.length > 0) {
       search(val, false);
     } else {
@@ -24,6 +27,7 @@ $('#filters input').on('change', function(e) {
       $('#searchbtnfocusresult').hide();
       $('main').removeHighlight();
     }
+  }
 });
 
 function scrollto(target) {
