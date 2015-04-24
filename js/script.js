@@ -1,10 +1,26 @@
 jQuery(document).ready(function($) {
 
+  function updateuri(uri) {
+    history.pushState(null, null, uri);
+    localStorage.setItem('url', uri);
+  }
+
+  function geturi() {
+    var location = window.history.location || window.location;
+    var uri = new URI(location);
+    var url = localStorage.getItem('url');
+    if (uri.search()=="" && url!=="") {
+      history.replaceState(null, null, url);
+    }
+    applyurl();
+  }
+
   $('#filters input').on('change', function(e) {
     var o = "";
     $('#filters input').each(function(){
       var cinput = $(this);
-      var uri = new URI(window.location);
+      var location = window.history.location || window.location;
+      var uri = new URI(location);
       if (cinput.is(':checked')) {
         $('.' + cinput.attr('name') + '-' + cinput.val()).each(function () {
           $(this).show();
@@ -17,7 +33,7 @@ jQuery(document).ready(function($) {
         });
         uri.addSearch(cinput.attr('name'),cinput.val());
       }
-      history.pushState(null, null, uri);
+      updateuri(uri);
     });
 
     if (o=="") {
@@ -53,7 +69,6 @@ jQuery(document).ready(function($) {
           }
         } else {
           for (var i = data[prop].length - 1; i >= 0; i--) {
-            console.log($('[name=' + prop + '][value=' + data[prop][i] + ']'));
             $('[name=' + prop + '][value=' + data[prop][i] + ']').prop('checked', false).trigger( "change" );
           }
         }
@@ -183,7 +198,7 @@ jQuery(document).ready(function($) {
     } else {
       uri.addSearch("hide", $(this).parent().parent().attr('class'));
     }
-    history.pushState(null, null, uri);
+    updateuri(uri);
   });
 
   var $sideBar = $('.navbar-scroll');
@@ -214,10 +229,10 @@ jQuery(document).ready(function($) {
     $(this).css('position', 'static');
   });
 
+  geturi();
+
+});
+
+$(window).on('popstate', function(event) {
   applyurl();
-
-window.onpopstate = function(event) {
-  console.log("location: " + document.location + ", state: " + JSON.stringify(event.state));
-};
-
 });
