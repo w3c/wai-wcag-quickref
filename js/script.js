@@ -17,7 +17,7 @@ jQuery(document).ready(function($) {
   }
 
   $('#filters input').on('change', function(e) {
-    var o = "";
+    var o = [];
     $('#filters input').each(function(){
       var cinput = $(this);
       var location = window.history.location || window.location;
@@ -28,7 +28,7 @@ jQuery(document).ready(function($) {
         });
         uri.removeSearch(cinput.attr('name'),cinput.val());
       } else {
-        o = o +' ' + '<span class="label label-default">' + cinput.parent().text() + '</span><span>&nbsp;</span>';
+        o.push($.trim(cinput.parent().text()));
         $('.' + cinput.attr('name') + '-' + cinput.val()).each(function () {
           $(this).hide();
         });
@@ -37,11 +37,11 @@ jQuery(document).ready(function($) {
       updateuri(uri);
     });
 
-    if (o=="") {
-      $('#filtered').html('').hide('slow');
+    if (o.length == 0) {
+      $('#filtered').html('').parent().parent().hide('slow');
     } else {
-      o = ' <strong>Hidden items:</strong> ' + o;
-      $('#filtered').html(o).parent().show('slow');
+      o = ' <strong>Hidden items:</strong><br>' + o.join(', ');
+      $('#filtered').html(o).parent().parent().show('slow');
       var val = $('#exampleSearch').val();
       if (val.length > 0) {
         search(val, false);
