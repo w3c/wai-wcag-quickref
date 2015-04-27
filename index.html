@@ -8,9 +8,7 @@ layout: default
   </aside>
   <main>
 
-    <div class="panel panel-default" id="{{filter.title | prepend: 'filter-' | slugify}}" hidden>
-      <div class="panel-body" id="filtered"></div>
-    </div>
+  {% include filter-status.html%}
 
   	{% assign p = 0 %}
   	{% for principle in site.data.principles %}
