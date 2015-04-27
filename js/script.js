@@ -104,7 +104,7 @@ jQuery(document).ready(function($) {
     $('#searchnumber').attr('data-current-index', '1').attr('data-max-index', marknum).attr('data-hiddennum', hiddennum);
     if (marknum > 0) {
       $('#searchbtnfocusresult').show();
-      $('#searchnumber').val('1/' + marknum + '[' + hiddennum + ' invisible]').removeAttr('disabled', 'disabled');
+      $('#searchnumber').val('1/' + marknum + ' [' + hiddennum + ' hidden]').removeAttr('disabled', 'disabled');
       if (scroll !== false) {
         scrollto($('mark.highlight').filter(":visible").first().addClass('current'));
       }
@@ -158,6 +158,7 @@ jQuery(document).ready(function($) {
   $('#searchbtnnext').on('click', function() {
     var currentindex = parseInt($('#searchnumber').attr('data-current-index'),10);
     var maxindex = parseInt($('#searchnumber').attr('data-max-index'),10);
+    var hiddennum = parseInt($('#searchnumber').attr('data-hiddennum'),10);
     $('mark.highlight.current').removeClass('current');
     if (currentindex < maxindex) {
       var newindex = currentindex + 1;
