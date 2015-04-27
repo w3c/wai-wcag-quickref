@@ -10,7 +10,6 @@
 	<div class="col-md-9">
     <div class="sc-content">
 		  {{ currentsc.output }}
-      <button data-target="#techniques-{{ p }}{{ g }}{{ s }}" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="techniques-{{ p }}{{ g }}{{ s }}" class="btn btn-default">Show/Hide techniques</button>
     </div>
   </div>
   <aside class="col-md-3">
@@ -28,6 +27,9 @@
   </aside>
 </div>
     {% if currentsc.techniques %}
+<div class="row">
+  <div class="col-md-12"><button data-target="#techniques-{{ p }}{{ g }}{{ s }}" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="techniques-{{ p }}{{ g }}{{ s }}" class="btn btn-default btn-techniques"><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show</span><span class="word-hide"><span class="glyphicon glyphicon-chevron-down"></span> Hide</span> techniques</button></div>
+</div>
 <div class=" collapse row" id="techniques-{{ p }}{{ g }}{{ s }}">
       <div class="col-md-3">
       <div>

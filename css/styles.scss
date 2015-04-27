@@ -242,6 +242,20 @@ h5 {
   }
 }
 
+[aria-expanded] {
+  .word-show { display: inline; }
+  .word-hide { display: none; }
+}
+
+[aria-expanded=true] {
+  .word-show { display: none; }
+  .word-hide { display: inline; }
+}
+
+.btn-techniques {
+  width:100%;
+}
+
 /*.sc-content {
   height: 10em;
   overflow: hidden;
