@@ -1,6 +1,7 @@
 jQuery(document).ready(function($) {
 
   function updateuri(uri) {
+    uri.fragment("");
     history.pushState(null, null, uri);
     localStorage.setItem('url', uri);
   }
