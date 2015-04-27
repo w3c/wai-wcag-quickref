@@ -54,6 +54,14 @@ jQuery(document).ready(function($) {
     }
   });
 
+  $('#clearall').on('click', function(e) {
+    var unchecked = $('#filters input:not(:checked)');
+    unchecked.each(function(){
+      $(this).prop('checked', 'checked');
+    });
+    unchecked.first().trigger('change');
+  });
+
   function applyurl() {
     var location = window.history.location || window.location;
     var uri = new URI(location);
