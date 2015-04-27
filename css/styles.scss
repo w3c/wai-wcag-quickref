@@ -232,6 +232,16 @@ h5 {
   padding: 5px;
 }
 
+.filter-status {
+  .panel-body {
+    display: flex;
+    justify-content: space-between;
+    :first-child {
+      flex: 6;
+    }
+  }
+}
+
 /*.sc-content {
   height: 10em;
   overflow: hidden;
