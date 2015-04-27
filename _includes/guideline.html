@@ -4,10 +4,11 @@
 	<div class="guideline panel panel-primary">
 		<div class="panel-heading">
 			<h3 id="{{guideline.short}}">{{ p }}.{{ g }} {{guideline.title}}</h3>
-			{{guideline.output}} {% if guideline.techniques %}<button data-target="#techniques-{{ p }}{{ g }}" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="techniques-{{ p }}{{ g }}" class="btn btn-default">Show/Hide techniques for this Guideline</button>{% endif %}
+			{{guideline.output}}
 		</div>
 		<div class="panel-body">
 		{% if guideline.techniques %}
+			<button data-target="#techniques-{{ p }}{{ g }}" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="techniques-{{ p }}{{ g }}" class="btn btn-default btn-techniques btn-gltechniques"><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show</span><span class="word-hide"><span class="glyphicon glyphicon-chevron-down"></span> Hide</span> techniques for Guideline {{ p }}.{{ g }}</button>
 			<div id="techniques-{{ p }}{{ g }}" class="guideline-techniques collapse" aria-expanded="false">
 				{% if guideline.techniques.sufficient %}
 					<h4>Sufficient Techniques</h4>
