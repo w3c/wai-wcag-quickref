@@ -35,8 +35,8 @@ h1 {
 
 .sc-wrapper {
   border-top: 1px solid $brand-primary;
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding-top: 5px;
+  padding-bottom: 5px;
   .panel:last-child {
     margin-bottom: 0;
   }
@@ -45,10 +45,13 @@ h1 {
   }
 }
 
-.panel-body section:first-child .sc-wrapper:first-child,
-.panel-body [aria-expanded=false] + section .sc-wrapper:first-child {
+.panel-body section:first-child .sc-wrapper:first-child {
   border-top: none;
   padding-top:0;
+}
+
+.btn-gltechniques {
+  margin-bottom: 5px;
 }
 
 .sc-wrapper header {
@@ -254,6 +257,7 @@ h5 {
 
 .btn-techniques {
   width:100%;
+  text-align: left;
 }
 
 /*.sc-content {
