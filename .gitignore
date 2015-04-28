@@ -1,3 +1,5 @@
 _site
 .sass-cache
 questions.md
+node_modules
+npm-debug.log
