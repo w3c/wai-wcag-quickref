@@ -13,20 +13,21 @@
   <form class="" role="search">
     {% include searchform.html %}
   </form>
+  <nav class="nav-overview" aria-label="Principles, Guidelines and Success Criteria">
   <ul class="nav nav-pills nav-stacked">
     {% assign p = 0 %}
     {% for principle in site.data.principles %}
       {% assign p = p | plus: 1 %}
       {% assign g = 0 %}
       <li>
-        <a href="#principle{{ p }}">{{ p }}. {{principle}}</a>
+        <a href="#principle{{ p }}"><strong>{{ p }}.</strong> <span>{{principle}}</span></a>
         <ul>
           {% for guideline in site.guidelines %}
             {% assign g = g | plus: 1 %}
             {% assign s = 0 %}
             {% if guideline.principle == principle %}
               <li>
-                <a href="#{{ guideline.short }}">{{ p }}.{{ g }} {{ guideline.title }}</a>
+                <a href="#{{ guideline.short }}"><strong>{{ p }}.{{ g }}</strong> <span>{{ guideline.title }}</span></a>
                   {% if guideline.successcriteria %}
                   <ul>
                     {% if guideline.successcriteria.levelA %}
@@ -35,7 +36,7 @@
                           {% assign currentscs = site.successcriteria | where: "short", criterion %}
                             {% for currentsc in currentscs %}
                             <li class="filter-levels-a">
-                              <a href="#{{currentsc.short}}">{{ p }}.{{ g }}.{{ s }} {{currentsc.title}}</a>
+                              <a href="#{{currentsc.short}}"><strong>{{ p }}.{{ g }}.{{ s }}</strong> <span>{{currentsc.title}}</span></a>
                             </li>
                             {% endfor %}
                         {% endfor %}
@@ -46,7 +47,7 @@
                           {% assign currentscs = site.successcriteria | where: "short", criterion %}
                             {% for currentsc in currentscs %}
                             <li class="filter-levels-aa">
-                              <a href="#{{currentsc.short}}">{{ p }}.{{ g }}.{{ s }} {{currentsc.title}}</a>
+                              <a href="#{{currentsc.short}}"><strong>{{ p }}.{{ g }}.{{ s }}</strong> <span>{{currentsc.title}}</span></a>
                             </li>
                             {% endfor %}
                         {% endfor %}
@@ -57,7 +58,7 @@
                           {% assign currentscs = site.successcriteria | where: "short", criterion %}
                             {% for currentsc in currentscs %}
                             <li class="filter-levels-aaa">
-                              <a href="#{{currentsc.short}}">{{ p }}.{{ g }}.{{ s }} {{currentsc.title}}</a>
+                              <a href="#{{currentsc.short}}"><strong>{{ p }}.{{ g }}.{{ s }}</strong> <span>{{currentsc.title}}</span></a>
                             </li>
                             {% endfor %}
                         {% endfor %}
@@ -71,6 +72,7 @@
       </li>
 {% endfor %}
   </ul>
+  </nav>
   </div>
   </div><!--
   </div>

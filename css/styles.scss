@@ -41,17 +41,23 @@ h1 {
     margin-bottom: 0;
   }
   .row + .row {
-    margin-top: 1em;
+
   }
 }
 
-.panel-body section:first-child .sc-wrapper:first-child {
+.sc-wrapper:first-child {
   border-top: none;
   padding-top:0;
 }
 
+.panel-body-guideline {
+  background-color: $brand-primary;
+  color: #fff;
+}
+
 .btn-gltechniques {
   margin-bottom: 5px;
+  border-color: #fff;
 }
 
 .sc-wrapper header {
@@ -80,7 +86,6 @@ h1 {
 }
 
 .sc-content {
-  padding-top: .5em;
   a {
     border-bottom: 1px solid #666;
   }
@@ -110,12 +115,12 @@ h5 {
     ul {
       li {
         line-height: 2;
-        border-left: 1em solid transparent;
+        //border-left: 1em solid transparent;
         border-top: 1px solid transparent;
         border-bottom: 1px solid transparent;
         a {
-          padding-left: 1em;
-          display: block;
+          //padding-left: 1em;
+          //display: block;
         }
       }
     }
@@ -126,7 +131,19 @@ h5 {
       display:block;
     }
   }
+  a {
+    display:table-row;
+    line-height: 1.3;
+    span, strong {
+      display:table-cell;
+      padding: 2px 4px;
+    }
+  }
   .active {
+    >a>strong {
+      background-color: $brand-primary;
+      color: #fff;
+    }
     border-color: #036;
     .active:last-child {
       border-bottom: none;
