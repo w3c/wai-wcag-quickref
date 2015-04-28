@@ -6,40 +6,41 @@
 			<h3 id="{{guideline.short}}">{{ p }}.{{ g }} {{guideline.title}}</h3>
 			{{guideline.output}}
 		</div>
-		<div class="panel-body">
 		{% if guideline.techniques %}
-			<button data-target="#techniques-{{ p }}{{ g }}" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="techniques-{{ p }}{{ g }}" class="btn btn-default btn-techniques btn-gltechniques"><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show</span><span class="word-hide"><span class="glyphicon glyphicon-chevron-down"></span> Hide</span> techniques for Guideline {{ p }}.{{ g }}</button>
-			<div id="techniques-{{ p }}{{ g }}" class="guideline-techniques collapse" aria-expanded="false">
-				{% if guideline.techniques.sufficient %}
-					<h4>Sufficient Techniques</h4>
-					<ul>
-					{% for technique in guideline.techniques.sufficient %}
-						<li class="{% include techniqueclass.html %}">
-              {% include techniquelink.html %}
-            </li>
-					{% endfor %}
-					</ul>
-				{% endif %}
-				{% if guideline.techniques.advisory %}
-					<h4>Advisory Techniques</h4>
-					<ul>
-					{% for technique in guideline.techniques.advisory %}
-						<li class="{% include techniqueclass.html %}">
-              {% include techniquelink.html %}
-            </li>
-					{% endfor %}
-					</ul>
-				{% endif %}
-				{% if guideline.techniques.failures %}
-					<h4>Failure Techniques</h4>
-					<ul>
-					{% for technique in guideline.techniques.failures %}
-						<li class="{% include techniqueclass.html %}">
-              {% include techniquelink.html %}
-            </li>
-					{% endfor %}
-					</ul>
-				{% endif %}
+			<div class="panel-body panel-body-guideline">
+				<button data-target="#techniques-{{ p }}{{ g }}" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="techniques-{{ p }}{{ g }}" class="btn btn-primary btn-techniques btn-gltechniques"><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show</span><span class="word-hide"><span class="glyphicon glyphicon-chevron-down"></span> Hide</span> techniques for Guideline {{ p }}.{{ g }}</button>
+				<div id="techniques-{{ p }}{{ g }}" class="guideline-techniques collapse" aria-expanded="false">
+					{% if guideline.techniques.sufficient %}
+						<h4>Sufficient Techniques</h4>
+						<ul>
+						{% for technique in guideline.techniques.sufficient %}
+							<li class="{% include techniqueclass.html %}">
+		            {% include techniquelink.html %}
+		          </li>
+						{% endfor %}
+						</ul>
+					{% endif %}
+					{% if guideline.techniques.advisory %}
+						<h4>Advisory Techniques</h4>
+						<ul>
+						{% for technique in guideline.techniques.advisory %}
+							<li class="{% include techniqueclass.html %}">
+		            {% include techniquelink.html %}
+		          </li>
+						{% endfor %}
+						</ul>
+					{% endif %}
+					{% if guideline.techniques.failures %}
+						<h4>Failure Techniques</h4>
+						<ul>
+						{% for technique in guideline.techniques.failures %}
+							<li class="{% include techniqueclass.html %}">
+		            {% include techniquelink.html %}
+		          </li>
+						{% endfor %}
+						</ul>
+					{% endif %}
+				</div>
 			</div>
 			{% endif%}
 			{% if guideline.successcriteria %}
@@ -53,6 +54,5 @@
 					{% include level.html level="AAA" items=guideline.successcriteria.levelAAA %}
 				{% endif %}
 			{% endif%}
-		</div>
 	</div>
 {% endif%}
