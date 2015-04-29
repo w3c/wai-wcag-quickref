@@ -219,6 +219,9 @@ h5 {
 
 .mainrow {
   display:flex;
+  aside, main {
+    padding: 0 15px;
+  }
   aside {
     transition: all .1s linear;
     flex: 2;
@@ -232,7 +235,9 @@ h5 {
   main {
     transition: all .1s linear;
     flex: 8;
-    padding: 0 30px;
+  }
+  .filters {
+    order: 3;
   }
 }
 

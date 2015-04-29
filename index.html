@@ -6,6 +6,12 @@ layout: default
     {% include sidenav.html %}
     <a href="#top" class="sr-only sr-only-focusable">Back to top</a>
   </aside>
+
+  <aside class="filters">
+    {% include filters2.html %}
+    <a href="#top" class="sr-only sr-only-focusable">Back to top</a>
+  </aside>
+
   <main>
 
   {% include filter-status.html%}
@@ -21,8 +27,4 @@ layout: default
   	{% endfor %}
     <a href="#top" class="mainbacktotop">Back to top</a>
   </main>
-  <aside>
-    {% include filters2.html %}
-    <a href="#top" class="sr-only sr-only-focusable">Back to top</a>
-  </aside>
 </div>
