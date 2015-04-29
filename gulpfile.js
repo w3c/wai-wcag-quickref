@@ -5,7 +5,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var concat = require('gulp-concat');
 var minifyCss =require('gulp-minify-css');
 
-var sassdir = "_scss/*.scss";
+var sassdir = "_scss/**/*.scss";
 
 gulp.task('default', function () {
     return gulp.src(sassdir)
