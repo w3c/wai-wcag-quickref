@@ -1,12 +1,12 @@
 {% assign s = s | plus: 1 %}
 <article class="sc-wrapper">
-<div class="row">
+<div>
   <header class="col-md-12">
     <p class="h4"><span class="level-{{include.level | downcase}}">Level {{include.level}}</span></p>
     <h4 id="{{currentsc.short}}"><strong>{{ p }}.{{ g }}.{{ s }}</strong> {{currentsc.title}}</h4>
   </header>
 </div>
-<div class="row">
+<div>
 	<div class="col-md-9">
     <div class="sc-content">
 		  {{ currentsc.output }}
@@ -27,10 +27,10 @@
   </aside>
 </div>
     {% if currentsc.techniques %}
-<div class="row">
+<div>
   <div class="col-md-12"><button data-target="#techniques-{{ p }}{{ g }}{{ s }}" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="techniques-{{ p }}{{ g }}{{ s }}" class="btn btn-default btn-techniques"><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show</span><span class="word-hide"><span class="glyphicon glyphicon-chevron-down"></span> Hide</span> techniques for <abbr title="Success Criterion">SC</abbr> {{ p }}.{{ g }}.{{ s }}</button></div>
 </div>
-<div class=" collapse row" id="techniques-{{ p }}{{ g }}{{ s }}">
+<div class="collapse" id="techniques-{{ p }}{{ g }}{{ s }}">
       <div class="col-md-3">
       <div>
         <!-- Nav tabs -->
