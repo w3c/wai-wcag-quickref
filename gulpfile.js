@@ -4,8 +4,10 @@ var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
 var concat = require('gulp-concat');
 
+var sassdir = "_scss/*.scss";
+
 gulp.task('default', function () {
-    return gulp.src('scss/*.scss')
+    return gulp.src(sassdir)
         .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(gulp.dest('./css/'))
@@ -13,4 +15,5 @@ gulp.task('default', function () {
         .pipe(concat('styles.css'))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('./css/'));
+});
 });
