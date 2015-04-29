@@ -16,4 +16,10 @@ gulp.task('default', function () {
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('./css/'));
 });
+
+gulp.task('watch', function() {
+  var watcher = gulp.watch(sassdir, ['default']);
+  watcher.on('change', function(event) {
+    console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
+  });
 });
