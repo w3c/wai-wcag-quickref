@@ -19,3 +19,6 @@ collections:
 - successcriteria
 - guidelines
 - filters
+
+exclude:
+  - node_modules
