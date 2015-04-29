@@ -1,4 +1,4 @@
-@import "bootstrap/variables";
+@import "bootstrap";
 
 body {
   position: relative;
@@ -14,7 +14,6 @@ mark.current {
   background-color: #FF0;
   border: 1px dashed #333;
 }
-
 
 h1 {
   line-height: 1;
