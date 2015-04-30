@@ -211,34 +211,59 @@ jQuery(document).ready(function($) {
     updateuri(uri);
   });
 
-  var $sideBar = $('.navbar-scroll');
+  function affixOn() {
+    var $sideBar = $('.navbar-scroll');
 
-  $sideBar.affix({
-    offset: {
-      top: function () {
-        var offsetTop      = $sideBar.offset().top
-        var sideBarMargin  = parseInt($sideBar.children(0).css('margin-top'), 10)
-        var navOuterHeight = $('.navbar-default').height()
+    $sideBar.affix({
+      offset: {
+        top: function () {
+          var offsetTop      = $sideBar.offset().top
+          var sideBarMargin  = parseInt($sideBar.children(0).css('margin-top'), 10)
+          var navOuterHeight = $('.navbar-default').height()
 
-        return (this.top = offsetTop - navOuterHeight - sideBarMargin)
-      },
-      bottom: function () {
-        return 0;
-        // return (this.bottom = $('.bs-docs-footer').outerHeight(true))
+          return (this.top = offsetTop - navOuterHeight - sideBarMargin)
+        },
+        bottom: function () {
+          return 0;
+          // return (this.bottom = $('.bs-docs-footer').outerHeight(true))
+        }
       }
+    });
+
+    $sideBar.on('affix.bs.affix', function(e) {
+      $(this).css('width', $(this).parent().width());
+      $(this).css('position', 'fixed');
+    });
+
+    $sideBar.on('affixed-top.bs.affix', function(e) {
+      $(this).css('width', 'auto');
+      $(this).css('position', 'static');
+    });
+  }
+
+  function affixOff() {
+    $(window).off('.affix');
+    $(".navbar-scroll")
+        .removeClass("affix affix-top affix-bottom")
+        .removeData("bs.affix");
+  }
+
+  function init() {
+    $('html').addClass('.has-js');
+    affixOff();
+    if ($( window ).width() > 896) {
+      affixOn();
     }
+    if ($( window ).width() < 480) {
+      $('.hide-sb').not(".hidden-sb .hide-sb").trigger('click');
+    }
+  }
+
+  $( window ).resize(function() {
+    init();
   });
 
-  $sideBar.on('affix.bs.affix', function(e) {
-    $(this).css('width', $(this).parent().width());
-    $(this).css('position', 'fixed');
-  });
-
-  $sideBar.on('affixed-top.bs.affix', function(e) {
-    $(this).css('width', 'auto');
-    $(this).css('position', 'static');
-  });
-
+  init();
   geturi();
 
 });
