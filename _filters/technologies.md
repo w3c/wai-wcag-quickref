@@ -5,11 +5,11 @@ short: tech
 type: checkbox
 filters:
 - short: html
-  title: <acronym title="Hypertext Markup Language">HTML</acronym>
+  title: <abbr title="Hypertext Markup Language">HTML</abbr>
 - short: css
-  title: <acronym title="Cascading Style Sheets (CSS)">CSS</acronym>
+  title: <abbr title="Cascading Style Sheets (CSS)">CSS</abbr>
 - short: smil
-  title: <acronym title="Synchronized Multimedia Integration Language (SMIL)">SMIL</acronym>
+  title: <abbr title="Synchronized Multimedia Integration Language (SMIL)">SMIL</abbr>
 - short: js
   title: Client-side Scripting
 - short: server
@@ -21,5 +21,5 @@ filters:
 - short: sl
   title: Silverlight
 - short: wai-aria
-  title: <acronym title="Web Accessibility Initiative - Accessible Rich Internet Applications">WAI-ARIA</acronym>
+  title: <abbr title="Web Accessibility Initiative - Accessible Rich Internet Applications">WAI-ARIA</abbr>
 ---
