@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "helper";
 
 body {
   position: relative;
@@ -189,24 +190,29 @@ h5 {
 }
 
 .sidebar-heading {
-  background-color: #036;
-  color: #fff;
-  padding: 5px;
-  font-weight: bold;
-  position: relative;
   .btn {
-    position: absolute;
-    background: $brand-primary;
-    padding: 5px;
-    line-height: 1.1;
-    top:0;
-    left: 100%;
-  }
-  &#filter_heading .btn {
-    right: 100%;
-    left: auto;
+    width: 100%;
+    text-align:left;
   }
 }
+//   background-color: #036;
+//   color: #fff;
+//   padding: 5px;
+//   font-weight: bold;
+//   position: relative;
+//   .btn {
+//     position: absolute;
+//     background: $brand-primary;
+//     padding: 5px;
+//     line-height: 1.1;
+//     top:0;
+//     left: 100%;
+//   }
+//   &#filter_heading .btn {
+//     right: 100%;
+//     left: auto;
+//   }
+// }
 
 .checkbox {
   display:flex;
@@ -217,27 +223,64 @@ h5 {
   display: none;
 }
 
-.mainrow {
-  display:flex;
-  aside, main {
-    padding: 0 15px;
-  }
-  aside {
-    transition: all .1s linear;
-    flex: 2;
-    &.hidden-sb {
-      flex:0;
-      h6 {
-        padding:0;
+@include mq(30em) {
+  .mainrow {
+    display:flex;
+    flex-wrap: wrap;
+    main {
+      width: 100%;
+    }
+    aside {
+      width: 50%;
+      padding: 0 15px;
+      transition: all .1s linear;
+      &.hidden-sb {
+        h6 {
+          padding:0;
+        }
+      }
+      &:first-child {
+        padding-left:0;
+      }
+      +aside  {
+        padding-right:0;
       }
     }
+    main {
+      transition: all .1s linear;
+    }
   }
-  main {
-    transition: all .1s linear;
-    flex: 8;
-  }
-  .filters {
-    order: 3;
+}
+
+@include mq(56em) {
+  .mainrow {
+    display:flex;
+    aside, main {
+      padding: 0 15px;
+    }
+    aside {
+      transition: all .1s linear;
+      flex: 2;
+      &.hidden-sb {
+        flex:0;
+        h6 {
+          padding:0;
+        }
+      }
+      &:first-child {
+        padding-left:0;
+      }
+      +aside  {
+        padding-right:0;
+      }
+    }
+    main {
+      transition: all .1s linear;
+      flex: 8;
+    }
+    .filters {
+      order: 3;
+    }
   }
 }
 
@@ -277,6 +320,16 @@ h5 {
 .btn-techniques {
   width:100%;
   text-align: left;
+}
+
+.container-fluid {
+  padding: 0 2px;
+  @include mq(30em) {
+    padding: 0 4px;
+  }
+  @include mq(56em) {
+    padding: 0 8px;
+  }
 }
 
 /*.sc-content {
