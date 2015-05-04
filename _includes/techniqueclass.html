@@ -6,6 +6,7 @@
   {% elsif technique.future %}
     {% assign shortname = technique.technology %}
   {% elsif technique.text %}
+    {% assign shortname ="text" %}
   {% elsif technique.sub %}
     {% assign shortname ="sub" %}
   {% elsif technique.combined %}
@@ -26,4 +27,4 @@
 {% when "ARIA" %}
 {% assign shortname = 'wai-aria' %}
 {% endcase %}
-{{ shortname | downcase | prepend: "filter-tech-" }}
+{{ shortname | downcase | prepend: "filter-tech-" | slugify }}
