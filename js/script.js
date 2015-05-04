@@ -211,14 +211,14 @@ jQuery(document).ready(function($) {
     updateuri(uri);
   });
 
-  function affixOn() {
-    var $sideBar = $('.navbar-scroll');
+  function affixOn(target) {
+    var $affixTarget = $(target);
 
-    $sideBar.affix({
+    $affixTarget.affix({
       offset: {
         top: function () {
-          var offsetTop      = $sideBar.offset().top
-          var sideBarMargin  = parseInt($sideBar.children(0).css('margin-top'), 10)
+          var offsetTop      = $affixTarget.offset().top
+          var sideBarMargin  = parseInt($affixTarget.children(0).css('margin-top'), 10)
           var navOuterHeight = $('.navbar-default').height()
 
           return (this.top = offsetTop - navOuterHeight - sideBarMargin)
@@ -230,29 +230,46 @@ jQuery(document).ready(function($) {
       }
     });
 
-    $sideBar.on('affix.bs.affix', function(e) {
+    $affixTarget.on('affix.bs.affix', function(e) {
       $(this).css('width', $(this).parent().width());
       $(this).css('position', 'fixed');
     });
 
-    $sideBar.on('affixed-top.bs.affix', function(e) {
+    $affixTarget.on('affixed-top.bs.affix', function(e) {
       $(this).css('width', 'auto');
       $(this).css('position', 'static');
     });
   }
 
-  function affixOff() {
+  function affixOff(target) {
     $(window).off('.affix');
-    $(".navbar-scroll")
+    $(target)
         .removeClass("affix affix-top affix-bottom")
         .removeData("bs.affix");
   }
 
+  function moveSearchToSide() {
+    $('#searchcontainer-mainbar form').detach().appendTo('#searchcontainer-sidebar');
+  }
+
+  function moveSearchToMain() {
+    $('#searchcontainer-sidebar form').detach().appendTo('#searchcontainer-mainbar');
+  }
+
   function init() {
     $('html').addClass('.has-js');
-    affixOff();
+    affixOff('.navbar-scroll');
+    affixOff('#searchcontainer-mainbar');
     if ($( window ).width() > 896) {
-      affixOn();
+      moveSearchToSide();
+      affixOn('.navbar-scroll');
+      $('html').addClass('large');
+      $('.tab-nav-wrap .nav-pills').addClass('nav-stacked');
+    } else {
+      moveSearchToMain();
+      affixOn('#searchcontainer-mainbar');
+      $('html').removeClass('large');
+      $('.tab-nav-wrap .nav-pills').removeClass('nav-stacked');
     }
     if ($( window ).width() < 480) {
       $('.hide-sb').not(".hidden-sb .hide-sb").trigger('click');

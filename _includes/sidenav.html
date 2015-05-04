@@ -8,11 +8,9 @@
 
   <div class="tab-content">
   --><div id="overview" class="overview" aria-labelledby="overview_heading">
-  <h6 id="overview_heading" class="sidebar-heading"><span>Overview</span> <button class="btn btn-primary hide-sb"><span class="glyphicon glyphicon-remove" aria-label="Hide overview sidebar"></span> <span class="glyphicon glyphicon-menu-hamburger" hidden aria-label="Show overview sidebar"></span></button></h6>
+  <h6 id="overview_heading" class="sidebar-heading"><button class="btn btn-primary btn-lg hide-sb"><span class="glyphicon glyphicon-remove" aria-label="Hide overview sidebar"></span> <span class="glyphicon glyphicon-menu-hamburger" hidden aria-label="Show overview sidebar"></span> Overview</button></h6>
   <div class="sidebar-content">
-  <form class="" role="search">
-    {% include searchform.html %}
-  </form>
+  <div id="searchcontainer-sidebar"></div>
   <nav class="nav-overview" aria-label="Principles, Guidelines and Success Criteria">
   <ul class="nav nav-pills nav-stacked">
     {% assign p = 0 %}
