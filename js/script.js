@@ -199,7 +199,7 @@ jQuery(document).ready(function($) {
     var status = sidebar.find('.sidebar-content').toggle().is(":visible");
     sidebar.find('h6>span:first-child').toggle();
     sidebar.parent().toggleClass('hidden-sb');
-    $(this).parent().find('span').prop('hidden', function(idx, oldProp) {
+    $(this).parent().find('.glyphicon').prop('hidden', function(idx, oldProp) {
         return !oldProp;
     });
     var uri = new URI(window.location);
