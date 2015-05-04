@@ -204,8 +204,21 @@ h5 {
   .btn {
     width: 100%;
     text-align:left;
+    min-width: 3.5em;
+    .large .hidden-sb & {
+      text-align: center;
+    }
   }
 }
+
+  .large .hidden-sb .text {
+    display:block;
+    text-transform: uppercase;
+    font-size: 0.5em;
+    > span {
+      display: inline;
+    }
+  }
 //   background-color: #036;
 //   color: #fff;
 //   padding: 5px;
