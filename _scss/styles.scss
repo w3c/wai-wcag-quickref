@@ -41,6 +41,17 @@ h1 {
   .row + .row {
 
   }
+  .large & .tab-nav-wrap {
+    width: 23%;
+    float: left;
+  }
+  .large & .tab-wrap {
+    width: 73%;
+    float: right;
+  }
+  .collapse>div {
+    padding-top: .5em;
+  }
 }
 
 .sc-wrapper:first-child {
@@ -330,6 +341,22 @@ h5 {
   @include mq(56em) {
     padding: 0 8px;
   }
+}
+
+#searchcontainer-mainbar.affix {
+  top:0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 9999;
+}
+
+aside.learnmore {
+  h5 {
+    padding-right: 1em;
+  }
+  display:flex;
+  align-items: baseline;
 }
 
 /*.sc-content {
