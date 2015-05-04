@@ -1,6 +1,6 @@
 <div id="filters" aria-labelledby="filter_heading">
 <div class="filters">
-<h6 id="filter_heading" class="sidebar-heading"><button class="btn btn-primary btn-lg hide-sb" aria-expanded="true" aria-controls="filters"><span class="glyphicon glyphicon-remove" aria-label="Hide"></span> <span class="glyphicon glyphicon-filter" hidden  aria-label="Show"></span> Filters</button></h6>
+<h6 id="filter_heading" class="sidebar-heading"><button class="btn btn-primary btn-lg hide-sb" aria-expanded="true" aria-controls="filters"><span class="glyphicon glyphicon-remove" aria-label="Hide"></span> <span class="glyphicon glyphicon-filter" hidden  aria-label="Show"></span> <span class="text">Filters</span></button></h6>
 <div class="sidebar-content">
 {% assign filters = site.filters | sort: 'sort' %}
 {% for filter in filters %}
