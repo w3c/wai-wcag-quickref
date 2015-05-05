@@ -6,6 +6,33 @@ jQuery(document).ready(function($) {
     localStorage.setItem('url', uri);
   }
 
+  function applyurl() {
+    var location = window.history.location || window.location;
+    var uri = new URI(location);
+    var data = uri.search(true);
+
+    for(var prop in data) {
+      if(data.hasOwnProperty(prop)) {
+        if (prop == "hide") {
+          for (var i = data[prop].length - 1; i >= 0; i--) {
+            var sidebar = $('#' + data[prop]);
+            console.log(sidebar);
+            var status = sidebar.find('.sidebar-content').toggle().is(":visible");
+            console.log(sidebar.find('h6>span:first-child').toggle().parent().find('.glyphicon'));
+            sidebar.find('h6 .glyphicon').prop('hidden', function(idx, oldProp) {
+                return !oldProp;
+            });
+            sidebar.parent().toggleClass('hidden-sb');
+          }
+        } else {
+          for (var i = data[prop].length - 1; i >= 0; i--) {
+            $('[name=' + prop + '][value=' + data[prop] + ']').prop('checked', false).trigger( "change" );
+          }
+        }
+      }
+    }
+  }
+
   function geturi() {
     var location = window.history.location || window.location;
     var uri = new URI(location);
@@ -61,29 +88,6 @@ jQuery(document).ready(function($) {
     });
     unchecked.first().trigger('change');
   });
-
-  function applyurl() {
-    var location = window.history.location || window.location;
-    var uri = new URI(location);
-    var data = uri.search(true);
-
-    for(var prop in data) {
-      if(data.hasOwnProperty(prop)) {
-        if (prop == "hide") {
-          for (var i = data[prop].length - 1; i >= 0; i--) {
-            var sidebar = $('#' + data[prop]);
-            var status = sidebar.find('.sidebar-content').toggle().is(":visible");
-            sidebar.find('h6>span:first-child').toggle();
-            sidebar.parent().toggleClass('hidden-sb');
-          }
-        } else {
-          for (var i = data[prop].length - 1; i >= 0; i--) {
-            $('[name=' + prop + '][value=' + data[prop][i] + ']').prop('checked', false).trigger( "change" );
-          }
-        }
-      }
-    }
-  }
 
   function scrollto(target) {
      $('html,body').animate({
