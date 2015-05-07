@@ -1,27 +1,30 @@
-<div id="filters" aria-labelledby="filter_heading">
-<div class="filters">
-<h6 id="filter_heading" class="sidebar-heading"><button class="btn btn-primary btn-lg hide-sb" aria-expanded="true" aria-controls="filters"><span class="glyphicon glyphicon-remove" aria-label="Hide"></span> <span class="glyphicon glyphicon-filter" hidden  aria-label="Show"></span> <span class="text">Filters</span></button></h6>
-<div class="sidebar-content">
-{% assign filters = site.filters | sort: 'sort' %}
-{% for filter in filters %}
-  <div class="panel panel-default" id="{{filter.title | prepend: 'filter-' | slugify}}">
-    <div class="panel-heading">{{ filter.title }}</div>
-    <div class="panel-body form-group">
-    <p><small>{{filter.output}}</small></p>
-    {% for f in filter.filters %}
-      <div class="checkbox">
-        <label>
-          <input type="{{filter.type}}" name="{{ 'filter ' | append: filter.short | slugify }}" value="{{ f.short }}" checked> {{f.title}}
-        </label>
-        {% if f.noonly %}
-        {% else %}
-          <button class="btn btn-default btn-xs btn-only" title="Show only {{f.title | strip_html}}" aria-label="Show only {{f.title | strip_html}}" data-value="{{ f.short }}">only</button>
-        {% endif %}
+<section class="filters panel panel-primary" hidden id="filters" aria-labelledby="filter_heading" tabindex="-1">
+  <header class="panel-heading">
+    <h6 id="filter_heading" class="h2">Filters</h6>
+  </header>
+  <div class="filters-content panel-body">
+    <div>
+    {% assign filters = site.filters | sort: 'sort' %}
+    {% for filter in filters %}
+      <div class="panel panel-default" id="{{filter.title | prepend: 'filter-' | slugify}}">
+        <div class="panel-heading">{{ filter.title }}</div>
+        <div class="panel-body form-group">
+        <p><small>{{filter.output}}</small></p>
+        {% for f in filter.filters %}
+          <div class="checkbox">
+            <label>
+              <input type="{{filter.type}}" name="{{ 'filter ' | append: filter.short | slugify }}" value="{{ f.short }}" checked> {{f.title}}
+            </label>
+            {% if f.noonly %}
+            {% else %}
+              <button class="btn btn-default btn-xs btn-only" title="Show only {{f.title | strip_html}}" aria-label="Show only {{f.title | strip_html}}" data-value="{{ f.short }}">only</button>
+            {% endif %}
+          </div>
+        {% endfor %}
+        </div>
       </div>
     {% endfor %}
     </div>
+    <button class="btn btn-primary btn-lg" aria-expanded="true" aria-controls="filters" id="btn-closefilters">Apply and close</button>
   </div>
-{% endfor %}
-</div>
-</div>
-</div>
+</section>
