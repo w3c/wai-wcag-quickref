@@ -70,6 +70,9 @@ h1 {
 }
 
 .sc-wrapper header {
+  display: flex;
+  justify-content: space-between;
+  white-space: nowrap;
   strong, [class^=level] {
     display: inline-block;
     background-color: #ddd;
@@ -157,6 +160,9 @@ h5 {
     .active:last-child {
       border-bottom: none;
     }
+  }
+  .nav-pills > li.active > a {
+    background-color: $brand-primary;
   }
 }
 
