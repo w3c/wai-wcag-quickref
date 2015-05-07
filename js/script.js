@@ -65,10 +65,12 @@ jQuery(document).ready(function($) {
     });
 
     if (o.length == 0) {
-      $('#filtered').html('').parent().parent().hide('slow');
+      $('#filtered').html('<strong>No filters set.</strong>');
+      $('#clearall').prop('disabled', true);
     } else {
-      o = ' <strong>Hidden items:</strong><br>' + o.join(', ');
-      $('#filtered').html(o).parent().parent().show('slow');
+      o = ' <strong>Filtered items:</strong><br>' + o.join(', ');
+      $('#filtered').html(o);
+      $('#clearall').prop('disabled', false);
       var val = $('#exampleSearch').val();
       if (val.length > 0) {
         search(val, false);
@@ -88,6 +90,20 @@ jQuery(document).ready(function($) {
     });
     unchecked.first().trigger('change');
   });
+
+  $('#btn-filters').on('click', function(e) {
+    e.preventDefault();
+    $('body').append('<div id="backdrop"></div>');
+    $('.filters').show();
+  });
+
+  $('#btn-closefilters').on('click', function(e) {
+    e.preventDefault();
+    $('#backdrop').remove();
+    $('.filters').hide();
+  });
+
+
 
   function scrollto(target) {
      $('html,body').animate({

@@ -300,16 +300,61 @@ h5 {
       &:first-child {
         padding-left:0;
       }
-      +aside  {
-        padding-right:0;
-      }
     }
     main {
       transition: all .1s linear;
-      flex: 8;
+      flex: 10;
+      padding-right:0;
     }
-    .filters {
-      order: 3;
+  }
+}
+
+.filterrow {
+  background-color: $gray-light;
+  border-radius: 5px;
+  @include mq(30em) {
+    display:flex;
+    >div {
+      flex: 10;
+      margin-left: 15px;
+    }
+    >div:first-child {
+      flex: 2;
+      padding-right: 15px;
+      margin-left:0;
+    }
+  }
+}
+
+.filtering {
+  @include mq(30em) {
+    display:flex;
+    margin: 5px;
+    border-radius: 5px;
+    border-color: $gray;
+    background-color: #fff;
+    .filter-status, .operations {
+      align-items: stretch;
+      margin:0;
+    }
+    div.operations {
+      border-left: 1px solid $gray-light !important;
+      a, button {
+        border: none;
+        text-align: center;
+        border-radius: 0;
+        width:100%;
+      }
+      a {
+        border-bottom: 1px solid $gray-light !important;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+    }
+    .filter-status {
+      flex: 8;
+      margin-left: 15px;
     }
   }
 }
@@ -328,13 +373,11 @@ h5 {
 }
 
 .filter-status {
-  .panel-body {
     display: flex;
     justify-content: space-between;
     :first-child {
       flex: 6;
     }
-  }
 }
 
 [aria-expanded] {
@@ -372,6 +415,38 @@ h5 {
 
 div.understanding {
   margin-bottom: 5px;
+}
+
+#backdrop {
+  background-color: rgba(#000, .7);
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index:5000;
+}
+
+.filters {
+  background-color: rgba(#fff, 1);
+  position:fixed;
+  top:2em;
+  left:2em;
+  right:2em;
+  bottom:2em;
+  z-index:5001;
+  overflow: scroll;
+}
+
+.filters-content > div {
+  display:flex;
+  .panel {
+    flex: 1;
+    margin-left: 15px;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
 }
 
 /*.sc-content {
