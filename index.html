@@ -1,26 +1,30 @@
 ---
 layout: default
 ---
+<div class="filterrow">
+
+  <div class="search">
+    <form class="" role="search">
+      {% include searchform.html %}
+    </form>
+  </div>
+  <div class="filtering">
+    {% include filter-status.html%}
+    <div class="operations">
+      <a href="#filters" class="btn btn-default" id="btn-filters">
+        <span class="glyphicon glyphicon-cog" style="font-size: 1.25em; vertical-align:middle;"></span> Configure Filters
+      </a>
+      <button type="button" class="btn btn-default btn-sm" id="clearall" disabled><span class="glyphicon glyphicon-trash"></span> Clear all Filters</button>
+    </div>
+  </div>
+</div>
 <div class="mainrow">
   <aside>
     {% include sidenav.html %}
     <a href="#top" class="sr-only sr-only-focusable">Back to top</a>
   </aside>
 
-  <aside class="filters">
-    {% include filters2.html %}
-    <a href="#top" class="sr-only sr-only-focusable">Back to top</a>
-  </aside>
-
   <main>
-
-  <div id="searchcontainer-mainbar">
-    <form class="" role="search">
-      {% include searchform.html %}
-    </form>
-  </div>
-
-  {% include filter-status.html%}
 
   	{% assign p = 0 %}
   	{% for principle in site.data.principles %}
@@ -34,3 +38,5 @@ layout: default
     <a href="#top" class="mainbacktotop">Back to top</a>
   </main>
 </div>
+
+{% include filters2.html %}
