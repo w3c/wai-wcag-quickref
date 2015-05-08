@@ -66,11 +66,11 @@ jQuery(document).ready(function($) {
 
     if (o.length == 0) {
       $('#filtered').html('<strong>No filters set.</strong>');
-      $('#clearall').prop('disabled', true);
+      $('#clearall').hide();
     } else {
       o = ' <strong>Filtered items:</strong><br>' + o.join(', ');
       $('#filtered').html(o);
-      $('#clearall').prop('disabled', false);
+      $('#clearall').show();
       var val = $('#exampleSearch').val();
       if (val.length > 0) {
         search(val, false);
@@ -88,7 +88,7 @@ jQuery(document).ready(function($) {
     unchecked.each(function(){
       $(this).prop('checked', 'checked');
     });
-    unchecked.first().trigger('change');
+    applyFilters();
   });
 
   $('#btn-filters').on('click', function(e) {
