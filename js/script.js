@@ -42,7 +42,8 @@ jQuery(document).ready(function($) {
     applyurl();
   }
 
-  $('#filters input').on('change', function(e) {
+
+  function applyFilters() {
     var o = [];
     $('#filters input').each(function(){
       var cinput = $(this);
@@ -80,7 +81,7 @@ jQuery(document).ready(function($) {
         $('main').removeHighlight();
       }
     }
-  });
+  }
 
   $('#clearall').on('click', function(e) {
     var unchecked = $('#filters input:not(:checked)');
@@ -93,20 +94,24 @@ jQuery(document).ready(function($) {
   $('#btn-filters').on('click', function(e) {
     e.preventDefault();
     $('body').append('<div id="backdrop"></div>');
-    $('.filters').show();
+    $('#filters').show().focus();
   });
+
+
 
   $('#btn-closefilters').on('click', function(e) {
     e.preventDefault();
+    applyFilters();
     $('#backdrop').remove();
-    $('.filters').hide();
+    $('#filters').hide();
+    $('#btn-filters').focus();
   });
 
 
 
   function scrollto(target) {
      $('html,body').animate({
-         scrollTop: (target.offset().top - 60)
+         scrollTop: (target.offset().top - parseInt($('.filterrow').outerHeight(),10))
     }, 1000);
     return false;
   }
@@ -230,17 +235,16 @@ jQuery(document).ready(function($) {
     updateuri(uri);
   });
 
-  function affixOn(target) {
+  function affixOn(target, offset) {
     var $affixTarget = $(target);
+    var $offset = (parseInt(offset, 10));// ? (affixTarget.offset().top + parseInt(offset, 10)) : $affixTarget.offset().top;
 
     $affixTarget.affix({
       offset: {
         top: function () {
-          var offsetTop      = $affixTarget.offset().top
-          var sideBarMargin  = parseInt($affixTarget.children(0).css('margin-top'), 10)
-          var navOuterHeight = $('.navbar-default').height()
+          var offsetTop      = $offset;
 
-          return (this.top = offsetTop - navOuterHeight - sideBarMargin)
+          return (this.top = offsetTop);
         },
         bottom: function () {
           return 0;
@@ -252,6 +256,10 @@ jQuery(document).ready(function($) {
     $affixTarget.on('affix.bs.affix', function(e) {
       $(this).css('width', $(this).parent().width());
       $(this).css('position', 'fixed');
+      $(this).css('z-index', '9999');
+      if ($(this).hasClass('navbar-scroll')) {
+        $(this).css('top', (parseInt($('.filterrow').outerHeight(),10)) + 'px' );
+      }
     });
 
     $affixTarget.on('affixed-top.bs.affix', function(e) {
@@ -267,26 +275,16 @@ jQuery(document).ready(function($) {
         .removeData("bs.affix");
   }
 
-  function moveSearchToSide() {
-    $('#searchcontainer-mainbar form').detach().appendTo('#searchcontainer-sidebar');
-  }
-
-  function moveSearchToMain() {
-    $('#searchcontainer-sidebar form').detach().appendTo('#searchcontainer-mainbar');
-  }
-
   function init() {
     $('html').addClass('.has-js');
     affixOff('.navbar-scroll');
-    affixOff('#searchcontainer-mainbar');
+    affixOff('.filterrow');
+    affixOn('.filterrow', $('.filterrow').offset().top);
     if ($( window ).width() > 896) {
-      moveSearchToSide();
-      affixOn('.navbar-scroll');
+      affixOn('.navbar-scroll', $('.filterrow').offset().top);
       $('html').addClass('large');
       $('.tab-nav-wrap .nav-pills').addClass('nav-stacked');
     } else {
-      moveSearchToMain();
-      affixOn('#searchcontainer-mainbar');
       $('html').removeClass('large');
       $('.tab-nav-wrap .nav-pills').removeClass('nav-stacked');
     }
