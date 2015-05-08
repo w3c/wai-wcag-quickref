@@ -16,9 +16,7 @@ jQuery(document).ready(function($) {
         if (prop == "hide") {
           for (var i = data[prop].length - 1; i >= 0; i--) {
             var sidebar = $('#' + data[prop]);
-            console.log(sidebar);
             var status = sidebar.find('.sidebar-content').toggle().is(":visible");
-            console.log(sidebar.find('h6>span:first-child').toggle().parent().find('.glyphicon'));
             sidebar.find('h6 .glyphicon').prop('hidden', function(idx, oldProp) {
                 return !oldProp;
             });
