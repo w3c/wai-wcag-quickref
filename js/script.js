@@ -68,7 +68,7 @@ jQuery(document).ready(function($) {
       $('#filtered').html('<strong>No filters set.</strong>');
       $('#clearall').hide();
     } else {
-      o = ' <strong>Filtered items:</strong><br>' + o.join(', ');
+      o = ' <strong>Items filtered out:</strong><br>' + o.join(', ');
       $('#filtered').html(o);
       $('#clearall').show();
       var val = $('#exampleSearch').val();
