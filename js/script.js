@@ -24,7 +24,8 @@ jQuery(document).ready(function($) {
           }
         } else {
           for (var i = data[prop].length - 1; i >= 0; i--) {
-            $('[name=' + prop + '][value=' + data[prop] + ']').prop('checked', false).trigger( "change" );
+            $('[name=' + prop + '][value=' + data[prop][i] + ']').prop('checked', false);
+            applyFilters();
           }
         }
       }
