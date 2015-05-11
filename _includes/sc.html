@@ -11,9 +11,9 @@
     </div>
   </div>
     {% if currentsc.techniques %}
-<button data-target="#techniques-{{ p }}{{ g }}{{ s }}" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="techniques-{{ p }}{{ g }}{{ s }}" class="btn btn-default btn-techniques"><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show</span><span class="word-hide"><span class="glyphicon glyphicon-chevron-down"></span> Hide</span> techniques for <abbr title="Success Criterion">SC</abbr> {{ p }}.{{ g }}.{{ s }}</button>
-<div class="collapse" id="techniques-{{ p }}{{ g }}{{ s }}">
-  <div>
+  <button data-target="#techniques-{{ p }}{{ g }}{{ s }}" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="techniques-{{ p }}{{ g }}{{ s }}" class="btn btn-info btn-techniques"><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show</span><span class="word-hide"><span class="glyphicon glyphicon-chevron-down"></span> Hide</span> techniques for <abbr title="Success Criterion">SC</abbr> {{ p }}.{{ g }}.{{ s }}</button>
+  <div class="collapse" id="techniques-{{ p }}{{ g }}{{ s }}">
+    <div>
       <div class="tab-nav-wrap">
         <!-- Nav tabs -->
         <ul class="nav nav-pills nav-stacked" role="tablist">
@@ -30,8 +30,8 @@
             <li role="presentation"{% if currentsc.techniques.size == 1 %} class="active"{% endif %}><a href="#sc-{{ p }}{{ g }}{{ s }}-failures" aria-controls="sc-{{ p }}{{ g }}{{ s }}-failures" role="tab" data-toggle="tab">Failures</a></li>
           {% endif %}
         </ul>
-        </div>
-        <div class="tab-wrap">
+      </div>
+      <div class="tab-wrap">
         <div class="tab-content">
           {% if currentsc.techniques.sufficient %}
             <div role="tabpanel" class="tab-pane fade in active" id="sc-{{ p }}{{ g }}{{ s }}-sufficient">
@@ -49,8 +49,8 @@
             </div>
           {% endif %}
         </div>
-        </div>
-        </div>
-        </div>
-        {% endif%}
+      </div>
+    </div>
+  </div>
+{% endif%}
 </article>
