@@ -68,7 +68,7 @@ jQuery(document).ready(function($) {
       $('#filtered').html('<strong>No filters set.</strong>');
       $('#clearall').hide();
     } else {
-      o = ' <strong>Items filtered out:</strong><br>' + o.join(', ');
+      o = ' <strong>Items filtered out:</strong> ' + o.join(', ');
       $('#filtered').html(o);
       $('#clearall').show();
       var val = $('#exampleSearch').val();
@@ -117,7 +117,7 @@ jQuery(document).ready(function($) {
   }
 
   function search(query, scroll) {
-    $('#searchbtnfocusresult').hide();
+    $('#searchbtnfocusresult').parent().hide();
     $('#searchbtnprev, #searchbtnnext, #searchnumber').attr('disabled', 'disabled');
     $('#searchnumber').val('0/0');
     $('main').removeHighlight();
@@ -127,7 +127,7 @@ jQuery(document).ready(function($) {
     var hiddennum = total.length - marknum;
     $('#searchnumber').attr('data-current-index', '1').attr('data-max-index', marknum).attr('data-hiddennum', hiddennum);
     if (marknum > 0) {
-      $('#searchbtnfocusresult').show();
+      $('#searchbtnfocusresult').parent().css('display','flex');
       $('#searchnumber').val('1/' + marknum + ' [' + hiddennum + ' hidden]').removeAttr('disabled', 'disabled');
       if (scroll !== false) {
         scrollto($('mark.highlight').filter(":visible").first().addClass('current'));
@@ -145,7 +145,7 @@ jQuery(document).ready(function($) {
     } else {
       $('#searchnumber').val('0/0').attr('data-current-index', 0).attr('data-max-index', 0).attr('aria-label', "No search results").attr('disabled', 'disabled');
       $('#searchbtnprev, #searchbtnnext').attr('disabled', 'disabled');
-      $('#searchbtnfocusresult').hide();
+      $('#searchbtnfocusresult').parent().hide();
       $('main').removeHighlight();
     }
   });
@@ -219,10 +219,13 @@ jQuery(document).ready(function($) {
   });
 
   $('.hide-sb').on('click', function(e){
+    // console.log($(this).offset().top + ' -- ' + $('body').scrollTop());
+    // var top = $(this).parent().css('top', $(this).offset().top - $('html').scrollTop());
     var sidebar = $(this).parent().parent().parent();
     var status = sidebar.find('.sidebar-content').toggle().is(":visible");
     sidebar.find('h6>span:first-child').toggle();
     sidebar.parent().toggleClass('hidden-sb');
+
     $(this).parent().find('.glyphicon').prop('hidden', function(idx, oldProp) {
         return !oldProp;
     });
@@ -254,17 +257,14 @@ jQuery(document).ready(function($) {
     });
 
     $affixTarget.on('affix.bs.affix', function(e) {
-      $(this).css('width', $(this).parent().width());
-      $(this).css('position', 'fixed');
-      $(this).css('z-index', '9999');
+      //$(this).css('width', $(this).parent().width());
       if ($(this).hasClass('navbar-scroll')) {
         $(this).css('top', (parseInt($('.filterrow').outerHeight(),10)) + 'px' );
       }
     });
 
     $affixTarget.on('affixed-top.bs.affix', function(e) {
-      $(this).css('width', 'auto');
-      $(this).css('position', 'static');
+      //$(this).css('width', 'auto');
     });
   }
 
@@ -281,7 +281,7 @@ jQuery(document).ready(function($) {
     affixOff('.filterrow');
     affixOn('.filterrow', $('.filterrow').offset().top);
     if ($( window ).width() > 896) {
-      affixOn('.navbar-scroll', $('.filterrow').offset().top);
+      affixOn('.navbar-scroll', $('.navbar-scroll').offset().top);
       $('html').addClass('large');
       $('.tab-nav-wrap .nav-pills').addClass('nav-stacked');
     } else {
