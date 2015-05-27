@@ -8,7 +8,7 @@
 		</div>
 		{% if guideline.techniques %}
 			<div class="panel-body panel-body-guideline">
-				<button data-target="#techniques-{{ p }}{{ g }}" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="techniques-{{ p }}{{ g }}" class="btn btn-primary btn-techniques btn-gltechniques"><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show</span><span class="word-hide"><span class="glyphicon glyphicon-chevron-down"></span> Hide</span> techniques for Guideline {{ p }}.{{ g }}</button>
+				<button data-target="#techniques-{{ p }}{{ g }}" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="techniques-{{ p }}{{ g }}" class="btn btn-default btn-techniques"><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show</span><span class="word-hide"><span class="glyphicon glyphicon-chevron-down"></span> Hide</span> techniques for Guideline {{ p }}.{{ g }}</button>
 				<div id="techniques-{{ p }}{{ g }}" class="guideline-techniques collapse" aria-expanded="false">
 					{% if guideline.techniques.sufficient %}
 						<h4>Sufficient Techniques</h4>
