@@ -268,6 +268,26 @@ jQuery(document).ready(function($) {
     });
   }
 
+  function excolsc() {
+    var hr = $('.sc-content hr');
+    hr.hide(); // hide horizontal rule
+    hr.prev().append('<button type="button" aria-expanded="false" class="btn btn-default"><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show</span><span class="word-hide"><span class="glyphicon glyphicon-chevron-down"></span> Hide</span> full description</button>'); // Append button
+    hr.find('~ *').hide();
+    hr.prev().find('button').on('click', function(event) {
+      event.preventDefault();
+      /* Act on the event */
+      $(this).attr('aria-expanded', function(idx, oldAttr) {
+          if(oldAttr==='true') {
+            return 'false';
+          } else {
+            return 'true';
+          }
+      }).parent().find('~ *:not(hr)').toggle();
+
+    });;
+  }
+  excolsc();
+
   function affixOff(target) {
     $(window).off('.affix');
     $(target)
