@@ -1,25 +1,26 @@
-<div class="panel panel-default">
-  <div class="panel-heading">Tags:</div>
-  <div class="panel-body">
-    <ul class="list-inline">
-      <li role="presentation"><a href="#">WAI-ARIA</a></li>
-      <li role="presentation"><a href="#">AJAX</a></li>
-      <li role="presentation"><a href="#">Tables</a></li>
-      <li role="presentation"><a href="#">Navigation</a></li>
-      <li role="presentation"><a href="#">Live Regions</a></li>
-      <li role="presentation"><a href="#">Alternative Text</a></li>
-      <li role="presentation"><a href="#">Structure</a></li>
-      <li role="presentation"><a href="#">Progressive Enhancement</a></li>
-      <li role="presentation"><a href="#">Carousels</a></li>
-      <li role="presentation"><a href="#">Forms</a></li>
-      <li role="presentation"><a href="#">HTML5</a></li>
-      <li role="presentation"><a href="#">SVG</a></li>
-      <li role="presentation"><a href="#">Images</a></li>
-      <li role="presentation"><a href="#">CSS Transforms</a></li>
-      <li role="presentation"><a href="#">Font Features</a></li>
-      <li role="presentation"><a href="#">Animation</a></li>
-      <li role="presentation"><a href="#">Notifications</a></li>
-    </ul>
-  </div>
-</div>
+<strong>(Note: Those don’t work yet.)</strong><br>
+{% for sc in site.successcriteria %}
+  {% for tag in sc.tags %}
+    {% assign taglist = taglist | append: '||' | append: tag %}
+    {% assign tagcount.tag = tagcount.tag | plus:1 %}
+  {% endfor %}
+{% endfor %}
 
+
+{% assign splittaglist = taglist | split: '||' | sort %}
+
+{% assign currenttag = "" %}
+{% assign tagcount = 0 %}
+{% assign firsttag = true %}
+{% for tag in splittaglist %}
+  {% assign tagcount = tagcount | plus: 1 %}
+  {% if currenttag == tag %}
+  {% else %}
+    {% assign currenttag = tag %}
+    {% unless firsttag %}{{tagcount}}</a>{% endunless %} <a href="#{{tag}}" class="btn btn-default btn-sm">{{tag}}
+    {% assign tagcount = 0 %}
+    {% assign firsttag = false %}
+  {% endif %}
+{% endfor %}
+
+{{tagcount}}
