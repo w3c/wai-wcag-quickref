@@ -3,7 +3,7 @@
 {% if guideline.principle == principle %}
 	<div class="guideline panel panel-primary">
 		<div class="panel-heading">
-			<h3 id="{{guideline.short}}">{{ p }}.{{ g }} {{guideline.title}}</h3>
+			<h3 id="{{guideline.slug}}">{{ p }}.{{ g }} {{guideline.title}}</h3>
 			{{guideline.output}}
 		</div>
 		{% if guideline.techniques %}

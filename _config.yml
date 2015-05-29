@@ -16,9 +16,14 @@ lsi: false
 markdown: kramdown
 
 collections:
-- successcriteria
-- guidelines
-- filters
+  successcriteria:
+    output: true
+    permalink: /sc/:title.html
+  guidelines:
+    output: true
+    permalink: /gl/:title.html
+  filters:
+    output: false
 
 exclude:
   - node_modules

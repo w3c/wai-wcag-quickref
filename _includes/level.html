@@ -1,6 +1,6 @@
 <section class="panel-body filter-levels-{{include.level | downcase }}">
 	{% for criterion in include.items %}
-		{% assign currentscs = site.successcriteria | where: "short", criterion %}
+		{% assign currentscs = site.successcriteria | where: "slug", criterion %}
 			{% for currentsc in currentscs %}
 				{% include sc.html level=include.level %}
 			{% endfor %}
