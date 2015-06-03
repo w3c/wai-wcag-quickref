@@ -209,7 +209,13 @@ jQuery(document).ready(function($) {
   $('.hide-sb').on('click', function(e){
     // console.log($(this).offset().top + ' -- ' + $('body').scrollTop());
     // var top = $(this).parent().css('top', $(this).offset().top - $('html').scrollTop());
-    var sidebar = $(this).parent().parent().parent();
+    var sidebar = $(this).parent().parent().parent().css('width', function(idx, oldProp) {
+      if (oldProp == "auto") {
+        $(this).parent().width();
+      } else {
+        return 'auto';
+      }
+    });
     var status = sidebar.find('.sidebar-content').toggle().is(":visible");
     sidebar.find('h6>span:first-child').toggle();
     sidebar.parent().toggleClass('hidden-sb');
