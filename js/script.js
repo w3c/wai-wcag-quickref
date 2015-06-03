@@ -42,27 +42,27 @@ jQuery(document).ready(function($) {
     applyurl();
   }
 
-
   function applyFilters() {
-    var o = [];
+    var o = [],
+        selshow = [],
+        selhide = [],
+        uri,
+        location = window.history.location || window.location;
+    uri = new URI(location);
     $('#filters input').each(function(){
       var cinput = $(this);
-      var location = window.history.location || window.location;
-      var uri = new URI(location);
       if (cinput.is(':checked')) {
-        $('.' + cinput.attr('name') + '-' + cinput.val()).each(function () {
-          $(this).show();
-        });
+        selshow.push('.' + cinput.attr('name') + '-' + cinput.val());
         uri.removeSearch(cinput.attr('name'),cinput.val());
       } else {
         o.push($.trim(cinput.parent().text()));
-        $('.' + cinput.attr('name') + '-' + cinput.val()).each(function () {
-          $(this).hide();
-        });
+        selhide.push('.' + cinput.attr('name') + '-' + cinput.val());
         uri.addSearch(cinput.attr('name'),cinput.val());
       }
-      updateuri(uri);
     });
+    $(selshow.join(',')).show();
+    $(selhide.join(',')).hide();
+    updateuri(uri);
 
     if (o.length == 0) {
       $('#filtered').html('<strong>No filters set.</strong>');
@@ -83,28 +83,16 @@ jQuery(document).ready(function($) {
     }
   }
 
+  $('#filters').on('change', function(e) {
+    applyFilters();
+  });
+
   $('#clearall').on('click', function(e) {
     var unchecked = $('#filters input:not(:checked)');
     unchecked.each(function(){
       $(this).prop('checked', 'checked');
     });
     applyFilters();
-  });
-
-  $('#btn-filters').on('click', function(e) {
-    e.preventDefault();
-    $('body').append('<div id="backdrop"></div>');
-    $('#filters').show().focus();
-  });
-
-
-
-  $('#btn-closefilters').on('click', function(e) {
-    e.preventDefault();
-    applyFilters();
-    $('#backdrop').remove();
-    $('#filters').hide();
-    $('#btn-filters').focus();
   });
 
 
@@ -238,40 +226,10 @@ jQuery(document).ready(function($) {
     updateuri(uri);
   });
 
-  function affixOn(target, offset) {
-    var $affixTarget = $(target);
-    var $offset = (parseInt(offset, 10));// ? (affixTarget.offset().top + parseInt(offset, 10)) : $affixTarget.offset().top;
-
-    $affixTarget.affix({
-      offset: {
-        top: function () {
-          var offsetTop      = $offset;
-
-          return (this.top = offsetTop);
-        },
-        bottom: function () {
-          return 0;
-          // return (this.bottom = $('.bs-docs-footer').outerHeight(true))
-        }
-      }
-    });
-
-    $affixTarget.on('affix.bs.affix', function(e) {
-      //$(this).css('width', $(this).parent().width());
-      if ($(this).hasClass('navbar-scroll')) {
-        $(this).css('top', (parseInt($('.filterrow').outerHeight(),10)) + 'px' );
-      }
-    });
-
-    $affixTarget.on('affixed-top.bs.affix', function(e) {
-      //$(this).css('width', 'auto');
-    });
-  }
-
   function excolsc() {
     var hr = $('.sc-content hr');
     hr.hide(); // hide horizontal rule
-    hr.prev().append('<button type="button" aria-expanded="false" class="btn btn-default"><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show</span><span class="word-hide"><span class="glyphicon glyphicon-chevron-down"></span> Hide</span> full description</button>'); // Append button
+    hr.prev().append('<br><button type="button" aria-expanded="false" class="btn btn-default"><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show</span><span class="word-hide"><span class="glyphicon glyphicon-chevron-down"></span> Hide</span> full description</button>'); // Append button
     hr.find('~ *').hide();
     hr.prev().find('button').on('click', function(event) {
       event.preventDefault();
@@ -288,20 +246,12 @@ jQuery(document).ready(function($) {
   }
   excolsc();
 
-  function affixOff(target) {
-    $(window).off('.affix');
-    $(target)
-        .removeClass("affix affix-top affix-bottom")
-        .removeData("bs.affix");
-  }
-
   function init() {
     $('html').addClass('.has-js');
-    affixOff('.navbar-scroll');
-    affixOff('.filterrow');
-    affixOn('.filterrow', $('.filterrow').offset().top);
+    $('.navbar-scroll').css('width', $('.navbar-scroll').parent().width()).fixedsticky();
+
     if ($( window ).width() > 896) {
-      affixOn('.navbar-scroll', $('.navbar-scroll').offset().top);
+      //affixOn('.navbar-scroll', $('.navbar-scroll').offset().top);
       $('html').addClass('large');
       $('.tab-nav-wrap .nav-pills').addClass('nav-stacked');
     } else {
