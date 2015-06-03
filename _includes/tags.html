@@ -1,4 +1,6 @@
-<strong>(Note: Those don’t work yet.)</strong><br>
+<div class="panel panel-default" id="tags">
+<div class="panel-heading">Tags</div>
+<div class="panel-body">
 {% for sc in site.successcriteria %}
   {% for tag in sc.tags %}
     {% assign taglist = taglist | append: '||' | append: tag %}
@@ -14,13 +16,13 @@
 {% assign firsttag = true %}
 {% for tag in splittaglist %}
   {% assign tagcount = tagcount | plus: 1 %}
-  {% if currenttag == tag %}
-  {% else %}
+  {% unless currenttag == tag %}
     {% assign currenttag = tag %}
-    {% unless firsttag %}{{tagcount}}</a>{% endunless %} <a href="#{{tag}}" class="btn btn-default btn-sm">{{tag}}
+    {% comment %}{% unless firsttag %}{{tagcount}}</a>{% endunless %}{% endcomment %} <a href="#{{tag}}" class="btn btn-default btn-sm">{{tag}}</a>
     {% assign tagcount = 0 %}
     {% assign firsttag = false %}
-  {% endif %}
+  {% endunless %}
+  {% comment %}{%if forloop.last %}{{tagcount}}</a>{%endif%}{% endcomment %}
 {% endfor %}
-
-{{tagcount}}
+</div>
+</div>

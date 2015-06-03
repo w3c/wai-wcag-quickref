@@ -7,7 +7,8 @@
   </ul>
 
   <div class="tab-content">
-  --><div id="overview" class="overview" aria-labelledby="overview_heading">
+  -->
+  <div id="overview" class="overview" aria-labelledby="overview_heading">
     <h6 id="overview_heading" class="sidebar-heading"><button class="btn btn-primary btn-lg hide-sb"><span class="glyphicon glyphicon-chevron-left" aria-label="Hide overview sidebar"></span> <span class="glyphicon glyphicon-chevron-right" hidden aria-label="Show overview sidebar"></span> <span class="text">Over<span hidden>-<br></span>view</span></button></h6>
   <div class="sidebar-content">
   <nav class="nav-overview" aria-label="Principles, Guidelines and Success Criteria">
@@ -30,10 +31,10 @@
                     {% if guideline.successcriteria.levelA %}
                         {% for criterion in guideline.successcriteria.levelA %}
                         {% assign s = s | plus: 1 %}
-                          {% assign currentscs = site.successcriteria | where: "short", criterion %}
+                          {% assign currentscs = site.successcriteria | where: "slug", criterion %}
                             {% for currentsc in currentscs %}
                             <li class="filter-levels-a">
-                              <a href="#{{currentsc.short}}"><strong><span>{{ p }}.{{ g }}.{{ s }}</span></strong> <span>{{currentsc.title}}</span></a>
+                              <a href="#{{currentsc.slug}}"><strong><span>{{ p }}.{{ g }}.{{ s }}</span></strong> <span>{{currentsc.title}}</span></a>
                             </li>
                             {% endfor %}
                         {% endfor %}
@@ -41,10 +42,10 @@
                     {% if guideline.successcriteria.levelAA %}
                       {% for criterion in guideline.successcriteria.levelAA %}
                         {% assign s = s | plus: 1 %}
-                          {% assign currentscs = site.successcriteria | where: "short", criterion %}
+                          {% assign currentscs = site.successcriteria | where: "slug", criterion %}
                             {% for currentsc in currentscs %}
                             <li class="filter-levels-aa">
-                              <a href="#{{currentsc.short}}"><strong>{{ p }}.{{ g }}.{{ s }}</strong> <span>{{currentsc.title}}</span></a>
+                              <a href="#{{currentsc.slug}}"><strong>{{ p }}.{{ g }}.{{ s }}</strong> <span>{{currentsc.title}}</span></a>
                             </li>
                             {% endfor %}
                         {% endfor %}
@@ -52,10 +53,10 @@
                     {% if guideline.successcriteria.levelAAA %}
                       {% for criterion in guideline.successcriteria.levelAAA %}
                         {% assign s = s | plus: 1 %}
-                          {% assign currentscs = site.successcriteria | where: "short", criterion %}
+                          {% assign currentscs = site.successcriteria | where: "slug", criterion %}
                             {% for currentsc in currentscs %}
                             <li class="filter-levels-aaa">
-                              <a href="#{{currentsc.short}}"><strong>{{ p }}.{{ g }}.{{ s }}</strong> <span>{{currentsc.title}}</span></a>
+                              <a href="#{{currentsc.slug}}"><strong>{{ p }}.{{ g }}.{{ s }}</strong> <span>{{currentsc.title}}</span></a>
                             </li>
                             {% endfor %}
                         {% endfor %}
@@ -70,16 +71,10 @@
 {% endfor %}
   </ul>
   </nav>
-  </div>
-  </div><!--
-  </div>
-  <div id="filters" role="tabpanel" class="tab-pane">
-    {% include filters2.html %}
-  </div>
-  <div id="tags" role="tabpanel" class="tab-pane">
-    {% include tags.html %}
+  {% include tags.html %}
+
+  {% include filters2.html %}
+
   </div>
   </div>
-</div>
--->
 </div>
