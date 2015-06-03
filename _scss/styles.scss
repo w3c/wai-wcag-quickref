@@ -1,6 +1,29 @@
 @import "bootstrap";
 @import "helper";
 
+.fixedsticky {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky;
+}
+/* When position: sticky is supported but native behavior is ignored */
+.fixedsticky-withoutfixedfixed .fixedsticky-off,
+.fixed-supported .fixedsticky-off {
+  position: static;
+}
+.fixedsticky-withoutfixedfixed .fixedsticky-on,
+.fixed-supported .fixedsticky-on {
+  position: fixed;
+}
+.fixedsticky-dummy {
+  display: none;
+}
+.fixedsticky-on + .fixedsticky-dummy {
+  display: block;
+}
+
 body {
   position: relative;
   padding-bottom: 2em;
@@ -147,7 +170,11 @@ h5 {
       display:block;
     }
   }
+}
+
+.nav-overview {
   a {
+    color: #fff;
     display:table-row;
     line-height: 1.3;
     font-variant-numeric: tabular-nums;
@@ -162,10 +189,10 @@ h5 {
   }
   .active {
     >a>strong {
-      background-color: $brand-primary;
-      color: #fff;
+      background-color: #fff;
+      color: $brand-primary;
     }
-    border-color: #036;
+    border-color: #fff;
     .active:last-child {
       border-bottom: none;
     }
@@ -279,12 +306,10 @@ h5 {
       width: 100%;
     }
     aside {
-      border: 1px solid $gray-light;
-      border-top: none;
-      border-radius: 0 0 5px 5px;
       width: 50%;
       padding: 0 15px;
       transition: all .1s linear;
+      background-color: $brand-primary;
       &.hidden-sb {
         padding:0;
         border: none;
@@ -308,12 +333,13 @@ h5 {
 @include mq(56em) {
   .mainrow {
     display:flex;
-    aside, main {
-      padding: 0 15px;
+    flex-direction: row-reverse;
+    > div {
+      padding-left: 15px;
     }
     aside {
       transition: all .1s linear;
-      flex: 2;
+      flex: 1;
       &.hidden-sb {
         flex:0;
         h6 {
@@ -323,10 +349,14 @@ h5 {
       &:first-child {
         padding-left:0;
       }
+      .navbar-scroll {
+        position:sticky;
+        top:0;
+      }
     }
-    main {
+    > div {
       transition: all .1s linear;
-      flex: 10;
+      flex: 3;
       padding-right:0;
     }
   }
@@ -461,7 +491,7 @@ div.understanding {
   z-index:5000;
 }
 
-.filters {
+/*.filters {
   background-color: rgba(#fff, 1);
   position:fixed;
   top:2em;
@@ -484,7 +514,7 @@ div.understanding {
     }
   }
 }
-
+*/
 
 .nav-overview > .nav > li > a {
   padding: 0;
@@ -499,6 +529,19 @@ div.understanding {
     flex-direction: column;
     margin: 0;
   }
+}
+
+#tags {
+  a.btn {
+    margin-bottom: 5px;
+  }
+}
+
+button.panel-heading {
+  display: block;
+  width: 100%;
+  border: none;
+  text-align: left;
 }
 
 /*.sc-content {
