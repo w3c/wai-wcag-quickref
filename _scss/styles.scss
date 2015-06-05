@@ -317,12 +317,6 @@ h5 {
           padding:0;
         }
       }
-      &:first-child {
-        padding-left:0;
-      }
-      +aside  {
-        padding-right:0;
-      }
     }
     main {
       transition: all .1s linear;
@@ -333,21 +327,26 @@ h5 {
 @include mq(56em) {
   .mainrow {
     display:flex;
-    flex-direction: row-reverse;
+    &.threecols {
+      flex-direction: row;
+    }
     > div {
-      padding-left: 15px;
+      padding: 0 15px;
+      order: 2;
     }
     aside {
       transition: all .1s linear;
       flex: 1;
+      order: 1;
       &.hidden-sb {
         flex:0;
         h6 {
           padding:0;
         }
       }
-      &:first-child {
-        padding-left:0;
+      &.tags {
+        order: 3;
+        background-color: #ddd;
       }
       .navbar-scroll {
         position:sticky;
@@ -357,7 +356,6 @@ h5 {
     > div {
       transition: all .1s linear;
       flex: 3;
-      padding-right:0;
     }
   }
 }
@@ -468,13 +466,13 @@ h5 {
 }
 
 .container-fluid {
-  padding: 0 2px;
-  @include mq(30em) {
+  padding: 0;
+  /*@include mq(30em) {
     padding: 0 4px;
   }
   @include mq(56em) {
     padding: 0 8px;
-  }
+  }*/
 }
 
 div.understanding {
