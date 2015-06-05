@@ -71,10 +71,11 @@
 {% endfor %}
   </ul>
   </nav>
+  {% unless include.tags %}
   {% include tags.html %}
 
   {% include filters2.html %}
-
+  {% endunless %}
   </div>
   </div>
 </div>

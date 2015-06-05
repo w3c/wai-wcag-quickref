@@ -1,0 +1,59 @@
+---
+layout: default
+---
+{% comment %}
+<div class="filterrow">
+
+  <div class="search">
+    <form class="" role="search">
+      {% include searchform.html %}
+    </form>
+  </div>
+  <div class="filtering">
+    {% include filter-status.html%}
+    <div class="operations">
+      <a href="#filters" class="btn btn-default btn-sm" id="btn-filters"><span><span class="glyphicon glyphicon-cog"></span> Configure Filters</span></a>
+      <button type="button" class="btn btn-default btn-sm" hidden id="clearall"><span><span class="glyphicon glyphicon-trash"></span> Clear all</span></button>
+    </div>
+  </div>
+</div>
+{% endcomment %}
+<div class="mainrow threecols">
+  <div>
+  {% include header.html %}
+  <main>
+    {% include status.html %}
+
+    	{% assign p = 0 %}
+    	{% for principle in site.data.principles %}
+    		{% assign p = p | plus: 1 %}
+    		{% assign g = 0 %}
+    		<h2 id="principle{{ p }}">{{ p }}. {{principle}}</h2>
+    		{% for guideline in site.guidelines %}
+    			{% include guideline.html %}
+    		{% endfor %}
+    	{% endfor %}
+      <a href="#top" class="mainbacktotop">Back to top</a>
+    </main>
+  </div>
+  <aside>
+    {% include sidenav.html tags="false" %}
+    <a href="#top" class="sr-only sr-only-focusable">Back to top</a>
+  </aside>
+  <aside class="tags">
+    <div class="fixedsticky" style="top:0;">
+      <div>
+        <h6 id="customize_heading" class="sidebar-heading"><button class="btn btn-primary btn-lg hide-sb"><span class="glyphicon glyphicon-chevron-right" aria-label="Hide customize sidebar"></span> <span class="glyphicon glyphicon-chevron-left" hidden aria-label="Show customize sidebar"></span> <span class="text">Custo<span hidden>-<br></span>mize</span></button></h6>
+        <div class="sidebar-content">
+          {% include tags.html %}
+
+    {% include filters2.html %}
+        </div>
+      </div>
+    </div>
+  </aside>
+</div>
+
+{% comment %}
+{% include filters2.html %}
+{% endcomment %}
