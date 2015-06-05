@@ -255,6 +255,7 @@ jQuery(document).ready(function($) {
   function init() {
     $('html').addClass('.has-js');
     $('.navbar-scroll').css('width', $('.navbar-scroll').parent().width()).fixedsticky();
+    $('aside.tags>div').css('width', $('aside.tags').width()).fixedsticky();
 
     if ($( window ).width() > 896) {
       //affixOn('.navbar-scroll', $('.navbar-scroll').offset().top);
