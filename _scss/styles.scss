@@ -72,7 +72,7 @@ h1 {
   }
 }
 
-.sc-wrapper:first-child {
+.guideline section:first-of-type .sc-wrapper:first-child {
   border-top: none;
   padding-top:0;
 }
@@ -304,6 +304,7 @@ h5 {
     flex-wrap: wrap;
     main {
       width: 100%;
+      transition: all .1s linear;
     }
     aside {
       width: 50%;
@@ -318,9 +319,6 @@ h5 {
         }
       }
     }
-    main {
-      transition: all .1s linear;
-    }
   }
 }
 
@@ -330,9 +328,11 @@ h5 {
     &.threecols {
       flex-direction: row;
     }
-    > div {
+    > main {
       padding: 0 15px;
       order: 2;
+      transition: all .1s linear;
+      flex: 3;
     }
     aside {
       transition: all .1s linear;
@@ -352,10 +352,6 @@ h5 {
         position:sticky;
         top:0;
       }
-    }
-    > div {
-      transition: all .1s linear;
-      flex: 3;
     }
   }
 }
@@ -473,6 +469,10 @@ h5 {
   @include mq(56em) {
     padding: 0 8px;
   }*/
+}
+
+.mainhead {
+  padding: 0 15px 15px;
 }
 
 div.understanding {
