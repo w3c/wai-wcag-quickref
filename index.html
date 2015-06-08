@@ -18,24 +18,22 @@ layout: default
   </div>
 </div>
 {% endcomment %}
+{% include header.html %}
 <div class="mainrow">
-  <div>
-  {% include header.html %}
   <main>
     {% include status.html %}
 
-    	{% assign p = 0 %}
-    	{% for principle in site.data.principles %}
-    		{% assign p = p | plus: 1 %}
-    		{% assign g = 0 %}
-    		<h2 id="principle{{ p }}">{{ p }}. {{principle}}</h2>
-    		{% for guideline in site.guidelines %}
-    			{% include guideline.html %}
-    		{% endfor %}
-    	{% endfor %}
-      <a href="#top" class="mainbacktotop">Back to top</a>
-    </main>
-  </div>
+  	{% assign p = 0 %}
+  	{% for principle in site.data.principles %}
+  		{% assign p = p | plus: 1 %}
+  		{% assign g = 0 %}
+  		<h2 id="principle{{ p }}">{{ p }}. {{principle}}</h2>
+  		{% for guideline in site.guidelines %}
+  			{% include guideline.html %}
+  		{% endfor %}
+  	{% endfor %}
+    <a href="#top" class="mainbacktotop">Back to top</a>
+  </main>
   <aside>
     {% include sidenav.html %}
     <a href="#top" class="sr-only sr-only-focusable">Back to top</a>
