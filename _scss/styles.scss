@@ -144,9 +144,8 @@ h5 {
 }
 
 .navbar-scroll {
-  &.affix {
-    z-index: 4000;
-  }
+  overflow: scroll;
+  height: 90vh;
   ul {
     margin: 0;
     padding: 0;
@@ -214,19 +213,6 @@ h5 {
   }
   .nav-pills > li.active > a {
     background-color: $brand-primary;
-  }
-}
-
-.navbar-scroll.affix {
-  top: 10px;
-  bottom: 10px;
-  .tab-content {
-    overflow: scroll;
-    position: absolute;
-    bottom: 0;
-    right:0;
-    left:0;
-    top:4em;
   }
 }
 
