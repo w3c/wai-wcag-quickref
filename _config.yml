@@ -9,6 +9,8 @@ github_username:  yatil
 
 techniqueurl: http://www.w3.org/TR/WCAG20-TECHS/
 
+port: 4099
+
 safe: true
 lsi: false
 
