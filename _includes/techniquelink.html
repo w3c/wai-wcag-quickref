@@ -2,7 +2,7 @@
   {% assign currenttechnique = site.data.techniques | where: "short", technique.short | first %}
   {{ technique.prepend }} <a href="{{technique.short | append: '.html' | prepend: site.techniqueurl}}">{{technique.short}}: {{currenttechnique.title}}</a> {{ technique.append }}
 {% elsif technique.future %}
-  <em>{{technique.future}}</em> (future link){% if technique.append %} <br> {{ technique.append }}{% endif %}
+  <span class="future">{{technique.future}}</span> (future link){% if technique.append %} <br> {{ technique.append }}{% endif %}
   {% if technique.techniques %}
     <ul>
       {% for t in technique.techniques %}
