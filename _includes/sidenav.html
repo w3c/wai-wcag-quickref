@@ -25,7 +25,7 @@
             {% assign s = 0 %}
             {% if guideline.principle == principle %}
               <li>
-                <a href="#{{ guideline.short }}"><strong><span>{{ p }}.{{ g }}</span></strong> <span>{{ guideline.title }}</span></a>
+                <a href="#{{ guideline.slug }}"><strong><span>{{ p }}.{{ g }}</span></strong> <span>{{ guideline.title }}</span></a>
                   {% if guideline.successcriteria %}
                   <ul>
                     {% if guideline.successcriteria.levelA %}
