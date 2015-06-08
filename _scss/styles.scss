@@ -433,9 +433,17 @@ h5 {
   text-align: center;
   text-transform: uppercase;
   display:block;
-  background: linear-gradient(to bottom, rgba(#fff,.7), #fff);
+  color: #fff;
+  font-weight: bold;
+  background: linear-gradient(to bottom, #5180B4, $brand-primary);
   z-index: 2000;
   padding: 5px;
+  transition: all .4s linear;
+  &:hover, &:focus {
+    font-size: 1.5em;
+    color: #fff;
+    text-decoration: underline;
+  }
 }
 
 .filter-status {
