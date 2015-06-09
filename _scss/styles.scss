@@ -74,11 +74,14 @@ h1 {
 
 .guideline section:first-of-type .sc-wrapper:first-child {
   border-top: none;
+}
+
+.guideline .sc-wrapper:first-child {
   padding-top:0;
 }
 
-.guideline .panel-body {
-  padding-bottom: 0;
+.guideline .sc-wrapper:last-child {
+  padding-bottom:0;
 }
 
 .panel-body-guideline {
@@ -140,6 +143,10 @@ h1 {
     }
     header {
       opacity: .5;
+      h4, .h4 {
+        font-size: 1em;
+        margin: 0;
+      }
     }
   }
 }
