@@ -1,5 +1,5 @@
 {% assign s = s | plus: 1 %}
-<article class="sc-wrapper">
+<article class="sc-wrapper" data-tags="{{currentsc.tags | join: " "}}">
   <header>
     <h4 id="{{currentsc.slug}}"><strong>{{ p }}.{{ g }}.{{ s }}</strong> {{currentsc.title}}</h4>
     <p class="h4"><span class="level-{{include.level | downcase}}">Level {{include.level}}</span></p>

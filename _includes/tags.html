@@ -1,5 +1,5 @@
 <div class="panel panel-default" id="tags">
-<div class="panel-heading">Tags (don’t work yet)</div>
+<div class="panel-heading">Tags</div>
 <div class="panel-body">
 {% for sc in site.successcriteria %}
   {% for tag in sc.tags %}
@@ -18,7 +18,7 @@
   {% assign tagcount = tagcount | plus: 1 %}
   {% unless currenttag == tag %}
     {% assign currenttag = tag %}
-    {% comment %}{% unless firsttag %}{{tagcount}}</a>{% endunless %}{% endcomment %} <a href="#{{tag}}" class="btn btn-default btn-sm">{{tag}}</a>
+    {% comment %}{% unless firsttag %}{{tagcount}}</a>{% endunless %}{% endcomment %} <button data-tag="{{tag}}" class="btn btn-default btn-sm">{{tag}}</button>
     {% assign tagcount = 0 %}
     {% assign firsttag = false %}
   {% endunless %}

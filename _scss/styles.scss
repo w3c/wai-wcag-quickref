@@ -86,44 +86,57 @@ h1 {
   border-color: #fff;
 }
 
-.sc-wrapper header {
-  display: flex;
-  //justify-content: space-between;
-  white-space: nowrap;
-  strong, [class^=level] {
-    display: inline-block;
-    background-color: #ddd;
-    padding: 3px;
-    border-radius:2px;
-    font-weight: normal;
-  }
-  [class^=level] {
-    margin-left: 5px;
-    background-color: #fff;
-    &::before {
-      content:'(';
+.sc-wrapper {
+  header {
+    display: flex;
+    //justify-content: space-between;
+    white-space: nowrap;
+    strong, [class^=level] {
+      display: inline-block;
+      background-color: #ddd;
+      padding: 3px;
+      border-radius:2px;
+      font-weight: normal;
     }
-    &::after {
-      content:')';
+    [class^=level] {
+      margin-left: 5px;
+      background-color: #fff;
+      &::before {
+        content:'(';
+      }
+      &::after {
+        content:')';
+      }
     }
-  }
-  .level-a {
-    color: lighten($brand-primary, 6%);
-  }
-  .level-aa {
-    color: lighten($brand-primary, 3%);
-  }
-  .level-aaa {
-    color: lighten($brand-primary, 0%);
-  }
-  p {
-    float: right;
+    .level-a {
+      color: lighten($brand-primary, 6%);
+    }
+    .level-aa {
+      color: lighten($brand-primary, 3%);
+    }
+    .level-aaa {
+      color: lighten($brand-primary, 0%);
+    }
+    p {
+      float: right;
+    }
   }
 }
 
 .sc-content {
   a {
     border-bottom: 1px solid #666;
+  }
+}
+
+.tagged {
+  .sc-wrapper:not(.current) {
+    .sc-content, .btn-techniques {
+      display:none;
+    }
+    header {
+      opacity: .5;
+    }
   }
 }
 

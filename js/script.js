@@ -245,6 +245,17 @@ jQuery(document).ready(function($) {
   }
   excolsc();
 
+  var tagButtons = function () {
+    $('#tags').on('click', function(e) {
+      var button = $(e.target);
+      $('.sc-wrapper').removeClass('current');
+      $('.sc-wrapper[data-tags~="' + button.attr('data-tag') + '"]').addClass('current');
+      $('body').addClass('tagged');
+      $('#tags button').removeClass('btn-primary').addClass('btn-default');
+      button.removeClass('btn-default').addClass('btn-primary');
+    });
+  };
+
   function init() {
     $('html').addClass('.has-js');
     $('.navbar-scroll').css('width', $('.navbar-scroll').parent().width()).fixedsticky();
@@ -268,6 +279,7 @@ jQuery(document).ready(function($) {
 
   init();
   geturi();
+  tagButtons();
 
 });
 
