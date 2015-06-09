@@ -22,7 +22,7 @@ layout: default
 <div class="mainrow">
   <main>
     {% include status.html %}
-
+    {% include filter-status.html %}
   	{% assign p = 0 %}
   	{% for principle in site.data.principles %}
   		{% assign p = p | plus: 1 %}

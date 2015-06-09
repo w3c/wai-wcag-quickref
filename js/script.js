@@ -247,12 +247,21 @@ jQuery(document).ready(function($) {
 
   var tagButtons = function () {
     $('#tags').on('click', function(e) {
-      var button = $(e.target);
-      $('.sc-wrapper').removeClass('current');
-      $('.sc-wrapper[data-tags~="' + button.attr('data-tag') + '"]').addClass('current');
-      $('body').addClass('tagged');
-      $('#tags button').removeClass('btn-primary').addClass('btn-default');
-      button.removeClass('btn-default').addClass('btn-primary');
+      var button = $(e.target),
+          tag = button.attr('data-tag');
+      if (button.hasClass('btn-primary')) {
+        $('.sc-wrapper.current').removeClass('current');
+        $('#tagged').text('');
+        $('body').removeClass('tagged');
+        button.removeClass('btn-primary').addClass('btn-default').removeAttr('aria-selected');
+      } else {
+        $('.sc-wrapper.current').removeClass('current');
+        $('.sc-wrapper[data-tags~="' + tag + '"]').addClass('current');
+        $('#tagged').text('Only displaying content for the tag »'+tag+'«');
+        $('body').addClass('tagged');
+        $('#tags button').removeClass('btn-primary').addClass('btn-default').removeAttr('aria-selected');
+        button.removeClass('btn-default').addClass('btn-primary').attr('aria-selected','true');;
+      }
     });
   };
 
