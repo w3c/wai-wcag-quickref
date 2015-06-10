@@ -68,7 +68,7 @@ jQuery(document).ready(function($) {
       $('#filtered').html('<strong>No filters set.</strong>');
       $('#clearall').hide();
     } else {
-      o = ' <strong>Items filtered out:</strong> ' + o.join(', ');
+      o = ' <strong>Techniques/Levels filtered out:</strong> ' + o.join(', ');
       $('#filtered').html(o);
       $('#clearall').show();
       var val = $('#exampleSearch').val();
@@ -84,6 +84,7 @@ jQuery(document).ready(function($) {
   }
 
   $('#filters').on('change', function(e) {
+    $('.filter-status .icon').addClass('loading');
     applyFilters();
   });
 
@@ -247,6 +248,7 @@ jQuery(document).ready(function($) {
 
   var tagButtons = function () {
     $('#tags').on('click', function(e) {
+      $('.filter-status .icon').addClass('loading');
       var button = $(e.target),
           tag = button.attr('data-tag');
       if (button.hasClass('btn-primary')) {
@@ -260,7 +262,7 @@ jQuery(document).ready(function($) {
         $('#tagged').text('Only displaying content for the tag »'+tag+'«');
         $('body').addClass('tagged');
         $('#tags button').removeClass('btn-primary').addClass('btn-default').removeAttr('aria-selected');
-        button.removeClass('btn-default').addClass('btn-primary').attr('aria-selected','true');;
+        button.removeClass('btn-default').addClass('btn-primary').attr('aria-selected','true');
       }
     });
   };
@@ -269,7 +271,9 @@ jQuery(document).ready(function($) {
     $('html').addClass('.has-js');
     $('.navbar-scroll').css('width', $('.navbar-scroll').parent().width()).fixedsticky();
     $('aside.tags>div').css('width', $('aside.tags').width()).fixedsticky();
-
+    $('.filter-status .icon').on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(event) {
+      $('.filter-status .icon').removeClass('loading');
+    });
     if ($( window ).width() > 896) {
       $('html').addClass('large');
       $('.tab-nav-wrap .nav-pills').addClass('nav-stacked');
