@@ -3,7 +3,7 @@ jQuery(document).ready(function($) {
   function updateuri(uri) {
     uri.fragment("");
     history.pushState(null, null, uri);
-    localStorage.setItem('url', uri);
+    localStorage.setItem('url-' + uri.filename(), uri);
   }
 
   function applyurl() {
@@ -35,7 +35,7 @@ jQuery(document).ready(function($) {
   function geturi() {
     var location = window.history.location || window.location;
     var uri = new URI(location);
-    var url = localStorage.getItem('url');
+    var url = localStorage.getItem('url-' + uri.filename());
     if (uri.search()=="" && url!=="") {
       history.replaceState(null, null, url);
     }
