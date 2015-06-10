@@ -6,9 +6,9 @@
   </header>
   <div class="sc-content">
 	  {{ currentsc.output }}
-    <div class="understanding">
-      <a href="#" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-link"></span> Understanding <abbr title="Success Criterion">SC</abbr> {{ p }}.{{ g }}.{{ s }}</a>
-    </div>
+  </div>
+  <div class="understanding">
+    <a href="#" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-link"></span> Understanding <abbr title="Success Criterion">SC</abbr> {{ p }}.{{ g }}.{{ s }}</a>
   </div>
     {% if currentsc.techniques %}
   <button data-target="#techniques-{{ p }}{{ g }}{{ s }}" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="techniques-{{ p }}{{ g }}{{ s }}" class="btn btn-info btn-techniques"><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show</span><span class="word-hide"><span class="glyphicon glyphicon-chevron-down"></span> Hide</span> techniques for <abbr title="Success Criterion">SC</abbr> {{ p }}.{{ g }}.{{ s }}</button>
