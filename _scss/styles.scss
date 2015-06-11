@@ -1,5 +1,6 @@
 @import "bootstrap";
 @import "helper";
+@import "sharebox";
 
 .fixedsticky {
   position: -webkit-sticky;
@@ -126,6 +127,12 @@ h1 {
     }
     p {
       float: right;
+    }
+    .permalink {
+      order:3;
+      align-self: flex-end;
+      flex-grow: 99;
+      text-align: right;
     }
   }
 }
@@ -301,6 +308,12 @@ h5 {
       }
     }
   }
+}
+
+svg.icon {
+  width:1em;
+}
+
 //   background-color: #036;
 //   color: #fff;
 //   padding: 5px;
