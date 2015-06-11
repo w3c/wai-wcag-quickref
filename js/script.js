@@ -208,9 +208,9 @@ jQuery(document).ready(function($) {
   });
 
   $('.hide-sb').on('click', function(e){
-    var sidebar = $(this).parent().parent().parent();
-    var status = sidebar.find('.sidebar-content').toggle().is(":visible");
-    sidebar.find('h6>span:first-child').toggle();
+    var sidebar = $(this).parent().parent().parent().parent();
+    var status = sidebar.find('.sidebar-content, h6').toggle().is(":visible");
+    //sidebar.find('h6>span:first-child').toggle();
     sidebar.parent().toggleClass('hidden-sb');
 
     $(this).parent().find('.glyphicon').prop('hidden', function(idx, oldProp) {
@@ -218,12 +218,17 @@ jQuery(document).ready(function($) {
     });
     var uri = new URI(window.location);
     if (status) {
-      uri.removeSearch("hide", $(this).parent().parent().attr('class'));
+      uri.removeSearch("hide", $(this).parent().parent().parent().attr('class'));
+      window.setTimeout(function (){
+        sidebar.css('width',$(this).parent().width());
+      }, 100);
+      $(this).removeClass('btn-primary btn-lg').addClass('btn-default');
     } else {
-      uri.addSearch("hide", $(this).parent().parent().attr('class'));
+      uri.addSearch("hide", $(this).parent().parent().parent().attr('class'));
+      sidebar.css('width','auto');
+      $(this).addClass('btn-primary btn-lg').removeClass('btn-default');
     }
     updateuri(uri);
-    sidebar.css('width',$(this).parent().width());
   });
 
   function excolsc() {

@@ -1,9 +1,8 @@
 <section id="filters" aria-label="Filter by Techniques or Level">
-<hr>
   {% assign filters = site.filters | sort: 'sort' %}
   {% for filter in filters %}
     <div class="panel panel-default" id="{{filter.title | prepend: 'filter-' | slugify}}">
-      <button data-target="#{{filter.title | prepend: 'filter-' | append: '-content' | slugify}}" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="levels" class="panel-heading collapsed"><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show</span><span class="word-hide"><span class="glyphicon glyphicon-chevron-down"></span> Hide</span> {{ filter.title }} Filters</button>
+      <button data-target="#{{filter.title | prepend: 'filter-' | append: '-content' | slugify}}" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="{{filter.title | prepend: 'filter-' | append: '-content' | slugify}}" class="panel-heading collapsed"><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show</span><span class="word-hide"><span class="glyphicon glyphicon-chevron-down"></span> Hide</span> {{ filter.title }} Filters</button>
       <div hidden id="{{filter.title | prepend: 'filter-' | append: '-content' | slugify}}" class="panel-body form-group">
       <p><small>{{filter.output}}</small></p>
       {% for f in filter.filters %}

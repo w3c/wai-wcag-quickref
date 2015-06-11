@@ -170,6 +170,10 @@ h5 {
 .navbar-scroll {
   overflow: scroll;
   height: 90vh;
+  .hidden-sb & {
+    overflow: visible;
+    height: auto;
+  }
   ul {
     margin: 0;
     padding: 0;
@@ -275,24 +279,26 @@ h5 {
 }
 
 .sidebar-heading {
-  margin-top:0;
-  .btn {
-    width: 100%;
-    text-align:left;
-    min-width: 3.5em;
-    .large .hidden-sb & {
-      text-align: center;
-      width:3.5em;
-    }
-  }
+  color: #fff;
 }
 
-  .large .hidden-sb .text {
-    display:block;
-    text-transform: uppercase;
-    font-size: 0.5em;
-    > span {
-      display: inline;
+.overview, .tags {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+     .text {
+      display:none;
+      text-transform: uppercase;
+      font-size: 0.7em;
+      .hidden-sb & {
+        display:block;
+      }
+    }
+    button {
+      .hidden-sb & {
+        position: absolute;
+      }
     }
   }
 //   background-color: #036;
@@ -371,7 +377,8 @@ h5 {
       }
       &.tags {
         order: 3;
-        background-color: #ddd;
+        background-color: #333;
+        color: #fff;
       }
       .navbar-scroll {
         position:sticky;

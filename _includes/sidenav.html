@@ -9,7 +9,12 @@
   <div class="tab-content">
   -->
   <div id="overview" class="overview" aria-labelledby="overview_heading">
-    <h6 id="overview_heading" class="sidebar-heading"><button class="btn btn-primary btn-lg hide-sb"><span class="glyphicon glyphicon-chevron-left" aria-label="Hide overview sidebar"></span> <span class="glyphicon glyphicon-chevron-right" hidden aria-label="Show overview sidebar"></span> <span class="text">Over<span hidden>-<br></span>view</span></button></h6>
+    <header>
+      <h6 id="overview_heading" class="h3 sidebar-heading">On this Page</h6>
+      <span>
+        <button class="btn btn-default hide-sb"><span class="glyphicon glyphicon-remove-circle" aria-label="Hide overview sidebar"></span> <span class="glyphicon glyphicon-menu-hamburger" hidden aria-label="Show overview sidebar"></span> <span class="text">Side-<br>bar</span></button>
+      </span>
+    </header>
   <div class="sidebar-content">
   <nav class="nav-overview" aria-label="Principles, Guidelines and Success Criteria">
   <ul class="nav">
@@ -72,6 +77,7 @@
   </ul>
   </nav>
   {% unless include.tags %}
+  <h6 class="h3 sidebar-heading">Configure</h6>
   {% include tags.html %}
 
   {% include filters2.html %}
