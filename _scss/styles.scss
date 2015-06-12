@@ -305,6 +305,7 @@ h5 {
     button {
       .hidden-sb & {
         position: absolute;
+        z-index: 9999;
       }
     }
   }
@@ -341,7 +342,7 @@ svg.icon {
 [hidden] {
   display: none;
 }
-
+/*
 @include mq(30em) {
   .mainrow {
     display:flex;
@@ -365,25 +366,28 @@ svg.icon {
     }
   }
 }
-
-@include mq(56em) {
+*/
+@include mq(30em) {
   .mainrow {
     display:flex;
     &.threecols {
       flex-direction: row;
     }
-    > main {
+    main, aside {
       padding: 0 15px;
-      order: 2;
       transition: all .1s linear;
-      flex: 3;
+    }
+    main {
+      order: 2;
+      flex: 5;
     }
     aside {
-      transition: all .1s linear;
       flex: 1;
       order: 1;
+      background-color: $brand-primary;
       &.hidden-sb {
         flex:0;
+        padding:0;
         h6 {
           padding:0;
         }
@@ -392,6 +396,9 @@ svg.icon {
         order: 3;
         background-color: #333;
         color: #fff;
+        .panel-body {
+          color: #333;
+        }
       }
       .navbar-scroll {
         position:sticky;
@@ -494,11 +501,13 @@ svg.icon {
 
 .filter-status {
   background-color: #fff;
-  background: linear-gradient(to top, transparent, #fff 10px, #fff);
   z-index: 9999;
-  padding-bottom: 10px;
   display: flex;
   align-items: center;
+  margin: 0 80px;
+  border: 1px solid $brand-primary;
+  padding: 5px;
+  box-shadow: 0 0 20px $brand-primary;
   .icon {
     font-size: 2.5em;
     margin-right: 15px;
