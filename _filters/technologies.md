@@ -1,6 +1,6 @@
 ---
 title: "Techniques"
-sort: 1
+sort: 2
 short: tech
 type: checkbox
 filters:

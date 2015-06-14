@@ -1,6 +1,6 @@
 ---
 title: "Levels"
-sort: 2
+sort: 1
 short: levels
 type: checkbox
 filters:
