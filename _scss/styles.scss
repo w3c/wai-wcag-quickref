@@ -369,11 +369,6 @@ svg.icon {
     &.threecols {
       flex-direction: row;
     }
-    // .navrow + & {
-    //   aside {
-    //     flex-basis: 250px;
-    //   }
-    // }
     main, aside {
       padding: 0 15px;
       transition: all .1s linear;
@@ -381,6 +376,25 @@ svg.icon {
     main {
       order: 2;
       flex: 5;
+    }
+    &.prototype-5 {
+      main {
+        flex:7;
+        padding-right:0;
+        .realmain {
+          padding-right: 15px;
+        }
+        aside {
+          padding: 26.5px;
+        }
+      }
+      aside {
+        padding: 0 26.5px;
+      }
+      #filters {
+        display: flex;
+        flex-direction: row;
+      }
     }
     &.col_overview, &.col_customize {
       main {
