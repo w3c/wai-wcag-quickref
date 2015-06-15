@@ -369,6 +369,11 @@ svg.icon {
     &.threecols {
       flex-direction: row;
     }
+    // .navrow + & {
+    //   aside {
+    //     flex-basis: 250px;
+    //   }
+    // }
     main, aside {
       padding: 0 15px;
       transition: all .1s linear;
@@ -376,6 +381,16 @@ svg.icon {
     main {
       order: 2;
       flex: 5;
+    }
+    &.col_overview, &.col_customize {
+      main {
+        flex: 7;
+      }
+    }
+    &.col_overview.col_customize {
+      main {
+        flex: 9;
+      }
     }
     aside {
       flex: 1;
@@ -401,6 +416,43 @@ svg.icon {
         top:0;
       }
     }
+  }
+}
+
+.navrow {
+  display:flex;
+  flex-direction: row;
+  align-items: stretch;
+  z-index: 999;
+  > div {
+    flex: 5;
+    padding: 0 15px;
+  }
+  > .button {
+    flex: 1;
+    margin:0;
+    padding: 0 15px;
+    display: block;
+    background-color: #333;
+    display:flex;
+    flex-direction: row;
+    align-items: stretch;
+    &:first-child {
+      background-color: $brand-primary;
+    }
+    button {
+      background-color: inherit;
+      color: #fff;
+      border: none;
+      display: block;
+      width: 100%;
+      display:flex;
+      align-items: center;
+    }
+  }
+  .filter-status {
+    box-shadow: none;
+    margin: 0;
   }
 }
 
