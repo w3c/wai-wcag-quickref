@@ -416,6 +416,11 @@ svg.icon {
         top:0;
       }
     }
+    &.prototype-4 {
+      aside {
+        order: -1;
+      }
+    }
   }
 }
 
@@ -453,6 +458,11 @@ svg.icon {
   .filter-status {
     box-shadow: none;
     margin: 0;
+  }
+  &.prototype-4 {
+    div.button {
+      order: -1;
+    }
   }
 }
 
