@@ -451,6 +451,10 @@ svg.icon {
   }
 }
 
+#p6cust {
+  padding: 10px;
+}
+
 .navrow {
   display:flex;
   flex-direction: row;
@@ -662,14 +666,14 @@ svg.icon {
   }
 }
 
-[aria-expanded] {
+[aria-expanded], [aria-expanded=true] [aria-expanded] {
   .word-show { display: inline; }
   .word-hide { display: none; }
 }
 
-[aria-expanded=true] {
-  .word-show { display: none !important; }
-  .word-hide { display: inline !important; }
+[aria-expanded=true], [aria-expanded=true] [aria-expanded=true] {
+  .word-show { display: none; }
+  .word-hide { display: inline; }
 }
 
 .btn-techniques {
