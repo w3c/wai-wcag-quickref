@@ -394,6 +394,7 @@ svg.icon {
       #col_customize .sidebar-content {
         display: flex;
         flex-direction: row;
+        align-items: flex-start;
         > div {
           flex: 1
         }
@@ -401,6 +402,7 @@ svg.icon {
           flex: 2;
           display: flex;
           flex-direction: row;
+          align-items: flex-start;
           .panel-default {
             flex:1;
           }
