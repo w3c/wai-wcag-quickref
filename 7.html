@@ -37,8 +37,8 @@ layout: default
   <aside>
     <div>
       <div class="panel panel-default" style="margin-top:15px;">
-        <button data-target="#p6cust" type="button" data-toggle="collapse" aria-expanded="true" aria-controls="p6cust" class="panel-heading collapsed"><span class="glyphicon glyphicon-remove-circle word-hide" aria-label="Hide customize sidebar"></span> <span class="glyphicon glyphicon-wrench word-show" hidden aria-label="Show customize sidebar"></span> <span class="text">Customize</span></button>
-        <div id="p6cust" class="collapsed in panel-content">
+        <button data-target="#p6cust" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="p6cust" class="panel-heading collapsed"><span class="glyphicon glyphicon-remove-circle word-hide" aria-label="Hide customize sidebar"></span> <span class="glyphicon glyphicon-wrench word-show" hidden aria-label="Show customize sidebar"></span> <span class="text">Customize</span></button>
+        <div hidden id="p6cust" class="collapsed panel-content">
           {% include tags.html show=true %}
           {% include filters2.html %}
         </div>
