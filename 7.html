@@ -1,0 +1,54 @@
+---
+layout: default
+---
+{% comment %}
+<div class="filterrow">
+
+  <div class="search">
+    <form class="" role="search">
+      {% include searchform.html %}
+    </form>
+  </div>
+  <div class="filtering">
+    {% include filter-status.html%}
+    <div class="operations">
+      <a href="#filters" class="btn btn-default btn-sm" id="btn-filters"><span><span class="glyphicon glyphicon-cog"></span> Configure Filters</span></a>
+      <button type="button" class="btn btn-default btn-sm" hidden id="clearall"><span><span class="glyphicon glyphicon-trash"></span> Clear all</span></button>
+    </div>
+  </div>
+</div>
+{% endcomment %}
+{% include header.html %}
+<div class="mainrow">
+  <main>
+    {% include status.html %}
+    {% include filter-status.html %}
+  	{% assign p = 0 %}
+  	{% for principle in site.data.principles %}
+  		{% assign p = p | plus: 1 %}
+  		{% assign g = 0 %}
+  		<h2 id="principle{{ p }}">{{ p }}. {{principle}}</h2>
+  		{% for guideline in site.guidelines %}
+  			{% include guideline.html %}
+  		{% endfor %}
+  	{% endfor %}
+    <a href="#top" class="mainbacktotop"><span aria-hidden="true" class="glyphicon glyphicon-hand-up"></span> Back to top <span aria-hidden="true" class="glyphicon glyphicon-hand-up"></span></a>
+  </main>
+  <aside>
+    <div>
+      <div class="panel panel-default" style="margin-top:15px;">
+        <button data-target="#p6cust" type="button" data-toggle="collapse" aria-expanded="true" aria-controls="p6cust" class="panel-heading collapsed"><span class="glyphicon glyphicon-remove-circle word-hide" aria-label="Hide customize sidebar"></span> <span class="glyphicon glyphicon-wrench word-show" hidden aria-label="Show customize sidebar"></span> <span class="text">Customize</span></button>
+        <div id="p6cust" class="collapsed in panel-content">
+          {% include tags.html show=true %}
+          {% include filters2.html %}
+        </div>
+      </div>
+    </div>
+    {% include sidenav.html heading="false" tags="false" %}
+    <a href="#top" class="sr-only sr-only-focusable">Back to top</a>
+  </aside>
+</div>
+
+{% comment %}
+{% include filters2.html %}
+{% endcomment %}
