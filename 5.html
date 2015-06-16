@@ -2,7 +2,7 @@
 layout: default
 ---
 {% include header.html %}
-<div class="navrow fixedsticky prototype-5" style="top:0;">
+<div class="navrow fixedsticky prototype-5" style="top:0; left:0; right:0;">
   <div class="button">
     <!-- <button class="h4"><span>Overview</span></button> -->
     <button data-target="#col_overview" type="button" data-toggle="collapse" aria-expanded="true" aria-controls="col_overview" class="btn btn-default btn-lg"><span><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show</span><span class="word-hide"><span class="glyphicon glyphicon-chevron-down"></span> Hide</span> Overview</span></button>
@@ -16,8 +16,8 @@ layout: default
 </div>
 <div class="mainrow threecols prototype-5">
   <main>
-      <aside class="tags collapse in" id="col_customize">
-        <div class="fixedsticky" style="top:0;">
+      <aside class="tags collapse in fixedsticky" style="top:65px;" id="col_customize" >
+        <div>
           <div>
             <!-- <header>
               <h6 id="customize_heading" class="h3 sidebar-heading">Customize</h6>
