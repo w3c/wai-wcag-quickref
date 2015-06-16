@@ -275,6 +275,7 @@ jQuery(document).ready(function($) {
   function init() {
     $('html').addClass('.has-js');
     $('.navbar-scroll').css('width', $('.navbar-scroll').parent().width()).fixedsticky();
+    $('.fixedsticky').fixedsticky();
     $('aside.tags>div').css('width', $('aside.tags').width()).fixedsticky();
     $('.filter-status .icon').on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(event) {
       $('.filter-status .icon').removeClass('loading');
