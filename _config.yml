@@ -30,3 +30,9 @@ collections:
 exclude:
   - node_modules
   - .sass-cache
+  - Gemfile.lock
+  - Gemfile
+  - gulpfile.js
+  - npm-debug.log
+  - package.json
+  - questions.md
