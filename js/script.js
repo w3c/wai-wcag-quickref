@@ -96,8 +96,6 @@ jQuery(document).ready(function($) {
     applyFilters();
   });
 
-
-
   function scrollto(target) {
      $('html,body').animate({
          scrollTop: (target.offset().top - parseInt($('.filterrow').outerHeight(),10))
@@ -300,6 +298,21 @@ jQuery(document).ready(function($) {
   $('#col_overview, #col_customize').on('hide.bs.collapse', function () {
     $('.mainrow').addClass($(this).attr('id'));
   });
+
+  if($('.prototype-8')) {
+    $('.prototype-8 .tab-content.fixedsticky').css('top', $('.navrow').height()).fixedsticky();
+
+    $('#hidesidebars').on('click', function () {
+      if ($(this).is('[aria-expanded=true]')) {
+        $('.mainrow>div, .navrow .buttons li:first-child, .navrow .buttons li:first-child + li').hide();
+        $(this).attr('aria-expanded', 'false').parent().addClass('closed');
+      } else {
+        $('.mainrow>div, .navrow .buttons li:first-child, .navrow .buttons li:first-child + li').show();
+        $(this).attr('aria-expanded', 'true').parent().removeClass('closed');;
+      }
+
+    });
+  }
 
   $( window ).resize(function() {
     init();

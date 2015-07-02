@@ -1,0 +1,65 @@
+---
+layout: default
+---
+{% include header.html %}
+<div class="navrow fixedsticky prototype-8" style="top:0;">
+  <ul class="nav nav-tabs buttons">
+    <li role="presentation" class="active">
+      <!-- <button class="h4"><span>Overview</span></button> -->
+      <a href="#col_overview" data-toggle="tab" data-toggle="tab" aria-controls="col_overview"><span><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> Menu</span></a>
+    </li>
+    <li role="presentation">
+      <a href="#col_customize" data-toggle="tab" data-toggle="tab" aria-controls="col_customize"><span><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Settings</span></a>
+    </li>
+    <li role="presentation">
+      <button id="hidesidebars" aria-expanded="true" type="button" class="btn btn-default btn-sm"><span><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show</span><span class="word-hide"><span class="glyphicon glyphicon-chevron-left"></span> Hide</span></span></button>
+    </li>
+  </ul>
+  <div>
+    {% include filter-status.html %}
+  </div>
+</div>
+<div class="mainrow threecols prototype-8">
+  <main>
+    {% include status.html %}
+  	{% assign p = 0 %}
+  	{% for principle in site.data.principles %}
+  		{% assign p = p | plus: 1 %}
+  		{% assign g = 0 %}
+  		<h2 id="principle{{ p }}">{{ p }}. {{principle}}</h2>
+  		{% for guideline in site.guidelines %}
+  			{% include guideline.html %}
+  		{% endfor %}
+  	{% endfor %}
+    <a href="#top" class="mainbacktotop"><span aria-hidden="true" class="glyphicon glyphicon-hand-up"></span> Back to top <span aria-hidden="true" class="glyphicon glyphicon-hand-up"></span></a>
+  </main>
+  <div>
+    <div class="tab-content fixedsticky">
+      <aside role="tabpanel" class="tab-pane active" id="col_overview">
+        {% include sidenav.html tags="false" heading="false" %}
+        <a href="#top" class="sr-only sr-only-focusable">Back to top</a>
+      </aside>
+      <aside role="tabpanel" class="tab-pane tags" id="col_customize">
+        <div class="fixedsticky" style="top:0;">
+          <div>
+            <!-- <header>
+              <h6 id="customize_heading" class="h3 sidebar-heading">Customize</h6>
+              <span>
+                <button class="btn btn-default hide-sb"><span class="glyphicon glyphicon-remove-circle" aria-label="Hide customize sidebar"></span> <span class="glyphicon glyphicon-wrench" hidden aria-label="Show customize sidebar"></span> <span class="text">Custo<span hidden>-<br></span>mize</span></button>
+              </span>
+            </header> -->
+            <div class="sidebar-content">
+              {% include tags.html %}
+
+            {% include filters2.html %}
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+
+{% comment %}
+{% include filters2.html %}
+{% endcomment %}
