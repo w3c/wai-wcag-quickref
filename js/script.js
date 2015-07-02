@@ -97,8 +97,10 @@ jQuery(document).ready(function($) {
   });
 
   function scrollto(target) {
+     var scrollpos = (target.offset().top - parseInt($('.navrow').outerHeight(),10));
+           scrollpos = scrollpos - 10;
      $('html,body').animate({
-         scrollTop: (target.offset().top - parseInt($('.filterrow').outerHeight(),10))
+         scrollTop: scrollpos
     }, 1000);
     return false;
   }
@@ -289,6 +291,28 @@ jQuery(document).ready(function($) {
       $('.hide-sb').not(".hidden-sb .hide-sb").trigger('click');
     }
     $('.mainrow aside > div').css('top', $('.navrow').height());
+
+
+      if($('.prototype-8')) {
+        $('.prototype-8 .tab-content.fixedsticky').css('top', $('.navrow').height()).fixedsticky();
+
+        $('#hidesidebars').on('click', function () {
+          if ($(this).is('[aria-expanded=true]')) {
+            $('.mainrow>div, .navrow .buttons li:first-child, .navrow .buttons li:first-child + li').hide();
+            $(this).attr('aria-expanded', 'false').parent().addClass('closed').parent().addClass('closed');
+          } else {
+            $('.mainrow>div, .navrow .buttons li:first-child, .navrow .buttons li:first-child + li').show();
+            $(this).attr('aria-expanded', 'true').parent().removeClass('closed').parent().removeClass('closed');
+          }
+
+        });
+      }
+
+      $('#overview').on('click', function(e) {
+        var thetarget = $(e.target).parents('a').attr('href');
+        console.log(scrollto($(thetarget)));
+      });
+
   }
 
   $('#col_overview, #col_customize').on('show.bs.collapse', function () {
@@ -298,21 +322,6 @@ jQuery(document).ready(function($) {
   $('#col_overview, #col_customize').on('hide.bs.collapse', function () {
     $('.mainrow').addClass($(this).attr('id'));
   });
-
-  if($('.prototype-8')) {
-    $('.prototype-8 .tab-content.fixedsticky').css('top', $('.navrow').height()).fixedsticky();
-
-    $('#hidesidebars').on('click', function () {
-      if ($(this).is('[aria-expanded=true]')) {
-        $('.mainrow>div, .navrow .buttons li:first-child, .navrow .buttons li:first-child + li').hide();
-        $(this).attr('aria-expanded', 'false').parent().addClass('closed');
-      } else {
-        $('.mainrow>div, .navrow .buttons li:first-child, .navrow .buttons li:first-child + li').show();
-        $(this).attr('aria-expanded', 'true').parent().removeClass('closed');;
-      }
-
-    });
-  }
 
   $( window ).resize(function() {
     init();
