@@ -416,7 +416,7 @@ svg.icon {
       }
       >div {
         flex:2 !important;
-        background-color: #ddd;
+        background-color: #eee;
         aside {
           background-color: transparent !important;
           padding: 15px;
@@ -538,24 +538,31 @@ svg.icon {
     li {
       a {
         background-color: #fff;
+        background: linear-gradient(#f3f3f3, #f3f3f3 3px, #fff 3px, #fff);
         color: #555;
         border: 1px solid #555;
         display:block;
+        margin-right: 4px;
+        border-radius: 5px 5px 0 0;
+        padding-bottom: 7px;
+        padding-top: 7px;
       }
       &.active a {
         color: #333;
         background-color: #ddd;
+        background: linear-gradient($brand-primary, $brand-primary 3px, #eee 3px, #eee);
         border-color: #333;
-        border-bottom-color: transparent;
+        border-bottom: none;
         //font-size: 1.45em;
       }
       &:first-child {
-        padding-left: 3px;
+        padding-left: 6px;
       }
       &:last-child {
         align-self: center;
         flex-grow:1;
         text-align: right;
+        padding-left:12px;
       }
       &.closed:last-child {
         text-align: left;
@@ -590,16 +597,16 @@ svg.icon {
       a {
         height: 2em;
         padding: 5px;
-        background-color: #f3f3f3;
+        background-color: #fff;
         color: #555;
-        border-right: 1px solid #ddd;
+        border-right: 1px solid #eee;
         width: 100%;
         display: flex;
         text-align:center;
       }
       &.active a {
         color: #333;
-        background-color: #ddd;
+        background-color: #eee;
         // border-color: #333;
         border-bottom-color: transparent;
         //font-size: 1.45em;
