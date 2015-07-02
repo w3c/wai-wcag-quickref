@@ -416,13 +416,14 @@ svg.icon {
       }
       >div {
         flex:2 !important;
-        background-color: #666;
+        background-color: #ddd;
         aside {
           background-color: transparent !important;
+          padding: 15px;
+          a {
+            color: $brand-primary !important;
+          }
         }
-      }
-      aside {
-        padding: 15px;
       }
     }
     &.col_overview, &.col_customize {
@@ -529,17 +530,27 @@ svg.icon {
     display:flex;
     flex-direction: row;
     align-items: flex-end;
-    border-bottom-color: #666;
+    border-bottom-color:#555;
+    &.closed {
+      border-bottom-color: transparent;
+      padding-left: 15px;
+    }
     li {
       a {
-        background-color: #eee;
-        color: #333;
+        background-color: #fff;
+        color: #555;
+        border: 1px solid #555;
         display:block;
       }
       &.active a {
-        color: #fff;
-        background-color: #666;
-        font-size: 1.25em;
+        color: #333;
+        background-color: #ddd;
+        border-color: #333;
+        border-bottom-color: transparent;
+        font-size: 1.45em;
+      }
+      &:first-child {
+        padding-left: 3px;
       }
       &:last-child {
         align-self: center;
@@ -548,6 +559,7 @@ svg.icon {
       }
       &.closed:last-child {
         text-align: left;
+        font-weight: bold !important;
       }
     }
   }
