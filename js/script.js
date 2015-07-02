@@ -310,7 +310,7 @@ jQuery(document).ready(function($) {
 
       $('#overview').on('click', function(e) {
         var thetarget = $(e.target).parents('a').attr('href');
-        console.log(scrollto($(thetarget)));
+        scrollto($(thetarget));
       });
 
   }
