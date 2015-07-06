@@ -90,6 +90,7 @@ h1 {
     }
     h4 {
       font-family: $font-family-serif;
+      font-feature-settings: "lnum", "pnum";
       span {
         padding: 3px 10px;
         background-color: #f3f3f3;
@@ -102,7 +103,8 @@ h1 {
       font-weight: normal;
     }
     strong {
-      font-family: $font-family-base;
+      //font-family: $font-family-base;
+      font-weight: bold;
       border-radius: 3px 0 0 3px;
       min-width: 3em;
       text-align: right;
@@ -288,11 +290,12 @@ h1 {
 .panel-heading {
   h3 {
     font-family: $font-family-serif;
+    font-feature-settings: "lnum", "pnum";
     margin-top: 0;
     font-weight: normal;
     strong {
       font-weight: normal;
-      font-family: $font-family-base;
+      // font-family: $font-family-base;
     }
   }
   h5 {
