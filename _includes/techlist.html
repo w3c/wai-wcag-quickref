@@ -1,5 +1,12 @@
 <div class="panel panel-default">
-  <div class="panel-heading">{{include.techtitle}}</div>
+  <div class="panel-heading">
+    <h5>
+      {% if include.ttype == "sufficient" %}<span class="glyphicon glyphicon-hand-right"></span>{% endif %}
+      {% if include.ttype == "advisory" %}<span class="glyphicon glyphicon-thumbs-up"></span>{% endif %}
+      {% if include.ttype == "failure" %}<span class="glyphicon glyphicon-fire"></span>{% endif %}
+      {{include.techtitle}}
+    </h5>
+  </div>
   <div class="panel-body">
     {% if include.techniques.techniques %}
       <ol>
@@ -11,7 +18,7 @@
     {% if include.techniques.situations %}
       {% for situation in include.techniques.situations %}
         <div class="panel panel-default">
-          <div class="panel-heading">{{situation.title}}</div>
+          <div class="panel-heading"><h6>{{situation.title}}</h6></div>
           <div class="panel-body">
             {% if (situation.techniques) %}
               {% if situation.techop == "and" %}

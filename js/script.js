@@ -234,7 +234,7 @@ jQuery(document).ready(function($) {
   function excolsc() {
     var hr = $('.sc-content hr');
     hr.hide(); // hide horizontal rule
-    hr.prev().append('<br><button type="button" aria-expanded="false" class="btn btn-default"><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show</span><span class="word-hide"><span class="glyphicon glyphicon-chevron-down"></span> Hide</span> full description</button>'); // Append button
+    hr.prev().append(' <button type="button" aria-expanded="false" class="btn btn-info btn-xs"><span class="word-show"><span class="glyphicon glyphicon-chevron-right" aria-label="Show full description"></span></span><span class="word-hide"><span aria-label="Hide full description" class="glyphicon glyphicon glyphicon-chevron-down"></span></span></button>'); // Append button
     hr.find('~ *').hide();
     hr.prev().find('button').on('click', function(event) {
       event.preventDefault();
@@ -321,6 +321,16 @@ jQuery(document).ready(function($) {
 
   $('#col_overview, #col_customize').on('hide.bs.collapse', function () {
     $('.mainrow').addClass($(this).attr('id'));
+  });
+
+  $('.techniques-button').on('change', 'input', function(event) {
+    event.preventDefault();
+    var target = $(event.target);
+    if(target.is(':checked')) {
+      $('#' + target.prop('name')).addClass('active');
+    } else {
+      $('#' + target.prop('name')).removeClass('active');
+    }
   });
 
   $( window ).resize(function() {

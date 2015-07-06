@@ -1,9 +1,9 @@
 {% assign g = g | plus: 1 %}
 {% assign s = 0 %}
 {% if guideline.principle == principle %}
-	<div class="guideline panel panel-primary">
+	<div class="guideline panel panel-primary panel-borderless">
 		<div class="panel-heading">
-			<h3 id="{{guideline.slug}}">{{ p }}.{{ g }} {{guideline.title}}</h3>
+			<h3 id="{{guideline.slug}}"><strong>{{ p }}.{{ g }}</strong> {{guideline.title}}</h3>
 			{{guideline.output}}
 		</div>
 		{% if guideline.techniques %}

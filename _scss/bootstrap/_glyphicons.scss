@@ -123,7 +123,7 @@
 // .glyphicon-remove-sign            { &:before { content: "\e083"; } }
 // .glyphicon-ok-sign                { &:before { content: "\e084"; } }
 // .glyphicon-question-sign          { &:before { content: "\e085"; } }
-// .glyphicon-info-sign              { &:before { content: "\e086"; } }
+.glyphicon-info-sign              { &:before { content: "\e086"; } }
 // .glyphicon-screenshot             { &:before { content: "\e087"; } }
 .glyphicon-remove-circle          { &:before { content: "\e088"; } }
 // .glyphicon-ok-circle              { &:before { content: "\e089"; } }
@@ -138,7 +138,7 @@
 // .glyphicon-exclamation-sign       { &:before { content: "\e101"; } }
 // .glyphicon-gift                   { &:before { content: "\e102"; } }
 // .glyphicon-leaf                   { &:before { content: "\e103"; } }
-// .glyphicon-fire                   { &:before { content: "\e104"; } }
+.glyphicon-fire                   { &:before { content: "\e104"; } }
 // .glyphicon-eye-open               { &:before { content: "\e105"; } }
 // .glyphicon-eye-close              { &:before { content: "\e106"; } }
 // .glyphicon-warning-sign           { &:before { content: "\e107"; } }
@@ -159,9 +159,9 @@
 // .glyphicon-bullhorn               { &:before { content: "\e122"; } }
 // .glyphicon-bell                   { &:before { content: "\e123"; } }
 // .glyphicon-certificate            { &:before { content: "\e124"; } }
-// .glyphicon-thumbs-up              { &:before { content: "\e125"; } }
+.glyphicon-thumbs-up              { &:before { content: "\e125"; } }
 // .glyphicon-thumbs-down            { &:before { content: "\e126"; } }
-// .glyphicon-hand-right             { &:before { content: "\e127"; } }
+.glyphicon-hand-right             { &:before { content: "\e127"; } }
 // .glyphicon-hand-left              { &:before { content: "\e128"; } }
 .glyphicon-hand-up                { &:before { content: "\e129"; } }
 // .glyphicon-hand-down              { &:before { content: "\e130"; } }
@@ -191,13 +191,13 @@
 // .glyphicon-sort-by-attributes     { &:before { content: "\e155"; } }
 // .glyphicon-sort-by-attributes-alt { &:before { content: "\e156"; } }
 // .glyphicon-unchecked              { &:before { content: "\e157"; } }
-// .glyphicon-expand                 { &:before { content: "\e158"; } }
-// .glyphicon-collapse-down          { &:before { content: "\e159"; } }
-// .glyphicon-collapse-up            { &:before { content: "\e160"; } }
+.glyphicon-expand                 { &:before { content: "\e158"; } }
+.glyphicon-collapse-down          { &:before { content: "\e159"; } }
+.glyphicon-collapse-up            { &:before { content: "\e160"; } }
 // .glyphicon-log-in                 { &:before { content: "\e161"; } }
 // .glyphicon-flash                  { &:before { content: "\e162"; } }
 // .glyphicon-log-out                { &:before { content: "\e163"; } }
-// .glyphicon-new-window             { &:before { content: "\e164"; } }
+.glyphicon-new-window             { &:before { content: "\e164"; } }
 // .glyphicon-record                 { &:before { content: "\e165"; } }
 .glyphicon-save                   { &:before { content: "\e166"; } }
 // .glyphicon-open                   { &:before { content: "\e167"; } }
