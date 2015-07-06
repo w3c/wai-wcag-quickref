@@ -12,7 +12,7 @@ layout: default
       <a href="#col_customize" data-toggle="tab" data-toggle="tab" aria-controls="col_customize"><span><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Filter</span></a>
     </li>
     <li role="presentation">
-      <button id="hidesidebars" aria-expanded="true" type="button" class="btn btn-default btn-sm"><span><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show</span><span class="word-hide"><span class="glyphicon glyphicon-chevron-left"></span> Hide</span></span></button>
+      <button id="hidesidebars" aria-expanded="true" type="button" class="btn btn-default btn-sm"><span><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show Sidebar</span><span class="word-hide"><span class="glyphicon glyphicon-chevron-left"></span> Hide</span></span></button>
     </li>
   </ul>
   <div>
@@ -30,16 +30,14 @@ layout: default
   			{% include guideline.html %}
   		{% endfor %}
   	{% endfor %}
-    <a href="#top" class="mainbacktotop"><span aria-hidden="true" class="glyphicon glyphicon-hand-up"></span> Back to top <span aria-hidden="true" class="glyphicon glyphicon-hand-up"></span></a>
   </main>
   <div>
-    <div class="tab-content fixedsticky">
+    <div class="tab-content fixedsticky" style="display:flex; flex-direction: column-reverse; justify-content: space-between">
       <aside role="tabpanel" class="tab-pane active" id="col_overview">
         {% include sidenav.html tags="false" heading="false" %}
-        <a href="#top" class="sr-only sr-only-focusable">Back to top</a>
       </aside>
       <aside role="tabpanel" class="tab-pane tags" id="col_customize">
-        <div class="fixedsticky" style="top:0;">
+        <div>
           <div>
             <!-- <header>
               <h6 id="customize_heading" class="h3 sidebar-heading">Customize</h6>
@@ -55,6 +53,7 @@ layout: default
           </div>
         </div>
       </aside>
+      <a href="#top" style="align-self: flex-end;"><span aria-hidden="true" class="glyphicon glyphicon-hand-up"></span> Back to top <span aria-hidden="true" class="glyphicon glyphicon-hand-up"></span></a>
     </div>
   </div>
 </div>
