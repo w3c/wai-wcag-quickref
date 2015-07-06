@@ -1,6 +1,6 @@
 {% if technique.short %}
   {% assign currenttechnique = site.data.techniques | where: "short", technique.short | first %}
-  {{ technique.prepend }} <a href="{{technique.short | append: '.html' | prepend: site.techniqueurl}}">{{technique.short}}: {{currenttechnique.title}}</a> {{ technique.append }}
+  {{ technique.prepend }} <a target="_blank" href="{{technique.short | append: '.html' | prepend: site.techniqueurl}}">{{technique.short}}: {{currenttechnique.title}} <span class="glyphicon glyphicon-new-window" aria-label="Opens new window/tab"></span></a> {{ technique.append }}
 {% elsif technique.future %}
   <span class="future">{{technique.future}}</span> (future link){% if technique.append %} <br> {{ technique.append }}{% endif %}
   {% if technique.techniques %}
@@ -11,7 +11,7 @@
             {{t.text}}
           {% else %}
           {% assign currenttechnique = site.data.techniques | where: "short", t | first %}
-          <a href="{{t | append: '.html' | prepend: site.techniqueurl}}">{{t}}: {{currenttechnique.title}}</a>
+          <a target="_blank" href="{{t | append: '.html' | prepend: site.techniqueurl}}">{{t}}: {{currenttechnique.title}} <span class="glyphicon glyphicon-new-window" aria-label="Opens new window/tab"></span></a>
           {% endif %}
         </li>
       {% endfor %}
@@ -27,7 +27,7 @@
             {{t.text}}
           {% else %}
           {% assign currenttechnique = site.data.techniques | where: "short", t | first %}
-          <a href="{{t | append: '.html' | prepend: site.techniqueurl}}">{{t}}: {{currenttechnique.title}}</a>
+          <a target="_blank" href="{{t | append: '.html' | prepend: site.techniqueurl}}">{{t}}: {{currenttechnique.title}} <span class="glyphicon glyphicon-new-window" aria-label="Opens new window/tab"></span></a>
           {% endif %}
         </li>
       {% endfor %}
@@ -42,7 +42,7 @@
   {% for t in technique.combined %}
     {% if t.short %}
       {% assign currenttechnique = site.data.techniques | where: "short", t.short | first %}
-      {{ t.prepend }} <a href="{{t.short | append: '.html' | prepend: site.techniqueurl}}">{{t.short}}: {{currenttechnique.title}}</a> {{ t.append }}
+      {{ t.prepend }} <a target="_blank" href="{{t.short | append: '.html' | prepend: site.techniqueurl}}">{{t.short}}: {{currenttechnique.title}} <span class="glyphicon glyphicon-new-window" aria-label="Opens new window/tab"></span></a> {{ t.append }}
       {% if forloop.rindex0 > 0 and !(forloop.rindex0 > 1 and hastechniques) %}
         <strong>AND</strong>
       {% endif%}
@@ -59,7 +59,7 @@
               {{t.text}}
             {% else %}
             {% assign currenttechnique = site.data.techniques | where: "short", t | first %}
-            <a href="{{t | append: '.html' | prepend: site.techniqueurl}}">{{t}}: {{currenttechnique.title}}</a>
+            <a target="_blank" href="{{t | append: '.html' | prepend: site.techniqueurl}}">{{t}}: {{currenttechnique.title}} <span class="glyphicon glyphicon-new-window" aria-label="Opens new window/tab"></span></a>
             {% endif %}
           </li>
         {% endfor %}
@@ -67,7 +67,7 @@
     {% else %}
       {% assign currenttechnique = site.data.techniques | where: "short", t | first %}
       <span class="{% include techniqueclass.html tech=t %}">
-      <a href="{{t | append: '.html' | prepend: site.techniqueurl}}">{{t}}: {{currenttechnique.title}}</a>
+      <a target="_blank" href="{{t | append: '.html' | prepend: site.techniqueurl}}">{{t}}: {{currenttechnique.title}} <span class="glyphicon glyphicon-new-window" aria-label="Opens new window/tab"></span></a>
       {% if forloop.rindex0 > 0 or !(forloop.rindex0 > 1 and hastechniques) %}
         <strong>AND</strong>
       {% endif%}
@@ -79,7 +79,7 @@
     {{ technique.sub.text }}
   {% else %}
     {% assign currenttechnique = site.data.techniques | where: "short", technique.sub | first %}
-    <a href="{{technique.sub | append: '.html' | prepend: site.techniqueurl}}">{{technique.sub}}: {{currenttechnique.title}}</a> {{ technique.append }}
+    <a target="_blank" href="{{technique.sub | append: '.html' | prepend: site.techniqueurl}}">{{technique.sub}}: {{currenttechnique.title}} <span class="glyphicon glyphicon-new-window" aria-label="Opens new window/tab"></span></a> {{ technique.append }}
   {% endif %}
   <ul>
     {% for t in technique.techniques %}
@@ -94,7 +94,7 @@
                 {{te.text}}
               {% else %}
               {% assign currenttechnique = site.data.techniques | where: "short", te | first %}
-              <a href="{{te | append: '.html' | prepend: site.techniqueurl}}">{{te}}: {{currenttechnique.title}}</a>
+              <a target="_blank" href="{{te | append: '.html' | prepend: site.techniqueurl}}">{{te}}: {{currenttechnique.title}} <span class="glyphicon glyphicon-new-window" aria-label="Opens new window/tab"></span></a>
               {% endif %}
             </li>
             {% endfor %}
@@ -102,12 +102,12 @@
           {% endif %}
         {% else %}
           {% assign currenttechnique = site.data.techniques | where: "short", t | first %}
-          <a href="{{t | append: '.html' | prepend: site.techniqueurl}}">{{t}}: {{currenttechnique.title}}</a>
+          <a target="_blank" href="{{t | append: '.html' | prepend: site.techniqueurl}}">{{t}}: {{currenttechnique.title}} <span class="glyphicon glyphicon-new-window" aria-label="Opens new window/tab"></span></a>
         {% endif %}
       </li>
     {% endfor %}
   </ul>
 {% else %}
   {% assign currenttechnique = site.data.techniques | where: "short", technique | first %}
-  <a href="{{technique | append: '.html' | prepend: site.techniqueurl}}">{{technique}}: {{currenttechnique.title}}</a>
+  <a target="_blank" href="{{technique | append: '.html' | prepend: site.techniqueurl}}">{{technique}}: {{currenttechnique.title}} <span class="glyphicon glyphicon-new-window" aria-label="Opens new window/tab"></span></a>
 {% endif %}
