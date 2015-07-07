@@ -1,6 +1,6 @@
-<div class="panel panel-default">
-<button data-target="#tags" type="button" data-toggle="collapse" aria-expanded="{% unless include.show %}false{% else %}true{% endunless %}" aria-controls="tags" class="panel-heading"><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show</span><span class="word-hide"><span class="glyphicon glyphicon-chevron-down"></span> Hide</span> Tags</button>
-<div {% unless include.show %}hidden{% endunless %} class="panel-body {% if include.show %}collapsed in{% endif %}"  id="tags">
+<div class="sbbox sbbox-default">
+<div class="sbbox-heading">Tags</div>
+<div {% unless include.show %}hidden{% endunless %} class="sbbox-body {% if include.show %}collapsed in{% endif %}"  id="tags">
 {% for sc in site.successcriteria %}
   {% for tag in sc.tags %}
     {% assign taglist = taglist | append: '||' | append: tag %}

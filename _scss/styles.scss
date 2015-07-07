@@ -26,6 +26,10 @@
   display: block;
 }
 
+[disabled] + span{
+  color:#777;
+}
+
 body {
   position: relative;
   padding-bottom: 2em;
@@ -164,8 +168,11 @@ h1 {
 .sc-content {
   display:flex;
   justify-content: space-between;
-  a {
-    border-bottom: 1px solid #666;
+  .sc-text a {
+    border:none;
+    text-decoration: none;
+    color:inherit;
+    pointer-events:none;
   }
   .understanding {
     padding-left: 15px;
@@ -535,6 +542,29 @@ svg.icon {
 
 #p6cust {
   padding: 10px;
+}
+
+.sbbox {
+  color: #333;
+  background-color: #fff;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.sbbox-heading {
+  font-family: $font-family-serif;
+  font-weight: bold;
+  border-bottom: 1px solid #eee;
+}
+
+.sbbox-body {
+  margin: 10px 0 0;
+  :first-child {
+    margin-top: 0;
+  }
+  :last-child {
+    margin-bottom: 0;
+  }
 }
 
 .navrow {

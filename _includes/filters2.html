@@ -1,9 +1,9 @@
 <section id="filters" aria-label="Filter by Techniques or Level">
   {% assign filters = site.filters | sort: 'sort' %}
   {% for filter in filters %}
-    <div class="panel panel-default" id="{{filter.title | prepend: 'filter-' | slugify}}">
-      <button data-target="#{{filter.title | prepend: 'filter-' | append: '-content' | slugify}}" type="button" data-toggle="collapse" aria-expanded="true" aria-controls="{{filter.title | prepend: 'filter-' | append: '-content' | slugify}}" class="panel-heading collapsed"><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show</span><span class="word-hide"><span class="glyphicon glyphicon-chevron-down"></span> Hide</span> {{ filter.title }}</button>
-      <div id="{{filter.title | prepend: 'filter-' | append: '-content' | slugify}}" class="panel-body form-group">
+    <div class="sbbox sbbox-default" id="{{filter.title | prepend: 'filter-' | slugify}}">
+      <div class="sbbox-heading"> {{ filter.title }} </div>
+      <div id="{{filter.title | prepend: 'filter-' | append: '-content' | slugify}}" class="sbbox-body">
       <p><small>{{filter.output}}</small></p>
       {% for f in filter.filters %}
         <div class="checkbox">
