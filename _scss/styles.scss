@@ -60,16 +60,14 @@ h1 {
 
 .sc-wrapper {
   border-top: 1px solid $brand-primary;
-  padding: 20px 0;
+  padding: 20px 0 5px;
   clear: both;
   .panel .panel:last-child {
     margin-bottom: 0;
   }
-  .row + .row {
-
+  header {
+    margin-bottom: 10px;
   }
-  .collapse>div {
-    padding-top: .5em;
   footer {
     text-align: right;
     font-size: (12/14) * 1em;
@@ -111,8 +109,11 @@ h1 {
     }
     h4 {
       span {
-        padding: 3px 10px;
+        padding: 3px;
         background-color: #f3f3f3;
+        &:before, &:after {
+          content: " ";
+        }
       }
     }
     strong, [class^=level] {
@@ -172,7 +173,13 @@ h1 {
 }
 
 .sc-content, .techniques-button, .techniques-button + div {
-  padding-left: 4.5em;
+  padding-left: 63px;
+}
+
+.panel-body-guideline .techniques-button {
+  &, + div {
+    padding-left: 0;
+  }
 }
 
 .techniques-button {
@@ -185,13 +192,20 @@ h1 {
   }
 }
 
+.tbox {
+  margin-top: 1em;
+}
+
 .tagged {
   .sc-wrapper:not(.current) {
-    .sc-content, .btn-techniques {
+    padding: 5px;
+    border: none;
+    .sc-content, .btn-techniques, .permalink, footer {
       display:none;
     }
     header {
       opacity: .5;
+      margin-bottom: 0;
       h4, .h4 {
         font-size: 1em;
         margin: 0;
