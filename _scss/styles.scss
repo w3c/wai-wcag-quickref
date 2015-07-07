@@ -41,6 +41,14 @@ mark.current {
   border: 1px dashed #333;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-serif;
+  font-feature-settings: "lnum", "tnum";
+  strong:first-child {
+  font-weight: inherit;
+  }
+}
+
 h1 {
   line-height: 1;
   small {
@@ -94,8 +102,6 @@ h1 {
       margin: 0;
     }
     h4 {
-      font-family: $font-family-serif;
-      font-feature-settings: "lnum", "pnum";
       span {
         padding: 3px 10px;
         background-color: #f3f3f3;
@@ -108,8 +114,6 @@ h1 {
       font-weight: normal;
     }
     strong {
-      //font-family: $font-family-base;
-      font-weight: bold;
       border-radius: 3px 0 0 3px;
       min-width: 3em;
       text-align: right;
@@ -291,24 +295,16 @@ h1 {
 
 .panel-heading {
   h3 {
-    font-family: $font-family-serif;
-    font-feature-settings: "lnum", "pnum";
     margin-top: 0;
     font-weight: normal;
-    strong {
-      font-weight: bold;
-      // font-family: $font-family-base;
-    }
   }
   h5 {
     margin:0;
-    font-family: $font-family-serif;
     font-weight: bold;
     font-size: 1.25em;
   }
   h6 {
     margin:0;
-    font-family: $font-family-serif;
     font-weight: normal;
     font-size: 1em;
   }
