@@ -65,6 +65,11 @@ h1 {
   }
 }
 
+.guideline {
+  box-shadow: none;
+  margin-bottom: 0;
+}
+
 .guideline section:first-of-type .sc-wrapper:first-child {
   border-top: none;
 }
@@ -160,9 +165,6 @@ h1 {
 
 .techniques-button {
   display: flex;
-  :last-child, [aria-expanded="false"] {
-    flex: 999;
-  }
   .btn {
     text-align: left;
   }
