@@ -313,6 +313,11 @@ jQuery(document).ready(function($) {
         scrollto($(thetarget));
       });
 
+      $('.toplink').on('click', function(e) {
+        var thetarget = $(this).attr('href');
+        scrollto($(thetarget));
+      });
+
   }
 
   $('#col_overview, #col_customize').on('show.bs.collapse', function () {
