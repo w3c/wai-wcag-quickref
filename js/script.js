@@ -84,7 +84,9 @@ jQuery(document).ready(function($) {
   }
 
   $('#filters').on('change', function(e) {
-    $('.filter-status .icon').addClass('loading');
+    $('.filter-status').addClass('loading');
+    $('.filter-status .loaded').hide();
+    $('.filter-status .loading').show();
     applyFilters();
   });
 
@@ -253,7 +255,9 @@ jQuery(document).ready(function($) {
 
   var tagButtons = function () {
     $('#tags').on('click', function(e) {
-      $('.filter-status .icon').addClass('loading');
+      $('.filter-status').addClass('loading');
+      $('.filter-status .loaded').hide();
+      $('.filter-status .loading').show();
       var button = $(e.target),
           tag = button.attr('data-tag');
       if (button.hasClass('btn-primary')) {
@@ -277,8 +281,11 @@ jQuery(document).ready(function($) {
     $('.navbar-scroll').css('width', $('.navbar-scroll').parent().width()).fixedsticky();
     $('.fixedsticky').fixedsticky();
     $('aside.tags>div').css('width', $('aside.tags').width()).fixedsticky();
-    $('.filter-status .icon').on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(event) {
-      $('.filter-status .icon').removeClass('loading');
+    $('.filter-status').on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(event) {
+      console.log('Transition end');
+      $(this).removeClass('loading');
+      $('.filter-status .loaded').show();
+      $('.filter-status .loading').hide();
     });
     if ($( window ).width() > 896) {
       $('html').addClass('large');

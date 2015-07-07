@@ -817,7 +817,6 @@ svg.icon {
 }
 
 .filter-status {
-  background-color: #fff;
   z-index: 9999;
   display: flex;
   align-items: center;
@@ -825,7 +824,15 @@ svg.icon {
   border: 1px solid $brand-primary;
   padding: 5px;
   box-shadow: 0 0 20px $brand-primary;
-  .icon {
+  background: #fff linear-gradient(to right, yellow, yellow 50%, white 50%, white);
+  background-size: 200% 100%;
+  background-position: -100% 0;
+  &.loading {
+    animation-name: backgroundanim;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+  }
+  /*.icon {
     font-size: 1.5em;
     margin-right: 15px;
     color: #fff;
@@ -861,7 +868,7 @@ svg.icon {
         display: none;
       }
     }
-  }
+  }*/
 }
 
 @keyframes loading {
@@ -887,10 +894,13 @@ svg.icon {
 
 @keyframes backgroundanim {
   from {
+    background-position: 100% 0;
+  }
+  90% {
     background-position: 0 0;
   }
   to {
-    background-position: 0 100%;
+    background-position: 0 0;
   }
 }
 
