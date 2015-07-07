@@ -25,26 +25,20 @@ layout: default
   	{% for principle in site.data.principles %}
   		{% assign p = p | plus: 1 %}
   		{% assign g = 0 %}
-  		<h2 id="principle{{ p }}">{{ p }}. {{principle}}</h2>
+  		<h2 id="principle{{ p }}"><strong>{{ p }}</strong> {{principle}}</h2>
   		{% for guideline in site.guidelines %}
   			{% include guideline.html %}
   		{% endfor %}
   	{% endfor %}
   </main>
   <div>
-    <div class="tab-content fixedsticky" style="display:flex; flex-direction: column-reverse; justify-content: space-between">
+    <div class="tab-content fixedsticky">
       <aside role="tabpanel" class="tab-pane active" id="col_overview">
         {% include sidenav.html tags="false" heading="false" %}
       </aside>
       <aside role="tabpanel" class="tab-pane tags" id="col_customize">
         <div>
           <div>
-            <!-- <header>
-              <h6 id="customize_heading" class="h3 sidebar-heading">Customize</h6>
-              <span>
-                <button class="btn btn-default hide-sb"><span class="glyphicon glyphicon-remove-circle" aria-label="Hide customize sidebar"></span> <span class="glyphicon glyphicon-wrench" hidden aria-label="Show customize sidebar"></span> <span class="text">Custo<span hidden>-<br></span>mize</span></button>
-              </span>
-            </header> -->
             <div class="sidebar-content">
               {% include tags.html show="true" %}
 
@@ -53,7 +47,6 @@ layout: default
           </div>
         </div>
       </aside>
-      <a href="#top" style="align-self: flex-end;"><span aria-hidden="true" class="glyphicon glyphicon-hand-up"></span> Back to top <span aria-hidden="true" class="glyphicon glyphicon-hand-up"></span></a>
     </div>
   </div>
 </div>
