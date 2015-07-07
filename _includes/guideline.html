@@ -6,43 +6,39 @@
 			<h3 id="{{guideline.slug}}"><strong>{{ p }}.{{ g }}</strong> {{guideline.title}}</h3>
 			{{guideline.output}}
 		</div>
-		{% if guideline.techniques %}
+			{% if guideline.techniques %}
 			<div class="panel-body panel-body-guideline">
-				<button data-target="#techniques-{{ p }}{{ g }}" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="techniques-{{ p }}{{ g }}" class="btn btn-default btn-techniques"><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show</span><span class="word-hide"><span class="glyphicon glyphicon-chevron-down"></span> Hide</span> techniques for Guideline {{ p }}.{{ g }}</button>
-				<div id="techniques-{{ p }}{{ g }}" class="guideline-techniques collapse" aria-expanded="false">
-					{% if guideline.techniques.sufficient %}
-						<h4>Sufficient Techniques</h4>
-						<ul>
-						{% for technique in guideline.techniques.sufficient %}
-							<li class="{% include techniqueclass.html %}">
-		            {% include techniquelink.html %}
-		          </li>
-						{% endfor %}
-						</ul>
-					{% endif %}
-					{% if guideline.techniques.advisory %}
-						<h4>Advisory Techniques</h4>
-						<ul>
-						{% for technique in guideline.techniques.advisory %}
-							<li class="{% include techniqueclass.html %}">
-		            {% include techniquelink.html %}
-		          </li>
-						{% endfor %}
-						</ul>
-					{% endif %}
-					{% if guideline.techniques.failures %}
-						<h4>Failure Techniques</h4>
-						<ul>
-						{% for technique in guideline.techniques.failures %}
-							<li class="{% include techniqueclass.html %}">
-		            {% include techniquelink.html %}
-		          </li>
-						{% endfor %}
-						</ul>
-					{% endif %}
-				</div>
-			</div>
-			{% endif%}
+		    <div class="techniques-button btn-group" role="group">
+		      <button data-target="#techniques-{{ p }}{{ g }}" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="techniques-{{ p }}{{ g }}" class="btn btn-info btn-techniques"><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show</span><span class="word-hide"><span class="glyphicon glyphicon-chevron-down"></span> Hide</span> techniques for {{ p }}.{{ g }}</button>
+		      <label class="btn btn-default"><input type="checkbox" name="sc-{{ p }}{{ g }}-sufficient" {% if guideline.techniques.sufficient %}checked{% else %}disabled{% endif %}> Sufficient</label>
+		      <label class="btn btn-default"><input type="checkbox" name="sc-{{ p }}{{ g }}-advisory" {% if guideline.techniques.advisory %}checked{% else %}disabled{% endif %}> Advisory</label>
+		      <label class="btn btn-default"><input type="checkbox" name="sc-{{ p }}{{ g }}-failures" {% if guideline.techniques.failures %}checked{% else %}disabled{% endif %}> Failures</label>
+		    </div>
+			  <div class="collapse" id="techniques-{{ p }}{{ g }}">
+			    <div>
+			      <div class="tab-wrap">
+			        <div class="tab-content">
+			          {% if guideline.techniques.sufficient %}
+			            <div role="tabpanel" class="tbox tbox-sufficient tab-pane active" id="sc-{{ p }}{{ g }}-sufficient">
+			              {% include techlist.html techtitle="Sufficient Techniques" techniques=guideline.techniques.sufficient ttype="sufficient" %}
+			            </div>
+			          {% endif %}
+			          {% if guideline.techniques.advisory %}
+			            <div role="tabpanel" class="tbox tbox-advisory tab-pane active" id="sc-{{ p }}{{ g }}-advisory">
+			              {% include techlist.html techtitle="Advisory Techniques" techniques=guideline.techniques.advisory ttype="advisory" %}
+			            </div>
+			          {% endif %}
+			          {% if guideline.techniques.failures %}
+			            <div role="tabpanel" class="tbox tbox-failure tab-pane active" id="sc-{{ p }}{{ g }}-failures">
+			              {% include techlist.html techtitle="Failures" techniques=guideline.techniques.failures ttype="failure" %}
+			            </div>
+			          {% endif %}
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			  </div>
+			{% endif %}
 			{% if guideline.successcriteria %}
 				{% if guideline.successcriteria.levelA %}
 					{% include level.html level="A" items=guideline.successcriteria.levelA %}

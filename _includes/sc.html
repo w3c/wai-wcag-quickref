@@ -24,17 +24,17 @@
       <div class="tab-wrap">
         <div class="tab-content">
           {% if currentsc.techniques.sufficient %}
-            <div role="tabpanel" class="sufficient tab-pane fade in active" id="sc-{{ p }}{{ g }}{{ s }}-sufficient">
+            <div role="tabpanel" class="tbox tbox-sufficient tab-pane active" id="sc-{{ p }}{{ g }}{{ s }}-sufficient">
               {% include techlist.html techtitle="Sufficient Techniques" techniques=currentsc.techniques.sufficient ttype="sufficient" %}
             </div>
           {% endif %}
           {% if currentsc.techniques.advisory %}
-            <div role="tabpanel" class="advisory tab-pane fade in active" id="sc-{{ p }}{{ g }}{{ s }}-advisory">
+            <div role="tabpanel" class="tbox tbox-advisory tab-pane active" id="sc-{{ p }}{{ g }}{{ s }}-advisory">
               {% include techlist.html techtitle="Advisory Techniques" techniques=currentsc.techniques.advisory ttype="advisory" %}
             </div>
           {% endif %}
           {% if currentsc.techniques.failures %}
-            <div role="tabpanel" class="failure tab-pane fade in active" id="sc-{{ p }}{{ g }}{{ s }}-failures">
+            <div role="tabpanel" class="tbox tbox-failure tab-pane active" id="sc-{{ p }}{{ g }}{{ s }}-failures">
               {% include techlist.html techtitle="Failures" techniques=currentsc.techniques.failures ttype="failure" %}
             </div>
           {% endif %}
@@ -43,4 +43,7 @@
     </div>
   </div>
 {% endif%}
+  <footer>
+    <a href="#top" class="toplink">Back to top</a>
+  </footer>
 </article>
