@@ -281,12 +281,6 @@ jQuery(document).ready(function($) {
     $('.navbar-scroll').css('width', $('.navbar-scroll').parent().width()).fixedsticky();
     $('.fixedsticky').fixedsticky();
     $('aside.tags>div').css('width', $('aside.tags').width()).fixedsticky();
-    $('.filter-status').on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(event) {
-      console.log('Transition end');
-      $(this).removeClass('loading');
-      $('.filter-status .loaded').show();
-      $('.filter-status .loading').hide();
-    });
     if ($( window ).width() > 896) {
       $('html').addClass('large');
       $('.tab-nav-wrap .nav-pills').addClass('nav-stacked');
@@ -323,6 +317,12 @@ jQuery(document).ready(function($) {
       $('.toplink').on('click', function(e) {
         var thetarget = $(this).attr('href');
         scrollto($(thetarget));
+      });
+
+      $('.filter-status').one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(event) {
+        $(this).removeClass('loading');
+        $('.filter-status .loaded').show();
+        $('.filter-status .loading').hide();
       });
 
   }
