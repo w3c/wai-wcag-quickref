@@ -259,20 +259,25 @@ jQuery(document).ready(function($) {
         $('.filter-status').addClass('loading');
         $('.filter-status .loaded').hide();
         $('.filter-status .loading').show();
-        var button = $(e.target),
-            tag = button.attr('data-tag');
+        $('.sc-wrapper.current').removeClass('current');
+        var button = $(e.target), tags = new Array();;
         if (button.hasClass('btn-primary')) {
-          $('.sc-wrapper.current').removeClass('current');
-          $('#tagged').text('');
-          $('body').removeClass('tagged');
           button.removeClass('btn-primary').addClass('btn-default').removeAttr('aria-selected');
         } else {
-          $('.sc-wrapper.current').removeClass('current');
-          $('.sc-wrapper[data-tags~="' + tag + '"]').addClass('current');
-          $('#tagged').text('Only displaying content for the tag »'+tag+'«');
-          $('body').addClass('tagged');
-          $('#tags button').removeClass('btn-primary').addClass('btn-default').removeAttr('aria-selected');
           button.removeClass('btn-default').addClass('btn-primary').attr('aria-selected','true');
+        }
+        var pressed = $('#tags .btn-primary');
+        if (pressed.length>0) {
+          $('#tags .btn-primary').each(function(index, el) {
+            tags.push($(el).attr('data-tag'));
+          });
+          var selector = '.sc-wrapper[data-tags~="' + tags.join('"], .sc-wrapper[data-tags~="') + '"]';
+          $('body').addClass('tagged');
+          $(selector).addClass('current');
+          $('#tagged').text('Tags: '+tags.join(', '));
+        } else {
+          $('#tagged').text('');
+          $('body').removeClass('tagged');
         }
       }
     });
