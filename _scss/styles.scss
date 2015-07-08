@@ -221,6 +221,9 @@ header[role=banner] {
 .sc-content {
   display:flex;
   justify-content: space-between;
+  .sc-text {
+    flex:1;
+  }
   .sc-text a {
     border:none;
     text-decoration: none;
