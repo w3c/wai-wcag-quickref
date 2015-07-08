@@ -203,7 +203,7 @@ jQuery(document).ready(function($) {
   });
 
   $('.btn-only').on('click', function(){
-    $(this).parents('.form-group').find("input[type=checkbox]").prop('checked', false);
+    $(this).parents('.sbbox-body').find("input[type=checkbox]").prop('checked', false);
     $(this).parent().find("input[type=checkbox]").prop('checked', true).trigger( "change" );
   });
 
