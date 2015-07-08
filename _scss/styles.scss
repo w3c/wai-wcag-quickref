@@ -62,6 +62,59 @@ h1 {
   }
 }
 
+header[role=banner] {
+  font-size: (18/14) * 1em;
+  margin-bottom: 1em;
+  border-top: 5px solid #930;
+  div {
+    margin: 0 auto;
+    @include mq(30em) {
+      float: right;
+    }
+  }
+  img {
+    display:inline-block;
+    vertical-align: middle;
+  }
+  a {
+      text-decoration: none;
+      display: inline-block;
+      &:hover, &:focus {text-decoration: underline;}
+  }
+}
+
+.subheading {
+  display: block;
+  font-family: $font-family-sans-serif;
+  font-size: 0.55em;
+  margin: 0.25em;
+}
+
+.page-title {
+  font-size: 1.75em;
+  font-family: $font-family-serif;
+  margin-bottom: 1em;
+  line-height: 1;
+  padding: .25em 0 0;
+  float:none !important;
+  .subheading {
+    padding: .25em 0 0;
+    display:block;
+    font-size: .5em;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+    &:hover, &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+
+.panel-status {
+  margin-bottom: 0;
+}
+
 .sc-wrapper {
   border-top: 1px solid $brand-primary;
   padding: 20px 0 5px;
