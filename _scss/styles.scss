@@ -664,36 +664,41 @@ svg.icon {
     }
   }
   &.prototype-8, &.prototype-9 {
-      > div {
-        flex:6;
-      }
-      .buttons {
-        flex:2;
-      }
+    &.fixedsticky-on {
+      width:100%;
     }
+    > div {
+      flex:6;
+    }
+    .buttons {
+      flex:2;
+    }
+  }
 }
 
 .prototype-8 {
   &.navrow {
     background-color: #fff;
+    display:flex;
+    align-items: flex-end;
   }
   .buttons {
-    display:flex;
-    flex-direction: row;
-    align-items: flex-end;
     border-bottom-color:#555;
     &.closed {
       border-bottom-color: transparent;
       padding-left: 15px;
     }
     li {
+      margin-bottom: -2px;
+      border-bottom: 1px solid #EEEEEE;
+      margin-left: 4px;
       a {
         background-color: #fff;
         background: linear-gradient(#f3f3f3, #f3f3f3 3px, #fff 3px, #fff);
         color: #555;
         border: 1px solid #555;
         display:block;
-        margin-right: 4px;
+        margin:0;
         border-radius: 5px 5px 0 0;
         padding-bottom: 7px;
         padding-top: 7px;
@@ -709,15 +714,18 @@ svg.icon {
       &:first-child {
         padding-left: 6px;
       }
-      &:last-child {
-        align-self: center;
-        flex-grow:1;
+      &:first-child {
+        float: right;
+        //align-self: center;
+        // flex-grow:1;
         text-align: right;
         padding-left:12px;
       }
-      &.closed:last-child {
+      &.closed:first-child {
+        float: none;
         text-align: left;
-        font-weight: bold !important;
+        .btn {font-weight: bold !important;}
+        padding-left: 0;
       }
     }
   }

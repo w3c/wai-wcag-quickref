@@ -343,10 +343,10 @@ jQuery(document).ready(function($) {
 
         $('#hidesidebars').on('click', function () {
           if ($(this).is('[aria-expanded=true]')) {
-            $('.mainrow>div, .navrow .buttons li:first-child, .navrow .buttons li:first-child + li').hide();
+            $('.mainrow>div, .navrow .buttons li:nth-child(2), .navrow .buttons li:nth-child(3)').hide();
             $(this).attr('aria-expanded', 'false').parent().addClass('closed').parent().addClass('closed');
           } else {
-            $('.mainrow>div, .navrow .buttons li:first-child, .navrow .buttons li:first-child + li').show();
+            $('.mainrow>div, .navrow .buttons li:nth-child(2), .navrow .buttons li:nth-child(3)').show();
             $(this).attr('aria-expanded', 'true').parent().removeClass('closed').parent().removeClass('closed');
           }
 

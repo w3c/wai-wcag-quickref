@@ -4,15 +4,15 @@ layout: default
 {% include header.html %}
 <div class="navrow fixedsticky prototype-8" style="top:0;">
   <ul class="nav nav-tabs buttons">
+    <li role="presentation">
+      <button id="hidesidebars" aria-expanded="true" type="button" class="btn btn-default btn-sm"><span><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show Sidebar</span><span class="word-hide"><span class="glyphicon glyphicon-chevron-left"></span> Hide</span></span></button>
+    </li>
     <li role="presentation" class="active">
       <!-- <button class="h4"><span>Overview</span></button> -->
       <a href="#col_overview" data-toggle="tab" data-toggle="tab" aria-controls="col_overview"><span><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> Contents</span></a>
     </li>
     <li role="presentation">
       <a href="#col_customize" data-toggle="tab" data-toggle="tab" aria-controls="col_customize"><span><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Filter</span></a>
-    </li>
-    <li role="presentation">
-      <button id="hidesidebars" aria-expanded="true" type="button" class="btn btn-default btn-sm"><span><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show Sidebar</span><span class="word-hide"><span class="glyphicon glyphicon-chevron-left"></span> Hide</span></span></button>
     </li>
   </ul>
   <div>
