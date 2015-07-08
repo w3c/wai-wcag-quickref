@@ -882,7 +882,7 @@ svg.icon {
   background-position: -100% 0;
   &.loading {
     animation-name: backgroundanim;
-    animation-duration: 1s;
+    animation-duration: .5s;
     animation-iteration-count: 1;
   }
   /*.icon {
@@ -949,7 +949,7 @@ svg.icon {
   from {
     background-position: 100% 0;
   }
-  90% {
+  70% {
     background-position: 0 0;
   }
   to {
@@ -1050,13 +1050,6 @@ button.panel-heading {
   width: 100%;
   border: none;
   text-align: left;
-}
-
-#tagged {
-  display: none;
-  .tagged & {
-    display: block;
-  }
 }
 
 .glyphicon.glyphicon-new-window {

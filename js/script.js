@@ -65,11 +65,8 @@ jQuery(document).ready(function($) {
     updateuri(uri);
 
     if (o.length == 0) {
-      $('#filtered').html('<strong>No filters set.</strong>');
       $('#clearall').hide();
     } else {
-      o = ' <strong>Techniques/Levels filtered out:</strong> ' + o.join(', ');
-      $('#filtered').html(o);
       $('#clearall').show();
       var val = $('#exampleSearch').val();
       if (val.length > 0) {
@@ -81,6 +78,7 @@ jQuery(document).ready(function($) {
         $('main').removeHighlight();
       }
     }
+    statustext();
   }
 
   $('#filters').on('change', function(e) {
@@ -249,9 +247,47 @@ jQuery(document).ready(function($) {
           }
       }).parent().find('~ *:not(hr)').toggle();
 
-    });;
+    });
   }
   excolsc();
+
+  var statustext = function(){
+    var tags = new Array(),
+        sctext = "all success criteria",
+        sctext1 = "";
+        sctext2 = ""
+        techtext = "all techniques";
+    var pressed = $('#tags .btn-primary');
+    if (pressed.length>0) {
+      pressed.each(function(index, el) {
+        tags.push($(el).attr('data-tag'));
+      });
+      sctext1 = ' tagged with '+tags.join(', ');
+    }
+    var levels = new Array();
+    var selected = $('#filter-levels input:checked'),
+        all = $('#filter-levels input');
+    if (selected.length<all.length) {
+      selected.each(function(index, el) {
+        levels.push($(el).attr('value').toUpperCase());
+      });
+      sctext2 = ' for levels '+levels.join(', ');
+    };
+    if ((pressed.length>0) || (selected.length<all.length)) {
+      sctext = 'success criteria ' + sctext1 + sctext2;
+    };
+    var techniques = new Array();
+    var selectedtechniques = $('#filter-techniques input:checked'),
+        alltechniques = $('#filter-techniques input');
+    if (selectedtechniques.length<alltechniques.length) {
+      selectedtechniques.each(function(index, el) {
+        techniques.push($(el).parent().text());
+      });
+      techtext = ' techniques for the following technologies: '+techniques.join(', ');
+    };
+    $('#status .sc').html(sctext);
+    $('#status .tech').html(techtext);
+  };
 
   var tagButtons = function () {
     $('#tags').on('click', function(e) {
@@ -260,7 +296,7 @@ jQuery(document).ready(function($) {
         $('.filter-status .loaded').hide();
         $('.filter-status .loading').show();
         $('.sc-wrapper.current').removeClass('current');
-        var button = $(e.target), tags = new Array();;
+        var button = $(e.target), tags = new Array();
         if (button.hasClass('btn-primary')) {
           button.removeClass('btn-primary').addClass('btn-default').removeAttr('aria-selected');
         } else {
@@ -274,11 +310,12 @@ jQuery(document).ready(function($) {
           var selector = '.sc-wrapper[data-tags~="' + tags.join('"], .sc-wrapper[data-tags~="') + '"]';
           $('body').addClass('tagged');
           $(selector).addClass('current');
-          $('#tagged').text('Tags: '+tags.join(', '));
+          //$('#status .sc').html('<strong>Tags applied:</strong> '+tags.join(', '));
         } else {
-          $('#tagged').text('');
+          //$('#status .sc').html('No tags applied.');
           $('body').removeClass('tagged');
         }
+        statustext();
       }
     });
   };
