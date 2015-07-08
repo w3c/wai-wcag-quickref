@@ -1,5 +1,5 @@
 ---
-title: "Techniques"
+title: "Technologies"
 sort: 2
 short: tech
 type: checkbox
