@@ -1,5 +1,17 @@
 jQuery(document).ready(function($) {
 
+  function array2prose(array, andor) {
+    if (array.length < 3) {
+      return array.join(' '+andor+' ');
+    } else {
+      var o = [];
+      for (var i = array.length - 2; i >= 0; i--) {
+        o[i] = $.trim(array[i]);
+      };
+      return o.join(', ') + ', ' + andor + ' ' + $.trim(array[array.length - 1]);
+    }
+  }
+
   function updateuri(uri) {
     uri.fragment("");
     history.pushState(null, null, uri);
@@ -63,6 +75,7 @@ jQuery(document).ready(function($) {
     $(selshow.join(',')).show();
     $(selhide.join(',')).hide();
     updateuri(uri);
+    statustext();
 
     if (o.length == 0) {
       $('#clearall').hide();
@@ -78,7 +91,6 @@ jQuery(document).ready(function($) {
         $('main').removeHighlight();
       }
     }
-    statustext();
   }
 
   $('#filters').on('change', function(e) {
@@ -262,7 +274,7 @@ jQuery(document).ready(function($) {
       pressed.each(function(index, el) {
         tags.push($(el).attr('data-tag'));
       });
-      sctext1 = ' tagged with '+tags.join(', ');
+      sctext1 = ' tagged with '+ array2prose(tags, 'or');
     }
     var levels = new Array();
     var selected = $('#filter-levels input:checked'),
@@ -271,19 +283,21 @@ jQuery(document).ready(function($) {
       selected.each(function(index, el) {
         levels.push($(el).attr('value').toUpperCase());
       });
-      sctext2 = ' for levels '+levels.join(', ');
+      sctext2 = ' for levels '+array2prose(levels, 'and');
     };
     if ((pressed.length>0) || (selected.length<all.length)) {
       sctext = 'success criteria ' + sctext1 + sctext2;
     };
-    var techniques = new Array();
-    var selectedtechniques = $('#filter-techniques input:checked'),
-        alltechniques = $('#filter-techniques input');
-    if (selectedtechniques.length<alltechniques.length) {
-      selectedtechniques.each(function(index, el) {
-        techniques.push($(el).parent().text());
+    var technologies = new Array();
+    var selectedtechnologies = $('#filter-technologies input:checked'),
+        alltechnologies = $('#filter-technologies input');
+    console.log(selectedtechnologies);
+    console.log(alltechnologies);
+    if (selectedtechnologies.length<alltechnologies.length) {
+      selectedtechnologies.each(function(index, el) {
+        technologies.push($(el).parent().text());
       });
-      techtext = ' techniques for the following technologies: '+techniques.join(', ');
+      techtext = ' techniques for the following technologies: '+array2prose(technologies, 'and');
     };
     $('#status .sc').html(sctext);
     $('#status .tech').html(techtext);
