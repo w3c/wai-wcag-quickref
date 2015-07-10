@@ -3,6 +3,11 @@
 @import "helper";
 @import "sharebox";
 
+$small:  25em; //* 400px */
+$medium: 43em; //* 700px */
+$big:    56em; //* 900px */
+$large:  81em; //* 1300px */
+
 .fixedsticky {
   position: -webkit-sticky;
   position: -moz-sticky;
@@ -68,7 +73,7 @@ header[role=banner] {
   border-top: 5px solid #930;
   div {
     margin: 0 auto;
-    @include mq(30em) {
+    @include mq($small) {
       float: right;
     }
   }
@@ -467,7 +472,7 @@ svg.icon {
   display: none;
 }
 /*
-@include mq(30em) {
+@include mq($small) {
   .mainrow {
     display:flex;
     flex-wrap: wrap;
@@ -491,7 +496,7 @@ svg.icon {
   }
 }
 */
-@include mq(30em) {
+@include mq($small) {
   .mainrow {
     display:flex;
     &.threecols {
@@ -827,7 +832,7 @@ svg.icon {
 // }
 
 // .filtering {
-//   @include mq(30em) {
+//   @include mq($small) {
 //     display:flex;
 //     margin: 5px;
 //     border-radius: 5px;
@@ -893,7 +898,7 @@ svg.icon {
   background-position: -100% 0;
   &.loading {
     animation-name: backgroundanim;
-    animation-duration: .5s;
+    animation-duration: 1s;
     animation-iteration-count: 1;
   }
   /*.icon {
@@ -984,10 +989,10 @@ svg.icon {
 
 .container-fluid {
   padding: 0;
-  /*@include mq(30em) {
+  /*@include mq($small) {
     padding: 0 4px;
   }
-  @include mq(56em) {
+  @include mq($big) {
     padding: 0 8px;
   }*/
 }
@@ -1065,6 +1070,19 @@ button.panel-heading {
 
 .glyphicon.glyphicon-new-window {
   color: #777;
+}
+
+.filter-status-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  #status {
+    flex:999;
+  }
+  button {
+    flex:1;
+    align-self: flex-end;
+  }
 }
 
 /*.sc-content {
