@@ -616,6 +616,16 @@ svg.icon {
   font-family: $font-family-serif;
   font-weight: bold;
   border-bottom: 1px solid #eee;
+  display:flex;
+  align-items: baseline;
+  span {
+    flex: 99;
+  }
+  button {
+    flex:1;
+    float:right;
+    padding: 3px;
+  }
 }
 
 .sbbox-body {

@@ -1,5 +1,5 @@
 <div class="sbbox sbbox-default">
-<div class="sbbox-heading">Tags</div>
+<div class="sbbox-heading"><span>Tags</span></div>
 <div {% unless include.show %}hidden{% endunless %} class="sbbox-body {% if include.show %}collapsed in{% endif %}"  id="tags">
 {% for sc in site.successcriteria %}
   {% for tag in sc.tags %}

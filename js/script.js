@@ -108,6 +108,14 @@ jQuery(document).ready(function($) {
     applyFilters();
   });
 
+  $('.sbbox-heading button').on('click', function(e) {
+    var unchecked = $(e.target).parent().parent().find('input:not(:checked)');
+    unchecked.each(function(){
+      $(this).prop('checked', 'checked');
+    });
+    applyFilters();
+  });
+
   function scrollto(target) {
      var scrollpos = (target.offset().top - parseInt($('.navrow').outerHeight(),10));
            scrollpos = scrollpos - 10;
