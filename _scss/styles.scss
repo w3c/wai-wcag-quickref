@@ -899,64 +899,6 @@ svg.icon {
     animation-duration: 1s;
     animation-iteration-count: 1;
   }
-  /*.icon {
-    font-size: 1.5em;
-    margin-right: 15px;
-    color: #fff;
-    .outer {
-      display:inline-block;
-      border-radius: 1.5em;
-      line-height: 1.5;
-      background-color: #777;
-      transition: all .5s linear;
-      background-position: 0 0;
-      text-align: center;
-      width: 1.5em;
-      height: 1.5em;
-    }
-    .glyphicon-hourglass {
-      color: #000;
-    }
-    &.loading {
-      .outer {
-        background: green linear-gradient(to bottom, yellow, yellow 50%, green 50%, green);
-        background-size: 100% 200%;
-        animation-name: backgroundanim;
-        animation-duration: .5s;
-        animation-iteration-count: 1;
-      }
-      .glyphicon-hourglass {
-        display: inline-block;
-        animation-name: loading;
-        animation-duration: .5s;
-        animation-iteration-count: 1;
-      }
-      .glyphicon-ok {
-        display: none;
-      }
-    }
-  }*/
-}
-
-@keyframes loading {
-  from {
-    transform: rotate(0);
-  }
-  5% {
-    transform: rotate(0);
-  }
-  /*45% {
-    transform: rotate(180deg);
-  }
-  55% {
-    transform: rotate(180deg);
-  }*/
-  95% {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 @keyframes backgroundanim {
