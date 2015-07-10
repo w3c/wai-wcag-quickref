@@ -893,9 +893,7 @@ svg.icon {
   border: 1px solid $brand-primary;
   padding: 5px;
   box-shadow: 0 0 20px $brand-primary;
-  background: #fff linear-gradient(to right, yellow, yellow 50%, white 50%, white);
-  background-size: 200% 100%;
-  background-position: -100% 0;
+  background: #fff;
   &.loading {
     animation-name: backgroundanim;
     animation-duration: 1s;
@@ -963,13 +961,10 @@ svg.icon {
 
 @keyframes backgroundanim {
   from {
-    background-position: 100% 0;
-  }
-  70% {
-    background-position: 0 0;
+    background-color: yellow;
   }
   to {
-    background-position: 0 0;
+    background-color: white;
   }
 }
 
