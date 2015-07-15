@@ -167,7 +167,6 @@ header[role=banner] {
 .sc-wrapper {
   header {
     display: flex;
-    //justify-content: space-between;
     white-space: nowrap;
     h4, .h4 {
       display:flex;
@@ -203,15 +202,6 @@ header[role=banner] {
         content:'— ';
       }
     }
-    // .level-a {
-    //   color: lighten($brand-primary, 6%);
-    // }
-    // .level-aa {
-    //   color: lighten($brand-primary, 3%);
-    // }
-    // .level-aaa {
-    //   color: lighten($brand-primary, 0%);
-    // }
     p {
       float: right;
     }
@@ -314,13 +304,6 @@ header[role=banner] {
       color: #fff;
       li {
         line-height: 2;
-        //border-left: 1em solid transparent;
-        // border-top: 1px solid transparent;
-        // border-bottom: 1px solid transparent;
-        a {
-          //padding-left: 1em;
-          //display: block;
-        }
       }
     }
     ul ul {
@@ -380,10 +363,6 @@ header[role=banner] {
   margin-bottom: 1em;
 }
 
-.navbar-scroll.affix, .navbar-scroll.affix-bottom {
-
-}
-
 .panel-heading {
   h3 {
     margin-top: 0;
@@ -410,9 +389,6 @@ header[role=banner] {
 
 .label {
   display:inline-block;
-}
-
-#filtered {
 }
 
 .sidebar-heading {
@@ -445,25 +421,6 @@ svg.icon {
   width:1em;
 }
 
-//   background-color: #036;
-//   color: #fff;
-//   padding: 5px;
-//   font-weight: bold;
-//   position: relative;
-//   .btn {
-//     position: absolute;
-//     background: $brand-primary;
-//     padding: 5px;
-//     line-height: 1.1;
-//     top:0;
-//     left: 100%;
-//   }
-//   &#filter_heading .btn {
-//     right: 100%;
-//     left: auto;
-//   }
-// }
-
 .checkbox {
   display:flex;
   justify-content: space-between;
@@ -472,31 +429,7 @@ svg.icon {
 [hidden] {
   display: none;
 }
-/*
-@include mq($small) {
-  .mainrow {
-    display:flex;
-    flex-wrap: wrap;
-    main {
-      width: 100%;
-      transition: all .1s linear;
-    }
-    aside {
-      width: 50%;
-      padding: 0 15px;
-      transition: all .1s linear;
-      background-color: $brand-primary;
-      &.hidden-sb {
-        padding:0;
-        border: none;
-        h6 {
-          padding:0;
-        }
-      }
-    }
-  }
-}
-*/
+
 @include mq($small) {
   .mainrow {
     display:flex;
@@ -674,12 +607,7 @@ svg.icon {
     box-shadow: none;
     margin: 0;
   }
-  &.prototype-4 {
-    div.button {
-      order: -1;
-    }
-  }
-  &.prototype-8, &.prototype-9 {
+  &.prototype-8 {
     &.fixedsticky-on {
       width:100%;
     }
@@ -747,155 +675,6 @@ svg.icon {
   }
 }
 
-.prototype-9 {
-  &.navrow {
-    background-color: #fff;
-  }
-  .buttons {
-    display:flex;
-    flex-direction: row;
-    align-items: stretch;
-    border-bottom-color:#555;
-    padding:0;
-    margin:0;
-
-    &.closed {
-      border-bottom-color: transparent;
-      padding-left: 15px;
-    }
-    li {
-      list-style: none;
-      flex-grow:99;
-      display:flex;
-      align-items: flex-end;
-      align-content: bottom;
-      a {
-        height: 2em;
-        padding: 5px;
-        background-color: #fff;
-        color: #555;
-        border-right: 1px solid #eee;
-        width: 100%;
-        display: flex;
-        text-align:center;
-      }
-      &.active a {
-        color: #333;
-        background-color: #eee;
-        // border-color: #333;
-        border-bottom-color: transparent;
-        //font-size: 1.45em;
-      }
-      &:first-child {
-        padding-left: 6px;
-      }
-      &:last-child {
-        flex-grow:1;
-        text-align: right;
-        padding-right: 6px;
-        a {
-          border-right: none;
-        }
-      }
-      &.closed:last-child {
-        text-align: left;
-        font-weight: bold !important;
-      }
-    }
-  }
-}
-
-// .filterrow {
-//   background-color: $gray-light;
-//   border-radius: 5px 5px 5px 0;
-//   @include mq(30em) {
-//     display:flex;
-//     >div {
-//       flex: 10;
-//       margin-left: 15px;
-//     }
-//     >div:first-child {
-//       flex: 2;
-//       margin-right: 15px;
-//       margin-left:0;
-//       display: flex;
-//       form {
-//         padding:5px;
-//       }
-//     }
-//   }
-//   .btn-group{
-//     display:none;
-//     position:absolute;
-//     top:100%;
-//     z-index: 200;
-//     .btn {
-//       flex:1;
-//     }
-//   }
-//   &.affix {
-//     position: fixed;
-//     top:0;
-//     left: 8px;
-//     right:8px;
-//     z-index: 4010;
-//   }
-// }
-
-// .filtering {
-//   @include mq($small) {
-//     display:flex;
-//     margin: 5px;
-//     border-radius: 5px;
-//     border-color: $gray;
-//     background-color: #fff;
-//     .filter-status, .operations {
-//       display:flex;
-//     }
-//     .filter-status {
-//       align-items: center;
-//     }
-//     .operations {
-//       align-items: stretch;
-//       a, button {
-//         display: flex;
-//         align-items: center;
-//         border: none;
-//         border-radius: 0;
-//         border-left: 1px solid $gray-light !important;
-//         width:100%;
-//         flex-grow: 1;
-//       }
-//     }
-//     .filter-status {
-//       flex: 8;
-//       margin-left: 15px;
-//     }
-//   }
-// }
-
-.mainbacktotop {
-  position: fixed;
-  bottom:0;
-  left: 0;
-  right: 0;
-  text-align: center;
-  text-transform: uppercase;
-  display:block;
-  color: #fff;
-  font-weight: bold;
-  background: $brand-primary;
-  background: linear-gradient(to bottom, #5180B4, $brand-primary);
-  z-index: 2000;
-  padding: 5px;
-  transition: all .4s linear;
-  &:hover, &:focus {
-    font-size: 1.5em;
-    color: #fff;
-    text-decoration: underline;
-  }
-}
-
 .filter-status {
   z-index: 9999;
   display: flex;
@@ -937,12 +716,6 @@ svg.icon {
 
 .container-fluid {
   padding: 0;
-  /*@include mq($small) {
-    padding: 0 4px;
-  }
-  @include mq($big) {
-    padding: 0 8px;
-  }*/
 }
 
 .mainhead {
@@ -962,31 +735,6 @@ div.understanding {
   bottom:0;
   z-index:5000;
 }
-
-/*.filters {
-  background-color: rgba(#fff, 1);
-  position:fixed;
-  top:2em;
-  left:2em;
-  right:2em;
-  bottom:2em;
-  z-index:5001;
-  overflow: scroll;
-}
-
-.filters-content > div {
-  display:flex;
-  flex-wrap: wrap;
-  .panel {
-    flex: 1;
-    min-width: 15em;
-    margin: 8px;
-    &:first-child {
-      margin-left: 0;
-    }
-  }
-}
-*/
 
 .nav-overview > .nav > li > a {
   padding: 0;
@@ -1032,27 +780,3 @@ button.panel-heading {
     align-self: flex-end;
   }
 }
-
-/*.sc-content {
-  height: 10em;
-  overflow: hidden;
-  padding-bottom: 3em;
-  position: relative;
-  margin-bottom: 1em;
-  &:after {
-    display: block;
-    content: "";
-    background: linear-gradient(to bottom, rgba(#fff, 0), #fff 60%);
-    height: 3em;
-    position:absolute;
-    bottom:0;
-    left:0;
-    right: 0;
-  }
-  button {
-    position: absolute;
-    bottom: 0;
-    z-index: 100;
-    left: 43%;
-  }
-}*/
