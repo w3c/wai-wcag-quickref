@@ -196,15 +196,11 @@ header[role=banner] {
     }
     [class^=level] {
       font-family: $font-family-serif;
-      font-style: italic;
       margin-left: 5px;
       background-color: inherit;
       color: #656565;
       &::before {
         content:'— ';
-      }
-      &::after {
-        // content:')';
       }
     }
     // .level-a {
