@@ -106,6 +106,10 @@ jQuery(document).ready(function($) {
       $(this).prop('checked', 'checked');
     });
     applyFilters();
+    $('#tags .btn-primary').removeClass('btn-primary').addClass('btn-default').removeAttr('aria-selected');
+    $('.sc-wrapper.current').removeClass('current');
+    $('body').removeClass('tagged');
+    statustext();
   });
 
   $('.sbbox-heading button').on('click', function(e) {
