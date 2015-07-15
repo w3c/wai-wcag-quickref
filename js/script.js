@@ -277,19 +277,32 @@ jQuery(document).ready(function($) {
 
   var statustext = function(){
     var tags = new Array(),
+        htags = new Array(),
         sctext = "all success criteria",
-        sctext1 = "";
-        sctext2 = ""
-        techtext = "all techniques";
+        sctext1 = "",
+        sctexthidden1 = "",
+        sctext2 = "",
+        sctexthidden2 = "",
+        techtext = "all techniques",
+        techtexthidden = "";
     var pressed = $('#tags .btn-primary');
     if (pressed.length>0) {
       pressed.each(function(index, el) {
         tags.push($(el).attr('data-tag'));
       });
       sctext1 = ' tagged with '+ array2prose(tags, 'or');
+      var notpressed = $('#tags .btn-default');
+      if (notpressed.length>0) {
+        notpressed.each(function(index, el) {
+          htags.push($(el).attr('data-tag'));
+        });
+        sctexthidden1 = ' <span class="deem">(Hidden: '+ array2prose(htags, 'and')+ ')</span>';
+      }
     }
-    var levels = new Array();
+    var levels = new Array(),
+        hlevels = new Array();
     var selected = $('#filter-levels input:checked'),
+        nselected = $('#filter-levels input:not(:checked)'),
         all = $('#filter-levels input');
     if (selected.length<all.length) {
       selected.each(function(index, el) {
@@ -297,22 +310,39 @@ jQuery(document).ready(function($) {
       });
       sctext2 = ' for levels '+array2prose(levels, 'and');
     };
+    if (nselected.length>0) {
+      nselected.each(function(index, el) {
+        hlevels.push($(el).attr('value').toUpperCase());
+      });
+      sctexthidden2 = ' <span class="deem">(Hidden: '+array2prose(hlevels, 'and')+')</span>';
+    }
     if ((pressed.length>0) || (selected.length<all.length)) {
-      sctext = 'success criteria ' + sctext1 + sctext2;
+      sctext = 'success criteria ' + sctext1 + sctexthidden1 + sctext2 + sctexthidden2;
     };
-    var technologies = new Array();
+    var technologies = new Array(),
+        htechnologies = new Array();
     var selectedtechnologies = $('#filter-technologies input:checked'),
+        nselectedtechnologies = $('#filter-technologies input:not(:checked)'),
         alltechnologies = $('#filter-technologies input');
-    console.log(selectedtechnologies);
-    console.log(alltechnologies);
     if (selectedtechnologies.length<alltechnologies.length) {
       selectedtechnologies.each(function(index, el) {
         technologies.push($(el).parent().text());
       });
       techtext = ' techniques for the following technologies: '+array2prose(technologies, 'and');
     };
+    if (nselectedtechnologies.length>0) {
+      nselectedtechnologies.each(function(index, el) {
+        htechnologies.push($(el).parent().text());
+      });
+      techtexthidden = ' <span class="deem">(Hidden: '+array2prose(htechnologies, 'and')+')</span>';
+    };
     $('#status .sc').html(sctext);
-    $('#status .tech').html(techtext);
+    $('#status .tech').html(techtext + techtexthidden);
+    if (techtext == "all techniques" && sctext == "all success criteria") {
+      $('#clearall').hide();
+    } else {
+      $('#clearall').show();
+    }
   };
 
   var tagButtons = function () {

@@ -50,6 +50,11 @@ mark.current {
   border: 1px dashed #333;
 }
 
+.deem {
+  font-weight: normal;
+  color: #666;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-family-serif;
   font-feature-settings: "lnum", "tnum";
