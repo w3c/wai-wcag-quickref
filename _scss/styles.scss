@@ -396,6 +396,10 @@ header[role=banner] {
   color: #fff;
 }
 
+.sidebar-content {
+  overflow-y: scroll;
+}
+
 .overview, .tags {
   header {
     display: flex;
@@ -619,6 +623,14 @@ svg.icon {
       flex:2;
     }
   }
+}
+
+#showsidebars {
+  margin-right: 20px;
+}
+
+#clearall {
+  margin: 5px 0;
 }
 
 .prototype-8 {

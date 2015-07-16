@@ -2,36 +2,21 @@
 layout: default
 ---
 {% include header.html %}
-<div class="navrow fixedsticky prototype-8" style="top:0;">
-  <ul class="nav nav-tabs buttons">
-    <li role="presentation">
-      <button id="hidesidebars" aria-expanded="true" type="button" class="btn btn-default btn-sm"><span><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show Sidebar</span><span class="word-hide"><span class="glyphicon glyphicon-chevron-left"></span> Hide</span></span></button>
-    </li>
-    <li role="presentation" class="active">
-      <!-- <button class="h4"><span>Overview</span></button> -->
-      <a href="#col_overview" data-toggle="tab" data-toggle="tab" aria-controls="col_overview"><span><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> Contents</span></a>
-    </li>
-    <li role="presentation">
-      <a href="#col_customize" data-toggle="tab" data-toggle="tab" aria-controls="col_customize"><span><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Filter</span></a>
-    </li>
-  </ul>
-  <div>
-    {% include filter-status.html %}
-  </div>
-</div>
 <div class="mainrow threecols prototype-8">
-  <main>
-  	{% assign p = 0 %}
-  	{% for principle in site.data.principles %}
-  		{% assign p = p | plus: 1 %}
-  		{% assign g = 0 %}
-  		<h2 id="principle{{ p }}"><strong>{{ p }}</strong> {{principle}}</h2>
-  		{% for guideline in site.guidelines %}
-  			{% include guideline.html %}
-  		{% endfor %}
-  	{% endfor %}
-  </main>
   <div>
+    <div class="navrow fixedsticky prototype-8" style="top:0;">
+      <ul class="nav nav-tabs buttons">
+        <li role="presentation">
+          <button id="hidesidebars" aria-expanded="true" type="button" class="btn btn-default btn-sm"><span><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show Sidebar</span><span class="word-hide"><span class="glyphicon glyphicon-chevron-left"></span> Hide</span></span></button>
+        </li>
+        <li role="presentation" class="active">
+          <a href="#col_overview" data-toggle="tab" data-toggle="tab" aria-controls="col_overview"><span><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> Contents</span></a>
+        </li>
+        <li role="presentation">
+          <a href="#col_customize" data-toggle="tab" data-toggle="tab" aria-controls="col_customize"><span><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Filter</span></a>
+        </li>
+      </ul>
+    </div>
     <div class="tab-content fixedsticky">
       <aside role="tabpanel" class="tab-pane active" id="col_overview">
         {% include sidenav.html tags="false" heading="false" %}
@@ -49,6 +34,21 @@ layout: default
       </aside>
     </div>
   </div>
+  <main>
+    <div class="navrow fixedsticky prototype-8" style="top:0;">
+      <button id="showsidebars" aria-expanded="false" hidden type="button" class="btn btn-default btn-sm"><span><span class="glyphicon glyphicon-chevron-right"></span> Show Sidebar</span></button>
+      {% include filter-status.html %}
+    </div>
+    {% assign p = 0 %}
+    {% for principle in site.data.principles %}
+      {% assign p = p | plus: 1 %}
+      {% assign g = 0 %}
+      <h2 id="principle{{ p }}"><strong>{{ p }}</strong> {{principle}}</h2>
+      {% for guideline in site.guidelines %}
+        {% include guideline.html %}
+      {% endfor %}
+    {% endfor %}
+  </main>
 </div>
 
 {% comment %}
