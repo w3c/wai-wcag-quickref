@@ -400,6 +400,10 @@ header[role=banner] {
   overflow-y: scroll;
 }
 
+.sidebar nav {
+  background-color: #fff;
+}
+
 .overview, .tags {
   header {
     display: flex;
@@ -648,6 +652,9 @@ svg.icon {
     li {
       margin-bottom: -2px;
       border-bottom: 1px solid #EEEEEE;
+      &:first-child {
+        border-bottom: none;
+      }
       margin-left: 4px;
       a {
         background-color: #fff;
