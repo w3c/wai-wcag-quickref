@@ -4,7 +4,7 @@ layout: default
 {% include header.html %}
 <div class="mainrow threecols prototype-8">
   <div>
-    <div class="navrow fixedsticky prototype-8" style="top:0;">
+    <div class="fixedsticky" style="top:0;">
       <ul class="nav nav-tabs buttons">
         <li role="presentation">
           <button id="hidesidebars" aria-expanded="true" type="button" class="btn btn-default btn-sm"><span><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show Sidebar</span><span class="word-hide"><span class="glyphicon glyphicon-chevron-left"></span> Hide</span></span></button>
@@ -16,23 +16,23 @@ layout: default
           <a href="#col_customize" data-toggle="tab" data-toggle="tab" aria-controls="col_customize"><span><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Filter</span></a>
         </li>
       </ul>
-    </div>
-    <div class="tab-content fixedsticky">
-      <aside role="tabpanel" class="tab-pane active" id="col_overview">
-        {% include sidenav.html tags="false" heading="false" %}
-      </aside>
-      <aside role="tabpanel" class="tab-pane tags" id="col_customize">
-        <div>
+      <div class="tab-content">
+        <aside role="tabpanel" class="tab-pane active" id="col_overview">
+          {% include sidenav.html tags="false" heading="false" %}
+        </aside>
+        <aside role="tabpanel" class="tab-pane tags" id="col_customize">
           <div>
-            <div class="sidebar-content">
-              {% include tags.html show="true" %}
+            <div>
+              <div class="sidebar-content">
+                {% include tags.html show="true" %}
 
-            {% include filters2.html %}
+              {% include filters2.html %}
+              </div>
             </div>
           </div>
-        </div>
-      </aside>
-    </div>
+        </aside>
+      </div>
+      </div>
   </div>
   <main>
     <div class="navrow fixedsticky prototype-8" style="top:0;">

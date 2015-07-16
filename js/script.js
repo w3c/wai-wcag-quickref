@@ -378,7 +378,7 @@ jQuery(document).ready(function($) {
 
   function init() {
     $('html').addClass('.has-js');
-    $('.navbar-scroll').css('width', $('.navbar-scroll').parent().width()).fixedsticky();
+    $('.mainrow>div>div').css('width', $('.tab-pane.active').outerWidth()).fixedsticky();
     $('.fixedsticky').fixedsticky();
     $('aside.tags>div').css('width', $('aside.tags').width()).fixedsticky();
     if ($( window ).width() > 896) {
