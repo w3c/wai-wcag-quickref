@@ -419,7 +419,7 @@ jQuery(document).ready(function($) {
         scrollto($(thetarget));
       });
 
-      $('.filter-status').one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(event) {
+      $('.filter-status').on('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(event) {
         $(this).removeClass('loading');
         $('.filter-status .loaded').show();
         $('.filter-status .loading').hide();
