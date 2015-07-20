@@ -376,6 +376,17 @@ jQuery(document).ready(function($) {
     });
   };
 
+  var techniqueCheckboxes = function () {
+    $('#filter-techniques-content input').on('change', function(event) {
+      $('#filter-techniques-content input:checked').each(function(index, el) {
+        $('.techniques-button input[name$="' + $(el).val() + '"]').prop('checked', true);
+      });
+      $('#filter-techniques-content input:not(:checked)').each(function(index, el) {
+        $('.techniques-button input[name$="' + $(el).val() + '"]').prop('checked', false);
+      });
+    });
+  };
+
   function init() {
     $('html').addClass('.has-js');
     $('.mainrow>div>div').css('width', $('.tab-pane.active').outerWidth()).fixedsticky();
@@ -446,6 +457,8 @@ jQuery(document).ready(function($) {
       $('#' + target.prop('name')).removeClass('active');
     }
   });
+
+  techniqueCheckboxes();
 
   $( window ).resize(function() {
     init();
