@@ -273,10 +273,10 @@ jQuery(document).ready(function($) {
   var techniqueCheckboxes = function () {
     $('#filter-techniques-content input').on('change', function(event) {
       $('#filter-techniques-content input:checked').each(function(index, el) {
-        $('.techniques-button input[name$="' + $(el).val() + '"]').prop('checked', true);
+        $('.techniques-button input[name$="' + $(el).val() + '"]').prop('checked', true).change();
       });
       $('#filter-techniques-content input:not(:checked)').each(function(index, el) {
-        $('.techniques-button input[name$="' + $(el).val() + '"]').prop('checked', false);
+        $('.techniques-button input[name$="' + $(el).val() + '"]').prop('checked', false).change();
       });
     });
   };
