@@ -334,14 +334,6 @@ jQuery(document).ready(function($) {
 
   }
 
-  $('#col_overview, #col_customize').on('show.bs.collapse', function () {
-    $('.mainrow').removeClass($(this).attr('id'));
-  });
-
-  $('#col_overview, #col_customize').on('hide.bs.collapse', function () {
-    $('.mainrow').addClass($(this).attr('id'));
-  });
-
   $('.techniques-button').on('change', 'input', function(event) {
     event.preventDefault();
     var target = $(event.target);
