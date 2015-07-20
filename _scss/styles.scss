@@ -273,11 +273,8 @@ header[role=banner] {
 
 .navbar-scroll {
   overflow: scroll;
-  height: 90vh;
-  .prototype-8 & {
-    height: auto;
-    flex: 999;
-  }
+  height: auto;
+  flex: 999;
   .hidden-sb & {
     overflow: visible;
     height: auto;
@@ -305,11 +302,6 @@ header[role=banner] {
   a {
     color: #fff;
     line-height: 1.5;
-    font-variant-numeric: tabular-nums;
-    -moz-font-feature-settings: "tnum";
-    -ms-font-feature-settings: "tnum";
-    -webkit-font-feature-settings: "tnum";
-    font-feature-settings: "tnum";
     display: table-row;
     > span, > strong {
       padding: 2px 4px;
@@ -436,94 +428,17 @@ svg.icon {
     }
     main {
       order: 2;
-      flex: 5;
+      flex: 6;
+      padding-right: 15px;
     }
-    &.prototype-5 {
-      main {
-        flex:7;
-        padding-right:0;
-        .realmain {
-          padding-right: 15px;
-        }
-        aside {
-          padding: 26.5px;
-        }
-      }
+    >div {
+      flex:2 !important;
+      background-color: #eee;
       aside {
-        padding: 0 26.5px;
-      }
-      #col_customize .sidebar-content {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        > div {
-          flex: 1
+        padding: 15px;
+        a {
+          color: $brand-primary !important;
         }
-        > section {
-          flex: 2;
-          display: flex;
-          flex-direction: row;
-          align-items: flex-start;
-          .panel-default {
-            flex:1;
-          }
-        }
-      }
-    }
-    &.prototype-8 {
-      main {
-        flex:6 !important;
-        padding-right: 15px;
-      }
-      >div {
-        flex:2 !important;
-        background-color: #eee;
-        aside {
-          background-color: transparent !important;
-          padding: 15px;
-          a {
-            color: $brand-primary !important;
-          }
-        }
-      }
-    }
-    &.col_overview, &.col_customize {
-      main {
-        flex: 7;
-      }
-    }
-    &.col_overview.col_customize {
-      main {
-        flex: 9;
-      }
-    }
-    aside {
-      flex: 1;
-      order: 1;
-      background-color: $brand-primary;
-      &.hidden-sb {
-        flex:0;
-        padding:0;
-        h6 {
-          padding:0;
-        }
-      }
-      &.tags {
-        order: 3;
-        background-color: #333;
-        color: #fff;
-        .panel-body {
-          color: #333;
-        }
-      }
-      .navbar-scroll {
-        position:sticky;
-        top:0;
-      }
-    }
-    &.prototype-4 {
-      aside {
-        order: -1;
       }
     }
   }
@@ -569,47 +484,48 @@ svg.icon {
 .navrow {
   display:flex;
   flex-direction: row;
-  align-items: stretch;
+  align-items: flex-end;
   z-index: 999;
+  background-color: #fff;
   > div {
-    flex: 5;
+    flex:6;
     padding: 0 15px;
   }
-  > .button {
-    flex: 1;
-    margin:0;
-    padding: 0 15px;
-    display: block;
-    background-color: #333;
-    display:flex;
-    flex-direction: row;
-    align-items: stretch;
+  &.fixedsticky-on {
+    width:100%;
+  }
+}
+
+.buttons {
+  margin:0;
+  padding: 0 0 0 15px;
+  border-bottom-color:#555;
+  li {
+    margin-bottom: -2px;
+    border-bottom: 1px solid #EEEEEE;
+    margin-left: 4px;
     &:first-child {
-      background-color: $brand-primary;
+      border-bottom: none;
+      float: right !important;
+      text-align: right;
     }
-    button {
-      background-color: inherit;
-      color: #fff;
-      border: none;
-      display: block;
-      width: 100%;
-      display:flex;
-      align-items: center;
+    a {
+      background-color: #fff;
+      background: linear-gradient(#f3f3f3, #f3f3f3 3px, #fff 3px, #fff);
+      color: #555;
+      border: 1px solid #555;
+      display:block;
+      margin:0;
+      border-radius: 5px 5px 0 0;
+      padding-bottom: 7px;
+      padding-top: 7px;
     }
-  }
-  .filter-status {
-    box-shadow: none;
-    margin: 0;
-  }
-  &.prototype-8 {
-    &.fixedsticky-on {
-      width:100%;
-    }
-    > div {
-      flex:6;
-    }
-    .buttons {
-      flex:2;
+    &.active a {
+      color: #333;
+      background-color: #ddd;
+      background: linear-gradient($brand-primary, $brand-primary 3px, #eee 3px, #eee);
+      border-color: #333;
+      border-bottom: none;
     }
   }
 }
@@ -622,73 +538,23 @@ svg.icon {
   margin: 5px 0;
 }
 
-.prototype-8 {
-  &.navrow {
-    background-color: #fff;
-    display:flex;
-    align-items: flex-end;
-  }
-  .buttons {
-    border-bottom-color:#555;
-    &.closed {
-      border-bottom-color: transparent;
-      padding-left: 15px;
-    }
-    li {
-      margin-bottom: -2px;
-      border-bottom: 1px solid #EEEEEE;
-      &:first-child {
-        border-bottom: none;
-      }
-      margin-left: 4px;
-      a {
-        background-color: #fff;
-        background: linear-gradient(#f3f3f3, #f3f3f3 3px, #fff 3px, #fff);
-        color: #555;
-        border: 1px solid #555;
-        display:block;
-        margin:0;
-        border-radius: 5px 5px 0 0;
-        padding-bottom: 7px;
-        padding-top: 7px;
-      }
-      &.active a {
-        color: #333;
-        background-color: #ddd;
-        background: linear-gradient($brand-primary, $brand-primary 3px, #eee 3px, #eee);
-        border-color: #333;
-        border-bottom: none;
-        //font-size: 1.45em;
-      }
-      &:first-child {
-        padding-left: 6px;
-      }
-      &:first-child {
-        float: right;
-        //align-self: center;
-        // flex-grow:1;
-        text-align: right;
-        padding-left:12px;
-      }
-      &.closed:first-child {
-        float: none;
-        text-align: left;
-        .btn {font-weight: bold !important;}
-        padding-left: 0;
-      }
-    }
-  }
-}
-
 .filter-status {
   z-index: 9999;
   display: flex;
   align-items: center;
-  margin: 0 80px;
-  border: 1px solid $brand-primary;
+  border-bottom: 1px solid $brand-primary;
   padding: 5px;
-  box-shadow: 0 0 20px $brand-primary;
   background: #fff;
+  margin: 0;
+  min-height: 2.5em;
+  position:relative;
+  &:after {
+    position: absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    box-shadow: 0 0 10px #000;
+  }
   &.loading {
     animation-name: backgroundanim;
     animation-duration: 1s;
