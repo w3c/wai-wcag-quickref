@@ -414,7 +414,9 @@ header[role=banner] {
 }
 
 .sidebar-content {
-  overflow-y: scroll;
+  @include mq($medium) {
+    overflow-y: scroll;
+  }
 }
 
 .sidebar>div>nav {
@@ -534,6 +536,13 @@ svg.icon {
   }
   &.fixedsticky-on {
     width:100%;
+  }
+}
+
+#hidesidebars {
+  display:none;
+  @include mq($medium){
+    display:inline-block;
   }
 }
 
