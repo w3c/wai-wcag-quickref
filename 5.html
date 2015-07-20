@@ -1,58 +1,10 @@
----
-layout: default
----
-{% include header.html %}
-<div class="navrow fixedsticky prototype-5" style="top:0; left:0; right:0;">
-  <div class="button">
-    <!-- <button class="h4"><span>Overview</span></button> -->
-    <button data-target="#col_overview" type="button" data-toggle="collapse" aria-expanded="true" aria-controls="col_overview" class="btn btn-default btn-lg"><span><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show</span><span class="word-hide"><span class="glyphicon glyphicon-chevron-down"></span> Hide</span> Overview</span></button>
-  </div>
-  <div>
-    {% include filter-status.html %}
-  </div>
-  <div class="button">
-    <button data-target="#col_customize" type="button" data-toggle="collapse" aria-expanded="true" aria-controls="col_customize" class="btn btn-default btn-lg"><span><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show</span><span class="word-hide"><span class="glyphicon glyphicon-chevron-down"></span> Hide</span> Customize</span></button>
-  </div>
-</div>
-<div class="mainrow threecols prototype-5">
-  <main>
-      <aside class="tags collapse in fixedsticky" style="top:65px;" id="col_customize" >
-        <div>
-          <div>
-            <!-- <header>
-              <h6 id="customize_heading" class="h3 sidebar-heading">Customize</h6>
-              <span>
-                <button class="btn btn-default hide-sb"><span class="glyphicon glyphicon-remove-circle" aria-label="Hide customize sidebar"></span> <span class="glyphicon glyphicon-wrench" hidden aria-label="Show customize sidebar"></span> <span class="text">Custo<span hidden>-<br></span>mize</span></button>
-              </span>
-            </header> -->
-            <div class="sidebar-content">
-              {% include tags.html %}
-              {% include filters2.html %}
-            </div>
-          </div>
-        </div>
-      </aside>
-      <div class="realmain">
-      <div>
-      	{% assign p = 0 %}
-      	{% for principle in site.data.principles %}
-      		{% assign p = p | plus: 1 %}
-      		{% assign g = 0 %}
-      		<h2 id="principle{{ p }}">{{ p }}. {{principle}}</h2>
-      		{% for guideline in site.guidelines %}
-      			{% include guideline.html %}
-      		{% endfor %}
-      	{% endfor %}
-        <a href="#top" class="mainbacktotop"><span aria-hidden="true" class="glyphicon glyphicon-hand-up"></span> Back to top <span aria-hidden="true" class="glyphicon glyphicon-hand-up"></span></a>
-      </div>
-    </div>
-  </main>
-  <aside class="collapse in" id="col_overview">
-    {% include sidenav.html tags="false" heading="false" %}
-    <a href="#top" class="sr-only sr-only-focusable">Back to top</a>
-  </aside>
-</div>
-
-{% comment %}
-{% include filters2.html %}
-{% endcomment %}
+<!doctype html>
+<html>
+  <head>
+    <title>Redirecting to current prototype</title>
+    <meta HTTP-EQUIV="REFRESH" content="0; url=http://w3c.github.io/wai-wcag-quickref">
+  </head>
+  <body>
+    <a href="http://w3c.github.io/wai-wcag-quickref">The current version of this prototype can be found at w3c.github.io/wai-wcag-quickref</a>
+  </body>
+</html>
