@@ -268,12 +268,17 @@ header[role=banner] {
 }
 
 .techniques-button {
-  display: flex;
+  @include mq($medium){
+      display: flex;
+  }
   .btn {
     text-align: left;
   }
   [aria-expanded="false"] ~ label {
     display: none;
+  }
+  [aria-expanded] + label {
+    clear:both;
   }
 }
 
