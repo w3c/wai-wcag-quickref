@@ -1,54 +1,63 @@
 {% assign g = g | plus: 1 %}
 {% assign s = 0 %}
-{% if guideline.principle == principle %}
-	<div class="guideline panel panel-primary panel-borderless">
-		<div class="panel-heading">
-			<h3 id="{{guideline.slug}}"><strong>{{ p }}.{{ g }}</strong> {{guideline.title}}</h3>
-			{{guideline.output}}
-		</div>
-			{% if guideline.techniques %}
-			<div class="panel-body panel-body-guideline">
-		    <div class="techniques-button btn-group" role="group">
-		      <button data-target="#techniques-{{ p }}{{ g }}" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="techniques-{{ p }}{{ g }}" class="btn btn-info btn-techniques"><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show</span><span class="word-hide"><span class="glyphicon glyphicon-chevron-down"></span> Hide</span> techniques for {{ p }}.{{ g }}</button>
-		      <label class="btn btn-default"><input type="checkbox" name="sc-{{ p }}{{ g }}-sufficient" {% if guideline.techniques.sufficient %}checked{% else %}disabled{% endif %}> Sufficient</label>
-		      <label class="btn btn-default"><input type="checkbox" name="sc-{{ p }}{{ g }}-advisory" {% if guideline.techniques.advisory %}checked{% else %}disabled{% endif %}> Advisory</label>
-		      <label class="btn btn-default"><input type="checkbox" name="sc-{{ p }}{{ g }}-failures" {% if guideline.techniques.failures %}checked{% else %}disabled{% endif %}> Failures</label>
-		    </div>
-			  <div class="collapse" id="techniques-{{ p }}{{ g }}">
-			    <div>
-			      <div class="tab-wrap">
-			        <div class="tab-content">
-			          {% if guideline.techniques.sufficient %}
-			            <div role="tabpanel" class="tbox tbox-sufficient tab-pane active" id="sc-{{ p }}{{ g }}-sufficient">
-			              {% include techlist.html techtitle="Sufficient Techniques" techniques=guideline.techniques.sufficient ttype="sufficient" %}
-			            </div>
-			          {% endif %}
-			          {% if guideline.techniques.advisory %}
-			            <div role="tabpanel" class="tbox tbox-advisory tab-pane active" id="sc-{{ p }}{{ g }}-advisory">
-			              {% include techlist.html techtitle="Advisory Techniques" techniques=guideline.techniques.advisory ttype="advisory" %}
-			            </div>
-			          {% endif %}
-			          {% if guideline.techniques.failures %}
-			            <div role="tabpanel" class="tbox tbox-failure tab-pane active" id="sc-{{ p }}{{ g }}-failures">
-			              {% include techlist.html techtitle="Failures" techniques=guideline.techniques.failures ttype="failure" %}
-			            </div>
-			          {% endif %}
-			        </div>
-			      </div>
-			    </div>
-			  </div>
-			  </div>
-			{% endif %}
-			{% if guideline.successcriteria %}
-				{% if guideline.successcriteria.levelA %}
-					{% include level.html level="A" items=guideline.successcriteria.levelA %}
-				{% endif %}
-				{% if guideline.successcriteria.levelAA %}
-					{% include level.html level="AA" items=guideline.successcriteria.levelAA %}
-				{% endif %}
-				{% if guideline.successcriteria.levelAAA %}
-					{% include level.html level="AAA" items=guideline.successcriteria.levelAAA %}
-				{% endif %}
-			{% endif%}
+<div class="guideline panel panel-primary panel-borderless">
+	<div class="panel-heading">
+		<h3 id="{{guideline.id}}"><strong>{{ guideline.num }}</strong> {{guideline.handle}}</h3>
+		{{guideline.title}}
 	</div>
-{% endif%}
+		{% assign tsize = guideline.techniques | size %}
+		{% assign stech = guideline.techniques[0].sufficient %}
+		{% assign ssize = stech | size %}
+		{% assign atech = guideline.techniques[0].advisory %}
+		{% assign asize = atech | size %}
+		{% assign ftech = guideline.techniques[0].failures %}
+		{% assign fsize = ftech | size %}
+		{% assign completesize = ssize | plus: asize | plus: fsize %}
+
+		{% if completesize >= 1 %}
+
+		<div class="panel-body panel-body-guideline">
+	    <div class="techniques-button btn-group" role="group">
+	      <button data-target="#techniques-{{ p }}{{ g }}" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="techniques-{{ p }}{{ g }}" class="btn btn-info btn-techniques"><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show</span><span class="word-hide"><span class="glyphicon glyphicon-chevron-down"></span> Hide</span> techniques for {{ p }}.{{ g }}</button>
+	      <label class="btn btn-default"><input type="checkbox" name="sc-{{ p }}{{ g }}-sufficient" {% if ssize >= 1 %}checked{% else %}disabled{% endif %}> Sufficient</label>
+	      <label class="btn btn-default"><input type="checkbox" name="sc-{{ p }}{{ g }}-advisory" {% if asize >= 1 %}checked{% else %}disabled{% endif %}> Advisory</label>
+	      <label class="btn btn-default"><input type="checkbox" name="sc-{{ p }}{{ g }}-failures" {% if fsize >= 1 %}checked{% else %}disabled{% endif %}> Failures</label>
+	    </div>
+
+		  <div class="collapse" id="techniques-{{ p }}{{ g }}">
+		    <div>
+		      <div class="tab-wrap">
+
+		        <div class="tab-content">
+
+		          {% if ssize >= 1 %}
+		            <div role="tabpanel" class="tbox tbox-sufficient tab-pane active" id="sc-{{ p }}{{ g }}-sufficient">
+		              {% include techlist.html techtitle="Sufficient Techniques" techniques=stech ttype="sufficient" %}
+		            </div>
+		          {% endif %}
+
+		          {% if asize >= 1 %}
+		            <div role="tabpanel" class="tbox tbox-advisory tab-pane active" id="sc-{{ p }}{{ g }}-advisory">
+		          {% include techlist.html techtitle="Advisory Techniques" techniques=atech ttype="advisory" %}
+		            </div>
+		          {% endif %}
+
+		          {% if fsize >= 1 %}
+		            <div role="tabpanel" class="tbox tbox-failure tab-pane active" id="sc-{{ p }}{{ g }}-failures">
+		              {% include techlist.html techtitle="Failures" techniques=ftech ttype="failure" %}
+		            </div>
+		          {% endif %}
+		        </div>
+
+		      </div>
+		    </div>
+		  </div>
+		  </div>
+		{% endif %}
+		{% if guideline.successcriteria %}
+			{% for currentsc in guideline.successcriteria %}
+				{% include sc.html sc=currentsc %}
+			{% endfor %}
+		{% endif %}
+</div>
+

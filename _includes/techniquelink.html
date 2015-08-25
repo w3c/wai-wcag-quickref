@@ -1,3 +1,38 @@
+{% assign shortname = include.technique.id | replace:'TECH:','' | replace:'1','' | replace:'2','' | replace:'3','' | replace:'4','' | replace:'5','' | replace:'6','' | replace:'7','' | replace:'8','' | replace:'9','' | replace:'0','' | trim %}
+
+{% assign techid = include.technique.id | replace:'TECH:','' %}
+
+{% if include.technique.and %}
+  {% for technique in include.technique.and %}
+    <span class="{% include techniqueclass.html technique=technique %}">{% include techniquelink.html technique=technique %} {{technique.append}} {% if forloop.last %}{% else %}<strong>AND</strong>{% endif %}</span>
+  {% endfor %}
+{% else %}
+  {% if include.technique.or %}
+    {% for technique in include.technique.or %}
+      <span class="{% include techniqueclass.html technique=technique %}">{% include techniquelink.html technique=technique %} {{technique.append}} {% if forloop.last %}{% else %}<strong>AND</strong>{% endif %}</span>
+    {% endfor %}
+  {% else %}
+    {% if shortname == "future" %}
+      {{include.technique.title}}
+    {% else %}
+      {% assign currenttechnique = site.data.techniques | where: "short", techid | first %}
+
+      {{ include.technique.prepend }} <a target="_blank" href="{{technique.short | append: '.html' | prepend: site.techniqueurl}}">{{ techid }}: {{currenttechnique.title}} <span class="glyphicon glyphicon-new-window" aria-label="Opens new window/tab"></span></a> {{ include.technique.append }}
+    {% endif %}
+    {% if include.technique.using %}
+      <i>using one of the following techniques:</i>
+      <ul>
+      {% for technique in include.technique.using %}
+        <li class="{% include techniqueclass.html technique=technique %}">{% include techniquelink.html technique=technique %}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  {% endif %}
+{% endif %}
+
+
+
+  {% comment %}
 {% if technique.short %}
   {% assign currenttechnique = site.data.techniques | where: "short", technique.short | first %}
   {{ technique.prepend }} <a target="_blank" href="{{technique.short | append: '.html' | prepend: site.techniqueurl}}">{{technique.short}}: {{currenttechnique.title}} <span class="glyphicon glyphicon-new-window" aria-label="Opens new window/tab"></span></a> {{ technique.append }}
@@ -111,3 +146,4 @@
   {% assign currenttechnique = site.data.techniques | where: "short", technique | first %}
   <a target="_blank" href="{{technique | append: '.html' | prepend: site.techniqueurl}}">{{technique}}: {{currenttechnique.title}} <span class="glyphicon glyphicon-new-window" aria-label="Opens new window/tab"></span></a>
 {% endif %}
+{% endcomment %}

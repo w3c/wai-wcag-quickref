@@ -1,8 +1,8 @@
-{% if include.tech %}
-  {% assign shortname = include.tech | replace:'1','' | replace:'2','' | replace:'3','' | replace:'4','' | replace:'5','' | replace:'6','' | replace:'7','' | replace:'8','' | replace:'9','' | replace:'0','' | trim %}
+{% if include.technique %}
+  {% assign shortname = include.technique.id | replace:'TECH:','' | replace:'1','' | replace:'2','' | replace:'3','' | replace:'4','' | replace:'5','' | replace:'6','' | replace:'7','' | replace:'8','' | replace:'9','' | replace:'0','' | trim %}
 {% else %}
   {% if technique.short %}
-    {% assign shortname = technique.short | replace:'1','' | replace:'2','' | replace:'3','' | replace:'4','' | replace:'5','' | replace:'6','' | replace:'7','' | replace:'8','' | replace:'9','' | replace:'0','' | trim %}
+    {% assign shortname = include.technique.id | replace:'TECH:','' | replace:'1','' | replace:'2','' | replace:'3','' | replace:'4','' | replace:'5','' | replace:'6','' | replace:'7','' | replace:'8','' | replace:'9','' | replace:'0','' | trim %}
   {% elsif technique.future %}
     {% assign shortname = technique.technology %}
   {% elsif technique.text %}
@@ -12,7 +12,7 @@
   {% elsif technique.combined %}
     {% assign shortname ="combined" %}
   {% else %}
-    {% assign shortname = technique | replace:'1','' | replace:'2','' | replace:'3','' | replace:'4','' | replace:'5','' | replace:'6','' | replace:'7','' | replace:'8','' | replace:'9','' | replace:'0','' | trim %}
+    {% assign shortname = include.technique.id | replace:'TECH:','' | replace:'1','' | replace:'2','' | replace:'3','' | replace:'4','' | replace:'5','' | replace:'6','' | replace:'7','' | replace:'8','' | replace:'9','' | replace:'0','' | trim %}
   {% endif %}
 {% endif %}
 {% case shortname %}

@@ -232,6 +232,9 @@ header[role=banner] {
       font-weight: bold;
     }
   }
+  aside {
+    font-size: 12/14 * 1em;
+  }
 }
 
 .sc-content {
@@ -466,7 +469,7 @@ svg.icon {
 .mainrow {
   >div {
     background-color: #eee;
-    aside {
+  > aside {
       padding: 15px;
       a {
         color: $brand-primary !important;
@@ -481,7 +484,7 @@ svg.icon {
     &.threecols {
       flex-direction: row;
     }
-    main, aside {
+    main, > div {
       padding: 0 15px;
       transition: all .1s linear;
     }

@@ -2,6 +2,9 @@
 layout: default
 ---
 {% include header.html %}
+
+{% comment %}{{ site.data.wcag2.principles[0].id }}{% endcomment %}
+
 <div class="mainrow threecols prototype-8">
   <div class="sidebar">
     <div class="fixedsticky" style="top:0;">
@@ -37,11 +40,12 @@ layout: default
       {% include filter-status.html %}
     </div>
     {% assign p = 0 %}
-    {% for principle in site.data.principles %}
+    {% for principle in site.data.wcag2.principles %}
       {% assign p = p | plus: 1 %}
       {% assign g = 0 %}
-      <h2 id="principle{{ p }}"><strong>{{ p }}</strong> {{principle}}</h2>
-      {% for guideline in site.guidelines %}
+      <h2 id="principle.id"><strong>{{ num }}</strong> {{principle.handle}}</h2>
+      <p>{{principle.title}}</p>
+      {% for guideline in principle.guidelines %}
         {% include guideline.html %}
       {% endfor %}
     {% endfor %}

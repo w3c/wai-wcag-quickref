@@ -1,41 +1,74 @@
 {% assign s = s | plus: 1 %}
-<article class="sc-wrapper" data-tags="{{currentsc.tags | join: " "}}">
+{% assign sc = include.sc %}
+{% assign sc_id = sc.id | replace:'WCAG2:','' %}
+<article class="sc-wrapper" data-tags="{{sc.tags | join: " "}}">
   <header>
-    <h4 id="{{currentsc.slug}}"><strong>{{ p }}.{{ g }}.{{ s }}</strong> <span>{{currentsc.title}}</span></h4>
-    <p class="h4"><span class="level-{{include.level | downcase}}">Level {{include.level}}</span></p>
+    <h4 id="{{sc_id}}"><strong>{{ p }}.{{ g }}.{{ s }}</strong> <span>{{sc.handle}}</span></h4>
+    <p class="h4"><span class="level-{{sc.level | downcase}}">Level {{sc.level}}</span></p>
   </header>
   <div class="sc-content">
     <div class="sc-text">
-	    {{ currentsc.output }}
+	    <p>{{ sc.text }}</p>
+      {% for detail in sc.details %}
+        {% if detail.type == 'note' %}
+          <aside class="note">
+            <p><em>Note:</em> {{ detail.text }}</p>
+          </aside>
+        {% endif%}
+        {% if detail.type == 'ulist' %}
+          <hr>
+          <ul>{% for li in detail.items %}<li><p><strong>{{li.handle}}:</strong> {{li.text}}{% endfor %}</p></ul>
+        {% endif%}
+        {% if detail.type == 'olist' %}
+          <hr>
+          <ol>{% for li in detail.items %}<li><p><strong>{{li.handle}}:</strong> {{li.text}}{% endfor %}</p></ol>
+        {% endif%}
+      {% endfor%}
     </div>
     <div class="understanding">
-      <a href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/{{currentsc.slug}}.html" target="_blank" class="btn btn-default btn-sm"><span aria-hidden="true" class="glyphicon glyphicon glyphicon-info-sign"></span> Understanding {{ p }}.{{ g }}.{{ s }} <span class="glyphicon glyphicon-new-window" aria-label="Opens new window/tab"></span></a>
+      <a href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/{{sc_id}}.html" target="_blank" class="btn btn-default btn-sm"><span aria-hidden="true" class="glyphicon glyphicon glyphicon-info-sign"></span> Understanding {{ p }}.{{ g }}.{{ s }} <span class="glyphicon glyphicon-new-window" aria-label="Opens new window/tab"></span></a>
     </div>
   </div>
-    {% if currentsc.techniques %}
+    {% for sctech in sc.techniques %}
+      {% if sctech.sufficient %}
+        {% assign stech = sctech.sufficient %}
+        {% assign ssize = stech | size %}
+      {% endif %}
+      {% if sctech.advisory %}
+        {% assign atech = sctech.advisory %}
+        {% assign asize = atech | size %}
+      {% endif %}
+      {% if sctech.failure %}
+        {% assign ftech = sctech.failure %}
+        {% assign fsize = ftech | size %}
+      {% endif %}
+    {% endfor %}
+    {% assign completesize = ssize | plus: asize | plus: fsize %}
+    {%comment%}{{ssize}} {{asize}} {{fsize}}{%endcomment%}
+    {% if completesize >= 1 %}
     <div class="techniques-button btn-group" role="group">
       <button data-target="#techniques-{{ p }}{{ g }}{{ s }}" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="techniques-{{ p }}{{ g }}{{ s }}" class="btn btn-info btn-techniques"><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show</span><span class="word-hide"><span class="glyphicon glyphicon-chevron-down"></span> Hide</span> techniques for {{ p }}.{{ g }}.{{ s }}</button>
-      <label class="btn btn-default"><input type="checkbox" name="sc-{{ p }}{{ g }}{{ s }}-sufficient" {% if currentsc.techniques.sufficient %}checked{% else %}disabled{% endif %}> Sufficient</label>
-      <label class="btn btn-default"><input type="checkbox" name="sc-{{ p }}{{ g }}{{ s }}-advisory" {% if currentsc.techniques.advisory %}checked{% else %}disabled{% endif %}> Advisory</label>
-      <label class="btn btn-default"><input type="checkbox" name="sc-{{ p }}{{ g }}{{ s }}-failures" {% if currentsc.techniques.failures %}checked{% else %}disabled{% endif %}> Failures</label>
+      <label class="btn btn-default"><input type="checkbox" name="sc-{{ p }}{{ g }}{{ s }}-sufficient" {% if ssize %}checked{% else %}disabled{% endif %}> Sufficient</label>
+      <label class="btn btn-default"><input type="checkbox" name="sc-{{ p }}{{ g }}{{ s }}-advisory" {% if asize %}checked{% else %}disabled{% endif %}> Advisory</label>
+      <label class="btn btn-default"><input type="checkbox" name="sc-{{ p }}{{ g }}{{ s }}-failures" {% if fsize %}checked{% else %}disabled{% endif %}> Failures</label>
     </div>
   <div class="collapse" id="techniques-{{ p }}{{ g }}{{ s }}">
     <div>
       <div class="tab-wrap">
         <div class="tab-content">
-          {% if currentsc.techniques.sufficient %}
+          {% if ssize >= 1 %}
             <div role="tabpanel" class="tbox tbox-sufficient tab-pane active" id="sc-{{ p }}{{ g }}{{ s }}-sufficient">
-              {% include techlist.html techtitle="Sufficient Techniques" techniques=currentsc.techniques.sufficient ttype="sufficient" %}
+              {% include techlist.html techtitle="Sufficient Techniques" techniques=stech ttype="sufficient" %}
             </div>
           {% endif %}
-          {% if currentsc.techniques.advisory %}
+          {% if asize >= 1 %}
             <div role="tabpanel" class="tbox tbox-advisory tab-pane active" id="sc-{{ p }}{{ g }}{{ s }}-advisory">
-              {% include techlist.html techtitle="Advisory Techniques" techniques=currentsc.techniques.advisory ttype="advisory" %}
+              {% include techlist.html techtitle="Advisory Techniques" techniques=atech ttype="advisory" %}
             </div>
           {% endif %}
-          {% if currentsc.techniques.failures %}
+          {% if asize >= 1 %}
             <div role="tabpanel" class="tbox tbox-failure tab-pane active" id="sc-{{ p }}{{ g }}{{ s }}-failures">
-              {% include techlist.html techtitle="Failures" techniques=currentsc.techniques.failures ttype="failure" %}
+              {% include techlist.html techtitle="Failures" techniques=ftech ttype="failure" %}
             </div>
           {% endif %}
         </div>
