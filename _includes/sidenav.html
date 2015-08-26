@@ -30,8 +30,9 @@
           {% for guideline in principle.guidelines %}
             {% assign g = g | plus: 1 %}
             {% assign s = 0 %}
+            {% assign g_id = guideline.id | replace:'WCAG2:','' %}
               <li>
-                <a href="#{{ guideline.id }}"><strong><span>{{ p }}.{{ g }}</span></strong> <span>{{ guideline.handle }}</span></a>
+                <a href="#{{ g_id }}"><strong><span>{{ p }}.{{ g }}</span></strong> <span>{{ guideline.handle }}</span></a>
                 <ul>
                   {% for sc in guideline.successcriteria %}
                     {% assign s = s | plus: 1 %}
