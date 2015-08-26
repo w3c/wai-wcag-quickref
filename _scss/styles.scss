@@ -347,6 +347,9 @@ header[role=banner] {
 }
 
 .nav-overview {
+  .principle {
+    font-weight: bold;
+  }
   a {
     color: #fff;
     line-height: 1.5;
@@ -376,9 +379,9 @@ header[role=banner] {
     &:last-child {
       border-bottom: none;
     }
-    ul {
-      padding-left: 1em;
-    }
+  }
+  ul {
+    padding-left: 1em;
   }
   .nav-pills > li.active > a {
     background-color: $brand-primary;

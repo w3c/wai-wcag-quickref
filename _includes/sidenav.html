@@ -25,7 +25,7 @@
       {% assign p = p | plus: 1 %}
       {% assign g = 0 %}
       <li>
-        <a href="#principle{{ p }}"><strong><span>{{ p }}.</span></strong> <span>{{principle.handle}}</span></a>
+        <a href="#principle{{ p }}" class="principle"><strong><span>{{ p }}.</span></strong> <span>{{principle.handle}}</span></a>
         <ul>
           {% for guideline in principle.guidelines %}
             {% assign g = g | plus: 1 %}
