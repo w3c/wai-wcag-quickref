@@ -485,10 +485,10 @@ svg.icon {
       flex-direction: row;
     }
     main, > div {
-      padding: 0 15px;
-      transition: all .1s linear;
+       transition: all .1s linear;
     }
     main {
+      padding: 0 15px;
       order: 2;
       flex: 6;
       padding-right: 15px;
