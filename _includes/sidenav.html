@@ -21,57 +21,27 @@
   <nav class="nav-overview" aria-label="Principles, Guidelines and Success Criteria">
   <ul class="nav">
     {% assign p = 0 %}
-    {% for principle in site.data.principles %}
+    {% for principle in site.data.wcag2.principles %}
       {% assign p = p | plus: 1 %}
       {% assign g = 0 %}
       <li>
-        <a href="#principle{{ p }}"><strong><span>{{ p }}.</span></strong> <span>{{principle}}</span></a>
+        <a href="#principle{{ p }}"><strong><span>{{ p }}.</span></strong> <span>{{principle.handle}}</span></a>
         <ul>
-          {% for guideline in site.guidelines %}
+          {% for guideline in principle.guidelines %}
             {% assign g = g | plus: 1 %}
             {% assign s = 0 %}
-            {% if guideline.principle == principle %}
               <li>
-                <a href="#{{ guideline.slug }}"><strong><span>{{ p }}.{{ g }}</span></strong> <span>{{ guideline.title }}</span></a>
-                  {% if guideline.successcriteria %}
-                  <ul>
-                    {% if guideline.successcriteria.levelA %}
-                        {% for criterion in guideline.successcriteria.levelA %}
-                        {% assign s = s | plus: 1 %}
-                          {% assign currentscs = site.successcriteria | where: "slug", criterion %}
-                            {% for currentsc in currentscs %}
-                            <li class="filter-levels-a">
-                              <a href="#{{currentsc.slug}}"><strong><span>{{ p }}.{{ g }}.{{ s }}</span></strong> <span>{{currentsc.title}}</span></a>
-                            </li>
-                            {% endfor %}
-                        {% endfor %}
-                    {% endif %}
-                    {% if guideline.successcriteria.levelAA %}
-                      {% for criterion in guideline.successcriteria.levelAA %}
-                        {% assign s = s | plus: 1 %}
-                          {% assign currentscs = site.successcriteria | where: "slug", criterion %}
-                            {% for currentsc in currentscs %}
-                            <li class="filter-levels-aa">
-                              <a href="#{{currentsc.slug}}"><strong>{{ p }}.{{ g }}.{{ s }}</strong> <span>{{currentsc.title}}</span></a>
-                            </li>
-                            {% endfor %}
-                        {% endfor %}
-                    {% endif %}
-                    {% if guideline.successcriteria.levelAAA %}
-                      {% for criterion in guideline.successcriteria.levelAAA %}
-                        {% assign s = s | plus: 1 %}
-                          {% assign currentscs = site.successcriteria | where: "slug", criterion %}
-                            {% for currentsc in currentscs %}
-                            <li class="filter-levels-aaa">
-                              <a href="#{{currentsc.slug}}"><strong>{{ p }}.{{ g }}.{{ s }}</strong> <span>{{currentsc.title}}</span></a>
-                            </li>
-                            {% endfor %}
-                        {% endfor %}
-                    {% endif %}
+                <a href="#{{ guideline.id }}"><strong><span>{{ p }}.{{ g }}</span></strong> <span>{{ guideline.handle }}</span></a>
+                <ul>
+                  {% for sc in guideline.successcriteria %}
+                    {% assign s = s | plus: 1 %}
+                    {% assign sc_id = sc.id | replace:'WCAG2:','' %}
+                    <li>
+                      <a href="#{{sc_id}}"><strong><span>{{ p }}.{{ g }}.{{ s }}</span></strong> <span>{{sc.handle}}</span></a>
+                    </li>
+                  {% endfor %}
                   </ul>
-                  {% endif%}
               </li>
-            {% endif %}
           {% endfor %}
         </ul>
       </li>
