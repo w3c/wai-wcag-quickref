@@ -1,8 +1,9 @@
 <div class="sbbox sbbox-default">
 <div class="sbbox-heading"><span>Tags</span></div>
 <div {% unless include.show %}hidden{% endunless %} class="sbbox-body {% if include.show %}collapsed in{% endif %}"  id="tags">
-{% for sc in site.successcriteria %}
-  {% for tag in sc.tags %}
+{% for tg in site.data.tags-sc %}
+  {% assign tgs = tg[1] | split: " "%}
+  {% for tag in tgs %}
     {% assign taglist = taglist | append: '||' | append: tag %}
     {% assign tagcount.tag = tagcount.tag | plus:1 %}
   {% endfor %}
