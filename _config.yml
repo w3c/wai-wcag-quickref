@@ -21,9 +21,6 @@ collections:
   successcriteria:
     output: true
     permalink: /sc/:title.html
-  guidelines:
-    output: true
-    permalink: /gl/:title.html
   filters:
     output: false
 
