@@ -1,0 +1,15 @@
+text-equiv-all: images video audio
+media-equiv-av-only-alt: audio video
+media-equiv-captions: video
+media-equiv-audio-desc: video
+media-equiv-real-time-captions: live video
+media-equiv-audio-desc-only: video
+media-equiv-sign: video
+media-equiv-extended-ad: video
+media-equiv-text-doc: images video audio
+media-equiv-live-audio-only: audio
+content-structure-separation-programmatic: structure
+content-structure-separation-sequence: structure keyboard
+content-structure-separation-understanding: structure
+visual-audio-contrast-without-color: color contrast
+visual-audio-contrast-dis-audio: audio video

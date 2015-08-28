@@ -120,8 +120,9 @@ jQuery(document).ready(function($) {
         uri.addSearch(cinput.attr('name'),cinput.val());
       }
     });
-    $(selshow.join(',')).show();
-    $(selhide.join(',')).hide();
+    $('body').addClass('tagged');
+    $(selshow.join(',')).addClass('current');
+    $(selhide.join(',')).removeClass('current');
     updateuri(uri);
     statustext();
 
