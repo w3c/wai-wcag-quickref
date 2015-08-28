@@ -18,9 +18,6 @@ lsi: false
 markdown: kramdown
 
 collections:
-  successcriteria:
-    output: true
-    permalink: /sc/:title.html
   filters:
     output: false
 
