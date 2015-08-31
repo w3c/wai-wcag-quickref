@@ -121,8 +121,20 @@ jQuery(document).ready(function($) {
       }
     });
     $('body').addClass('tagged');
-    $(selshow.join(',')).addClass('current');
-    $(selhide.join(',')).removeClass('current');
+    $(selshow.join(',')).each(function(e) {
+      if ($(this).hasClass('sc-wrapper')) {
+        $(this).addClass('current');
+      } else {
+        $(this).show();
+      }
+    });
+    $(selhide.join(',')).each(function(e) {
+      if ($(this).hasClass('sc-wrapper')) {
+        $(this).removeClass('current');
+      } else {
+        $(this).hide();
+      }
+    });
     updateuri(uri);
     statustext();
 
@@ -152,7 +164,7 @@ jQuery(document).ready(function($) {
     statustext();
   });
 
-  $('.sbbox-heading button').on('click', function(e) {
+  $('.sbbox-heading button.filters').on('click', function(e) {
     var unchecked = $(e.target).parent().parent().find('input:not(:checked)');
     unchecked.each(function(){
       $(this).prop('checked', 'checked');
@@ -169,35 +181,15 @@ jQuery(document).ready(function($) {
     return false;
   }
 
+  // Only buttons in filters
+
   $('.btn-only').on('click', function(){
     $(this).parents('.sbbox-body').find("input[type=checkbox]").prop('checked', false);
     $(this).parent().find("input[type=checkbox]").prop('checked', true).trigger( "change" );
   });
 
-  $('.hide-sb').on('click', function(e){
-    var sidebar = $(this).parent().parent().parent().parent();
-    var status = sidebar.find('.sidebar-content, h6').toggle().is(":visible");
-    //sidebar.find('h6>span:first-child').toggle();
-    sidebar.parent().toggleClass('hidden-sb');
 
-    $(this).parent().find('.glyphicon').prop('hidden', function(idx, oldProp) {
-        return !oldProp;
-    });
-    var uri = new URI(window.location);
-    if (status) {
-      uri.removeSearch("hide", $(this).parent().parent().parent().attr('class'));
-      window.setTimeout(function (){
-        sidebar.css('width',$(this).parent().width()); // On Resize fix funky stuff
-      }, 100);
-      $(this).removeClass('btn-primary btn-lg').addClass('btn-default');
-    } else {
-      uri.addSearch("hide", $(this).parent().parent().parent().attr('class'));
-      sidebar.css('width','auto');
-      $(this).addClass('btn-primary btn-lg').removeClass('btn-default');
-    }
-    updateuri(uri);
-  });
-
+  // More buttons in Success Criteria
   function excolsc() {
     var hr = $('.sc-content hr');
     hr.hide(); // hide horizontal rule
@@ -289,103 +281,107 @@ jQuery(document).ready(function($) {
   };
 
   var tagButtons = function () {
-    $('#tags').on('click', function(e) {
-      if(e.target.localName=="button") {
-        $('.filter-status').addClass('loading');
-        $('.filter-status .loaded').hide();
-        $('.filter-status .loading').show();
-        $('.sc-wrapper.current').removeClass('current');
-        var button = $(e.target), tags = new Array();
-        if (button.hasClass('btn-primary')) {
-          button.removeClass('btn-primary').addClass('btn-default').removeAttr('aria-selected');
-        } else {
-          button.removeClass('btn-default').addClass('btn-primary').attr('aria-selected','true');
-        }
-        var pressed = $('#tags .btn-primary');
-        if (pressed.length>0) {
-          $('#tags .btn-primary').each(function(index, el) {
-            tags.push($(el).attr('data-tag'));
-          });
-          var selector = '.sc-wrapper[data-tags~="' + tags.join('"], .sc-wrapper[data-tags~="') + '"]';
-          $('body').addClass('tagged');
-          $(selector).addClass('current');
-          //$('#status .sc').html('<strong>Tags applied:</strong> '+tags.join(', '));
-        } else {
-          //$('#status .sc').html('No tags applied.');
-          $('body').removeClass('tagged');
-        }
-        statustext();
+    $('#tags').on('click', 'button', function(e) {
+      $('.filter-status').addClass('loading');
+      $('.filter-status .loaded').hide();
+      $('.filter-status .loading').show();
+      $('.sc-wrapper.current').removeClass('current');
+      var button = $(e.target), tags = new Array();
+      if (button.hasClass('btn-primary')) {
+        button.removeClass('btn-primary').addClass('btn-default').removeAttr('aria-selected');
+      } else {
+        button.removeClass('btn-default').addClass('btn-primary').attr('aria-selected','true');
       }
+      var pressed = $('#tags .btn-primary');
+      if (pressed.length>0) {
+        $('#tags .btn-primary').each(function(index, el) {
+          tags.push($(el).attr('data-tag'));
+        });
+        var selector = '.sc-wrapper[data-tags~="' + tags.join('"], .sc-wrapper[data-tags~="') + '"]';
+        $('body').addClass('tagged');
+        $(selector).addClass('current');
+      } else {
+        $('body').removeClass('tagged');
+      }
+      statustext();
     });
   };
 
   var techniqueCheckboxes = function () {
-    $('#filter-techniques-content input').on('change', function(event) {
-      $('#filter-techniques-content input:checked').each(function(index, el) {
-        $('.techniques-button input[name$="' + $(el).val() + '"]').prop('checked', true).change();
+    var techniques = $('#filter-techniques-content');
+    var tselected, tunselected;
+    techniques.on('change', 'input', function(event) {
+      techniques.find('input:checked').each(function(index, el) {
+        tselected.push($(el).val());
       });
-      $('#filter-techniques-content input:not(:checked)').each(function(index, el) {
-        $('.techniques-button input[name$="' + $(el).val() + '"]').prop('checked', false).change();
+      var selector = '.techniques-button input[name$="' + tselected.join('"], .techniques-button input[name$="') + '"]';
+      $(selector).prop('checked', true);
+      techniques.find('input:not(:checked)').each(function(index, el) {
+        tselected.push($(el).val());
       });
+      selector = '.techniques-button input[name$="' + tunselected.join('"], .techniques-button input[name$="') + '"]';
+      $(selector).prop('checked', false);
+      $(selector).find('input:first-of-type').change();
     });
   };
 
   function init() {
     $('html').addClass('.has-js');
-    $('.mainrow>div>div').css('width', $('.tab-pane.active').outerWidth()).fixedsticky();
+    $('.mainrow>div>div').css('width', $('.tab-pane.active').outerWidth());
     $('.fixedsticky').fixedsticky();
-    $('aside.tags>div').css('width', $('aside.tags').width()).fixedsticky();
     if ($( window ).width() > 896) {
       $('html').addClass('large');
-      $('.tab-nav-wrap .nav-pills').addClass('nav-stacked');
     } else {
       $('html').removeClass('large');
-      $('.tab-nav-wrap .nav-pills').removeClass('nav-stacked');
     }
     if ($( window ).width() < 480) {
-      $('.hide-sb').not(".hidden-sb .hide-sb").trigger('click');
+      $('#hidesidebars').not(":visible").trigger('click');
     }
-    $('.mainrow aside > div').css('top', $('.navrow').height());
 
+    $('.mainrow aside > div').css('top', $('.navrow').height()); //Applies top to make fixedsticky work in sidebars
 
-      if($('.prototype-8')) {
-        $('.prototype-8 .tab-content.fixedsticky').css('top', $('.navrow').height()).fixedsticky();
+    $('#hidesidebars').on('click', function () {
+        var location = window.history.location || window.location;
+        var uri = new URI(location);
+        uri.addSearch("hidesidebar", true);
+        $('.mainrow>div').hide();
+        $('#showsidebars').show().focus();
+        updateuri(uri);
+    });
 
-        $('#hidesidebars').on('click', function () {
-            $('.mainrow>div').hide();
-            $('#showsidebars').show().focus();
-        });
+    $('#showsidebars').on('click', function () {
+      var location = window.history.location || window.location;
+      var uri = new URI(location);
+      uri.removeSearch("hidesidebar")
+      $('.mainrow>div').show();
+      $('#showsidebars').hide();
+      $('#hidesidebars').focus();
+      updateuri(uri);
+    });
 
-        $('#showsidebars').on('click', function () {
-          $('.mainrow>div').show();
-          $('#showsidebars').hide();
-          $('#hidesidebars').focus();
-        });
-      }
+    $('#overview').on('click', function(e) {
+      var thetarget = $(e.target).parents('a').attr('href');
+      scrollto($(thetarget));
+    });
 
-      $('#overview').on('click', function(e) {
-        var thetarget = $(e.target).parents('a').attr('href');
-        scrollto($(thetarget));
-      });
+    $('.toplink').on('click', function(e) {
+      var thetarget = $(this).attr('href');
+      scrollto($(thetarget));
+    });
 
-      $('.toplink').on('click', function(e) {
-        var thetarget = $(this).attr('href');
-        scrollto($(thetarget));
-      });
+    $('.filter-status').on('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(event) {
+      $(this).removeClass('loading');
+      $('.filter-status .loaded').show();
+      $('.filter-status .loading').hide();
+    });
 
-      $('.filter-status').on('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(event) {
-        $(this).removeClass('loading');
-        $('.filter-status .loaded').show();
-        $('.filter-status .loading').hide();
-      });
-
-      if (matchMedia('screen and (min-width: 43em)').matches) {
-        $('.sidebar-content').css('height', window.innerHeight-document.querySelectorAll('.active .sidebar-content')[0].getBoundingClientRect().top);
-      }
+    if (matchMedia('screen and (min-width: 43em)').matches) {
+      $('.sidebar-content').css('height', window.innerHeight-document.querySelectorAll('.active .sidebar-content')[0].getBoundingClientRect().top);
+    }
 
   }
 
-  $('.techniques-button').on('change', 'input', function(event) {
+  $('main').on('change', '.techniques-button input', function(event) {
     event.preventDefault();
     var target = $(event.target),
         type = target.attr('name').match(/sc-[0-9]{3}-(.*)/)[1];
