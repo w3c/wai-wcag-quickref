@@ -2,7 +2,7 @@
 {% assign sc = include.sc %}
 {% assign sc_id = sc.id | replace:'WCAG2:','' %}
 {% assign keywords = site.data.tags-sc[sc_id] %}
-<article class="sc-wrapper filter-levels-{{sc.level | downcase}}" data-tags="{{keywords}}">
+<article class="sc-wrapper current filter-levels-{{sc.level | downcase}}" data-tags="{{keywords}}">
   <header>
     <h4 id="{{sc_id}}"><strong>{{ p }}.{{ g }}.{{ s }}</strong> <span>{{sc.handle}}</span></h4>
     <p class="h4"><span class="level-{{sc.level | downcase}}">Level {{sc.level}}</span></p>
