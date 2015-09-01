@@ -49,9 +49,9 @@
     {% if completesize >= 1 %}
     <div class="techniques-button btn-group" role="group">
       <button data-target="#techniques-{{ p }}{{ g }}{{ s }}" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="techniques-{{ p }}{{ g }}{{ s }}" class="btn btn-info btn-techniques"><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show</span><span class="word-hide"><span class="glyphicon glyphicon-chevron-down"></span> Hide</span> techniques for {{ p }}.{{ g }}.{{ s }}</button>
-      <label class="btn btn-default"><input type="checkbox" name="sc-{{ p }}{{ g }}{{ s }}-sufficient" {% if ssize %}checked{% else %}disabled{% endif %}> Sufficient</label>
-      <label class="btn btn-default"><input type="checkbox" name="sc-{{ p }}{{ g }}{{ s }}-advisory" {% if asize %}checked{% else %}disabled{% endif %}> Advisory</label>
-      <label class="btn btn-default"><input type="checkbox" name="sc-{{ p }}{{ g }}{{ s }}-failures" {% if fsize %}checked{% else %}disabled{% endif %}> Failures</label>
+      <label class="btn btn-default"><input type="checkbox" name="sc-{{ p }}{{ g }}{{ s }}-sufficient" {% if ssize > 0 %}checked{% else %}disabled{% endif %}> Sufficient</label>
+      <label class="btn btn-default"><input type="checkbox" name="sc-{{ p }}{{ g }}{{ s }}-advisory" {% if asize > 0 %}checked{% else %}disabled{% endif %}> Advisory</label>
+      <label class="btn btn-default"><input type="checkbox" name="sc-{{ p }}{{ g }}{{ s }}-failures" {% if fsize > 0 %}checked{% else %}disabled{% endif %}> Failures</label>
     </div>
   <div class="collapse" id="techniques-{{ p }}{{ g }}{{ s }}">
     <div>
@@ -67,7 +67,7 @@
               {% include techlist.html techtitle="Advisory Techniques" techniques=atech ttype="advisory" %}
             </div>
           {% endif %}
-          {% if asize >= 1 %}
+          {% if fsize >= 1 %}
             <div role="tabpanel" class="tbox tbox-failure tab-pane active" id="sc-{{ p }}{{ g }}{{ s }}-failures">
               {% include techlist.html techtitle="Failures" techniques=ftech ttype="failure" %}
             </div>
