@@ -20,9 +20,9 @@
 		<div class="panel-body panel-body-guideline">
 	    <div class="techniques-button btn-group" role="group">
 	      <button data-target="#techniques-{{ p }}{{ g }}" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="techniques-{{ p }}{{ g }}" class="btn btn-info btn-techniques"><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show</span><span class="word-hide"><span class="glyphicon glyphicon-chevron-down"></span> Hide</span> techniques for {{ p }}.{{ g }}</button>
-	      <label class="btn btn-default"><input type="checkbox" name="sc-{{ p }}{{ g }}-sufficient" {% if ssize >= 1 %}checked{% else %}disabled{% endif %}> Sufficient</label>
-	      <label class="btn btn-default"><input type="checkbox" name="sc-{{ p }}{{ g }}-advisory" {% if asize >= 1 %}checked{% else %}disabled{% endif %}> Advisory</label>
-	      <label class="btn btn-default"><input type="checkbox" name="sc-{{ p }}{{ g }}-failures" {% if fsize >= 1 %}checked{% else %}disabled{% endif %}> Failures</label>
+	      <label class="btn btn-default {% unless ssize >= 1 %}disabled{% endunless %}"><input type="checkbox" name="sc-{{ p }}{{ g }}-sufficient" {% if ssize >= 1 %}checked{% else %}disabled{% endif %}> Sufficient</label>
+	      <label class="btn btn-default {% unless asize >= 1 %}disabled{% endunless %}"><input type="checkbox" name="sc-{{ p }}{{ g }}-advisory" {% if asize >= 1 %}checked{% else %}disabled{% endif %}> Advisory</label>
+	      <label class="btn btn-default {% unless fsize >= 1 %}disabled{% endunless %}"><input type="checkbox" name="sc-{{ p }}{{ g }}-failures" {% if fsize >= 1 %}checked{% else %}disabled{% endif %}> Failures</label>
 	    </div>
 
 		  <div class="collapse" id="techniques-{{ p }}{{ g }}">
