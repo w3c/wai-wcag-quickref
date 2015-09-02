@@ -483,21 +483,20 @@ svg.icon {
 
 @include mq($medium) {
   .mainrow {
-    display:flex;
+    display:table-row;
     &.threecols {
       flex-direction: row;
     }
     main, > div {
-       transition: all .1s linear;
+      display: table-cell;
+      vertical-align:top;
+      transition: all .1s linear;
     }
     main {
       padding: 0 15px;
-      order: 2;
-      flex: 6;
-      padding-right: 15px;
     }
     >div {
-      flex:2 !important;
+      width: 300px;
     }
   }
 }
