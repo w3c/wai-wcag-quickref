@@ -43,8 +43,14 @@ layout: default
     {% for principle in site.data.wcag2.principles %}
       {% assign p = p | plus: 1 %}
       {% assign g = 0 %}
-      <h2 id="principle{{ principle.num }}"><strong>{{ p }}.</strong> {{principle.handle}}</h2>
-      <p>{{principle.title}}</p>
+      <div class="principle panel panel-default">
+        <div class="panel-heading">
+          <h2 id="principle{{ principle.num }}"><strong>{{ p }}.</strong> {{principle.handle}}</h2>
+        </div>
+        <div class="panel-body panel-body-principle">
+          <p>{{principle.title}}</p>
+        </div>
+      </div>
       {% for guideline in principle.guidelines %}
         {% include guideline.html %}
       {% endfor %}

@@ -712,3 +712,12 @@ button.panel-heading {
     align-self: flex-end;
   }
 }
+
+
+.panel.principle {
+  margin-top: 1em;
+  h2, p {
+    margin: 0;
+    font-weight: bold;
+  }
+}
