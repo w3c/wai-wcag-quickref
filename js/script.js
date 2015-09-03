@@ -135,6 +135,18 @@ jQuery(document).ready(function($) {
         $(this).hide();
       }
     });
+
+    $('#filters .sbbox').each(function(index, el) {
+      var elem = $(el);
+      var allcheckboxes = elem.find('input[type=checkbox]');
+      var checked = elem.find('input[type=checkbox]:checked');
+      if (allcheckboxes.length == checked.length) {
+        elem.find('button').prop('disabled', true);
+      } else {
+        elem.find('button').prop('disabled', false);
+      }
+    });
+
     updateuri(uri);
     statustext();
 
@@ -300,8 +312,10 @@ jQuery(document).ready(function($) {
         var selector = '.sc-wrapper[data-tags~="' + tags.join('"], .sc-wrapper[data-tags~="') + '"]';
         $('body').addClass('tagged');
         $(selector).addClass('current');
+        $('#deselecttags').prop('disabled', false);
       } else {
         $('body').removeClass('tagged');
+        $('#deselecttags').prop('disabled', true);
       }
       statustext();
     });
@@ -327,7 +341,6 @@ jQuery(document).ready(function($) {
 
   function init() {
     $('html').addClass('.has-js');
-    $('.mainrow>div>div').css('width', $('.tab-pane.active').outerWidth());
     $('.fixedsticky').fixedsticky();
     if ($( window ).width() > 896) {
       $('html').addClass('large');
@@ -379,6 +392,17 @@ jQuery(document).ready(function($) {
       $('.sidebar-content').css('height', window.innerHeight-document.querySelectorAll('.active .sidebar-content')[0].getBoundingClientRect().top);
     }
 
+    $('#deselecttags').on('click', function(event) {
+      event.preventDefault();
+      /* Act on the event */
+      $('#tags .btn-primary').removeClass('btn-primary').addClass('btn-default').removeAttr('aria-selected');
+      $('.sc-wrapper.current').removeClass('current');
+      $('body').removeClass('tagged');
+      statustext();
+      $(this).hide();
+    });
+
+    $('.sidebar>div').css('width', $('.tab-pane.active').outerWidth());
   }
 
   $('main').on('change', '.techniques-button input', function(event) {
@@ -406,7 +430,7 @@ jQuery(document).ready(function($) {
   techniqueCheckboxes();
 
   $( window ).resize(function() {
-    init();
+    //init();
   });
 
   init();
