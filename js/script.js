@@ -331,14 +331,17 @@ jQuery(document).ready(function($) {
         tselected.push($(checked[i]).val());
       };
       var selector = '.techniques-button input[name$="' + tselected.join('"], .techniques-button input[name$="') + '"]';
+      var selector2 = '.tbox-' + tselected.join(', .tbox-') + '';
       $(selector).prop('checked', true);
+      $(selector2).addClass('active');
       var unchecked =  techniques.find('input:not(:checked)');
       for (var i = unchecked.length - 1; i >= 0; i--) {
         tunselected.push($(unchecked[i]).val());
       };
       selector = '.techniques-button input[name$="' + tunselected.join('"], .techniques-button input[name$="') + '"]';
+      var selector2 = '.tbox-' + tunselected.join(', .tbox-') + '';
       $(selector).prop('checked', false);
-      $(selector).find('input:first-of-type').change();
+      $(selector2).removeClass('active');
     });
   };
 
