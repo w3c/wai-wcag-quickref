@@ -410,8 +410,8 @@ jQuery(document).ready(function($) {
 
   $('main').on('change', '.techniques-button input', function(event) {
     event.preventDefault();
-    var target = $(event.target),
-        type = target.attr('name').match(/sc-[0-9]{3}-(.*)/)[1];
+    var target = $(event.target);
+    var type = target.attr('name').match(/sc-[0-9]{2,3}-(.*)/)[1];
     if (($('.techniques-button input[name$="' + type + '"]:checked').length > 0) && ($('.techniques-button input[name$="' + type + '"]:not(:checked)').length > 0)) {
       $('[name="filter-techniques"][value="' + type + '"]').prop('indeterminate', true);
     } else {
