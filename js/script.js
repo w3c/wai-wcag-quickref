@@ -141,9 +141,9 @@ jQuery(document).ready(function($) {
       var allcheckboxes = elem.find('input[type=checkbox]');
       var checked = elem.find('input[type=checkbox]:checked');
       if (allcheckboxes.length == checked.length) {
-        elem.find('button').prop('disabled', true);
+        elem.find('.sbbox-heading button').prop('disabled', true);
       } else {
-        elem.find('button').prop('disabled', false);
+        elem.find('.sbbox-heading button').prop('disabled', false);
       }
     });
 
