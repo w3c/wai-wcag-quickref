@@ -157,7 +157,7 @@ jQuery(document).ready(function($) {
     }
   }
 
-  $('#filters').on('change', function(e) {
+  $('#filters').on('change', '#filter-technologies input[type=checkbox], #filter-levels input[type=checkbox]', function(e) {
     $('.filter-status').addClass('loading');
     $('.filter-status .loaded').hide();
     $('.filter-status .loading').show();
