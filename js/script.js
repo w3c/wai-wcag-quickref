@@ -433,7 +433,9 @@ jQuery(document).ready(function($) {
   techniqueCheckboxes();
 
   $( window ).resize(function() {
-    //init();
+    if (matchMedia('screen and (min-width: 43em)').matches) {
+      $('.sidebar-content').css('height', window.innerHeight-document.querySelectorAll('.active .sidebar-content')[0].getBoundingClientRect().top);
+    }
   });
 
   init();
