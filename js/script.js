@@ -383,7 +383,7 @@ jQuery(document).ready(function($) {
       scrollto($(thetarget));
     });
 
-    $('.toplink').on('click', function(e) {
+    $('main').on('click', '.toplink', function(e) {
       var thetarget = $(this).attr('href');
       scrollto($(thetarget));
     });
