@@ -323,16 +323,19 @@ jQuery(document).ready(function($) {
 
   var techniqueCheckboxes = function () {
     var techniques = $('#filter-techniques-content');
-    var tselected, tunselected;
     techniques.on('change', 'input', function(event) {
-      techniques.find('input:checked').each(function(index, el) {
-        tselected.push($(el).val());
-      });
+      var techniques = $('#filter-techniques-content');
+      var tselected = new Array(), tunselected = new Array();
+      var checked =  techniques.find('input:checked');
+      for (var i = checked.length - 1; i >= 0; i--) {
+        tselected.push($(checked[i]).val());
+      };
       var selector = '.techniques-button input[name$="' + tselected.join('"], .techniques-button input[name$="') + '"]';
       $(selector).prop('checked', true);
-      techniques.find('input:not(:checked)').each(function(index, el) {
-        tselected.push($(el).val());
-      });
+      var unchecked =  techniques.find('input:not(:checked)');
+      for (var i = unchecked.length - 1; i >= 0; i--) {
+        tunselected.push($(unchecked[i]).val());
+      };
       selector = '.techniques-button input[name$="' + tunselected.join('"], .techniques-button input[name$="') + '"]';
       $(selector).prop('checked', false);
       $(selector).find('input:first-of-type').change();
