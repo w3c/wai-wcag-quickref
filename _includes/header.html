@@ -9,5 +9,36 @@
     <div class="page-title">
       <a href="{{ page.url | prepend: site.baseurl }}">[Mockup] How to Meet WCAG 2.0 <br><span class="subheading">A customizable quick reference to Web Content Accessibility Guidelines 2.0 requirements (success criteria) and techniques</span></a>
     </div>
-
 </header>
+<div class="container-fluid mainhead">
+  <p><button data-target="#pageinfo" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="pageinfo" class="btn btn-info btn-techniques"><span class="word-show"><span class="glyphicon glyphicon-question-sign"></span> Show</span><span class="word-hide"><span class="glyphicon glyphicon-remove-sign"></span> Hide</span> detailed explanation of this document</button></p>
+  <div id="pageinfo">
+    <div class="pibox">
+      <div class="pibox-heading">About</div>
+      <div class="pibox-body">
+        <p>This document provides a customizable list of <abbr title="Web Content Accessibility Guidelines 2.0">WCAG 2.0</abbr> Success Criteria and Techniques. This allows for focusing on a subset of the guidelines.</p>
+      </div>
+    </div>
+    <div class="pibox">
+      <div class="pibox-heading">Tags &amp; Filters</div>
+      <div class="pibox-body">
+        <p><strong>Tags</strong> apply to the Success Criteria. When selecting a tag, only the criteria that are tagged with that tag are visible, the others are collapsed. You can select multiple tags.</p>
+        <p><strong>Filters</strong> can apply to Success Criteria or Techniques.</p>
+        <p><em>Note:</em> Other success criteria than the tagged/filtered might also apply in certain circumstances.</p>
+      </div>
+    </div>
+    <div class="pibox">
+      <div class="pibox-heading">Sharing</div>
+      <div class="pibox-body">
+        <p>Use the “Share this view” button to copy the current URL into your clipboard. You can then paste it wherever you like.</p>
+      </div>
+    </div>
+    <div class="pibox">
+      <div class="pibox-heading">Contribute</div>
+      <div class="pibox-body">
+        <p>There are a few ways to contribute to this document. For contributing to the functionality of this quick reference or to <a href="http://github.com/w3c/wai-wcag-quickref/issues/">report bugs</a>, see <a href="http://github.com/w3c/wai-wcag-quickref">this Github repository</a>.</p>
+        <p>Anyone can also <a href="http://www.w3.org/WAI/GL/WCAG20/TECHS-SUBMIT/">submit techniques</a> that are considered for inclusion in an update. Please submit corrections, updates, or new information related to techniques, failures, or other WCAG documentation to the WCAG Working Group, per the <a href="http://www.w3.org/WAI/WCAG20/comments/">instructions for commenting</a>.</p>
+      </div>
+    </div>
+  </div>
+</div>

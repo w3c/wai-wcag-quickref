@@ -720,3 +720,41 @@ button.panel-heading {
     font-weight: bold;
   }
 }
+.has-js #pageinfo {
+  display:none;
+  &[aria-expanded=true] {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    align-items: space-beteen;
+  }
+}
+
+.pibox {
+  color: #333;
+  background-color: #eee;
+  padding: 5px;
+  margin-bottom: 10px;
+  flex-basis: 48.5%;
+  margin-right: 1%;
+  flex-grow: 1;
+  &:nth-child(even) {
+    margin-right: 0;
+  }
+}
+
+.pibox-heading {
+  font-family: $font-family-sans-serif;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+}
+
+.pibox-body {
+  margin: 10px 0 0;
+  :first-child {
+    margin-top: 0;
+  }
+  :last-child {
+    margin-bottom: 0;
+  }
+}
