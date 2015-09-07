@@ -351,7 +351,7 @@ jQuery(document).ready(function($) {
   });
 
   function init() {
-    $('html').addClass('.has-js');
+    $('html').addClass('has-js');
     $('.fixedsticky').fixedsticky();
     if ($( window ).width() > 896) {
       $('html').addClass('large');
