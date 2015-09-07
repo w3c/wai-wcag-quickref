@@ -451,6 +451,40 @@ jQuery(document).ready(function($) {
     }
   });
 
+  $('#sharethisview').on('click', function (){
+
+    window.getSelection().removeAllRanges();
+
+    var location = window.history.location || window.location;
+
+    var shareSpan = document.createElement('span');
+    shareSpan.id = 'shareSpan'
+    // shareSpan.style('display', 'none');
+    shareSpan.innerHTML = location;
+
+    document.querySelector('body').insertAdjacentHTML('beforeend', shareSpan.outerHTML);
+
+    var shareSpanNode = document.querySelector('#shareSpan');
+    var range = document.createRange();
+    range.selectNode(shareSpanNode);
+    window.getSelection().addRange(range);
+
+     try {
+      // Now that we've selected the anchor text, execute the copy command
+      var successful = document.execCommand('copy');
+      var msg = successful ? 'successful' : 'unsuccessful';
+      console.log('Copy email command was ' + msg);
+    } catch(err) {
+      console.log('Oops, unable to copy');
+    }
+
+    // Remove the selections - NOTE: Should use
+    // removeRange(range) when it is supported
+    window.getSelection().removeAllRanges();
+
+    shareSpanNode.parentNode.removeChild(shareSpanNode);
+  });
+
   $(window).on('popstate', function(event) {
     applyurl();
   });

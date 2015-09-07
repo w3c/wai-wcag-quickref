@@ -74,7 +74,6 @@ h1 {
 
 header[role=banner] {
   font-size: (18/14) * 1em;
-  margin-bottom: 1em;
   border-top: 5px solid #930;
   div {
     margin: 0 auto;
@@ -542,7 +541,7 @@ svg.icon {
   background-color: #fff;
   > div {
     flex:6;
-    padding: 0 15px;
+    padding: 0;
   }
   &.fixedsticky-on {
     width:100%;
@@ -592,10 +591,6 @@ svg.icon {
 
 #showsidebars {
   margin-right: 20px;
-}
-
-#clearall {
-  margin: 5px 0;
 }
 
 .filter-status {
@@ -709,6 +704,10 @@ button.panel-heading {
   button {
     flex:1;
     align-self: flex-end;
+    margin: 5px;
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
 
@@ -720,6 +719,7 @@ button.panel-heading {
     font-weight: bold;
   }
 }
+
 .has-js #pageinfo {
   display:none;
   &[aria-expanded=true] {
