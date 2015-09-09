@@ -45,7 +45,6 @@
       {% endif %}
     {% endfor %}
     {% assign completesize = ssize | plus: asize | plus: fsize %}
-    {%comment%}{{ssize}} {{asize}} {{fsize}}{%endcomment%}
     {% if completesize >= 1 %}
     <div class="techniques-button btn-group" role="group">
       <button data-target="#techniques-{{ p }}{{ g }}{{ s }}" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="techniques-{{ p }}{{ g }}{{ s }}" class="btn btn-info btn-techniques"><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show</span><span class="word-hide"><span class="glyphicon glyphicon-chevron-down"></span> Hide</span> techniques for {{ p }}.{{ g }}.{{ s }}</button>
