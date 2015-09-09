@@ -678,8 +678,12 @@ div.understanding {
 }
 
 #tags {
-  a.btn {
-    margin-bottom: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  .btn {
+    flex-grow: 1;
+    margin-bottom: 3px;
+    margin-right: 3px;
   }
 }
 
