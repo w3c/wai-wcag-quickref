@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function(){
     cplwrapdiv.appendChild(csb);
     //addclass(cplwrapdiv, el.localName);
 
-    cplel.addEventListener('click', function(e){
+    function showsharebox(e) {
       var sbox = this.nextSibling;
       if (hasclass(sbox, 'open')) {
         remclass(this.nextSibling, 'open');
@@ -58,8 +58,9 @@ document.addEventListener('DOMContentLoaded', function(){
         this.nextSibling.querySelector('input').select();
       }
       e.preventDefault();
+    }
 
-    });
+    cplel.addEventListener('click', showsharebox);
 
     el.parentNode.insertBefore(cplwrapdiv, el);
   });
