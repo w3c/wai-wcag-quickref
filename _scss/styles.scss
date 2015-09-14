@@ -544,7 +544,9 @@ svg.icon {
     padding: 0;
   }
   &.fixedsticky-on {
-    width:100%;
+    @include mq($medium){
+      left: 315px;
+    }
   }
 }
 
