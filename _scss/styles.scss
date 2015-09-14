@@ -514,10 +514,10 @@ svg.icon {
   display:flex;
   align-items: baseline;
   span {
-    flex: 99;
+    flex: 5;
   }
   button {
-    flex:1;
+    flex:1 1 25%;
     float:right;
     padding: 3px;
   }
