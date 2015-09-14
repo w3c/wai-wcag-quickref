@@ -417,7 +417,7 @@ jQuery(document).ready(function($) {
       $('.sc-wrapper.current').removeClass('current');
       $('body').removeClass('tagged');
       statustext();
-      $(this).hide();
+      $(this).prop('disabled', true);
     });
 
     $('.sidebar>div').css('width', $('.tab-pane.active').outerWidth());
