@@ -292,7 +292,7 @@ header[role=banner] {
   .sc-wrapper:not(.current) {
     padding: 5px;
     border: none;
-    .sc-content, .btn-techniques, .permalink, footer {
+    div, footer {
       display:none;
     }
     header {
