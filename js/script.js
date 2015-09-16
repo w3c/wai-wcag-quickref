@@ -132,6 +132,13 @@ jQuery(document).ready(function($) {
       } else {
         $(this).hide();
       }
+
+      $('#filter-levels input').each(function(index, el) {
+        if (!$(el).is(':checked')) {
+          $('.current.filter-levels-' + $(el).val()).removeClass('current');
+        };
+      });
+
     });
 
     $('#filters .sbbox').each(function(index, el) {
@@ -301,7 +308,6 @@ jQuery(document).ready(function($) {
     $('.filter-status').addClass('loading');
     $('.filter-status .loaded').hide();
     $('.filter-status .loading').show();
-    $('.sc-wrapper.current').removeClass('current');
     var button = $(e.target), tags = new Array();
     if (button.hasClass('btn-primary')) {
       button.removeClass('btn-primary').addClass('btn-default').removeAttr('aria-selected');
@@ -320,6 +326,7 @@ jQuery(document).ready(function($) {
       $('body').removeClass('tagged');
       $('#deselecttags').prop('disabled', true);
     }
+    applyFilters();
     statustext();
   });
 
