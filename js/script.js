@@ -390,7 +390,7 @@ jQuery(document).ready(function($) {
     $('.sidebar nav .buttons').on('click', 'a', function (e) {
       var location = window.history.location || window.location;
       var uri = new URI(location);
-      uri.setSearch("currentsidebar", $('.sidebar nav .buttons .active a').attr('href'));
+      uri.setSearch("currentsidebar", $('.sidebar nav .buttons :not(.active) a').attr('href'));
       updateuri(uri);
     });
 
