@@ -584,6 +584,10 @@ svg.icon {
       background: linear-gradient($brand-primary, $brand-primary 3px, #eee 3px, #eee);
       border-color: #333;
       border-bottom: none;
+      &:hover, &:active, &:focus {
+        border-bottom: none;
+        text-decoration: underline;
+      }
     }
   }
 }
