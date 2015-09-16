@@ -84,7 +84,6 @@ jQuery(document).ready(function($) {
       var filtered = data.filters.split(',');
       for (var i = filtered.length - 1; i >= 0; i--) {
         var items = filtered[i].split('-');
-        console.log($('[name=filter-' + items[0] + '][value=' + items[1] + ']'));
         $('[name=filter-' + items[0] + '][value=' + items[1] + ']').prop('checked', false);
       };
       applyFilters();
