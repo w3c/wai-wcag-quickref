@@ -234,6 +234,21 @@ header[role=banner] {
   aside {
     font-size: 12/14 * 1em;
   }
+  &:not(.current) {
+    padding: 5px;
+    border: none;
+    div, footer {
+      display:none;
+    }
+    header {
+      opacity: .5;
+      margin-bottom: 0;
+      h4, .h4 {
+        font-size: 1em;
+        margin: 0;
+      }
+    }
+  }
 }
 
 .sc-content {
@@ -286,24 +301,6 @@ header[role=banner] {
 
 .tbox {
   margin-top: 1em;
-}
-
-.tagged {
-  .sc-wrapper:not(.current) {
-    padding: 5px;
-    border: none;
-    div, footer {
-      display:none;
-    }
-    header {
-      opacity: .5;
-      margin-bottom: 0;
-      h4, .h4 {
-        font-size: 1em;
-        margin: 0;
-      }
-    }
-  }
 }
 
 #devnotes a{

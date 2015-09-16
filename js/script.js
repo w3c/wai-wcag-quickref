@@ -120,7 +120,6 @@ jQuery(document).ready(function($) {
         foruri.push(cinput.attr('name') + '-' + cinput.val());
       }
     });
-    $('body').addClass('tagged');
     $(selshow.join(',')).each(function(e) {
       if ($(this).hasClass('sc-wrapper')) {
         $(this).addClass('current');
@@ -316,7 +315,6 @@ jQuery(document).ready(function($) {
         tags.push($(el).attr('data-tag'));
       });
       var selector = '.sc-wrapper[data-tags~="' + tags.join('"], .sc-wrapper[data-tags~="') + '"]';
-      $('body').addClass('tagged');
       $(selector).addClass('current');
       $('#deselecttags').prop('disabled', false);
     } else {
