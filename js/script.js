@@ -184,7 +184,7 @@ jQuery(document).ready(function($) {
     applyFilters();
     $('#tags .btn-primary').removeClass('btn-primary').addClass('btn-default').removeAttr('aria-selected');
     $('.sc-wrapper.current').removeClass('current');
-    $('body').removeClass('tagged');
+
     statustext();
   });
 
@@ -323,7 +323,7 @@ jQuery(document).ready(function($) {
       $(selector).addClass('current');
       $('#deselecttags').prop('disabled', false);
     } else {
-      $('body').removeClass('tagged');
+
       $('#deselecttags').prop('disabled', true);
     }
     applyFilters();
@@ -419,7 +419,6 @@ jQuery(document).ready(function($) {
       /* Act on the event */
       $('#tags .btn-primary').removeClass('btn-primary').addClass('btn-default').removeAttr('aria-selected');
       $('.sc-wrapper.current').removeClass('current');
-      $('body').removeClass('tagged');
       statustext();
       $(this).prop('disabled', true);
     });
