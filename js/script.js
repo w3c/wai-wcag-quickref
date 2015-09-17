@@ -418,7 +418,8 @@ jQuery(document).ready(function($) {
       event.preventDefault();
       /* Act on the event */
       $('#tags .btn-primary').removeClass('btn-primary').addClass('btn-default').removeAttr('aria-selected');
-      $('.sc-wrapper.current').removeClass('current');
+      $('.sc-wrapper').addClass('current');
+      applyFilters();
       statustext();
       $(this).prop('disabled', true);
     });
