@@ -535,7 +535,7 @@ svg.icon {
   flex-direction: row;
   align-items: flex-end;
   z-index: 999;
-  background-color: #fff;
+  box-shadow: 0 4px 4px -4px $gray;
   > div {
     flex:6;
     padding: 0;
@@ -602,10 +602,10 @@ svg.icon {
   align-items: center;
   border-bottom: 1px solid $brand-primary;
   padding: 5px;
-  background: #fff;
   margin: 0;
   min-height: 2.5em;
   position:relative;
+  background-color: $gray-lighter;
   &:after {
     position: absolute;
     bottom:0;
@@ -707,10 +707,10 @@ button.panel-heading {
   width: 100%;
   #status {
     flex:999;
+    padding: .25em;
   }
   button {
     flex:1;
-    align-self: flex-end;
     margin: 5px;
     &:last-child {
       margin-right: 0;
