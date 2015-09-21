@@ -316,17 +316,18 @@ jQuery(document).ready(function($) {
     }
     var pressed = $('#tags .btn-primary');
     if (pressed.length>0) {
+      var tags = new Array();
       $('#tags .btn-primary').each(function(index, el) {
         tags.push($(el).attr('data-tag'));
       });
       var selector = '.sc-wrapper[data-tags~="' + tags.join('"], .sc-wrapper[data-tags~="') + '"]';
+      $('.sc-wrapper').removeClass('current');
       $(selector).addClass('current');
       $('#deselecttags').prop('disabled', false);
     } else {
-
       $('#deselecttags').prop('disabled', true);
     }
-    applyFilters();
+    //applyFilters();
     statustext();
   });
 
