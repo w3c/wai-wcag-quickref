@@ -457,7 +457,7 @@ jQuery(document).ready(function($) {
     }
   });
 
-  $( window ).resize(function() {
+  $( window ).on('resize, scroll', function() {
     if (matchMedia('screen and (min-width: 43em)').matches) {
       $('.sidebar-content').css('height', window.innerHeight-document.querySelectorAll('.active .sidebar-content')[0].getBoundingClientRect().top);
     }
