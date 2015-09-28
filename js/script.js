@@ -60,6 +60,12 @@ jQuery(document).ready(function($) {
     }
   }
 
+  function statusanimation() {
+    $('.filter-status').addClass('loading');
+    $('.filter-status .loaded').hide();
+    $('.filter-status .loading').show();
+  }
+
   function updateuri(uri) {
     uri.fragment("");
     history.pushState(null, null, uri);
@@ -80,14 +86,24 @@ jQuery(document).ready(function($) {
       $('a[href=' + data.currentsidebar + ']').trigger('click');
     }
 
-    if(data.filters) {
-      var filtered = data.filters.split(',');
-      for (var i = filtered.length - 1; i >= 0; i--) {
-        var items = filtered[i].split('-');
-        $('[name=filter-' + items[0] + '][value=' + items[1] + ']').prop('checked', false);
-      };
-      applyFilters();
-    }
+    if (data.tags) {
+      $('#tags .btn').removeClass('btn-primary').addClass('btn-default').removeAttr('aria-selected');
+      $('[data-tag="' + data.tags.split(',').join('"], [data-tag="') + '"]').addClass('btn-primary').removeClass('btn-default').attr('aria-selected', true);
+    };
+    if (data.levels) {
+      $('#filter-levels input').prop('checked', true);
+      $('#filter-levels input[value="' + data.levels.split(',').join('"], #filter-levels input[value="') + '"]').prop('checked', false);
+    };
+    if (data.technologies) {
+      $('#filter-technologies input').prop('checked', true);
+      $('#filter-technologies input[value="' + data.technologies.split(',').join('"], #filter-technologies input[value="') + '"]').prop('checked', false);
+    };
+    if (data.techniques) {
+      $('#filter-techniques input').prop('checked', true);
+      $('#filter-techniques input[value="' + data.techniques.split(',').join('"], #filter-techniques input[value="') + '"]').prop('checked', false);
+    };
+    applyTechnologies();
+    applyTagsAndLevelsToSC();
   }
 
   function geturi() {
@@ -100,80 +116,100 @@ jQuery(document).ready(function($) {
     applyurl();
   }
 
-  function applyFilters() {
-    var o = [],
-        selshow = [],
-        selhide = [],
-        foruri = [],
-        location = window.history.location || window.location,
-        uri = new URI(location);
-    $('#filters input').each(function(){
-      var cinput = $(this);
-      if (cinput.is(':checked')) {
-        selshow.push('.' + cinput.attr('name') + '-' + cinput.val());
-        //uri.removeSearch(cinput.attr('name'),cinput.val());
-      } else {
-        o.push($.trim(cinput.parent().text()));
-        selhide.push('.' + cinput.attr('name') + '-' + cinput.val());
-        //uri.addSearch(cinput.attr('name'),cinput.val());
-        foruri.push(cinput.attr('name') + '-' + cinput.val());
-      }
-    });
-    $(selshow.join(',')).each(function(e) {
-      if ($(this).hasClass('sc-wrapper')) {
-        $(this).addClass('current');
-      } else {
-        $(this).show();
-      }
-    });
-    $(selhide.join(',')).each(function(e) {
-      if ($(this).hasClass('sc-wrapper')) {
-        $(this).removeClass('current');
-      } else {
-        $(this).hide();
-      }
-
-      $('#filter-levels input').each(function(index, el) {
-        if (!$(el).is(':checked')) {
-          $('.current.filter-levels-' + $(el).val()).removeClass('current');
-        };
+  function applyTagsAndLevelsToSC() {
+    var pressed = $('#tags .btn-primary');
+    if (pressed.length>0) {
+      var tags = new Array();
+      $('#tags .btn-primary').each(function(index, el) {
+        tags.push($(el).attr('data-tag'));
       });
-
-    });
-
-    $('#filters .sbbox').each(function(index, el) {
-      var elem = $(el);
-      var allcheckboxes = elem.find('input[type=checkbox]');
-      var checked = elem.find('input[type=checkbox]:checked');
-      if (allcheckboxes.length == checked.length) {
-        elem.find('.sbbox-heading button').prop('disabled', true);
-      } else {
-        elem.find('.sbbox-heading button').prop('disabled', false);
-      }
-    });
-
-    if (foruri.length > 0) {
-      var urlstring = foruri.join(',');
-      uri.setSearch('filters', urlstring.replace(/filter-/gi, ""));
+      var selector = '.sc-wrapper[data-tags~="' + tags.join('"], .sc-wrapper[data-tags~="') + '"]';
+      $('.sc-wrapper').removeClass('current');
+      $(selector).addClass('current');
+      $('#deselecttags').prop('disabled', false);
     } else {
-      uri.removeSearch('filters');
+      $('#deselecttags').prop('disabled', true);
     }
 
-    updateuri(uri);
+    var uncheckedLevels = $('#filter-levels input:not(:checked)');
+    uncheckedLevels.each(function(index, lvl) {
+      $('.sc-wrapper.current').each(function(index, sc) {
+        if($(sc).hasClass('filter-levels-' + $(lvl).val())) {
+          $(sc).removeClass('current');
+        }
+      });
+    });
+    saveURL();
     statustext();
-
-    if (o.length == 0) {
-      $('#clearall').hide();
-    } else {
-      $('#clearall').show();
-    }
   }
 
-  $('#filters').on('change', '#filter-technologies input[type=checkbox], #filter-levels input[type=checkbox]', function(e) {
-    $('.filter-status').addClass('loading');
-    $('.filter-status .loaded').hide();
-    $('.filter-status .loading').show();
-    applyFilters();
+  function applyTechnologies() {
+    var technologies = new Array();
+    $('#filter-technologies input:not(:checked)').each(function(index, el) {
+      technologies.push($(el).val());
+    });
+    var selector = '.filter-tech-' + technologies.join(', .filter-tech-') + '';
+    $('[class*=filter-tech]').show();
+    $(selector).hide();
+    saveURL();
+    statustext();
+  }
+
+  function applyTechniques() {
+    var techniques = $('#filter-techniques-content');
+    var tselected = new Array(), tunselected = new Array();
+    var checked =  techniques.find('input:checked');
+    for (var i = checked.length - 1; i >= 0; i--) {
+      tselected.push($(checked[i]).val());
+    };
+    var selector = '.techniques-button input[name$="' + tselected.join('"], .techniques-button input[name$="') + '"]';
+    var selector2 = '.tbox-' + tselected.join(', .tbox-') + '';
+    $(selector).prop('checked', true);
+    $(selector2).addClass('active');
+    var unchecked =  techniques.find('input:not(:checked)');
+    for (var i = unchecked.length - 1; i >= 0; i--) {
+      tunselected.push($(unchecked[i]).val());
+    };
+    selector = '.techniques-button input[name$="' + tunselected.join('"], .techniques-button input[name$="') + '"]';
+    selector2 = '.tbox-' + tunselected.join(', .tbox-') + '';
+    $(selector).prop('checked', false);
+    $(selector2).removeClass('active');
+  }
+
+  function saveURL() {
+    var location = window.history.location || window.location,
+        uri = new URI(location);
+    var tags = new Array();
+    $('#tags .btn-primary').each(function(index, el) {
+      tags.push($(el).data('tag'));
+    });
+    uri.removeSearch('tags');
+    if (tags.length>0) {
+      uri.setSearch('tags', tags.join(','));
+    }
+
+    $('#filters .sbbox').each(function(index, el){
+      var filter = new Array();
+      $(el).find('input:not(:checked)').each(function(index, el) {
+        filter.push($(el).val());
+      });
+      uri.removeSearch(el.id.replace(/filter-/gi, ""));
+      if (filter.length>0) {
+        uri.setSearch(el.id.replace(/filter-/gi, ""), filter.join(',') + '');
+      }
+    });
+
+    updateuri(uri);
+  }
+
+  $('#filter-technologies').on('change', 'input[type=checkbox]', function(e) {
+    statusanimation();
+    applyTechnologies();
+  });
+
+  $('#filter-levels').on('change', 'input[type=checkbox]', function(e) {
+    statusanimation();
+    applyTagsAndLevelsToSC();
   });
 
   $('#clearall').on('click', function(e) {
@@ -181,7 +217,8 @@ jQuery(document).ready(function($) {
     unchecked.each(function(){
       $(this).prop('checked', 'checked');
     });
-    applyFilters();
+    applyTechnologies();
+    applyTagsAndLevelsToSC();
     $('#tags .btn-primary').removeClass('btn-primary').addClass('btn-default').removeAttr('aria-selected');
     $('.sc-wrapper.current').removeClass('current');
 
@@ -193,7 +230,8 @@ jQuery(document).ready(function($) {
     unchecked.each(function(){
       $(this).prop('checked', 'checked');
     });
-    applyFilters();
+    applyTechnologies();
+    applyTagsAndLevelsToSC();
   });
 
   function scrollto(target) {
@@ -235,6 +273,7 @@ jQuery(document).ready(function($) {
   excolsc();
 
   var statustext = function(){
+    statusanimation();
     var tags = new Array(),
         htags = new Array(),
         sctext = "all success criteria",
@@ -305,54 +344,21 @@ jQuery(document).ready(function($) {
   };
 
   $('#tags').on('click', 'button', function(e) {
-    $('.filter-status').addClass('loading');
-    $('.filter-status .loaded').hide();
-    $('.filter-status .loading').show();
+    statusanimation();
     var button = $(e.target), tags = new Array();
     if (button.hasClass('btn-primary')) {
       button.removeClass('btn-primary').addClass('btn-default').removeAttr('aria-selected');
     } else {
       button.removeClass('btn-default').addClass('btn-primary').attr('aria-selected','true');
     }
-    var pressed = $('#tags .btn-primary');
-    if (pressed.length>0) {
-      var tags = new Array();
-      $('#tags .btn-primary').each(function(index, el) {
-        tags.push($(el).attr('data-tag'));
-      });
-      var selector = '.sc-wrapper[data-tags~="' + tags.join('"], .sc-wrapper[data-tags~="') + '"]';
-      $('.sc-wrapper').removeClass('current');
-      $(selector).addClass('current');
-      $('#deselecttags').prop('disabled', false);
-    } else {
-      $('#deselecttags').prop('disabled', true);
-    }
-    //applyFilters();
-    statustext();
+    applyTagsAndLevelsToSC()
   });
 
 
   $('#filter-techniques-content').on('change', 'input', function(event) {
-    var techniques = $('#filter-techniques-content');
-    var tselected = new Array(), tunselected = new Array();
-    var checked =  techniques.find('input:checked');
-    for (var i = checked.length - 1; i >= 0; i--) {
-      tselected.push($(checked[i]).val());
-    };
-    var selector = '.techniques-button input[name$="' + tselected.join('"], .techniques-button input[name$="') + '"]';
-    var selector2 = '.tbox-' + tselected.join(', .tbox-') + '';
-    $(selector).prop('checked', true);
-    $(selector2).addClass('active');
-    var unchecked =  techniques.find('input:not(:checked)');
-    for (var i = unchecked.length - 1; i >= 0; i--) {
-      tunselected.push($(unchecked[i]).val());
-    };
-    selector = '.techniques-button input[name$="' + tunselected.join('"], .techniques-button input[name$="') + '"]';
-    var selector2 = '.tbox-' + tunselected.join(', .tbox-') + '';
-    $(selector).prop('checked', false);
-    $(selector2).removeClass('active');
-
-    applyFilters();
+    applyTechniques();
+    applyTechnologies();
+    applyTagsAndLevelsToSC();
   });
 
   function init() {
@@ -420,7 +426,8 @@ jQuery(document).ready(function($) {
       /* Act on the event */
       $('#tags .btn-primary').removeClass('btn-primary').addClass('btn-default').removeAttr('aria-selected');
       $('.sc-wrapper').addClass('current');
-      applyFilters();
+      applyTechnologies();
+      applyTagsAndLevelsToSC();
       statustext();
       $(this).prop('disabled', true);
     });
