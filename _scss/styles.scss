@@ -541,6 +541,7 @@ svg.icon {
   &.fixedsticky-on {
     @include mq($medium){
       left: 315px;
+      right:15px;
     }
   }
 }
