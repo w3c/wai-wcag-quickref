@@ -307,10 +307,6 @@ header[role=banner] {
   border-bottom: 1px solid #666;
 }
 
-.devnoteheading {
-
-}
-
 .nav-pills > li > a {
   border: 1px solid #ddd;
 }
@@ -511,6 +507,10 @@ svg.icon {
     flex:1 1 25%;
     float:right;
     padding: 3px;
+  }
+  .btn[disabled] {
+    opacity: .85 !important;
+    text-decoration: line-through !important;
   }
 }
 
