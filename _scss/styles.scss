@@ -141,6 +141,7 @@ header[role=banner] {
 .guideline {
   box-shadow: none;
   margin-bottom: 0;
+  background-color: transparent !important;
 }
 
 .guideline section:first-of-type .sc-wrapper:first-child {
@@ -610,11 +611,12 @@ svg.icon {
     right:0;
     box-shadow: 0 0 10px #000;
   }
-  &.loading {
-    animation-name: backgroundanim;
-    animation-duration: 1s;
-    animation-iteration-count: 1;
-  }
+}
+
+.loading {
+  animation-name: backgroundanim;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
 }
 
 @keyframes backgroundanim {
@@ -622,7 +624,7 @@ svg.icon {
     background-color: yellow;
   }
   to {
-    background-color: $gray-lighter;
+    background-color: #fff;
   }
 }
 

@@ -61,7 +61,7 @@ jQuery(document).ready(function($) {
   }
 
   function statusanimation() {
-    $('.filter-status').addClass('loading');
+    $('.maininner').addClass('loading');
     $('.filter-status .loaded').hide();
     $('.filter-status .loading').show();
   }
@@ -437,7 +437,7 @@ jQuery(document).ready(function($) {
       scrollto($(thetarget));
     });
 
-    $('.filter-status').on('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(event) {
+    $('.maininner').on('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(event) {
       $(this).removeClass('loading');
       $('.filter-status .loaded').show();
       $('.filter-status .loading').hide();
