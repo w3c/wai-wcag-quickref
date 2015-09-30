@@ -316,7 +316,7 @@ header[role=banner] {
 }
 
 .navbar-scroll {
-  overflow: scroll;
+  overflow-y: scroll;
   height: auto;
   flex: 999;
   .hidden-sb & {
@@ -418,12 +418,6 @@ header[role=banner] {
 
 .sidebar-heading {
   color: #fff;
-}
-
-.sidebar-content {
-  @include mq($medium) {
-    overflow-y: scroll;
-  }
 }
 
 .sidebar>div>nav {
