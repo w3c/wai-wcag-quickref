@@ -118,6 +118,12 @@ jQuery(document).ready(function($) {
 
   function applyTagsAndLevelsToSC() {
     var pressed = $('#tags .btn-primary');
+    var uncheckedLevels = $('#filter-levels input:not(:checked)');
+    if((pressed.length==0) && (uncheckedLevels.length==0)) {
+      $('.sc-wrapper').addClass('current');
+    } else {
+      $('.sc-wrapper').removeClass('current');
+    }
     if (pressed.length>0) {
       var tags = new Array();
       $('#tags .btn-primary').each(function(index, el) {
@@ -131,14 +137,19 @@ jQuery(document).ready(function($) {
       $('#deselecttags').prop('disabled', true);
     }
 
-    var uncheckedLevels = $('#filter-levels input:not(:checked)');
-    uncheckedLevels.each(function(index, lvl) {
-      $('.sc-wrapper.current').each(function(index, sc) {
-        if($(sc).hasClass('filter-levels-' + $(lvl).val())) {
-          $(sc).removeClass('current');
-        }
+
+    if (uncheckedLevels.length>0) {
+      $('#filter-levels button.filters').prop('disabled', false);
+      uncheckedLevels.each(function(index, lvl) {
+        $('.sc-wrapper.current').each(function(index, sc) {
+          if($(sc).hasClass('filter-levels-' + $(lvl).val())) {
+            $(sc).removeClass('current');
+          }
+        });
       });
-    });
+    } else {
+      $('#filter-levels button.filters').prop('disabled', true);
+    }
     saveURL();
     statustext();
   }
@@ -236,7 +247,11 @@ jQuery(document).ready(function($) {
 
   function scrollto(target) {
      var scrollpos = (target.offset().top - parseInt($('.navrow').outerHeight(),10));
-           scrollpos = scrollpos - 10;
+         scrollpos = scrollpos - 10;
+     $('body').attr('data-offset', parseInt($('.navrow').outerHeight(),10) + 20);
+     $('[data-spy="scroll"]').each(function () {
+      var $spy = $(this).scrollspy('refresh');
+    });
      $('html,body').animate({
          scrollTop: scrollpos
     }, 1000);
@@ -425,7 +440,6 @@ jQuery(document).ready(function($) {
       event.preventDefault();
       /* Act on the event */
       $('#tags .btn-primary').removeClass('btn-primary').addClass('btn-default').removeAttr('aria-selected');
-      $('.sc-wrapper').addClass('current');
       applyTechnologies();
       applyTagsAndLevelsToSC();
       statustext();
@@ -457,9 +471,13 @@ jQuery(document).ready(function($) {
     }
   });
 
-  $( window ).on('resize, scroll', function() {
+  $( window ).on('resize', function() {
+    console.log('resize');
     if (matchMedia('screen and (min-width: 43em)').matches) {
       $('.sidebar-content').css('height', window.innerHeight-document.querySelectorAll('.active .sidebar-content')[0].getBoundingClientRect().top);
+    } else {
+      $('.sidebar-content').css('height', 'auto');
+      $('.sidebar > div').css('width', 'auto');
     }
   });
 
