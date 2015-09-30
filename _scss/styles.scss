@@ -312,7 +312,6 @@ header[role=banner] {
 }
 
 .navbar-scroll {
-  overflow-y: scroll;
   height: auto;
   flex: 999;
   .hidden-sb & {
@@ -336,6 +335,10 @@ header[role=banner] {
       display:block;
     }
   }
+}
+
+.sidebar-content {
+  overflow-y: scroll;
 }
 
 .nav-overview {
