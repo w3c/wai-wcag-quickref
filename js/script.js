@@ -155,15 +155,21 @@ jQuery(document).ready(function($) {
   }
 
   function applyTechnologies() {
-    var technologies = new Array();
-    $('#filter-technologies input:not(:checked)').each(function(index, el) {
-      technologies.push($(el).val());
-    });
-    var selector = '.filter-tech-' + technologies.join(', .filter-tech-') + '';
     $('[class*=filter-tech]').show();
-    $(selector).hide();
-    saveURL();
-    statustext();
+    var technologies = new Array();
+    var uncheckedTechnologies = $('#filter-technologies input:not(:checked)');
+    if (uncheckedTechnologies.length>0) {
+      uncheckedTechnologies.each(function(index, el) {
+        technologies.push($(el).val());
+      });
+      var selector = '.filter-tech-' + technologies.join(', .filter-tech-') + '';
+      $(selector).hide();
+      saveURL();
+      statustext();
+      $('#filter-technologies button.filters').prop('disabled', false);
+    } else {
+      $('#filter-technologies button.filters').prop('disabled', true);
+    }
   }
 
   function applyTechniques() {
@@ -178,13 +184,18 @@ jQuery(document).ready(function($) {
     $(selector).prop('checked', true);
     $(selector2).addClass('active');
     var unchecked =  techniques.find('input:not(:checked)');
-    for (var i = unchecked.length - 1; i >= 0; i--) {
-      tunselected.push($(unchecked[i]).val());
-    };
-    selector = '.techniques-button input[name$="' + tunselected.join('"], .techniques-button input[name$="') + '"]';
-    selector2 = '.tbox-' + tunselected.join(', .tbox-') + '';
-    $(selector).prop('checked', false);
-    $(selector2).removeClass('active');
+    if (unchecked.length>0) {
+      for (var i = unchecked.length - 1; i >= 0; i--) {
+        tunselected.push($(unchecked[i]).val());
+      };
+      selector = '.techniques-button input[name$="' + tunselected.join('"], .techniques-button input[name$="') + '"]';
+      selector2 = '.tbox-' + tunselected.join(', .tbox-') + '';
+      $(selector).prop('checked', false);
+      $(selector2).removeClass('active');
+      $('#filter-techniques button.filters').prop('disabled', false);
+    } else {
+      $('#filter-techniques button.filters').prop('disabled', true);
+    }
   }
 
   function saveURL() {
