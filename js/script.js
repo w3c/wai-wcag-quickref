@@ -458,6 +458,11 @@ jQuery(document).ready(function($) {
     });
 
     $('.sidebar>div').css('width', $('.tab-pane.active').outerWidth());
+
+    $('body').scrollspy({
+      target: '.overview',
+      offset: parseInt($('.navrow').outerHeight(),10) + 10
+    })
   }
 
   $('main').on('change', '.techniques-button input', function(event) {
