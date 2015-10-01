@@ -119,11 +119,7 @@ jQuery(document).ready(function($) {
   function applyTagsAndLevelsToSC() {
     var pressed = $('#tags .btn-primary');
     var uncheckedLevels = $('#filter-levels input:not(:checked)');
-    if((pressed.length==0) && (uncheckedLevels.length==0)) {
-      $('.sc-wrapper').addClass('current');
-    } else {
-      $('.sc-wrapper').removeClass('current');
-    }
+    $('.sc-wrapper').addClass('current');
     if (pressed.length>0) {
       var tags = new Array();
       $('#tags .btn-primary').each(function(index, el) {
