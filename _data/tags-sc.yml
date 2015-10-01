@@ -8,8 +8,8 @@ media-equiv-sign: video audio
 media-equiv-extended-ad: video
 media-equiv-text-doc: images video audio
 media-equiv-live-audio-only: audio live
-content-structure-separation-programmatic: structure
-content-structure-separation-sequence: structure keyboard
+content-structure-separation-programmatic: structure layout
+content-structure-separation-sequence: structure keyboard layout
 content-structure-separation-understanding: structure
 visual-audio-contrast-without-color: color contrast
 visual-audio-contrast-dis-audio: audio video autoplay control
@@ -23,15 +23,15 @@ visual-audio-contrast-text-images: images text
 keyboard-operation-keyboard-operable: keyboard
 keyboard-operation-trapping: keyboard structure
 keyboard-operation-all-funcs: keyboard
-time-limits-required-behaviors: time
+time-limits-required-behaviors: time control
 time-limits-pause: control time autoplay
 time-limits-no-exceptions: time
-time-limits-postponed: time
+time-limits-postponed: time control
 time-limits-server-timeout: time
 seizure-does-not-violate: autoplay flashes
 seizure-three-times: autoplay flashes
 navigation-mechanisms-skip: structure navigation
-navigation-mechanisms-title: title structure
+navigation-mechanisms-title: structure
 navigation-mechanisms-focus-order: focus keyboard structure
 navigation-mechanisms-refs: links navigation
 navigation-mechanisms-mult-loc: navigation
@@ -44,13 +44,13 @@ meaning-doc-lang-id: language
 meaning-other-lang-id: language
 meaning-idioms: clarification
 meaning-located: clarification
-meaning-supplements: clarification reading
+meaning-supplements: clarification language
 meaning-pronunciation: clarification
 consistent-behavior-receive-focus: focus navigation
 consistent-behavior-unpredictable-change: navigation
 consistent-behavior-consistent-locations: navigation consistency
 consistent-behavior-consistent-functionality: consistency
-consistent-behavior-no-extreme-changes-context: consistency links
+consistent-behavior-no-extreme-changes-context: consistency links control
 minimize-error-identified: errors
 minimize-error-cues: labels
 minimize-error-suggestions: errors
