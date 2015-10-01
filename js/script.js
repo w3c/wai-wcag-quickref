@@ -277,7 +277,7 @@ jQuery(document).ready(function($) {
   function excolsc() {
     var hr = $('.sc-content hr');
     hr.hide(); // hide horizontal rule
-    hr.prev().append(' <button type="button" aria-expanded="false" class="btn btn-info btn-xs"><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show</span><span class="word-hide"><span class="glyphicon glyphicon glyphicon-chevron-down"></span> Hide</span> full description</button>'); // Append button
+    hr.prev().append(' <button type="button" aria-expanded="false" class="btn btn-info btn-xs"><span class="word-show"><svg aria-hidden="true" class="i-chevron-right"><use xlink:href="img/icons.svg#i-chevron-right"></use></svg> Show</span><span class="word-hide"><svg aria-hidden="true" class="i-chevron-down"><use xlink:href="img/icons.svg#i-chevron-down"></use></svg> Hide</span> full description</button>'); // Append button
     hr.find('~ *').hide();
     hr.prev().find('button').on('click', function(event) {
       event.preventDefault();
@@ -460,6 +460,8 @@ jQuery(document).ready(function($) {
       target: '.overview',
       offset: parseInt($('.navrow').outerHeight(),10) + 30
     })
+
+    svg4everybody();
   }
 
   $('main').on('change', '.techniques-button input', function(event) {

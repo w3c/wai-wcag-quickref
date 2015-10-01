@@ -9,13 +9,13 @@ layout: default
       <nav>
         <ul class="nav nav-tabs buttons" id="navtabs">
           <li role="presentation">
-            <button id="hidesidebars" aria-expanded="true" type="button" class="btn btn-default btn-sm"><span><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show Sidebar</span><span class="word-hide"><span class="glyphicon glyphicon-chevron-left"></span> Hide</span></span></button>
+            <button id="hidesidebars" aria-expanded="true" type="button" class="btn btn-default btn-sm"><span><span class="word-show"><svg aria-hidden="true" class="i-chevron-right"><use xlink:href="{{ "/img/icons.svg" | prepend: site.baseurl }}#i-chevron-right"></use></svg> Show Sidebar</span><span class="word-hide"><svg aria-hidden="true" class="i-chevron-left"><use xlink:href="{{ "/img/icons.svg" | prepend: site.baseurl }}#i-chevron-left"></use></svg> Hide</span></span></button>
           </li>
           <li role="presentation" class="active">
-            <a href="#col_overview" data-toggle="tab" data-toggle="tab" aria-controls="col_overview"><span><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> Contents</span></a>
+            <a href="#col_overview" data-toggle="tab" data-toggle="tab" aria-controls="col_overview"><span><svg aria-hidden="true" class="i-menu"><use xlink:href="{{ "/img/icons.svg" | prepend: site.baseurl }}#i-menu"></use></svg> Contents</span></a>
           </li>
           <li role="presentation">
-            <a href="#col_customize" data-toggle="tab" data-toggle="tab" aria-controls="col_customize"><span><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Filter</span></a>
+            <a href="#col_customize" data-toggle="tab" data-toggle="tab" aria-controls="col_customize"><span><svg aria-hidden="true" class="i-settings"><use xlink:href="{{ "/img/icons.svg" | prepend: site.baseurl }}#i-settings"></use></svg> Filter</span></a>
           </li>
         </ul>
       </nav>
@@ -25,6 +25,9 @@ layout: default
         </aside>
         <aside role="tabpanel" class="tab-pane tags" id="col_customize">
           <div class="sidebar-content">
+            <div class="infobox">
+
+            </div>
             {% include tags.html show="true" %}
             {% include filters.html %}
           </div>
@@ -35,7 +38,7 @@ layout: default
   <main>
     <div class="maininner">
       <div class="navrow fixedsticky" style="top:0;">
-        <button id="showsidebars" aria-expanded="false" hidden type="button" class="btn btn-default btn-sm"><span><span class="glyphicon glyphicon-chevron-right"></span> Show Sidebar</span></button>
+        <button id="showsidebars" aria-expanded="false" hidden type="button" class="btn btn-default btn-sm"><span><svg aria-hidden="true" class="i-chevron-right"><use xlink:href="{{ "/img/icons.svg" | prepend: site.baseurl }}#i-chevron-right"></use></svg> Show Sidebar</span></button>
         {% include filter-status.html %}
       </div>
       {% assign p = 0 %}

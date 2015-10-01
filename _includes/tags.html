@@ -1,5 +1,5 @@
 <div class="sbbox sbbox-default">
-<div class="sbbox-heading"><span>Tags</span> <button class="btn btn-info btn-sm" id="deselecttags" disabled><span class="glyphicon glyphicon-remove"></span> Clear tags</button></div>
+<div class="sbbox-heading"><span>Tags</span> <button class="btn btn-info btn-sm" id="deselecttags" disabled><svg aria-hidden="true" class="i-close"><use xlink:href="{{ "/img/icons.svg" | prepend: site.baseurl }}#i-close"></use></svg> Clear tags</button></div>
 <div {% unless include.show %}hidden{% endunless %} class="sbbox-body {% if include.show %}collapsed in{% endif %}"  id="tags">
 {% for tg in site.data.tags-sc %}
   {% assign tgs = tg[1] | split: " "%}

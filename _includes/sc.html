@@ -27,7 +27,7 @@
       {% endfor%}
     </div>
     <div class="understanding">
-      <a href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/{{sc_id}}.html" target="_blank" class="btn btn-default btn-sm"><span aria-hidden="true" class="glyphicon glyphicon glyphicon-info-sign"></span> Understanding {{ p }}.{{ g }}.{{ s }} <span class="glyphicon glyphicon-new-window" aria-label="Opens new window/tab"></span></a>
+      <a href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/{{sc_id}}.html" target="_blank" class="btn btn-default btn-sm"><svg aria-hidden="true" class="i-info"><use xlink:href="{{ "/img/icons.svg" | prepend: site.baseurl }}#i-info"></use></svg> Understanding {{ p }}.{{ g }}.{{ s }} <svg role="img" title="Opens new window/tab" class="i-external"><use xlink:href="{{ "/img/icons.svg" | prepend: site.baseurl }}#i-external"></use></svg></span></a>
     </div>
   </div>
     {% for sctech in sc.techniques %}
@@ -47,7 +47,7 @@
     {% assign completesize = ssize | plus: asize | plus: fsize %}
     {% if completesize >= 1 %}
     <div class="techniques-button btn-group" role="group">
-      <button data-target="#techniques-{{ p }}{{ g }}{{ s }}" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="techniques-{{ p }}{{ g }}{{ s }}" class="btn btn-info btn-techniques"><span class="word-show"><span class="glyphicon glyphicon-chevron-right"></span> Show</span><span class="word-hide"><span class="glyphicon glyphicon-chevron-down"></span> Hide</span> techniques for {{ p }}.{{ g }}.{{ s }}</button>
+      <button data-target="#techniques-{{ p }}{{ g }}{{ s }}" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="techniques-{{ p }}{{ g }}{{ s }}" class="btn btn-info btn-techniques"><span class="word-show"><svg aria-hidden="true" class="i-chevron-right"><use xlink:href="{{ "/img/icons.svg" | prepend: site.baseurl }}#i-chevron-right"></use></svg> Show</span><span class="word-hide"><svg aria-hidden="true" class="i-chevron-down"><use xlink:href="{{ "/img/icons.svg" | prepend: site.baseurl }}#i-chevron-down"></use></svg> Hide</span> techniques for {{ p }}.{{ g }}.{{ s }}</button>
       <label class="btn btn-default {% unless ssize > 0 %}disabled{% endunless %}"><input type="checkbox" name="sc-{{ p }}{{ g }}{{ s }}-sufficient" {% if ssize > 0 %}checked{% else %}disabled{% endif %}><span> Sufficient</span></label>
       <label class="btn btn-default {% unless asize > 0 %}disabled{% endunless %}"><input type="checkbox" name="sc-{{ p }}{{ g }}{{ s }}-advisory" {% if asize > 0 %}checked{% else %}disabled{% endif %}><span> Advisory</span></label>
       <label class="btn btn-default {% unless fsize > 0 %}disabled{% endunless %}"><input type="checkbox" name="sc-{{ p }}{{ g }}{{ s }}-failures" {% if fsize > 0 %}checked{% else %}disabled{% endif %}><span> Failures</span></label>

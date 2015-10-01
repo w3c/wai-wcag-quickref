@@ -765,3 +765,11 @@ button.panel-heading {
     margin-bottom: 0;
   }
 }
+
+svg[class^="i-"] {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  vertical-align: middle;
+  margin-top: -.25em;
+}
