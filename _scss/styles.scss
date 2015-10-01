@@ -773,3 +773,16 @@ svg[class^="i-"] {
   vertical-align: middle;
   margin-top: -.25em;
 }
+
+.infobox {
+  border: 1px solid #fff;
+  background-color: #f3f3f3;
+  padding: 5px 5px 5px 2em;
+  margin-bottom: 1em;
+  position: relative;
+  svg {
+    position: absolute;
+    margin-left: -1.5em;
+    margin-top: 3px;
+  }
+}

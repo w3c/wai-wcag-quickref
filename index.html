@@ -26,7 +26,7 @@ layout: default
         <aside role="tabpanel" class="tab-pane tags" id="col_customize">
           <div class="sidebar-content">
             <div class="infobox">
-
+              <svg aria-hidden="true" class="i-info"><use xlink:href="{{ "/img/icons.svg" | prepend: site.baseurl }}#i-info"></use></svg> Changes in this panel are reflected on the right:
             </div>
             {% include tags.html show="true" %}
             {% include filters.html %}
@@ -38,7 +38,7 @@ layout: default
   <main>
     <div class="maininner">
       <div class="navrow fixedsticky" style="top:0;">
-        <button id="showsidebars" aria-expanded="false" hidden type="button" class="btn btn-default btn-sm"><span><svg aria-hidden="true" class="i-chevron-right"><use xlink:href="{{ "/img/icons.svg" | prepend: site.baseurl }}#i-chevron-right"></use></svg> Show Sidebar</span></button>
+        <button id="showsidebars" aria-expanded="false" hidden type="button" class="btn btn-default btn-sm"><span><svg aria-hidden="true" class="i-chevron-righ"><use xlink:href="{{ "/img/icons.svg" | prepend: site.baseurl }}#i-chevron-righ"></use></svg> Show Sidebar</span></button>
         {% include filter-status.html %}
       </div>
       {% assign p = 0 %}
