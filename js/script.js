@@ -416,10 +416,11 @@ jQuery(document).ready(function($) {
       updateuri(uri);
     });
 
-    $('.sidebar nav .buttons').on('click', 'a', function (e) {
+    $('#navtabs a').on('click', function (e) {
+      console.log('WOOP WOOP');
       var location = window.history.location || window.location;
       var uri = new URI(location);
-      uri.setSearch("currentsidebar", $('.sidebar nav .buttons :not(.active) a').attr('href'));
+      uri.setSearch("currentsidebar", $(this).attr('href'));
       updateuri(uri);
     });
 
@@ -457,7 +458,7 @@ jQuery(document).ready(function($) {
 
     $('body').scrollspy({
       target: '.overview',
-      offset: parseInt($('.navrow').outerHeight(),10) + 10
+      offset: parseInt($('.navrow').outerHeight(),10) + 30
     })
   }
 
