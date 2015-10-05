@@ -474,9 +474,6 @@ svg.icon {
 @include mq($medium) {
   .mainrow {
     display:table-row;
-    &.threecols {
-      flex-direction: row;
-    }
     main, > div {
       display: table-cell;
       vertical-align:top;
