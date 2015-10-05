@@ -456,9 +456,17 @@ jQuery(document).ready(function($) {
     $('.sidebar>div').css('width', $('.tab-pane.active').outerWidth());
 
     $('body').scrollspy({
-      target: '.overview',
+      target: '.overview.spy-active',
       offset: parseInt($('.navrow').outerHeight(),10) + 30
     })
+
+    $('#spy-checkbox').on('change', function(event) {
+      if ($(this).is(':checked')) {
+        $('.overview').addClass('spy-active');
+      } else {
+        $('.overview').removeClass('spy-active');
+      }
+    });
 
     svg4everybody();
   }
