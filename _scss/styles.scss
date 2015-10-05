@@ -192,6 +192,7 @@ header[role=banner] {
       display: inline-block;
       padding-right: 5px;
       font-weight: normal;
+      white-space: nowrap;
     }
     strong {
       @include mq($medium) {
@@ -216,7 +217,7 @@ header[role=banner] {
     .permalink {
       @include mq($medium) {
         order:3;
-        align-self: flex-end;
+        align-self: flex-start;
         flex-grow: 99;
         text-align: right;
         margin:0;
