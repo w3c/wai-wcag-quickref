@@ -417,7 +417,6 @@ jQuery(document).ready(function($) {
     });
 
     $('#navtabs a').on('click', function (e) {
-      console.log('WOOP WOOP');
       var location = window.history.location || window.location;
       var uri = new URI(location);
       uri.setSearch("currentsidebar", $(this).attr('href'));
