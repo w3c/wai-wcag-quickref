@@ -284,6 +284,10 @@ header[role=banner] {
   &, + div {
     padding-left: 0;
   }
+  .btn.disabled {
+    opacity: 1;
+    color: #777;
+  }
 }
 
 .techniques-button {
