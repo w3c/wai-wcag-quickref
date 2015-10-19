@@ -261,11 +261,10 @@ jQuery(document).ready(function($) {
     unchecked.each(function(){
       $(this).prop('checked', 'checked');
     });
-    applyTechnologies();
-    applyTagsAndLevelsToSC();
     $('#tags .btn-primary').removeClass('btn-primary').addClass('btn-default').removeAttr('aria-selected');
     $('.sc-wrapper.current').removeClass('current');
-
+    applyTechnologies();
+    applyTagsAndLevelsToSC();
     statustext();
   });
 
