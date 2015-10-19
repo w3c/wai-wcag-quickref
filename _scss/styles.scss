@@ -8,29 +8,6 @@ $medium: 43em; //* 700px */
 $big:    56em; //* 900px */
 $large:  81em; //* 1300px */
 
-.fixedsticky {
-  position: -webkit-sticky;
-  position: -moz-sticky;
-  position: -ms-sticky;
-  position: -o-sticky;
-  position: sticky;
-}
-/* When position: sticky is supported but native behavior is ignored */
-.fixedsticky-withoutfixedfixed .fixedsticky-off,
-.fixed-supported .fixedsticky-off {
-  position: static;
-}
-.fixedsticky-withoutfixedfixed .fixedsticky-on,
-.fixed-supported .fixedsticky-on {
-  position: fixed;
-}
-.fixedsticky-dummy {
-  display: none;
-}
-.fixedsticky-on + .fixedsticky-dummy {
-  display: block;
-}
-
 [disabled] + span{
   color:#777;
 }
@@ -53,6 +30,7 @@ mark.current {
 .deem {
   font-weight: normal;
   color: #666;
+  display:none;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -708,6 +686,9 @@ button.panel-heading {
   display: flex;
   align-items: center;
   width: 100%;
+  &.active {
+    background-color: yellow;
+  }
   #status {
     flex:999;
     padding: .25em;
@@ -792,4 +773,9 @@ svg[class^="i-"] {
 
 .hiddensc-inner {
   columns: 250px;
+}
+
+.maininner {
+  height: 600px;
+  overflow-y: scroll;
 }

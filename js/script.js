@@ -279,13 +279,10 @@ jQuery(document).ready(function($) {
   });
 
   function scrollto(target) {
-     var scrollpos = (target.offset().top - parseInt($('.navrow').outerHeight(),10));
+     var scrollpos = target.offset().top - $(".maininner").offset().top;
          scrollpos = scrollpos - 10;
-     $('body').attr('data-offset', parseInt($('.navrow').outerHeight(),10) + 20);
-     $('[data-spy="scroll"]').each(function () {
-      var $spy = $(this).scrollspy('refresh');
-    });
-     $('html,body').animate({
+         scrollpos = $(".maininner").scrollTop() + scrollpos;
+     $('.maininner').animate({
          scrollTop: scrollpos
     }, 1000);
     return false;
@@ -386,8 +383,10 @@ jQuery(document).ready(function($) {
     $('#status .tech').html(techtext + techtexthidden);
     if (techtext == "all techniques" && sctext == "all success criteria") {
       $('#clearall').hide();
+      $('.filter-status-row').removeClass('active');
     } else {
       $('#clearall').show();
+      $('.filter-status-row').addClass('active');
     }
   };
 
@@ -411,7 +410,7 @@ jQuery(document).ready(function($) {
 
   function init() {
     $('html').addClass('has-js');
-    $('.fixedsticky').fixedsticky();
+    // $('.fixedsticky').fixedsticky();
     if ($( window ).width() > 896) {
       $('html').addClass('large');
     } else {
@@ -450,6 +449,7 @@ jQuery(document).ready(function($) {
     });
 
     $('#overview').on('click', function(e) {
+      e.preventDefault();
       var thetarget = $(e.target).parents('a').attr('href');
       scrollto($(thetarget));
     });
@@ -466,7 +466,8 @@ jQuery(document).ready(function($) {
     });
 
     if (matchMedia('screen and (min-width: 43em)').matches) {
-      $('.sidebar-content').css('height', window.innerHeight-document.querySelectorAll('.active .sidebar-content')[0].getBoundingClientRect().top);
+      $('.sidebar-content').css('height', window.innerHeight - document.querySelectorAll('.active .sidebar-content')[0].getBoundingClientRect().top - 10);
+      $('.maininner').css('height', window.innerHeight - document.querySelectorAll('.maininner')[0].getBoundingClientRect().top - 10);
     }
 
     $('#deselecttags').on('click', function(event) {
@@ -481,7 +482,7 @@ jQuery(document).ready(function($) {
 
     $('.sidebar>div').css('width', $('.tab-pane.active').outerWidth());
 
-    $('body').scrollspy({
+    $('.maininner').scrollspy({
       target: '.overview.spy-active',
       offset: parseInt($('.navrow').outerHeight(),10) + 30
     })
@@ -521,7 +522,8 @@ jQuery(document).ready(function($) {
 
   $( window ).on('resize scroll', function() {
     if (matchMedia('screen and (min-width: 43em)').matches) {
-      $('.sidebar-content').css('height', window.innerHeight-document.querySelectorAll('.active .sidebar-content')[0].getBoundingClientRect().top);
+      $('.sidebar-content').css('height', window.innerHeight - (document.querySelectorAll('.active .sidebar-content')[0].getBoundingClientRect().top>0 ? document.querySelectorAll('.active .sidebar-content')[0].getBoundingClientRect().top : 0 ) - 10);
+      $('.maininner').css('height', window.innerHeight - (document.querySelectorAll('.maininner')[0].getBoundingClientRect().top>0 ? document.querySelectorAll('.maininner')[0].getBoundingClientRect().top : 0 ) - 10);
     } else {
       $('.sidebar-content').css('height', 'auto');
       $('.sidebar > div').css('width', 'auto');
