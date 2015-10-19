@@ -1,8 +1,8 @@
 text-equiv-all: images video audio
 media-equiv-av-only-alt: audio video
-media-equiv-captions: video captioning
+media-equiv-captions: video captions
 media-equiv-audio-desc: video
-media-equiv-real-time-captions: live video captioning
+media-equiv-real-time-captions: live video captions
 media-equiv-audio-desc-only: video
 media-equiv-sign: video audio
 media-equiv-extended-ad: video
@@ -12,22 +12,22 @@ content-structure-separation-programmatic: structure layout
 content-structure-separation-sequence: structure keyboard layout
 content-structure-separation-understanding: structure
 visual-audio-contrast-without-color: color contrast
-visual-audio-contrast-dis-audio: audio video autoplay control
+visual-audio-contrast-dis-audio: audio video autoplay controls
 visual-audio-contrast-contrast: color contrast
 visual-audio-contrast-scale: text
 visual-audio-contrast-text-presentation: images text
 visual-audio-contrast7: color contrast
 visual-audio-contrast-noaudio: audio
-visual-audio-contrast-visual-presentation: structure text layout
+visual-audio-contrast-visual-presentation: structure text layout controls
 visual-audio-contrast-text-images: images text
-keyboard-operation-keyboard-operable: keyboard
-keyboard-operation-trapping: keyboard structure
+keyboard-operation-keyboard-operable: video keyboard
+keyboard-operation-trapping: keyboard structure video
 keyboard-operation-all-funcs: keyboard
-time-limits-required-behaviors: time control
-time-limits-pause: control time autoplay
-time-limits-no-exceptions: time
-time-limits-postponed: time control
-time-limits-server-timeout: time
+time-limits-required-behaviors: timing controls
+time-limits-pause: controls timing autoplay
+time-limits-no-exceptions: timing
+time-limits-postponed: timing controls
+time-limits-server-timeout: timing
 seizure-does-not-violate: autoplay flashes
 seizure-three-times: autoplay flashes
 navigation-mechanisms-skip: structure navigation
@@ -36,21 +36,21 @@ navigation-mechanisms-focus-order: focus keyboard structure
 navigation-mechanisms-refs: links navigation
 navigation-mechanisms-mult-loc: navigation
 navigation-mechanisms-descriptive: labels headings
-navigation-mechanisms-focus-visible: focus
+navigation-mechanisms-focus-visible: focus keyboard
 navigation-mechanisms-location: structure navigation
 navigation-mechanisms-link: links navigation
 navigation-mechanisms-headings: headings structure
 meaning-doc-lang-id: language
 meaning-other-lang-id: language
-meaning-idioms: clarification
-meaning-located: clarification
-meaning-supplements: clarification language
-meaning-pronunciation: clarification
+meaning-idioms: content
+meaning-located: content
+meaning-supplements: content language
+meaning-pronunciation: content
 consistent-behavior-receive-focus: focus navigation
 consistent-behavior-unpredictable-change: navigation
-consistent-behavior-consistent-locations: navigation consistency
-consistent-behavior-consistent-functionality: consistency
-consistent-behavior-no-extreme-changes-context: consistency links control
+consistent-behavior-consistent-locations: navigation structure layout
+consistent-behavior-consistent-functionality: structure layout
+consistent-behavior-no-extreme-changes-context: structure controls
 minimize-error-identified: errors
 minimize-error-cues: labels
 minimize-error-suggestions: errors
@@ -58,4 +58,4 @@ minimize-error-reversible: errors
 minimize-error-context-help: errors
 minimize-error-reversible-all: errors
 ensure-compat-parses: compatibility
-ensure-compat-rsv: compatibility
+ensure-compat-rsv: compatibility links
