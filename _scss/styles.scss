@@ -603,7 +603,7 @@ svg.icon {
 
 @keyframes backgroundanim {
   from {
-    background-color: yellow;
+    background-color: #FFF9C4;
   }
   to {
     background-color: #fff;
@@ -687,7 +687,7 @@ button.panel-heading {
   align-items: center;
   width: 100%;
   &.active {
-    background-color: yellow;
+    background-color: #FFF9C4;
   }
   #status {
     flex:999;
