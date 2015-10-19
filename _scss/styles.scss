@@ -237,6 +237,7 @@ header[role=banner] {
     font-size: 12/14 * 1em;
   }
   &:not(.current) {
+    display:none;
     padding: 5px;
     border: none;
     div, footer {
@@ -723,7 +724,7 @@ button.panel-heading {
 
 .panel.principle {
   margin-top: 1em;
-  h2, p {
+  h2, .panel-body-principle p {
     margin: 0;
     font-weight: bold;
   }
@@ -787,4 +788,8 @@ svg[class^="i-"] {
     margin-left: -1.5em;
     margin-top: 3px;
   }
+}
+
+.hiddensc-inner {
+  columns: 250px;
 }

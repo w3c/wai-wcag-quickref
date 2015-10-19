@@ -53,10 +53,15 @@ layout: default
             <p>{{principle.title}}</p>
           </div>
         </div>
-        {% for guideline in principle.guidelines %}
-          {% include guideline.html %}
-        {% endfor %}
+        <div class="guidelines">
+          {% for guideline in principle.guidelines %}
+            {% include guideline.html %}
+          {% endfor %}
+        </div>
       {% endfor %}
+    </div>
+    <div id="hiddensc">
+
     </div>
   </main>
 </div>

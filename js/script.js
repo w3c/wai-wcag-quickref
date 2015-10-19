@@ -146,6 +146,32 @@ jQuery(document).ready(function($) {
     } else {
       $('#filter-levels button.filters').prop('disabled', true);
     }
+    $('.guideline').each(function(index, el) {
+      if ($(el).has('.sc-wrapper.current').length > 0) {
+        $(el).find('> .panel-heading, > .panel-body').show();
+      } else {
+        $(el).find('> .panel-heading, > .panel-body').hide();
+      }
+    });
+    $('.principle + .guidelines').each(function(index, el) {
+      if ($(el).has('.sc-wrapper.current').length > 0) {
+        $(el).prev().show();
+      } else {
+        $(el).prev().hide();
+      }
+    });
+    if($('.sc-wrapper:not(.current)')) {
+      $('#hiddensc').empty();
+      $('<h3>Hidden Success Criteria</h3>').appendTo('#hiddensc');
+      $('<div class="hiddensc-inner">').appendTo('#hiddensc')
+      var hiddenscul = $('<ul>');
+      $('.sc-wrapper:not(.current) h4'). each(function(index, el) {
+        hiddenscul.append('<li>' + $(el).find('> strong').text() + ' ' + $(el).find('> span').text() + '</li>').appendTo('#hiddensc .hiddensc-inner');
+      });
+      $('#hiddensc').show()
+    } else {
+      $('#hiddensc').hide()
+    }
     saveURL();
     statustext();
   }
