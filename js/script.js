@@ -483,7 +483,7 @@ jQuery(document).ready(function($) {
 
     $('.maininner').scrollspy({
       target: '.overview.spy-active',
-      offset: parseInt($('.navrow').outerHeight(),10) + 30
+      offset: document.querySelectorAll('.maininner')[0].getBoundingClientRect().top + 20
     })
 
     // $('#spy-checkbox').on('change', function(event) {
