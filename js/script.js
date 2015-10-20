@@ -447,7 +447,7 @@ jQuery(document).ready(function($) {
       updateuri(uri);
     });
 
-    $('#overview').on('click', function(e) {
+    $('#overview').on('click', 'a', function(e) {
       e.preventDefault();
       var thetarget = $(e.target).parents('a').attr('href');
       scrollto($(thetarget));
@@ -486,13 +486,13 @@ jQuery(document).ready(function($) {
       offset: parseInt($('.navrow').outerHeight(),10) + 30
     })
 
-    $('#spy-checkbox').on('change', function(event) {
-      if ($(this).is(':checked')) {
-        $('.overview').addClass('spy-active');
-      } else {
-        $('.overview').removeClass('spy-active');
-      }
-    });
+    // $('#spy-checkbox').on('change', function(event) {
+    //   if ($(this).is(':checked')) {
+    //     $('.overview').addClass('spy-active');
+    //   } else {
+    //     $('.overview').removeClass('spy-active');
+    //   }
+    // });
 
     svg4everybody();
   }
