@@ -116,6 +116,9 @@ jQuery(document).ready(function($) {
     };
     applyTechnologies();
     applyTagsAndLevelsToSC();
+    if (uri.hash()) {
+      scrollto($(uri.hash()));
+    }
   }
 
   function geturi() {
