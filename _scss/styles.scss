@@ -746,12 +746,22 @@ button.panel-heading {
   }
 }
 
-svg[class^="i-"] {
+[class^="i-"] {
   width: 1em;
   height: 1em;
   fill: currentColor;
   vertical-align: middle;
   margin-top: -.25em;
+}
+
+.i-smaller {
+  width: .8em;
+  height: .8em;
+  vertical-align: baseline;
+}
+
+.i-subtle {
+  fill: #767676;
 }
 
 .infobox {

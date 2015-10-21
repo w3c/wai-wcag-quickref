@@ -27,7 +27,7 @@
       {% endfor%}
     </div>
     <div class="understanding">
-      <a href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/{{sc_id}}.html" target="_blank" class="btn btn-default btn-sm"><svg aria-hidden="true" class="i-info"><use xlink:href="{{ "/img/icons.svg" | prepend: site.baseurl }}#i-info"></use></svg> Understanding {{ p }}.{{ g }}.{{ s }} <svg role="img" title="Opens new window/tab" class="i-external"><use xlink:href="{{ "/img/icons.svg" | prepend: site.baseurl }}#i-external"></use></svg></span></a>
+      <a href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/{{sc_id}}.html" class="btn btn-default btn-sm"><svg aria-hidden="true" class="i-info"><use xlink:href="{{ "/img/icons.svg" | prepend: site.baseurl }}#i-info"></use></svg> Understanding {{ p }}.{{ g }}.{{ s }} <svg role="img" title="External link" class="i-external"><use xlink:href="{{ "/img/icons.svg" | prepend: site.baseurl }}#i-external"></use></svg></span></a>
     </div>
   </div>
     {% for sctech in sc.techniques %}
