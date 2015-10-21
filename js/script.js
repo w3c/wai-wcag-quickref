@@ -146,21 +146,34 @@ jQuery(document).ready(function($) {
     } else {
       $('#filter-levels button.filters').prop('disabled', true);
     }
+
+    $('.sc-wrapper').each(function(index, el) {
+      if ($(el).is('.current')) {
+        $('.overview [href="#' + $(el).find('h4').attr('id') + '"]').parent().show();
+      } else {
+        $('.overview [href="#' + $(el).find('h4').attr('id') + '"]').parent().hide();
+      }
+    });
+
     $('.guideline').each(function(index, el) {
       if ($(el).has('.sc-wrapper.current').length > 0) {
         $(el).find('> .panel-heading, > .panel-body').show();
+        $('.overview [href="#' + $(el).find('h3').attr('id') + '"]').parent().show();
       } else {
         $(el).find('> .panel-heading, > .panel-body').hide();
+        $('.overview [href="#' + $(el).find('h3').attr('id') + '"]').parent().hide();
       }
     });
     $('.principle + .guidelines').each(function(index, el) {
       if ($(el).has('.sc-wrapper.current').length > 0) {
         $(el).prev().show();
+        $('.overview [href="#' + $(el).prev().find('h2').attr('id') + '"]').parent().show();
       } else {
         $(el).prev().hide();
+        $('.overview [href="#' + $(el).prev().find('h2').attr('id') + '"]').parent().hide();
       }
     });
-    if($('.sc-wrapper:not(.current)')) {
+    if($('.sc-wrapper.current').length == 0) {
       $('#hiddensc').empty();
       $('<h3>Hidden Success Criteria</h3>').appendTo('#hiddensc');
       $('<div class="hiddensc-inner">').appendTo('#hiddensc')
@@ -168,9 +181,11 @@ jQuery(document).ready(function($) {
       $('.sc-wrapper:not(.current) h4'). each(function(index, el) {
         hiddenscul.append('<li>' + $(el).find('> strong').text() + ' ' + $(el).find('> span').text() + '</li>').appendTo('#hiddensc .hiddensc-inner');
       });
-      $('#hiddensc').show()
+      $('#hiddensc').show();
+      $('#hiddennav').show();
     } else {
-      $('#hiddensc').hide()
+      $('#hiddensc').hide();
+      $('#hiddennav').hide();
     }
     saveURL();
     statustext();
@@ -278,11 +293,11 @@ jQuery(document).ready(function($) {
   });
 
   function scrollto(target) {
-     var scrollpos = target.offset().top - $(".maininner").offset().top;
-         scrollpos = scrollpos - 10;
-         scrollpos = $(".maininner").scrollTop() + scrollpos;
-     $('.maininner').animate({
-         scrollTop: scrollpos
+    var scrollpos = target.offset().top - $(".maininner").offset().top;
+        scrollpos = scrollpos - 10;
+        scrollpos = $(".maininner").scrollTop() + scrollpos;
+    $('.maininner').animate({
+        scrollTop: scrollpos
     }, 1000);
     return false;
   }
@@ -449,7 +464,13 @@ jQuery(document).ready(function($) {
 
     $('#overview').on('click', 'a', function(e) {
       e.preventDefault();
-      var thetarget = $(e.target).parents('a').attr('href');
+      var tgt = $(e.target),
+          thetarget;
+      if (tgt.is('[href="#hiddensc"]')) {
+        thetarget = $(e.target).attr('href');
+      } else {
+        thetarget = $(e.target).parents('a').attr('href');
+      }
       scrollto($(thetarget));
     });
 
