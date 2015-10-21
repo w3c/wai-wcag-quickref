@@ -102,6 +102,18 @@ jQuery(document).ready(function($) {
       $('#filter-techniques input').prop('checked', true);
       $('#filter-techniques input[value="' + data.techniques.split(',').join('"], #filter-techniques input[value="') + '"]').prop('checked', false);
     };
+    if (data.showtechniques) {
+      $('.btn-techniques').each(function(index, el) {
+        var btn = $(el);
+        btn.attr('aria-expanded', false);
+        $('#'+btn.attr('aria-controls')).removeClass('in');
+      });
+      $('.btn-techniques[aria-controls="techniques-' + data.showtechniques.split(',').join('"], .btn-techniques[aria-controls="techniques-') + '"]').each(function(index, el) {
+        var btn = $(el);
+        btn.attr('aria-expanded', true);
+        $('#'+btn.attr('aria-controls')).addClass('in');
+      });
+    };
     applyTechnologies();
     applyTagsAndLevelsToSC();
   }
@@ -538,6 +550,33 @@ jQuery(document).ready(function($) {
     } else {
       $('#' + target.prop('name')).removeClass('active');
     }
+  });
+
+  $('main').on('click', '.techniques-button .btn-techniques', function(event) {
+    var target = $(event.target),
+        cntrls = target.attr('aria-controls'),
+        location = window.history.location || window.location,
+        uri = new URI(location),
+        urltags = new Array();
+    $('.btn-techniques[aria-expanded="true"]').each(function(index, el) {
+      urltags.push($(el).attr('aria-controls'));
+    });
+    // attribute aria-expanded is false when clicked on the button when the associated area is currently hidden. So if the following returns 'false' the panel is/will be open.
+    if (target.attr('aria-expanded') == "false") {
+      urltags.push(cntrls);
+    } else {
+      for (var i = urltags.length - 1; i >= 0; i--) {
+        if (urltags[i] == cntrls) {
+          urltags.splice(i, 1);
+        }
+      };
+    }
+    if (urltags.length > 0) {
+      uri.setSearch('showtechniques', urltags.join(',').replace(/techniques-/gi, "") + '');
+    } else {
+      uri.removeSearch('showtechniques');
+    }
+    updateuri(uri);
   });
 
   $( window ).on('resize scroll', function() {
