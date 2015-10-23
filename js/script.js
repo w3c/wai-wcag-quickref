@@ -67,8 +67,8 @@ jQuery(document).ready(function($) {
   }
 
   function updateuri(uri) {
-    uri.fragment("");
     history.pushState(null, null, uri);
+    uri.fragment("");
     localStorage.setItem('url-' + uri.filename(), uri);
   }
 
@@ -308,12 +308,16 @@ jQuery(document).ready(function($) {
   });
 
   function scrollto(target) {
+    var location = window.history.location || window.location,
+        uri = new URI(location);
     var scrollpos = target.offset().top - $(".maininner").offset().top;
         scrollpos = scrollpos - 10;
-        scrollpos = $(".maininner").scrollTop() + scrollpos;
+        scrollpos = $(".maininner").scrollTop() + scrollpos - 10;
     $('.maininner').animate({
         scrollTop: scrollpos
     }, 1000);
+    uri.fragment(target.selector);
+    updateuri(uri);
     return false;
   }
 
@@ -487,6 +491,7 @@ jQuery(document).ready(function($) {
         thetarget = $(e.target).parents('a').attr('href');
       }
       scrollto($(thetarget));
+
     });
 
     $('main').on('click', '.toplink', function(e) {
