@@ -188,7 +188,7 @@ jQuery(document).ready(function($) {
         $('.overview [href="#' + $(el).prev().find('h2').attr('id') + '"]').parent().hide();
       }
     });
-    if($('.sc-wrapper.current').length == 0) {
+    if($('.sc-wrapper.current').length > 0) {
       $('#hiddensc').empty();
       $('<h3>Hidden Success Criteria</h3>').appendTo('#hiddensc');
       $('<div class="hiddensc-inner">').appendTo('#hiddensc')
