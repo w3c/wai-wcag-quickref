@@ -196,11 +196,9 @@ jQuery(document).ready(function($) {
       $('.sc-wrapper:not(.current) h4'). each(function(index, el) {
         hiddenscul.append('<li>' + $(el).find('> strong').text() + ' ' + $(el).find('> span').text() + '</li>').appendTo('#hiddensc .hiddensc-inner');
       });
-      $('#hiddensc').show();
-      $('#hiddennav').show();
+      $('#hiddensc, #hiddennav').show();
     } else {
-      $('#hiddensc').hide();
-      $('#hiddennav').hide();
+      $('#hiddensc, #hiddennav').hide();
     }
     saveURL();
     statustext();
