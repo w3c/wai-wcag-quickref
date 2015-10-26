@@ -316,6 +316,7 @@ jQuery(document).ready(function($) {
     }, 1000);
     uri.fragment(target.selector);
     updateuri(uri);
+    target.attr('tabindex', '-1').focus();
     return false;
   }
 
