@@ -4,7 +4,7 @@
             "id": "WCAG2:perceivable",
             "num": "1",
             "handle": "Perceivable",
-            "title": "Principle 1: Perceivable - Information and user interface components must be presentable to users in ways they can perceive.",
+            "title": "Information and user interface components must be presentable to users in ways they can perceive.",
             "guidelines": [
                 {
                     "id": "WCAG2:text-equiv",
@@ -33,27 +33,27 @@
                                     "type": "ulist",
                                     "items": [
                                         {
-                                            "handle": "Controls, Input:",
+                                            "handle": "Controls, Input",
                                             "text": "If non-text content is a control or accepts user input, then it has a name that describes its purpose. (Refer to for additional requirements for controls and content that accepts user input.)"
                                         },
                                         {
-                                            "handle": "Time-Based Media:",
+                                            "handle": "Time-Based Media",
                                             "text": "If non-text content is time-based media, then text alternatives at least provide descriptive identification of the non-text content. (Refer to for additional requirements for media.)"
                                         },
                                         {
-                                            "handle": "Test:",
+                                            "handle": "Test",
                                             "text": "If non-text content is a test or exercise that would be invalid if presented in text, then text alternatives at least provide descriptive identification of the non-text content."
                                         },
                                         {
-                                            "handle": "Sensory:",
+                                            "handle": "Sensory",
                                             "text": "If non-text content is primarily intended to create a specific sensory experience, then text alternatives at least provide descriptive identification of the non-text content."
                                         },
                                         {
-                                            "handle": "CAPTCHA:",
+                                            "handle": "CAPTCHA",
                                             "text": "If the purpose of non-text content is to confirm that content is being accessed by a person rather than a computer, then text alternatives that identify and describe the purpose of the non-text content are provided, and alternative forms of CAPTCHA using output modes for different types of sensory perception are provided to accommodate different disabilities."
                                         },
                                         {
-                                            "handle": "Decoration, Formatting, Invisible:",
+                                            "handle": "Decoration, Formatting, Invisible",
                                             "text": "If non-text content is pure decoration, is used only for visual formatting, or is not presented to users, then it is implemented in a way that it can be ignored by assistive technology."
                                         }
                                     ]
@@ -326,11 +326,11 @@
                                     "type": "ulist",
                                     "items": [
                                         {
-                                            "handle": "Prerecorded Audio-only:",
+                                            "handle": "Prerecorded Audio-only",
                                             "text": "An alternative for time-based media is provided that presents equivalent information for prerecorded audio-only content."
                                         },
                                         {
-                                            "handle": "Prerecorded Video-only:",
+                                            "handle": "Prerecorded Video-only",
                                             "text": "Either an alternative for time-based media or an audio track is provided that presents equivalent information for prerecorded video-only content."
                                         }
                                     ]
@@ -1428,15 +1428,15 @@
                                     "type": "ulist",
                                     "items": [
                                         {
-                                            "handle": "Large Text:",
+                                            "handle": "Large Text",
                                             "text": "Large-scale text and images of large-scale text have a contrast ratio of at least 3:1;"
                                         },
                                         {
-                                            "handle": "Incidental:",
+                                            "handle": "Incidental",
                                             "text": "Text or images of text that are part of an inactive user interface component, that are pure decoration, that are not visible to anyone, or that are part of a picture that contains significant other visual content, have no contrast requirement."
                                         },
                                         {
-                                            "handle": "Logotypes:",
+                                            "handle": "Logotypes",
                                             "text": "Text that is part of a logo or brand name has no minimum contrast requirement."
                                         }
                                     ]
@@ -1736,15 +1736,15 @@
                                     "type": "ulist",
                                     "items": [
                                         {
-                                            "handle": "Large Text:",
+                                            "handle": "Large Text",
                                             "text": "Large-scale text and images of large-scale text have a contrast ratio of at least 4.5:1;"
                                         },
                                         {
-                                            "handle": "Incidental:",
+                                            "handle": "Incidental",
                                             "text": "Text or images of text that are part of an inactive user interface component, that are pure decoration, that are not visible to anyone, or that are part of a picture that contains significant other visual content, have no contrast requirement."
                                         },
                                         {
-                                            "handle": "Logotypes:",
+                                            "handle": "Logotypes",
                                             "text": "Text that is part of a logo or brand name has no minimum contrast requirement."
                                         }
                                     ]
@@ -1863,15 +1863,15 @@
                                     "type": "ulist",
                                     "items": [
                                         {
-                                            "handle": "No Background:",
+                                            "handle": "No Background",
                                             "text": "The audio does not contain background sounds."
                                         },
                                         {
-                                            "handle": "Turn Off:",
+                                            "handle": "Turn Off",
                                             "text": "The background sounds can be turned off."
                                         },
                                         {
-                                            "handle": "20 dB:",
+                                            "handle": "20 dB",
                                             "text": "The background sounds are at least 20 decibels lower than the foreground speech content, with the exception of occasional sounds that last for only one or two seconds."
                                         }
                                     ]
@@ -2052,7 +2052,7 @@
             "id": "WCAG2:operable",
             "num": "2",
             "handle": "Operable",
-            "title": "Principle 2: Operable - User interface components and navigation must be operable.",
+            "title": "User interface components and navigation must be operable.",
             "guidelines": [
                 {
                     "id": "WCAG2:keyboard-operation",
@@ -2246,27 +2246,27 @@
                                     "type": "ulist",
                                     "items": [
                                         {
-                                            "handle": "Turn off:",
+                                            "handle": "Turn off",
                                             "text": "The user is allowed to turn off the time limit before encountering it; or"
                                         },
                                         {
-                                            "handle": "Adjust:",
+                                            "handle": "Adjust",
                                             "text": "The user is allowed to adjust the time limit before encountering it over a wide range that is at least ten times the length of the default setting; or"
                                         },
                                         {
-                                            "handle": "Extend:",
+                                            "handle": "Extend",
                                             "text": "The user is warned before time expires and given at least 20 seconds to extend the time limit with a simple action (for example, \"press the space bar\"), and the user is allowed to extend the time limit at least ten times; or"
                                         },
                                         {
-                                            "handle": "Real-time Exception:",
+                                            "handle": "Real-time Exception",
                                             "text": "The time limit is a required part of a real-time event (for example, an auction), and no alternative to the time limit is possible; or"
                                         },
                                         {
-                                            "handle": "Essential Exception:",
+                                            "handle": "Essential Exception",
                                             "text": "The time limit is essential and extending it would invalidate the activity; or"
                                         },
                                         {
-                                            "handle": "20 Hour Exception:",
+                                            "handle": "20 Hour Exception",
                                             "text": "The time limit is longer than 20 hours."
                                         }
                                     ]
@@ -2381,11 +2381,11 @@
                                     "type": "ulist",
                                     "items": [
                                         {
-                                            "handle": "Moving, blinking, scrolling:",
+                                            "handle": "Moving, blinking, scrolling",
                                             "text": "For any moving, blinking or scrolling information that (1) starts automatically, (2) lasts more than five seconds, and (3) is presented in parallel with other content, there is a mechanism for the user to pause, stop, or hide it unless the movement, blinking, or scrolling is part of an activity where it is essential; and"
                                         },
                                         {
-                                            "handle": "Auto-updating:",
+                                            "handle": "Auto-updating",
                                             "text": "For any auto-updating information that (1) starts automatically and (2) is presented in parallel with other content, there is a mechanism for the user to pause, stop, or hide it or to control the frequency of the update unless the auto-updating is part of an activity where it is essential."
                                         }
                                     ]
@@ -3369,7 +3369,7 @@
             "id": "WCAG2:understandable",
             "num": "3",
             "handle": "Understandable",
-            "title": "Principle 3: Understandable - Information and the operation of user interface must be understandable.",
+            "title": "Information and the operation of user interface must be understandable.",
             "guidelines": [
                 {
                     "id": "WCAG2:meaning",
@@ -4592,15 +4592,15 @@
                             "text": "For Web pages that cause legal commitments or financial transactions for the user to occur, that modify or delete user-controllable data in data storage systems, or that submit user test responses, at least one of the following is true:",
                             "details": [
                                 {
-                                    "handle": "Reversible:",
+                                    "handle": "Reversible",
                                     "text": "Submissions are reversible."
                                 },
                                 {
-                                    "handle": "Checked:",
+                                    "handle": "Checked",
                                     "text": "Data entered by the user is checked for input errors and the user is provided an opportunity to correct them."
                                 },
                                 {
-                                    "handle": "Confirmed:",
+                                    "handle": "Confirmed",
                                     "text": "A mechanism is available for reviewing, confirming, and correcting information before finalizing the submission."
                                 }
                             ],
@@ -4743,15 +4743,15 @@
                             "text": "For Web pages that require the user to submit information, at least one of the following is true:",
                             "details": [
                                 {
-                                    "handle": "Reversible:",
+                                    "handle": "Reversible",
                                     "text": "Submissions are reversible."
                                 },
                                 {
-                                    "handle": "Checked:",
+                                    "handle": "Checked",
                                     "text": "Data entered by the user is checked for input errors and the user is provided an opportunity to correct them."
                                 },
                                 {
-                                    "handle": "Confirmed:",
+                                    "handle": "Confirmed",
                                     "text": "A mechanism is available for reviewing, confirming, and correcting information before finalizing the submission."
                                 }
                             ],
@@ -4773,7 +4773,7 @@
             "id": "WCAG2:robust",
             "num": "4",
             "handle": "Robust",
-            "title": "Principle 4: Robust - Content must be robust enough that it can be interpreted reliably by a wide variety of user agents, including assistive technologies.",
+            "title": "Content must be robust enough that it can be interpreted reliably by a wide variety of user agents, including assistive technologies.",
             "guidelines": [
                 {
                     "id": "WCAG2:ensure-compat",
