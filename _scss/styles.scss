@@ -12,6 +12,18 @@ $large:  81em; //* 1300px */
   color:#777;
 }
 
+@include mq($medium) {
+
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    overflow:hidden;
+  }
+
+}
+
 body {
   position: relative;
   padding-bottom: 2em;
@@ -461,7 +473,7 @@ svg.icon {
       transition: all .1s linear;
     }
     main {
-      padding: 0 15px;
+      padding: 0 0 0 15px;
     }
     .sidebar, .sidebar > div {
       width: 300px;
