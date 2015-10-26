@@ -306,6 +306,8 @@
   title: Providing text alternatives for the area elements of image maps
 - short: H25
   title: Providing a title using the title element
+- short: H27
+  title: Providing text and non-text alternatives for object
 - short: H28
   title: Providing definitions for abbreviations by using the abbr element
 - short: H30

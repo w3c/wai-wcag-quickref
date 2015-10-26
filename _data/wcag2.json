@@ -264,7 +264,150 @@
                                     ]
                                 },
                                 {
-                                    "advisory": []
+                                    "advisory": [
+                                        {
+                                            "situations": [
+                                                {
+                                                    "title": "General Techniques for Informative Non-Text Content",
+                                                    "techniques": [
+                                                        {
+                                                            "id": "TECH:future1",
+                                                            "title": "Identifying informative non-text content"
+                                                        },
+                                                        {
+                                                            "id": "TECH:future1",
+                                                            "title": "Keeping short descriptions short"
+                                                        },
+                                                        {
+                                                            "id": "TECH:future1",
+                                                            "title": "Describing images that include text"
+                                                        },
+                                                        {
+                                                            "id": "TECH:future1",
+                                                            "title": "Providing a longer description of the non-text content where only a descriptive label is required using a technology-specific technique (for an accessibility-supported content technology) for long description listed above"
+                                                        },
+                                                        {
+                                                            "id": "TECH:future1",
+                                                            "title": "Providing different sizes for non-text content when it cannot have an equivalent accessible alternative"
+                                                        },
+                                                        {
+                                                            "id": "TECH:future1",
+                                                            "title": "Using server-side scripts to resize images of text"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "title": "General Techniques for Live Non-Text Content",
+                                                    "techniques": [
+                                                        {
+                                                            "id": "TECH:future1",
+                                                            "title": "Linking to textual information that provides comparable information (e.g., for a traffic Webcam, a municipality could provide a link to the text traffic report.)"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "title": "General techniques to minimize the barrier of CAPTCHAs",
+                                                    "techniques": [
+                                                        {
+                                                            "id": "TECH:future1",
+                                                            "title": "Providing more than two modalities of CAPTCHAs"
+                                                        },
+                                                        {
+                                                            "id": "TECH:future1",
+                                                            "title": "Providing access to a human customer service representative who can bypass CAPTCHA"
+                                                        },
+                                                        {
+                                                            "id": "TECH:future1",
+                                                            "title": "Not requiring CAPTCHAs for authorized users"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "title": "HTML Techniques",
+                                                    "techniques": [
+                                                        {
+                                                            "id": "TECH:H46"
+                                                        },
+                                                        {
+                                                            "id": "TECH:future1",
+                                                            "title": "Writing for browsers that do not support frame"
+                                                        },
+                                                        {
+                                                            "id": "TECH:future1",
+                                                            "title": "Providing alternative content for iframe"
+                                                        },
+                                                        {
+                                                            "id": "TECH:H27"
+                                                        },
+                                                        {
+                                                            "id": "TECH:future1",
+                                                            "title": "Not using long descriptions for iframe"
+                                                        },
+                                                        {
+                                                            "id": "TECH:future1",
+                                                            "title": "Providing redundant text links for client-side image maps"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "title": "CSS Techniques",
+                                                    "techniques": [
+                                                        {
+                                                            "id": "TECH:C18",
+                                                        },
+                                                        {
+                                                            "id": "TECH:future1",
+                                                            "title": "Using CSS background, :before or :after rules for decorative images instead of img elements"
+                                                        },
+                                                        {
+                                                            "id": "TECH:future1",
+                                                            "title": "Displaying empty table cells"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "title": "WAI-ARIA Techniques",
+                                                    "techniques": [
+                                                        {
+                                                            "id": "TECH:future1",
+                                                            "title": "Using the ARIA presentation role to indicate elements are purely presentational"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "title": "Silverlight Techniques",
+                                                    "techniques": [
+                                                        {
+                                                            "id": "TECH:SL19"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "title": "Metadata Techniques",
+                                                    "techniques": [
+                                                        {
+                                                            "id": "TECH:future1",
+                                                            "title": "Using metadata to associate text transcriptions with a video"
+                                                        },
+                                                        {
+                                                            "id": "TECH:future1",
+                                                            "title": "Using metadata to associate text transcriptions with audio-only content",
+                                                            "using": [
+                                                                {
+                                                                    "id": "TECH:future1",
+                                                                    "title": "EXAMPLE: Providing, in metadata, URI(s) that points to an audio description and a text transcript of a video."
+                                                                },
+                                                                {
+                                                                    "id": "TECH:future1",
+                                                                    "title": "EXAMPLE: Providing, in metadata, URI(s) that point to several text transcripts (English, French, Dutch) of an audio file."
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
                                 },
                                 {
                                     "failure": [
