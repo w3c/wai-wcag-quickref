@@ -496,9 +496,9 @@ jQuery(document).ready(function($) {
       scrollto($('#hiddensc'));
     });
 
-    $('main').on('click', '.toplink', function(e) {
-      var thetarget = $(this).attr('href');
-      scrollto($(thetarget));
+    $('main').on('click', '.toplink', function(event) {
+      event.preventDefault();
+      scrollto($('#top'));
     });
 
     $('.maininner').on('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(event) {
