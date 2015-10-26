@@ -591,10 +591,10 @@ jQuery(document).ready(function($) {
     updateuri(uri);
   });
 
-  $( window ).on('resize scroll', function() {
+  $( window ).on('resize', function() {
     if (matchMedia('screen and (min-width: 43em)').matches) {
-      $('.sidebar-content').css('height', window.innerHeight - (document.querySelectorAll('.active .sidebar-content')[0].getBoundingClientRect().top>0 ? document.querySelectorAll('.active .sidebar-content')[0].getBoundingClientRect().top : 0 ) - 10);
-      $('.maininner').css('height', window.innerHeight - (document.querySelectorAll('.maininner')[0].getBoundingClientRect().top>0 ? document.querySelectorAll('.maininner')[0].getBoundingClientRect().top : 0 ) - 10);
+      $('.sidebar-content').css('height', window.innerHeight - (document.querySelectorAll('.active .sidebar-content')[0].getBoundingClientRect().top>0 ? document.querySelectorAll('.active .sidebar-content')[0].getBoundingClientRect().top : 0 ));
+      $('.maininner').css('height', window.innerHeight - (document.querySelectorAll('.maininner')[0].getBoundingClientRect().top>0 ? document.querySelectorAll('.maininner')[0].getBoundingClientRect().top : 0 ));
     } else {
       $('.sidebar-content').css('height', 'auto');
       $('.sidebar > div').css('width', 'auto');
