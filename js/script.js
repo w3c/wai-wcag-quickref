@@ -190,7 +190,7 @@ jQuery(document).ready(function($) {
     });
     if($('.sc-wrapper.current').length > 0) {
       $('#hiddensc').empty();
-      $('<h3>Hidden Success Criteria</h3>').appendTo('#hiddensc');
+      $('<h3>Hidden Success Criteria <button class="clearall btn btn-info btn-sm" hidden="" style="display: inline-block;"><span class="glyphicon glyphicon-refresh"></span> Clear filters</button></h3>').appendTo('#hiddensc');
       $('<div class="hiddensc-inner">').appendTo('#hiddensc')
       var hiddenscul = $('<ul>');
       $('.sc-wrapper:not(.current) h4'). each(function(index, el) {
@@ -284,7 +284,7 @@ jQuery(document).ready(function($) {
     applyTagsAndLevelsToSC();
   });
 
-  $('#clearall').on('click', function(e) {
+  $('#hiddensc, .filter-status-row').on('click', '.clearall', function(e) {
     var unchecked = $('#filters input:not(:checked)');
     unchecked.each(function(){
       $(this).prop('checked', 'checked');
@@ -413,10 +413,10 @@ jQuery(document).ready(function($) {
     $('#status .sc').html(sctext);
     $('#status .tech').html(techtext + techtexthidden);
     if (techtext == "all techniques" && sctext == "all success criteria") {
-      $('#clearall').hide();
+      $('.clearall').hide();
       $('.filter-status-row').removeClass('active');
     } else {
-      $('#clearall').show();
+      $('.clearall').show();
       $('.filter-status-row').addClass('active');
     }
   };
@@ -489,7 +489,11 @@ jQuery(document).ready(function($) {
         thetarget = $(e.target).parents('a').attr('href');
       }
       scrollto($(thetarget));
+    });
 
+    $('#hiddennav').on('click', function(event) {
+      event.preventDefault();
+      scrollto($('#hiddensc'));
     });
 
     $('main').on('click', '.toplink', function(e) {
