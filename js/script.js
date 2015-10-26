@@ -188,7 +188,7 @@ jQuery(document).ready(function($) {
         $('.overview [href="#' + $(el).prev().find('h2').attr('id') + '"]').parent().hide();
       }
     });
-    if($('.sc-wrapper.current').length > 0) {
+    if($('.sc-wrapper:not(.current)').length > 0) {
       $('#hiddensc').empty();
       $('<h3>Hidden Success Criteria <button class="clearall btn btn-info btn-sm" hidden="" style="display: inline-block;"><span class="glyphicon glyphicon-refresh"></span> Clear filters</button></h3>').appendTo('#hiddensc');
       $('<div class="hiddensc-inner">').appendTo('#hiddensc')
