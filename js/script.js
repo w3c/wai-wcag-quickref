@@ -294,6 +294,7 @@ jQuery(document).ready(function($) {
     applyTechnologies();
     applyTagsAndLevelsToSC();
     statustext();
+    scrollto($('#top'));
   });
 
   $('.sbbox-heading button.filters').on('click', function(e) {
