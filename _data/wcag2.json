@@ -4,19 +4,19 @@
             "id": "WCAG2:perceivable",
             "num": "1",
             "handle": "Perceivable",
-            "title": "Information and user interface components must be presentable to users in ways they can perceive.",
+            "text": "Information and user interface components must be presentable to users in ways they can perceive.",
             "guidelines": [
                 {
                     "id": "WCAG2:text-equiv",
                     "num": "1.1",
                     "handle": "Text Alternatives",
-                    "title": "Provide text alternatives for any non-text content so that it can be changed into other forms people need, such as large print, braille, speech, symbols or simpler language.",
+                    "text": "Provide text alternatives for any non-text content so that it can be changed into other forms people need, such as large print, braille, speech, symbols or simpler language.",
                     "techniques": [
                         {
                             "advisory": [
                                 {
                                     "id": "TECH:future1",
-                                    "title": "Providing sign language videos for audio-only files (future link)"
+                                    "text": "Providing sign language videos for audio-only files (future link)"
                                 }
                             ]
                         }
@@ -65,7 +65,7 @@
                                         {
                                             "situations": [
                                                 {
-                                                    "title": "Situation A: If a short description can serve the same purpose and present the same information as the non-text content:",
+                                                    "text": "Situation A: If a short description can serve the same purpose and present the same information as the non-text content:",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:G94"
@@ -112,7 +112,7 @@
                                                     ]
                                                 },
                                                 {
-                                                    "title": "Situation B: If a short description can not serve the same purpose and present the same information as the non-text content (e.g., a chart or diagram):",
+                                                    "text": "Situation B: If a short description can not serve the same purpose and present the same information as the non-text content (e.g., a chart or diagram):",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:G95"
@@ -147,7 +147,7 @@
                                                     ]
                                                 },
                                                 {
-                                                    "title": "Situation C: If non-text content is a control or accepts user input:",
+                                                    "text": "Situation C: If non-text content is a control or accepts user input:",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:G82"
@@ -203,11 +203,11 @@
                                                     ]
                                                 },
                                                 {
-                                                    "title": "Situation D: If non-text content is time-based media (including live video-only and live audio-only); a test or exercise that would be invalid if presented in text; or primarily intended to create a specific sensory experience:",
+                                                    "text": "Situation D: If non-text content is time-based media (including live video-only and live audio-only); a test or exercise that would be invalid if presented in text; or primarily intended to create a specific sensory experience:",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:future1",
-                                                            "title": "Providing a descriptive label using one of the following Short text alternative techniques for Situation D :"
+                                                            "text": "Providing a descriptive label using one of the following Short text alternative techniques for Situation D :"
                                                         },
                                                         {
                                                             "id": "TECH:ARIA6"
@@ -224,7 +224,7 @@
                                                     ]
                                                 },
                                                 {
-                                                    "title": "Situation E: If non-text content is a CAPTCHA:",
+                                                    "text": "Situation E: If non-text content is a CAPTCHA:",
                                                     "techniques": [
                                                         {
                                                             "and": [
@@ -239,11 +239,11 @@
                                                     ]
                                                 },
                                                 {
-                                                    "title": "Situation F: If the non-text content should be ignored by assistive technology:",
+                                                    "text": "Situation F: If the non-text content should be ignored by assistive technology:",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:future1",
-                                                            "title": "Implementing or marking the non-text content so that it will be ignored by assistive technology using one of the following Techniques to indicate that text alternatives are not required for Situation F :"
+                                                            "text": "Implementing or marking the non-text content so that it will be ignored by assistive technology using one of the following Techniques to indicate that text alternatives are not required for Situation F :"
                                                         },
                                                         {
                                                             "id": "TECH:C9"
@@ -268,114 +268,114 @@
                                         {
                                             "situations": [
                                                 {
-                                                    "title": "General Techniques for Informative Non-Text Content",
+                                                    "text": "General Techniques for Informative Non-Text Content",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:future1",
-                                                            "title": "Identifying informative non-text content"
+                                                            "text": "Identifying informative non-text content"
                                                         },
                                                         {
                                                             "id": "TECH:future1",
-                                                            "title": "Keeping short descriptions short"
+                                                            "text": "Keeping short descriptions short"
                                                         },
                                                         {
                                                             "id": "TECH:future1",
-                                                            "title": "Describing images that include text"
+                                                            "text": "Describing images that include text"
                                                         },
                                                         {
                                                             "id": "TECH:future1",
-                                                            "title": "Providing a longer description of the non-text content where only a descriptive label is required using a technology-specific technique (for an accessibility-supported content technology) for long description listed above"
+                                                            "text": "Providing a longer description of the non-text content where only a descriptive label is required using a technology-specific technique (for an accessibility-supported content technology) for long description listed above"
                                                         },
                                                         {
                                                             "id": "TECH:future1",
-                                                            "title": "Providing different sizes for non-text content when it cannot have an equivalent accessible alternative"
+                                                            "text": "Providing different sizes for non-text content when it cannot have an equivalent accessible alternative"
                                                         },
                                                         {
                                                             "id": "TECH:future1",
-                                                            "title": "Using server-side scripts to resize images of text"
+                                                            "text": "Using server-side scripts to resize images of text"
                                                         }
                                                     ]
                                                 },
                                                 {
-                                                    "title": "General Techniques for Live Non-Text Content",
+                                                    "text": "General Techniques for Live Non-Text Content",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:future1",
-                                                            "title": "Linking to textual information that provides comparable information (e.g., for a traffic Webcam, a municipality could provide a link to the text traffic report.)"
+                                                            "text": "Linking to textual information that provides comparable information (e.g., for a traffic Webcam, a municipality could provide a link to the text traffic report.)"
                                                         }
                                                     ]
                                                 },
                                                 {
-                                                    "title": "General techniques to minimize the barrier of CAPTCHAs",
+                                                    "text": "General techniques to minimize the barrier of CAPTCHAs",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:future1",
-                                                            "title": "Providing more than two modalities of CAPTCHAs"
+                                                            "text": "Providing more than two modalities of CAPTCHAs"
                                                         },
                                                         {
                                                             "id": "TECH:future1",
-                                                            "title": "Providing access to a human customer service representative who can bypass CAPTCHA"
+                                                            "text": "Providing access to a human customer service representative who can bypass CAPTCHA"
                                                         },
                                                         {
                                                             "id": "TECH:future1",
-                                                            "title": "Not requiring CAPTCHAs for authorized users"
+                                                            "text": "Not requiring CAPTCHAs for authorized users"
                                                         }
                                                     ]
                                                 },
                                                 {
-                                                    "title": "HTML Techniques",
+                                                    "text": "HTML Techniques",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:H46"
                                                         },
                                                         {
                                                             "id": "TECH:future1",
-                                                            "title": "Writing for browsers that do not support frame"
+                                                            "text": "Writing for browsers that do not support frame"
                                                         },
                                                         {
                                                             "id": "TECH:future1",
-                                                            "title": "Providing alternative content for iframe"
+                                                            "text": "Providing alternative content for iframe"
                                                         },
                                                         {
                                                             "id": "TECH:H27"
                                                         },
                                                         {
                                                             "id": "TECH:future1",
-                                                            "title": "Not using long descriptions for iframe"
+                                                            "text": "Not using long descriptions for iframe"
                                                         },
                                                         {
                                                             "id": "TECH:future1",
-                                                            "title": "Providing redundant text links for client-side image maps"
+                                                            "text": "Providing redundant text links for client-side image maps"
                                                         }
                                                     ]
                                                 },
                                                 {
-                                                    "title": "CSS Techniques",
+                                                    "text": "CSS Techniques",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:C18",
                                                         },
                                                         {
                                                             "id": "TECH:future1",
-                                                            "title": "Using CSS background, :before or :after rules for decorative images instead of img elements"
+                                                            "text": "Using CSS background, :before or :after rules for decorative images instead of img elements"
                                                         },
                                                         {
                                                             "id": "TECH:future1",
-                                                            "title": "Displaying empty table cells"
+                                                            "text": "Displaying empty table cells"
                                                         }
                                                     ]
                                                 },
                                                 {
-                                                    "title": "WAI-ARIA Techniques",
+                                                    "text": "WAI-ARIA Techniques",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:future1",
-                                                            "title": "Using the ARIA presentation role to indicate elements are purely presentational"
+                                                            "text": "Using the ARIA presentation role to indicate elements are purely presentational"
                                                         }
                                                     ]
                                                 },
                                                 {
-                                                    "title": "Silverlight Techniques",
+                                                    "text": "Silverlight Techniques",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:SL19"
@@ -383,23 +383,23 @@
                                                     ]
                                                 },
                                                 {
-                                                    "title": "Metadata Techniques",
+                                                    "text": "Metadata Techniques",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:future1",
-                                                            "title": "Using metadata to associate text transcriptions with a video"
+                                                            "text": "Using metadata to associate text transcriptions with a video"
                                                         },
                                                         {
                                                             "id": "TECH:future1",
-                                                            "title": "Using metadata to associate text transcriptions with audio-only content",
+                                                            "text": "Using metadata to associate text transcriptions with audio-only content",
                                                             "using": [
                                                                 {
                                                                     "id": "TECH:future1",
-                                                                    "title": "EXAMPLE: Providing, in metadata, URI(s) that points to an audio description and a text transcript of a video."
+                                                                    "text": "EXAMPLE: Providing, in metadata, URI(s) that points to an audio description and a text transcript of a video."
                                                                 },
                                                                 {
                                                                     "id": "TECH:future1",
-                                                                    "title": "EXAMPLE: Providing, in metadata, URI(s) that point to several text transcripts (English, French, Dutch) of an audio file."
+                                                                    "text": "EXAMPLE: Providing, in metadata, URI(s) that point to several text transcripts (English, French, Dutch) of an audio file."
                                                                 }
                                                             ]
                                                         }
@@ -451,7 +451,7 @@
                     "id": "WCAG2:media-equiv",
                     "num": "1.2",
                     "handle": "Time-based Media",
-                    "title": "Provide alternatives for time-based media.",
+                    "text": "Provide alternatives for time-based media.",
                     "techniques": [
                         {
                             "advisory": []
@@ -485,7 +485,7 @@
                                         {
                                             "situations": [
                                                 {
-                                                    "title": "Situation A: If the content is prerecorded audio-only:",
+                                                    "text": "Situation A: If the content is prerecorded audio-only:",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:G158"
@@ -496,7 +496,7 @@
                                                     ]
                                                 },
                                                 {
-                                                    "title": "Situation B: If the content is prerecorded video-only:",
+                                                    "text": "Situation B: If the content is prerecorded video-only:",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:G159"
@@ -520,11 +520,11 @@
                                         },
                                         {
                                             "id": "TECH:future2",
-                                            "title": "Providing a transcript of a live audio only presentation after the fact (future link)"
+                                            "text": "Providing a transcript of a live audio only presentation after the fact (future link)"
                                         },
                                         {
                                             "id": "TECH:future3",
-                                            "title": "Linking to textual information that provides comparable information (e.g., for a traffic Webcam, a municipality could provide a link to the text traffic report.) (future link)"
+                                            "text": "Linking to textual information that provides comparable information (e.g., for a traffic Webcam, a municipality could provide a link to the text traffic report.) (future link)"
                                         }
                                     ]
                                 },
@@ -584,15 +584,15 @@
                                     "advisory": [
                                         {
                                             "id": "TECH:future1",
-                                            "title": "Providing a note saying \"No sound is used in this clip\" for video-only clips (future link)"
+                                            "text": "Providing a note saying \"No sound is used in this clip\" for video-only clips (future link)"
                                         },
                                         {
                                             "id": "TECH:future2",
-                                            "title": "Using SMIL 1.0 to provide captions for all languages for which there are audio tracks (future link)"
+                                            "text": "Using SMIL 1.0 to provide captions for all languages for which there are audio tracks (future link)"
                                         },
                                         {
                                             "id": "TECH:future3",
-                                            "title": "Using SMIL 2.0 to provide captions for all languages for which there are audio tracks (future link)"
+                                            "text": "Using SMIL 2.0 to provide captions for all languages for which there are audio tracks (future link)"
                                         }
                                     ]
                                 },
@@ -633,7 +633,7 @@
                                         },
                                         {
                                             "id": "TECH:future2",
-                                            "title": "Linking to the alternative for time-based media using one of the following techniques Using the body of the object element",
+                                            "text": "Linking to the alternative for time-based media using one of the following techniques Using the body of the object element",
                                             "using": [
                                                 {
                                                     "id": "TECH:H53"
@@ -670,7 +670,7 @@
                                                 },
                                                 {
                                                     "id": "TECH:future5",
-                                                    "title": "Using any player that supports audio and video"
+                                                    "text": "Using any player that supports audio and video"
                                                 }
                                             ]
                                         },
@@ -691,7 +691,7 @@
                                                 },
                                                 {
                                                     "id": "TECH:future5",
-                                                    "title": "Using any player that supports audio and video"
+                                                    "text": "Using any player that supports audio and video"
                                                 }
                                             ]
                                         },
@@ -707,11 +707,11 @@
                                         },
                                         {
                                             "id": "TECH:future2",
-                                            "title": "Providing audio description in multiple languages in SMIL 1.0 (future link)"
+                                            "text": "Providing audio description in multiple languages in SMIL 1.0 (future link)"
                                         },
                                         {
                                             "id": "TECH:future3",
-                                            "title": "Providing audio description in multiple languages in SMIL 2.0 (future link)"
+                                            "text": "Providing audio description in multiple languages in SMIL 2.0 (future link)"
                                         }
                                     ]
                                 }
@@ -804,7 +804,7 @@
                                                 },
                                                 {
                                                     "id": "TECH:future4",
-                                                    "title": "Using any player that supports audio and video"
+                                                    "text": "Using any player that supports audio and video"
                                                 }
                                             ]
                                         },
@@ -822,7 +822,7 @@
                                                 },
                                                 {
                                                     "id": "TECH:future4",
-                                                    "title": "Using any player that supports audio and video"
+                                                    "text": "Using any player that supports audio and video"
                                                 }
                                             ]
                                         },
@@ -838,15 +838,15 @@
                                         },
                                         {
                                             "id": "TECH:future2",
-                                            "title": "Providing audio description in multiple languages in SMIL 1.0 (future link)"
+                                            "text": "Providing audio description in multiple languages in SMIL 1.0 (future link)"
                                         },
                                         {
                                             "id": "TECH:future3",
-                                            "title": "Providing audio description in multiple languages in SMIL 2.0 (future link)"
+                                            "text": "Providing audio description in multiple languages in SMIL 2.0 (future link)"
                                         },
                                         {
                                             "id": "TECH:future4",
-                                            "title": "Providing audio description for live synchronized media (future link)"
+                                            "text": "Providing audio description for live synchronized media (future link)"
                                         }
                                     ]
                                 }
@@ -902,7 +902,7 @@
                                                 },
                                                 {
                                                     "id": "TECH:future3",
-                                                    "title": "Using any player that supports audio and video"
+                                                    "text": "Using any player that supports audio and video"
                                                 }
                                             ]
                                         }
@@ -915,11 +915,11 @@
                                         },
                                         {
                                             "id": "TECH:future2",
-                                            "title": "Adding extended audio description in multiple languages in SMIL 1.0 (future link)"
+                                            "text": "Adding extended audio description in multiple languages in SMIL 1.0 (future link)"
                                         },
                                         {
                                             "id": "TECH:future3",
-                                            "title": "Adding extended audio description in multiple languages in SMIL 2.0 (future link)"
+                                            "text": "Adding extended audio description in multiple languages in SMIL 2.0 (future link)"
                                         }
                                     ]
                                 }
@@ -937,7 +937,7 @@
                                         {
                                             "situations": [
                                                 {
-                                                    "title": "Situation A: If the content is prerecorded synchronized media:",
+                                                    "text": "Situation A: If the content is prerecorded synchronized media:",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:G69",
@@ -952,7 +952,7 @@
                                                         },
                                                         {
                                                             "id": "TECH:future2",
-                                                            "title": "Linking to the alternative for time-based media using one of the following techniques Using the body of the object element",
+                                                            "text": "Linking to the alternative for time-based media using one of the following techniques Using the body of the object element",
                                                             "using": [
                                                                 {
                                                                     "id": "TECH:H53"
@@ -962,7 +962,7 @@
                                                     ]
                                                 },
                                                 {
-                                                    "title": "Situation B: If the content is prerecorded video-only:",
+                                                    "text": "Situation B: If the content is prerecorded video-only:",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:G159"
@@ -980,11 +980,11 @@
                                         },
                                         {
                                             "id": "TECH:future2",
-                                            "title": "Providing a corrected script (future link)"
+                                            "text": "Providing a corrected script (future link)"
                                         },
                                         {
                                             "id": "TECH:future3",
-                                            "title": "Adding detail to audio description (future link)"
+                                            "text": "Adding detail to audio description (future link)"
                                         }
                                     ]
                                 },
@@ -1021,7 +1021,7 @@
                                     "advisory": [
                                         {
                                             "id": "TECH:future1",
-                                            "title": "Using metadata to associate text transcriptions with audio-only content (future link)Providing, in metadata, URI(s) that point to several text transcripts (English, French, Dutch) of an audio file."
+                                            "text": "Using metadata to associate text transcriptions with audio-only content (future link)Providing, in metadata, URI(s) that point to several text transcripts (English, French, Dutch) of an audio file."
                                         }
                                     ]
                                 }
@@ -1033,7 +1033,7 @@
                     "id": "WCAG2:content-structure-separation",
                     "num": "1.3",
                     "handle": "Adaptable",
-                    "title": "Create content that can be presented in different ways (for example simpler layout) without losing information or structure.",
+                    "text": "Create content that can be presented in different ways (for example simpler layout) without losing information or structure.",
                     "techniques": [],
                     "successcriteria": [
                         {
@@ -1048,7 +1048,7 @@
                                         {
                                             "situations": [
                                                 {
-                                                    "title": "Situation A: The technology provides semantic structure to make information and relationships conveyed through presentation programmatically determinable:",
+                                                    "text": "Situation A: The technology provides semantic structure to make information and relationships conveyed through presentation programmatically determinable:",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:ARIA11"
@@ -1086,7 +1086,7 @@
                                                         },
                                                         {
                                                             "id": "TECH:future10",
-                                                            "title": "Making information and relationships conveyed through presentation programmatically determinable using the following techniques: Using semantic markup whenever color cues are used Using table markup to present tabular information Using caption elements to associate data table captions with data tables Specifying caption text for a DataGrid Using the summary attribute of the table element to give an overview of data tables Adding summary information to a DataGrid Using the scope attribute to associate header cells and data cells in data tables Using id and headers attributes to associate data cells with header cells in data tables Using the DataGrid component to associate column headers with cells Using label elements to associate text labels with form controls Using the title attribute to identify form controls when the label element cannot be used Using auto labeling to associate text labels with form controls Setting the label property for form components Labeling a form control by setting its accessible name Providing a label for groups of radio buttons or checkboxes using the fieldset and legend elements Using OPTGROUP to group OPTION elements inside a SELECT Using ol, ul and dl for lists Using h1-h6 to identify headings Using functions of the Document Object Model (DOM) to add content to a page",
+                                                            "text": "Making information and relationships conveyed through presentation programmatically determinable using the following techniques: Using semantic markup whenever color cues are used Using table markup to present tabular information Using caption elements to associate data table captions with data tables Specifying caption text for a DataGrid Using the summary attribute of the table element to give an overview of data tables Adding summary information to a DataGrid Using the scope attribute to associate header cells and data cells in data tables Using id and headers attributes to associate data cells with header cells in data tables Using the DataGrid component to associate column headers with cells Using label elements to associate text labels with form controls Using the title attribute to identify form controls when the label element cannot be used Using auto labeling to associate text labels with form controls Setting the label property for form components Labeling a form control by setting its accessible name Providing a label for groups of radio buttons or checkboxes using the fieldset and legend elements Using OPTGROUP to group OPTION elements inside a SELECT Using ol, ul and dl for lists Using h1-h6 to identify headings Using functions of the Document Object Model (DOM) to add content to a page",
                                                             "using": [
                                                                 {
                                                                     "id": "TECH:G138"
@@ -1183,7 +1183,7 @@
                                                     ]
                                                 },
                                                 {
-                                                    "title": "Situation B: The technology in use does NOT provide the semantic structure to make the information and relationships conveyed through presentation programmatically determinable:",
+                                                    "text": "Situation B: The technology in use does NOT provide the semantic structure to make the information and relationships conveyed through presentation programmatically determinable:",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:G117"
@@ -1193,7 +1193,7 @@
                                                         },
                                                         {
                                                             "id": "TECH:future3",
-                                                            "title": "Making information and relationships conveyed through presentation programmatically determinable or available in text using the following techniques: Using standard text formatting conventions for paragraphs Using standard text formatting conventions for lists Using standard text formatting conventions for headings",
+                                                            "text": "Making information and relationships conveyed through presentation programmatically determinable or available in text using the following techniques: Using standard text formatting conventions for paragraphs Using standard text formatting conventions for lists Using standard text formatting conventions for headings",
                                                             "using": [
                                                                 {
                                                                     "id": "TECH:T1"
@@ -1219,7 +1219,7 @@
                                         },
                                         {
                                             "id": "TECH:future2",
-                                            "title": "Using CSS rather than tables for page layout (future link)"
+                                            "text": "Using CSS rather than tables for page layout (future link)"
                                         },
                                         {
                                             "id": "TECH:G162"
@@ -1232,7 +1232,7 @@
                                         },
                                         {
                                             "id": "TECH:future6",
-                                            "title": "Providing labels for all form controls that do not have implicit labels (future link)"
+                                            "text": "Providing labels for all form controls that do not have implicit labels (future link)"
                                         },
                                         {
                                             "id": "TECH:G141"
@@ -1328,15 +1328,15 @@
                                     "advisory": [
                                         {
                                             "id": "TECH:future1",
-                                            "title": "Using left-justified text for languages that are written left to right and right-justified text for languages that are written right-to-left (future link)"
+                                            "text": "Using left-justified text for languages that are written left to right and right-justified text for languages that are written right-to-left (future link)"
                                         },
                                         {
                                             "id": "TECH:future2",
-                                            "title": "Providing a link to linearized rendering (future link)"
+                                            "text": "Providing a link to linearized rendering (future link)"
                                         },
                                         {
                                             "id": "TECH:future3",
-                                            "title": "Providing a style switcher between style sheets that affect presentation order (future link)"
+                                            "text": "Providing a style switcher between style sheets that affect presentation order (future link)"
                                         }
                                     ]
                                 },
@@ -1385,7 +1385,7 @@
                                     "advisory": [
                                         {
                                             "id": "TECH:future1",
-                                            "title": "Using an image with a text alternative for graphical symbols instead of a Unicode font glyph with the desired graphical appearance but different meaning (future link)"
+                                            "text": "Using an image with a text alternative for graphical symbols instead of a Unicode font glyph with the desired graphical appearance but different meaning (future link)"
                                         }
                                     ]
                                 },
@@ -1407,21 +1407,21 @@
                     "id": "WCAG2:visual-audio-contrast",
                     "num": "1.4",
                     "handle": "Distinguishable",
-                    "title": "Make it easier for users to see and hear content including separating foreground from background.",
+                    "text": "Make it easier for users to see and hear content including separating foreground from background.",
                     "techniques": [
                         {
                             "advisory": [
                                 {
                                     "id": "TECH:future1",
-                                    "title": "Using readable fonts (future link)"
+                                    "text": "Using readable fonts (future link)"
                                 },
                                 {
                                     "id": "TECH:future2",
-                                    "title": "Making sure any text in images of text is at least 14 points and has good contrast (future link)"
+                                    "text": "Making sure any text in images of text is at least 14 points and has good contrast (future link)"
                                 },
                                 {
                                     "id": "TECH:future3",
-                                    "title": "Providing a highly visible highlighting mechanism for links or controls when they receive keyboard focus (future link)"
+                                    "text": "Providing a highly visible highlighting mechanism for links or controls when they receive keyboard focus (future link)"
                                 }
                             ]
                         }
@@ -1445,7 +1445,7 @@
                                         {
                                             "situations": [
                                                 {
-                                                    "title": "Situation A: If the color of particular words, backgrounds, or other content is used to indicate information:",
+                                                    "text": "Situation A: If the color of particular words, backgrounds, or other content is used to indicate information:",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:G14"
@@ -1462,7 +1462,7 @@
                                                     ]
                                                 },
                                                 {
-                                                    "title": "Situation B: If color is used within an image to convey information:",
+                                                    "text": "Situation B: If color is used within an image to convey information:",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:G111"
@@ -1480,7 +1480,7 @@
                                     "advisory": [
                                         {
                                             "id": "TECH:future1",
-                                            "title": "Conveying information redundantly using color (future link)"
+                                            "text": "Conveying information redundantly using color (future link)"
                                         },
                                         {
                                             "id": "TECH:C15"
@@ -1544,7 +1544,7 @@
                                     "advisory": [
                                         {
                                             "id": "TECH:future1",
-                                            "title": "Providing a site-wide preference to turn off audio in addition to providing a control near the top of the Web page that turns off sounds that play automatically (future link)"
+                                            "text": "Providing a site-wide preference to turn off audio in addition to providing a control near the top of the Web page that turns off sounds that play automatically (future link)"
                                         }
                                     ]
                                 },
@@ -1591,7 +1591,7 @@
                                         {
                                             "situations": [
                                                 {
-                                                    "title": "Situation A: text is less than 18 point if not bold and less than 14 point if bold",
+                                                    "text": "Situation A: text is less than 18 point if not bold and less than 14 point if bold",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:G18"
@@ -1608,7 +1608,7 @@
                                                     ]
                                                 },
                                                 {
-                                                    "title": "Situation B: text is at least 18 point if not bold and at least 14 point if bold",
+                                                    "text": "Situation B: text is at least 18 point if not bold and at least 14 point if bold",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:G145"
@@ -1635,43 +1635,43 @@
                                         },
                                         {
                                             "id": "TECH:future2",
-                                            "title": "Using a higher contrast value for text that is over a patterned background (future link)"
+                                            "text": "Using a higher contrast value for text that is over a patterned background (future link)"
                                         },
                                         {
                                             "id": "TECH:future3",
-                                            "title": "Using Unicode text and style sheets instead of images of text (future link)"
+                                            "text": "Using Unicode text and style sheets instead of images of text (future link)"
                                         },
                                         {
                                             "id": "TECH:future4",
-                                            "title": "Using a higher contrast values for lines in diagrams (future link)"
+                                            "text": "Using a higher contrast values for lines in diagrams (future link)"
                                         },
                                         {
                                             "id": "TECH:future5",
-                                            "title": "Using greater contrast level for red-black text/background combinations (future link)"
+                                            "text": "Using greater contrast level for red-black text/background combinations (future link)"
                                         },
                                         {
                                             "id": "TECH:future6",
-                                            "title": "Using colors that are composed predominantly of mid spectral components for the light and spectral extremes (blue and red wavelengths) for the dark"
+                                            "text": "Using colors that are composed predominantly of mid spectral components for the light and spectral extremes (blue and red wavelengths) for the dark"
                                         },
                                         {
                                             "id": "TECH:future7",
-                                            "title": "Using a light pastel background rather than a white background behind black text to create sufficient but not extreme contrast (future link)"
+                                            "text": "Using a light pastel background rather than a white background behind black text to create sufficient but not extreme contrast (future link)"
                                         },
                                         {
                                             "id": "TECH:future8",
-                                            "title": "Making icons using simple line drawings that meet the contrast provisions for text (future link)"
+                                            "text": "Making icons using simple line drawings that meet the contrast provisions for text (future link)"
                                         },
                                         {
                                             "id": "TECH:future9",
-                                            "title": "Providing sufficient contrast ratio in graphs and charts (future link)"
+                                            "text": "Providing sufficient contrast ratio in graphs and charts (future link)"
                                         },
                                         {
                                             "id": "TECH:future10",
-                                            "title": "Using a 3:1 contrast ratio or higher as the default presentation (future link)"
+                                            "text": "Using a 3:1 contrast ratio or higher as the default presentation (future link)"
                                         },
                                         {
                                             "id": "TECH:future11",
-                                            "title": "Providing sufficient color contrast for empty text fields (future link)"
+                                            "text": "Providing sufficient color contrast for empty text fields (future link)"
                                         }
                                     ]
                                 },
@@ -1707,14 +1707,14 @@
                                         },
                                         {
                                             "id": "TECH:future4",
-                                            "title": "Ensuring that text containers resize when the text resizes AND using measurements that are relative to other measurements in the content by using one or more of the following techniques: Specifying the size of text containers using em units Techniques for relative measurements Using percent for font sizes Using named font sizes Using em units for font sizes Techniques for text container resizing Calculating size and position in a way that scales with text size (Scripting) Using liquid layout",
+                                            "text": "Ensuring that text containers resize when the text resizes AND using measurements that are relative to other measurements in the content by using one or more of the following techniques: Specifying the size of text containers using em units Techniques for relative measurements Using percent for font sizes Using named font sizes Using em units for font sizes Techniques for text container resizing Calculating size and position in a way that scales with text size (Scripting) Using liquid layout",
                                             "using": [
                                                 {
                                                     "id": "TECH:C28"
                                                 },
                                                 {
                                                     "id": "TECH:future2",
-                                                    "title": "Techniques for relative measurements Using percent for font sizes Using named font sizes Using em units for font sizes",
+                                                    "text": "Techniques for relative measurements Using percent for font sizes Using named font sizes Using em units for font sizes",
                                                     "using": [
                                                         {
                                                             "id": "TECH:C12"
@@ -1729,7 +1729,7 @@
                                                 },
                                                 {
                                                     "id": "TECH:future3",
-                                                    "title": "Techniques for text container resizing Calculating size and position in a way that scales with text size (Scripting) Using liquid layout",
+                                                    "text": "Techniques for text container resizing Calculating size and position in a way that scales with text size (Scripting) Using liquid layout",
                                                     "using": [
                                                         {
                                                             "id": "TECH:SCR34"
@@ -1753,46 +1753,46 @@
                                     "advisory": [
                                         {
                                             "id": "TECH:future1",
-                                            "title": "Providing large fonts by default (future link)"
+                                            "text": "Providing large fonts by default (future link)"
                                         },
                                         {
                                             "id": "TECH:future2",
-                                            "title": "Using page-percent for container sizes (future link)"
+                                            "text": "Using page-percent for container sizes (future link)"
                                         },
                                         {
                                             "id": "TECH:future3",
-                                            "title": "Avoiding scaling font sizes smaller than the user-agent default (future link)The author won't actually know the font size, but should avoid percentage scaling that results in less than 100%"
+                                            "text": "Avoiding scaling font sizes smaller than the user-agent default (future link)The author won't actually know the font size, but should avoid percentage scaling that results in less than 100%"
                                         },
                                         {
                                             "id": "TECH:future4",
-                                            "title": "Avoiding justified text (future link)"
+                                            "text": "Avoiding justified text (future link)"
                                         },
                                         {
                                             "id": "TECH:future5",
-                                            "title": "Providing sufficient inter-line and inter-column spacing (future link)"
+                                            "text": "Providing sufficient inter-line and inter-column spacing (future link)"
                                         },
                                         {
                                             "id": "TECH:future6",
-                                            "title": "Providing different sizes for non-text content when it cannot have an equivalent accessible alternative (future link)"
+                                            "text": "Providing different sizes for non-text content when it cannot have an equivalent accessible alternative (future link)"
                                         },
                                         {
                                             "id": "TECH:future7",
-                                            "title": "Avoiding the use of text in raster images (future link)"
+                                            "text": "Avoiding the use of text in raster images (future link)"
                                         },
                                         {
                                             "id": "TECH:future8",
-                                            "title": "Using server-side scripts to resize images of text (future link)"
+                                            "text": "Using server-side scripts to resize images of text (future link)"
                                         },
                                         {
                                             "id": "TECH:C17"
                                         },
                                         {
                                             "id": "TECH:future10",
-                                            "title": "Ensuring that text in raster images is at least 18pt (future link)"
+                                            "text": "Ensuring that text in raster images is at least 18pt (future link)"
                                         },
                                         {
                                             "id": "TECH:future11",
-                                            "title": "Scaling text down to 50% (future link)"
+                                            "text": "Scaling text down to 50% (future link)"
                                         },
                                         {
                                             "id": "TECH:C20"
@@ -1802,7 +1802,7 @@
                                         },
                                         {
                                             "id": "TECH:future14",
-                                            "title": "Providing a mechanism to allow captions to be enlarged (future link)"
+                                            "text": "Providing a mechanism to allow captions to be enlarged (future link)"
                                         }
                                     ]
                                 },
@@ -1899,7 +1899,7 @@
                                         {
                                             "situations": [
                                                 {
-                                                    "title": "Situation A: text is less than 18 point if not bold and less than 14 point if bold",
+                                                    "text": "Situation A: text is less than 18 point if not bold and less than 14 point if bold",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:G17"
@@ -1916,7 +1916,7 @@
                                                     ]
                                                 },
                                                 {
-                                                    "title": "Situation B: text is as least 18 point if not bold and at least 14 point if bold",
+                                                    "text": "Situation B: text is as least 18 point if not bold and at least 14 point if bold",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:G18"
@@ -1943,43 +1943,43 @@
                                         },
                                         {
                                             "id": "TECH:future2",
-                                            "title": "Using a higher contrast value for text that is over a patterned background (future link)"
+                                            "text": "Using a higher contrast value for text that is over a patterned background (future link)"
                                         },
                                         {
                                             "id": "TECH:future3",
-                                            "title": "Using Unicode text and style sheets instead of images of text (future link)"
+                                            "text": "Using Unicode text and style sheets instead of images of text (future link)"
                                         },
                                         {
                                             "id": "TECH:future4",
-                                            "title": "Using a higher contrast values for lines in diagrams (future link)"
+                                            "text": "Using a higher contrast values for lines in diagrams (future link)"
                                         },
                                         {
                                             "id": "TECH:future5",
-                                            "title": "Using greater contrast level for red-black text/background combinations"
+                                            "text": "Using greater contrast level for red-black text/background combinations"
                                         },
                                         {
                                             "id": "TECH:future6",
-                                            "title": "Using colors that are composed predominantly of mid spectral components for the light and spectral extremes (blue and red wavelengths) for the dark"
+                                            "text": "Using colors that are composed predominantly of mid spectral components for the light and spectral extremes (blue and red wavelengths) for the dark"
                                         },
                                         {
                                             "id": "TECH:future7",
-                                            "title": "Using a light pastel background rather than a white background behind black text to create sufficient but not extreme contrast (future link)"
+                                            "text": "Using a light pastel background rather than a white background behind black text to create sufficient but not extreme contrast (future link)"
                                         },
                                         {
                                             "id": "TECH:future8",
-                                            "title": "Making icons using simple line drawings that meet the contrast provisions for text (future link)"
+                                            "text": "Making icons using simple line drawings that meet the contrast provisions for text (future link)"
                                         },
                                         {
                                             "id": "TECH:future9",
-                                            "title": "Providing sufficient contrast ratio in graphs and charts (future link)"
+                                            "text": "Providing sufficient contrast ratio in graphs and charts (future link)"
                                         },
                                         {
                                             "id": "TECH:future10",
-                                            "title": "Using a 3:1 contrast ratio or higher as the default presentation (future link)"
+                                            "text": "Using a 3:1 contrast ratio or higher as the default presentation (future link)"
                                         },
                                         {
                                             "id": "TECH:future11",
-                                            "title": "Providing sufficient color contrast for empty text fields (future link)"
+                                            "text": "Providing sufficient color contrast for empty text fields (future link)"
                                         }
                                     ]
                                 },
@@ -2032,11 +2032,11 @@
                                     "advisory": [
                                         {
                                             "id": "TECH:future1",
-                                            "title": "Providing a way for users to adjust auditory levels of foreground and background sound independently (future link)"
+                                            "text": "Providing a way for users to adjust auditory levels of foreground and background sound independently (future link)"
                                         },
                                         {
                                             "id": "TECH:future2",
-                                            "title": "Providing an audio track for synchronized media that includes background sounds that are at least 20 decibels lower than speech (future link)"
+                                            "text": "Providing an audio track for synchronized media that includes background sounds that are at least 20 decibels lower than speech (future link)"
                                         }
                                     ]
                                 }
@@ -2078,63 +2078,63 @@
                                     "advisory": [
                                         {
                                             "id": "TECH:future1",
-                                            "title": "Using a hover effect to highlight a paragraph, list items, or table cells (CSS) (future link)"
+                                            "text": "Using a hover effect to highlight a paragraph, list items, or table cells (CSS) (future link)"
                                         },
                                         {
                                             "id": "TECH:future2",
-                                            "title": "Presenting text in sans serif font or providing a mechanism to achieve this (CSS) (future link)"
+                                            "text": "Presenting text in sans serif font or providing a mechanism to achieve this (CSS) (future link)"
                                         },
                                         {
                                             "id": "TECH:future3",
-                                            "title": "Using vertical (bulleted or numbered) lists rather than inline lists (future link)"
+                                            "text": "Using vertical (bulleted or numbered) lists rather than inline lists (future link)"
                                         },
                                         {
                                             "id": "TECH:future4",
-                                            "title": "Using upper and lower case according to the spelling conventions of the text language (future link)"
+                                            "text": "Using upper and lower case according to the spelling conventions of the text language (future link)"
                                         },
                                         {
                                             "id": "TECH:future5",
-                                            "title": "Providing large fonts by default (future link)"
+                                            "text": "Providing large fonts by default (future link)"
                                         },
                                         {
                                             "id": "TECH:future6",
-                                            "title": "Avoiding the use of text in raster images (future link)"
+                                            "text": "Avoiding the use of text in raster images (future link)"
                                         },
                                         {
                                             "id": "TECH:future7",
-                                            "title": "Avoiding scaling font sizes smaller than the user-agent default (future link)"
+                                            "text": "Avoiding scaling font sizes smaller than the user-agent default (future link)"
                                         },
                                         {
                                             "id": "TECH:future8",
-                                            "title": "Providing sufficient inter-column spacing (future link)"
+                                            "text": "Providing sufficient inter-column spacing (future link)"
                                         },
                                         {
                                             "id": "TECH:future9",
-                                            "title": "Avoiding centrally aligned text (future link)"
+                                            "text": "Avoiding centrally aligned text (future link)"
                                         },
                                         {
                                             "id": "TECH:future10",
-                                            "title": "Avoiding chunks of italic text (future link)"
+                                            "text": "Avoiding chunks of italic text (future link)"
                                         },
                                         {
                                             "id": "TECH:future11",
-                                            "title": "Avoiding overuse of different styles on individual pages and in sites (future link)"
+                                            "text": "Avoiding overuse of different styles on individual pages and in sites (future link)"
                                         },
                                         {
                                             "id": "TECH:future12",
-                                            "title": "Making links visually distinct (future link)"
+                                            "text": "Making links visually distinct (future link)"
                                         },
                                         {
                                             "id": "TECH:future13",
-                                            "title": "Providing expandable bullets (future link)"
+                                            "text": "Providing expandable bullets (future link)"
                                         },
                                         {
                                             "id": "TECH:future14",
-                                            "title": "Show/hide bullet points (future link)"
+                                            "text": "Show/hide bullet points (future link)"
                                         },
                                         {
                                             "id": "TECH:future15",
-                                            "title": "Putting an em-space or two spaces after sentences (future link)"
+                                            "text": "Putting an em-space or two spaces after sentences (future link)"
                                         }
                                     ]
                                 },
@@ -2195,13 +2195,13 @@
             "id": "WCAG2:operable",
             "num": "2",
             "handle": "Operable",
-            "title": "User interface components and navigation must be operable.",
+            "text": "User interface components and navigation must be operable.",
             "guidelines": [
                 {
                     "id": "WCAG2:keyboard-operation",
                     "num": "2.1",
                     "handle": "Keyboard Accessible",
-                    "title": "Make all functionality available from a keyboard.",
+                    "text": "Make all functionality available from a keyboard.",
                     "techniques": [
                         {
                             "advisory": []
@@ -2228,7 +2228,7 @@
                                         },
                                         {
                                             "id": "TECH:future2",
-                                            "title": "Ensuring keyboard control by using one of the following techniques. Using HTML form controls and links",
+                                            "text": "Ensuring keyboard control by using one of the following techniques. Using HTML form controls and links",
                                             "using": [
                                                 {
                                                     "id": "TECH:H91"
@@ -2290,23 +2290,23 @@
                                         },
                                         {
                                             "id": "TECH:future2",
-                                            "title": "Providing keyboard shortcuts to important links and form controls (future link)"
+                                            "text": "Providing keyboard shortcuts to important links and form controls (future link)"
                                         },
                                         {
                                             "id": "TECH:future3",
-                                            "title": "Using unique letter combinations to begin each item of a list (future link)"
+                                            "text": "Using unique letter combinations to begin each item of a list (future link)"
                                         },
                                         {
                                             "id": "TECH:future4",
-                                            "title": "Choosing the most abstract event handler (future link) (Scripting)"
+                                            "text": "Choosing the most abstract event handler (future link) (Scripting)"
                                         },
                                         {
                                             "id": "TECH:future5",
-                                            "title": "Using the onactivate event (future link) (Scripting)"
+                                            "text": "Using the onactivate event (future link) (Scripting)"
                                         },
                                         {
                                             "id": "TECH:future6",
-                                            "title": "Avoiding use of common user-agent keyboard commands for other purposes (future link)"
+                                            "text": "Avoiding use of common user-agent keyboard commands for other purposes (future link)"
                                         }
                                     ]
                                 },
@@ -2371,7 +2371,7 @@
                     "id": "WCAG2:time-limits",
                     "num": "2.2",
                     "handle": "Enough Time",
-                    "title": "Provide users enough time to read and use content.",
+                    "text": "Provide users enough time to read and use content.",
                     "techniques": [
                         {
                             "advisory": []
@@ -2425,7 +2425,7 @@
                                         {
                                             "situations": [
                                                 {
-                                                    "title": "Situation A: If there are session time limits:",
+                                                    "text": "Situation A: If there are session time limits:",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:G133"
@@ -2436,7 +2436,7 @@
                                                     ]
                                                 },
                                                 {
-                                                    "title": "Situation B: If a time limit is controlled by a script on the page:",
+                                                    "text": "Situation B: If a time limit is controlled by a script on the page:",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:G198"
@@ -2466,7 +2466,7 @@
                                                     ]
                                                 },
                                                 {
-                                                    "title": "Situation C: If there are time limits on reading:",
+                                                    "text": "Situation C: If there are time limits on reading:",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:G4"
@@ -2490,11 +2490,11 @@
                                     "advisory": [
                                         {
                                             "id": "TECH:future1",
-                                            "title": "Using a script to poll the server and notify a user if a time limit is present (future link) (Scripting)"
+                                            "text": "Using a script to poll the server and notify a user if a time limit is present (future link) (Scripting)"
                                         },
                                         {
                                             "id": "TECH:future2",
-                                            "title": "Using sounds to focus user's attention (future link)"
+                                            "text": "Using sounds to focus user's attention (future link)"
                                         }
                                     ]
                                 },
@@ -2586,11 +2586,11 @@
                                     "advisory": [
                                         {
                                             "id": "TECH:future1",
-                                            "title": "Providing a mechanism to stop all content that blinks within a Web page (future link)"
+                                            "text": "Providing a mechanism to stop all content that blinks within a Web page (future link)"
                                         },
                                         {
                                             "id": "TECH:future2",
-                                            "title": "Providing the user with a means to stop moving content even if it stops automatically within 5 seconds (future link)"
+                                            "text": "Providing the user with a means to stop moving content even if it stops automatically within 5 seconds (future link)"
                                         }
                                     ]
                                 },
@@ -2674,7 +2674,7 @@
                                     "sufficient": [
                                         {
                                             "id": "TECH:future1",
-                                            "title": "Providing options to continue without loss of data using one of the following techniques: Saving data so that it can be used after a user re-authenticates Encoding user data as hidden data in re-authorization page",
+                                            "text": "Providing options to continue without loss of data using one of the following techniques: Saving data so that it can be used after a user re-authenticates Encoding user data as hidden data in re-authorization page",
                                             "using": [
                                                 {
                                                     "id": "TECH:G105"
@@ -2701,13 +2701,13 @@
                     "id": "WCAG2:seizure",
                     "num": "2.3",
                     "handle": "Seizures",
-                    "title": "Do not design content in a way that is known to cause seizures.",
+                    "text": "Do not design content in a way that is known to cause seizures.",
                     "techniques": [
                         {
                             "advisory": [
                                 {
                                     "id": "TECH:future1",
-                                    "title": "Ensuring that content does not violate spatial pattern thresholds (future link)"
+                                    "text": "Ensuring that content does not violate spatial pattern thresholds (future link)"
                                 }
                             ]
                         }
@@ -2743,35 +2743,35 @@
                                     "advisory": [
                                         {
                                             "id": "TECH:future1",
-                                            "title": "Reducing contrast for any flashing content (future link)"
+                                            "text": "Reducing contrast for any flashing content (future link)"
                                         },
                                         {
                                             "id": "TECH:future2",
-                                            "title": "Avoiding fully saturated reds for any flashing content (future link)"
+                                            "text": "Avoiding fully saturated reds for any flashing content (future link)"
                                         },
                                         {
                                             "id": "TECH:future3",
-                                            "title": "Reducing the number of flashes even if they do not violate thresholds (future link)"
+                                            "text": "Reducing the number of flashes even if they do not violate thresholds (future link)"
                                         },
                                         {
                                             "id": "TECH:future4",
-                                            "title": "Providing a mechanism to suppress any flashing content before it begins (future link)"
+                                            "text": "Providing a mechanism to suppress any flashing content before it begins (future link)"
                                         },
                                         {
                                             "id": "TECH:future5",
-                                            "title": "Slowing down live material to avoid rapid flashes (as in flashbulbs) (future link)"
+                                            "text": "Slowing down live material to avoid rapid flashes (as in flashbulbs) (future link)"
                                         },
                                         {
                                             "id": "TECH:future6",
-                                            "title": "Freezing the image momentarily if 3 flashes within one second are detected (future link)"
+                                            "text": "Freezing the image momentarily if 3 flashes within one second are detected (future link)"
                                         },
                                         {
                                             "id": "TECH:future7",
-                                            "title": "Dropping the contrast ratio if 3 flashes within one second are detected (future link)"
+                                            "text": "Dropping the contrast ratio if 3 flashes within one second are detected (future link)"
                                         },
                                         {
                                             "id": "TECH:future8",
-                                            "title": "Allowing users to set a custom flash rate limit (future link)"
+                                            "text": "Allowing users to set a custom flash rate limit (future link)"
                                         }
                                     ]
                                 }
@@ -2795,27 +2795,27 @@
                                     "advisory": [
                                         {
                                             "id": "TECH:future1",
-                                            "title": "Reducing contrast for any flashing content (future link)"
+                                            "text": "Reducing contrast for any flashing content (future link)"
                                         },
                                         {
                                             "id": "TECH:future2",
-                                            "title": "Avoiding fully saturated reds for any flashing content (future link)"
+                                            "text": "Avoiding fully saturated reds for any flashing content (future link)"
                                         },
                                         {
                                             "id": "TECH:future3",
-                                            "title": "Reducing the number of flashes even if they don't violate thresholds (future link)"
+                                            "text": "Reducing the number of flashes even if they don't violate thresholds (future link)"
                                         },
                                         {
                                             "id": "TECH:future4",
-                                            "title": "Slowing down live material to avoid rapid flashes (as in flashbulbs) (future link)"
+                                            "text": "Slowing down live material to avoid rapid flashes (as in flashbulbs) (future link)"
                                         },
                                         {
                                             "id": "TECH:future5",
-                                            "title": "Freezing the image momentarily if 3 flashes within one second are detected (future link)"
+                                            "text": "Freezing the image momentarily if 3 flashes within one second are detected (future link)"
                                         },
                                         {
                                             "id": "TECH:future6",
-                                            "title": "Dropping the contrast ratio if 3 flashes within one second are detected (future link)"
+                                            "text": "Dropping the contrast ratio if 3 flashes within one second are detected (future link)"
                                         }
                                     ]
                                 }
@@ -2827,25 +2827,25 @@
                     "id": "WCAG2:navigation-mechanisms",
                     "num": "2.4",
                     "handle": "Navigable",
-                    "title": "Provide ways to help users navigate, find content, and determine where they are.",
+                    "text": "Provide ways to help users navigate, find content, and determine where they are.",
                     "techniques": [
                         {
                             "advisory": [
                                 {
                                     "id": "TECH:future1",
-                                    "title": "Limiting the number of links per page (future link)"
+                                    "text": "Limiting the number of links per page (future link)"
                                 },
                                 {
                                     "id": "TECH:future2",
-                                    "title": "Providing mechanisms to navigate to different sections of the content of a Web page (future link)"
+                                    "text": "Providing mechanisms to navigate to different sections of the content of a Web page (future link)"
                                 },
                                 {
                                     "id": "TECH:future3",
-                                    "title": "Making links visually distinct (future link)"
+                                    "text": "Making links visually distinct (future link)"
                                 },
                                 {
                                     "id": "TECH:future4",
-                                    "title": "Highlighting search terms (future link)"
+                                    "text": "Highlighting search terms (future link)"
                                 }
                             ]
                         }
@@ -2862,7 +2862,7 @@
                                     "sufficient": [
                                         {
                                             "id": "TECH:future1",
-                                            "title": "Creating links to skip blocks of repeated material using one of the following techniques: Adding a link at the top of each page that goes directly to the main content area Adding a link at the beginning of a block of repeated content to go to the end of the block Adding links at the top of the page to each area of the content",
+                                            "text": "Creating links to skip blocks of repeated material using one of the following techniques: Adding a link at the top of each page that goes directly to the main content area Adding a link at the beginning of a block of repeated content to go to the end of the block Adding links at the top of the page to each area of the content",
                                             "using": [
                                                 {
                                                     "id": "TECH:G1"
@@ -2880,7 +2880,7 @@
                                         },
                                         {
                                             "id": "TECH:future2",
-                                            "title": "Grouping blocks of repeated material in a way that can be skipped, using one of the following techniques: Providing Heading elements at the beginning of each section of content Using frame elements to group blocks of repeated material AND Using the title attribute of the frame and iframe elements Using an expandable and collapsible menu",
+                                            "text": "Grouping blocks of repeated material in a way that can be skipped, using one of the following techniques: Providing Heading elements at the beginning of each section of content Using frame elements to group blocks of repeated material AND Using the title attribute of the frame and iframe elements Using an expandable and collapsible menu",
                                             "using": [
                                                 {
                                                     "id": "TECH:ARIA11"
@@ -2915,19 +2915,19 @@
                                     "advisory": [
                                         {
                                             "id": "TECH:future1",
-                                            "title": "Providing keyboard access to important links and form controls (future link)"
+                                            "text": "Providing keyboard access to important links and form controls (future link)"
                                         },
                                         {
                                             "id": "TECH:future2",
-                                            "title": "Providing skip links to enhance page navigation (future link)"
+                                            "text": "Providing skip links to enhance page navigation (future link)"
                                         },
                                         {
                                             "id": "TECH:future3",
-                                            "title": "Providing access keys (future link)"
+                                            "text": "Providing access keys (future link)"
                                         },
                                         {
                                             "id": "TECH:future4",
-                                            "title": "Using accessibility supported technologies which allow structured navigation by user agents and assistive technologies (future link)"
+                                            "text": "Using accessibility supported technologies which allow structured navigation by user agents and assistive technologies (future link)"
                                         },
                                         {
                                             "id": "TECH:C6"
@@ -2965,19 +2965,19 @@
                                         },
                                         {
                                             "id": "TECH:future2",
-                                            "title": "Identifying the subject of the Web page (future link)"
+                                            "text": "Identifying the subject of the Web page (future link)"
                                         },
                                         {
                                             "id": "TECH:future3",
-                                            "title": "Providing a meaningful name for identifying frames (future link)"
+                                            "text": "Providing a meaningful name for identifying frames (future link)"
                                         },
                                         {
                                             "id": "TECH:future4",
-                                            "title": "Using unique titles for Web pages (future link)"
+                                            "text": "Using unique titles for Web pages (future link)"
                                         },
                                         {
                                             "id": "TECH:future5",
-                                            "title": "Providing a descriptive top-level page heading (future link)"
+                                            "text": "Providing a descriptive top-level page heading (future link)"
                                         }
                                     ]
                                 },
@@ -3004,7 +3004,7 @@
                                         },
                                         {
                                             "id": "TECH:future2",
-                                            "title": "Giving focus to elements in an order that follows sequences and relationships within the content using one of the following techniques: Creating a logical tab order through links, form controls, and objects Using the tabIndex property to specify a logical tab order in Flash Making the DOM order match the visual order",
+                                            "text": "Giving focus to elements in an order that follows sequences and relationships within the content using one of the following techniques: Creating a logical tab order through links, form controls, and objects Using the tabIndex property to specify a logical tab order in Flash Making the DOM order match the visual order",
                                             "using": [
                                                 {
                                                     "id": "TECH:H4"
@@ -3025,7 +3025,7 @@
                                         },
                                         {
                                             "id": "TECH:future3",
-                                            "title": "Changing a Web page dynamically using one of the following techniques: Inserting dynamic content into the Document Object Model immediately following its trigger element Creating custom dialogs in a device independent way Reordering page sections using the Document Object Model",
+                                            "text": "Changing a Web page dynamically using one of the following techniques: Inserting dynamic content into the Document Object Model immediately following its trigger element Creating custom dialogs in a device independent way Reordering page sections using the Document Object Model",
                                             "using": [
                                                 {
                                                     "id": "TECH:SCR26"
@@ -3044,11 +3044,11 @@
                                     "advisory": [
                                         {
                                             "id": "TECH:future1",
-                                            "title": "Providing a highly visible highlighting mechanism for links or controls when they receive keyboard focus (future link)"
+                                            "text": "Providing a highly visible highlighting mechanism for links or controls when they receive keyboard focus (future link)"
                                         },
                                         {
                                             "id": "TECH:future2",
-                                            "title": "Creating alternative presentation orders (future link)"
+                                            "text": "Creating alternative presentation orders (future link)"
                                         }
                                     ]
                                 },
@@ -3087,7 +3087,7 @@
                                         },
                                         {
                                             "id": "TECH:future5",
-                                            "title": "Allowing the user to choose short or long link text using one of the techniques below: Providing a control near the beginning of the Web page that changes the link text Using scripts to change the link text Using scripting to change control labels",
+                                            "text": "Allowing the user to choose short or long link text using one of the techniques below: Providing a control near the beginning of the Web page that changes the link text Using scripts to change the link text Using scripting to change control labels",
                                             "using": [
                                                 {
                                                     "id": "TECH:G189"
@@ -3105,7 +3105,7 @@
                                         },
                                         {
                                             "id": "TECH:future7",
-                                            "title": "Providing a supplemental description of the purpose of a link using one of the following techniques: Supplementing link text with the title attribute Supplementing link text with hidden text",
+                                            "text": "Providing a supplemental description of the purpose of a link using one of the following techniques: Supplementing link text with the title attribute Supplementing link text with hidden text",
                                             "using": [
                                                 {
                                                     "id": "TECH:H33"
@@ -3117,7 +3117,7 @@
                                         },
                                         {
                                             "id": "TECH:future8",
-                                            "title": "Identifying the purpose of a link using link text combined with programmatically determined link context using one of the following techniques: Identifying the purpose of a link in a nested list using link text combined with the list item that the list is nested beneath",
+                                            "text": "Identifying the purpose of a link using link text combined with programmatically determined link context using one of the following techniques: Identifying the purpose of a link in a nested list using link text combined with the list item that the list is nested beneath",
                                             "using": [
                                                 {
                                                     "id": "TECH:ARIA7"
@@ -3191,7 +3191,7 @@
                                     "sufficient": [
                                         {
                                             "id": "TECH:future1",
-                                            "title": "Using two or more of the following techniques: Providing links to navigate to related Web pages Providing a Table of Contents Providing a Site Map Providing a search function to help users find content Providing a list of links to all other Web pages Linking to all of the pages on the site from the home page",
+                                            "text": "Using two or more of the following techniques: Providing links to navigate to related Web pages Providing a Table of Contents Providing a Site Map Providing a search function to help users find content Providing a list of links to all other Web pages Linking to all of the pages on the site from the home page",
                                             "using": [
                                                 {
                                                     "id": "TECH:G125"
@@ -3225,7 +3225,7 @@
                                         },
                                         {
                                             "id": "TECH:future2",
-                                            "title": "Including information about presentation modes in tables of contents and concept maps (future link)"
+                                            "text": "Including information about presentation modes in tables of contents and concept maps (future link)"
                                         }
                                     ]
                                 }
@@ -3252,11 +3252,11 @@
                                     "advisory": [
                                         {
                                             "id": "TECH:future1",
-                                            "title": "Using unique section headings in a Web Page (future link)"
+                                            "text": "Using unique section headings in a Web Page (future link)"
                                         },
                                         {
                                             "id": "TECH:future2",
-                                            "title": "Starting section headings with unique information (future link)"
+                                            "text": "Starting section headings with unique information (future link)"
                                         }
                                     ]
                                 }
@@ -3301,11 +3301,11 @@
                                     "advisory": [
                                         {
                                             "id": "TECH:future1",
-                                            "title": "Highlighting a link or control when the mouse hovers over it (future link)"
+                                            "text": "Highlighting a link or control when the mouse hovers over it (future link)"
                                         },
                                         {
                                             "id": "TECH:future2",
-                                            "title": "Providing a highly visible highlighting mechanism for links or controls when they receive keyboard focus (future link)"
+                                            "text": "Providing a highly visible highlighting mechanism for links or controls when they receive keyboard focus (future link)"
                                         }
                                     ]
                                 },
@@ -3359,19 +3359,19 @@
                                         },
                                         {
                                             "id": "TECH:future3",
-                                            "title": "Providing a link to the home page or main page (future link)"
+                                            "text": "Providing a link to the home page or main page (future link)"
                                         },
                                         {
                                             "id": "TECH:future4",
-                                            "title": "Providing an easy-to-read version of information about the organization of a set of Web pages (future link)"
+                                            "text": "Providing an easy-to-read version of information about the organization of a set of Web pages (future link)"
                                         },
                                         {
                                             "id": "TECH:future5",
-                                            "title": "Providing a sign language version of information about the organization of a set of Web pages (future link)"
+                                            "text": "Providing a sign language version of information about the organization of a set of Web pages (future link)"
                                         },
                                         {
                                             "id": "TECH:future6",
-                                            "title": "Providing an easy-to-read summary at the beginning of each section of content (future link)"
+                                            "text": "Providing an easy-to-read summary at the beginning of each section of content (future link)"
                                         }
                                     ]
                                 }
@@ -3403,7 +3403,7 @@
                                         },
                                         {
                                             "id": "TECH:future6",
-                                            "title": "Allowing the user to choose short or long link text using one of the techniques below: Providing a control near the beginning of the Web page that changes the link text Using scripts to change the link text Using scripting to change control labels",
+                                            "text": "Allowing the user to choose short or long link text using one of the techniques below: Providing a control near the beginning of the Web page that changes the link text Using scripts to change the link text Using scripting to change control labels",
                                             "using": [
                                                 {
                                                     "id": "TECH:G189"
@@ -3418,7 +3418,7 @@
                                         },
                                         {
                                             "id": "TECH:future7",
-                                            "title": "Providing a supplemental description of the purpose of a link using one of the following techniques: Supplementing link text with hidden text",
+                                            "text": "Providing a supplemental description of the purpose of a link using one of the following techniques: Supplementing link text with hidden text",
                                             "using": [
                                                 {
                                                     "id": "TECH:C7"
@@ -3427,7 +3427,7 @@
                                         },
                                         {
                                             "id": "TECH:future8",
-                                            "title": "Semantically indicating links using one of the following techniques:",
+                                            "text": "Semantically indicating links using one of the following techniques:",
                                             "using": [
                                                 {
                                                     "id": "TECH:PDF11"
@@ -3494,11 +3494,11 @@
                                     "advisory": [
                                         {
                                             "id": "TECH:future1",
-                                            "title": "Using the 'live' property to mark live regions (future link) (ARIA)"
+                                            "text": "Using the 'live' property to mark live regions (future link) (ARIA)"
                                         },
                                         {
                                             "id": "TECH:future2",
-                                            "title": "Providing mechanisms to navigate to different sections of the content of a Web page (future link)"
+                                            "text": "Providing mechanisms to navigate to different sections of the content of a Web page (future link)"
                                         }
                                     ]
                                 }
@@ -3512,99 +3512,99 @@
             "id": "WCAG2:understandable",
             "num": "3",
             "handle": "Understandable",
-            "title": "Information and the operation of user interface must be understandable.",
+            "text": "Information and the operation of user interface must be understandable.",
             "guidelines": [
                 {
                     "id": "WCAG2:meaning",
                     "num": "3.1",
                     "handle": "Readable",
-                    "title": "Make text content readable and understandable.",
+                    "text": "Make text content readable and understandable.",
                     "techniques": [
                         {
                             "advisory": [
                                 {
                                     "id": "TECH:future1",
-                                    "title": "Setting expectations about content in the page from uncontrolled sources (future link)"
+                                    "text": "Setting expectations about content in the page from uncontrolled sources (future link)"
                                 },
                                 {
                                     "id": "TECH:future2",
-                                    "title": "Providing sign language interpretation for all content (future link)"
+                                    "text": "Providing sign language interpretation for all content (future link)"
                                 },
                                 {
                                     "id": "TECH:future3",
-                                    "title": "Using the clearest and simplest language appropriate for the content (future link)"
+                                    "text": "Using the clearest and simplest language appropriate for the content (future link)"
                                 },
                                 {
                                     "id": "TECH:future4",
-                                    "title": "Avoiding centrally aligned text (future link)"
+                                    "text": "Avoiding centrally aligned text (future link)"
                                 },
                                 {
                                     "id": "TECH:future5",
-                                    "title": "Avoiding text that is fully justified (to both left and right margins) in a way that causes poor spacing between words or characters (future link)"
+                                    "text": "Avoiding text that is fully justified (to both left and right margins) in a way that causes poor spacing between words or characters (future link)"
                                 },
                                 {
                                     "id": "TECH:future6",
-                                    "title": "Using left-justified text for languages that are written left to right and right-justified text for languages that are written right-to-left (future link)"
+                                    "text": "Using left-justified text for languages that are written left to right and right-justified text for languages that are written right-to-left (future link)"
                                 },
                                 {
                                     "id": "TECH:future7",
-                                    "title": "Limiting text column width (future link)"
+                                    "text": "Limiting text column width (future link)"
                                 },
                                 {
                                     "id": "TECH:future8",
-                                    "title": "Avoiding chunks of italic text (future link)"
+                                    "text": "Avoiding chunks of italic text (future link)"
                                 },
                                 {
                                     "id": "TECH:future9",
-                                    "title": "Avoiding overuse of different styles on individual pages and in sites (future link)"
+                                    "text": "Avoiding overuse of different styles on individual pages and in sites (future link)"
                                 },
                                 {
                                     "id": "TECH:future10",
-                                    "title": "Making links visually distinct (future link)"
+                                    "text": "Making links visually distinct (future link)"
                                 },
                                 {
                                     "id": "TECH:future11",
-                                    "title": "Using images, illustrations, video, audio, or symbols to clarify meaning (future link)"
+                                    "text": "Using images, illustrations, video, audio, or symbols to clarify meaning (future link)"
                                 },
                                 {
                                     "id": "TECH:future12",
-                                    "title": "Providing practical examples to clarify content (future link)"
+                                    "text": "Providing practical examples to clarify content (future link)"
                                 },
                                 {
                                     "id": "TECH:future13",
-                                    "title": "Using a light pastel background rather than a white background behind black text (future link)"
+                                    "text": "Using a light pastel background rather than a white background behind black text (future link)"
                                 },
                                 {
                                     "id": "TECH:future14",
-                                    "title": "Avoiding the use of unique interface controls unnecessarily (future link)"
+                                    "text": "Avoiding the use of unique interface controls unnecessarily (future link)"
                                 },
                                 {
                                     "id": "TECH:future15",
-                                    "title": "Using upper and lower case according to the spelling rules of the text language (future link)"
+                                    "text": "Using upper and lower case according to the spelling rules of the text language (future link)"
                                 },
                                 {
                                     "id": "TECH:future16",
-                                    "title": "Avoiding unusual foreign words (future link)"
+                                    "text": "Avoiding unusual foreign words (future link)"
                                 },
                                 {
                                     "id": "TECH:future17",
-                                    "title": "Providing sign language versions of information, ideas, and processes that must be understood in order to use the content (future link)"
+                                    "text": "Providing sign language versions of information, ideas, and processes that must be understood in order to use the content (future link)"
                                 },
                                 {
                                     "id": "TECH:future18",
-                                    "title": "Making any reference to a location in a Web page into a link to that location (future link)"
+                                    "text": "Making any reference to a location in a Web page into a link to that location (future link)"
                                 },
                                 {
                                     "id": "TECH:future19",
-                                    "title": "Making references to a heading or title include the full text of the title (future link)"
+                                    "text": "Making references to a heading or title include the full text of the title (future link)"
                                 },
                                 {
                                     "id": "TECH:future20",
-                                    "title": "Providing easy-to-read versions of basic information about a set of Web pages, including information about how to contact the Webmaster (future link)"
+                                    "text": "Providing easy-to-read versions of basic information about a set of Web pages, including information about how to contact the Webmaster (future link)"
                                 },
                                 {
                                     "id": "TECH:future21",
-                                    "title": "Providing a sign language version of basic information about a set of Web pages, including information about how to contact the Webmaster (future link)"
+                                    "text": "Providing a sign language version of basic information about a set of Web pages, including information about how to contact the Webmaster (future link)"
                                 }
                             ]
                         }
@@ -3640,7 +3640,7 @@
                                         },
                                         {
                                             "id": "TECH:future2",
-                                            "title": "Using http or the Content-Language meta tag for metadata (future link)"
+                                            "text": "Using http or the Content-Language meta tag for metadata (future link)"
                                         }
                                     ]
                                 }
@@ -3676,15 +3676,15 @@
                                         },
                                         {
                                             "id": "TECH:future2",
-                                            "title": "Making text that is not in the default human language of the Web page visually distinct (future link)"
+                                            "text": "Making text that is not in the default human language of the Web page visually distinct (future link)"
                                         },
                                         {
                                             "id": "TECH:future3",
-                                            "title": "Giving the names of any languages used in foreign passages or phrases (future link)"
+                                            "text": "Giving the names of any languages used in foreign passages or phrases (future link)"
                                         },
                                         {
                                             "id": "TECH:future4",
-                                            "title": "Providing language markup on proper names to facilitate correct pronunciation by screen readers (future link)"
+                                            "text": "Providing language markup on proper names to facilitate correct pronunciation by screen readers (future link)"
                                         }
                                     ]
                                 }
@@ -3702,7 +3702,7 @@
                                         {
                                             "situations": [
                                                 {
-                                                    "title": "Situation A: If the word or phrase has a unique meaning within the Web page:",
+                                                    "text": "Situation A: If the word or phrase has a unique meaning within the Web page:",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:G101",
@@ -3753,7 +3753,7 @@
                                                     ]
                                                 },
                                                 {
-                                                    "title": "Situation B: If the word or phrase means different things within the same Web page:",
+                                                    "text": "Situation B: If the word or phrase means different things within the same Web page:",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:G101",
@@ -3789,31 +3789,31 @@
                                     "advisory": [
                                         {
                                             "id": "TECH:future1",
-                                            "title": "Using markup and visual formatting to help users recognize words that have special meaning (future link)"
+                                            "text": "Using markup and visual formatting to help users recognize words that have special meaning (future link)"
                                         },
                                         {
                                             "id": "TECH:future2",
-                                            "title": "Providing a voice-enabled dictionary search so that users who have difficulty typing or spelling can speak the word whose definition they need (future link)"
+                                            "text": "Providing a voice-enabled dictionary search so that users who have difficulty typing or spelling can speak the word whose definition they need (future link)"
                                         },
                                         {
                                             "id": "TECH:future3",
-                                            "title": "Providing a sign language dictionary to help users who are deaf find the necessary definitions (future link)"
+                                            "text": "Providing a sign language dictionary to help users who are deaf find the necessary definitions (future link)"
                                         },
                                         {
                                             "id": "TECH:future4",
-                                            "title": "Providing a mechanism for finding definitions for all words in text content (future link)"
+                                            "text": "Providing a mechanism for finding definitions for all words in text content (future link)"
                                         },
                                         {
                                             "id": "TECH:future5",
-                                            "title": "Providing a mechanism to determine the meaning of each word or phrase in text content (future link)"
+                                            "text": "Providing a mechanism to determine the meaning of each word or phrase in text content (future link)"
                                         },
                                         {
                                             "id": "TECH:future6",
-                                            "title": "Avoiding unusual foreign words (future link)"
+                                            "text": "Avoiding unusual foreign words (future link)"
                                         },
                                         {
                                             "id": "TECH:future7",
-                                            "title": "Using a series of dictionaries in cascading fashion to provide meanings (future link)"
+                                            "text": "Using a series of dictionaries in cascading fashion to provide meanings (future link)"
                                         }
                                     ]
                                 }
@@ -3831,7 +3831,7 @@
                                         {
                                             "situations": [
                                                 {
-                                                    "title": "Situation A: If the abbreviation has only one meaning within the Web page:",
+                                                    "text": "Situation A: If the abbreviation has only one meaning within the Web page:",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:G102",
@@ -3876,7 +3876,7 @@
                                                     ]
                                                 },
                                                 {
-                                                    "title": "Situation B: If the abbreviation means different things within the same Web page:",
+                                                    "text": "Situation B: If the abbreviation means different things within the same Web page:",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:G102",
@@ -3902,19 +3902,19 @@
                                     "advisory": [
                                         {
                                             "id": "TECH:future1",
-                                            "title": "Using unique abbreviations in a Web page (future link)"
+                                            "text": "Using unique abbreviations in a Web page (future link)"
                                         },
                                         {
                                             "id": "TECH:future2",
-                                            "title": "Using visual formatting to help users recognize abbreviations (future link)"
+                                            "text": "Using visual formatting to help users recognize abbreviations (future link)"
                                         },
                                         {
                                             "id": "TECH:future3",
-                                            "title": "Providing access to a talking dictionary to support users who might have difficulty decoding written definitions (future link)"
+                                            "text": "Providing access to a talking dictionary to support users who might have difficulty decoding written definitions (future link)"
                                         },
                                         {
                                             "id": "TECH:future4",
-                                            "title": "Providing a voice-enabled dictionary search so that users who have difficulty typing or spelling can speak the word whose definition they need (future link)"
+                                            "text": "Providing a voice-enabled dictionary search so that users who have difficulty typing or spelling can speak the word whose definition they need (future link)"
                                         }
                                     ]
                                 }
@@ -3950,81 +3950,81 @@
                                     "advisory": [
                                         {
                                             "id": "TECH:future1",
-                                            "title": "Providing text for navigational and landing pages that requires reading ability that is less advanced than the lower secondary education level (future link)"
+                                            "text": "Providing text for navigational and landing pages that requires reading ability that is less advanced than the lower secondary education level (future link)"
                                         },
                                         {
                                             "id": "TECH:future2",
-                                            "title": "Providing text for interior pages that requires reading ability at the lower secondary education level (future link)"
+                                            "text": "Providing text for interior pages that requires reading ability at the lower secondary education level (future link)"
                                         },
                                         {
                                             "id": "TECH:future3",
-                                            "title": "Including content summaries in metadata (future link)"
+                                            "text": "Including content summaries in metadata (future link)"
                                         },
                                         {
                                             "id": "TECH:future4",
-                                            "title": "Using the clearest and simplest language appropriate for the content (future link)"
+                                            "text": "Using the clearest and simplest language appropriate for the content (future link)"
                                         },
                                         {
                                             "id": "TECH:future5",
-                                            "title": "Using RDF to associate supplements with primary content (future link)"
+                                            "text": "Using RDF to associate supplements with primary content (future link)"
                                         },
                                         {
                                             "id": "TECH:future6",
-                                            "title": "Providing a clear representational image on the site's home page (future link)"
+                                            "text": "Providing a clear representational image on the site's home page (future link)"
                                         },
                                         {
                                             "id": "TECH:future7",
-                                            "title": "Clearly marking, by use of text or icon, content which has been optimized for easy reading (future link)"
+                                            "text": "Clearly marking, by use of text or icon, content which has been optimized for easy reading (future link)"
                                         },
                                         {
                                             "id": "TECH:future8",
-                                            "title": "Using sentences that contain no redundant words, that is, words that do not change the meaning of the sentence (future link)"
+                                            "text": "Using sentences that contain no redundant words, that is, words that do not change the meaning of the sentence (future link)"
                                         },
                                         {
                                             "id": "TECH:future9",
-                                            "title": "Using sentences that contain no more than two conjunctions (future link)"
+                                            "text": "Using sentences that contain no more than two conjunctions (future link)"
                                         },
                                         {
                                             "id": "TECH:future10",
-                                            "title": "Using sentences that are no longer than the typical accepted length for secondary education (Note: In English that is 25 words) (future link)"
+                                            "text": "Using sentences that are no longer than the typical accepted length for secondary education (Note: In English that is 25 words) (future link)"
                                         },
                                         {
                                             "id": "TECH:future11",
-                                            "title": "Using sentences that do not contain complex words or phrases that could be replaced with more commonly used words without changing the meaning of the sentence (future link)"
+                                            "text": "Using sentences that do not contain complex words or phrases that could be replaced with more commonly used words without changing the meaning of the sentence (future link)"
                                         },
                                         {
                                             "id": "TECH:future12",
-                                            "title": "Providing summaries for different sections of text (future link)"
+                                            "text": "Providing summaries for different sections of text (future link)"
                                         },
                                         {
                                             "id": "TECH:future13",
-                                            "title": "Using metadata to associate alternatives at different reading levels. (future link)"
+                                            "text": "Using metadata to associate alternatives at different reading levels. (future link)"
                                         },
                                         {
                                             "id": "TECH:future14",
-                                            "title": "Using the Dublin Core accessibility element to associate text content with text, graphical, or spoken supplements (future link)"
+                                            "text": "Using the Dublin Core accessibility element to associate text content with text, graphical, or spoken supplements (future link)"
                                         },
                                         {
                                             "id": "TECH:future15",
-                                            "title": "Using the ISO AfA accessibility element to associate text content with text, graphical, or spoken supplements (future link)"
+                                            "text": "Using the ISO AfA accessibility element to associate text content with text, graphical, or spoken supplements (future link)"
                                         },
                                         {
                                             "id": "TECH:future16",
-                                            "title": "Using the IMS accessibility element to associate text content with text, graphical, or spoken supplements (future link)"
+                                            "text": "Using the IMS accessibility element to associate text content with text, graphical, or spoken supplements (future link)"
                                         },
                                         {
                                             "id": "TECH:future17",
-                                            "title": "Making metadata viewable by humans (future link)EXAMPLE: Providing, in metadata, URI(s) that point to a pre-primary-reading-level and a primary-reading-level text transcript of a new scientific discovery advanced-reading-level article.",
+                                            "text": "Making metadata viewable by humans (future link)EXAMPLE: Providing, in metadata, URI(s) that point to a pre-primary-reading-level and a primary-reading-level text transcript of a new scientific discovery advanced-reading-level article.",
                                             "using": [
                                                 {
                                                     "id": "TECH:future1",
-                                                    "title": "EXAMPLE: Providing, in metadata, URI(s) that point to a pre-primary-reading-level and a primary-reading-level text transcript of a new scientific discovery advanced-reading-level article."
+                                                    "text": "EXAMPLE: Providing, in metadata, URI(s) that point to a pre-primary-reading-level and a primary-reading-level text transcript of a new scientific discovery advanced-reading-level article."
                                                 }
                                             ]
                                         },
                                         {
                                             "id": "TECH:future18",
-                                            "title": "Providing progressive complexity for site and page content (future link)"
+                                            "text": "Providing progressive complexity for site and page content (future link)"
                                         }
                                     ]
                                 }
@@ -4060,15 +4060,15 @@
                                     "advisory": [
                                         {
                                             "id": "TECH:future1",
-                                            "title": "Providing pronunciations in a sound file, so that users can listen to the pronunciations of the word (future link)"
+                                            "text": "Providing pronunciations in a sound file, so that users can listen to the pronunciations of the word (future link)"
                                         },
                                         {
                                             "id": "TECH:future2",
-                                            "title": "Providing a mechanism for finding pronunciations for all foreign words in text content (future link)"
+                                            "text": "Providing a mechanism for finding pronunciations for all foreign words in text content (future link)"
                                         },
                                         {
                                             "id": "TECH:future3",
-                                            "title": "Providing a mechanism to determine the pronunciations of each word or phrase in text content (future link)"
+                                            "text": "Providing a mechanism to determine the pronunciations of each word or phrase in text content (future link)"
                                         }
                                     ]
                                 }
@@ -4080,13 +4080,13 @@
                     "id": "WCAG2:consistent-behavior",
                     "num": "3.2",
                     "handle": "Predictable",
-                    "title": "Make Web pages appear and operate in predictable ways.",
+                    "text": "Make Web pages appear and operate in predictable ways.",
                     "techniques": [
                         {
                             "advisory": [
                                 {
                                     "id": "TECH:future1",
-                                    "title": "Positioning labels to maximize predictability of relationships"
+                                    "text": "Positioning labels to maximize predictability of relationships"
                                 }
                             ]
                         }
@@ -4110,7 +4110,7 @@
                                     "advisory": [
                                         {
                                             "id": "TECH:future1",
-                                            "title": "Not causing persistent changes of state or value when a component receives focus, or providing an alternate means to reset any changes (future link)"
+                                            "text": "Not causing persistent changes of state or value when a component receives focus, or providing an alternate means to reset any changes (future link)"
                                         },
                                         {
                                             "id": "TECH:G200"
@@ -4212,11 +4212,11 @@
                                         },
                                         {
                                             "id": "TECH:future3",
-                                            "title": "Using templates to ensure consistency across multiple Web pages (future link)"
+                                            "text": "Using templates to ensure consistency across multiple Web pages (future link)"
                                         },
                                         {
                                             "id": "TECH:future4",
-                                            "title": "Creating layout, positioning, layering, and alignment (future link)"
+                                            "text": "Creating layout, positioning, layering, and alignment (future link)"
                                         }
                                     ]
                                 },
@@ -4257,11 +4257,11 @@
                                     "advisory": [
                                         {
                                             "id": "TECH:future1",
-                                            "title": "Ensuring that the text alternative conveys the function of the component and what will happen when the user activates it (future link)"
+                                            "text": "Ensuring that the text alternative conveys the function of the component and what will happen when the user activates it (future link)"
                                         },
                                         {
                                             "id": "TECH:future2",
-                                            "title": "Using the same non-text content for a given function whenever possible (future link)"
+                                            "text": "Using the same non-text content for a given function whenever possible (future link)"
                                         }
                                     ]
                                 },
@@ -4286,7 +4286,7 @@
                                         {
                                             "situations": [
                                                 {
-                                                    "title": "Situation A: If the Web page allows automatic updates:",
+                                                    "text": "Situation A: If the Web page allows automatic updates:",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:G76"
@@ -4294,7 +4294,7 @@
                                                     ]
                                                 },
                                                 {
-                                                    "title": "Situation B: If automatic redirects are possible:",
+                                                    "text": "Situation B: If automatic redirects are possible:",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:SVR1"
@@ -4310,11 +4310,11 @@
                                                     ]
                                                 },
                                                 {
-                                                    "title": "Situation C: If the Web page uses pop-up windows:",
+                                                    "text": "Situation C: If the Web page uses pop-up windows:",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:future1",
-                                                            "title": "Including pop-up windows using one of the following techniques: Using the target attribute to open a new window Using script to open a new window",
+                                                            "text": "Including pop-up windows using one of the following techniques: Using the target attribute to open a new window Using script to open a new window",
                                                             "using": [
                                                                 {
                                                                     "id": "TECH:H83"
@@ -4327,7 +4327,7 @@
                                                     ]
                                                 },
                                                 {
-                                                    "title": "Situation D: If using an onchange event on a select element:",
+                                                    "text": "Situation D: If using an onchange event on a select element:",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:SCR19"
@@ -4342,7 +4342,7 @@
                                     "advisory": [
                                         {
                                             "id": "TECH:future1",
-                                            "title": "Opening new windows by providing normal hyperlinks without the target attribute (future link), because many user agents allow users to open links in another window or tab."
+                                            "text": "Opening new windows by providing normal hyperlinks without the target attribute (future link), because many user agents allow users to open links in another window or tab."
                                         },
                                         {
                                             "id": "TECH:G200"
@@ -4379,13 +4379,13 @@
                     "id": "WCAG2:minimize-error",
                     "num": "3.3",
                     "handle": "Input Assistance",
-                    "title": "Help users avoid and correct mistakes.",
+                    "text": "Help users avoid and correct mistakes.",
                     "techniques": [
                         {
                             "advisory": [
                                 {
                                     "id": "TECH:future1",
-                                    "title": "Hiding optional form fields (future link)"
+                                    "text": "Hiding optional form fields (future link)"
                                 }
                             ]
                         }
@@ -4403,7 +4403,7 @@
                                         {
                                             "situations": [
                                                 {
-                                                    "title": "Situation A: If a form contains fields for which information from the user is mandatory.",
+                                                    "text": "Situation A: If a form contains fields for which information from the user is mandatory.",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:G83"
@@ -4423,7 +4423,7 @@
                                                     ]
                                                 },
                                                 {
-                                                    "title": "Situation B: If information provided by the user is required to be in a specific data format or of certain values.",
+                                                    "text": "Situation B: If information provided by the user is required to be in a specific data format or of certain values.",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:ARIA18"
@@ -4468,34 +4468,34 @@
                                         },
                                         {
                                             "id": "TECH:future2",
-                                            "title": "Validating form submissions on the server (future link)"
+                                            "text": "Validating form submissions on the server (future link)"
                                         },
                                         {
                                             "id": "TECH:future3",
-                                            "title": "Re-displaying a form with a summary of errors (future link)"
+                                            "text": "Re-displaying a form with a summary of errors (future link)"
                                         },
                                         {
                                             "id": "TECH:future4",
-                                            "title": "Providing error notification as the user enters information (future link)"
+                                            "text": "Providing error notification as the user enters information (future link)"
                                         },
                                         {
                                             "id": "TECH:future5",
-                                            "title": "Including error notification information in the page title (future link)"
+                                            "text": "Including error notification information in the page title (future link)"
                                         },
                                         {
                                             "id": "TECH:future6",
-                                            "title": "Highlighting or visually emphasizing errors where they occur (future link)"
+                                            "text": "Highlighting or visually emphasizing errors where they occur (future link)"
                                         },
                                         {
                                             "id": "TECH:future7",
-                                            "title": "Supplementing text with non-text content when reporting errors (future link)"
+                                            "text": "Supplementing text with non-text content when reporting errors (future link)"
                                         },
                                         {
                                             "id": "TECH:G199"
                                         },
                                         {
                                             "id": "TECH:future9",
-                                            "title": "Using sounds to focus user's attention (future link)"
+                                            "text": "Using sounds to focus user's attention (future link)"
                                         }
                                     ]
                                 }
@@ -4590,7 +4590,7 @@
                                         },
                                         {
                                             "id": "TECH:future3",
-                                            "title": "Providing linear form design and grouping similar items (future link)"
+                                            "text": "Providing linear form design and grouping similar items (future link)"
                                         }
                                     ]
                                 },
@@ -4615,7 +4615,7 @@
                                         {
                                             "situations": [
                                                 {
-                                                    "title": "Situation A: If a mandatory field contains no information:",
+                                                    "text": "Situation A: If a mandatory field contains no information:",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:G83"
@@ -4632,7 +4632,7 @@
                                                     ]
                                                 },
                                                 {
-                                                    "title": "Situation B: If information for a field is required to be in a specific data format:",
+                                                    "text": "Situation B: If information for a field is required to be in a specific data format:",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:ARIA18"
@@ -4658,7 +4658,7 @@
                                                     ]
                                                 },
                                                 {
-                                                    "title": "Situation C: Information provided by the user is required to be one of a limited set of values:",
+                                                    "text": "Situation C: Information provided by the user is required to be one of a limited set of values:",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:ARIA18"
@@ -4694,31 +4694,31 @@
                                         },
                                         {
                                             "id": "TECH:future2",
-                                            "title": "Making error messages easy to understand and distinguishable from other text in the Web page (future link)"
+                                            "text": "Making error messages easy to understand and distinguishable from other text in the Web page (future link)"
                                         },
                                         {
                                             "id": "TECH:future3",
-                                            "title": "Validating form submissions on the server (future link)"
+                                            "text": "Validating form submissions on the server (future link)"
                                         },
                                         {
                                             "id": "TECH:future4",
-                                            "title": "When mandatory information has not been provided, including descriptions or examples of correct information in addition to identifying the field as mandatory (future link)"
+                                            "text": "When mandatory information has not been provided, including descriptions or examples of correct information in addition to identifying the field as mandatory (future link)"
                                         },
                                         {
                                             "id": "TECH:future5",
-                                            "title": "Repeating and emphasizing suggestions for correcting each input error in the context of its form field (future link)"
+                                            "text": "Repeating and emphasizing suggestions for correcting each input error in the context of its form field (future link)"
                                         },
                                         {
                                             "id": "TECH:future6",
-                                            "title": "Providing a way for the user to skip from each item in a list of suggestions to its corresponding form field (future link)"
+                                            "text": "Providing a way for the user to skip from each item in a list of suggestions to its corresponding form field (future link)"
                                         },
                                         {
                                             "id": "TECH:future7",
-                                            "title": "Providing additional contextual help for the form field requiring change (future link)"
+                                            "text": "Providing additional contextual help for the form field requiring change (future link)"
                                         },
                                         {
                                             "id": "TECH:future8",
-                                            "title": "Accepting input data in a variety of formats (future link)"
+                                            "text": "Accepting input data in a variety of formats (future link)"
                                         },
                                         {
                                             "id": "TECH:G199"
@@ -4753,7 +4753,7 @@
                                         {
                                             "situations": [
                                                 {
-                                                    "title": "Situation A: If an application causes a legal transaction to occur, such as making a purchase or submitting an income tax return:",
+                                                    "text": "Situation A: If an application causes a legal transaction to occur, such as making a purchase or submitting an income tax return:",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:G164"
@@ -4767,7 +4767,7 @@
                                                     ]
                                                 },
                                                 {
-                                                    "title": "Situation B: If an action causes information to be deleted:",
+                                                    "text": "Situation B: If an action causes information to be deleted:",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:G99"
@@ -4781,7 +4781,7 @@
                                                     ]
                                                 },
                                                 {
-                                                    "title": "Situation C: If the Web page includes a testing application:",
+                                                    "text": "Situation C: If the Web page includes a testing application:",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:G98"
@@ -4799,7 +4799,7 @@
                                     "advisory": [
                                         {
                                             "id": "TECH:future1",
-                                            "title": "Informing the user what irreversible action is about to happen (future link)"
+                                            "text": "Informing the user what irreversible action is about to happen (future link)"
                                         },
                                         {
                                             "id": "TECH:SCR18"
@@ -4809,11 +4809,11 @@
                                         },
                                         {
                                             "id": "TECH:future4",
-                                            "title": "Placing focus in the field containing the error (future link)"
+                                            "text": "Placing focus in the field containing the error (future link)"
                                         },
                                         {
                                             "id": "TECH:future5",
-                                            "title": "Avoiding use of the same words or letter combinations to begin each item of a drop-down list (future link)"
+                                            "text": "Avoiding use of the same words or letter combinations to begin each item of a drop-down list (future link)"
                                         },
                                         {
                                             "id": "TECH:G199"
@@ -4834,7 +4834,7 @@
                                         {
                                             "situations": [
                                                 {
-                                                    "title": "Situation A: If a form requires text input:",
+                                                    "text": "Situation A: If a form requires text input:",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:G71"
@@ -4851,7 +4851,7 @@
                                                     ]
                                                 },
                                                 {
-                                                    "title": "Situation B: If a form requires text input in an expected data format:",
+                                                    "text": "Situation B: If a form requires text input in an expected data format:",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:G89"
@@ -4872,7 +4872,7 @@
                                         },
                                         {
                                             "id": "TECH:future2",
-                                            "title": "Checking byte of character and auto-converting to expected byte for text input if applicable (future link)"
+                                            "text": "Checking byte of character and auto-converting to expected byte for text input if applicable (future link)"
                                         }
                                     ]
                                 }
@@ -4916,23 +4916,23 @@
             "id": "WCAG2:robust",
             "num": "4",
             "handle": "Robust",
-            "title": "Content must be robust enough that it can be interpreted reliably by a wide variety of user agents, including assistive technologies.",
+            "text": "Content must be robust enough that it can be interpreted reliably by a wide variety of user agents, including assistive technologies.",
             "guidelines": [
                 {
                     "id": "WCAG2:ensure-compat",
                     "num": "4.1",
                     "handle": "Compatible",
-                    "title": "Maximize compatibility with current and future user agents, including assistive technologies.",
+                    "text": "Maximize compatibility with current and future user agents, including assistive technologies.",
                     "techniques": [
                         {
                             "advisory": [
                                 {
                                     "id": "TECH:future1",
-                                    "title": "Avoiding deprecated features of W3C technologies (future link)"
+                                    "text": "Avoiding deprecated features of W3C technologies (future link)"
                                 },
                                 {
                                     "id": "TECH:future2",
-                                    "title": "Not displaying content that relies on technologies that are not accessibility-supported when the technology is turned off or not supported."
+                                    "text": "Not displaying content that relies on technologies that are not accessibility-supported when the technology is turned off or not supported."
                                 }
                             ]
                         }
@@ -4964,7 +4964,7 @@
                                         },
                                         {
                                             "id": "TECH:future4",
-                                            "title": "Ensuring that Web pages can be parsed by using one of the following techniques: Ensuring that opening and closing tags are used according to specification AND Ensuring that id attributes are unique on a Web page AND Ensuring that elements do not contain duplicate attributes Ensuring that Web pages are well-formed",
+                                            "text": "Ensuring that Web pages can be parsed by using one of the following techniques: Ensuring that opening and closing tags are used according to specification AND Ensuring that id attributes are unique on a Web page AND Ensuring that elements do not contain duplicate attributes Ensuring that Web pages are well-formed",
                                             "using": [
                                                 {
                                                     "and": [
@@ -5019,7 +5019,7 @@
                                         {
                                             "situations": [
                                                 {
-                                                    "title": "Situation A: If using a standard user interface component in a markup language (e.g., HTML):",
+                                                    "text": "Situation A: If using a standard user interface component in a markup language (e.g., HTML):",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:ARIA14"
@@ -5050,11 +5050,11 @@
                                                     ]
                                                 },
                                                 {
-                                                    "title": "Situation B: If using script or code to re-purpose a standard user interface component in a markup language:",
+                                                    "text": "Situation B: If using script or code to re-purpose a standard user interface component in a markup language:",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:future1",
-                                                            "title": "Exposing the names and roles, allowing user-settable properties to be directly set, and providing notification of changes using one of the following techniques:",
+                                                            "text": "Exposing the names and roles, allowing user-settable properties to be directly set, and providing notification of changes using one of the following techniques:",
                                                             "using": [
                                                                 {
                                                                     "id": "TECH:ARIA16"
@@ -5064,7 +5064,7 @@
                                                     ]
                                                 },
                                                 {
-                                                    "title": "Situation C: If using a standard user interface component in a programming technology:",
+                                                    "text": "Situation C: If using a standard user interface component in a programming technology:",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:G135",
@@ -5095,7 +5095,7 @@
                                                     ]
                                                 },
                                                 {
-                                                    "title": "Situation D: If creating your own user interface component in a programming language:",
+                                                    "text": "Situation D: If creating your own user interface component in a programming language:",
                                                     "techniques": [
                                                         {
                                                             "id": "TECH:G10",
@@ -5133,7 +5133,7 @@
                                     "advisory": [
                                         {
                                             "id": "TECH:future1",
-                                            "title": "Providing labels for all form controls that do not have implicit labels (future link)"
+                                            "text": "Providing labels for all form controls that do not have implicit labels (future link)"
                                         }
                                     ]
                                 },

@@ -10,7 +10,7 @@
       {% if tech.situations %}
         {% for situation in tech.situations %}
           <div class="panel panel-default">
-            <div class="panel-heading"><h6>{{situation.title}}</h6></div>
+            <div class="panel-heading"><h6>{{situation.text}}</h6></div>
             <div class="panel-body">
               {% assign sit = situation.techniques %}
                 {% if sit[0].and %}
@@ -38,7 +38,7 @@
                 {% endif %}
               {% if situation.sections %}
                 {% for section in situation.sections %}
-                  <p>{{section.title}}</p>
+                  <p>{{section.text}}</p>
                   <ul>
                   {% for technique in section.techniques %}
                     <li class="{% include techniqueclass.html technique=technique %}">{% include techniquelink.html technique=technique %}</li>
@@ -67,7 +67,7 @@
     {% if include.techniques[0].situations %}
       {% for situation in include.techniques[0].situations %}
         <div class="panel panel-default">
-          <div class="panel-heading"><h6>{{situation.title}}</h6></div>
+          <div class="panel-heading"><h6>{{situation.text}}</h6></div>
           <div class="panel-body">
             {% if (situation.techniques) %}
               {% if sit.and %}
@@ -96,7 +96,7 @@
             {% endif %}
             {% if situation.sections %}
               {% for section in situation.sections %}
-                <p>{{section.title}}</p>
+                <p>{{section.text}}</p>
                 <ul>
                 {% for technique in section.techniques %}
                   <li class="{% include techniqueclass.html technique=technique %}">{% include techniquelink.html technique=technique %}</li>
@@ -110,7 +110,7 @@
     {% endif %}
     {% if include.techniques.sections %}
       {% for section in include.techniques.sections %}
-        <p>{{section.title}}</p>
+        <p>{{section.text}}</p>
         <ul>
         {% for technique in section.techniques %}
           <li class="{% include techniqueclass.html  technique=technique %}">{% include techniquelink.html technique=technique %}</li>
