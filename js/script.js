@@ -513,6 +513,7 @@ jQuery(document).ready(function($) {
     if (matchMedia('screen and (min-width: 43em)').matches) {
       $('.sidebar-content').css('height', window.innerHeight - document.querySelectorAll('.active .sidebar-content')[0].getBoundingClientRect().top - 10);
       $('.maininner').css('height', window.innerHeight - document.querySelectorAll('.maininner')[0].getBoundingClientRect().top - 10);
+      $('#pageinfo').css('height', window.innerHeight - document.querySelectorAll('#pageinfo')[0].getBoundingClientRect().top - 10).css('overflow-y', 'scroll');
     }
 
     $('#deselecttags').on('click', function(event) {
