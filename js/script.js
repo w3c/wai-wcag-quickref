@@ -119,6 +119,7 @@ jQuery(document).ready(function($) {
     if (uri.hash()) {
       scrollto($(uri.hash()));
     }
+    $('body')[0].scrollTop = 0;
   }
 
   function geturi() {
