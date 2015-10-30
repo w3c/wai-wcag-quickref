@@ -191,7 +191,7 @@ jQuery(document).ready(function($) {
     });
     if($('.sc-wrapper:not(.current)').length > 0) {
       $('#hiddensc').empty();
-      $('<div class="panel-heading"><h2 style="margin: 0;">Filtered-out Success Criteria <button class="clearall btn btn-info btn-sm" hidden="" style="display: inline-block;"><span class="glyphicon glyphicon-refresh"></span> Clear filters</button></h2></div><div class="panel-body"><p><strong>The following success critera are not shown based on the selected tags and/or filters:</strong></p></div>').appendTo('#hiddensc');
+      $('<div class="panel-heading"><h2 style="margin: 0;">Filtered Success Criteria <button class="clearall btn btn-info btn-sm" hidden="" style="display: inline-block;"><span class="glyphicon glyphicon-refresh"></span> Clear filters</button></h2></div><div class="panel-body"><p><strong>The following success critera are not shown based on the selected tags and/or filters:</strong></p></div>').appendTo('#hiddensc');
       $('<div class="panel-body hiddensc-inner">').appendTo('#hiddensc')
       var hiddenscul = $('<ul>');
       $('.sc-wrapper:not(.current) h4'). each(function(index, el) {
