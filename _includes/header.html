@@ -7,7 +7,7 @@
       <a href="http://w3.org/WAI/" class="wai"><img src="{{ "/img/wai.png" | prepend: site.baseurl }}" alt="Web Accessibility Initiative"></a>
     </div>
     <div class="page-title">
-      <a href="{{ page.url | prepend: site.baseurl }}">[Mockup] How to Meet WCAG 2.0 <br><span class="subheading">A customizable quick reference to Web Content Accessibility Guidelines 2.0 requirements (success criteria) and techniques</span></a>
+      <a href="{{ page.url | prepend: site.baseurl }}">[Mockup] How to Meet WCAG 2.0 <br><span class="subheading">A customizable quick reference to Web Content Accessibility Guidelines (WCAG) 2.0 requirements (success criteria) and techniques</span></a>
     </div>
 </header>
 <div class="container-fluid mainhead">
@@ -16,29 +16,26 @@
     <div class="pibox">
       <div class="pibox-heading">About</div>
       <div class="pibox-body">
-        <p>This document is a customizable list of the <span id="wcagfull">Web Content Accessibility Guidelines 2.0</span> (aka <abbr aria-describedby="wcagfull">WCAG 2.0</abbr>). This allows for tailoring the guidelines and other material to the needs of the person using them.</p>
-        <p>It provides:</p>
-        <ul>
-          <li>All of the requirements (called “success criteria”) from WCAG 2.0</li>
-          <li>Techniques to meet the requirements, which are linked to pages with descriptions, code examples, browser and assistive technology support notes, and tests.</li>
-          <li>Failures to avoid, which are linked to pages with descriptions, examples, and tests.</li>
-          <li>“Understanding” links to pages that explain the intent of the guideline or success criterion, how it helps people with different disabilities, key terms, and resources.</li>
+        <p>This tool provides a single customizable view on different WCAG 2.0 resources including:</p>
+        <ul
+          <li><a href="http://www.w3.org/TR/WCAG20/">Web Content Accessibility Guidelines (WCAG) 2.0</a> web standard</li>
+          <li><a href="http://www.w3.org/TR/WCAG20-TECHS/">Techniques for WCAG 2.0</a> implementation guidance</li>
+          <li><a href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/">Understanding WCAG 2.0</a> supporting information</li>
         </ul>
-        <p>You can customize what is included in this page by selecting from the “Filter” sidebar which Technologies, <a href="http://www.w3.org/TR/2013/NOTE-UNDERSTANDING-WCAG20-20130905/conformance.html#uc-levels-head">Levels</a> of success criteria, and Sections of techniques you want to include. Also, you can use tags to filter by use cases.</p>
+        <p>More background on these resources in provided in <a href="http://www.w3.org/WAI/intro/wcag.php">WCAG Overview</a> and <a href="http://www.w3.org/WAI/intro/wcag20">The WCAG 2.0 Documents</a>.</p>
       </div>
     </div>
     <div class="pibox">
       <div class="pibox-heading">How to Use</div>
       <div class="pibox-body">
-        <p>To customize the view, click on “Filter” in the upper right:</p>
+        <p>Select the “Filter” tab in the main menu to customize:</p>
         <ul>
-        <li><p><strong>Tags</strong> are applied to success criteria. When selecting a tag, only the criteria that have that tag associated with them are visible, the others are hidden. If you select multiple tags, every success criteria is displayed that has one or more of the tags.</p></li>
-        <li><p>With the <strong>Levels</strong> filter, it is possible to hide levels of conformance that are currently not relevant to the user, for example hide Level AAA if testing for Levels A and AA.</p></li>
-        <li><p>The <strong>Technologies</strong> filter tailors down the list of techniques for each success criterion to show only techniques for the technologies used.</p></li>
-        <li><p>By using the <strong>Techniques</strong> filter, you can by default hide sufficient and/or advisory techniques as well as failures by default. Such technique types can also be shown or hidden on a success criteria basis.</p></li>
+          <li><strong>Tags</strong> &mdash; shows only success criteria associated with the selected tags.</li>
+          <li><strong>Levels</strong> &mdash; shows only success criteria associated with the selected levels.</li>
+          <li><strong>Technologies</strong> &mdash; shows only techniques associated with the selected technologies.</li>
+          <li><strong>Techniques</strong> &mdash; shows only the types of techniques and/or failuers selected.</li>
         </ul>
-        <p><em>Note:</em> Other success criteria than the ones shown after filtering might also apply in certain circumstances.</p>
-        <p><strong>Share</strong> a link to this view by chosing the button in the top bar, or send links to specific success criteria by using the share button.</p>
+        <p><strong>Share</strong> buttons allow you to link to the customized view and to individual success criteria.</p>
       </div>
     </div><!--
     <div class="pibox">
@@ -50,8 +47,12 @@
     <div class="pibox">
       <div class="pibox-heading">Contribute</div>
       <div class="pibox-body">
-        <p>There are a few ways to contribute to this document. For contributing to the functionality of this quick reference or to <a href="http://github.com/w3c/wai-wcag-quickref/issues/">report bugs</a>, see <a href="http://github.com/w3c/wai-wcag-quickref">this Github repository</a>.</p>
-        <p>Anyone can also <a href="http://www.w3.org/WAI/GL/WCAG20/TECHS-SUBMIT/">submit techniques</a> that are considered for inclusion in an update. Please submit corrections, updates, or new information related to techniques, failures, or other WCAG documentation to the WCAG Working Group, per the <a href="http://www.w3.org/WAI/WCAG20/comments/">instructions for commenting</a>.</p>
+        <p>We welcome feedback and suggestions:</p>
+        <ul>
+          <li>This resource &mdash; <a href="http://github.com/w3c/wai-wcag-quickref/issues/">report bugs</a> and contribute directly to the <a href="http://github.com/w3c/wai-wcag-quickref">Github repository</a></li>
+          <li>Techniques &mdash; contribute <a href="http://www.w3.org/WAI/GL/WCAG20/TECHS-SUBMIT/">new WCAG techniques</a></li>
+          <li>Other &mdash; contribute corrections, updates, or new information related to techniques, failures, or other WCAG documentation, per the <a href="http://www.w3.org/WAI/WCAG20/comments/">instructions for commenting</a></li>
+        </ul>
       </div>
     </div>
   </div>
