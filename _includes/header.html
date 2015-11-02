@@ -13,46 +13,14 @@
 <div class="container-fluid mainhead">
   <p><button data-target="#pageinfo" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="pageinfo" class="btn btn-info btn-techniques"><span class="word-show"><svg aria-hidden="true" class="i-question"><use xlink:href="{{ "/img/icons.svg" | prepend: site.baseurl }}#i-question"></use></svg> About this Quick Reference</span><span class="word-hide"><svg aria-hidden="true" class="i-close"><use xlink:href="{{ "/img/icons.svg" | prepend: site.baseurl }}#i-close"></use></svg> Hide this information</span></button></p>
   <div id="pageinfo">
+  {% for help in site.help %}
     <div class="pibox">
-      <div class="pibox-heading">About</div>
+      <div class="pibox-heading">{{help.title}}</div>
       <div class="pibox-body">
-        <p>This document is a customizable list of the <span id="wcagfull">Web Content Accessibility Guidelines 2.0</span> (aka <abbr aria-describedby="wcagfull">WCAG 2.0</abbr>). This allows for tailoring the guidelines and other material to the needs of the person using them.</p>
-        <p>It provides:</p>
-        <ul>
-          <li>All of the requirements (called “success criteria”) from WCAG 2.0</li>
-          <li>Techniques to meet the requirements, which are linked to pages with descriptions, code examples, browser and assistive technology support notes, and tests.</li>
-          <li>Failures to avoid, which are linked to pages with descriptions, examples, and tests.</li>
-          <li>“Understanding” links to pages that explain the intent of the guideline or success criterion, how it helps people with different disabilities, key terms, and resources.</li>
-        </ul>
-        <p>You can customize what is included in this page by selecting from the “Filter” sidebar which Technologies, <a href="http://www.w3.org/TR/2013/NOTE-UNDERSTANDING-WCAG20-20130905/conformance.html#uc-levels-head">Levels</a> of success criteria, and Sections of techniques you want to include. Also, you can use tags to filter by use cases.</p>
+        {{help.content}}
       </div>
     </div>
-    <div class="pibox">
-      <div class="pibox-heading">How to Use</div>
-      <div class="pibox-body">
-        <p>To customize the view, click on “Filter” in the upper right:</p>
-        <ul>
-        <li><p><strong>Tags</strong> are applied to success criteria. When selecting a tag, only the criteria that have that tag associated with them are visible, the others are hidden. If you select multiple tags, every success criteria is displayed that has one or more of the tags.</p></li>
-        <li><p>With the <strong>Levels</strong> filter, it is possible to hide levels of conformance that are currently not relevant to the user, for example hide Level AAA if testing for Levels A and AA.</p></li>
-        <li><p>The <strong>Technologies</strong> filter tailors down the list of techniques for each success criterion to show only techniques for the technologies used.</p></li>
-        <li><p>By using the <strong>Techniques</strong> filter, you can by default hide sufficient and/or advisory techniques as well as failures by default. Such technique types can also be shown or hidden on a success criteria basis.</p></li>
-        </ul>
-        <p><em>Note:</em> Other success criteria than the ones shown after filtering might also apply in certain circumstances.</p>
-        <p><strong>Share</strong> a link to this view by chosing the button in the top bar, or send links to specific success criteria by using the share button.</p>
-      </div>
-    </div><!--
-    <div class="pibox">
-      <div class="pibox-heading">Sharing</div>
-      <div class="pibox-body">
-        <p>Use the “Share this view” button to copy the current URL into your clipboard. You can then paste it wherever you like.</p>
-      </div>
-    </div>-->
-    <div class="pibox">
-      <div class="pibox-heading">Contribute</div>
-      <div class="pibox-body">
-        <p>There are a few ways to contribute to this document. For contributing to the functionality of this quick reference or to <a href="http://github.com/w3c/wai-wcag-quickref/issues/">report bugs</a>, see <a href="http://github.com/w3c/wai-wcag-quickref">this Github repository</a>.</p>
-        <p>Anyone can also <a href="http://www.w3.org/WAI/GL/WCAG20/TECHS-SUBMIT/">submit techniques</a> that are considered for inclusion in an update. Please submit corrections, updates, or new information related to techniques, failures, or other WCAG documentation to the WCAG Working Group, per the <a href="http://www.w3.org/WAI/WCAG20/comments/">instructions for commenting</a>.</p>
-      </div>
-    </div>
+  {% endfor %}
+
   </div>
 </div>

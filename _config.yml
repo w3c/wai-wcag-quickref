@@ -20,6 +20,8 @@ markdown: kramdown
 collections:
   filters:
     output: false
+  help:
+    output: true
 
 exclude:
   - node_modules
