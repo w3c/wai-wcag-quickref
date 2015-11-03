@@ -118,8 +118,9 @@ jQuery(document).ready(function($) {
     applyTagsAndLevelsToSC();
     if (uri.hash()) {
       scrollto($(uri.hash()));
+      document.querySelector('html').scrollTop = 0;
+      document.querySelector('body').scrollTop = 0;
     }
-    $('body')[0].scrollTop = 0;
   }
 
   function geturi() {
