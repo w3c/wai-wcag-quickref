@@ -794,7 +794,8 @@ button.panel-heading {
 }
 
 .maininner {
-  height: 600px;
-  overflow-y: scroll;
-  padding-right: 15px;
+  padding: 0 15px;
+  @include mq($small) {
+    padding: 0 15px 0 0;
+  }
 }
