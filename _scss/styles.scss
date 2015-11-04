@@ -524,6 +524,7 @@ svg.icon {
   align-items: flex-end;
   z-index: 999;
   box-shadow: 0 4px 4px -4px $gray;
+  margin-right: 15px;
   > div {
     flex:6;
     padding: 0;
@@ -693,20 +694,24 @@ button.panel-heading {
 
 .filter-status-row {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   width: 100%;
   &.active {
     background-color: #FFF176;
   }
-  >div:first-child {
+  > div {
+    padding: .25em;
+  }
+  .text {
     flex: 1;
   }
-  button {
-    margin: 5px;
-    &:last-child {
-      margin-right: 0;
-    }
+  .clear {
+
+  }
+  .permalink {
+    margin: 0 !important;
+    padding-left:0;
   }
 }
 
