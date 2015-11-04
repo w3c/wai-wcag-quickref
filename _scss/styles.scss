@@ -310,7 +310,7 @@ header[role=banner] {
 
 .navbar-scroll {
   height: auto;
-  flex: 999;
+  // flex: 999;
   .hidden-sb & {
     overflow: visible;
     height: auto;

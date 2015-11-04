@@ -527,7 +527,7 @@ jQuery(document).ready(function($) {
       $(this).prop('disabled', true);
     });
 
-    $('.sidebar>div').css('width', $('.tab-pane.active').outerWidth());
+    // $('.sidebar>div').css('width', $('.tab-pane.active').outerWidth());
 
     $('.maininner').scrollspy({
       target: '.overview.spy-active',
