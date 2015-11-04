@@ -523,7 +523,6 @@ svg.icon {
   flex-direction: row;
   align-items: flex-end;
   z-index: 999;
-  box-shadow: 0 4px 4px -4px $gray;
   margin-right: 15px;
   > div {
     flex:6;
@@ -596,6 +595,7 @@ svg.icon {
   min-height: 2.5em;
   position:relative;
   background-color: $gray-lighter;
+  box-shadow: 0 4px 4px -4px $gray;
   &:after {
     position: absolute;
     bottom:0;
