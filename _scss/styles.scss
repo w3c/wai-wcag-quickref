@@ -694,13 +694,13 @@ button.panel-heading {
 .filter-status-row {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
   &.active {
     background-color: #FFF176;
   }
-  #status {
-    flex:999;
-    padding: .25em;
+  >div:first-child {
+    flex: 1;
   }
   button {
     margin: 5px;
