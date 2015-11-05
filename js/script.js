@@ -488,9 +488,13 @@ jQuery(document).ready(function($) {
       var tgt = $(e.target),
           thetarget;
       if (tgt.is('[href="#hiddensc"]')) {
-        thetarget = $(e.target).attr('href');
+        thetarget = tgt.attr('href');
       } else {
-        thetarget = $(e.target).parents('a').attr('href');
+        if (tgt.is('a')) {
+          thetarget = tgt.attr('href');
+        } else {
+          thetarget = tgt.parents('a').attr('href');
+        }
       }
       scrollto($(thetarget));
     });
