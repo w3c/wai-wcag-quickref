@@ -9,7 +9,7 @@
 {% else %}
   {% if include.technique.or %}
     {% for technique in include.technique.or %}
-      <span class="{% include techniqueclass.html technique=technique %}">{% include techniquelink.html technique=technique %} {{technique.append}} {% if forloop.last %}{% else %}<strong>AND</strong>{% endif %}</span>
+      <span class="{% include techniqueclass.html technique=technique %}">{% include techniquelink.html technique=technique %} {{technique.append}} {% if forloop.last %}{% else %}<strong>OR</strong>{% endif %}</span>
     {% endfor %}
   {% else %}
     {% if shortname == "future" %}
