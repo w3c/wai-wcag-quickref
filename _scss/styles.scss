@@ -361,12 +361,17 @@ header[role=banner] {
     border-right: none;
     a {
       color: $brand-primary;
+      display:block;
     }
-    > a:only-child {
+    > a {
       font-weight: bold;
     }
     &:last-child {
       border-bottom: none;
+    }
+    .active .active a {
+      background-color: $brand-primary;
+      color: #fff !important;
     }
   }
   ul {
