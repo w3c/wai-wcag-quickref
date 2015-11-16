@@ -1,7 +1,7 @@
 ---
 title: About
 ---
-This tool provides a customizable view of different Web Content Accessibility Guidelines' (WCAG) 2.0 resources including:
+This tool provides a customizable view of different Web Content Accessibility Guidelines’ (WCAG) 2.0 resources including:
 
 -   [Web Content Accessibility Guidelines (WCAG) 2.0](http://www.w3.org/TR/WCAG20/) web standard
 -   [Techniques for WCAG 2.0](http://www.w3.org/TR/WCAG20-TECHS/) implementation guidance
