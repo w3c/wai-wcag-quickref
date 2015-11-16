@@ -1,16 +1,15 @@
 {% include status.html %}
 
-<header role="banner" class="mainhead container-fluid">
+<header role="banner" class="mainhead">
   <div class="w3c-wai-header">
       <a href="http://w3.org/"><img src="{{ "/img/w3c.png" | prepend: site.baseurl }}" alt="W3C" width="90"></a>
       <a href="http://w3.org/WAI/" class="wai"><img src="{{ "/img/wai.png" | prepend: site.baseurl }}" alt="Web Accessibility Initiative"></a>
     </div>
     <div class="page-title">
-      <a href="{{ page.url | prepend: site.baseurl }}">[Mockup] How to Meet WCAG 2.0 <br><span class="subheading">A customizable quick reference to Web Content Accessibility Guidelines (WCAG) 2.0 requirements (success criteria) and techniques</span></a>
+      <a href="{{ page.url | prepend: site.baseurl }}">[Mockup] How to Meet WCAG 2.0</a><br><span class="subheading">A customizable quick reference to Web Content Accessibility Guidelines (WCAG) 2.0 requirements (success criteria) and techniques. <button data-target="#pageinfo" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="pageinfo" class="btn btn-info btn-techniques"><span class="word-show"><svg aria-hidden="true" class="i-question"><use xlink:href="{{ "/img/icons.svg" | prepend: site.baseurl }}#i-question"></use></svg> About this Quick Reference</span><span class="word-hide"><svg aria-hidden="true" class="i-close"><use xlink:href="{{ "/img/icons.svg" | prepend: site.baseurl }}#i-close"></use></svg> Hide Section — About this Quick Reference</span></button></span>
     </div>
 </header>
-<div class="container-fluid mainhead">
-  <p><button data-target="#pageinfo" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="pageinfo" class="btn btn-info btn-techniques"><span class="word-show"><svg aria-hidden="true" class="i-question"><use xlink:href="{{ "/img/icons.svg" | prepend: site.baseurl }}#i-question"></use></svg> About this Quick Reference</span><span class="word-hide"><svg aria-hidden="true" class="i-close"><use xlink:href="{{ "/img/icons.svg" | prepend: site.baseurl }}#i-close"></use></svg> Hide Section — About this Quick Reference</span></button></p>
+<div class="mainhead">
   <div id="pageinfo">
   {% for help in site.help %}
     <div class="pibox">

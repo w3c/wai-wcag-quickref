@@ -68,7 +68,21 @@ header[role=banner] {
   div {
     margin: 0 auto;
     @include mq($small) {
-      float: right;
+      &.w3c-wai-header {
+        float: right;
+        border: 1px solid $brand-primary;
+        margin-left: .5em;
+        background-color: #005A9C;
+        a {
+          background-color: #fff;
+          .wai {
+            background-color: #005A9C;
+          }
+        }
+        a {
+          display: inline-block;
+        }
+      }
     }
   }
   img {
@@ -83,7 +97,6 @@ header[role=banner] {
   }
   a {
     text-decoration: none;
-    display: inline-block;
     &:hover, &:focus {text-decoration: underline;}
     @include mq($small) {
       &.wai img {
@@ -107,9 +120,7 @@ header[role=banner] {
   }
   font-family: $font-family-serif;
   margin-bottom: 1em;
-  line-height: 1;
   padding: .25em 0 0;
-  float:none !important;
   .subheading {
     padding: .25em 0 0;
     display:block;
