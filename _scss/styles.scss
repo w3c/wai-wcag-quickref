@@ -382,7 +382,11 @@ header[role=banner] {
     }
     .active .active a {
       background-color: $brand-primary;
-      color: #fff !important;
+      color: #fff;
+      &:hover, &:focus {
+        color: $brand-primary;
+        background-color: #fff;
+      }
     }
   }
   ul {
@@ -474,7 +478,7 @@ svg.icon {
     aside {
       padding: 15px;
       a {
-        color: $brand-primary !important;
+        color: $brand-primary;
       }
     }
   }
