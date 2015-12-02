@@ -3,7 +3,7 @@
 {% assign g_id = guideline.id | replace:'WCAG2:','' %}
 <div class="guideline panel panel-primary panel-borderless">
 	<div class="panel-heading">
-		<h3 id="{{g_id}}"><strong>{{ guideline.num }}</strong> {{guideline.handle}}</h3>
+		<h3 id="{{g_id}}">Guideline <strong>{{ guideline.num }}</strong> – {{guideline.handle}}</h3>
 		{{guideline.text}}
 	</div>
 		{% assign tsize = guideline.techniques | size %}
