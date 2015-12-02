@@ -698,6 +698,18 @@ div.understanding {
     flex-grow: 1;
     margin-bottom: 3px;
     margin-right: 3px;
+    position: relative;
+  }
+  .btn-primary:after {
+    content: "";
+    background-color: #fff;
+    display:block;
+    position: absolute;
+    top:2px;
+    left:2px;
+    height:6px;
+    width:6px;
+    border-radius: 6px;
   }
 }
 
