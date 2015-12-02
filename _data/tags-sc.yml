@@ -8,7 +8,7 @@ media-equiv-sign: video audio
 media-equiv-extended-ad: video
 media-equiv-text-doc: images video audio
 media-equiv-live-audio-only: audio live
-content-structure-separation-programmatic: structure layout
+content-structure-separation-programmatic: structure layout headings
 content-structure-separation-sequence: structure keyboard layout
 content-structure-separation-understanding: structure
 visual-audio-contrast-without-color: color contrast
