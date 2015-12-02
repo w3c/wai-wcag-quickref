@@ -19,11 +19,10 @@
   {% assign tagcount = tagcount | plus: 1 %}
   {% unless currenttag == tag %}
     {% assign currenttag = tag %}
-    {% comment %}{% unless firsttag %}{{tagcount}}</a>{% endunless %}{% endcomment %} <button data-tag="{{tag}}" class="btn btn-default btn-sm">{{tag}}</button>
+  	<button data-tag="{{tag}}" class="btn btn-default btn-sm">{{tag}}</button>
     {% assign tagcount = 0 %}
     {% assign firsttag = false %}
   {% endunless %}
-  {% comment %}{%if forloop.last %}{{tagcount}}</a>{%endif%}{% endcomment %}
 {% endfor %}
 </div>
 </div>
