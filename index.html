@@ -41,7 +41,6 @@ layout: default
       {% include filter-status.html %}
     </div>
     <div class="maininner">
-      <span id="top"></span>
       {% assign p = 0 %}
       {% for principle in site.data.wcag2.principles %}
         {% assign p = p | plus: 1 %}
