@@ -8,19 +8,35 @@ $medium: 43em; //* 700px */
 $big:    56em; //* 900px */
 $large:  81em; //* 1300px */
 
+/* When position: sticky is supported but native behavior is ignored */
+.fixedsticky-withoutfixedfixed .fixedsticky-off,
+.fixed-supported .fixedsticky-off {
+	position: static;
+}
+.fixedsticky-withoutfixedfixed .fixedsticky-on,
+.fixed-supported .fixedsticky-on {
+	position: fixed;
+}
+.fixedsticky-dummy {
+	display: none;
+}
+.fixedsticky-on + .fixedsticky-dummy {
+	display: block;
+}
+
 [disabled] + span{
   color:#777;
 }
 
 @include mq($medium) {
 
-  html, body {
-    height: 100%;
-  }
+  // html, body {
+  //   height: 100%;
+  // }
 
-  body {
-    overflow:hidden;
-  }
+  // body {
+  //   overflow:hidden;
+  // }
 
 }
 
@@ -498,6 +514,14 @@ svg.icon {
     .sidebar, .sidebar > div {
       width: 300px;
     }
+    .sidebar > div.fixedsticky-on {
+      width: 300px;
+      bottom:0;
+      .tab-content {
+        height: calc(100% - 3em);
+        overflow-y:scroll;
+      }
+    }
   }
 }
 
@@ -506,6 +530,9 @@ svg.icon {
   background-color: #fff;
   padding: 5px;
   margin-bottom: 10px;
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 
 .sbbox-heading {
@@ -543,15 +570,18 @@ svg.icon {
   flex-direction: row;
   align-items: flex-end;
   z-index: 999;
-  margin-right: 15px;
+	@include mq($medium) {
+		margin-right: 15px;
+	}
   > div {
     flex:6;
     padding: 0;
   }
   &.fixedsticky-on {
-    @include mq($medium){
+		left:0;
+		right:0;
+    @include mq($medium) {
       left: 315px;
-      right:15px;
     }
   }
 }
@@ -831,8 +861,12 @@ button.panel-heading {
 }
 
 .maininner {
-  padding: 0 15px;
-  @include mq($small) {
+  padding: 0 5px;
+  @include mq($medium) {
     padding: 0 15px 0 0;
   }
+}
+
+#tt {
+  align-items: flex-end;
 }

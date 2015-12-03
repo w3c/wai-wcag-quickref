@@ -118,8 +118,6 @@ jQuery(document).ready(function($) {
     applyTagsAndLevelsToSC();
     if (uri.hash()) {
       scrollto($(uri.hash()));
-      document.querySelector('html').scrollTop = 0;
-      document.querySelector('body').scrollTop = 0;
     }
   }
 
@@ -311,12 +309,10 @@ jQuery(document).ready(function($) {
   function scrollto(target) {
     var location = window.history.location || window.location,
         uri = new URI(location);
-    var scrollpos = target.offset().top - $(".maininner").offset().top;
-        scrollpos = scrollpos - 10;
-        scrollpos = $(".maininner").scrollTop() + scrollpos - 10;
-    $('.maininner').animate({
+    var scrollpos = target.offset().top - $('.navrow').clientHeight;
+    $('body').animate({
         scrollTop: scrollpos
-    }, 1000);
+    }, 1);
     uri.fragment(target.selector);
     updateuri(uri);
     target.attr('tabindex', '-1').focus();
@@ -515,10 +511,11 @@ jQuery(document).ready(function($) {
       $('.filter-status .loading').hide();
     });
 
+    FixedSticky.tests.sticky = false;
     if (matchMedia('screen and (min-width: 43em)').matches) {
-      $('.sidebar-content').css('height', window.innerHeight - document.querySelectorAll('.active .sidebar-content')[0].getBoundingClientRect().top - 10);
-      $('.maininner').css('height', window.innerHeight - document.querySelectorAll('.maininner')[0].getBoundingClientRect().top - 10).css('overflow-y', 'scroll');
-      $('#pageinfo').css('height', window.innerHeight - document.querySelectorAll('#pageinfo')[0].getBoundingClientRect().top - 10).css('overflow-y', 'scroll');
+      $('.fixedsticky').fixedsticky();
+    } else {
+      $('.navrow.fixedsticky').fixedsticky();
     }
 
     $('#deselecttags').on('click', function(event) {
@@ -533,9 +530,9 @@ jQuery(document).ready(function($) {
 
     // $('.sidebar>div').css('width', $('.tab-pane.active').outerWidth());
 
-    $('.maininner').scrollspy({
+    $('body').scrollspy({
       target: '.overview.spy-active',
-      offset: document.querySelectorAll('.maininner')[0].getBoundingClientRect().top + 20
+      offset: 40
     })
 
     // $('#spy-checkbox').on('change', function(event) {
@@ -600,13 +597,11 @@ jQuery(document).ready(function($) {
 
   $( window ).on('resize', function() {
     if (matchMedia('screen and (min-width: 43em)').matches) {
-      $('.sidebar-content').css('height', window.innerHeight - document.querySelectorAll('.active .sidebar-content')[0].getBoundingClientRect().top - 10);
-      $('.maininner').css('height', window.innerHeight - document.querySelectorAll('.maininner')[0].getBoundingClientRect().top - 10).css('overflow-y', 'scroll');
-      $('#pageinfo').css('height', window.innerHeight - document.querySelectorAll('#pageinfo')[0].getBoundingClientRect().top - 10).css('overflow-y', 'scroll');
+      $('.fixedsticky').fixedsticky( 'destroy' );
+      $('.fixedsticky').fixedsticky();
     } else {
-      $('.sidebar-content').css('height', 'auto');
-      $('.maininner').css('width', 'auto');
-      $('#pageinfo').css('height', 'auto').css('overflow-y', 'auto');
+      $('.fixedsticky').fixedsticky( 'destroy' );
+      $('.navrow.fixedsticky').fixedsticky();
     }
   });
 
@@ -620,40 +615,6 @@ jQuery(document).ready(function($) {
     $(this).parent().find('.sharebox').addClass('open');
     $(this).parent().find('input').val(location).select();
 
-
-
-   /*
-    window.getSelection().removeAllRanges();
-
-    var location = window.history.location || window.location;
-
-    var shareSpan = document.createElement('span');
-    shareSpan.id = 'shareSpan'
-    // shareSpan.style('display', 'none');
-    shareSpan.innerHTML = location;
-
-    document.querySelector('body').insertAdjacentHTML('beforeend', shareSpan.outerHTML);
-
-    var shareSpanNode = document.querySelector('#shareSpan');
-    var range = document.createRange();
-    range.selectNode(shareSpanNode);
-    window.getSelection().addRange(range);
-
-     try {
-      // Now that we've selected the anchor text, execute the copy command
-      var successful = document.execCommand('copy');
-      var msg = successful ? 'successful' : 'unsuccessful';
-      console.log('Copy email command was ' + msg);
-    } catch(err) {
-      console.log('Oops, unable to copy');
-    }
-
-    // Remove the selections - NOTE: Should use
-    // removeRange(range) when it is supported
-    window.getSelection().removeAllRanges();
-
-    shareSpanNode.parentNode.removeChild(shareSpanNode);
-    */
   });
 
   $(window).on('popstate', function(event) {
