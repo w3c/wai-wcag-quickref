@@ -4,6 +4,13 @@
       {{include.techtitle}}
     </h5>
   </div>
+  {% if include.ttype == 'sufficient' %}
+    <div class="panel-body">
+      <p>
+        <strong>Note:</strong> Other techniques may also be sufficient if they meet the success criterion.
+      </p>
+    </div>
+  {% endif %}
   <div class="panel-body">
     <ul>
     {% for tech in include.techniques %}
