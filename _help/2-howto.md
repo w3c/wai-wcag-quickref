@@ -11,4 +11,5 @@ Select the “Filter” tab in the main menu to customize:
 
 - **Techniques:** Shows only the types of techniques and/or failures selected.
 
-**Share** buttons allow you to link to the customized view and to individual success criteria.
+The **Share this view** button provides a link to this tool with the filters you have set.
+The SHARE buttons provide links to individual success criteria.
