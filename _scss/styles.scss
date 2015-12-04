@@ -235,15 +235,15 @@ header[role=banner] {
         float: right;
       }
     }
-    .permalink {
-      @include mq($medium) {
-        order:3;
-        align-self: flex-start;
-        flex-grow: 99;
-        text-align: right;
-        margin:0;
-      }
-    }
+    // .permalink {
+    //   @include mq($medium) {
+    //     order:3;
+    //     align-self: flex-start;
+    //     flex-grow: 99;
+    //     text-align: right;
+    //     margin:0;
+    //   }
+    // }
   }
   footer {
     text-align: right;
