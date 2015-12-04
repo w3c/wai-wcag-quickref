@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
   var url = window.location.origin + window.location.pathname;
 
-  var elements = document.querySelectorAll('.sc-wrapper h4');
+  var elements = document.querySelectorAll('.sc-wrapper footer a');
   Array.prototype.forEach.call(elements, function(el, i){ // … .each(…)
 
     var cplel = plel.cloneNode(true);

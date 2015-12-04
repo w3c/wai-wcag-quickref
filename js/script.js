@@ -500,11 +500,6 @@ jQuery(document).ready(function($) {
       scrollto($('#hiddensc'));
     });
 
-    $('main').on('click', '.toplink', function(event) {
-      event.preventDefault();
-      scrollto($('#top'));
-    });
-
     $('.maininner').on('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(event) {
       $(this).removeClass('loading');
       $('.filter-status .loaded').show();
