@@ -599,13 +599,14 @@ jQuery(document).ready(function($) {
 
   $('#sharethisviewbutton').parent().find('.sharebox button').on('click', function (){
     $(this).parent().parent().parent().removeClass('open');
+    $('#sharethisviewbutton').focus();
   });
 
   $('#sharethisviewbutton').on('click', function (){
 
     var location = window.history.location || window.location;
     $(this).parent().find('.sharebox').addClass('open');
-    $(this).parent().find('input').val(location).select();
+    $(this).parent().find('input').val(location).select().focus();
 
   });
 

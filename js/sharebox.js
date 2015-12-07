@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function(){
         remclass(this.nextSibling, 'open');
       } else {
         addclass(this.nextSibling, 'open');
-        this.nextSibling.querySelector('input').select();
+        this.nextSibling.querySelector('input').select().focus();
       }
       e.preventDefault();
     }
