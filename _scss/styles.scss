@@ -61,7 +61,7 @@ mark.current {
   display:none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4 {
   font-family: $font-family-serif;
   font-feature-settings: "lnum", "tnum";
   strong:first-child {
@@ -71,11 +71,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   line-height: 1;
-  small {
-    font-size: 50%;
-    line-height: 1;
-    display:block;
-  }
+	margin:0;
 }
 
 header[role=banner] {
@@ -137,11 +133,10 @@ header[role=banner] {
   font-family: $font-family-serif;
   margin-bottom: 1em;
   padding: .25em 0 0;
-	.mainheading {
-		font-weight: bold;
-		font-feature-settings: "lnum","tnum";
+	h1 {
+		font-size: 1em;
 	}
-  .subheading {
+	.subheading {
     padding: .25em 0 0;
     display:block;
     font-size: .5em;
