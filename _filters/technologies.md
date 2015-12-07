@@ -8,18 +8,18 @@ filters:
   title: <abbr title="Hypertext Markup Language">HTML</abbr>
 - short: css
   title: <abbr title="Cascading Style Sheets (CSS)">CSS</abbr>
-- short: smil
-  title: <abbr title="Synchronized Multimedia Integration Language (SMIL)">SMIL</abbr>
+- short: wai-aria
+  title: <abbr title="Accessible Rich Internet Applications">ARIA</abbr>
 - short: js
   title: Client-side Scripting
 - short: server
   title: Server-side Scripting
-- short: flash
-  title: Flash
+- short: smil
+  title: <abbr title="Synchronized Multimedia Integration Language (SMIL)">SMIL</abbr>
 - short: pdf
   title: PDF
+- short: flash
+  title: Flash
 - short: sl
   title: Silverlight
-- short: wai-aria
-  title: <abbr title="Web Accessibility Initiative - Accessible Rich Internet Applications">WAI-ARIA</abbr>
 ---
