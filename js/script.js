@@ -309,10 +309,10 @@ jQuery(document).ready(function($) {
   function scrollto(target) {
     var location = window.history.location || window.location,
         uri = new URI(location);
-    var scrollpos = target.offset().top - $('.navrow').clientHeight;
-    $('body').animate({
+    var scrollpos = target.offset().top - $('.navrow').outerHeight() - 5;
+    $('html').animate({
         scrollTop: scrollpos
-    }, 1);
+    }, 600, 'linear');
     uri.fragment(target.selector);
     updateuri(uri);
     target.attr('tabindex', '-1').focus();
@@ -483,16 +483,13 @@ jQuery(document).ready(function($) {
       e.preventDefault();
       var tgt = $(e.target),
           thetarget;
-      if (tgt.is('[href="#hiddensc"]')) {
+      if (tgt.is('a')) {
         thetarget = tgt.attr('href');
       } else {
-        if (tgt.is('a')) {
-          thetarget = tgt.attr('href');
-        } else {
-          thetarget = tgt.parents('a').attr('href');
-        }
+        thetarget = tgt.parents('a').attr('href');
       }
       scrollto($(thetarget));
+      return false;
     });
 
     $('#hiddennav').on('click', function(event) {
@@ -527,7 +524,7 @@ jQuery(document).ready(function($) {
 
     $('body').scrollspy({
       target: '.overview.spy-active',
-      offset: 40
+      offset: 45
     })
 
     // $('#spy-checkbox').on('change', function(event) {
