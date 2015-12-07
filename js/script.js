@@ -79,6 +79,7 @@ jQuery(document).ready(function($) {
 
     if(data.hidesidebar) {
       $('.sidebar').hide();
+      $('.navrow').addClass('sidebar-hidden');
       $('#showsidebars').show().focus();
     }
 
@@ -458,6 +459,7 @@ jQuery(document).ready(function($) {
         var uri = new URI(location);
         uri.addSearch("hidesidebar", true);
         $('.sidebar').hide();
+        $('.navrow').addClass('sidebar-hidden');
         $('#showsidebars').show().focus();
         updateuri(uri);
     });
@@ -467,6 +469,7 @@ jQuery(document).ready(function($) {
       var uri = new URI(location);
       uri.removeSearch("hidesidebar")
       $('.sidebar').show();
+      $('.navrow').removeClass('sidebar-hidden');
       $('#showsidebars').hide();
       $('#hidesidebars').focus();
       updateuri(uri);
@@ -599,13 +602,14 @@ jQuery(document).ready(function($) {
 
   $('#sharethisviewbutton').parent().find('.sharebox button').on('click', function (){
     $(this).parent().parent().parent().removeClass('open');
+    $('#sharethisviewbutton').focus();
   });
 
   $('#sharethisviewbutton').on('click', function (){
 
     var location = window.history.location || window.location;
     $(this).parent().find('.sharebox').addClass('open');
-    $(this).parent().find('input').val(location).select();
+    $(this).parent().find('input').val(location).select().focus();
 
   });
 
