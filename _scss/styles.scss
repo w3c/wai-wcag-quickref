@@ -244,7 +244,7 @@ header[role=banner] {
     text-align: right;
     font-size: (12/14) * 1em;
     a {
-      color: #777;
+      color: #666;
       text-transform: uppercase;
       font-weight: bold;
     }
@@ -652,6 +652,10 @@ svg.icon {
     right:0;
     box-shadow: 0 0 10px #000;
   }
+	.active #hiddennav {
+		color: #333;
+		text-decoration: underline;
+	}
 }
 
 .loading {
