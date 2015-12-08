@@ -11,17 +11,17 @@ $large:  81em; //* 1300px */
 /* When position: sticky is supported but native behavior is ignored */
 .fixedsticky-withoutfixedfixed .fixedsticky-off,
 .fixed-supported .fixedsticky-off {
-	position: static;
+  position: static;
 }
 .fixedsticky-withoutfixedfixed .fixedsticky-on,
 .fixed-supported .fixedsticky-on {
-	position: fixed;
+  position: fixed;
 }
 .fixedsticky-dummy {
-	display: none;
+  display: none;
 }
 .fixedsticky-on + .fixedsticky-dummy {
-	display: block;
+  display: block;
 }
 
 [disabled] + span{
@@ -71,7 +71,7 @@ h1, h2, h3, h4 {
 
 h1 {
   line-height: 1;
-	margin:0;
+  margin:0;
 }
 
 header[role=banner] {
@@ -132,10 +132,10 @@ header[role=banner] {
   font-family: $font-family-serif;
   margin-bottom: 1em;
   padding: .25em 0 0;
-	h1 {
-		font-size: 1em;
-	}
-	.subheading {
+  h1 {
+    font-size: 1em;
+  }
+  .subheading {
     padding: .25em 0 0;
     display:block;
     font-size: .5em;
@@ -528,9 +528,9 @@ svg.icon {
   background-color: #fff;
   padding: 5px;
   margin-bottom: 10px;
-	&:last-child {
-		margin-bottom: 0;
-	}
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .sbbox-heading {
@@ -653,11 +653,10 @@ svg.icon {
     left:0;
     right:0;
     box-shadow: 0 0 10px #000;
+  .active #hiddennav {
+    color: #333;
+    text-decoration: underline;
   }
-	.active #hiddennav {
-		color: #333;
-		text-decoration: underline;
-	}
 }
 
 .loading {
