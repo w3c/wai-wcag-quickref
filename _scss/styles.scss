@@ -11,17 +11,17 @@ $large:  81em; //* 1300px */
 /* When position: sticky is supported but native behavior is ignored */
 .fixedsticky-withoutfixedfixed .fixedsticky-off,
 .fixed-supported .fixedsticky-off {
-	position: static;
+  position: static;
 }
 .fixedsticky-withoutfixedfixed .fixedsticky-on,
 .fixed-supported .fixedsticky-on {
-	position: fixed;
+  position: fixed;
 }
 .fixedsticky-dummy {
-	display: none;
+  display: none;
 }
 .fixedsticky-on + .fixedsticky-dummy {
-	display: block;
+  display: block;
 }
 
 [disabled] + span{
@@ -71,7 +71,7 @@ h1, h2, h3, h4 {
 
 h1 {
   line-height: 1;
-	margin:0;
+  margin:0;
 }
 
 header[role=banner] {
@@ -82,8 +82,7 @@ header[role=banner] {
     @include mq($small) {
       &.w3c-wai-header {
         float: right;
-        border: 1px solid $brand-primary;
-        margin-left: .5em;
+        margin: 0 0 .5em .5em;
         background-color: #005A9C;
         a {
           background-color: #fff;
@@ -133,10 +132,10 @@ header[role=banner] {
   font-family: $font-family-serif;
   margin-bottom: 1em;
   padding: .25em 0 0;
-	h1 {
-		font-size: 1em;
-	}
-	.subheading {
+  h1 {
+    font-size: 1em;
+  }
+  .subheading {
     padding: .25em 0 0;
     display:block;
     font-size: .5em;
@@ -529,9 +528,9 @@ svg.icon {
   background-color: #fff;
   padding: 5px;
   margin-bottom: 10px;
-	&:last-child {
-		margin-bottom: 0;
-	}
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .sbbox-heading {
@@ -567,30 +566,36 @@ svg.icon {
 .navrow {
   display:flex;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: center;
   z-index: 999;
-	@include mq($medium) {
-		margin-right: 15px;
-	}
+  background-color: $gray-lighter;
+
+  transition: all 1s linear;
+
+  @include mq($medium) {
+    margin-right: 15px;
+  }
   > div {
     flex:6;
     padding: 0;
   }
   &.fixedsticky-on {
-		left:0;
-		right:0;
+    left:0;
+    right:0;
+    border-bottom: 1px solid $brand-primary;
+    box-shadow: 0 4px 4px -4px $gray;
     @include mq($medium) {
       left: 315px;
-			&.sidebar-hidden {
-				left: 15px;
-			}
+      &.sidebar-hidden {
+        left: 15px;
+      }
     }
   }
 }
 
 #hidesidebars {
   display:none;
-  @include mq($medium){
+  @include mq($medium) {
     display:inline-block;
   }
 }
@@ -634,31 +639,19 @@ svg.icon {
 }
 
 #showsidebars {
-  margin-right: 20px;
+  margin: 0 5px;
 }
 
 .filter-status {
   z-index: 9999;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid $brand-primary;
-  padding: 5px;
   margin: 0;
   min-height: 2.5em;
-  position:relative;
-  background-color: $gray-lighter;
-  box-shadow: 0 4px 4px -4px $gray;
-  &:after {
-    position: absolute;
-    bottom:0;
-    left:0;
-    right:0;
-    box-shadow: 0 0 10px #000;
+  .active #hiddennav {
+    color: #333;
+    text-decoration: underline;
   }
-	.active #hiddennav {
-		color: #333;
-		text-decoration: underline;
-	}
 }
 
 .loading {
@@ -765,21 +758,20 @@ button.panel-heading {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  padding: 5px;
   &.active {
     background-color: #FFF176;
-  }
-  > div {
-    padding: .25em;
   }
   .text {
     flex: 1;
   }
   .clear {
-
+    padding-right: 5px;
   }
   .permalink {
     margin: 0 !important;
-    padding-left:0;
+    padding:0;
+    border: none;
   }
 }
 
