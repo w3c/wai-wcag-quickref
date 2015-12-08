@@ -566,30 +566,36 @@ svg.icon {
 .navrow {
   display:flex;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: center;
   z-index: 999;
-	@include mq($medium) {
-		margin-right: 15px;
-	}
+  background-color: $gray-lighter;
+
+  transition: all 1s linear;
+
+  @include mq($medium) {
+    margin-right: 15px;
+  }
   > div {
     flex:6;
     padding: 0;
   }
   &.fixedsticky-on {
-		left:0;
-		right:0;
+    left:0;
+    right:0;
+    border-bottom: 1px solid $brand-primary;
+    box-shadow: 0 4px 4px -4px $gray;
     @include mq($medium) {
       left: 315px;
-			&.sidebar-hidden {
-				left: 15px;
-			}
+      &.sidebar-hidden {
+        left: 15px;
+      }
     }
   }
 }
 
 #hidesidebars {
   display:none;
-  @include mq($medium){
+  @include mq($medium) {
     display:inline-block;
   }
 }
@@ -633,26 +639,15 @@ svg.icon {
 }
 
 #showsidebars {
-  margin-right: 20px;
+  margin: 0 5px;
 }
 
 .filter-status {
   z-index: 9999;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid $brand-primary;
-  padding: 5px;
   margin: 0;
   min-height: 2.5em;
-  position:relative;
-  background-color: $gray-lighter;
-  box-shadow: 0 4px 4px -4px $gray;
-  &:after {
-    position: absolute;
-    bottom:0;
-    left:0;
-    right:0;
-    box-shadow: 0 0 10px #000;
   .active #hiddennav {
     color: #333;
     text-decoration: underline;
@@ -763,21 +758,20 @@ button.panel-heading {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  padding: 5px;
   &.active {
     background-color: #FFF176;
-  }
-  > div {
-    padding: .25em;
   }
   .text {
     flex: 1;
   }
   .clear {
-
+    padding-right: 5px;
   }
   .permalink {
     margin: 0 !important;
-    padding-left:0;
+    padding:0;
+    border: none;
   }
 }
 
