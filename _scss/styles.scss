@@ -82,8 +82,7 @@ header[role=banner] {
     @include mq($small) {
       &.w3c-wai-header {
         float: right;
-        border: 1px solid $brand-primary;
-        margin-left: .5em;
+        margin: 0 0 .5em .5em;
         background-color: #005A9C;
         a {
           background-color: #fff;
