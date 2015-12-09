@@ -564,9 +564,11 @@ svg.icon {
 }
 
 .navrow {
-  display:flex;
-  flex-direction: row;
-  align-items: center;
+	@include mq($medium) {
+	  display:flex;
+	  flex-direction: row;
+	  align-items: center;
+	}
   z-index: 999;
   background-color: $gray-lighter;
 
@@ -757,13 +759,20 @@ button.panel-heading {
   display: flex;
   align-items: center;
   justify-content: space-between;
+	flex-wrap: wrap;
+	@include mq($medium) {
+		flex-wrap: nowrap;
+	}
   width: 100%;
   padding: 5px;
   &.active {
     background-color: #FFF176;
   }
   .text {
-    flex: 1;
+    flex: 1 0 100%;
+		@include mq($medium) {
+			flex: 1;
+		}
   }
   .clear {
     padding-right: 5px;
