@@ -118,10 +118,10 @@ header[role=banner] {
 }
 
 .page-title {
-	clear: both;
+  clear: both;
   font-size: 1.4em;
   @include mq($medium) {
-		clear: none;
+    clear: none;
     font-size: 1.75em;
   }
   font-family: $font-family-serif;
@@ -559,11 +559,11 @@ svg.icon {
 }
 
 .navrow {
-	@include mq($medium) {
-	  display:flex;
-	  flex-direction: row;
-	  align-items: center;
-	}
+  @include mq($medium) {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+  }
   z-index: 999;
   background-color: $gray-lighter;
 
@@ -750,10 +750,10 @@ button.panel-heading {
   display: flex;
   align-items: center;
   justify-content: space-between;
-	flex-wrap: wrap;
-	@include mq($medium) {
-		flex-wrap: nowrap;
-	}
+  flex-wrap: wrap;
+  @include mq($medium) {
+    flex-wrap: nowrap;
+  }
   width: 100%;
   padding: 5px;
   &.active {
@@ -761,9 +761,9 @@ button.panel-heading {
   }
   .text {
     flex: 1 0 100%;
-		@include mq($medium) {
-			flex: 1;
-		}
+    @include mq($medium) {
+      flex: 1;
+    }
   }
   .clear {
     padding-right: 5px;
