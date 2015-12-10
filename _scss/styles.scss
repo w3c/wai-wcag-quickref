@@ -591,6 +591,7 @@ svg.icon {
 }
 
 #hidesidebars {
+  padding: 2px;
   display:none;
   @include mq($medium) {
     display:inline-block;
@@ -601,14 +602,20 @@ svg.icon {
   margin:0;
   padding: 0 0 0 15px;
   border-bottom-color:#555;
+  display:flex;
+  align-items: flex-end;
   li {
     margin-bottom: -2px;
     border-bottom: 1px solid #EEEEEE;
     margin-left: 4px;
     &:first-child {
       border-bottom: none;
-      float: right !important;
+      order: 2;
       text-align: right;
+      flex:1;
+      button {
+        margin-bottom:3px;
+      }
     }
     a {
       background-color: #fff;
