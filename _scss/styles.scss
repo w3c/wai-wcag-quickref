@@ -83,13 +83,6 @@ header[role=banner] {
       &.w3c-wai-header {
         float: right;
         margin: 0 0 .5em .5em;
-        background-color: #005A9C;
-        a {
-          background-color: #fff;
-          .wai {
-            background-color: #005A9C;
-          }
-        }
         a {
           display: inline-block;
         }
@@ -125,8 +118,10 @@ header[role=banner] {
 }
 
 .page-title {
+	clear: both;
   font-size: 1.4em;
   @include mq($medium) {
+		clear: none;
     font-size: 1.75em;
   }
   font-family: $font-family-serif;
