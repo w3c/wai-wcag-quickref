@@ -590,6 +590,28 @@ jQuery(document).ready(function($) {
     updateuri(uri);
   });
 
+  $('.abouttech').on('click', function(e) {
+    e.preventDefault();
+    function scrolltoabouttech() {
+        scrollto($('#abouttech'));
+        $('#pageinfo').off('shown.bs.collapse', scrolltoabouttech);
+    }
+    $('#pageinfo').on('shown.bs.collapse', function(e) {
+        scrolltoabouttech();
+    });
+    $('#pageinfo').collapse('show');
+
+  });
+
+  $('#pageinfo').on('shown.bs.collapse hidden.bs.collapse', function(e) {
+      $('.fixedsticky').fixedsticky( 'destroy' );
+      if (matchMedia('screen and (min-width: 43em)').matches) {
+        $('.fixedsticky').fixedsticky();
+      } else {
+        $('.navrow.fixedsticky').fixedsticky();
+      }
+  });
+
   $( window ).on('resize', function() {
     if (matchMedia('screen and (min-width: 43em)').matches) {
       $('.fixedsticky').fixedsticky( 'destroy' );
