@@ -313,7 +313,7 @@ jQuery(document).ready(function($) {
     var scrollpos = target.offset().top - $('.navrow').outerHeight() - 5;
     $('html').animate({
         scrollTop: scrollpos
-    }, 600, 'linear');
+    }, 750, 'linear');
     uri.fragment(target.selector);
     updateuri(uri);
     target.attr('tabindex', '-1').focus();
