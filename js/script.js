@@ -592,15 +592,7 @@ jQuery(document).ready(function($) {
 
   $('.abouttech').on('click', function(e) {
     e.preventDefault();
-    function scrolltoabouttech() {
-        scrollto($('#abouttech'));
-        $('#pageinfo').off('shown.bs.collapse', scrolltoabouttech);
-    }
-    $('#pageinfo').on('shown.bs.collapse', function(e) {
-        scrolltoabouttech();
-    });
-    $('#pageinfo').collapse('show');
-
+    scrollto($('#abouttech'));
   });
 
   $('#pageinfo').on('shown.bs.collapse hidden.bs.collapse', function(e) {
