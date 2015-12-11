@@ -17,7 +17,7 @@
     {% else %}
       {% assign currenttechnique = site.data.techniques | where: "short", techid | first %}
 
-      {{ include.technique.prepend }} <a href="{{techid | append: '.html' | prepend: site.techniqueurl}}">{{ techid }}: {{currenttechnique.title}}  <svg role="img" title="External link" class="i-external i-smaller i-subtle"><use xlink:href="{{ "/img/icons.svg" | prepend: site.baseurl }}#i-external"></use></svg></a> {{ include.technique.append }}
+      {{ include.technique.prepend }} <a href="{{techid | append: '.html' | prepend: site.techniqueurl}}">{{ techid }}: {{currenttechnique.title}} </a> {{ include.technique.append }}
     {% endif %}
     {% if include.technique.using %}
       <i>using one of the following techniques:</i>
