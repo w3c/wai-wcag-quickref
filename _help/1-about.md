@@ -8,4 +8,3 @@ This tool provides a customizable view of WCAG 2.0 resources, including:
 -   [Understanding WCAG 2.0](http://www.w3.org/TR/UNDERSTANDING-WCAG20/) supporting information
 
 Background on these resources is provided in the [WCAG Overview](http://www.w3.org/WAI/intro/wcag.php) and [The WCAG 2.0 Documents](http://www.w3.org/WAI/intro/wcag20).
-

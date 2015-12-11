@@ -17,21 +17,19 @@
 						<svg aria-hidden="true" class="i-chevron-down"><use xlink:href="{{ "/img/icons.svg" | prepend: site.baseurl }}#i-chevron-down"></use></svg>
 						Hide
 					</span>
-					About &amp; How to Use 
+					About &amp; How to Use
 				</button>
 			</span>
     </div>
-</header>
-<div class="mainhead">
-  <div id="pageinfo" hidden>
-  {% for help in site.help %}
-    <div class="pibox">
-      <div class="pibox-heading">{{help.title}}</div>
-      <div class="pibox-body">
-        {{help.content}}
-      </div>
-    </div>
-  {% endfor %}
+	  <div id="pageinfo" hidden>
+	  {% for help in site.help %}
+	    <div class="pibox">
+	      <div class="pibox-heading">{{help.title}}</div>
+	      <div class="pibox-body">
+	        {{help.content}}
+	      </div>
+	    </div>
+	  {% endfor %}
 
-  </div>
-</div>
+	  </div>
+</header>
