@@ -6,32 +6,35 @@ var concat = require('gulp-concat');
 var minifyCss =require('gulp-minify-css');
 var plumber =require('gulp-plumber');
 var uglify = require('gulp-uglify');
+var pxtorem = require('gulp-pxtorem');
 
 var sassdir = "_scss/**/*.scss";
 
 gulp.task('scss', function () {
     return gulp.src(sassdir)
         .pipe(plumber())
-        .pipe(sourcemaps.init())
+        //.pipe(sourcemaps.init())
         .pipe(sass())
-        .pipe(gulp.dest('./css/'))
         .pipe(autoprefixer())
-        .pipe(concat('styles.css'))
+        .pipe(pxtorem())
+        //.pipe(concat('styles.css'))
+        .pipe(gulp.dest('./css/'))
         .pipe(minifyCss())
-        .pipe(sourcemaps.write('.'))
+        //.pipe(concat('styles.min.css'))
+        //.pipe(sourcemaps.write())
         .pipe(gulp.dest('./css/'));
 });
 
 var jsdir = "_js/*.js";
 
 gulp.task('js', function () {
-/*    return gulp.src(['_js/jquery.min.js', '_/js/bootstrap.min.js', '_/js/highlight.jquery.js', '_/js/uri.js', '_/js/history.js', '_/js/fixedsticky.jquery.js', '_/js/sharebox.js', '_/js/script.js'])
+    return gulp.src(['_js/jquery.min.js', '_js/svg4everybody.js', '_js/bootstrap.js', '_js/uri.js', '_js/history.js', '_js/fixedsticky.jquery.js', '_js/sharebox.js', '_js/loadcss.js', '_js/script.js'])
         .pipe(plumber())
-        .pipe(sourcemaps.init())
-        .pipe(concat('script.js'))
+        //.pipe(sourcemaps.init())
+        .pipe(concat('script.js', {newline: ';'}))
         .pipe(uglify())
-        .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('./js/'));*/
+        //.pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('./js/'));
 });
 
 gulp.task('watch', function() {

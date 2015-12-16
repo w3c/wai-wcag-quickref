@@ -1,4 +1,4 @@
-@import "vollkorn";
+// @import "vollkorn";
 @import "bootstrap";
 @import "helper";
 @import "sharebox";
@@ -28,16 +28,8 @@ $large:  81em; //* 1300px */
   color:#777;
 }
 
-@include mq($medium) {
-
-  // html, body {
-  //   height: 100%;
-  // }
-
-  // body {
-  //   overflow:hidden;
-  // }
-
+html {
+  font-size: 16px;
 }
 
 body {
@@ -224,15 +216,6 @@ header[role=banner] {
         float: right;
       }
     }
-    // .permalink {
-    //   @include mq($medium) {
-    //     order:3;
-    //     align-self: flex-start;
-    //     flex-grow: 99;
-    //     text-align: right;
-    //     margin:0;
-    //   }
-    // }
   }
   footer {
     text-align: right;
@@ -288,7 +271,7 @@ header[role=banner] {
 }
 
 .sc-content, .techniques-button, .techniques-button + div {
-  @include mq($medium) { padding-left: 63px; }
+  @include mq($medium) { padding-left: 60px; }
 }
 
 .panel-body-guideline .techniques-button {
@@ -330,7 +313,6 @@ header[role=banner] {
 
 .navbar-scroll {
   height: auto;
-  // flex: 999;
   .hidden-sb & {
     overflow: visible;
     height: auto;
