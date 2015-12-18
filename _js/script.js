@@ -630,9 +630,16 @@ jQuery(document).ready(function($) {
   $('#sharethisviewbutton').on('click', function (){
 
     var location = window.history.location || window.location;
-    $(this).parent().find('.sharebox').addClass('open');
-    $(this).parent().find('input').val(location).select().focus();
+    var sharebox = $(this).parent().find('.sharebox');
 
+    if (sharebox.hasClass( "open" )) {
+      sharebox.removeClass('open');
+    } else {
+      sharebox.addClass('open');
+      sharebox.find('input').val(location).select().focus();
+    }
+
+  });
 
   $('#sharethisviewbutton').parent().find('.sharebox button').on('click', function (){
     $(this).parent().parent().parent().removeClass('open');

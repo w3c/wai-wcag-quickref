@@ -37,10 +37,11 @@ document.addEventListener('DOMContentLoaded', function(){
   Array.prototype.forEach.call(elements, function(el, i){ // … .each(…)
 
     var cplel = plel.cloneNode(true);
-    cplel.setAttribute('href', '#' + el.id);
+    var theid = el.parentNode.parentNode.querySelector('h4[id]').id;
+    cplel.setAttribute('href', '#' + theid);
     cplel.setAttribute('aria-label', 'Share Link to the section “' + el.textContent + '”');
 
-    var csbtext = shareboxtext.replace("%s", url + '#' + el.id).replace("%s", url + '#' + el.id);
+    var csbtext = shareboxtext.replace("%s", url + '#' + theid).replace("%s", url + '#' + theid);
     var csb = sharebox.cloneNode(true);
     csb.innerHTML = csbtext;
 
@@ -49,18 +50,18 @@ document.addEventListener('DOMContentLoaded', function(){
     cplwrapdiv.appendChild(csb);
     //addclass(cplwrapdiv, el.localName);
 
-    function showsharebox(e) {
+    cplel.addEventListener('click', function(e){
       var sbox = this.nextSibling;
+      var input = sbox.querySelector('input');
       if (hasclass(sbox, 'open')) {
-        remclass(this.nextSibling, 'open');
+        remclass(sbox, 'open');
       } else {
-        addclass(this.nextSibling, 'open');
-        this.nextSibling.querySelector('input').select().focus();
+        addclass(sbox, 'open');
+        input.select();
+        input.focus();
       }
       e.preventDefault();
-    }
-
-    cplel.addEventListener('click', showsharebox);
+    });
 
     el.parentNode.insertBefore(cplwrapdiv, el);
   });
