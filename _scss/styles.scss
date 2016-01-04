@@ -862,4 +862,13 @@ button.panel-heading {
   align-items: flex-end;
 }
 
+#showhidesbsmall {
+  margin-bottom: 1em;
+  margin-left: 15px;
+  margin-right: 15px;
+  @include mq($medium) {
+    display:none;
+  }
+}
+
 @import "print";

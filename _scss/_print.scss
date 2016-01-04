@@ -4,7 +4,8 @@
   .filter-status-row div:not(.text),
   .sc-text button,
   .sc-wrapper footer,
-  .clearall {
+  .clearall,
+  #showhidesbsmall {
     display: none !important;
   }
   .fixedsticky {
