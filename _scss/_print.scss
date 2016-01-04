@@ -1,0 +1,31 @@
+@media print {
+  .sidebar,
+  .hiddennav,
+  .filter-status-row div:not(.text),
+  .sc-text button,
+  .sc-wrapper footer,
+  .clearall {
+    display: none !important;
+  }
+  .fixedsticky {
+    position: static !important;
+  }
+  .techniques-button {
+    display: block !important;
+  }
+  .collapse {
+    clear: both !important;
+  }
+  .btn-group-vertical>.btn, .btn-group>.btn {
+    float: none;
+  }
+  .sc-wrapper header ~ div {
+    margin-left: 63px;
+  }
+  hr ~ * {
+    display: block !important;
+  }
+  .hiddensc-inner ul {
+    columns: 200px;
+  }
+}
