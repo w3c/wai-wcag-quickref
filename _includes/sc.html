@@ -9,11 +9,11 @@
   </header>
   <div class="sc-content">
     <div class="sc-text">
-	    <p>{{ sc.text }}</p>
+	    <p>{{ sc.title }}</p>
       {% for detail in sc.details %}
         {% if detail.type == 'note' %}
           <aside class="note">
-            <p><em>Note:</em> {{ detail.text }}</p>
+            <p><em>{{ detail.handle }}:</em> {{ detail.text }}</p>
           </aside>
         {% endif%}
         {% if detail.type == 'ulist' %}

@@ -13,11 +13,13 @@
     {% endfor %}
   {% else %}
     {% if shortname == 'future' %}
-      {{include.technique.text}}
+      {{include.technique.title}} (future link)
     {% else %}
-      {% assign currenttechnique = site.data.techniques | where: "short", techid | first %}
-
-      {{ include.technique.prepend }} <a href="{{techid | append: '.html' | prepend: site.techniqueurl}}">{{ techid }}: {{currenttechnique.title}} </a> {{ include.technique.append }}
+      {% if shortname == 'text' %}
+        {{include.technique.title}}
+      {% else %}
+        {{ include.technique.prepend }} <a href="{{techid | append: '.html' | prepend: site.techniqueurl}}">{{ techid }}: {{include.technique.title}} </a> {{ include.technique.append }}
+      {% endif %}
     {% endif %}
     {% if include.technique.using %}
       <i>using one of the following techniques:</i>

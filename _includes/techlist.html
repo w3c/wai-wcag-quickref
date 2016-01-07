@@ -15,42 +15,44 @@
       {% if tech.situations %}
         {% for situation in tech.situations %}
           <div class="panel panel-default">
-            <div class="panel-heading"><h6>{{situation.text}}</h6></div>
+            <div class="panel-heading"><h6>{{situation.title}}</h6></div>
             <div class="panel-body">
               {% assign sit = situation.techniques %}
-                {% if sit[0].and %}
-                  <p>
-                    {% for technique in sit[0].and %}
-                      <span class="{% include techniqueclass.html technique=technique %}">{% include techniquelink.html technique=technique %} {{technique.append}} {% if forloop.last %}{% else %}<strong>AND</strong>{% endif %}</span>
-                    {% endfor %}
-                  </p>
-                {% else %}
-                  {% if sit[0].or %}
-                    <ol>
-                      {% for technique in sit[0].or %}
-                        <li class="{% include techniqueclass.html technique=technique %}">{% include techniquelink.html technique=technique %} {% if forloop.rindex0 > 0 %}<strong>OR</strong>{% endif %}</li>
+                {% for techn in sit %}
+                  {% if techn.and %}
+                    <p>
+                      {% for technique in techn.and %}
+                        <span class="{% include techniqueclass.html technique=technique %}">{% include techniquelink.html technique=technique %} {{technique.append}} {% if forloop.last %}{% else %}<strong>AND</strong>{% endif %}</span>
                       {% endfor %}
-                    </ol>
+                    </p>
                   {% else %}
-                    <ul>
-                      {% for technique in sit %}
-                        <li class="{% include techniqueclass.html technique=technique %}">
-                          {% include techniquelink.html technique=technique %}
-                        </li>
-                      {% endfor %}
-                    </ul>
+                    {% if techn.or %}
+                      <ol>
+                        {% for technique in techn.or %}
+                          <li class="{% include techniqueclass.html technique=technique %}">{% include techniquelink.html technique=technique %} {% if forloop.rindex0 > 0 %}<strong>OR</strong>{% endif %}</li>
+                        {% endfor %}
+                      </ol>
+                    {% else %}
+                      {% if techn.group %}
+                        {% assign group = techn.group %}
+                            <p>{{group.title}}</p>
+                            <ul>
+                            {% for technique in group.techniques %}
+                              <li class="{% include techniqueclass.html technique=technique %}">{% include techniquelink.html technique=technique %}</li>
+                            {% endfor %}
+                            </ul>
+                        {% else %}
+                        <ul>
+                          {% for technique in sit %}
+                            <li class="{% include techniqueclass.html technique=technique %}">
+                              {% include techniquelink.html technique=technique %}
+                            </li>
+                          {% endfor %}
+                        </ul>
+                      {% endif %}
+                    {% endif %}
                   {% endif %}
-                {% endif %}
-              {% if situation.sections %}
-                {% for section in situation.sections %}
-                  <p>{{section.text}}</p>
-                  <ul>
-                  {% for technique in section.techniques %}
-                    <li class="{% include techniqueclass.html technique=technique %}">{% include techniquelink.html technique=technique %}</li>
-                  {% endfor %}
-                  </ul>
                 {% endfor %}
-              {% endif %}
             </div>
           </div>
         {% endfor %}
