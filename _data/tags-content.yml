@@ -1,0 +1,61 @@
+text-equiv-all: audio captions content images live-stream moving-content text-alternatives video visual-cues buttons
+media-equiv-av-only-alt: audio captions content moving-content text-alternatives video
+media-equiv-captions: audio captions content moving-content text-alternatives video
+media-equiv-audio-desc: content video
+media-equiv-real-time-captions: audio captions content live-stream
+media-equiv-audio-desc-only: content live-stream video
+media-equiv-sign: audio content video
+media-equiv-extended-ad: content video
+media-equiv-text-doc: audio content video
+media-equiv-live-audio-only: audio live-stream
+content-structure-separation-programmatic: consistent-experience content headings hidden-content progress-steps structure visual-cues
+content-structure-separation-sequence: consistent-experience content hidden-content messaging progress-steps structure
+content-structure-separation-understanding: audio consistent-experience content messaging visual-cues
+visual-audio-contrast-without-color: content links messaging text
+visual-audio-contrast-dis-audio: buttons
+visual-audio-contrast-contrast: content messaging
+visual-audio-contrast-scale:
+visual-audio-contrast-text-presentation: content images text text-alternatives
+visual-audio-contrast7: content messaging
+visual-audio-contrast-noaudio:
+visual-audio-contrast-visual-presentation: content structure text
+visual-audio-contrast-text-images: consistent-experience structure text
+keyboard-operation-keyboard-operable: links messaging
+keyboard-operation-trapping:
+keyboard-operation-all-funcs:
+time-limits-required-behaviors:
+time-limits-pause: buttons
+time-limits-no-exceptions:
+time-limits-postponed:
+time-limits-server-timeout:
+seizure-does-not-violate: content video moving-content
+seizure-three-times: content video moving-content
+navigation-mechanisms-skip: headings
+navigation-mechanisms-title: content page-title structure
+navigation-mechanisms-focus-order: buttons
+navigation-mechanisms-refs: content links buttons
+navigation-mechanisms-mult-loc:
+navigation-mechanisms-descriptive: content headings messaging
+navigation-mechanisms-focus-visible: buttons
+navigation-mechanisms-location:
+navigation-mechanisms-link: content links buttons
+navigation-mechanisms-headings: content headings progress-steps
+meaning-doc-lang-id:
+meaning-other-lang-id:
+meaning-idioms: content
+meaning-located: content
+meaning-supplements: content
+meaning-pronunciation: content
+consistent-behavior-receive-focus:
+consistent-behavior-unpredictable-change:
+consistent-behavior-consistent-locations: progress-steps
+consistent-behavior-consistent-functionality: consistent-experience content visual-cues buttons
+consistent-behavior-no-extreme-changes-context:
+minimize-error-identified: content
+minimize-error-cues: content messaging progress-steps visual-cues
+minimize-error-suggestions: content messaging
+minimize-error-reversible: content messaging
+minimize-error-context-help: content messaging
+minimize-error-reversible-all: content
+ensure-compat-parses:
+ensure-compat-rsv: messaging moving-content

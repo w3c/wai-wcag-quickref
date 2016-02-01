@@ -1,0 +1,61 @@
+text-equiv-all: images images-of-text animation progress-steps text-alternatives video
+media-equiv-av-only-alt: animation text-alternatives video
+media-equiv-captions: animation text-alternatives video
+media-equiv-audio-desc: animation video
+media-equiv-real-time-captions: animation text-alternatives video
+media-equiv-audio-desc-only: animation text-alternatives video
+media-equiv-sign: video
+media-equiv-extended-ad: animation video
+media-equiv-text-doc: animation text-alternatives video
+media-equiv-live-audio-only: text-alternatives
+content-structure-separation-programmatic: hidden-content layout progress-steps structure tables
+content-structure-separation-sequence: hidden-content layout progress-steps structure tables
+content-structure-separation-understanding: color layout structure
+visual-audio-contrast-without-color: color text
+visual-audio-contrast-dis-audio:
+visual-audio-contrast-contrast: color contrast images-of-text text
+visual-audio-contrast-scale: layout text zoom
+visual-audio-contrast-text-presentation: contrast images-of-text text text-alternatives
+visual-audio-contrast7: color contrast images-of-text text
+visual-audio-contrast-noaudio:
+visual-audio-contrast-visual-presentation: color contrast layout structure text zoom
+visual-audio-contrast-text-images: contrast images images-of-text text text alternatives
+keyboard-operation-keyboard-operable:
+keyboard-operation-trapping:
+keyboard-operation-all-funcs:
+time-limits-required-behaviors:
+time-limits-pause: blinking animation video
+time-limits-no-exceptions:
+time-limits-postponed:
+time-limits-server-timeout: text
+seizure-does-not-violate: flashing animation
+seizure-three-times: flashing animation
+navigation-mechanisms-skip: layout structure
+navigation-mechanisms-title: structure progress-steps
+navigation-mechanisms-focus-order: structure
+navigation-mechanisms-refs:
+navigation-mechanisms-mult-loc: structure
+navigation-mechanisms-descriptive: text
+navigation-mechanisms-focus-visible: color contrast progress-steps
+navigation-mechanisms-location:
+navigation-mechanisms-link:
+navigation-mechanisms-headings: structure text
+meaning-doc-lang-id: text
+meaning-other-lang-id: text
+meaning-idioms: text
+meaning-located: text
+meaning-supplements: text
+meaning-pronunciation: text
+consistent-behavior-receive-focus:
+consistent-behavior-unpredictable-change:
+consistent-behavior-consistent-locations: layout progress-steps
+consistent-behavior-consistent-functionality: progress-steps structure
+consistent-behavior-no-extreme-changes-context:
+minimize-error-identified:
+minimize-error-cues:
+minimize-error-suggestions:
+minimize-error-reversible:
+minimize-error-context-help: text
+minimize-error-reversible-all:
+ensure-compat-parses:
+ensure-compat-rsv:
