@@ -3,7 +3,7 @@ var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
 var concat = require('gulp-concat');
-var minifyCss =require('gulp-minify-css');
+var cssnano =require('gulp-cssnano');
 var plumber =require('gulp-plumber');
 var uglify = require('gulp-uglify');
 var pxtorem = require('gulp-pxtorem');
@@ -19,7 +19,7 @@ gulp.task('scss', function () {
         .pipe(pxtorem())
         //.pipe(concat('styles.css'))
         .pipe(gulp.dest('./css/'))
-        .pipe(minifyCss())
+        .pipe(cssnano())
         //.pipe(concat('styles.min.css'))
         //.pipe(sourcemaps.write())
         .pipe(gulp.dest('./css/'));
