@@ -707,8 +707,10 @@ div.understanding {
 }
 
 #tags {
-  display: flex;
-  flex-wrap: wrap;
+  .panel-body {
+    display: flex;
+    flex-wrap: wrap;
+  }
   .btn {
     flex-grow: 1;
     margin-bottom: 3px;
