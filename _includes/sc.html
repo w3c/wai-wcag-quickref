@@ -1,8 +1,11 @@
 {% assign s = s | plus: 1 %}
 {% assign sc = include.sc %}
 {% assign sc_id = sc.id | replace:'WCAG2:','' %}
-{% assign keywords = site.data.tags-sc[sc_id] %}
-<article class="sc-wrapper current filter-levels-{{sc.level | downcase}}" data-tags="{{keywords}}">
+{% assign keywordscontent = site.data.tags-content[sc_id] %}
+{% assign keywordsdeveloping = site.data.tags-developing[sc_id] %}
+{% assign keywordsinteraction = site.data.tags-interaction[sc_id] %}
+{% assign keywordsvisual = site.data.tags-visual[sc_id] %}
+<article class="sc-wrapper current filter-levels-{{sc.level | downcase}}" data-tags-content="{{keywordscontent}}" data-tags-developing="{{keywordsdeveloping}}" data-tags-interaction="{{keywordsinteraction}}" data-tags-visual="{{keywordsvisual}}">
   <header>
     <h4 id="{{sc_id}}"><strong>{{ p }}.{{ g }}.{{ s }}</strong> <span>{{sc.handle}}</span></h4>
     <p class="h4"><span class="level-{{sc.level | downcase}}">Level {{sc.level}}</span></p>
