@@ -11,12 +11,12 @@ media-equiv-live-audio-only: text text-altenative
 content-structure-separation-programmatic: forms headings labels menus markup structure tables
 content-structure-separation-sequence: forms keyboard structure
 content-structure-separation-understanding: text
-visual-audio-contrast-without-color:
+# visual-audio-contrast-without-color
 visual-audio-contrast-dis-audio: controls video
-visual-audio-contrast-contrast:
+# visual-audio-contrast-contrast
 visual-audio-contrast-scale: text
 visual-audio-contrast-text-presentation: images text
-visual-audio-contrast7:
+# visual-audio-contrast7
 visual-audio-contrast-noaudio: CAPTCHA video
 visual-audio-contrast-visual-presentation: controls text
 visual-audio-contrast-text-images: images text
@@ -27,9 +27,9 @@ time-limits-required-behaviors: controls
 time-limits-pause: controls video
 time-limits-no-exceptions: controls
 time-limits-postponed: controls
-time-limits-server-timeout:
-seizure-does-not-violate:
-seizure-three-times:
+# time-limits-server-timeout
+# seizure-does-not-violate
+# seizure-three-times
 navigation-mechanisms-skip: headings menus markup structure iframes
 navigation-mechanisms-title: page-title
 navigation-mechanisms-focus-order: errors focus forms keyboard links menus events
@@ -44,8 +44,8 @@ meaning-doc-lang-id: language text
 meaning-other-lang-id: language text
 meaning-idioms: text markup
 meaning-located: text markup
-meaning-supplements:
-meaning-pronunciation:
+# meaning-supplements
+# meaning-pronunciation
 consistent-behavior-receive-focus: controls focus forms menus events
 consistent-behavior-unpredictable-change: controls forms menus events
 consistent-behavior-consistent-locations: menus

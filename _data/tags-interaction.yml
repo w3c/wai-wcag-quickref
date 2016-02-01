@@ -14,7 +14,7 @@ content-structure-separation-understanding: buttons controls errors navigation
 visual-audio-contrast-without-color: buttons controls errors focus forms navigation
 visual-audio-contrast-dis-audio: audio autoplay controls streaming video
 visual-audio-contrast-contrast: buttons errors focus forms navigation
-visual-audio-contrast-scale:
+# visual-audio-contrast-scale
 visual-audio-contrast-text-presentation: buttons
 visual-audio-contrast7: buttons errors focus forms navigation
 visual-audio-contrast-noaudio: audio autoplay controls streaming CAPTCHA
@@ -28,8 +28,8 @@ time-limits-pause: audio autoplay carousels changing-content controls video time
 time-limits-no-exceptions: controls time-limits
 time-limits-postponed: controls errors changing-content time-limits
 time-limits-server-timeout: forms time-limits
-seizure-does-not-violate:
-seizure-three-times:
+# seizure-does-not-violate
+# seizure-three-times
 navigation-mechanisms-skip: navigation skip-to-content
 navigation-mechanisms-title: navigation
 navigation-mechanisms-focus-order: buttons carousels controls errors focus forms modals events navigation skip-to-content tab-order
@@ -39,13 +39,13 @@ navigation-mechanisms-descriptive: erors forms navigation
 navigation-mechanisms-focus-visible: controls focus navigation skip-to-content tab-order
 navigation-mechanisms-location: navigation
 navigation-mechanisms-link: buttons navigation
-navigation-mechanisms-headings:
-meaning-doc-lang-id:
-meaning-other-lang-id:
-meaning-idioms:
-meaning-located:
-meaning-supplements:
-meaning-pronunciation:
+# navigation-mechanisms-headings
+# meaning-doc-lang-id
+# meaning-other-lang-id
+# meaning-idioms
+# meaning-located
+# meaning-supplements
+# meaning-pronunciation
 consistent-behavior-receive-focus: controls forms events navigation
 consistent-behavior-unpredictable-change: controls forms events navigation
 consistent-behavior-consistent-locations: navigation
@@ -57,5 +57,5 @@ minimize-error-suggestions: controls errors focus forms
 minimize-error-reversible: errors forms
 minimize-error-context-help: errors
 minimize-error-reversible-all: errors forms
-ensure-compat-parses:
-ensure-compat-rsv:
+# ensure-compat-parses
+# ensure-compat-rsv
