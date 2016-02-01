@@ -1,28 +1,155 @@
 <div class="sbbox sbbox-default">
 <div class="sbbox-heading"><span>Tags</span> <button class="btn btn-info btn-sm" id="deselecttags" disabled><svg aria-hidden="true" class="i-close"><use xlink:href="{{ "/img/icons.svg" | prepend: site.baseurl }}#i-close"></use></svg> Clear tags</button></div>
 <div {% unless include.show %}hidden{% endunless %} class="sbbox-body {% if include.show %}collapsed in{% endif %}"  id="tags">
-{% for tg in site.data.tags-sc %}
-  {% assign tgs = tg[1] | split: " "%}
-  {% for tag in tgs %}
-    {% assign taglist = taglist | append: '||' | append: tag %}
-    {% assign tagcount.tag = tagcount.tag | plus:1 %}
-  {% endfor %}
-{% endfor %}
+
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Content Authoring
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        {% for tg in site.data.tags-content %}
+          {% assign tgss = tg[1] %}
+          {% assign tgs = tgss | split: " " %}
+          {% for tag in tgs %}
+            {% assign taglist = taglist | append: '||' | append: tag %}
+            {% assign tagcount.tag = tagcount.tag | plus:1 %}
+          {% endfor %}
+        {% endfor %}
 
 
-{% assign splittaglist = taglist | split: '||' | sort %}
+        {% assign splittaglist = taglist | split: '||' | sort %}
 
-{% assign currenttag = "" %}
-{% assign tagcount = 0 %}
-{% assign firsttag = true %}
-{% for tag in splittaglist %}
-  {% assign tagcount = tagcount | plus: 1 %}
-  {% unless currenttag == tag %}
-    {% assign currenttag = tag %}
-  	<button data-tag="{{tag}}" class="btn btn-default btn-sm">{{tag}}</button>
-    {% assign tagcount = 0 %}
-    {% assign firsttag = false %}
-  {% endunless %}
-{% endfor %}
+        {% assign currenttag = "" %}
+        {% assign tagcount = 0 %}
+        {% assign firsttag = true %}
+        {% for tag in splittaglist %}
+          {% assign tagcount = tagcount | plus: 1 %}
+          {% unless currenttag == tag %}
+            {% assign currenttag = tag %}
+            <button data-tag="{{tag}}" class="btn btn-default btn-sm">{{tag}}</button>
+            {% assign tagcount = 0 %}
+            {% assign firsttag = false %}
+          {% endunless %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Visual Design
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+        {% for tg in site.data.tags-visual %}
+          {% assign tgss = tg[1] %}
+          {% assign tgs = tgss | split: " " %}
+          {% for tag in tgs %}
+            {% assign taglist = taglist | append: '||' | append: tag %}
+            {% assign tagcount.tag = tagcount.tag | plus:1 %}
+          {% endfor %}
+        {% endfor %}
+
+
+        {% assign splittaglist = taglist | split: '||' | sort %}
+
+        {% assign currenttag = "" %}
+        {% assign tagcount = 0 %}
+        {% assign firsttag = true %}
+        {% for tag in splittaglist %}
+          {% assign tagcount = tagcount | plus: 1 %}
+          {% unless currenttag == tag %}
+            {% assign currenttag = tag %}
+            <button data-tag="{{tag}}" class="btn btn-default btn-sm">{{tag}}</button>
+            {% assign tagcount = 0 %}
+            {% assign firsttag = false %}
+          {% endunless %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Interaction Design
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+        {% for tg in site.data.tags-interaction %}
+          {% assign tgss = tg[1] %}
+          {% assign tgs = tgss | split: " " %}
+          {% for tag in tgs %}
+            {% assign taglist = taglist | append: '||' | append: tag %}
+            {% assign tagcount.tag = tagcount.tag | plus:1 %}
+          {% endfor %}
+        {% endfor %}
+
+
+        {% assign splittaglist = taglist | split: '||' | sort %}
+
+        {% assign currenttag = "" %}
+        {% assign tagcount = 0 %}
+        {% assign firsttag = true %}
+        {% for tag in splittaglist %}
+          {% assign tagcount = tagcount | plus: 1 %}
+          {% unless currenttag == tag %}
+            {% assign currenttag = tag %}
+            <button data-tag="{{tag}}" class="btn btn-default btn-sm">{{tag}}</button>
+            {% assign tagcount = 0 %}
+            {% assign firsttag = false %}
+          {% endunless %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          Developing
+        </a>
+      </h4>
+    </div>
+    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+      <div class="panel-body">
+        {% for tg in site.data.tags-developing %}
+          {% assign tgss = tg[1] %}
+          {% assign tgs = tgss | split: " " %}
+          {% for tag in tgs %}
+            {% assign taglist = taglist | append: '||' | append: tag %}
+            {% assign tagcount.tag = tagcount.tag | plus:1 %}
+          {% endfor %}
+        {% endfor %}
+
+        {% assign splittaglist = taglist | split: '||' | sort %}
+
+        {% assign currenttag = "" %}
+        {% assign tagcount = 0 %}
+        {% assign firsttag = true %}
+        {% for tag in splittaglist %}
+          {% assign tagcount = tagcount | plus: 1 %}
+          {% unless currenttag == tag %}
+            {% assign currenttag = tag %}
+            <button data-tag="{{tag}}" class="btn btn-default btn-sm">{{tag}}</button>
+            {% assign tagcount = 0 %}
+            {% assign firsttag = false %}
+          {% endunless %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 </div>
