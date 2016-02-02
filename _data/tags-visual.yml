@@ -19,7 +19,7 @@ visual-audio-contrast-text-presentation: contrast images-of-text text text-alter
 visual-audio-contrast7: color contrast images-of-text text
 # visual-audio-contrast-noaudio
 visual-audio-contrast-visual-presentation: color contrast layout structure text zoom
-visual-audio-contrast-text-images: contrast images images-of-text text text alternatives
+visual-audio-contrast-text-images: contrast images images-of-text text text-alternatives
 # keyboard-operation-keyboard-operable
 # keyboard-operation-trapping
 # keyboard-operation-all-funcs
