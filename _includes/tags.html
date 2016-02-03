@@ -2,17 +2,18 @@
 <div class="sbbox-heading"><span>Tags</span> <button class="btn btn-info btn-sm" id="deselecttags" disabled><svg aria-hidden="true" class="i-close"><use xlink:href="{{ "/img/icons.svg" | prepend: site.baseurl }}#i-close"></use></svg> Clear tags</button></div>
 <div {% unless include.show %}hidden{% endunless %} class="sbbox-body {% if include.show %}collapsed in{% endif %}"  id="tags">
 
-<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="false">
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingOne">
       <h4 class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" data-scope="content">
           Content Authoring
         </a>
       </h4>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
       <div class="panel-body" data-scope="content">
+        {% assign taglist = '' %}
         {% for tg in site.data.tags-content %}
           {% assign tgss = tg[1] %}
           {% assign tgs = tgss | split: " " %}
@@ -32,7 +33,7 @@
           {% assign tagcount = tagcount | plus: 1 %}
           {% unless currenttag == tag %}
             {% assign currenttag = tag %}
-            <button data-tag="{{tag}}" class="btn btn-default btn-sm">{{tag}}</button>
+            <button data-tag="{{tag}}" class="btn btn-default btn-xsm">{{tag | replace: '-',' ' }}</button>
             {% assign tagcount = 0 %}
             {% assign firsttag = false %}
           {% endunless %}
@@ -43,13 +44,14 @@
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingTwo">
       <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" data-scope="visual">
           Visual Design
         </a>
       </h4>
     </div>
     <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
       <div class="panel-body" data-scope="visual">
+        {% assign taglist = '' %}
         {% for tg in site.data.tags-visual %}
           {% assign tgss = tg[1] %}
           {% assign tgs = tgss | split: " " %}
@@ -69,7 +71,7 @@
           {% assign tagcount = tagcount | plus: 1 %}
           {% unless currenttag == tag %}
             {% assign currenttag = tag %}
-            <button data-tag="{{tag}}" class="btn btn-default btn-sm">{{tag}}</button>
+            <button data-tag="{{tag}}" class="btn btn-default btn-xsm">{{tag | replace: '-',' ' }}</button>
             {% assign tagcount = 0 %}
             {% assign firsttag = false %}
           {% endunless %}
@@ -80,13 +82,14 @@
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingThree">
       <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree" data-scope="interaction">
           Interaction Design
         </a>
       </h4>
     </div>
     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
       <div class="panel-body" data-scope="interaction">
+        {% assign taglist = '' %}
         {% for tg in site.data.tags-interaction %}
           {% assign tgss = tg[1] %}
           {% assign tgs = tgss | split: " " %}
@@ -106,7 +109,7 @@
           {% assign tagcount = tagcount | plus: 1 %}
           {% unless currenttag == tag %}
             {% assign currenttag = tag %}
-            <button data-tag="{{tag}}" class="btn btn-default btn-sm">{{tag}}</button>
+            <button data-tag="{{tag}}" class="btn btn-default btn-xsm">{{tag | replace: '-',' ' }}</button>
             {% assign tagcount = 0 %}
             {% assign firsttag = false %}
           {% endunless %}
@@ -117,13 +120,14 @@
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingThree">
       <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour" data-scope="developing">
           Developing
         </a>
       </h4>
     </div>
     <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
       <div class="panel-body" data-scope="developing">
+        {% assign taglist = '' %}
         {% for tg in site.data.tags-developing %}
           {% assign tgss = tg[1] %}
           {% assign tgs = tgss | split: " " %}
@@ -142,7 +146,7 @@
           {% assign tagcount = tagcount | plus: 1 %}
           {% unless currenttag == tag %}
             {% assign currenttag = tag %}
-            <button data-tag="{{tag}}" class="btn btn-default btn-sm">{{tag}}</button>
+            <button data-tag="{{tag}}" class="btn btn-default btn-xsm">{{tag | replace: '-',' ' }}</button>
             {% assign tagcount = 0 %}
             {% assign firsttag = false %}
           {% endunless %}
