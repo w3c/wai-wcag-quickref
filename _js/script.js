@@ -148,13 +148,14 @@ jQuery(document).ready(function($) {
   function applyTagsAndLevelsToSC() {
     var pressed = $('#tags .btn-primary');
     var uncheckedLevels = $('#filter-levels input:not(:checked)');
+    var currentscope = $("#tags a[aria-expanded=true]").data('scope');
     $('.sc-wrapper').addClass('current');
-    if (pressed.length>0) {
+    if ((pressed.length>0) && currentscope) {
       var tags = new Array();
       $('#tags .btn-primary').each(function(index, el) {
         tags.push($(el).attr('data-tag'));
       });
-      var selector = '.sc-wrapper[data-tags~="' + tags.join('"], .sc-wrapper[data-tags~="') + '"]';
+      var selector = '.sc-wrapper[data-tags-' + currentscope + '~="' + tags.join('"], .sc-wrapper[data-tags' + currentscope + '~="') + '"]';
       $('.sc-wrapper').removeClass('current');
       $(selector).addClass('current');
       $('#deselecttags').prop('disabled', false);
