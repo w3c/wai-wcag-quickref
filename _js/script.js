@@ -265,14 +265,17 @@ jQuery(document).ready(function($) {
   function saveURL() {
     var location = window.history.location || window.location,
         uri = new URI(location);
-    var tags = new Array();
-    $('#tags .btn-primary').each(function(index, el) {
-      tags.push($(el).data('tag'));
+    $('#tags .panel-body').each(function(index, elm){
+      var tags = new Array();
+      var scope = $(elm).data('scope');
+      $(elm).find('.btn-primary').each(function(jndex, el) {
+        tags.push($(el).data('tag'));
+      });
+      uri.removeSearch('tags-' + scope);
+      if (tags.length>0) {
+        uri.setSearch('tags-' + scope, tags.join(','));
+      }
     });
-    uri.removeSearch('tags');
-    if (tags.length>0) {
-      uri.setSearch('tags', tags.join(','));
-    }
 
     $('#filters .sbbox').each(function(index, el){
       var filter = new Array();
