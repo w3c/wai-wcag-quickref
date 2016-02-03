@@ -649,6 +649,22 @@ jQuery(document).ready(function($) {
     $('#sharethisviewbutton').focus();
   });
 
+  function disableUnusedAccodionPanels(event) {
+    event.stopPropagation();
+    event.preventDefault();
+  }
+
+  function enableUnusedAccodionPanels(event) {
+    $('#accordion .panel-title a[aria-expanded=false]').removeClass('disabled').off('click', disableUnusedAccodionPanels);
+    $('#accordion .panel-title a[aria-expanded=true] ').off('click', enableUnusedAccodionPanels );
+  }
+
+  //enable/disable used/unused tag tabs
+  $('#accordion').on('shown.bs.collapse', function (event) {
+    $('#accordion .panel-title a[aria-expanded=false]').addClass('disabled').on('click', disableUnusedAccodionPanels);
+    $('#accordion .panel-title a[aria-expanded=true] ').on('click', enableUnusedAccodionPanels );
+  });
+
   $(window).on('popstate', function(event) {
     applyurl();
   });
