@@ -20,9 +20,9 @@ visual-audio-contrast7: buttons errors focus forms navigation
 visual-audio-contrast-noaudio: audio autoplay controls streaming CAPTCHA
 visual-audio-contrast-visual-presentation: controls
 visual-audio-contrast-text-images: buttons
-keyboard-operation-keyboard-operable: autoplay buttons carousels controls errors focus forms events navigation streaming vido tab-order skip-to-content
-keyboard-operation-trapping: autoplay buttons carousels controls errors focus forms events navigation streaming vido tab-order skip-to-content
-keyboard-operation-all-funcs: autoplay buttons carousels controls errors focus forms events navigation streaming vido tab-order skip-to-content
+keyboard-operation-keyboard-operable: autoplay buttons carousels controls errors focus forms events navigation streaming video tab-order skip-to-content
+keyboard-operation-trapping: autoplay buttons carousels controls errors focus forms events navigation streaming video tab-order skip-to-content
+keyboard-operation-all-funcs: autoplay buttons carousels controls errors focus forms events navigation streaming video tab-order skip-to-content
 time-limits-required-behaviors: controls time-limits
 time-limits-pause: audio autoplay carousels changing-content controls video time-limits
 time-limits-no-exceptions: controls time-limits

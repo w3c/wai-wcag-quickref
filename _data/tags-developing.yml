@@ -35,7 +35,7 @@ navigation-mechanisms-title: page-title
 navigation-mechanisms-focus-order: errors focus forms keyboard links menus events
 navigation-mechanisms-refs: links menus
 navigation-mechanisms-mult-loc: menus
-navigation-mechanisms-descriptive: errors forms headings labels menus tabels
+navigation-mechanisms-descriptive: errors forms headings labels menus tables
 navigation-mechanisms-focus-visible: controls focus keyboard menus
 navigation-mechanisms-location: menus
 navigation-mechanisms-link: menus links
