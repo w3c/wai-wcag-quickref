@@ -735,6 +735,10 @@ div.understanding {
     &.disabled {
       color: #333;
       opacity: .65;
+      + button {
+        color: #333;
+        opacity: .65;
+      }
     }
     &:before {
       content: ' ▶︎';
@@ -892,4 +896,20 @@ button.panel-heading {
     border-radius: 2px;
 }
 
+#accordion .panel-title {
+  font-style: 1em;
+  font-family: $font-family-sans-serif;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  button {
+    padding: 3px;
+    margin-bottom: 0;
+    flex-grow: 0;
+  }
+  .btn[disabled] {
+    opacity: .85 !important;
+    text-decoration: line-through !important;
+  }
+}
 @import "print";
