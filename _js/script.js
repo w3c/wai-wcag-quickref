@@ -167,9 +167,9 @@ jQuery(document).ready(function($) {
       var selector = '.sc-wrapper[data-tags-' + currentscope + '~="' + tags.join('"], .sc-wrapper[data-tags' + currentscope + '~="') + '"]';
       $('.sc-wrapper').removeClass('current');
       $(selector).addClass('current');
-      $('#deselecttags').prop('disabled', false);
+      $('[aria-expanded=true] + .cleartags').prop('disabled', false);
     } else {
-      $('#deselecttags').prop('disabled', true);
+      $('.cleartags').prop('disabled', true);
     }
 
 
@@ -539,10 +539,10 @@ jQuery(document).ready(function($) {
       $('.navrow.fixedsticky').fixedsticky();
     }
 
-    $('#deselecttags').on('click', function(event) {
+    $('.cleartags').on('click', function(event) {
       event.preventDefault();
       /* Act on the event */
-      $('#tags .btn-primary').removeClass('btn-primary').addClass('btn-default').removeAttr('aria-selected');
+      $('#tags .collapse.in .btn-primary').removeClass('btn-primary').addClass('btn-default').removeAttr('aria-selected');
       applyTechnologies();
       applyTagsAndLevelsToSC();
       statustext();
