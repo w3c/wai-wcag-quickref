@@ -35,7 +35,7 @@ navigation-mechanisms-title: navigation
 navigation-mechanisms-focus-order: buttons carousels controls errors focus forms modals events navigation skip-to-content tab-order
 navigation-mechanisms-refs: buttons navigation
 navigation-mechanisms-mult-loc: navigation
-navigation-mechanisms-descriptive: erors forms navigation
+navigation-mechanisms-descriptive: errors forms navigation
 navigation-mechanisms-focus-visible: controls focus navigation skip-to-content tab-order
 navigation-mechanisms-location: navigation
 navigation-mechanisms-link: buttons navigation
