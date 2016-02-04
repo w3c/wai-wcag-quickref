@@ -30,10 +30,10 @@ var jsdir = "_js/*.js";
 gulp.task('js', function () {
     return gulp.src(['_js/jquery.min.js', '_js/svg4everybody.js', '_js/bootstrap.js', '_js/uri.js', '_js/history.js', '_js/fixedsticky.jquery.js', '_js/sharebox.js', '_js/loadcss.js', '_js/script.js'])
         .pipe(plumber())
-        //.pipe(sourcemaps.init())
+        .pipe(sourcemaps.init())
         .pipe(concat('script.js', {newline: ';'}))
         .pipe(uglify())
-        //.pipe(sourcemaps.write('.'))
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('./js/'));
 });
 
