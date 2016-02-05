@@ -169,11 +169,9 @@ jQuery(document).ready(function($) {
     $('.sc-wrapper').addClass('current');
     if ((pressed.length>0) && currentscope) {
       var tags = [];
-      console.log('before tag collection');
       $('#tags .btn-primary').each(function(index, el) {
         tags.push($(el).attr('data-tag'));
       });
-      console.log('after tag collection');
       var selector = '.sc-wrapper[data-tags-' + currentscope + '~="' + tags.join('"], .sc-wrapper[data-tags-' + currentscope + '~="') + '"]';
       $('.sc-wrapper').removeClass('current');
       $(selector).addClass('current');
