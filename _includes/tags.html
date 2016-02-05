@@ -33,7 +33,7 @@
           {% assign tagcount = tagcount | plus: 1 %}
           {% unless currenttag == tag %}
             {% assign currenttag = tag %}
-            <button data-tag="{{tag}}" class="btn btn-default btn-xsm">{{tag | replace: '-',' ' }}</button>
+            <button data-tag="{{tag}}" class="btn btn-default btn-sm">{{tag | replace: '-',' ' }}</button>
             {% assign tagcount = 0 %}
             {% assign firsttag = false %}
           {% endunless %}
@@ -72,7 +72,7 @@
           {% assign tagcount = tagcount | plus: 1 %}
           {% unless currenttag == tag %}
             {% assign currenttag = tag %}
-            <button data-tag="{{tag}}" class="btn btn-default btn-xsm">{{tag | replace: '-',' ' }}</button>
+            <button data-tag="{{tag}}" class="btn btn-default btn-sm">{{tag | replace: '-',' ' }}</button>
             {% assign tagcount = 0 %}
             {% assign firsttag = false %}
           {% endunless %}
@@ -111,7 +111,7 @@
           {% assign tagcount = tagcount | plus: 1 %}
           {% unless currenttag == tag %}
             {% assign currenttag = tag %}
-            <button data-tag="{{tag}}" class="btn btn-default btn-xsm">{{tag | replace: '-',' ' }}</button>
+            <button data-tag="{{tag}}" class="btn btn-default btn-sm">{{tag | replace: '-',' ' }}</button>
             {% assign tagcount = 0 %}
             {% assign firsttag = false %}
           {% endunless %}
@@ -150,7 +150,7 @@
           {% assign tagcount = tagcount | plus: 1 %}
           {% unless currenttag == tag %}
             {% assign currenttag = tag %}
-            <button data-tag="{{tag}}" class="btn btn-default btn-xsm">{{tag | replace: '-',' ' }}</button>
+            <button data-tag="{{tag}}" class="btn btn-default btn-sm">{{tag | replace: '-',' ' }}</button>
             {% assign tagcount = 0 %}
             {% assign firsttag = false %}
           {% endunless %}
