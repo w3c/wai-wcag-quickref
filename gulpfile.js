@@ -20,7 +20,7 @@ gulp.task('scss', function () {
         .pipe(pxtorem())
         //.pipe(concat('styles.css'))
         .pipe(gulp.dest('./css/'))
-        .pipe(cssnano())
+        .pipe(cssnano({safe: true}))
         //.pipe(concat('styles.min.css'))
         //.pipe(sourcemaps.write())
         .pipe(gulp.dest('./css/'));
