@@ -58,7 +58,6 @@ window.matchMedia || (window.matchMedia = function() {
     };
 }());
 
-
 jQuery(document).ready(function($) {
 
   function array2prose(array, andor) {
@@ -68,7 +67,7 @@ jQuery(document).ready(function($) {
       var o = [];
       for (var i = array.length - 2; i >= 0; i--) {
         o[i] = $.trim(array[i]);
-      };
+      }
       return o.join(', ') + ', ' + andor + ' ' + $.trim(array[array.length - 1]);
     }
   }
@@ -103,28 +102,28 @@ jQuery(document).ready(function($) {
     $('#tags .btn').removeClass('btn-primary').addClass('btn-default').removeAttr('aria-selected');
     if (data.tagscontent) {
       $('[data-scope=content] [data-tag="' + data.tagscontent.split(',').join('"], [data-scope=content] [data-tag="') + '"]').addClass('btn-primary').removeClass('btn-default').attr('aria-selected', true);
-    };
+    }
     if (data.tagsvisual) {
       $('[data-scope=visual] [data-tag="' + data.tagsvisual.split(',').join('"], [data-scope=visual] [data-tag="') + '"]').addClass('btn-primary').removeClass('btn-default').attr('aria-selected', true);
-    };
+    }
     if (data.tagsinteraction) {
       $('[data-scope=interaction] [data-tag="' + data.tagsinteraction.split(',').join('"], [data-scope=interaction] [data-tag="') + '"]').addClass('btn-primary').removeClass('btn-default').attr('aria-selected', true);
-    };
+    }
     if (data.tagsdeveloping) {
       $('[data-scope=developing] [data-tag="' + data.tagsdeveloping.split(',').join('"], [data-scope=developing] [data-tag="') + '"]').addClass('btn-primary').removeClass('btn-default').attr('aria-selected', true);
-    };
+    }
     if (data.levels) {
       $('#filter-levels input').prop('checked', true);
       $('#filter-levels input[value="' + data.levels.split(',').join('"], #filter-levels input[value="') + '"]').prop('checked', false);
-    };
+    }
     if (data.technologies) {
       $('#filter-technologies input').prop('checked', true);
       $('#filter-technologies input[value="' + data.technologies.split(',').join('"], #filter-technologies input[value="') + '"]').prop('checked', false);
-    };
+    }
     if (data.techniques) {
       $('#filter-techniques input').prop('checked', true);
       $('#filter-techniques input[value="' + data.techniques.split(',').join('"], #filter-techniques input[value="') + '"]').prop('checked', false);
-    };
+    }
     if (data.showtechniques) {
       $('.btn-techniques').each(function(index, el) {
         var btn = $(el);
@@ -136,7 +135,7 @@ jQuery(document).ready(function($) {
         btn.attr('aria-expanded', true);
         $('#'+btn.attr('aria-controls')).addClass('in');
       });
-    };
+    }
     applyTechnologies();
     applyTagsAndLevelsToSC();
     if (uri.hash()) {
@@ -148,7 +147,7 @@ jQuery(document).ready(function($) {
     var location = window.history.location || window.location;
     var uri = new URI(location);
     var url = localStorage.getItem('url-' + uri.filename());
-    if (uri.search()=="" && url!=="") {
+    if ((uri.search()==="") && (url!=="")) {
       history.replaceState(null, null, url);
     }
     applyurl();
@@ -160,10 +159,12 @@ jQuery(document).ready(function($) {
     var currentscope = $("#tags a[aria-expanded=true]").data('scope');
     $('.sc-wrapper').addClass('current');
     if ((pressed.length>0) && currentscope) {
-      var tags = new Array();
+      var tags = [];
+      console.log('before tag collection');
       $('#tags .btn-primary').each(function(index, el) {
         tags.push($(el).attr('data-tag'));
       });
+      console.log('after tag collection');
       var selector = '.sc-wrapper[data-tags-' + currentscope + '~="' + tags.join('"], .sc-wrapper[data-tags-' + currentscope + '~="') + '"]';
       $('.sc-wrapper').removeClass('current');
       $(selector).addClass('current');
@@ -215,7 +216,7 @@ jQuery(document).ready(function($) {
     if($('.sc-wrapper:not(.current)').length > 0) {
       $('#hiddensc').empty();
       $('<div class="panel-heading"><h2 style="margin: 0;">Filtered Success Criteria <button class="clearall btn btn-info btn-sm" hidden="" style="display: inline-block;"><span class="glyphicon glyphicon-refresh"></span> Clear filters</button></h2></div><div class="panel-body"><p><strong>The following success critera are not shown based on the selected tags and/or filters:</strong></p></div>').appendTo('#hiddensc');
-      $('<div class="panel-body hiddensc-inner">').appendTo('#hiddensc')
+      $('<div class="panel-body hiddensc-inner">').appendTo('#hiddensc');
       var hiddenscul = $('<ul>');
       $('.sc-wrapper:not(.current) h4'). each(function(index, el) {
         hiddenscul.append('<li>' + $(el).find('> strong').text() + ' ' + $(el).find('> span').text() + '</li>').appendTo('#hiddensc .hiddensc-inner');
@@ -230,7 +231,7 @@ jQuery(document).ready(function($) {
 
   function applyTechnologies() {
     $('[class*=filter-tech]').show();
-    var technologies = new Array();
+    var technologies = [];
     var uncheckedTechnologies = $('#filter-technologies input:not(:checked)');
     if (uncheckedTechnologies.length>0) {
       uncheckedTechnologies.each(function(index, el) {
@@ -248,20 +249,20 @@ jQuery(document).ready(function($) {
 
   function applyTechniques() {
     var techniques = $('#filter-techniques-content');
-    var tselected = new Array(), tunselected = new Array();
+    var tselected = [], tunselected = [];
     var checked =  techniques.find('input:checked');
     for (var i = checked.length - 1; i >= 0; i--) {
       tselected.push($(checked[i]).val());
-    };
+    }
     var selector = '.techniques-button input[name$="' + tselected.join('"], .techniques-button input[name$="') + '"]';
     var selector2 = '.tbox-' + tselected.join(', .tbox-') + '';
     $(selector).prop('checked', true);
     $(selector2).addClass('active');
     var unchecked =  techniques.find('input:not(:checked)');
     if (unchecked.length>0) {
-      for (var i = unchecked.length - 1; i >= 0; i--) {
+      for (var j = unchecked.length - 1; j >= 0; j--) {
         tunselected.push($(unchecked[i]).val());
-      };
+      }
       selector = '.techniques-button input[name$="' + tunselected.join('"], .techniques-button input[name$="') + '"]';
       selector2 = '.tbox-' + tunselected.join(', .tbox-') + '';
       $(selector).prop('checked', false);
@@ -276,7 +277,7 @@ jQuery(document).ready(function($) {
     var location = window.history.location || window.location,
         uri = new URI(location);
     $('#tags .panel-body').each(function(index, elm){
-      var tags = new Array();
+      var tags = [];
       var scope = $(elm).data('scope');
       $(elm).find('.btn-primary').each(function(jndex, el) {
         tags.push($(el).data('tag'));
@@ -288,7 +289,7 @@ jQuery(document).ready(function($) {
     });
 
     $('#filters .sbbox').each(function(index, el){
-      var filter = new Array();
+      var filter = [];
       $(el).find('input:not(:checked)').each(function(index, el) {
         filter.push($(el).val());
       });
@@ -377,8 +378,8 @@ jQuery(document).ready(function($) {
 
   var statustext = function(){
     statusanimation();
-    var tags = new Array(),
-        htags = new Array(),
+    var tags = [],
+        htags = [],
         sctext = "all success criteria",
         sctext1 = "",
         sctexthidden1 = "",
@@ -400,8 +401,8 @@ jQuery(document).ready(function($) {
         sctexthidden1 = ' <span class="deem">(Hidden: '+ array2prose(htags, 'and')+ ')</span>';
       }
     }
-    var levels = new Array(),
-        hlevels = new Array();
+    var levels = [],
+        hlevels = [];
     var selected = $('#filter-levels input:checked'),
         nselected = $('#filter-levels input:not(:checked)'),
         all = $('#filter-levels input');
@@ -410,7 +411,7 @@ jQuery(document).ready(function($) {
         levels.push($(el).attr('value').toUpperCase());
       });
       sctext2 = ' for levels '+array2prose(levels, 'and');
-    };
+    }
     if (nselected.length>0) {
       nselected.each(function(index, el) {
         hlevels.push($(el).attr('value').toUpperCase());
@@ -419,9 +420,9 @@ jQuery(document).ready(function($) {
     }
     if ((pressed.length>0) || (selected.length<all.length)) {
       sctext = 'success criteria ' + sctext1 + sctexthidden1 + sctext2 + sctexthidden2;
-    };
-    var technologies = new Array(),
-        htechnologies = new Array();
+    }
+    var technologies = [],
+        htechnologies = [];
     var selectedtechnologies = $('#filter-technologies input:checked'),
         nselectedtechnologies = $('#filter-technologies input:not(:checked)'),
         alltechnologies = $('#filter-technologies input');
@@ -430,13 +431,13 @@ jQuery(document).ready(function($) {
         technologies.push($(el).parent().text());
       });
       techtext = ' techniques for the following technologies: '+array2prose(technologies, 'and');
-    };
+    }
     if (nselectedtechnologies.length>0) {
       nselectedtechnologies.each(function(index, el) {
         htechnologies.push($(el).parent().text());
       });
       techtexthidden = ' <span class="deem">(Hidden: '+array2prose(htechnologies, 'and')+')</span>';
-    };
+    }
     $('#status .sc').html(sctext);
     $('#status .tech').html(techtext + techtexthidden);
     if (techtext == "all techniques" && sctext == "all success criteria") {
@@ -450,13 +451,13 @@ jQuery(document).ready(function($) {
 
   $('#tags').on('click', 'button', function(e) {
     statusanimation();
-    var button = $(e.target), tags = new Array();
+    var button = $(e.target), tags = [];
     if (button.hasClass('btn-primary')) {
       button.removeClass('btn-primary').addClass('btn-default').removeAttr('aria-selected');
     } else {
       button.removeClass('btn-default').addClass('btn-primary').attr('aria-selected','true');
     }
-    applyTagsAndLevelsToSC()
+    applyTagsAndLevelsToSC();
   });
 
 
@@ -493,7 +494,7 @@ jQuery(document).ready(function($) {
     $('#showsidebars').on('click', function () {
       var location = window.history.location || window.location;
       var uri = new URI(location);
-      uri.removeSearch("hidesidebar")
+      uri.removeSearch("hidesidebar");
       $('.sidebar').show();
       $('.navrow').removeClass('sidebar-hidden');
       $('#showsidebars').hide();
@@ -554,7 +555,7 @@ jQuery(document).ready(function($) {
     $('body').scrollspy({
       target: '.overview.spy-active',
       offset: 45
-    })
+    });
 
     // Use WOFF2 if supported
     if( supportsWoff2 ) {
@@ -575,12 +576,12 @@ jQuery(document).ready(function($) {
       $('[name="filter-techniques"][value="' + type + '"]').prop('indeterminate', true);
     } else {
       $('[name="filter-techniques"][value="' + type + '"]').prop('indeterminate', false);
-      if ($('.techniques-button input[name$="' + type + '"]:checked').length == 0) {
+      if ($('.techniques-button input[name$="' + type + '"]:checked').length === 0) {
         $('[name="filter-techniques"][value="' + type + '"]').removeProp('checked');
-      };
-      if ($('.techniques-button input[name$="' + type + '"]:not(:checked)').length == 0) {
+      }
+      if ($('.techniques-button input[name$="' + type + '"]:not(:checked)').length === 0) {
         $('[name="filter-techniques"][value="' + type + '"]').prop('checked', "checked");
-      };
+      }
     }
     if(target.is(':checked')) {
       $('#' + target.prop('name')).addClass('active');
@@ -594,7 +595,7 @@ jQuery(document).ready(function($) {
         cntrls = target.attr('aria-controls'),
         location = window.history.location || window.location,
         uri = new URI(location),
-        urltags = new Array();
+        urltags = [];
     $('.btn-techniques[aria-expanded="true"]').each(function(index, el) {
       urltags.push($(el).attr('aria-controls'));
     });
@@ -606,7 +607,7 @@ jQuery(document).ready(function($) {
         if (urltags[i] == cntrls) {
           urltags.splice(i, 1);
         }
-      };
+      }
     }
     if (urltags.length > 0) {
       uri.setSearch('showtechniques', urltags.join(',').replace(/techniques-/gi, "") + '');
