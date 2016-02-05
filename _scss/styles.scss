@@ -902,6 +902,9 @@ button.panel-heading {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
+  a.disabled {
+    cursor: not-allowed;
+  }
   button {
     padding: 3px;
     margin-bottom: 0;
