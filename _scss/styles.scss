@@ -908,8 +908,7 @@ button.panel-heading {
     flex-grow: 0;
   }
   .btn[disabled] {
-    opacity: .85 !important;
-    text-decoration: line-through !important;
+    display:none;
   }
 }
 @import "print";
