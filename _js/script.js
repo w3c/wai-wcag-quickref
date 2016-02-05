@@ -99,19 +99,28 @@ jQuery(document).ready(function($) {
       $('a[href=' + data.currentsidebar + ']').trigger('click');
     }
 
-    $('#tags .btn').removeClass('btn-primary').addClass('btn-default').removeAttr('aria-selected');
-    if (data.tagscontent) {
-      $('[data-scope=content] [data-tag="' + data.tagscontent.split(',').join('"], [data-scope=content] [data-tag="') + '"]').addClass('btn-primary').removeClass('btn-default').attr('aria-selected', true);
+    if (data.tagscontent || data.tagsvisual || data.tagsinteraction || data.tagsdeveloping) {
+      $('#tags .btn').removeClass('btn-primary').addClass('btn-default').removeAttr('aria-selected');
+      if (data.tagscontent) {
+        $('[data-scope=content] [data-tag="' + data.tagscontent.split(',').join('"], [data-scope=content] [data-tag="') + '"]').addClass('btn-primary').removeClass('btn-default').attr('aria-selected', true);
+        $('#collapseOne').collapse('show');
+      }
+      if (data.tagsvisual) {
+        $('[data-scope=visual] [data-tag="' + data.tagsvisual.split(',').join('"], [data-scope=visual] [data-tag="') + '"]').addClass('btn-primary').removeClass('btn-default').attr('aria-selected', true);
+        $('#collapseTwo').collapse('show');
+      }
+      if (data.tagsinteraction) {
+        $('[data-scope=interaction] [data-tag="' + data.tagsinteraction.split(',').join('"], [data-scope=interaction] [data-tag="') + '"]').addClass('btn-primary').removeClass('btn-default').attr('aria-selected', true);
+        $('#collapseThree').collapse('show');
+      }
+      if (data.tagsdeveloping) {
+        $('[data-scope=developing] [data-tag="' + data.tagsdeveloping.split(',').join('"], [data-scope=developing] [data-tag="') + '"]').addClass('btn-primary').removeClass('btn-default').attr('aria-selected', true);
+        $('#collapseFour').collapse('show');
+      }
+      $('#accordion .panel-title a[aria-expanded=false]').addClass('disabled');
+      $('#accordion .panel-title a').on('click', disableUnusedAccodionPanels);
     }
-    if (data.tagsvisual) {
-      $('[data-scope=visual] [data-tag="' + data.tagsvisual.split(',').join('"], [data-scope=visual] [data-tag="') + '"]').addClass('btn-primary').removeClass('btn-default').attr('aria-selected', true);
-    }
-    if (data.tagsinteraction) {
-      $('[data-scope=interaction] [data-tag="' + data.tagsinteraction.split(',').join('"], [data-scope=interaction] [data-tag="') + '"]').addClass('btn-primary').removeClass('btn-default').attr('aria-selected', true);
-    }
-    if (data.tagsdeveloping) {
-      $('[data-scope=developing] [data-tag="' + data.tagsdeveloping.split(',').join('"], [data-scope=developing] [data-tag="') + '"]').addClass('btn-primary').removeClass('btn-default').attr('aria-selected', true);
-    }
+
     if (data.levels) {
       $('#filter-levels input').prop('checked', true);
       $('#filter-levels input[value="' + data.levels.split(',').join('"], #filter-levels input[value="') + '"]').prop('checked', false);
