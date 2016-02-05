@@ -171,6 +171,7 @@ jQuery(document).ready(function($) {
       $('[aria-expanded=true] + .cleartags').prop('disabled', false);
     } else {
       $('.cleartags').prop('disabled', true);
+      enableUnusedAccodionPanels();
     }
 
 
@@ -456,6 +457,8 @@ jQuery(document).ready(function($) {
       button.removeClass('btn-primary').addClass('btn-default').removeAttr('aria-selected');
     } else {
       button.removeClass('btn-default').addClass('btn-primary').attr('aria-selected','true');
+      $('#accordion .panel-title a[aria-expanded=false]').addClass('disabled');
+      $('#accordion .panel-title a').on('click', disableUnusedAccodionPanels);
     }
     applyTagsAndLevelsToSC();
   });
@@ -666,14 +669,14 @@ jQuery(document).ready(function($) {
   }
 
   function enableUnusedAccodionPanels(event) {
-    $('#accordion .panel-title a[aria-expanded=false]').removeClass('disabled').off('click', disableUnusedAccodionPanels);
-    $('#accordion .panel-title a[aria-expanded=true] ').off('click', enableUnusedAccodionPanels );
+    $('#accordion .panel-title a').removeClass('disabled').off('click', disableUnusedAccodionPanels);
+    //$('#accordion .panel-title a[aria-expanded=true] ').off('click', enableUnusedAccodionPanels );
   }
 
   //enable/disable used/unused tag tabs
   $('#accordion').on('shown.bs.collapse', function (event) {
-    $('#accordion .panel-title a[aria-expanded=false]').addClass('disabled').on('click', disableUnusedAccodionPanels);
-    $('#accordion .panel-title a[aria-expanded=true] ').on('click', enableUnusedAccodionPanels );
+    // $('#accordion .panel-title a[aria-expanded=false]').addClass('disabled');
+    // $('#accordion .panel-title a').on('click', disableUnusedAccodionPanels);
   });
 
   $(window).on('popstate', function(event) {
