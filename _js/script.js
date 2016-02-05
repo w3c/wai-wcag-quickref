@@ -670,14 +670,7 @@ jQuery(document).ready(function($) {
 
   function enableUnusedAccodionPanels(event) {
     $('#accordion .panel-title a').removeClass('disabled').off('click', disableUnusedAccodionPanels);
-    //$('#accordion .panel-title a[aria-expanded=true] ').off('click', enableUnusedAccodionPanels );
   }
-
-  //enable/disable used/unused tag tabs
-  $('#accordion').on('shown.bs.collapse', function (event) {
-    // $('#accordion .panel-title a[aria-expanded=false]').addClass('disabled');
-    // $('#accordion .panel-title a').on('click', disableUnusedAccodionPanels);
-  });
 
   $(window).on('popstate', function(event) {
     applyurl();
