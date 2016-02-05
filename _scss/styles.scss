@@ -896,22 +896,36 @@ button.panel-heading {
     border-radius: 2px;
 }
 
-#accordion .panel-title {
-  font-style: 1em;
-  font-family: $font-family-sans-serif;
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  a.disabled {
-    cursor: not-allowed;
+#accordion {
+  .panel {
+    margin-top: 0;
+    &:first-child{
+      border-radius: 2px 2px 0 0;
+    }
+    &:last-child {
+      border-radius: 0 0 2px 2px;
+    }
   }
-  button {
-    padding: 3px;
-    margin-bottom: 0;
-    flex-grow: 0;
+  .panel-heading {
+    border-radius: 0;
   }
-  .btn[disabled] {
-    display:none;
+  .panel-title {
+    font-style: 1em;
+    font-family: $font-family-sans-serif;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    a.disabled {
+      cursor: not-allowed;
+    }
+    button {
+      padding: 3px;
+      margin-bottom: 0;
+      flex-grow: 0;
+    }
+    .btn[disabled] {
+      display:none;
+    }
   }
 }
 @import "print";
