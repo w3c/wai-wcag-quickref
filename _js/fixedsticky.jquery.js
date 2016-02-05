@@ -1,3 +1,12 @@
+/*!
+Fixed-Sticky
+https://github.com/filamentgroup/fixed-sticky
+
+The MIT License (MIT)
+
+Copyright (c) 2013 Filament Group
+*/
+
 ;(function( win, $ ) {
 
   function featureTest( property, value, noPrefixes ) {
