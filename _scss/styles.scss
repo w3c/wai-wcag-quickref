@@ -333,10 +333,6 @@ header[role=banner] {
   }
 }
 
-.sidebar-content {
-  overflow-y: scroll;
-}
-
 .nav-overview {
   .principle {
     font-weight: bold;
@@ -910,7 +906,7 @@ button.panel-heading {
     border-radius: 0;
   }
   .panel-title {
-    font-style: 1em;
+    font-size: .875rem;
     font-family: $font-family-sans-serif;
     display: flex;
     align-items: baseline;
