@@ -1,8 +1,34 @@
 <div class="sbbox sbbox-default">
-<div class="sbbox-heading"><span>Tags</span> <!--<button class="btn btn-info btn-sm" id="deselecttags" disabled><svg aria-hidden="true" class="i-close"><use xlink:href="{{ "/img/icons.svg" | prepend: site.baseurl }}#i-close"></use></svg> Clear tags</button>--></div>
-<div {% unless include.show %}hidden{% endunless %} class="sbbox-body {% if include.show %}collapsed in{% endif %}"  id="tags">
+<div class="sbbox-heading"><span>Tags</span> <button class="btn btn-info btn-sm" id="deselecttags" disabled><svg aria-hidden="true" class="i-close"><use xlink:href="{{ "/img/icons.svg" | prepend: site.baseurl }}#i-close"></use></svg> Clear tags</button></div>
+<div class="sbbox-body" id="audiences">
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" name="audiences" value="dev" checked> Developing
+    </label>
+    <button class="btn btn-default btn-xs btn-only" title="Show only tags for Developing" aria-label="Show only tags for Developing" data-value="cbdev">only</button>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" name="audiences" value="int" checked> Interaction Design
+    </label>
+    <button class="btn btn-default btn-xs btn-only" title="Show only tags for Interaction Design" aria-label="Show only tags for Interaction Design" data-value="cbint">only</button>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" name="audiences" value="con" checked> Content Creation
+    </label>
+    <button class="btn btn-default btn-xs btn-only" title="Show only tags for Content Creation" aria-label="Show only tags for Content Creation" data-value="cbcon">only</button>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" name="audiences" value="vis" checked> Visual Design
+    </label>
+    <button class="btn btn-default btn-xs btn-only" title="Show only tags for Visual Design" aria-label="Show only tags for Visual Design" data-value="cbvis">only</button>
+  </div>
+</div>
+<div {% unless include.show %}hidden{% endunless %} class="sbbox-body {% if include.show %}collapsed in{% endif %}" id="tags">
 
-<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="false">
+{% comment %}<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="false">
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingFour">
       <h4 class="panel-title">
@@ -14,31 +40,96 @@
     </div>
     <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
       <div class="panel-body" data-scope="developing">
-        {% assign taglist = '' %}
-        {% for tg in site.data.tags-developing %}
-          {% assign tgss = tg[1] %}
-          {% assign tgs = tgss | split: " " %}
-          {% for tag in tgs %}
-            {% assign taglist = taglist | append: '||' | append: tag %}
-            {% assign tagcount.tag = tagcount.tag | plus:1 %}
-          {% endfor %}
+      {% endcomment %}
+        {% assign alltags = site.data.tags-sc %}
+        {% assign metataglist = '' %}
+        {% assign taglistDev = '' %}
+        {% assign taglistCon = '' %}
+        {% assign taglistVis = '' %}
+        {% assign taglistInt = '' %}
+        {% for tg in alltags %}
+
+          {% assign tgssCon = tg[1].con %}
+          {% if tgssCon %}
+            {% assign tgsCon = tgssCon | split: " " %}
+            {% for tag in tgsCon %}
+              {% assign taglistCon = taglistCon | append: '||' | append: tag %}
+            {% endfor %}
+          {% endif %}
+
+          {% assign tgssDev = tg[1].dev %}
+          {% if tgssDev %}
+            {% assign tgsDev = tgssDev | split: " " %}
+            {% for tag in tgsDev %}
+              {% assign taglistDev = taglistDev | append: '||' | append: tag %}
+            {% endfor %}
+          {% endif %}
+
+          {% assign tgssVis = tg[1].vis %}
+          {% if tgssVis %}
+            {% assign tgsVis = tgssVis | split: " " %}
+            {% for tag in tgsVis %}
+              {% assign taglistVis = taglistVis | append: '||' | append: tag %}
+            {% endfor %}
+          {% endif %}
+
+          {% assign tgssInt = tg[1].int %}
+          {% if tgssInt %}
+            {% assign tgsInt = tgssInt | split: " " %}
+            {% for tag in tgsInt %}
+              {% assign taglistInt = taglistInt | append: '||' | append: tag %}
+            {% endfor %}
+          {% endif %}
+
         {% endfor %}
 
-        {% assign splittaglist = taglist | split: '||' | sort %}
+        {% assign taglist = taglistCon | append: '||' | append: taglistDev | append: '||' | append: taglistVis | append: '||' | append: taglistInt%}
+
+        {% assign splittaglistCon = taglistCon | split: '||' | sort %}
+        {% assign splittaglistDev = taglistDev | split: '||' | sort %}
+        {% assign splittaglistVis = taglistVis | split: '||' | sort %}
+        {% assign splittaglistInt = taglistInt | split: '||' | sort %}
+
+        {% assign splittaglist    = taglist    | split: '||' | sort %}
 
         {% assign currenttag = "" %}
         {% assign tagcount = 0 %}
         {% assign firsttag = true %}
         {% for tag in splittaglist %}
+          {% assign tagcountCon = 0 %}
+          {% assign tagcountDev = 0 %}
+          {% assign tagcountVis = 0 %}
+          {% assign tagcountInt = 0 %}
           {% assign tagcount = tagcount | plus: 1 %}
           {% unless currenttag == tag %}
             {% assign currenttag = tag %}
-            <button data-tag="{{tag}}" class="btn btn-default btn-sm">{{tag | replace: '-',' ' }}</button>
+            {% for tagCon in splittaglistCon %}
+              {% if tagCon == tag %}
+                {% assign tagcountCon = tagcountCon | plus: 1 %}
+              {% endif %}
+            {% endfor %}
+            {% for tagDev in splittaglistDev %}
+              {% if tagDev == tag %}
+                {% assign tagcountDev = tagcountDev | plus: 1 %}
+              {% endif %}
+            {% endfor %}
+            {% for tagVis in splittaglistVis %}
+              {% if tagVis == tag %}
+                {% assign tagcountVis = tagcountVis | plus: 1 %}
+              {% endif %}
+            {% endfor %}
+            {% for tagInt in splittaglistInt %}
+              {% if tagInt == tag %}
+                {% assign tagcountInt = tagcountInt | plus: 1 %}
+              {% endif %}
+            {% endfor %}
+            <button data-tag="{{tag}}" class="btn btn-sm btn-default" data-countcon="{{tagcountCon}}" data-countdev="{{tagcountDev}}" data-countvis="{{tagcountVis}}" data-countint="{{tagcountInt}}">{{tag | replace: '-',' ' }}</button>
             {% assign tagcount = 0 %}
             {% assign firsttag = false %}
           {% endunless %}
         {% endfor %}
-      </div>
+        <button id="showalltags">Show all tags</button>
+      {% comment %}</div>
     </div>
   </div>
   <div class="panel panel-default">
@@ -157,7 +248,6 @@
         {% endfor %}
       </div>
     </div>
-  </div>
-</div>
+  </div>{% endcomment %}
 </div>
 </div>
