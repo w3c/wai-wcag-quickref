@@ -703,9 +703,25 @@ div.understanding {
 }
 
 #tags {
-  .panel-body {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
+  &:not(.open) {
+    overflow:hidden;
+    position:relative;
+    height: 10em;
+  }
+  #showalltags {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom:0;
+    right: 0px;
+    left: 0px;
+    border: 0px none;
+    text-transform: uppercase;
+    font-size: .9em;
+    color: $brand-primary;
+    background: linear-gradient(transparent, #fff 45%);
   }
   .btn {
     flex-grow: 1;
