@@ -165,7 +165,7 @@ jQuery(document).ready(function($) {
   function applyTagsAndLevelsToSC() {
     var pressed = $('#tags .btn-primary');
     var uncheckedLevels = $('#filter-levels input:not(:checked)');
-    var currentscope = $("#tags a[aria-expanded=true]").data('scope');
+    //var currentscope = $("#tags a[aria-expanded=true]").data('scope');
     $('.sc-wrapper').addClass('current');
     if ((pressed.length>0) && currentscope) {
       var tags = [];
@@ -175,10 +175,9 @@ jQuery(document).ready(function($) {
       var selector = '.sc-wrapper[data-tags-' + currentscope + '~="' + tags.join('"], .sc-wrapper[data-tags-' + currentscope + '~="') + '"]';
       $('.sc-wrapper').removeClass('current');
       $(selector).addClass('current');
-      $('[aria-expanded=true] + .cleartags').prop('disabled', false);
+      $('#deselecttags').prop('disabled', false);
     } else {
-      $('.cleartags').prop('disabled', true);
-      enableUnusedAccodionPanels();
+      $('#deselecttags').prop('disabled', true);
     }
 
 
@@ -400,14 +399,14 @@ jQuery(document).ready(function($) {
       pressed.each(function(index, el) {
         tags.push($(el).attr('data-tag'));
       });
-      sctext1 = ' tagged with '+ array2prose(tags, 'or');
+      sctext1 = ' <strong>tagged with '+ array2prose(tags, 'or') + '</strong>';
       var notpressed = $('#tags .btn-default');
-      if (notpressed.length>0) {
-        notpressed.each(function(index, el) {
-          htags.push($(el).attr('data-tag'));
-        });
-        sctexthidden1 = ' <span class="deem">(Hidden: '+ array2prose(htags, 'and')+ ')</span>';
-      }
+      // if (notpressed.length>0) {
+      //   notpressed.each(function(index, el) {
+      //     htags.push($(el).attr('data-tag'));
+      //   });
+      //   sctexthidden1 = ' <span class="deem">(Hidden: '+ array2prose(htags, 'and')+ ')</span>';
+      // }
     }
     var levels = [],
         hlevels = [];
@@ -418,14 +417,14 @@ jQuery(document).ready(function($) {
       selected.each(function(index, el) {
         levels.push($(el).attr('value').toUpperCase());
       });
-      sctext2 = ' for levels '+array2prose(levels, 'and');
+      sctext2 = ' for <strong>levels ' + array2prose(levels, 'and') + '</strong>';
     }
-    if (nselected.length>0) {
-      nselected.each(function(index, el) {
-        hlevels.push($(el).attr('value').toUpperCase());
-      });
-      sctexthidden2 = ' <span class="deem">(Hidden: '+array2prose(hlevels, 'and')+')</span>';
-    }
+    // if (nselected.length>0) {
+    //   nselected.each(function(index, el) {
+    //     hlevels.push($(el).attr('value').toUpperCase());
+    //   });
+    //   sctexthidden2 = ' <span class="deem">(Hidden: '+array2prose(hlevels, 'and')+')</span>';
+    // }
     if ((pressed.length>0) || (selected.length<all.length)) {
       sctext = 'success criteria ' + sctext1 + sctexthidden1 + sctext2 + sctexthidden2;
     }
@@ -438,16 +437,16 @@ jQuery(document).ready(function($) {
       selectedtechnologies.each(function(index, el) {
         technologies.push($(el).parent().text());
       });
-      techtext = ' techniques for the following technologies: '+array2prose(technologies, 'and');
+      techtext = ' techniques for the following technologies: <strong>' + array2prose(technologies, 'and') + '</strong>';
     }
-    if (nselectedtechnologies.length>0) {
-      nselectedtechnologies.each(function(index, el) {
-        htechnologies.push($(el).parent().text());
-      });
-      techtexthidden = ' <span class="deem">(Hidden: '+array2prose(htechnologies, 'and')+')</span>';
-    }
+    // if (nselectedtechnologies.length>0) {
+    //   nselectedtechnologies.each(function(index, el) {
+    //     htechnologies.push($(el).parent().text());
+    //   });
+    //   techtexthidden = ' <span class="deem">(Hidden: '+array2prose(htechnologies, 'and')+')</span>';
+    // }
     $('#status .sc').html(sctext);
-    $('#status .tech').html(techtext + techtexthidden);
+    $('#status .tech').html(techtext + techtexthidden + '.');
     if (techtext == "all techniques" && sctext == "all success criteria") {
       $('.clearall').hide();
       $('.filter-status-row').removeClass('active');
@@ -457,19 +456,33 @@ jQuery(document).ready(function($) {
     }
   };
 
-  $('#tags').on('click', 'button', function(e) {
+  $('#tags').on('click', '.btn', function(e) {
     statusanimation();
     var button = $(e.target), tags = [];
     if (button.hasClass('btn-primary')) {
       button.removeClass('btn-primary').addClass('btn-default').removeAttr('aria-selected');
     } else {
       button.removeClass('btn-default').addClass('btn-primary').attr('aria-selected','true');
-      $('#accordion .panel-title a[aria-expanded=false]').addClass('disabled');
-      $('#accordion .panel-title a').on('click', disableUnusedAccodionPanels);
     }
     applyTagsAndLevelsToSC();
   });
 
+  $('#showalltags').on('click', function(e) {
+    $('#tags').addClass('open');
+    $('#tags button:first-child').focus();
+    $(this).hide();
+  });
+
+  $('#audiences').on('change', 'input', function(e) {
+    $('#tags button').prop('disabled', false);
+    var sel = [];
+    $('#audiences input:checked').each(function(index, el) {
+      sel.push($(el).val());
+    });
+    var selector = '[data-count' + sel.join('="0"][data-count') + '="0"]';
+    console.log('#tags button' + selector);
+    $('#tags button' + selector).prop('disabled', true);
+  });
 
   $('#filter-techniques-content').on('change', 'input', function(event) {
     applyTechniques();
@@ -550,7 +563,7 @@ jQuery(document).ready(function($) {
       $('.navrow.fixedsticky').fixedsticky();
     }
 
-    $('.cleartags').on('click', function(event) {
+    $('#deselecttags').on('click', function(event) {
       event.preventDefault();
       /* Act on the event */
       $('#tags .collapse.in .btn-primary').removeClass('btn-primary').addClass('btn-default').removeAttr('aria-selected');
