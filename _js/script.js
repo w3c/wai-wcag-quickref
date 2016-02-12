@@ -13,7 +13,8 @@ var supportsWoff2 = (function( win ){
 
 /*! matchMedia() polyfill - Test a CSS media type/query in JS. Authors & copyright (c) 2012: Scott Jehl, Paul Irish, Nicholas Zakas, David Knight. Dual MIT/BSD license */
 
-window.matchMedia || (window.matchMedia = function() {
+if (!window.matchMedia) {
+  window.matchMedia = function() {
     "use strict";
 
     // For browsers that support matchMedium api such as IE 9 and webkit
@@ -56,7 +57,8 @@ window.matchMedia || (window.matchMedia = function() {
             media: media || 'all'
         };
     };
-}());
+}();
+}
 
 jQuery(document).ready(function($) {
 
