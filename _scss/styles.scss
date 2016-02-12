@@ -66,6 +66,12 @@ h1 {
   margin:0;
 }
 
+[role="heading"][aria-level="7"] {
+  //aka <h7>
+  font-weight: bold;
+  margin: .5em 0;
+}
+
 header[role=banner] {
   font-size: (18/14) * 1em;
   border-top: 5px solid #930;
@@ -737,7 +743,8 @@ div.understanding {
     line-height: 1.25;
     border-radius: 2px;
     &:first-of-type {
-      clear:both;
+      break-before: always;
+      page-break-before: always;
     }
   }
   .btn-primary:after {
