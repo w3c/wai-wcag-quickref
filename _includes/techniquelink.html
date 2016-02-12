@@ -23,11 +23,14 @@
     {% endif %}
     {% if include.technique.using %}
       <i>using one of the following techniques:</i>
-      <ul>
-      {% for technique in include.technique.using %}
-        <li class="{% include techniqueclass.html technique=technique %}">{% include techniquelink.html technique=technique %}</li>
+      {% for gr in include.technique.using %}
+        <p role="heading" aria-level="7">{{gr.group.title}}</p>
+        <ul>
+        {% for techn in gr.group.techniques %}
+          <li class="{% include techniqueclass.html technique=techn %}">{% include techniquelink.html technique=techn %}</li>
+        {% endfor %}
+        </ul>
       {% endfor %}
-      </ul>
     {% endif %}
   {% endif %}
 {% endif %}
