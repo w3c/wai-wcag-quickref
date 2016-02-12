@@ -165,16 +165,27 @@ jQuery(document).ready(function($) {
   }
 
   function applyTagsAndLevelsToSC() {
-    var pressed = $('#tags .btn-primary');
+    var pressed = $('#tags .btn-primary:not(:disabled)');
+    var audiences = $('#audiences input:checked');
     var uncheckedLevels = $('#filter-levels input:not(:checked)');
-    //var currentscope = $("#tags a[aria-expanded=true]").data('scope');
+
     $('.sc-wrapper').addClass('current');
-    if ((pressed.length>0) && currentscope) {
-      var tags = [];
-      $('#tags .btn-primary').each(function(index, el) {
+    if (pressed.length>0) {
+      var tags = [],
+          auds = [],
+          sels = [];
+      pressed.each(function(index, el) {
         tags.push($(el).attr('data-tag'));
       });
-      var selector = '.sc-wrapper[data-tags-' + currentscope + '~="' + tags.join('"], .sc-wrapper[data-tags-' + currentscope + '~="') + '"]';
+      audiences.each(function(index, el) {
+        auds.push($(el).val());
+      });
+      for (var i = auds.length - 1; i >= 0; i--) {
+        for (var j = tags.length - 1; j >= 0; j--) {
+          sels.push('.sc-wrapper[data-tags-' + auds[i] + '~=' + tags[j] + ']');
+        }
+      }
+      var selector = sels.join(', ');
       $('.sc-wrapper').removeClass('current');
       $(selector).addClass('current');
       $('#deselecttags').prop('disabled', false);
@@ -482,8 +493,10 @@ jQuery(document).ready(function($) {
       sel.push($(el).val());
     });
     var selector = '[data-count' + sel.join('="0"][data-count') + '="0"]';
-    console.log('#tags button' + selector);
     $('#tags button' + selector).prop('disabled', true);
+    applyTechniques();
+    applyTechnologies();
+    applyTagsAndLevelsToSC();
   });
 
   $('#filter-techniques-content').on('change', 'input', function(event) {
