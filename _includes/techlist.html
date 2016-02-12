@@ -35,7 +35,7 @@
                     {% else %}
                       {% if techn.group %}
                         {% assign group = techn.group %}
-                            <p>{{group.title}}</p>
+                           <p>{{group.title}}</p>
                             <ul>
                             {% for technique in group.techniques %}
                               <li class="{% include techniqueclass.html technique=technique %}">{% include techniquelink.html technique=technique %}</li>
@@ -43,11 +43,9 @@
                             </ul>
                         {% else %}
                         <ul>
-                          {% for technique in sit %}
-                            <li class="{% include techniqueclass.html technique=technique %}">
-                              {% include techniquelink.html technique=technique %}
-                            </li>
-                          {% endfor %}
+                          <li class="{% include techniqueclass.html technique=techn %}">
+                            {% include techniquelink.html technique=techn %}
+                          </li>
                         </ul>
                       {% endif %}
                     {% endif %}
