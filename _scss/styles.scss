@@ -729,6 +729,17 @@ div.understanding {
     margin-right: 3px;
     position: relative;
   }
+  .btn:disabled {
+    order: 2;
+    align-self: flex-end;
+    padding: 2px 7px 2px 2px;
+    font-size: .65rem;
+    line-height: 1.25;
+    border-radius: 2px;
+    &:first-of-type {
+      clear:both;
+    }
+  }
   .btn-primary:after {
     content: "";
     background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNDQ4Ij48cGF0aCBmaWxsPSIjZmZmIiBkPSJNNDE3Ljc1IDE0MS41cTAgMTAtNyAxN2wtMjE1IDIxNXEtNyA3LTE3IDd0LTE3LTdMMzcuMjUgMjQ5cS03LTctNy0xN3Q3LTE3bDM0LTM0cTctNyAxNy03dDE3IDdsNzMuNSA3My43NSAxNjQtMTY0LjI1cTctNyAxNy03dDE3IDdsMzQgMzRxNyA3IDcgMTd6Ii8+PC9zdmc+');
@@ -739,22 +750,6 @@ div.understanding {
     right:1px;
     height:10px;
     width:10px;
-  }
-  a[aria-expanded='true']:before {
-    content: ' ▼︎';
-  }
-  a[aria-expanded='false'] {
-    &.disabled {
-      color: #333;
-      opacity: .65;
-      + button {
-        color: #333;
-        opacity: .65;
-      }
-    }
-    &:before {
-      content: ' ▶︎';
-    }
   }
 }
 
