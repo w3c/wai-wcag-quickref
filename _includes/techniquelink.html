@@ -24,12 +24,18 @@
     {% if include.technique.using %}
       <i>using one of the following techniques:</i>
       {% for gr in include.technique.using %}
-        <p role="heading" aria-level="7">{{gr.group.title}}</p>
-        <ul>
-        {% for techn in gr.group.techniques %}
-          <li class="{% include techniqueclass.html technique=techn %}">{% include techniquelink.html technique=techn %}</li>
-        {% endfor %}
-        </ul>
+        {% if gr.group %}
+          <p role="heading" aria-level="7">{{gr.group.title}}</p>
+          <ul>
+          {% for techn in gr.group.techniques %}
+            <li class="{% include techniqueclass.html technique=techn %}">{% include techniquelink.html technique=techn %}</li>
+          {% endfor %}
+          </ul>
+        {% else %}
+          {% if forloop.first %}<ul>{% endif %}
+          <li class="{% include techniqueclass.html technique=gr %}">{% include techniquelink.html technique=gr %}</li>
+          {% if forloop.last %}</ul>{% endif %}
+        {% endif %}
       {% endfor %}
     {% endif %}
   {% endif %}
