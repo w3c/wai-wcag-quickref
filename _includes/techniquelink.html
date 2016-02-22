@@ -6,11 +6,27 @@
   {% for technique in include.technique.and %}
     <span class="{% include techniqueclass.html technique=technique %}">{% include techniquelink.html technique=technique %} {{technique.append}} {% if forloop.last %}{% else %}<strong>AND</strong>{% endif %}</span>
   {% endfor %}
+  {% if include.technique.using %}
+    using one of the following techniques:
+    <ul>
+      {% for techn in include.technique.using %}
+        <li class="{% include techniqueclass.html technique=techn %}">{% include techniquelink.html technique=techn %}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
 {% else %}
   {% if include.technique.or %}
     {% for technique in include.technique.or %}
       <span class="{% include techniqueclass.html technique=technique %}">{% include techniquelink.html technique=technique %} {{technique.append}} {% if forloop.last %}{% else %}<strong>OR</strong>{% endif %}</span>
     {% endfor %}
+    {% if include.technique.using %}
+      using one of the following techniques:
+      <ul>
+        {% for techn in include.technique.using %}
+          <li class="{% include techniqueclass.html technique=techn %}">{% include techniquelink.html technique=techn %}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
   {% else %}
     {% if shortname == 'future' %}
       {{include.technique.title}} (future link)
