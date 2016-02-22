@@ -254,12 +254,12 @@ header[role=banner] {
 }
 
 .sc-content {
-  @include mq($medium) {
+  @include mq($big) {
     display:flex;
     justify-content: space-between;
   }
   .sc-text {
-    @include mq($medium) {
+    @include mq($big) {
     flex:1;
     }
   }
@@ -270,7 +270,7 @@ header[role=banner] {
     pointer-events:none;
   }
   .understanding {
-    @include mq($medium) {
+    @include mq($big) {
       padding-left: 15px;
     }
   }
