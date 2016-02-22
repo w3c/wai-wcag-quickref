@@ -44,11 +44,15 @@
                             {% endfor %}
                             </ul>
                         {% else %}
-                        <ul>
+                        {% if forloop.first %}
+                          <ul>
+                        {% endif %}
                           <li class="{% include techniqueclass.html technique=techn %}">
                             {% include techniquelink.html technique=techn %}
                           </li>
-                        </ul>
+                        {% if forloop.last %}
+                          </ul>
+                        {% endif%}
                       {% endif %}
                     {% endif %}
                   {% endif %}
