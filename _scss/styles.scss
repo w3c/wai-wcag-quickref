@@ -743,7 +743,7 @@ div.understanding {
     font-size: .65rem;
     line-height: 1.25;
     border-radius: 2px;
-    &:first-of-type {
+    &.first {
       break-before: always;
       page-break-before: always;
     }
