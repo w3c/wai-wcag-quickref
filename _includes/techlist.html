@@ -10,7 +10,9 @@
     </div>
   {% endif %}
   <div class="panel-body">
-    <ul>
+    {% unless include.techniques[0].situations %}
+      <ul>
+    {% endunless %}
     {% for tech in include.techniques %}
       {% if tech.situations %}
         {% for situation in tech.situations %}
@@ -60,6 +62,8 @@
         </li>
       {% endif%}
     {% endfor %}
-    </ul>
+    {% unless include.techniques[0].situations %}
+      </ul>
+    {% endunless %}
   </div>
 </div>
