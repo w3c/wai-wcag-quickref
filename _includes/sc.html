@@ -34,18 +34,26 @@
       <a href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/{{sc_id}}.html" class="btn btn-default btn-sm"><svg aria-hidden="true" class="i-info"><use xlink:href="{{ "/img/icons.svg" | prepend: site.baseurl }}#i-info"></use></svg> Understanding {{ p }}.{{ g }}.{{ s }}</a>
     </div>
   </div>
+    {% assign stech = [] %}
+    {% assign ssize = 0 %}
+    {% assign atech = [] %}
+    {% assign asize = 0 %}
+    {% assign ftech = [] %}
+    {% assign fsize = 0 %}
     {% for sctech in sc.techniques %}
       {% if sctech.sufficient %}
         {% assign stech = sctech.sufficient %}
-        {% assign ssize = stech | size %}
-      {% endif %}
-      {% if sctech.advisory %}
-        {% assign atech = sctech.advisory %}
-        {% assign asize = atech | size %}
-      {% endif %}
-      {% if sctech.failure %}
-        {% assign ftech = sctech.failure %}
-        {% assign fsize = ftech | size %}
+        {% assign ssize = sctech.sufficient | size %}
+      {% else%}
+        {% if sctech.advisory %}
+          {% assign atech = sctech.advisory %}
+          {% assign asize = sctech.advisory | size %}
+        {% else %}
+          {% if sctech.failure %}
+            {% assign ftech = sctech.failure %}
+            {% assign fsize = sctech.failure | size %}
+          {% endif %}
+        {% endif %}
       {% endif %}
     {% endfor %}
     {% assign completesize = ssize | plus: asize | plus: fsize %}
