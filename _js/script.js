@@ -445,7 +445,7 @@ jQuery(document).ready(function($) {
       selectedtechnologies.each(function(index, el) {
         technologies.push($(el).parent().text());
       });
-      techtext = ' techniques for the following technologies: <strong>' + array2prose(technologies, 'and') + '</strong>';
+      techtext = ' techniques for the technologies: <strong>' + array2prose(technologies, 'and') + '</strong>';
     }
     // if (nselectedtechnologies.length>0) {
     //   nselectedtechnologies.each(function(index, el) {
@@ -578,7 +578,7 @@ jQuery(document).ready(function($) {
     $('#deselecttags').on('click', function(event) {
       event.preventDefault();
       /* Act on the event */
-      $('#tags .collapse.in .btn-primary').removeClass('btn-primary').addClass('btn-default').removeAttr('aria-selected');
+      $('#tags .btn-primary').removeClass('btn-primary').addClass('btn-default').removeAttr('aria-selected');
       applyTechnologies();
       applyTagsAndLevelsToSC();
       statustext();
