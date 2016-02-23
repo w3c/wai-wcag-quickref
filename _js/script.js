@@ -328,7 +328,7 @@ jQuery(document).ready(function($) {
   });
 
   $('#hiddensc, .filter-status-row').on('click', '.clearall', function(e) {
-    var unchecked = $('#filters input:not(:checked)');
+    var unchecked = $('#filters input:not(:checked), #audiences input:not(:checked)');
     unchecked.each(function(){
       $(this).prop('checked', 'checked');
     });
