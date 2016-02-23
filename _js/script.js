@@ -476,9 +476,9 @@ jQuery(document).ready(function($) {
   });
 
   $('#showalltags').on('click', function(e) {
-    $('#tags').addClass('open');
-    $('#tags button:first-child').focus();
-    $(this).hide();
+    var txt = $('#tags').is('.open') ? 'Show all tags' : 'Show less tags';
+    $(this).text(txt);
+    $('#tags').toggleClass('open');
   });
 
   $('#audiences').on('change', 'input', function(e) {

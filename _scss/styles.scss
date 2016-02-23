@@ -712,10 +712,14 @@ div.understanding {
 #tags {
   display: flex;
   flex-wrap: wrap;
+  transition: max-height 1s linear;
+  position:relative;
+  &.open {
+    padding-bottom: 1.5em;
+  }
   &:not(.open) {
     overflow:hidden;
-    position:relative;
-    height: 10em;
+    max-height: 10em;
   }
   #showalltags {
     position: absolute;
@@ -729,6 +733,7 @@ div.understanding {
     font-size: .9em;
     color: $brand-primary;
     background: linear-gradient(transparent, #fff 45%);
+    z-index: 10;
   }
   .btn {
     flex-grow: 1;
