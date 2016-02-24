@@ -2753,7 +2753,7 @@
                 },
                 {
                   "id": "TECH:future2",
-                  "title": "Ensuring keyboard control by using one of the following techniques.",
+                  "title": "Ensuring keyboard control",
                   "using": [
                     {
                       "id": "TECH:H91",
@@ -6424,7 +6424,7 @@
               },
               {
                 "id": "TECH:future4",
-                "title": "Ensuring that Web pages can be parsed by using one of the following techniques:",
+                "title": "Ensuring that Web pages can be parsed",
                 "using": [
                   {"and": [
                     {
