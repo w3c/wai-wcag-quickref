@@ -333,6 +333,7 @@ jQuery(document).ready(function($) {
       $(this).prop('checked', 'checked');
     });
     $('#tags .btn-primary').removeClass('btn-primary').addClass('btn-default').removeAttr('aria-selected');
+    $('#tags .btn').removeAttr('disabled');
     $('.sc-wrapper.current').removeClass('current');
     applyTechnologies();
     applyTagsAndLevelsToSC();
