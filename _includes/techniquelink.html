@@ -22,8 +22,8 @@
     {% if include.technique.using %}
       using one of the following techniques:
       <ul>
-        {% for techn in include.technique.using %}
-          <li class="{% include techniqueclass.html technique=techn %}">{% include techniquelink.html technique=techn %}</li>
+        {% for techniq in include.technique.using %}
+          <li class="{% include techniqueclass.html technique=techniq %}">{% include techniquelink.html technique=techniq %}</li>
         {% endfor %}
       </ul>
     {% endif %}
@@ -43,8 +43,8 @@
         {% if gr.group %}
           <p role="heading" aria-level="7">{{gr.group.title}}</p>
           <ul>
-          {% for techn in gr.group.techniques %}
-            <li class="{% include techniqueclass.html technique=techn %}">{% include techniquelink.html technique=techn %}</li>
+          {% for technik in gr.group.techniques %}
+            <li class="{% include techniqueclass.html technique=technik %}">{% include techniquelink.html technique=technik %}</li>
           {% endfor %}
           </ul>
         {% else %}
