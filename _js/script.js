@@ -276,7 +276,7 @@ jQuery(document).ready(function($) {
     var unchecked =  techniques.find('input:not(:checked)');
     if (unchecked.length>0) {
       for (var j = unchecked.length - 1; j >= 0; j--) {
-        tunselected.push($(unchecked[i]).val());
+        tunselected.push($(unchecked[j]).val());
       }
       selector = '.techniques-button input[name$="' + tunselected.join('"], .techniques-button input[name$="') + '"]';
       selector2 = '.tbox-' + tunselected.join(', .tbox-') + '';
