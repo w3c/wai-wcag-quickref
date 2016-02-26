@@ -401,8 +401,25 @@ jQuery(document).ready(function($) {
         sctexthidden1 = "",
         sctext2 = "",
         sctexthidden2 = "",
-        techtext = "all techniques",
+        pretechtext = "all"
+        techtext = "techniques",
         techtexthidden = "";
+
+    var techtypes = $('#filter-techniques-content input'),
+        techtypeschecked = techtypes.filter(':checked');
+
+    if (techtypeschecked.length<techtypes.length) {
+      var ttypes = [];
+      techtypeschecked.each(function(index, el) {
+        if ($(el).val() == "failures") {
+          ttypes.push('failure');
+        } else {
+          ttypes.push($(el).val());
+        }
+      });
+      pretechtext = array2prose(ttypes, 'and') + " ";
+    }c
+
     var pressed = $('#tags .btn-primary');
     if (pressed.length>0) {
       pressed.each(function(index, el) {
@@ -455,7 +472,7 @@ jQuery(document).ready(function($) {
     //   techtexthidden = ' <span class="deem">(Hidden: '+array2prose(htechnologies, 'and')+')</span>';
     // }
     $('#status .sc').html(sctext);
-    $('#status .tech').html(techtext + techtexthidden + '.');
+    $('#status .tech').html(pretechtext + techtext + techtexthidden + '.');
     if (techtext == "all techniques" && sctext == "all success criteria") {
       $('.clearall').hide();
       $('.filter-status-row').removeClass('active');
