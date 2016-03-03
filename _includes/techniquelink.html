@@ -14,6 +14,13 @@
       {% endfor %}
     </ul>
   {% endif %}
+  {% for note in include.technique.notes %}
+    {% if forloop.first %}<ul class="notes">{% endif %}
+      <li>
+        <em>Note{% if forloop.length > 1 %} {{forloop.index}}{% endif %}:</em> {{ note }}
+      </li>
+    {% if forloop.last %}</ul>{% endif %}
+  {% endfor %}
 {% else %}
   {% if include.technique.or %}
     {% for technique in include.technique.or %}
@@ -27,12 +34,33 @@
         {% endfor %}
       </ul>
     {% endif %}
+    {% for note in include.technique.notes %}
+      {% if forloop.first %}<ul class="notes">{% endif %}
+        <li>
+          <em>Note{% if forloop.length > 1 %} {{forloop.index}}{% endif %}:</em> {{ note }}
+        </li>
+      {% if forloop.last %}</ul>{% endif %}
+    {% endfor %}
   {% else %}
     {% if shortname == 'future' %}
       {{include.technique.title}} (future link)
+      {% for note in include.technique.notes %}
+        {% if forloop.first %}<ul class="notes">{% endif %}
+          <li>
+            <em>Note{% if forloop.length > 1 %} {{forloop.index}}{% endif %}:</em> {{ note }}
+          </li>
+        {% if forloop.last %}</ul>{% endif %}
+      {% endfor %}
     {% else %}
       {% if shortname == 'text' %}
         {{include.technique.title}}
+        {% for note in include.technique.notes %}
+          {% if forloop.first %}<ul class="notes">{% endif %}
+            <li>
+              <em>Note{% if forloop.length > 1 %} {{forloop.index}}{% endif %}:</em> {{ note }}
+            </li>
+          {% if forloop.last %}</ul>{% endif %}
+        {% endfor %}
       {% else %}
         {{ include.technique.prepend }} <a href="{{techid | append: '.html' | prepend: site.techniqueurl}}">{{ techid }}: {{include.technique.title}} </a> {{ include.technique.append }}
       {% endif %}

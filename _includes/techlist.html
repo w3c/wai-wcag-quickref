@@ -27,6 +27,13 @@
                         {% for technique in techn.and %}
                           <span class="{% include techniqueclass.html technique=technique %}">{% include techniquelink.html technique=technique %} {{technique.append}} {% unless forloop.last %}<strong>AND</strong>{% endunless %}</span>
                         {% endfor %}
+                        {% for note in techn.and.notes %}
+                          {% if forloop.first %}<ul class="notes">{% endif %}
+                            <li>
+                              <em>Note{% if forloop.length > 1 %} {{forloop.index}}{% endif %}:</em> {{ note }}
+                            </li>
+                          {% if forloop.last %}</ul>{% endif %}
+                        {% endfor %}
                       </li>
                     {% if forloop.last %}</ul>{% endif %}
                   {% else %}
@@ -36,6 +43,13 @@
                           {% for technique in techn.or %}
                             <span class="{% include techniqueclass.html technique=technique %}">{% include techniquelink.html technique=technique %} {% unless forloop.last %}<strong>OR</strong>{% endunless %}</span>
                           {% endfor %}
+                          {% for note in techn.or.notes %}
+                            {% if forloop.first %}<ul class="notes">{% endif %}
+                              <li>
+                                <em>Note{% if forloop.length > 1 %} {{forloop.index}}{% endif %}:</em> {{ note }}
+                              </li>
+                            {% if forloop.last %}</ul>{% endif %}
+                          {% endfor %}
                         </li>
                       {% if forloop.last %}</ul>{% endif %}
                     {% else %}
@@ -44,7 +58,15 @@
                            <p>{{group.title}}</p>
                             <ul>
                             {% for technique in group.techniques %}
-                              <li class="{% include techniqueclass.html technique=technique %}">{% include techniquelink.html technique=technique %}</li>
+                              <li class="{% include techniqueclass.html technique=technique %}">{% include techniquelink.html technique=technique %}
+                              {% for note in technique.notes %}
+                                {% if forloop.first %}<ul class="notes">{% endif %}
+                                  <li>
+                                    <em>Note{% if forloop.length > 1 %} {{forloop.index}}{% endif %}:</em> {{ note }}
+                                  </li>
+                                {% if forloop.last %}</ul>{% endif %}
+                              {% endfor %}
+                              </li>
                             {% endfor %}
                             </ul>
                         {% else %}
@@ -53,6 +75,13 @@
                           {% endif %}
                           <li class="{% include techniqueclass.html technique=techn %}">
                             {% include techniquelink.html technique=techn %}
+                            {% for note in techn.notes %}
+                              {% if forloop.first %}<ul class="notes">{% endif %}
+                                <li>
+                                  <em>Note{% if forloop.length > 1 %} {{forloop.index}}{% endif %}:</em> {{ note }}
+                                </li>
+                              {% if forloop.last %}</ul>{% endif %}
+                            {% endfor %}
                           </li>
                           {% if forloop.last %}
                             </ul>
