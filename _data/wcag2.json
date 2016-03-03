@@ -309,7 +309,7 @@
                 "techniques": [
                   {
                     "id": "TECH:future1",
-                    "title": "Providing a descriptive label using one of the following Short text alternative techniques for Situation D :",
+                    "title": "Providing a descriptive label",
                     "using": [{"group": {
                       "title": "Short text alternative techniques for Situation D:",
                       "techniques": [
@@ -518,7 +518,7 @@
                 "techniques": [
                   {
                     "id": "TECH:future1",
-                    "title": "Implementing or marking the non-text content so that it will be ignored by assistive technology using one of the following Techniques to indicate that text alternatives are not required for Situation F :",
+                    "title": "Implementing or marking the non-text content so that it will be ignored by assistive technology",
                     "using": [{"group": {
                       "title": "Techniques to indicate that text alternatives are not required for Situation F:",
                       "techniques": [
@@ -909,7 +909,7 @@
                 },
                 {
                   "id": "TECH:future2",
-                  "title": "Linking to the alternative for time-based media using one of the following techniques",
+                  "title": "Linking to the alternative for time-based media",
                   "using": [{
                     "id": "TECH:H53",
                     "title": "Using the body of the object element"
@@ -1252,7 +1252,7 @@
                     },
                     {
                       "id": "TECH:future2",
-                      "title": "Linking to the alternative for time-based media using one of the following techniques",
+                      "title": "Linking to the alternative for time-based media",
                       "using": [{
                         "id": "TECH:H53",
                         "title": "Using the body of the object element"
@@ -2042,7 +2042,7 @@
                 },
                 {
                   "id": "TECH:future4",
-                  "title": "Ensuring that text containers resize when the text resizes AND using measurements that are relative to other measurements in the content by using one or more of the following techniques:",
+                  "title": "Ensuring that text containers resize when the text resizes AND using measurements that are relative to other measurements in the content",
                   "using": [
                     {
                       "id": "TECH:C28",
@@ -3232,7 +3232,7 @@
             "techniques": [
               {"sufficient": [{
                 "id": "TECH:future1",
-                "title": "Providing options to continue without loss of data using one of the following techniques:",
+                "title": "Providing options to continue without loss of data",
                 "using": [
                   {
                     "id": "TECH:G105",
@@ -3399,7 +3399,7 @@
               {"sufficient": [
                 {
                   "id": "TECH:future1",
-                  "title": "Creating links to skip blocks of repeated material using one of the following techniques:",
+                  "title": "Creating links to skip blocks of repeated material",
                   "using": [
                     {
                       "id": "TECH:G1",
@@ -3421,7 +3421,7 @@
                 },
                 {
                   "id": "TECH:future2",
-                  "title": "Grouping blocks of repeated material in a way that can be skipped, using one of the following techniques:",
+                  "title": "Grouping blocks of repeated material in a way that can be skipped",
                   "using": [
                     {
                       "id": "TECH:ARIA11",
@@ -3543,7 +3543,7 @@
                 },
                 {
                   "id": "TECH:future2",
-                  "title": "Giving focus to elements in an order that follows sequences and relationships within the content using one of the following techniques:",
+                  "title": "Giving focus to elements in an order that follows sequences and relationships within the content",
                   "using": [
                     {
                       "id": "TECH:H4",
@@ -3569,7 +3569,7 @@
                 },
                 {
                   "id": "TECH:future3",
-                  "title": "Changing a Web page dynamically using one of the following techniques:",
+                  "title": "Changing a Web page dynamically",
                   "using": [
                     {
                       "id": "TECH:SCR26",
@@ -3634,7 +3634,7 @@
                 },
                 {
                   "id": "TECH:future5",
-                  "title": "Allowing the user to choose short or long link text using one of the techniques below:",
+                  "title": "Allowing the user to choose short or long link text",
                   "using": [
                     {
                       "id": "TECH:G189",
@@ -3656,7 +3656,7 @@
                 },
                 {
                   "id": "TECH:future7",
-                  "title": "Providing a supplemental description of the purpose of a link using one of the following techniques:",
+                  "title": "Providing a supplemental description of the purpose of a link",
                   "using": [
                     {
                       "id": "TECH:H33",
@@ -3670,7 +3670,7 @@
                 },
                 {
                   "id": "TECH:future8",
-                  "title": "Identifying the purpose of a link using link text combined with programmatically determined link context using one of the following techniques:",
+                  "title": "Identifying the purpose of a link using link text combined with programmatically determined link context",
                   "using": [
                     {
                       "id": "TECH:ARIA7",
@@ -3975,7 +3975,7 @@
                 },
                 {
                   "id": "TECH:future6",
-                  "title": "Allowing the user to choose short or long link text using one of the techniques below:",
+                  "title": "Allowing the user to choose short or long link text",
                   "using": [
                     {
                       "id": "TECH:G189",
@@ -3993,7 +3993,7 @@
                 },
                 {
                   "id": "TECH:future7",
-                  "title": "Providing a supplemental description of the purpose of a link using one of the following techniques:",
+                  "title": "Providing a supplemental description of the purpose of a link",
                   "using": [{
                     "id": "TECH:C7",
                     "title": "Using CSS to hide a portion of the link text"
@@ -4001,7 +4001,7 @@
                 },
                 {
                   "id": "TECH:future8",
-                  "title": "Semantically indicating links using one of the following techniques:",
+                  "title": "Semantically indicating links",
                   "using": [
                     {
                       "id": "TECH:PDF11",
@@ -5230,7 +5230,7 @@
                         "techniques": [
                           {
                             "id": "TECH:future1",
-                            "title": "Providing a descriptive label using one of the following Short text alternative techniques for Situation D :",
+                            "title": "Providing a descriptive label",
                             "using": [{"group": {
                               "title": "Short text alternative techniques for Situation D:",
                               "techniques": [
@@ -5439,7 +5439,7 @@
                         "techniques": [
                           {
                             "id": "TECH:future1",
-                            "title": "Implementing or marking the non-text content so that it will be ignored by assistive technology using one of the following Techniques to indicate that text alternatives are not required for Situation F :",
+                            "title": "Implementing or marking the non-text content so that it will be ignored by assistive technology",
                             "using": [{"group": {
                               "title": "@@@ Techniques to indicate that text alternatives are not required for Situation F:",
                               "techniques": [
@@ -5512,7 +5512,7 @@
                         "title": "Situation B: If using script or code to re-purpose a standard user interface component in a markup language:",
                         "techniques": [{
                           "id": "TECH:future1",
-                          "title": "Exposing the names and roles, allowing user-settable properties to be directly set, and providing notification of changes using one of the following techniques:",
+                          "title": "Exposing the names and roles, allowing user-settable properties to be directly set, and providing notification of changes",
                           "using": [{
                             "id": "TECH:ARIA16",
                             "title": "Using aria-labelledby to provide a name for user interface controls"
@@ -5649,7 +5649,7 @@
                   "title": "Situation C: If the Web page uses pop-up windows:",
                   "techniques": [{
                     "id": "TECH:future1",
-                    "title": "Including pop-up windows using one of the following techniques:",
+                    "title": "Including pop-up windows",
                     "using": [
                       {
                         "id": "TECH:H83",
@@ -6519,7 +6519,7 @@
                 "title": "Situation B: If using script or code to re-purpose a standard user interface component in a markup language:",
                 "techniques": [{
                   "id": "TECH:future1",
-                  "title": "Exposing the names and roles, allowing user-settable properties to be directly set, and providing notification of changes using one of the following techniques:",
+                  "title": "Exposing the names and roles, allowing user-settable properties to be directly set, and providing notification of changes",
                   "using": [{
                     "id": "TECH:ARIA16",
                     "title": "Using aria-labelledby to provide a name for user interface controls"
