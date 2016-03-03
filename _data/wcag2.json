@@ -2854,10 +2854,16 @@
                 }
               ]},
               {"advisory": [
-                {
-                  "id": "TECH:SCR29",
-                  "title": "Adding keyboard-accessible actions to static HTML elements"
-                },
+                {"and": [
+                  {
+                    "id": "TECH:future1",
+                    "title": "Using XHTML role, state, and value attributes if repurposing static elements as interactive user interface components"
+                  },
+                  {
+                    "id": "TECH:SCR29",
+                    "title": "Adding keyboard-accessible actions to static HTML elements (Scripting)"
+                  }
+                ]},
                 {
                   "id": "TECH:future2",
                   "title": "Providing keyboard shortcuts to important links and form controls"
