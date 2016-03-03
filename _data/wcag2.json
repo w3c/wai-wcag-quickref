@@ -2901,7 +2901,12 @@
             "level": "AAA",
             "handle": "Keyboard (No Exception)",
             "title": "All functionality of the content is operable through a keyboard interface without requiring specific timings for individual keystrokes.",
-            "techniques": []
+            "techniques": [{"sufficient":[
+              {
+                "id": "TECH:text1",
+                "title": "No additional techniques exist for this Success Criterion. Follow techniques for <a href='#keyboard-operation-keyboard-operable'>Success Criterion 2.1.1</a>. If that is not possible because there is a requirement for path-dependent input, then it is not possible to meet this Level AAA Success Criterion."
+              }
+            ]}]
           }
         ]
       },
