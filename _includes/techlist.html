@@ -22,18 +22,22 @@
               {% assign sit = situation.techniques %}
                 {% for techn in sit %}
                   {% if techn.and %}
-                    <li>
-                      {% for technique in techn.and %}
-                        <span class="{% include techniqueclass.html technique=technique %}">{% include techniquelink.html technique=technique %} {{technique.append}} {% unless forloop.last %}<strong>AND</strong>{% endunless %}</span>
-                      {% endfor %}
-                    </li>
-                  {% else %}
-                    {% if techn.or %}
+                    {% if forloop.first %}<ul>{% endif %}
                       <li>
-                        {% for technique in techn.or %}
-                          <span class="{% include techniqueclass.html technique=technique %}">{% include techniquelink.html technique=technique %} {% unless forloop.last %}<strong>OR</strong>{% endunless %}</span>
+                        {% for technique in techn.and %}
+                          <span class="{% include techniqueclass.html technique=technique %}">{% include techniquelink.html technique=technique %} {{technique.append}} {% unless forloop.last %}<strong>AND</strong>{% endunless %}</span>
                         {% endfor %}
                       </li>
+                    {% if forloop.last %}</ul>{% endif %}
+                  {% else %}
+                    {% if techn.or %}
+                      {% if forloop.first %}<ul>{% endif %}
+                        <li>
+                          {% for technique in techn.or %}
+                            <span class="{% include techniqueclass.html technique=technique %}">{% include techniquelink.html technique=technique %} {% unless forloop.last %}<strong>OR</strong>{% endunless %}</span>
+                          {% endfor %}
+                        </li>
+                      {% if forloop.last %}</ul>{% endif %}
                     {% else %}
                       {% if techn.group %}
                         {% assign group = techn.group %}
@@ -69,5 +73,12 @@
     {% unless include.techniques[0].situations %}
       </ul>
     {% endunless %}
+    {% for note in include.notes %}
+      {% if forloop.first %}<ul class="notes">{% endif %}
+        <li>
+          <em>Note{% if forloop.length > 1 %} {{forloop.index}}{% endif %}:</em> {{ note }}
+        </li>
+      {% if forloop.last %}</ul>{% endif %}
+    {% endfor %}
   </div>
 </div>

@@ -949,4 +949,12 @@ button.panel-heading {
     }
   }
 }
+
+ul.notes {
+  font-size: .9em;
+  li {
+    list-style: none;
+  }
+}
+
 @import "print";
