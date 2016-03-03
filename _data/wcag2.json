@@ -3740,24 +3740,30 @@
                     }
                   ]
                 },
-                {
-                  "id": "TECH:G91",
-                  "title": "Providing link text that describes the purpose of a link",
-                  "using": [
-                    {
-                      "id": "TECH:PDF11",
-                      "title": "Providing links and link text using the Link annotation and the /Link structure element in PDF documents"
-                    },
-                    {
-                      "id": "TECH:PDF13",
-                      "title": "Providing replacement text using the /Alt entry for links in PDF documents"
-                    },
-                    {
-                      "id": "TECH:SL18",
-                      "title": "Providing Text Equivalent for Nontext Silverlight Controls With AutomationProperties.Name"
-                    }
-                  ]
-                }
+                { "and": [
+                  {
+                    "id": "TECH:G91",
+                    "title": "Providing link text that describes the purpose of a link",
+                  },
+                  {
+                    "id": "TECH:text1",
+                    "title": "Semantically indicating links",
+                    "using": [
+                      {
+                        "id": "TECH:PDF11",
+                        "title": "Providing links and link text using the Link annotation and the /Link structure element in PDF documents"
+                      },
+                      {
+                        "id": "TECH:PDF13",
+                        "title": "Providing replacement text using the /Alt entry for links in PDF documents"
+                      },
+                      {
+                        "id": "TECH:SL18",
+                        "title": "Providing Text Equivalent for Nontext Silverlight Controls With AutomationProperties.Name"
+                      }
+                    ]
+                  }
+                ]}
               ]},
               {"advisory": [
                 {
