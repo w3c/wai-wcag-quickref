@@ -1314,7 +1314,13 @@
               ]},
               {"advisory": [{
                 "id": "TECH:future1",
-                "title": "Using metadata to associate text transcriptions with audio-only content"
+                "title": "Using metadata to associate text transcriptions with audio-only content",
+                "using": [
+                  {
+                    "id": "TECH:text1",
+                    "title": "<em>Example:</em> Providing, in metadata, URI(s) that point to several text transcripts (English, French, Dutch) of an audio file."
+                  }
+                ]
               }]}
             ]
           }
