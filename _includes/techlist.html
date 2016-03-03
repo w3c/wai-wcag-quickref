@@ -96,6 +96,13 @@
       {% else %}
         <li class="{% include techniqueclass.html technique=tech %}">
           {% include techniquelink.html technique=tech %}
+          {% for note in tech.notes %}
+            {% if forloop.first %}<ul class="notes">{% endif %}
+              <li>
+                <em>Note{% if forloop.length > 1 %} {{forloop.index}}{% endif %}:</em> {{ note }}
+              </li>
+            {% if forloop.last %}</ul>{% endif %}
+          {% endfor %}
         </li>
       {% endif%}
     {% endfor %}

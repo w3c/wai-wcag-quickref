@@ -63,6 +63,13 @@
         {% endfor %}
       {% else %}
         {{ include.technique.prepend }} <a href="{{techid | append: '.html' | prepend: site.techniqueurl}}">{{ techid }}: {{include.technique.title}} </a> {{ include.technique.append }}
+        {% for note in technique.notes %}
+          {% if forloop.first %}<ul class="notes">{% endif %}
+            <li>
+              <em>Note{% if forloop.length > 1 %} {{forloop.index}}{% endif %}:</em> {{ note }}
+            </li>
+          {% if forloop.last %}</ul>{% endif %}
+        {% endfor %}
       {% endif %}
     {% endif %}
     {% if include.technique.using %}
@@ -77,7 +84,15 @@
           </ul>
         {% else %}
           {% if forloop.first %}<ul>{% endif %}
-          <li class="{% include techniqueclass.html technique=gr %}">{% include techniquelink.html technique=gr %}</li>
+          <li class="{% include techniqueclass.html technique=gr %}">{% include techniquelink.html technique=gr %}
+          {% for note in technique.notes %}
+            {% if forloop.first %}<ul class="notes">{% endif %}
+              <li>
+                <em>Note{% if forloop.length > 1 %} {{forloop.index}}{% endif %}:</em> {{ note }}
+              </li>
+            {% if forloop.last %}</ul>{% endif %}
+          {% endfor %}
+          </li>
           {% if forloop.last %}</ul>{% endif %}
         {% endif %}
       {% endfor %}

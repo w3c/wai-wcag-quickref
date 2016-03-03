@@ -5847,7 +5847,8 @@
             {"failure": [
               {
                 "id": "TECH:F59",
-                "title": "Failure of Success Criterion 4.1.2 due to using script to make div or span a user interface control in HTML without providing a role for the control"
+                "title": "Failure of Success Criterion 4.1.2 due to using script to make div or span a user interface control in HTML without providing a role for the control",
+                "notes": ["This failure may be solved in the future using DHTML roadmap techniques."]
               },
               {
                 "id": "TECH:F15",
