@@ -22,11 +22,11 @@
         {% endif%}
         {% if detail.type == 'ulist' %}
           <hr>
-          <ul>{% for li in detail.items %}<li><p><strong>{{li.handle}}:</strong> {{li.text}}{% endfor %}</p></ul>
+          <ul>{% for li in detail.items %}<li><p>{% unless li.handle == "" %}<strong>{{li.handle}}:</strong> {% endunless %}{{li.text}}</p></li>{% endfor %}</ul>
         {% endif%}
         {% if detail.type == 'olist' %}
           <hr>
-          <ol>{% for li in detail.items %}<li><p><strong>{{li.handle}}:</strong> {{li.text}}{% endfor %}</p></ol>
+          <ol>{% for li in detail.items %}<li><p>{% unless li.handle == "" %}<strong>{{li.handle}}:</strong> {% endunless %}{{li.text}}</p></li>{% endfor %}</ol>
         {% endif%}
       {% endfor%}
     </div>
