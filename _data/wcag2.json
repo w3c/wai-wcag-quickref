@@ -2117,7 +2117,8 @@
                 },
                 {
                   "id": "TECH:future3",
-                  "title": "Avoiding scaling font sizes smaller than the user-agent default"
+                  "title": "Avoiding scaling font sizes smaller than the user-agent default",
+                  "notes": ["The author won't actually know the font size, but should avoid percentage scaling that results in less than 100%"]
                 },
                 {
                   "id": "TECH:future4",
