@@ -2188,12 +2188,12 @@
                 "type": "ulist",
                 "items": [
                   {
-                    "handle": "",
-                    "text": "Customizable: The image of text can be visually customized to the user's requirements;"
+                    "handle": "Customizable",
+                    "text": "The image of text can be visually customized to the user's requirements;"
                   },
                   {
-                    "handle": "",
-                    "text": "Essential: A particular presentation of text is essential to the information being conveyed."
+                    "handle": "Essential",
+                    "text": "A particular presentation of text is essential to the information being conveyed."
                   }
                 ]
               },
