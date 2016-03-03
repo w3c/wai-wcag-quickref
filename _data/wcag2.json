@@ -1640,28 +1640,34 @@
                   "id": "TECH:G57",
                   "title": "Ordering the content in a meaningful sequence"
                 },
-                {
-                  "id": "TECH:G57",
-                  "title": "Ordering the content in a meaningful sequence",
-                  "using": [
-                    {
-                      "id": "TECH:H34",
-                      "title": "Using a Unicode right-to-left mark (RLM) or left-to-right mark (LRM) to mix text direction inline"
-                    },
-                    {
-                      "id": "TECH:H56",
-                      "title": "Using the dir attribute on an inline element to resolve problems with nested directional runs"
-                    },
-                    {
-                      "id": "TECH:C6",
-                      "title": "Positioning content based on structural markup"
-                    },
-                    {
-                      "id": "TECH:C8",
-                      "title": "Using CSS letter-spacing to control spacing within a word"
-                    }
-                  ]
-                },
+                {"and": [
+                  {
+                    "id": "TECH:text1",
+                    "title": "Marking sequences in the content as meaningful"
+                  },
+                  {
+                    "id": "TECH:G57",
+                    "title": "Ordering the content in a meaningful sequence",
+                    "using": [
+                      {
+                        "id": "TECH:H34",
+                        "title": "Using a Unicode right-to-left mark (RLM) or left-to-right mark (LRM) to mix text direction inline"
+                      },
+                      {
+                        "id": "TECH:H56",
+                        "title": "Using the dir attribute on an inline element to resolve problems with nested directional runs"
+                      },
+                      {
+                        "id": "TECH:C6",
+                        "title": "Positioning content based on structural markup"
+                      },
+                      {
+                        "id": "TECH:C8",
+                        "title": "Using CSS letter-spacing to control spacing within a word"
+                      }
+                    ]
+                  }
+                ]},
                 {
                   "id": "TECH:C27",
                   "title": "Making the DOM order match the visual order"
@@ -5455,13 +5461,13 @@
                         ]}]
                       },
                       {
-                        "title": "@@@ Situation F: If the non-text content should be ignored by assistive technology:",
+                        "title": "Situation F: If the non-text content should be ignored by assistive technology:",
                         "techniques": [
                           {
                             "id": "TECH:future1",
                             "title": "Implementing or marking the non-text content so that it will be ignored by assistive technology",
                             "using": [{"group": {
-                              "title": "@@@ Techniques to indicate that text alternatives are not required for Situation F:",
+                              "title": "Techniques to indicate that text alternatives are not required for Situation F:",
                               "techniques": [
                                 {
                                   "id": "TECH:C9",
