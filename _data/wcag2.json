@@ -2470,23 +2470,28 @@
                   "techniques": [
                     {
                       "id": "TECH:C23",
-                      "title": "Specifying text and background colors of secondary content such as banners, features and navigation in CSS while not specifying text and background colors of the main content"
+                      "title": "Specifying text and background colors of secondary content such as banners, features and navigation in CSS while not specifying text and background colors of the main content",
+                      "append": "OR"
                     },
                     {
                       "id": "TECH:C25",
-                      "title": "Specifying borders and layout in CSS to delineate areas of a Web page while not specifying text and text-background colors"
+                      "title": "Specifying borders and layout in CSS to delineate areas of a Web page while not specifying text and text-background colors",
+                      "append": "OR"
                     },
                     {
                       "id": "TECH:G156",
-                      "title": "Using a technology that has commonly-available user agents that can change the foreground and background of blocks of text"
+                      "title": "Using a technology that has commonly-available user agents that can change the foreground and background of blocks of text",
+                      "append": "OR"
                     },
                     {
                       "id": "TECH:G148",
-                      "title": "Not specifying background color, not specifying text color, and not using technology features that change those defaults"
+                      "title": "Not specifying background color, not specifying text color, and not using technology features that change those defaults",
+                      "append": "OR"
                     },
                     {
                       "id": "TECH:G175",
-                      "title": "Providing a multi color selection tool on the page for foreground and background colors"
+                      "title": "Providing a multi color selection tool on the page for foreground and background colors",
+                      "append": "OR"
                     }
                   ]
                 },
@@ -2495,7 +2500,8 @@
                   "techniques": [
                     {
                       "id": "TECH:G204",
-                      "title": "Not interfering with the user agent's reflow of text as the viewing window is narrowed"
+                      "title": "Not interfering with the user agent's reflow of text as the viewing window is narrowed",
+                      "append": "OR"
                     },
                     {
                       "id": "TECH:C20",
@@ -2508,11 +2514,13 @@
                   "techniques": [
                     {
                       "id": "TECH:C19",
-                      "title": "Specifying alignment either to the left OR right in CSS"
+                      "title": "Specifying alignment either to the left OR right in CSS",
+                      "append": "OR"
                     },
                     {
                       "id": "TECH:G172",
-                      "title": "Providing a mechanism to remove full justification of text"
+                      "title": "Providing a mechanism to remove full justification of text",
+                      "append": "OR"
                     },
                     {
                       "id": "TECH:G169",
@@ -2525,7 +2533,8 @@
                   "techniques": [
                     {
                       "id": "TECH:G188",
-                      "title": "Providing a button on the page to increase line spaces and paragraph spaces"
+                      "title": "Providing a button on the page to increase line spaces and paragraph spaces",
+                      "append": "OR"
                     },
                     {
                       "id": "TECH:C21",
@@ -2538,7 +2547,8 @@
                   "techniques": [
                     {
                       "id": "TECH:future1",
-                      "title": "Not interfering with the user agent's reflow of text as the viewing window is narrowed (General) OR"
+                      "title": "Not interfering with the user agent's reflow of text as the viewing window is narrowed",
+                      "append": "OR"
                     },
                     {
                       "id": "TECH:G146",
@@ -2547,23 +2557,28 @@
                       "using": [
                         {
                           "id": "TECH:C12",
-                          "title": "Using percent for font sizes"
+                          "title": "Using percent for font sizes",
+                          "append": "OR"
                         },
                         {
                           "id": "TECH:C13",
-                          "title": "Using named font sizes"
+                          "title": "Using named font sizes",
+                          "append": "OR"
                         },
                         {
                           "id": "TECH:C14",
-                          "title": "Using em units for font sizes"
+                          "title": "Using em units for font sizes",
+                          "append": "OR"
                         },
                         {
                           "id": "TECH:C24",
-                          "title": "Using percentage values in CSS for container sizes"
+                          "title": "Using percentage values in CSS for container sizes",
+                          "append": "OR"
                         },
                         {
                           "id": "TECH:FLASH33",
-                          "title": "Using relative values for Flash object dimensions"
+                          "title": "Using relative values for Flash object dimensions",
+                          "append": "OR"
                         },
                         {
                           "id": "TECH:SCR34",

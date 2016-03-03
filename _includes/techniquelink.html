@@ -43,7 +43,7 @@
     {% endfor %}
   {% else %}
     {% if shortname == 'future' %}
-      {{include.technique.title}} (future link)
+      {{include.technique.title}} (future link) {{include.technique.append}}
       {% for note in include.technique.notes %}
         {% if forloop.first %}<ul class="notes">{% endif %}
           <li>
