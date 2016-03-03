@@ -5606,52 +5606,9 @@
             }],
             "techniques": [{"sufficient": [
               {
-                "title": "Situation A: If an application causes a legal transaction to occur, such as making a purchase or submitting an income tax return:",
-                "techniques": [
-                  {
-                    "id": "TECH:G164",
-                    "title": "Providing a stated time within which an online request (or transaction) may be amended or canceled by the user after making the request"
-                  },
-                  {
-                    "id": "TECH:G98",
-                    "title": "Providing the ability for the user to review and correct answers before submitting"
-                  },
-                  {
-                    "id": "TECH:G155",
-                    "title": "Providing a checkbox in addition to a submit button"
-                  }
-                ]
-              },
-              {
-                "title": "Situation B: If an action causes information to be deleted:",
-                "techniques": [
-                  {
-                    "id": "TECH:G99",
-                    "title": "Providing the ability to recover deleted information"
-                  },
-                  {
-                    "id": "TECH:G168",
-                    "title": "Requesting confirmation to continue with selected action"
-                  },
-                  {
-                    "id": "TECH:G155",
-                    "title": "Providing a checkbox in addition to a submit button"
-                  }
-                ]
-              },
-              {
-                "title": "Situation C: If the Web page includes a testing application:",
-                "techniques": [
-                  {
-                    "id": "TECH:G98",
-                    "title": "Providing the ability for the user to review and correct answers before submitting"
-                  },
-                  {
-                    "id": "TECH:G168",
-                    "title": "Requesting confirmation to continue with selected action"
-                  }
-                ]
-              }
+                "id": "TECH:text1",
+                "title": "Following the <a href='http://www.w3.org/TR/UNDERSTANDING-WCAG20/minimize-error-reversible.html#minimize-error-reversible-techniques-head'>sufficient techniques for Success Criterion 3.3.4</a> for all forms that require the user to submit information."
+               }
             ]}]
           }
         ]
