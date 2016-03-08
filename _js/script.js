@@ -401,7 +401,7 @@ jQuery(document).ready(function($) {
         sctexthidden1 = "",
         sctext2 = "",
         sctexthidden2 = "",
-        pretechtext = "all"
+        pretechtext = "all",
         techtext = "techniques",
         techtexthidden = "";
 
@@ -418,7 +418,7 @@ jQuery(document).ready(function($) {
         }
       });
       pretechtext = array2prose(ttypes, 'and') + " ";
-    }c
+    }
 
     var pressed = $('#tags .btn-primary');
     if (pressed.length>0) {
