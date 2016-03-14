@@ -73,6 +73,7 @@ h1 {
 }
 
 header[role=banner] {
+  overflow:hidden;
   font-size: (18/14) * 1em;
   border-top: 5px solid #930;
   div {
@@ -108,30 +109,24 @@ header[role=banner] {
   }
 }
 
-.subheading {
-  display: block;
-  font-family: $font-family-sans-serif;
-  font-size: 0.55em;
-  margin: 0.25em;
-}
-
 .page-title {
-  clear: both;
-  font-size: 1.4em;
-  @include mq($medium) {
-    clear: none;
-    font-size: 1.75em;
-  }
   font-family: $font-family-serif;
   margin-bottom: 1em;
   padding: .25em 0 0;
   h1 {
-    font-size: 1em;
+    clear: both;
+    font-size: 1.4em;
+    @include mq($medium) {
+      clear: none;
+      font-size: 1.75em;
+    }
   }
   .subheading {
     padding: .25em 0 0;
     display:block;
-    font-size: .5em;
+    font-family: $font-family-sans-serif;
+    font-size: 1em;
+    margin: 0.25em;
   }
   a {
     color: inherit;
@@ -836,6 +831,8 @@ button.panel-heading {
 
 .has-js #pageinfo {
   display:none;
+  clear: both;
+  font-size: (14/18) * 1em;
   &[aria-expanded=true] {
 		@include mq($medium) {
 	    display: flex;
