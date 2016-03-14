@@ -145,6 +145,7 @@ header[role=banner] {
   border: 1px solid #555;
   outline: 4px solid #FFF176;
   padding: .5em;
+  margin: 4px;
   @include mq($medium) {
     float:right;
     clear: right;
