@@ -1,7 +1,13 @@
 <div class="navbar-scroll">
   <div id="overview" class="overview spy-active" aria-labelledby="overview_heading">
+    <div id="expandcollapsalltechniqueswrapper">
+      <button class="btn btn-default btn-xsm" id="expandcollapsalltechniques" aria-expanded="false">
+        <svg aria-hidden="true" class="i-list-open"><use xlink:href="{{ "/img/icons.svg" | prepend: site.baseurl }}#i-list-open"></use></svg>
+        <svg aria-hidden="true" class="i-list"><use xlink:href="{{ "/img/icons.svg" | prepend: site.baseurl }}#i-list"></use></svg>
+        <span>Expand techniques</span>
+      </button>
+    </div>
     <div class="sidebar-content">
-      <!-- <label for="spy-checkbox"><input type="checkbox" id="spy-checkbox"> Dynamic highlight position in document</label> -->
       <nav class="nav-overview" aria-label="Principles, Guidelines and Success Criteria">
         <ul class="nav">
         {% assign p = 0 %}

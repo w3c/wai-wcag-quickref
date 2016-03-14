@@ -393,6 +393,7 @@ header[role=banner] {
 
 .navbar-scroll .nav {
   margin-bottom: 1em;
+  padding-left: 0;
 }
 
 .panel-heading {
@@ -879,6 +880,7 @@ button.panel-heading {
   padding: 5px 5px 5px 2em;
   margin-bottom: 1em;
   position: relative;
+  font-size: .85em;
   svg {
     position: absolute;
     margin-left: -1.5em;
@@ -956,5 +958,19 @@ ul.notes {
     list-style: none;
   }
 }
+
+#expandcollapsalltechniqueswrapper {
+  text-align: right;
+}
+
+#expandcollapsalltechniques {
+  .i-list      { display: none; }
+  .i-list-open { display: inline-block; }
+  &[aria-expanded=true] {
+    .i-list      { display: inline-block; }
+    .i-list-open { display: none; }
+  }
+}
+
 @import "footer";
 @import "print";
