@@ -6,7 +6,7 @@
 {% assign keywordsdeveloping = tags.dev %}
 {% assign keywordsinteraction = tags.int %}
 {% assign keywordsvisual = tags.vis %}
-<article class="sc-wrapper current filter-levels-{{sc.level | downcase}}" data-tags-con="{{keywordscontent}}" data-tags-dev="{{keywordsdeveloping}}" data-tags-int="{{keywordsinteraction}}" data-tags-vis="{{keywordsvisual}}">
+<article  id="qr-{{sc_id}}" class="sc-wrapper current filter-levels-{{sc.level | downcase}}" data-tags-con="{{keywordscontent}}" data-tags-dev="{{keywordsdeveloping}}" data-tags-int="{{keywordsinteraction}}" data-tags-vis="{{keywordsvisual}}">
   <header>
     <h4 id="{{sc_id}}"><strong>{{ p }}.{{ g }}.{{ s }}</strong> <span>{{sc.handle}}</span></h4>
     <p class="h4"><span class="level-{{sc.level | downcase}}">Level {{sc.level}}</span></p>
