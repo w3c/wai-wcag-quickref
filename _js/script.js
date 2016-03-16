@@ -417,8 +417,10 @@ jQuery(document).ready(function($) {
           ttypes.push($(el).val());
         }
       });
-      pretechtext = array2prose(ttypes, 'and') + " ";
+      pretechtext = array2prose(ttypes, 'and');
     }
+
+    pretechtext = pretechtext + " ";
 
     var pressed = $('#tags .btn-primary');
     if (pressed.length>0) {
