@@ -18,6 +18,13 @@ lsi: false
 # Build settings
 markdown: kramdown
 
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+  endings: all
+  blanklines: false
+  profile: false
+
 collections:
   filters:
     output: false
