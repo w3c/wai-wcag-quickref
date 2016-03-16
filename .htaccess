@@ -85,7 +85,7 @@
 # Customize what Apache returns to the client in case of an error.
 # https://httpd.apache.org/docs/current/mod/core.html#errordocument
 
-ErrorDocument 404 /404.html
+# ErrorDocument 404 /404.html
 
 # ----------------------------------------------------------------------
 # | Error prevention                                                   |
@@ -548,13 +548,6 @@ AddDefaultCharset utf-8
 # https://www.mnot.net/blog/2010/04/07/well-known
 # https://tools.ietf.org/html/rfc5785
 
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteCond %{REQUEST_URI} "!(^|/)\.well-known/([^./]+./?)+$" [NC]
-    RewriteCond %{SCRIPT_FILENAME} -d [OR]
-    RewriteCond %{SCRIPT_FILENAME} -f
-    RewriteRule "(^|/)\." - [F]
-</IfModule>
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -572,21 +565,21 @@ AddDefaultCharset utf-8
 # include: configuration files, files that contain metadata about the
 # project (e.g.: project dependencies), build scripts, etc..
 
-<FilesMatch "(^#.*#|\.(bak|conf|dist|fla|in[ci]|log|psd|sh|sql|sw[op])|~)$">
+#<FilesMatch "(^#.*#|\.(bak|conf|dist|fla|in[ci]|log|psd|sh|sql|sw[op])|~)$">
 
     # Apache < 2.3
-    <IfModule !mod_authz_core.c>
-        Order allow,deny
-        Deny from all
-        Satisfy All
-    </IfModule>
+ #   <IfModule !mod_authz_core.c>
+  #      Order allow,deny
+   #     Deny from all
+    #    Satisfy All
+    #</IfModule>
 
     # Apache ≥ 2.3
-    <IfModule mod_authz_core.c>
-        Require all denied
-    </IfModule>
+    #<IfModule mod_authz_core.c>
+     #   Require all denied
+    #</IfModule>
 
-</FilesMatch>
+#</FilesMatch>
 
 # ----------------------------------------------------------------------
 # | HTTP Strict Transport Security (HSTS)                              |
