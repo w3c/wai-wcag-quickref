@@ -21,7 +21,7 @@ collections:
   filters:
     output: false
   help:
-    output: true
+    output: false
 
 exclude:
   - node_modules
