@@ -718,10 +718,10 @@ jQuery(document).ready(function($) {
   $('#expandcollapsalltechniques').on('click', function (e) {
     if($(e.target).attr('aria-expanded') != 'true') {
       $('.collapse').collapse('show');
-      $(e.target).attr('aria-expanded', true).find('span').text('Collapse techniques');
+      $(e.target).attr('aria-expanded', true).find('span').html('Collapse <strong>all</strong> techniques');
     } else {
       $('.collapse').collapse('hide');
-      $(e.target).attr('aria-expanded', false).find('span').text('Expand techniques');
+      $(e.target).attr('aria-expanded', false).find('span').text('Expand <strong>all</strong> techniques');
     }
   });
 
