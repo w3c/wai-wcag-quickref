@@ -4,20 +4,20 @@ layout: default
 {% include header.html %}
 
 <div class="mainrow">
-  <button id="showhidesbsmall" data-target="#sidebar" type="button" data-toggle="collapse" aria-expanded="true" aria-controls="#sidebar" class="btn btn-default"><span class="word-show"><svg aria-hidden="true" class="i-chevron-right"><use xlink:href="{{ "/img/icons.svg" | prepend: site.baseurl }}#i-chevron-right"></use></svg> Show</span><span class="word-hide"><svg aria-hidden="true" class="i-chevron-down"><use xlink:href="{{ "/img/icons.svg" | prepend: site.baseurl }}#i-chevron-down"></use></svg> Hide</span> in-page navigation and filter options</button>
+  <button id="showhidesbsmall" data-target="#sidebar" type="button" data-toggle="collapse" aria-expanded="true" aria-controls="#sidebar" class="btn btn-default"><span class="word-show"><svg aria-hidden="true" class="i-chevron-right"><use xlink:href="{{ "img/icons.svg" | prepend: site.baseurl }}#i-chevron-right"></use></svg> Show</span><span class="word-hide"><svg aria-hidden="true" class="i-chevron-down"><use xlink:href="{{ "img/icons.svg" | prepend: site.baseurl }}#i-chevron-down"></use></svg> Hide</span> in-page navigation and filter options</button>
 
   <div class="sidebar" id="sidebar">
     <div class="fixedsticky" style="top:0;">
       <nav>
         <ul class="nav nav-tabs buttons" id="navtabs" tole="tablist">
           <li role="presentation">
-            <button id="hidesidebars" aria-expanded="true" type="button" class="btn btn-default btn-sm" aria-label="Hide Sidebar"><span><span class="word-hide"><svg aria-hidden="true" class="i-chevron-left"><use xlink:href="{{ "/img/icons.svg" | prepend: site.baseurl }}#i-chevron-left"></use></svg> Hide</span></span></button>
+            <button id="hidesidebars" aria-expanded="true" type="button" class="btn btn-default btn-sm" aria-label="Hide Sidebar"><span><span class="word-hide"><svg aria-hidden="true" class="i-chevron-left"><use xlink:href="{{ "img/icons.svg" | prepend: site.baseurl }}#i-chevron-left"></use></svg> Hide</span></span></button>
           </li>
           <li role="presentation" class="active">
-            <a href="#col_overview" aria-selected="true" data-toggle="tab" data-toggle="tab" aria-controls="col_overview"><span><svg aria-hidden="true" class="i-menu"><use xlink:href="{{ "/img/icons.svg" | prepend: site.baseurl }}#i-menu"></use></svg> Contents</span></a>
+            <a href="#col_overview" aria-selected="true" data-toggle="tab" data-toggle="tab" aria-controls="col_overview"><span><svg aria-hidden="true" class="i-menu"><use xlink:href="{{ "img/icons.svg" | prepend: site.baseurl }}#i-menu"></use></svg> Contents</span></a>
           </li>
           <li role="presentation">
-            <a href="#col_customize"  aria-selected="false" data-toggle="tab" data-toggle="tab" aria-controls="col_customize"><span><svg aria-hidden="true" class="i-settings"><use xlink:href="{{ "/img/icons.svg" | prepend: site.baseurl }}#i-settings"></use></svg> Filter</span></a>
+            <a href="#col_customize"  aria-selected="false" data-toggle="tab" data-toggle="tab" aria-controls="col_customize"><span><svg aria-hidden="true" class="i-settings"><use xlink:href="{{ "img/icons.svg" | prepend: site.baseurl }}#i-settings"></use></svg> Filter</span></a>
           </li>
         </ul>
       </nav>
@@ -28,7 +28,7 @@ layout: default
         <aside role="tabpanel" class="tab-pane tags" id="col_customize">
           <div class="sidebar-content">
             <div class="infobox">
-              <svg aria-hidden="true" class="i-info"><use xlink:href="{{ "/img/icons.svg" | prepend: site.baseurl }}#i-info"></use></svg> Changing filters will change the listed Success Criteria and Techniques.
+              <svg aria-hidden="true" class="i-info"><use xlink:href="{{ "img/icons.svg" | prepend: site.baseurl }}#i-info"></use></svg> Changing filters will change the listed Success Criteria and Techniques.
             </div>
             {% include tags.html show="true" %}
             {% include filters.html %}
@@ -39,7 +39,7 @@ layout: default
   </div>
   <main>
     <div class="navrow fixedsticky" style="top:0;">
-      <button id="showsidebars" aria-expanded="false" hidden type="button" class="btn btn-default btn-sm"><span><svg aria-hidden="true" class="i-chevron-right"><use xlink:href="{{ "/img/icons.svg" | prepend: site.baseurl }}#i-chevron-right"></use></svg> Show Sidebar</span></button>
+      <button id="showsidebars" aria-expanded="false" hidden type="button" class="btn btn-default btn-sm"><span><svg aria-hidden="true" class="i-chevron-right"><use xlink:href="{{ "img/icons.svg" | prepend: site.baseurl }}#i-chevron-right"></use></svg> Show Sidebar</span></button>
       {% include filter-status.html %}
     </div>
     <div class="maininner">
