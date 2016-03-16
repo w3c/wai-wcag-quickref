@@ -353,8 +353,8 @@ jQuery(document).ready(function($) {
   function scrollto(target) {
     var location = window.history.location || window.location,
         uri = new URI(location);
-    var scrollpos = target.offset().top - $('.navrow').outerHeight() - 5;
-    $('html').animate({
+    var scrollpos = target.offset().top - $('.navrow').outerHeight() + 1;
+    $('body, html').animate({
         scrollTop: scrollpos
     }, 750, 'linear');
     uri.fragment(target.selector);
