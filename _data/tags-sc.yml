@@ -1,6 +1,6 @@
 text-equiv-all:
-  dev: CAPTCHA images text-alternatives video
-  int: audio video buttons carousels CAPTCHA
+  dev: captcha images text-alternatives video
+  int: audio video buttons carousels captcha
   vis: images images-of-text animation progress-steps text-alternatives video
   con: audio captions content images live-stream moving-content text-alternatives video visual-cues buttons
 media-equiv-av-only-alt:
@@ -88,8 +88,8 @@ visual-audio-contrast7:
   vis: color contrast images-of-text text
   con: content messaging
 visual-audio-contrast-noaudio:
-  dev: CAPTCHA video
-  int: audio autoplay controls streaming CAPTCHA
+  dev: captcha video
+  int: audio autoplay controls streaming captcha
 visual-audio-contrast-visual-presentation:
   dev: controls text
   int: controls
