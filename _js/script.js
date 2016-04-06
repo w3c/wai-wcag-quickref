@@ -496,7 +496,7 @@ jQuery(document).ready(function($) {
   });
 
   $('#showalltags').on('click', function(e) {
-    var txt = $('#tags').is('.open') ? 'Show all tags' : 'Show less tags';
+    var txt = $('#tags').is('.open') ? 'Show all tags' : 'Show fewer tags';
     $(this).text(txt);
     $('#tags').toggleClass('open');
   });

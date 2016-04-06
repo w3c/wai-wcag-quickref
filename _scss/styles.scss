@@ -733,7 +733,7 @@ div.understanding {
   transition: max-height 1s linear;
   position:relative;
   &.open {
-    padding-bottom: 1.5em;
+    padding-bottom: 2em;
   }
   &:not(.open) {
     overflow:hidden;
@@ -746,6 +746,7 @@ div.understanding {
     bottom:0;
     right: 0px;
     left: 0px;
+    padding: 5px;
     border: 0px none;
     text-transform: uppercase;
     font-size: .9em;
