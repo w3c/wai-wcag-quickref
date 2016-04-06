@@ -1,5 +1,6 @@
 ---
 layout: default
+button: 1
 ---
 {% include header.html %}
 
@@ -38,11 +39,11 @@ layout: default
     </div>
   </div>
   <main>
-    <div class="navrow fixedsticky" style="top:0;">
+    <div class="navrow fixedsticky with-expandcollapseallbutton" style="top:0;">
       <button id="showsidebars" aria-expanded="false" hidden type="button" class="btn btn-default btn-sm"><span><svg aria-hidden="true" class="i-chevron-right"><use xlink:href="{{ "img/icons.svg" | prepend: site.baseurl }}#i-chevron-right"></use></svg> Show Sidebar</span></button>
-      {% include filter-status.html %}
+      {% include filter-status.html button="true" %}
     </div>
-    <div class="maininner">
+      <div class="maininner">
       {% assign p = 0 %}
       {% for principle in site.data.wcag2.principles %}
         {% assign p = p | plus: 1 %}

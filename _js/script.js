@@ -716,12 +716,14 @@ jQuery(document).ready(function($) {
   });
 
   $('#expandcollapsalltechniques').on('click', function (e) {
-    if($(e.target).attr('aria-expanded') != 'true') {
+    if($(this).attr('aria-expanded') != 'true') {
       $('.collapse').collapse('show');
-      $(e.target).attr('aria-expanded', true).find('span').html('Collapse <strong>all</strong> techniques');
+      $('.sc-text button').attr('aria-expanded', true).parent().find('~ *:not(hr)').toggle();
+      $(this).attr('aria-expanded', true).find('span').html('Collapse <strong>all</strong> sections');
     } else {
       $('.collapse').collapse('hide');
-      $(e.target).attr('aria-expanded', false).find('span').html('Expand <strong>all</strong> techniques');
+      $('.sc-text button').attr('aria-expanded', false).parent().find('~ *:not(hr)').toggle();
+      $(this).attr('aria-expanded', false).find('span').html('Expand <strong>all</strong> sections');
     }
   });
 
