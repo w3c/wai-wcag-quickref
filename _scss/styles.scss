@@ -984,11 +984,11 @@ ul.notes {
 }
 
 #expandcollapsalltechniques {
-  .i-list      { display: none; }
-  .i-list-open { display: inline-block; }
+  .i-minus { display: none; }
+  .i-plus  { display: inline-block; }
   &[aria-expanded=true] {
-    .i-list      { display: inline-block; }
-    .i-list-open { display: none; }
+    .i-minus { display: inline-block; }
+    .i-plus  { display: none; }
   }
   .maininner & {
     margin: 10px 5px 0 0;
