@@ -281,12 +281,10 @@ jQuery(document).ready(function($) {
     var location = window.history.location || window.location,
         uri = new URI(location),
         tags = [];
+        uri.removeSearch('tags');
     $('#tags .btn-primary').each(function(index, elm){
       tags.push($(elm).data('tag'));
-      uri.removeSearch('tags');
-      if (tags.length>0) {
-        uri.setSearch('tags', tags.join(','));
-      }
+      uri.setSearch('tags', tags.join(','));
     });
 
     $('#filters .sbbox').each(function(index, el){
