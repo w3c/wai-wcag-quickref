@@ -101,20 +101,9 @@ jQuery(document).ready(function($) {
       $('a[href=' + data.currentsidebar + ']').trigger('click');
     }
 
-    if (data.tagscontent || data.tagsvisual || data.tagsinteraction || data.tagsdeveloping) {
+    if (data.tags) {
       $('#tags .btn').removeClass('btn-primary').addClass('btn-default').removeAttr('aria-selected');
-      if (data.tagscontent) {
-        $('[data-scope=content] [data-tag="' + data.tagscontent.split(',').join('"], [data-scope=content] [data-tag="') + '"]').addClass('btn-primary').removeClass('btn-default').attr('aria-selected', true);
-      }
-      if (data.tagsvisual) {
-        $('[data-scope=visual] [data-tag="' + data.tagsvisual.split(',').join('"], [data-scope=visual] [data-tag="') + '"]').addClass('btn-primary').removeClass('btn-default').attr('aria-selected', true);
-      }
-      if (data.tagsinteraction) {
-        $('[data-scope=interaction] [data-tag="' + data.tagsinteraction.split(',').join('"], [data-scope=interaction] [data-tag="') + '"]').addClass('btn-primary').removeClass('btn-default').attr('aria-selected', true);
-      }
-      if (data.tagsdeveloping) {
-        $('[data-scope=developing] [data-tag="' + data.tagsdeveloping.split(',').join('"], [data-scope=developing] [data-tag="') + '"]').addClass('btn-primary').removeClass('btn-default').attr('aria-selected', true);
-      }
+      $('#tags .btn[data-tag="' + data.tags.split(',').join('"], #tags .btn[data-tag="') + '"]').addClass('btn-primary').removeClass('btn-default').attr('aria-selected', true);
     }
 
     if (data.levels) {
@@ -290,16 +279,13 @@ jQuery(document).ready(function($) {
 
   function saveURL() {
     var location = window.history.location || window.location,
-        uri = new URI(location);
-    $('#tags .panel-body').each(function(index, elm){
-      var tags = [];
-      var scope = $(elm).data('scope');
-      $(elm).find('.btn-primary').each(function(jndex, el) {
-        tags.push($(el).data('tag'));
-      });
-      uri.removeSearch('tags' + scope);
+        uri = new URI(location),
+        tags = [];
+    $('#tags .btn-primary').each(function(index, elm){
+      tags.push($(elm).data('tag'));
+      uri.removeSearch('tags');
       if (tags.length>0) {
-        uri.setSearch('tags' + scope, tags.join(','));
+        uri.setSearch('tags', tags.join(','));
       }
     });
 
@@ -493,6 +479,7 @@ jQuery(document).ready(function($) {
       button.removeClass('btn-default').addClass('btn-primary').attr('aria-selected','true');
     }
     applyTagsAndLevelsToSC();
+    saveURL();
   });
 
   $('#showalltags').on('click', function(e) {
