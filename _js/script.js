@@ -81,9 +81,12 @@ jQuery(document).ready(function($) {
   }
 
   function updateuri(uri) {
-    history.pushState(null, null, uri);
-    uri.fragment("");
-    localStorage.setItem('url-' + uri.filename(), uri);
+
+    if (!window.firstrun) {
+      history.pushState(null, null, uri);
+      uri.fragment("");
+      localStorage.setItem('url-' + uri.filename(), uri);
+    }
   }
 
   function applyurl() {
@@ -717,6 +720,8 @@ jQuery(document).ready(function($) {
   });
 
   init();
+  window.firstrun = true;
   applyurl();
+  window.firstrun = false;
 
 });
