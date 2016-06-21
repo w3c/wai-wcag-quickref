@@ -137,7 +137,13 @@ jQuery(document).ready(function($) {
     applyTagsAndLevelsToSC();
     $('#tags button:disabled').first().addClass('first');
     if (uri.hash()) {
-      scrollto($(uri.hash()));
+      var gotohash = uri.hash();
+      if (gotohash.match(/(.*)-sufficient-head$/) || gotohash.match(/(.*)-tech-optional-head$/) || gotohash.match(/(.*)-failures-head$/)) {
+        $('[data-historicalid="' + gotohash + '"]').parents('.collapse').collapse('show');
+        scrollto($('[data-historicalid="' + gotohash + '"]'));
+      } else {
+        scrollto(gotohash);
+      }
     }
   }
 
