@@ -69,17 +69,17 @@
       <div class="tab-wrap">
         <div class="tab-content">
           {% if ssize >= 1 %}
-            <div role="tabpanel" class="tbox tbox-sufficient tab-pane active" id="sc-{{ p }}{{ g }}{{ s }}-sufficient">
+            <div role="tabpanel" class="tbox tbox-sufficient tab-pane active" id="sc-{{ p }}{{ g }}{{ s }}-sufficient" data-historicalid="#{{sc_id}}-sufficient-head">
               {% include techlist.html techtitle="Sufficient Techniques" techniques=stech notes=sc.sufficientNotes ttype="sufficient" %}
             </div>
           {% endif %}
           {% if asize >= 1 %}
-            <div role="tabpanel" class="tbox tbox-advisory tab-pane active" id="sc-{{ p }}{{ g }}{{ s }}-advisory">
+            <div role="tabpanel" class="tbox tbox-advisory tab-pane active" id="sc-{{ p }}{{ g }}{{ s }}-advisory" data-historicalid="#{{sc_id}}-tech-optional-head">
               {% include techlist.html techtitle="Advisory Techniques" techniques=atech ttype="advisory" %}
             </div>
           {% endif %}
           {% if fsize >= 1 %}
-            <div role="tabpanel" class="tbox tbox-failures tab-pane active" id="sc-{{ p }}{{ g }}{{ s }}-failures">
+            <div role="tabpanel" class="tbox tbox-failures tab-pane active" id="sc-{{ p }}{{ g }}{{ s }}-failures" data-historicalid="#{{sc_id}}-failures-head">
               {% include techlist.html techtitle="Failures" techniques=ftech ttype="failure" %}
             </div>
           {% endif %}
