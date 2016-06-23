@@ -18,6 +18,8 @@ lsi: false
 # Build settings
 markdown: kramdown
 
+gems: ['jekyll-github-metadata']
+
 compress_html:
   clippings: all
   comments: ["<!-- ", " -->"]
