@@ -350,7 +350,7 @@ jQuery(document).ready(function($) {
     $('body, html').animate({
         scrollTop: scrollpos
     }, 750, 'linear');
-    uri.fragment(target.selector);
+    uri.fragment('#' + $(target).attr('id'));
     updateuri(uri);
     target.attr('tabindex', '-1').focus();
     return false;
