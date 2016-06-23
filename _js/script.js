@@ -666,11 +666,6 @@ jQuery(document).ready(function($) {
     updateuri(uri);
   });
 
-  $('.abouttech').on('click', function(e) {
-    e.preventDefault();
-    scrollto($('#abouttech'));
-  });
-
   $('#pageinfo').on('shown.bs.collapse hidden.bs.collapse', function(e) {
       $('.fixedsticky').fixedsticky( 'destroy' );
       if (matchMedia('screen and (min-width: 43em)').matches) {
