@@ -1,5 +1,5 @@
 <section id="filters" aria-label="Filter by Techniques or Level">
-  {% assign filters = site.filters | sort: 'sort' %}
+  {% assign filters = site.filters | sortby: 'sort' %}
   {% for filter in filters %}
     <div class="sbbox sbbox-default" id="{{filter.title | prepend: 'filter-' | slugify}}">
       <div class="sbbox-heading"> <span>{{ filter.title }}</span> <button class="btn btn-info btn-sm filters" disabled><svg aria-hidden="true" class="i-check"><use xlink:href="{{ "img/icons.svg" | prepend: site.baseurl }}#i-check"></use></svg> Select all</button></div>
