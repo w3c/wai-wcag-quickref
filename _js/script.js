@@ -345,11 +345,12 @@ jQuery(document).ready(function($) {
 
   function scrollto(target) {
     var location = window.history.location || window.location,
-        uri = new URI(location);
+        uri = new URI(location),
+        scrollAnimation = parseInt(localStorage.getItem("wai.scrollAnimation"));
     var scrollpos = target.offset().top - $('.navrow').outerHeight() + 1;
     $('body, html').animate({
         scrollTop: scrollpos
-    }, 750, 'linear');
+    }, scrollAnimation, 'linear');
     uri.fragment('#' + $(target).attr('id'));
     updateuri(uri);
     target.attr('tabindex', '-1').focus();
@@ -614,6 +615,15 @@ jQuery(document).ready(function($) {
       loadCSS( location.pathname + "css/vollkorn-woff.css" );
     }
 
+    if(!localStorage.getItem("wai.scrollAnimation")) {
+      localStorage.setItem("wai.scrollAnimation", 750);
+    }
+    $('input[name="scrollAnimation"][value=' + localStorage.getItem("wai.scrollAnimation") + ']').attr('checked', 'checked');
+
+    $('input[name="scrollAnimation"]').change(function(event) {
+      localStorage.setItem("wai.scrollAnimation", $(event.target).val());
+    });
+
     svg4everybody();
   }
 
@@ -721,6 +731,7 @@ jQuery(document).ready(function($) {
   });
 
   init();
+
   window.firstrun = true;
   applyurl();
   window.firstrun = false;
