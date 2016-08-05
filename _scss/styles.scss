@@ -851,12 +851,16 @@ button.panel-heading {
   padding: 5px;
   margin-bottom: 10px;
 	@include mq($medium) {
-		flex-basis: 48.5%;
+		flex-basis: 40%;
 	  margin-right: 1%;
 	  flex-grow: 1;
+    flex-shrink: 1;
 	}
   &:nth-child(even), &:last-child {
     margin-right: 0;
+  }
+  &:last-child {
+    flex-basis: 20%;
   }
 }
 
