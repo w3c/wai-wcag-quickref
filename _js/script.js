@@ -142,7 +142,7 @@ jQuery(document).ready(function($) {
         $('[data-historicalid="' + gotohash + '"]').parents('.collapse').collapse('show');
         scrollto($('[data-historicalid="' + gotohash + '"]'));
       } else {
-        scrollto(gotohash);
+        scrollto($(gotohash));
       }
     }
   }
@@ -346,8 +346,12 @@ jQuery(document).ready(function($) {
   function scrollto(target) {
     var location = window.history.location || window.location,
         uri = new URI(location),
-        scrollAnimation = parseInt(localStorage.getItem("wai.scrollAnimation"));
-    var scrollpos = target.offset().top - $('.navrow').outerHeight() + 1;
+        scrollAnimation = parseInt(localStorage.getItem("wai.scrollAnimation")),
+        scrolldiff = 60;
+        if ($('.navrow').outerHeight() > 0) {
+          scrolldiff = $('.navrow').outerHeight() + 5;
+        }
+    var scrollpos = target.offset().top - scrolldiff;
     $('body, html').animate({
         scrollTop: scrollpos
     }, scrollAnimation, 'linear');
