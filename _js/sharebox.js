@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function(){
     var cplel = plel.cloneNode(true);
     var theid = el.parentNode.parentNode.querySelector('h4[id]').id;
     cplel.setAttribute('href', '#' + theid);
-    cplel.setAttribute('aria-label', 'Share Link to the section “' + el.textContent + '”');
+    cplel.setAttribute('aria-label', 'Share Link to the section “' + el.parentNode.parentNode.querySelector('h4[id]').textContent + '”');
 
     var csbtext = shareboxtext.replace("%s", url + '#' + theid).replace("%s", url + '#' + theid);
     var csb = sharebox.cloneNode(true);
