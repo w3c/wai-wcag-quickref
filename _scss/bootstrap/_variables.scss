@@ -46,6 +46,13 @@ $link-hover-decoration: underline !default;
 
 $font-family-sans-serif:  "Trebuchet MS", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-serif:       "Vollkorn", Georgia, "Times New Roman", Times, serif !default;
+
+/* Change to Noto later:
+
+$font-family-sans-serif:  "Noto Sans", Helvetica, Arial, sans-serif !default;
+$font-family-serif:       $font-family-sans-serif;
+*/
+
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base:        $font-family-sans-serif !default;

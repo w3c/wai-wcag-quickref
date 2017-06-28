@@ -16,9 +16,9 @@
 	    <p>{{ sc.title }}</p>
       {% for detail in sc.details %}
         {% if detail.type == 'note' %}
-          <aside class="note">
+          <div class="note">
             <p><em>{{ detail.handle }}:</em> {{ detail.text }}</p>
-          </aside>
+          </div>
         {% endif%}
         {% if detail.type == 'ulist' %}
           <hr>
