@@ -875,12 +875,12 @@
                   "title": "Failure of Success Criterion 1.2.2 due to captions omitting some dialogue or important sound effects"
                 },
                 {
-                  "id": "TECH:F75",
-                  "title": "Failure of Success Criterion 1.2.2 by providing synchronized media without captions when the synchronized media presents more information than is presented on the page"
-                },
-                {
                   "id": "TECH:F74",
                   "title": "Failure of Success Criterion 1.2.2 and 1.2.8 due to not labeling a synchronized media alternative to text as an alternative"
+                },
+                {
+                  "id": "TECH:F75",
+                  "title": "Failure of Success Criterion 1.2.2 by providing synchronized media without captions when the synchronized media presents more information than is presented on the page"
                 }
               ]}
             ]
@@ -1697,24 +1697,24 @@
               ]},
               {"failure": [
                 {
-                  "id": "TECH:F34",
-                  "title": "Failure of Success Criterion 1.3.1 and 1.3.2 due to using white space characters to format tables in plain text content"
-                },
-                {
-                  "id": "TECH:F33",
-                  "title": "Failure of Success Criterion 1.3.1 and 1.3.2 due to using white space characters to create multiple columns in plain text content"
+                  "id": "TECH:F1",
+                  "title": "Failure of Success Criterion 1.3.2 due to changing the meaning of content by positioning information with CSS"
                 },
                 {
                   "id": "TECH:F32",
                   "title": "Failure of Success Criterion 1.3.2 due to using white space characters to control spacing within a word"
                 },
                 {
-                  "id": "TECH:F49",
-                  "title": "Failure of Success Criterion 1.3.2 due to using an HTML layout table that does not make sense when linearized"
+                  "id": "TECH:F33",
+                  "title": "Failure of Success Criterion 1.3.1 and 1.3.2 due to using white space characters to create multiple columns in plain text content"
                 },
                 {
-                  "id": "TECH:F1",
-                  "title": "Failure of Success Criterion 1.3.2 due to changing the meaning of content by positioning information with CSS"
+                  "id": "TECH:F34",
+                  "title": "Failure of Success Criterion 1.3.1 and 1.3.2 due to using white space characters to format tables in plain text content"
+                },
+                {
+                  "id": "TECH:F49",
+                  "title": "Failure of Success Criterion 1.3.2 due to using an HTML layout table that does not make sense when linearized"
                 }
               ]}
             ]
@@ -2883,16 +2883,16 @@
               ]},
               {"failure": [
                 {
+                  "id": "TECH:F42",
+                  "title": "Failure of Success Criteria 1.3.1, 2.1.1, 2.1.3, or 4.1.2 when emulating links"
+                },
+                {
                   "id": "TECH:F54",
                   "title": "Failure of Success Criterion 2.1.1 due to using only pointing-device-specific event handlers (including gesture) for a function"
                 },
                 {
                   "id": "TECH:F55",
                   "title": "Failure of Success Criteria 2.1.1, 2.4.7, and 3.2.1 due to using script to remove focus when focus is received"
-                },
-                {
-                  "id": "TECH:F42",
-                  "title": "Failure of Success Criteria 1.3.1, 2.1.1, 2.1.3, or 4.1.2 when emulating links"
                 }
               ]}
             ]
@@ -2936,7 +2936,12 @@
                 "id": "TECH:text1",
                 "title": "No additional techniques exist for this Success Criterion. Follow techniques for <a href='#keyboard-operation-keyboard-operable'>Success Criterion 2.1.1</a>. If that is not possible because there is a requirement for path-dependent input, then it is not possible to meet this Level AAA Success Criterion."
               }
-            ]}]
+            ]},
+            {"failure": [{
+              "id": "TECH:F42",
+              "title": "Failure of Success Criteria 1.3.1, 2.1.1, 2.1.3, or 4.1.2 when emulating links"
+            }]}
+          ]
           }
         ]
       },
@@ -3195,6 +3200,14 @@
               ]},
               {"failure": [
                 {
+                  "id": "TECH:F4",
+                  "title": "Failure of Success Criterion 2.2.2 due to using text-decoration:blink without a mechanism to stop it in less than five seconds"
+                },
+                {
+                  "id": "TECH:F7",
+                  "title": "Failure of Success Criterion 2.2.2 due to an object or applet, such as Java or Flash, that has blinking content without a mechanism to pause the content that blinks for more than five seconds"
+                },
+                {
                   "id": "TECH:F16",
                   "title": "Failure of Success Criterion 2.2.2 due to including scrolling content where movement is not essential to the activity without also including a mechanism to pause and restart the content"
                 },
@@ -3203,16 +3216,8 @@
                   "title": "Failure of Success Criterion 2.2.2 due to using the blink element"
                 },
                 {
-                  "id": "TECH:F4",
-                  "title": "Failure of Success Criterion 2.2.2 due to using text-decoration:blink without a mechanism to stop it in less than five seconds"
-                },
-                {
                   "id": "TECH:F50",
                   "title": "Failure of Success Criterion 2.2.2 due to a script that causes a blink effect without a mechanism to stop the blinking at 5 seconds or less"
-                },
-                {
-                  "id": "TECH:F7",
-                  "title": "Failure of Success Criterion 2.2.2 due to an object or applet, such as Java or Flash, that has blinking content without a mechanism to pause the content that blinks for more than five seconds"
                 }
               ]}
             ]
@@ -4959,14 +4964,6 @@
               ]},
               {"failure": [
                 {
-                  "id": "TECH:F60",
-                  "title": "Failure of Success Criterion 3.2.5 due to launching a new window when a user enters text into an input field"
-                },
-                {
-                  "id": "TECH:F61",
-                  "title": "Failure of Success Criterion 3.2.5 due to complete change of main content through an automatic update that the user cannot disable from within the content"
-                },
-                {
                   "id": "TECH:F9",
                   "title": "Failure of Success Criterion 3.2.5 due to changing the context when the user removes focus from a form element"
                 },
@@ -4975,12 +4972,20 @@
                   "title": "Failure of Success Criterion 3.2.5 due to opening windows that are not requested by the user"
                 },
                 {
+                  "id": "TECH:F41",
+                  "title": "Failure of Success Criterion 2.2.1, 2.2.4, and 3.2.5 due to using meta refresh to reload the page"
+                },
+                {
                   "id": "TECH:F52",
                   "title": "Failure of Success Criterion 3.2.1 and 3.2.5 due to opening a new window as soon as a new page is loaded"
                 },
                 {
-                  "id": "TECH:F41",
-                  "title": "Failure of Success Criterion 2.2.1, 2.2.4, and 3.2.5 due to using meta refresh to reload the page"
+                  "id": "TECH:F60",
+                  "title": "Failure of Success Criterion 3.2.5 due to launching a new window when a user enters text into an input field"
+                },
+                {
+                  "id": "TECH:F61",
+                  "title": "Failure of Success Criterion 3.2.5 due to complete change of main content through an automatic update that the user cannot disable from within the content"
                 }
               ]}
             ]
@@ -5842,17 +5847,21 @@
             }]},
             {"failure": [
               {
-                "id": "TECH:F59",
-                "title": "Failure of Success Criterion 4.1.2 due to using script to make div or span a user interface control in HTML without providing a role for the control",
-                "notes": ["This failure may be solved in the future using DHTML roadmap techniques."]
-              },
-              {
                 "id": "TECH:F15",
                 "title": "Failure of Success Criterion 4.1.2 due to implementing custom controls that do not use an accessibility API for the technology, or do so incompletely"
               },
               {
                 "id": "TECH:F20",
                 "title": "Failure of Success Criterion 1.1.1 and 4.1.2 due to not updating text alternatives when changes to non-text content occur"
+              },
+              {
+                "id": "TECH:F42",
+                "title": "Failure of Success Criteria 1.3.1, 2.1.1, 2.1.3, or 4.1.2 when emulating links"
+              },
+              {
+                "id": "TECH:F59",
+                "title": "Failure of Success Criterion 4.1.2 due to using script to make div or span a user interface control in HTML without providing a role for the control",
+                "notes": ["This failure may be solved in the future using DHTML roadmap techniques."]
               },
               {
                 "id": "TECH:F68",
