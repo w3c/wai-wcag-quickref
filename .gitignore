@@ -4,3 +4,4 @@ questions.md
 node_modules
 npm-debug.log
 .DS_Store
+/.jekyll-metadata
