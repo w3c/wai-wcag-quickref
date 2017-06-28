@@ -1,12 +1,13 @@
 {% assign s = s | plus: 1 %}
 {% assign sc = include.sc %}
 {% assign sc_id = sc.id | replace:'WCAG2:','' %}
+{% assign sc_num = p | append: "." | append: g | append: "." | append: s %}
 {% assign tags = site.data.tags-sc[sc_id] %}
 {% assign keywordscontent = tags.con %}
 {% assign keywordsdeveloping = tags.dev %}
 {% assign keywordsinteraction = tags.int %}
 {% assign keywordsvisual = tags.vis %}
-<article  id="{{sc_id}}" class="sc-wrapper current filter-levels-{{sc.level | downcase}}" data-tags-con="{{keywordscontent}}" data-tags-dev="{{keywordsdeveloping}}" data-tags-int="{{keywordsinteraction}}" data-tags-vis="{{keywordsvisual}}">
+<article role="region" id="{{sc_id}}" class="sc-wrapper current filter-levels-{{sc.level | downcase}}" data-tags-con="{{keywordscontent}}" data-tags-dev="{{keywordsdeveloping}}" data-tags-int="{{keywordsinteraction}}" data-tags-vis="{{keywordsvisual}}" aria-labelledby="qr-{{sc_id}}">
   <header>
     <h4 id="qr-{{sc_id}}"><strong>{{ p }}.{{ g }}.{{ s }}</strong> <span>{{sc.handle}}</span></h4>
     <p class="h4"><span class="level-{{sc.level | downcase}}">Level {{sc.level}}</span></p>
@@ -69,19 +70,25 @@
       <div class="tab-wrap">
         <div class="tab-content">
           {% if ssize >= 1 %}
-            <div role="tabpanel" class="tbox tbox-sufficient tab-pane active" id="sc-{{ p }}{{ g }}{{ s }}-sufficient" data-historicalid="#{{sc_id}}-sufficient-head">
-              {% include techlist.html techtitle="Sufficient Techniques" techniques=stech notes=sc.sufficientNotes ttype="sufficient" %}
-            </div>
+            {% assign theadid = "sc-" |append: p | append: g | append: s | append: "-sufficient-head" %}
+            {% assign theadtitle = "Sufficient Techniques <span class='sr-only'>for Success Criterion " | append: sc_num | append: "</span>" %}
+            <section class="tbox tbox-sufficient tab-pane active" id="sc-{{ p }}{{ g }}{{ s }}-sufficient" data-historicalid="#{{sc_id}}-sufficient-head" aria-labelledby="{{ theadid }}">
+              {% include techlist.html techtitle=theadtitle techheadid=theadid  techniques=stech notes=sc.sufficientNotes ttype="sufficient" %}
+            </section>
           {% endif %}
           {% if asize >= 1 %}
-            <div role="tabpanel" class="tbox tbox-advisory tab-pane active" id="sc-{{ p }}{{ g }}{{ s }}-advisory" data-historicalid="#{{sc_id}}-tech-optional-head">
-              {% include techlist.html techtitle="Advisory Techniques" techniques=atech ttype="advisory" %}
-            </div>
+            {% assign theadid = "sc-" |append: p | append: g | append: s | append: "-advisory-head" %}
+            {% assign theadtitle = "Advisory Techniques <span class='sr-only'>for Success Criterion " | append: sc_num | append: "</span>" %}
+            <section class="tbox tbox-advisory tab-pane active" id="sc-{{ p }}{{ g }}{{ s }}-advisory" data-historicalid="#{{sc_id}}-tech-optional-head" aria-labelledby="{{ theadid }}">
+              {% include techlist.html techtitle=theadtitle techheadid=theadid techniques=atech ttype="advisory" %}
+            </section>
           {% endif %}
           {% if fsize >= 1 %}
-            <div role="tabpanel" class="tbox tbox-failures tab-pane active" id="sc-{{ p }}{{ g }}{{ s }}-failures" data-historicalid="#{{sc_id}}-failures-head">
-              {% include techlist.html techtitle="Failures" techniques=ftech ttype="failure" %}
-            </div>
+            {% assign theadid = "sc-" |append: p | append: g | append: s | append: "-failures-head" %}
+            {% assign theadtitle = "Failures <span class='sr-only'>for Success Criterion " | append: sc_num | append: "</span>" %}
+            <section class="tbox tbox-failures tab-pane active" id="sc-{{ p }}{{ g }}{{ s }}-failures" data-historicalid="#{{sc_id}}-failures-head" aria-labelledby="{{ theadid }}">
+              {% include techlist.html techtitle=theadtitle techheadid=theadid techniques=ftech ttype="failure" %}
+            </section>
           {% endif %}
         </div>
       </div>
