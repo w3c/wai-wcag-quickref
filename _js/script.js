@@ -608,7 +608,7 @@ jQuery(document).ready(function($) {
 
     $('body').scrollspy({
       target: '.overview.spy-active',
-      offset: 45
+      offset: 60
     });
 
     // Use WOFF2 if supported
