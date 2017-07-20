@@ -21,6 +21,7 @@ lsi: false
 markdown: kramdown
 
 gems: ['jekyll-github-metadata']
+repository: 'w3c/wai-wcag-quickref'
 
 compress_html:
   clippings: all
