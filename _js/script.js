@@ -161,6 +161,7 @@ jQuery(document).ready(function($) {
     var pressed = $('#tags .btn-primary:not(:disabled)');
     var audiences = $('#audiences input:checked');
     var uncheckedLevels = $('#filter-levels input:not(:checked)');
+    var version = $('#filter-hideversion input:not(:checked)');
 
     $('.sc-wrapper').addClass('current');
     if (pressed.length>0) {
@@ -192,6 +193,19 @@ jQuery(document).ready(function($) {
       uncheckedLevels.each(function(index, lvl) {
         $('.sc-wrapper.current').each(function(index, sc) {
           if($(sc).hasClass('filter-levels-' + $(lvl).val())) {
+            $(sc).removeClass('current');
+          }
+        });
+      });
+    } else {
+      $('#filter-levels button.filters').prop('disabled', true);
+    }
+
+    if (version.length>0) {
+      $('#filter-levels button.filters').prop('disabled', false);
+      version.each(function(index, lvl) {
+        $('.sc-wrapper.current').each(function(index, sc) {
+          if($(sc).hasClass('filter-hideversion-' + $(lvl).val())) {
             $(sc).removeClass('current');
           }
         });
@@ -316,6 +330,11 @@ jQuery(document).ready(function($) {
   });
 
   $('#filter-levels').on('change', 'input[type=checkbox]', function(e) {
+    statusanimation();
+    applyTagsAndLevelsToSC();
+  });
+
+  $('#filter-hideversion').on('change', 'input[type=checkbox]', function(e) {
     statusanimation();
     applyTagsAndLevelsToSC();
   });

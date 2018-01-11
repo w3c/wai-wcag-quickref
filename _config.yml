@@ -1,13 +1,13 @@
 # Site settings
-title: How to Meet WCAG 2.0
+title: How to Meet WCAG 2.x
 email: ee@w3.org
 description: ""
-baseurl: "/wai-wcag-quickref/" # the subpath of your site, e.g. /blog/
-# baseurl: "/WAI/WCAG20/quickref/" # For publication
+#baseurl: "/wai-wcag-quickref/" # the subpath of your site, e.g. /blog/
+baseurl: "/WAI/WCAG20/quickref/" # For publication
 url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: yatil
 github_username:  yatil
-status: draft
+status: release
 version: "2.5"
 
 techniqueurl: https://www.w3.org/TR/WCAG20-TECHS/
