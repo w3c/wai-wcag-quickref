@@ -4,7 +4,7 @@ email: ee@w3.org
 description: ""
 #baseurl: "/wai-wcag-quickref/" # the subpath of your site, e.g. /blog/
 #baseurl: "/WAI/WCAG20/quickref/" # For publication
-baseurl: /
+#baseurl: /
 url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: yatil
 github_username:  yatil
@@ -21,7 +21,6 @@ lsi: false
 # Build settings
 markdown: kramdown
 
-gems: ['jekyll-github-metadata']
 repository: 'w3c/wai-wcag-quickref'
 
 compress_html:
@@ -36,6 +35,10 @@ collections:
     output: false
   help:
     output: false
+
+
+plugins:
+  - jekyll-github-metadata
 
 exclude:
   - node_modules
