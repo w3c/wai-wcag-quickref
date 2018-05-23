@@ -20,7 +20,7 @@ lsi: false
 # Build settings
 markdown: kramdown
 
-gems: ['jekyll-github-metadata']
+plugins: ['jekyll-github-metadata']
 repository: 'w3c/wai-wcag-quickref'
 
 compress_html:
