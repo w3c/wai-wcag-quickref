@@ -121,6 +121,10 @@ jQuery(document).ready(function($) {
       $('#filter-techniques input').prop('checked', true);
       $('#filter-techniques input[value="' + data.techniques.split(',').join('"], #filter-techniques input[value="') + '"]').prop('checked', false);
     }
+    if (data.versions) {
+      console.log('#wcagver [value="'+ data.versions +'"]');
+      $('#wcagver [value="'+ data.versions +'"]').prop('selected', true);
+    }
     if (data.showtechniques) {
       $('.btn-techniques').each(function(index, el) {
         var btn = $(el);
@@ -134,6 +138,7 @@ jQuery(document).ready(function($) {
       });
     }
     applyTechnologies();
+    applyVersions();
     applyTagsAndLevelsToSC();
     $('#tags button:disabled').first().addClass('first');
     if (uri.hash()) {
@@ -161,7 +166,6 @@ jQuery(document).ready(function($) {
     var pressed = $('#tags .btn-primary:not(:disabled)');
     var audiences = $('#audiences input:checked');
     var uncheckedLevels = $('#filter-levels input:not(:checked)');
-    var version = $('#filter-hideversion input:not(:checked)');
 
     $('.sc-wrapper').addClass('current');
     if (pressed.length>0) {
@@ -193,19 +197,6 @@ jQuery(document).ready(function($) {
       uncheckedLevels.each(function(index, lvl) {
         $('.sc-wrapper.current').each(function(index, sc) {
           if($(sc).hasClass('filter-levels-' + $(lvl).val())) {
-            $(sc).removeClass('current');
-          }
-        });
-      });
-    } else {
-      $('#filter-levels button.filters').prop('disabled', true);
-    }
-
-    if (version.length>0) {
-      $('#filter-levels button.filters').prop('disabled', false);
-      version.each(function(index, lvl) {
-        $('.sc-wrapper.current').each(function(index, sc) {
-          if($(sc).hasClass('filter-hideversion-' + $(lvl).val())) {
             $(sc).removeClass('current');
           }
         });
@@ -274,6 +265,12 @@ jQuery(document).ready(function($) {
     }
   }
 
+  function applyVersions() {
+    $('[data-versions]').hide();
+    var ver = $('#wcagver').val();
+    $('[data-versions*="' + ver + '"]').show();
+  }
+
   function applyTechniques() {
     var techniques = $('#filter-techniques-content');
     var tselected = [], tunselected = [];
@@ -330,11 +327,6 @@ jQuery(document).ready(function($) {
   });
 
   $('#filter-levels').on('change', 'input[type=checkbox]', function(e) {
-    statusanimation();
-    applyTagsAndLevelsToSC();
-  });
-
-  $('#filter-hideversion').on('change', 'input[type=checkbox]', function(e) {
     statusanimation();
     applyTagsAndLevelsToSC();
   });
@@ -423,7 +415,8 @@ jQuery(document).ready(function($) {
         techtexthidden = "";
 
     var techtypes = $('#filter-techniques-content input'),
-        techtypeschecked = techtypes.filter(':checked');
+        techtypeschecked = techtypes.filter(':checked'),
+        version = 'WCAG ' + $('#wcagver').val() + ':';
 
     if (techtypeschecked.length<techtypes.length) {
       var ttypes = [];
@@ -490,6 +483,7 @@ jQuery(document).ready(function($) {
     //   });
     //   techtexthidden = ' <span class="deem">(Hidden: '+array2prose(htechnologies, 'and')+')</span>';
     // }
+    $('#status .ver').html(version);
     $('#status .sc').html(sctext);
     $('#status .tech').html(pretechtext + techtext + techtexthidden + '.');
     if (techtext == "all techniques" && sctext == "all success criteria") {
@@ -623,7 +617,17 @@ jQuery(document).ready(function($) {
       $(this).prop('disabled', true);
     });
 
-    // $('.sidebar>div').css('width', $('.tab-pane.active').outerWidth());
+    $('#wcagver').on('change', function(event) {
+      event.preventDefault();
+      var location = window.history.location || window.location;
+      var uri = new URI(location);
+      uri.setSearch("versions", $('#wcagver').val());
+      applyTechnologies();
+      applyVersions();
+      applyTagsAndLevelsToSC();
+      statustext();
+      updateuri(uri);
+    });
 
     $('body').scrollspy({
       target: '.overview.spy-active',
