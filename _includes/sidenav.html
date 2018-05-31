@@ -20,8 +20,7 @@
                       {% for sc in guideline.successcriteria %}
                         {% assign s = s | plus: 1 %}
                         {% assign sc_id = sc.id | replace:'WCAG2:','' %}
-                        {% assign sc_id = sc_id | replace:'WCAG21:','' %}
-                        <li>
+                        <li data-versions="{% for v in sc.versions %}{{v}} {% endfor %}">
                           <a href="#{{sc_id}}"><strong><span>{{ p }}.{{ g }}.{{ s }}</span></strong> <span>{{sc.handle}}</span></a>
                         </li>
                       {% endfor %}
