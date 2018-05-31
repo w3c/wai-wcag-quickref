@@ -45,7 +45,7 @@ button: 1
     </div>
       <div class="maininner">
       {% assign p = 0 %}
-      {% for principle in site.data.wcag2.principles %}
+      {% for principle in site.data.wcag21.principles %}
         {% assign p = p | plus: 1 %}
         {% assign g = 0 %}
         <div class="principle panel panel-default">
