@@ -1,4 +1,4 @@
-text-equiv-all:
+non-text-content:
   dev: captcha images text-alternatives video
   int: audio video buttons carousels captcha
   vis: images images-of-text animation progress-steps text-alternatives video
