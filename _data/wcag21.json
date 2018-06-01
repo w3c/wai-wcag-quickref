@@ -11,6 +11,7 @@
         "guidelines": [
             {
                 "id": "WCAG2:text-alternatives",
+                "alt_id": ["text-equiv"],
                 "num": "1.1",
                 "versions": [
                     "2.0",
@@ -64,6 +65,7 @@
                 ],
                 "successcriteria": [{
                     "id": "WCAG2:non-text-content",
+                    "alt_id": ["text-equiv-all"],
                     "num": "1.1.1",
                     "versions": [
                         "2.0",
@@ -124,6 +126,7 @@
             },
             {
                 "id": "WCAG2:time-based-media",
+                "alt_id": ["media-equiv"],
                 "num": "1.2",
                 "versions": [
                     "2.0",
@@ -178,6 +181,7 @@
                 "successcriteria": [
                     {
                         "id": "WCAG2:audio-only-and-video-only-prerecorded",
+                        "alt_id": ["media-equiv-av-only-alt"],
                         "num": "1.2.1",
                         "versions": [
                             "2.0",
@@ -237,6 +241,7 @@
                     },
                     {
                         "id": "WCAG2:captions-prerecorded",
+                        "alt_id": ["media-equiv-captions"],
                         "num": "1.2.2",
                         "versions": [
                             "2.0",
@@ -292,6 +297,7 @@
                     },
                     {
                         "id": "WCAG2:audio-description-or-media-alternative-prerecorded",
+                        "alt_id": ["media-equiv-audio-desc"],
                         "num": "1.2.3",
                         "versions": [
                             "2.0",
@@ -347,6 +353,7 @@
                     },
                     {
                         "id": "WCAG2:captions-live",
+                        "alt_id": ["media-equiv-real-time-captions"],
                         "num": "1.2.4",
                         "versions": [
                             "2.0",
@@ -402,6 +409,7 @@
                     },
                     {
                         "id": "WCAG2:audio-description-prerecorded",
+                        "alt_id": ["media-equiv-audio-desc-only"],
                         "num": "1.2.5",
                         "versions": [
                             "2.0",
@@ -457,6 +465,7 @@
                     },
                     {
                         "id": "WCAG2:sign-language-prerecorded",
+                        "alt_id": ["media-equiv-sign"],
                         "num": "1.2.6",
                         "versions": [
                             "2.0",
@@ -512,6 +521,7 @@
                     },
                     {
                         "id": "WCAG2:extended-audio-description-prerecorded",
+                        "alt_id": ["media-equiv-extended-ad"],
                         "num": "1.2.7",
                         "versions": [
                             "2.0",
@@ -567,6 +577,7 @@
                     },
                     {
                         "id": "WCAG2:media-alternative-prerecorded",
+                        "alt_id": ["media-equiv-text-doc"],
                         "num": "1.2.8",
                         "versions": [
                             "2.0",
@@ -622,6 +633,7 @@
                     },
                     {
                         "id": "WCAG2:audio-only-live",
+                        "alt_id": ["media-equiv-live-audio-only"],
                         "num": "1.2.9",
                         "versions": [
                             "2.0",
@@ -679,6 +691,7 @@
             },
             {
                 "id": "WCAG2:adaptable",
+                "alt_id": ["content-structure-separation"],
                 "num": "1.3",
                 "versions": [
                     "2.0",
@@ -733,6 +746,7 @@
                 "successcriteria": [
                     {
                         "id": "WCAG2:info-and-relationships",
+                        "alt_id": ["content-structure-separation-programmatic"],
                         "num": "1.3.1",
                         "versions": [
                             "2.0",
@@ -788,6 +802,7 @@
                     },
                     {
                         "id": "WCAG2:meaningful-sequence",
+                        "alt_id": ["content-structure-separation-sequence"],
                         "num": "1.3.2",
                         "versions": [
                             "2.0",
@@ -843,6 +858,7 @@
                     },
                     {
                         "id": "WCAG2:sensory-characteristics",
+                        "alt_id": ["content-structure-separation-understanding"],
                         "num": "1.3.3",
                         "versions": [
                             "2.0",
@@ -898,6 +914,7 @@
                     },
                     {
                         "id": "WCAG2:orientation",
+                        "alt_id": [],
                         "num": "1.3.4",
                         "versions": ["2.1"],
                         "level": "AA",
@@ -950,6 +967,7 @@
                     },
                     {
                         "id": "WCAG2:identify-input-purpose",
+                        "alt_id": [],
                         "num": "1.3.5",
                         "versions": ["2.1"],
                         "level": "AA",
@@ -1002,6 +1020,7 @@
                     },
                     {
                         "id": "WCAG2:identify-purpose",
+                        "alt_id": [],
                         "num": "1.3.6",
                         "versions": ["2.1"],
                         "level": "AAA",
@@ -1056,6 +1075,7 @@
             },
             {
                 "id": "WCAG2:distinguishable",
+                "alt_id": ["visual-audio-contrast"],
                 "num": "1.4",
                 "versions": [
                     "2.0",
@@ -1110,6 +1130,7 @@
                 "successcriteria": [
                     {
                         "id": "WCAG2:use-of-color",
+                        "alt_id": ["visual-audio-contrast-without-color"],
                         "num": "1.4.1",
                         "versions": [
                             "2.0",
@@ -1165,6 +1186,7 @@
                     },
                     {
                         "id": "WCAG2:audio-control",
+                        "alt_id": ["visual-audio-contrast-dis-audio"],
                         "num": "1.4.2",
                         "versions": [
                             "2.0",
@@ -1220,6 +1242,7 @@
                     },
                     {
                         "id": "WCAG2:contrast-minimum",
+                        "alt_id": ["visual-audio-contrast-contrast"],
                         "num": "1.4.3",
                         "versions": [
                             "2.0",
@@ -1279,6 +1302,7 @@
                     },
                     {
                         "id": "WCAG2:resize-text",
+                        "alt_id": ["visual-audio-contrast-scale"],
                         "num": "1.4.4",
                         "versions": [
                             "2.0",
@@ -1334,6 +1358,7 @@
                     },
                     {
                         "id": "WCAG2:images-of-text",
+                        "alt_id": ["visual-audio-contrast-text-presentation"],
                         "num": "1.4.5",
                         "versions": [
                             "2.0",
@@ -1393,6 +1418,7 @@
                     },
                     {
                         "id": "WCAG2:contrast-enhanced",
+                        "alt_id": ["visual-audio-contrast7"],
                         "num": "1.4.6",
                         "versions": [
                             "2.0",
@@ -1452,6 +1478,7 @@
                     },
                     {
                         "id": "WCAG2:low-or-no-background-audio",
+                        "alt_id": ["visual-audio-contrast-noaudio"],
                         "num": "1.4.7",
                         "versions": [
                             "2.0",
@@ -1511,6 +1538,7 @@
                     },
                     {
                         "id": "WCAG2:visual-presentation",
+                        "alt_id": ["visual-audio-contrast-visual-presentation"],
                         "num": "1.4.8",
                         "versions": [
                             "2.0",
@@ -1566,6 +1594,7 @@
                     },
                     {
                         "id": "WCAG2:images-of-text-no-exception",
+                        "alt_id": ["visual-audio-contrast-text-images"],
                         "num": "1.4.9",
                         "versions": [
                             "2.0",
@@ -1621,6 +1650,7 @@
                     },
                     {
                         "id": "WCAG2:reflow",
+                        "alt_id": [],
                         "num": "1.4.10",
                         "versions": ["2.1"],
                         "level": "AA",
@@ -1673,6 +1703,7 @@
                     },
                     {
                         "id": "WCAG2:non-text-contrast",
+                        "alt_id": [],
                         "num": "1.4.11",
                         "versions": ["2.1"],
                         "level": "AA",
@@ -1729,6 +1760,7 @@
                     },
                     {
                         "id": "WCAG2:text-spacing",
+                        "alt_id": [],
                         "num": "1.4.12",
                         "versions": ["2.1"],
                         "level": "AA",
@@ -1781,6 +1813,7 @@
                     },
                     {
                         "id": "WCAG2:content-on-hover-or-focus",
+                        "alt_id": [],
                         "num": "1.4.13",
                         "versions": ["2.1"],
                         "level": "AA",
@@ -1851,6 +1884,7 @@
         "guidelines": [
             {
                 "id": "WCAG2:keyboard-accessible",
+                "alt_id": ["keyboard-operation"],
                 "num": "2.1",
                 "versions": [
                     "2.0",
@@ -1905,6 +1939,7 @@
                 "successcriteria": [
                     {
                         "id": "WCAG2:keyboard",
+                        "alt_id": ["keyboard-operation-keyboard-operable"],
                         "num": "2.1.1",
                         "versions": [
                             "2.0",
@@ -1960,6 +1995,7 @@
                     },
                     {
                         "id": "WCAG2:no-keyboard-trap",
+                        "alt_id": ["keyboard-operation-trapping"],
                         "num": "2.1.2",
                         "versions": [
                             "2.0",
@@ -2015,6 +2051,7 @@
                     },
                     {
                         "id": "WCAG2:keyboard-no-exception",
+                        "alt_id": ["keyboard-operation-all-funcs"],
                         "num": "2.1.3",
                         "versions": [
                             "2.0",
@@ -2070,6 +2107,7 @@
                     },
                     {
                         "id": "WCAG2:character-key-shortcuts",
+                        "alt_id": [],
                         "num": "2.1.4",
                         "versions": ["2.1"],
                         "level": "A",
@@ -2128,6 +2166,7 @@
             },
             {
                 "id": "WCAG2:enough-time",
+                "alt_id": ["time-limits"],
                 "num": "2.2",
                 "versions": [
                     "2.0",
@@ -2182,6 +2221,7 @@
                 "successcriteria": [
                     {
                         "id": "WCAG2:timing-adjustable",
+                        "alt_id": ["time-limits-required-behaviors"],
                         "num": "2.2.1",
                         "versions": [
                             "2.0",
@@ -2241,6 +2281,7 @@
                     },
                     {
                         "id": "WCAG2:pause-stop-hide",
+                        "alt_id": ["time-limits-pause"],
                         "num": "2.2.2",
                         "versions": [
                             "2.0",
@@ -2300,6 +2341,7 @@
                     },
                     {
                         "id": "WCAG2:no-timing",
+                        "alt_id": ["time-limits-no-exceptions"],
                         "num": "2.2.3",
                         "versions": [
                             "2.0",
@@ -2355,6 +2397,7 @@
                     },
                     {
                         "id": "WCAG2:interruptions",
+                        "alt_id": ["time-limits-postponed"],
                         "num": "2.2.4",
                         "versions": [
                             "2.0",
@@ -2410,6 +2453,7 @@
                     },
                     {
                         "id": "WCAG2:re-authenticating",
+                        "alt_id": ["time-limits-server-timeout"],
                         "num": "2.2.5",
                         "versions": [
                             "2.0",
@@ -2465,6 +2509,7 @@
                     },
                     {
                         "id": "WCAG2:timeouts",
+                        "alt_id": [],
                         "num": "2.2.6",
                         "versions": ["2.1"],
                         "level": "AAA",
@@ -2519,6 +2564,7 @@
             },
             {
                 "id": "WCAG2:seizures-and-physical-reactions",
+                "alt_id": [],
                 "num": "2.3",
                 "versions": ["2.1"],
                 "handle": "Seizures and Physical Reactions",
@@ -2570,6 +2616,7 @@
                 "successcriteria": [
                     {
                         "id": "WCAG2:three-flashes-or-below-threshold",
+                        "alt_id": ["seizure-does-not-violate"],
                         "num": "2.3.1",
                         "versions": [
                             "2.0",
@@ -2625,6 +2672,7 @@
                     },
                     {
                         "id": "WCAG2:three-flashes",
+                        "alt_id": ["seizure-three-times"],
                         "num": "2.3.2",
                         "versions": [
                             "2.0",
@@ -2680,6 +2728,7 @@
                     },
                     {
                         "id": "WCAG2:animation-from-interactions",
+                        "alt_id": [],
                         "num": "2.3.3",
                         "versions": ["2.1"],
                         "level": "AAA",
@@ -2734,6 +2783,7 @@
             },
             {
                 "id": "WCAG2:navigable",
+                "alt_id": ["navigation-mechanisms"],
                 "num": "2.4",
                 "versions": [
                     "2.0",
@@ -2788,6 +2838,7 @@
                 "successcriteria": [
                     {
                         "id": "WCAG2:bypass-blocks",
+                        "alt_id": ["navigation-mechanisms-skip"],
                         "num": "2.4.1",
                         "versions": [
                             "2.0",
@@ -2843,6 +2894,7 @@
                     },
                     {
                         "id": "WCAG2:page-titled",
+                        "alt_id": ["navigation-mechanisms-title"],
                         "num": "2.4.2",
                         "versions": [
                             "2.0",
@@ -2898,6 +2950,7 @@
                     },
                     {
                         "id": "WCAG2:focus-order",
+                        "alt_id": ["navigation-mechanisms-focus-order"],
                         "num": "2.4.3",
                         "versions": [
                             "2.0",
@@ -2953,6 +3006,7 @@
                     },
                     {
                         "id": "WCAG2:link-purpose-in-context",
+                        "alt_id": ["navigation-mechanisms-refs"],
                         "num": "2.4.4",
                         "versions": [
                             "2.0",
@@ -3008,6 +3062,7 @@
                     },
                     {
                         "id": "WCAG2:multiple-ways",
+                        "alt_id": ["navigation-mechanisms-mult-loc"],
                         "num": "2.4.5",
                         "versions": [
                             "2.0",
@@ -3063,6 +3118,7 @@
                     },
                     {
                         "id": "WCAG2:headings-and-labels",
+                        "alt_id": ["navigation-mechanisms-descriptive"],
                         "num": "2.4.6",
                         "versions": [
                             "2.0",
@@ -3118,6 +3174,7 @@
                     },
                     {
                         "id": "WCAG2:focus-visible",
+                        "alt_id": ["navigation-mechanisms-focus-visible"],
                         "num": "2.4.7",
                         "versions": [
                             "2.0",
@@ -3173,6 +3230,7 @@
                     },
                     {
                         "id": "WCAG2:location",
+                        "alt_id": ["navigation-mechanisms-location"],
                         "num": "2.4.8",
                         "versions": [
                             "2.0",
@@ -3228,6 +3286,7 @@
                     },
                     {
                         "id": "WCAG2:link-purpose-link-only",
+                        "alt_id": ["navigation-mechanisms-link"],
                         "num": "2.4.9",
                         "versions": [
                             "2.0",
@@ -3283,6 +3342,7 @@
                     },
                     {
                         "id": "WCAG2:section-headings",
+                        "alt_id": ["navigation-mechanisms-headings"],
                         "num": "2.4.10",
                         "versions": [
                             "2.0",
@@ -3340,6 +3400,7 @@
             },
             {
                 "id": "WCAG2:input-modalities",
+                "alt_id": [],
                 "num": "2.5",
                 "versions": ["2.1"],
                 "handle": "Input Modalities",
@@ -3391,6 +3452,7 @@
                 "successcriteria": [
                     {
                         "id": "WCAG2:pointer-gestures",
+                        "alt_id": [],
                         "num": "2.5.1",
                         "versions": ["2.1"],
                         "level": "A",
@@ -3443,6 +3505,7 @@
                     },
                     {
                         "id": "WCAG2:pointer-cancellation",
+                        "alt_id": [],
                         "num": "2.5.2",
                         "versions": ["2.1"],
                         "level": "A",
@@ -3499,6 +3562,7 @@
                     },
                     {
                         "id": "WCAG2:label-in-name",
+                        "alt_id": [],
                         "num": "2.5.3",
                         "versions": ["2.1"],
                         "level": "A",
@@ -3551,6 +3615,7 @@
                     },
                     {
                         "id": "WCAG2:motion-actuation",
+                        "alt_id": [],
                         "num": "2.5.4",
                         "versions": ["2.1"],
                         "level": "A",
@@ -3607,6 +3672,7 @@
                     },
                     {
                         "id": "WCAG2:target-size",
+                        "alt_id": [],
                         "num": "2.5.5",
                         "versions": ["2.1"],
                         "level": "AAA",
@@ -3663,6 +3729,7 @@
                     },
                     {
                         "id": "WCAG2:concurrent-input-mechanisms",
+                        "alt_id": [],
                         "num": "2.5.6",
                         "versions": ["2.1"],
                         "level": "AAA",
@@ -3729,6 +3796,7 @@
         "guidelines": [
             {
                 "id": "WCAG2:readable",
+                "alt_id": ["meaning"],
                 "num": "3.1",
                 "versions": [
                     "2.0",
@@ -3783,6 +3851,7 @@
                 "successcriteria": [
                     {
                         "id": "WCAG2:language-of-page",
+                        "alt_id": ["meaning-doc-lang-id"],
                         "num": "3.1.1",
                         "versions": [
                             "2.0",
@@ -3838,6 +3907,7 @@
                     },
                     {
                         "id": "WCAG2:language-of-parts",
+                        "alt_id": ["meaning-other-lang-id"],
                         "num": "3.1.2",
                         "versions": [
                             "2.0",
@@ -3893,6 +3963,7 @@
                     },
                     {
                         "id": "WCAG2:unusual-words",
+                        "alt_id": ["meaning-idioms"],
                         "num": "3.1.3",
                         "versions": [
                             "2.0",
@@ -3948,6 +4019,7 @@
                     },
                     {
                         "id": "WCAG2:abbreviations",
+                        "alt_id": ["meaning-located"],
                         "num": "3.1.4",
                         "versions": [
                             "2.0",
@@ -4003,6 +4075,7 @@
                     },
                     {
                         "id": "WCAG2:reading-level",
+                        "alt_id": ["meaning-supplements"],
                         "num": "3.1.5",
                         "versions": [
                             "2.0",
@@ -4058,6 +4131,7 @@
                     },
                     {
                         "id": "WCAG2:pronunciation",
+                        "alt_id": ["meaning-pronunciation"],
                         "num": "3.1.6",
                         "versions": [
                             "2.0",
@@ -4115,6 +4189,7 @@
             },
             {
                 "id": "WCAG2:predictable",
+                "alt_id": ["consistent-behavior"],
                 "num": "3.2",
                 "versions": [
                     "2.0",
@@ -4169,6 +4244,7 @@
                 "successcriteria": [
                     {
                         "id": "WCAG2:on-focus",
+                        "alt_id": ["consistent-behavior-receive-focus"],
                         "num": "3.2.1",
                         "versions": [
                             "2.0",
@@ -4224,6 +4300,7 @@
                     },
                     {
                         "id": "WCAG2:on-input",
+                        "alt_id": ["consistent-behavior-unpredictable-change"],
                         "num": "3.2.2",
                         "versions": [
                             "2.0",
@@ -4279,6 +4356,7 @@
                     },
                     {
                         "id": "WCAG2:consistent-navigation",
+                        "alt_id": ["consistent-behavior-consistent-locations"],
                         "num": "3.2.3",
                         "versions": [
                             "2.0",
@@ -4334,6 +4412,7 @@
                     },
                     {
                         "id": "WCAG2:consistent-identification",
+                        "alt_id": ["consistent-behavior-consistent-functionality"],
                         "num": "3.2.4",
                         "versions": [
                             "2.0",
@@ -4389,6 +4468,7 @@
                     },
                     {
                         "id": "WCAG2:change-on-request",
+                        "alt_id": ["consistent-behavior-no-extreme-changes-context"],
                         "num": "3.2.5",
                         "versions": [
                             "2.0",
@@ -4446,6 +4526,7 @@
             },
             {
                 "id": "WCAG2:input-assistance",
+                "alt_id": ["minimize-error"],
                 "num": "3.3",
                 "versions": [
                     "2.0",
@@ -4500,6 +4581,7 @@
                 "successcriteria": [
                     {
                         "id": "WCAG2:error-identification",
+                        "alt_id": ["minimize-error-identified"],
                         "num": "3.3.1",
                         "versions": [
                             "2.0",
@@ -4555,6 +4637,7 @@
                     },
                     {
                         "id": "WCAG2:labels-or-instructions",
+                        "alt_id": ["minimize-error-cues"],
                         "num": "3.3.2",
                         "versions": [
                             "2.0",
@@ -4610,6 +4693,7 @@
                     },
                     {
                         "id": "WCAG2:error-suggestion",
+                        "alt_id": ["minimize-error-suggestions"],
                         "num": "3.3.3",
                         "versions": [
                             "2.0",
@@ -4665,6 +4749,7 @@
                     },
                     {
                         "id": "WCAG2:error-prevention-legal-financial-data",
+                        "alt_id": ["minimize-error-reversible"],
                         "num": "3.3.4",
                         "versions": [
                             "2.0",
@@ -4724,6 +4809,7 @@
                     },
                     {
                         "id": "WCAG2:help",
+                        "alt_id": ["minimize-error-context-help"],
                         "num": "3.3.5",
                         "versions": [
                             "2.0",
@@ -4779,6 +4865,7 @@
                     },
                     {
                         "id": "WCAG2:error-prevention-all",
+                        "alt_id": ["minimize-error-reversible-all"],
                         "num": "3.3.6",
                         "versions": [
                             "2.0",
@@ -4851,6 +4938,7 @@
         "title": "Content must be robust enough that it can be interpreted by by a wide variety of user agents, including assistive technologies.",
         "guidelines": [{
             "id": "WCAG2:compatible",
+            "alt_id": ["ensure-compat"],
             "num": "4.1",
             "versions": [
                 "2.0",
@@ -4905,6 +4993,7 @@
             "successcriteria": [
                 {
                     "id": "WCAG2:parsing",
+                    "alt_id": ["ensure-compat-parses"],
                     "num": "4.1.1",
                     "versions": [
                         "2.0",
@@ -4960,6 +5049,7 @@
                 },
                 {
                     "id": "WCAG2:name-role-value",
+                    "alt_id": ["ensure-compat-rsv"],
                     "num": "4.1.2",
                     "versions": [
                         "2.0",
@@ -5015,6 +5105,7 @@
                 },
                 {
                     "id": "WCAG2:status-messages",
+                    "alt_id": [],
                     "num": "4.1.3",
                     "versions": ["2.1"],
                     "level": "AA",

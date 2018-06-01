@@ -145,9 +145,16 @@ jQuery(document).ready(function($) {
       var gotohash = uri.hash();
       if (gotohash.match(/(.*)-sufficient-head$/) || gotohash.match(/(.*)-tech-optional-head$/) || gotohash.match(/(.*)-failures-head$/)) {
         $('[data-historicalid="' + gotohash + '"]').parents('.collapse').collapse('show');
-        scrollto($('[data-historicalid="' + gotohash + '"]'));
+        scrollto($('[data-historicalid="' + gotohash.replace('#', '') + '"]'));
       } else {
-        scrollto($(gotohash));
+        // search for alternative ids
+        var altid = $('[data-alt-id~="' + gotohash.replace('#', '') + '"]');
+        if (altid.length) {
+          scrollto(altid);
+          window.location.hash = '#' + altid.attr('id');
+        } else {
+          scrollto($(gotohash));
+        }
       }
     }
   }
