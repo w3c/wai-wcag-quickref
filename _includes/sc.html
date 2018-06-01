@@ -10,7 +10,7 @@
 <article role="region" id="{{sc_id}}" data-alt-id="{% for aid in sc.alt_id %}{{aid}} {% endfor %}" class="sc-wrapper current filter-levels-{{sc.level | downcase}} filter-hideversion-{{sc_ver}}" data-tags-con="{{keywordscontent}}" data-tags-dev="{{keywordsdeveloping}}" data-tags-int="{{keywordsinteraction}}" data-tags-vis="{{keywordsvisual}}" data-versions="{% for v in sc.versions %}{{v}} {% endfor %}" aria-labelledby="qr-{{sc_id}}">
   <header>
     <h4 id="qr-{{sc_id}}"><strong>{{ p }}.{{ g }}.{{ s }}</strong> <span>{{sc.handle}}</span></h4>
-    <p class="h4"><span class="level-{{sc.level | downcase}}">Level {{sc.level}}</span>{% unless (sc.versions contains "2.0") %}<span class="newin21">(added in 2.1)</span>{% endunless %}</p>
+    <p class="h4"><span class="level-{{sc.level | downcase}}">Level {{sc.level}}</span>{% unless (sc.versions contains "2.0") %}<span class="newin21">(Added in 2.1)</span>{% endunless %}</p>
   </header>
   <div class="sc-content">
     <div class="sc-text">

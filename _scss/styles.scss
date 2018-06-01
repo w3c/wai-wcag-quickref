@@ -235,7 +235,7 @@ header[role=banner] {
       font-family: $font-family-serif;
       margin-left: 5px;
       background-color: inherit;
-      color: #656565;
+      color: #555555;
       &::before {
         content:'— ';
       }
@@ -250,7 +250,7 @@ header[role=banner] {
     text-align: right;
     font-size: (12/14) * 1em;
     >div>a,>a {
-      color: #666;
+      color: #555555;
       text-transform: uppercase;
       font-weight: bold;
     }
@@ -1016,6 +1016,7 @@ ul.notes {
 .newin21 {
   color: #656565;
   font-size: 1rem;
+  margin-left: .4rem;
 }
 
 @import "footer";
