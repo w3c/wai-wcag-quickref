@@ -262,7 +262,11 @@ jQuery(document).ready(function($) {
   function applyVersions() {
     $('[data-versions]').hide();
     var ver = $('#wcagver').val();
-    $('[data-versions*="' + ver + '"]').show();
+    if (ver == "2.1only") {
+      $('[data-versions="2.1 "]').show();
+    } else {
+      $('[data-versions*="' + ver + '"]').show();
+    }
   }
 
   function applyTechniques() {
@@ -408,9 +412,12 @@ jQuery(document).ready(function($) {
         techtext = "techniques",
         techtexthidden = "";
 
+    var vertxt = $('#wcagver').val();
+    if (vertxt == "2.1only") { vertxt = 'only 2.1'; }
+
     var techtypes = $('#filter-techniques-content input'),
         techtypeschecked = techtypes.filter(':checked'),
-        version = 'WCAG ' + $('#wcagver').val() + ':';
+        version = 'WCAG ' + vertxt + ':';
 
     if (techtypeschecked.length<techtypes.length) {
       var ttypes = [];
