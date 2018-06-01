@@ -414,11 +414,14 @@ jQuery(document).ready(function($) {
         techtexthidden = "";
 
     var vertxt = $('#wcagver').val();
-    if (vertxt == "2.1only") { vertxt = 'only 2.1'; }
+    if (vertxt == "2.1only") {
+      version = 'Only what’s added in WCAG 2.1:';
+    } else {
+      version = 'WCAG ' + vertxt + ':';
+    }
 
     var techtypes = $('#filter-techniques-content input'),
-        techtypeschecked = techtypes.filter(':checked'),
-        version = 'WCAG ' + vertxt + ':';
+        techtypeschecked = techtypes.filter(':checked');
 
     if (techtypeschecked.length<techtypes.length) {
       var ttypes = [];
