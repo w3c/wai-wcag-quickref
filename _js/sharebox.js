@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function(){
   Array.prototype.forEach.call(elements, function(el, i){ // … .each(…)
 
     var cplel = plel.cloneNode(true);
-    var theid = el.parentNode.parentNode.querySelector('h4[id]').id;
+    var theid = el.parentNode.parentNode.id;
     cplel.setAttribute('href', '#' + theid);
     cplel.setAttribute('aria-label', 'Share Link to the section “' + el.parentNode.parentNode.querySelector('h4[id]').textContent + '”');
 
