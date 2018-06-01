@@ -161,7 +161,7 @@ jQuery(document).ready(function($) {
     var audiences = $('#audiences input:checked');
     var uncheckedLevels = $('#filter-levels input:not(:checked)');
 
-    $('.sc-wrapper').addClass('current');
+    //$('.sc-wrapper').addClass('current');
     if (pressed.length>0) {
       var tags = [],
           auds = [],
@@ -261,11 +261,12 @@ jQuery(document).ready(function($) {
 
   function applyVersions() {
     $('[data-versions]').hide();
+    $('.sc-wrapper.current').removeClass('current');
     var ver = $('#wcagver').val();
     if (ver == "2.1only") {
-      $('[data-versions="2.1 "]').show();
+      $('[data-versions="2.1 "]').show().addClass('current');
     } else {
-      $('[data-versions*="' + ver + '"]').show();
+      $('[data-versions*="' + ver + '"]').show().addClass('current');
     }
   }
 
