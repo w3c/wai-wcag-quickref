@@ -842,6 +842,7 @@ button.panel-heading {
   clear: both;
   font-size: (14/18) * 1em;
   &[aria-expanded=true] {
+    display: block;
 		@include mq($medium) {
 	    display: flex;
 	    flex-wrap: wrap;
