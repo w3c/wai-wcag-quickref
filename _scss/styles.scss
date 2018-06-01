@@ -8,6 +8,12 @@ $medium: 43em; //* 700px */
 $big:    56em; //* 900px */
 $large:  81em; //* 1300px */
 
+
+@font-face{font-family:Noto Sans;src:url(https://www.w3.org/WAI/assets/fonts/notosans-regular.woff2) format("woff2"),url(https://www.w3.org/WAI/assets/fonts/notosans-regular.woff) format("woff");font-weight:400;font-style:normal}
+@font-face{font-family:Noto Sans;src:url(https://www.w3.org/WAI/assets/fonts/notosans-italic.woff2) format("woff2"),url(https://www.w3.org/WAI/assets/fonts/notosans-italic.woff) format("woff");font-weight:400;font-style:italic}
+@font-face{font-family:Noto Sans;src:url(https://www.w3.org/WAI/assets/fonts/notosans-bold.woff2) format("woff2"),url(https://www.w3.org/WAI/assets/fonts/notosans-bold.woff) format("woff");font-weight:600;font-style:normal}
+@font-face{font-family:Noto Sans;src:url(https://www.w3.org/WAI/assets/fonts/notosans-bolditalic.woff2) format("woff2"),url(https://www.w3.org/WAI/assets/fonts/notosans-bolditalic.woff) format("woff");font-weight:600;font-style:italic}
+
 /* When position: sticky is supported but native behavior is ignored */
 .fixedsticky-withoutfixedfixed .fixedsticky-off,
 .fixed-supported .fixedsticky-off {
