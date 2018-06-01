@@ -215,7 +215,7 @@ header[role=banner] {
       display:inline;
       @include mq($medium) {
         display: flex;
-        align-items: stretch;
+        align-items: center;
       }
       margin: 0;
     }
@@ -1011,6 +1011,11 @@ ul.notes {
   .navrow &{
     margin: 0 5px;
   }
+}
+
+.newin21 {
+  color: #656565;
+  font-size: 1rem;
 }
 
 @import "footer";
