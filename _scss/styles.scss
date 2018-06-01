@@ -81,7 +81,7 @@ h1 {
 header[role=banner] {
   overflow:hidden;
   font-size: (18/14) * 1em;
-  border-top: 5px solid #930;
+  border-top: 5px solid $brand-primary;
   div {
     margin: 0 auto;
     @include mq($small) {
