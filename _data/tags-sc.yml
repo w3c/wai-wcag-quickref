@@ -3,246 +3,246 @@ non-text-content:
   int: audio video buttons carousels captcha
   vis: images images-of-text animation progress-steps text-alternatives video
   con: audio captions content images live-stream moving-content text-alternatives video visual-cues buttons
-media-equiv-av-only-alt:
+audio-only-and-video-only-prerecorded:
   dev: video text-alternatives
   int: audio video
   vis: animation text-alternatives video
   con: audio captions content moving-content text-alternatives video
-media-equiv-captions:
+captions-prerecorded:
   dev: video text text-alternatives
   int: audio video
   vis: animation text-alternatives video
   con: audio captions content moving-content text-alternatives video
-media-equiv-audio-desc:
+audio-description-or-media-alternative-prerecorded:
   dev: video
   int: audio video
   vis: animation video
   con: content video
-media-equiv-real-time-captions:
+captions-live:
   dev: video text text-alternatives
   int: audio video streaming
   vis: animation text-alternatives video
   con: audio captions content live-stream
-media-equiv-audio-desc-only:
+audio-description-prerecorded:
   dev: video
   int: audio video streaming
   vis: animation text-alternatives video
   con: content live-stream video
-media-equiv-sign:
+sign-language-prerecorded:
   dev: video
   int: audio video
   vis: video
   con: audio content video
-media-equiv-extended-ad:
+extended-audio-description-prerecorded:
   dev: video
   int: audio video
   vis: animation video
   con: content video
-media-equiv-text-doc:
+media-alternative-prerecorded:
   dev: video text text-alternatives images
   int: audio video
   vis: animation text-alternatives video
   con: audio content video
-media-equiv-live-audio-only:
+audio-only-live:
   dev: text text-alternatives
   int: audio streaming
   vis: text-alternatives
   con: audio live-stream
-content-structure-separation-programmatic:
+info-and-relationships:
   dev: forms headings labels menus markup structure tables
   int: buttons carousels changing-content controls errors forms modals navigation skip-to-content
   vis: hidden-content layout progress-steps structure tables
   con: consistent-experience content headings hidden-content progress-steps structure visual-cues
-content-structure-separation-sequence:
+meaningful-sequence:
   dev: forms keyboard structure
   int: buttons carousels controls errors focus forms navigation skip-to-content tab-order
   vis: hidden-content layout progress-steps structure tables
   con: consistent-experience content hidden-content messaging progress-steps structure
-content-structure-separation-understanding:
+sensory-characteristics:
   dev: text
   int: buttons controls errors navigation
   vis: color layout structure
   con: audio consistent-experience content messaging visual-cues
-visual-audio-contrast-without-color:
+use-of-color:
   int: buttons controls errors focus forms navigation
   vis: color text
   con: content links messaging text
-visual-audio-contrast-dis-audio:
+audio-control:
   dev: controls video
   int: audio autoplay controls streaming video
   con: buttons
-visual-audio-contrast-contrast:
+contrast-minimum:
   int: buttons errors focus forms navigation
   vis: color contrast images-of-text text
   con: content messaging
-visual-audio-contrast-scale:
+resize-text:
   dev: text
   vis: layout text zoom
-visual-audio-contrast-text-presentation:
+images-of-text:
   dev: images text
   int: buttons
   vis: contrast images-of-text text text-alternatives
   con: content images text text-alternatives
-visual-audio-contrast7:
+contrast-enhanced:
   int: buttons errors focus forms navigation
   vis: color contrast images-of-text text
   con: content messaging
-visual-audio-contrast-noaudio:
+low-or-no-background-audio:
   dev: captcha video
   int: audio autoplay controls streaming captcha
-visual-audio-contrast-visual-presentation:
+visual-presentation:
   dev: controls text
   int: controls
   vis: color contrast layout structure text zoom
   con: content structure text
-visual-audio-contrast-text-images:
+images-of-text-no-exception:
   dev: images text
   int: buttons
   vis: contrast images images-of-text text text-alternatives
   con: consistent-experience structure text
-keyboard-operation-keyboard-operable:
+keyboard:
   dev: controls focus keyboard events video
   int: autoplay buttons carousels controls errors focus forms events navigation streaming video tab-order skip-to-content
   con: links messaging
-keyboard-operation-trapping:
+no-keyboard-trap:
   dev: controls focus keyboard events video
   int: autoplay buttons carousels controls errors focus forms events navigation streaming video tab-order skip-to-content
-keyboard-operation-all-funcs:
+keyboard-no-exception:
   dev: controls focus keyboard events video
   int: autoplay buttons carousels controls errors focus forms events navigation streaming video tab-order skip-to-content
-time-limits-required-behaviors:
+timing-adjustable:
   dev: controls
   int: controls time-limits
-time-limits-pause:
+pause-stop-hide:
   dev: controls video
   int: audio autoplay carousels changing-content controls video time-limits
   vis: blinking animation video
   con: buttons
-time-limits-no-exceptions:
+no-timing:
   dev: controls
   int: controls time-limits
-time-limits-postponed:
+interruptions:
   dev: controls
   int: controls errors changing-content time-limits
-time-limits-server-timeout:
+re-authenticating:
   int: forms time-limits
   vis: text
-seizure-does-not-violate:
+three-flashes-or-below-threshold:
   vis: flashing animation
   con: content video moving-content
-seizure-three-times:
+three-flashes:
   vis: flashing animation
   con: content video moving-content
-navigation-mechanisms-skip:
+bypass-blocks:
   dev: headings menus markup structure iframes
   int: navigation skip-to-content
   vis: layout structure
   con: headings
-navigation-mechanisms-title:
+page-titled:
   dev: page-title
   int: navigation
   vis: structure progress-steps
   con: content page-title structure
-navigation-mechanisms-focus-order:
+focus-order:
   dev: errors focus forms keyboard links menus events
   int: buttons carousels controls errors focus forms modals events navigation skip-to-content tab-order
   vis: structure
   con: buttons
-navigation-mechanisms-refs:
+link-purpose-in-context:
   dev: links menus
   int: buttons navigation
   con: content links buttons
-navigation-mechanisms-mult-loc:
+multiple-ways:
   dev: menus
   int: navigation
   vis: structure
-navigation-mechanisms-descriptive:
+headings-and-labels:
   dev: errors forms headings labels menus tables
   int: errors forms navigation
   vis: text
   con: content headings messaging
-navigation-mechanisms-focus-visible:
+focus-visible:
   dev: controls focus keyboard menus
   int: controls focus navigation skip-to-content tab-order
   vis: color contrast progress-steps
   con: buttons
-navigation-mechanisms-location:
+location:
   dev: menus
   int: navigation
-navigation-mechanisms-link:
+link-purpose-link-only:
   dev: menus links
   int: buttons navigation
   con: content links buttons
-navigation-mechanisms-headings:
+section-headings:
   dev: headings markup structure
   vis: structure text
   con: content headings progress-steps
-meaning-doc-lang-id:
+language-of-page:
   dev: language text
   vis: text
-meaning-other-lang-id:
+language-of-parts:
   dev: language text
   vis: text
-meaning-idioms:
+unusual-words:
   dev: text markup
   vis: text
   con: content
-meaning-located:
+abbreviations:
   dev: text markup
   vis: text
   con: content
-meaning-supplements:
+reading-level:
   vis: text
   con: content
-meaning-pronunciation:
+pronunciation:
   vis: text
   con: content
-consistent-behavior-receive-focus:
+on-focus:
   dev: controls focus forms menus events
   int: controls forms events navigation
-consistent-behavior-unpredictable-change:
+on-input:
   dev: controls forms menus events
   int: controls forms events navigation
-consistent-behavior-consistent-locations:
+consistent-navigation:
   dev: menus
   int: navigation
   vis: layout progress-steps
   con: progress-steps
-consistent-behavior-consistent-functionality:
+consistent-identification:
   dev:  controls forms menus structure
   int: buttons controls forms modals navigation
   vis: progress-steps structure
   con: consistent-experience content visual-cues buttons
-consistent-behavior-no-extreme-changes-context:
+change-on-request:
   dev:  controls forms menus events
   int: controls forms events navigation
-minimize-error-identified:
+error-identification:
   dev: controls errors focus forms labels
   int: controls errors focus forms
   con: content
-minimize-error-cues:
+labels-or-instructions:
   dev: controls focus forms labels
   int: controls errors focus forms
   con: content messaging progress-steps visual-cues
-minimize-error-suggestions:
+error-suggestion:
   dev: controls errors focus forms labels
   int: controls errors focus forms
   con: content messaging
-minimize-error-reversible:
+error-prevention-legal-financial-data:
   dev: errors forms
   int: errors forms
   con: content messaging
-minimize-error-context-help:
+help:
   dev: errors forms text
   int: errors
   vis: text
   con: content messaging
-minimize-error-reversible-all:
+error-prevention-all:
   dev: errors forms
   int: errors forms
   con: content
-ensure-compat-parses:
+parsing:
   dev: markup structure
-ensure-compat-rsv:
+name-role-value:
   dev: markup structure forms labels menus video
   con: messaging moving-content
