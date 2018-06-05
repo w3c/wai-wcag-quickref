@@ -2075,7 +2075,14 @@
               ],
               "level":"AA",
               "handle":"Identify Input Purpose",
-              "title":"The purpose of each input field collecting information about the user can be programmatically determined when:"
+              "title":"The purpose of each input field collecting information about the user can be programmatically determined when:",
+              "details": [{
+                    "type": "ulist",
+                    "items": [
+                      {"text":"The input field serves a purpose identified in the Input Purposes for User Interface Components section; and"},
+                      {"text":"The content is implemented using technologies with support for identifying the expected meaning for form input data."}
+                    ]
+                }]
             },
             {
               "id":"WCAG2:identify-purpose",
