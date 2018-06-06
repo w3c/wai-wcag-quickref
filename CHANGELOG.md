@@ -16,7 +16,8 @@
     * [#130] Link to understanding techniques not working
     * [#131] Deeplinks to sufficient and advisaory techniques and failures
 
-
+* 2018-06-05: v3.0.0 Update for WCAG 2.1
+  * http://www.w3.org/WAI/WCAG21/quickref/20180605/
 
 [#128]:https://github.com/w3c/wai-wcag-quickref/issues/128
 [#130]:https://github.com/w3c/wai-wcag-quickref/issues/130
