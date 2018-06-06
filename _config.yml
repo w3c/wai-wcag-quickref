@@ -11,7 +11,7 @@ github_username:  yatil
 status: draft
 version: "3.0.0"
 
-techniqueurl: https://www.w3.org/TR/WCAG21-TECHS/
+techniqueurl: https://www.w3.org/TR/WCAG20-TECHS/
 understandingurl: https://www.w3.org/WAI/WCAG21/Understanding/
 
 port: 4099
