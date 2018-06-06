@@ -14,15 +14,15 @@ var sassdir = "_scss/**/*.scss";
 gulp.task('scss', function () {
     return gulp.src(sassdir)
         .pipe(plumber())
-        //.pipe(sourcemaps.init())
+        .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(autoprefixer())
         .pipe(pxtorem())
-        //.pipe(concat('styles.css'))
+        .pipe(concat('styles.css'))
         .pipe(gulp.dest('./css/'))
-        .pipe(cssnano({safe: true}))
-        //.pipe(concat('styles.min.css'))
-        //.pipe(sourcemaps.write())
+        .pipe(cssnano({safe: true, stripWWW: false}))
+        .pipe(concat('styles.min.css'))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('./css/'));
 });
 
