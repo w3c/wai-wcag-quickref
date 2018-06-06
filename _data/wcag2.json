@@ -3780,7 +3780,7 @@
                 { "and": [
                   {
                     "id": "TECH:G91",
-                    "title": "Providing link text that describes the purpose of a link",
+                    "title": "Providing link text that describes the purpose of a link"
                   },
                   {
                     "id": "TECH:text1",
@@ -4907,11 +4907,11 @@
               {"sufficient": [{ "and": [
                   {
                     "id": "TECH:G197",
-                    "title": "Using labels, names, and text alternatives consistently for content that has the same functionality",
+                    "title": "Using labels, names, and text alternatives consistently for content that has the same functionality"
                   },
                   {
                     "id": "TECH:text1",
-                    "title": "following the <a href='#text-equiv-all'>sufficient techniques for Success Criterion 1.1.1</a> and <a href='#ensure-compat-rsv'>sufficient techniques for Success Criterion 4.1.2</a> for providing labels, names, and text alternatives",
+                    "title": "following the <a href='#text-equiv-all'>sufficient techniques for Success Criterion 1.1.1</a> and <a href='#ensure-compat-rsv'>sufficient techniques for Success Criterion 4.1.2</a> for providing labels, names, and text alternatives"
                   }
                 ]}
               ]},
