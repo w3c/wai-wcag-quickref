@@ -2,15 +2,17 @@
 title: "How to Meet WCAG 2 (Quickref Reference)"
 email: ee@w3.org
 description: ""
-baseurl: "/wai-wcag-quickref/" # the subpath of your site, e.g. /blog/
-# baseurl: "/WAI/WCAG20/quickref/" # For publication
+#baseurl: "/wai-wcag-quickref/" # the subpath of your site, e.g. /blog/
+#baseurl: "/WAI/WCAG20/quickref/" # For publication
+#baseurl: /
 url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: yatil
 github_username:  yatil
 status: draft
 version: "2.5"
 
-techniqueurl: https://www.w3.org/TR/WCAG20-TECHS/
+techniqueurl: https://www.w3.org/TR/WCAG21-TECHS/
+understandingurl: https://www.w3.org/WAI/WCAG21/Understanding/
 
 port: 4099
 
@@ -20,7 +22,6 @@ lsi: false
 # Build settings
 markdown: kramdown
 
-plugins: ['jekyll-github-metadata']
 repository: 'w3c/wai-wcag-quickref'
 
 compress_html:
@@ -35,6 +36,10 @@ collections:
     output: false
   help:
     output: false
+
+
+plugins:
+  - jekyll-github-metadata
 
 exclude:
   - node_modules

@@ -1,7 +1,7 @@
 ---
 title: "Technologies"
-sort: 2
-short: tech
+sort: 3
+short: technologies
 type: checkbox
 filters:
 - short: html

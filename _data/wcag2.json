@@ -1750,6 +1750,42 @@
                 }
               ]}
             ]
+          },
+          {
+            "id": "WCAG21:identify-common-purpose",
+            "num": "1.3.4",
+            "level": "AA",
+            "handle": "Identify Common Purpose",
+            "title": "In content implemented using markup languages, for each user interface component that serves a purpose identified in the Common Purposes for User Interface Components section, that purpose can be programmatically determined.",
+            "techniques": [
+              {"sufficient": [{
+                "id": "TECH:COGA41",
+                "title": 'Use semantics to provide extra context (COGA Techniques 4.1). EG: &lt;button aui-action="undo">default&lt;/button>'
+              },{
+                "id": "TECH:COGA42",
+                "title": 'Provide semantics that allows for symbols on key content (COGA Techniques 4.2)'
+              },{
+                "id": "TECH:future1",
+                "title": 'Using schema semantics <ul><li>&lt;button type="button" itemprop="http://schema.org/SendAction">Send&lt;/button></li><li>&lt;a rel="next" and rel="prev">&lt;/a></li></ul>'
+              },{
+                "id": "TECH:future1",
+                "title": 'Using microformats http://microformats.org'
+              },{
+                "id": "TECH:future1",
+                "title": 'Using autocorrect on datafields (conforming to https://www.w3.org/TR/html5/forms.html#attr-fe-autocomplete)'
+              },{
+                "id": "TECH:future1",
+                "title": 'Use of aria epub on document content'
+              }]},
+              {"advisory": [{
+                "id": "TECH:future1",
+                "title": "Use of aria landmarks with coga context where supported"
+              },{
+                "id": "TECH:future1",
+                "title": "Use of aria epub on document content"
+              }]},
+              {"failure": []}
+            ]
           }
         ]
       },

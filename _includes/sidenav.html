@@ -4,7 +4,7 @@
       <nav class="nav-overview" aria-label="Principles, Guidelines and Success Criteria">
         <ul class="nav">
         {% assign p = 0 %}
-        {% for principle in site.data.wcag2.principles %}
+        {% for principle in site.data.wcag21.principles %}
           {% assign p = p | plus: 1 %}
           {% assign g = 0 %}
           <li>
@@ -20,7 +20,7 @@
                       {% for sc in guideline.successcriteria %}
                         {% assign s = s | plus: 1 %}
                         {% assign sc_id = sc.id | replace:'WCAG2:','' %}
-                        <li>
+                        <li data-versions="{% for v in sc.versions %}{{v}} {% endfor %}">
                           <a href="#{{sc_id}}"><strong><span>{{ p }}.{{ g }}.{{ s }}</span></strong> <span>{{sc.handle}}</span></a>
                         </li>
                       {% endfor %}

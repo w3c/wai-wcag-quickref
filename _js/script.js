@@ -1,17 +1,4 @@
 /*! matchMedia() polyfill - Test a CSS media type/query in JS. Authors & copyright (c) 2012: Scott Jehl, Paul Irish, Nicholas Zakas, David Knight. Dual MIT/BSD license */
-var supportsWoff2 = (function( win ){
-  if( !( "FontFace" in win ) ) {
-    return false;
-  }
-
-  var f = new FontFace('t', 'url( "data:application/font-woff2;base64,d09GMgABAAAAAAIkAAoAAAAABVwAAAHcAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABlYAgloKLEoBNgIkAxgLDgAEIAWDcgc1G7IEyB6SJAFID5YA3nAHC6h4+H7s27nP1kTyOoQkGuJWtNGIJKYznRI3VEL7IaHq985ZUuKryZKcAtJsi5eULwUybm9KzajBBhywZ5ZwoJNuwDX5C/xBjvz5DbsoNsvG1NGQiqp0NMLZ7JlnW+5MaM3HwcHheUQeiVokekHkn/FRdefvJaTp2PczN+I1Sc3k9VuX51Tb0Tqqf1deVXGdJsDOhz0/EffMOPOzHNH06pYkDDjs+P8fb/z/8n9Iq8ITzWywkP6PBMMN9L/O7vY2FNoTAkp5PpD6g1nV9WmyQnM5uPpAMHR2fe06jbfvzPriekVTQxC6lpKr43oDtRZfCATl5OVAUKykqwm9o8R/kg37cxa6eZikS7cjK4aIwoyh6jOFplhFrz2b833G3Jii9AjDUiAZ9AxZtxdEYV6imvRF0+0Nej3wu6nPZrTLh81AVcV3kmMVdQj6Qbe9qetzbuDZ7vXOlRrqooFSxCv6SfrDICA6rnHZXQPVcUHJYGcoqa3jVH7ATrjWBNYYkEqF3RFpVIl0q2JvMOJd7/TyjXHw2NyAuJpNaEbz8RTEVtCbSH7JrwQQOqwGl7sTUOtdBZIY2DKqKlvOmPvUxJaURAZZcviTT0SKHCXqzwc=" ) format( "woff2" )', {});
-  f.load()['catch'](function() {});
-
-  return f.status == 'loading' || f.status == 'loaded';
-})( this );
-
-
-/*! matchMedia() polyfill - Test a CSS media type/query in JS. Authors & copyright (c) 2012: Scott Jehl, Paul Irish, Nicholas Zakas, David Knight. Dual MIT/BSD license */
 
 if (!window.matchMedia) {
   window.matchMedia = function() {
@@ -121,6 +108,10 @@ jQuery(document).ready(function($) {
       $('#filter-techniques input').prop('checked', true);
       $('#filter-techniques input[value="' + data.techniques.split(',').join('"], #filter-techniques input[value="') + '"]').prop('checked', false);
     }
+    if (data.versions) {
+      console.log('#wcagver [value="'+ data.versions +'"]');
+      $('#wcagver [value="'+ data.versions +'"]').prop('selected', true);
+    }
     if (data.showtechniques) {
       $('.btn-techniques').each(function(index, el) {
         var btn = $(el);
@@ -134,15 +125,23 @@ jQuery(document).ready(function($) {
       });
     }
     applyTechnologies();
+    applyVersions();
     applyTagsAndLevelsToSC();
     $('#tags button:disabled').first().addClass('first');
     if (uri.hash()) {
       var gotohash = uri.hash();
       if (gotohash.match(/(.*)-sufficient-head$/) || gotohash.match(/(.*)-tech-optional-head$/) || gotohash.match(/(.*)-failures-head$/)) {
         $('[data-historicalid="' + gotohash + '"]').parents('.collapse').collapse('show');
-        scrollto($('[data-historicalid="' + gotohash + '"]'));
+        scrollto($('[data-historicalid="' + gotohash.replace('#', '') + '"]'));
       } else {
-        scrollto($(gotohash));
+        // search for alternative ids
+        var altid = $('[data-alt-id~="' + gotohash.replace('#', '') + '"]');
+        if (altid.length) {
+          scrollto(altid);
+          window.location.hash = '#' + altid.attr('id');
+        } else {
+          scrollto($(gotohash));
+        }
       }
     }
   }
@@ -162,7 +161,7 @@ jQuery(document).ready(function($) {
     var audiences = $('#audiences input:checked');
     var uncheckedLevels = $('#filter-levels input:not(:checked)');
 
-    $('.sc-wrapper').addClass('current');
+    //$('.sc-wrapper').addClass('current');
     if (pressed.length>0) {
       var tags = [],
           auds = [],
@@ -257,6 +256,17 @@ jQuery(document).ready(function($) {
       $('#filter-technologies button.filters').prop('disabled', false);
     } else {
       $('#filter-technologies button.filters').prop('disabled', true);
+    }
+  }
+
+  function applyVersions() {
+    $('[data-versions]').hide();
+    $('.sc-wrapper.current').removeClass('current');
+    var ver = $('#wcagver').val();
+    if (ver == "2.1only") {
+      $('[data-versions="2.1 "]').show().addClass('current');
+    } else {
+      $('[data-versions*="' + ver + '"]').show().addClass('current');
     }
   }
 
@@ -403,6 +413,13 @@ jQuery(document).ready(function($) {
         techtext = "techniques",
         techtexthidden = "";
 
+    var vertxt = $('#wcagver').val();
+    if (vertxt == "2.1only") {
+      version = 'Only what’s added in WCAG 2.1:';
+    } else {
+      version = 'WCAG ' + vertxt + ':';
+    }
+
     var techtypes = $('#filter-techniques-content input'),
         techtypeschecked = techtypes.filter(':checked');
 
@@ -471,6 +488,7 @@ jQuery(document).ready(function($) {
     //   });
     //   techtexthidden = ' <span class="deem">(Hidden: '+array2prose(htechnologies, 'and')+')</span>';
     // }
+    $('#status .ver').html(version);
     $('#status .sc').html(sctext);
     $('#status .tech').html(pretechtext + techtext + techtexthidden + '.');
     if (techtext == "all techniques" && sctext == "all success criteria") {
@@ -604,20 +622,22 @@ jQuery(document).ready(function($) {
       $(this).prop('disabled', true);
     });
 
-    // $('.sidebar>div').css('width', $('.tab-pane.active').outerWidth());
+    $('#wcagver').on('change', function(event) {
+      event.preventDefault();
+      var location = window.history.location || window.location;
+      var uri = new URI(location);
+      uri.setSearch("versions", $('#wcagver').val());
+      applyTechnologies();
+      applyVersions();
+      applyTagsAndLevelsToSC();
+      statustext();
+      updateuri(uri);
+    });
 
     $('body').scrollspy({
       target: '.overview.spy-active',
       offset: 60
     });
-
-    // Use WOFF2 if supported
-    if( supportsWoff2 ) {
-      loadCSS( location.pathname + "css/vollkorn-woff2.css" );
-    } else {
-      // Default to WOFF
-      loadCSS( location.pathname + "css/vollkorn-woff.css" );
-    }
 
     if(!localStorage.getItem("wai.scrollAnimation")) {
       localStorage.setItem("wai.scrollAnimation", 750);

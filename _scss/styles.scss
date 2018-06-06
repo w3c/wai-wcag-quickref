@@ -8,6 +8,12 @@ $medium: 43em; //* 700px */
 $big:    56em; //* 900px */
 $large:  81em; //* 1300px */
 
+
+@font-face{font-family:Noto Sans;src:url(https://www.w3.org/WAI/assets/fonts/notosans-regular.woff2) format("woff2"),url(https://www.w3.org/WAI/assets/fonts/notosans-regular.woff) format("woff");font-weight:400;font-style:normal}
+@font-face{font-family:Noto Sans;src:url(https://www.w3.org/WAI/assets/fonts/notosans-italic.woff2) format("woff2"),url(https://www.w3.org/WAI/assets/fonts/notosans-italic.woff) format("woff");font-weight:400;font-style:italic}
+@font-face{font-family:Noto Sans;src:url(https://www.w3.org/WAI/assets/fonts/notosans-bold.woff2) format("woff2"),url(https://www.w3.org/WAI/assets/fonts/notosans-bold.woff) format("woff");font-weight:600;font-style:normal}
+@font-face{font-family:Noto Sans;src:url(https://www.w3.org/WAI/assets/fonts/notosans-bolditalic.woff2) format("woff2"),url(https://www.w3.org/WAI/assets/fonts/notosans-bolditalic.woff) format("woff");font-weight:600;font-style:italic}
+
 /* When position: sticky is supported but native behavior is ignored */
 .fixedsticky-withoutfixedfixed .fixedsticky-off,
 .fixed-supported .fixedsticky-off {
@@ -75,7 +81,7 @@ h1 {
 header[role=banner] {
   overflow:hidden;
   font-size: (18/14) * 1em;
-  border-top: 5px solid #930;
+  border-top: 5px solid $brand-primary;
   div {
     margin: 0 auto;
     @include mq($small) {
@@ -209,7 +215,7 @@ header[role=banner] {
       display:inline;
       @include mq($medium) {
         display: flex;
-        align-items: stretch;
+        align-items: center;
       }
       margin: 0;
     }
@@ -229,7 +235,7 @@ header[role=banner] {
       font-family: $font-family-serif;
       margin-left: 5px;
       background-color: inherit;
-      color: #656565;
+      color: #555555;
       &::before {
         content:'— ';
       }
@@ -244,7 +250,7 @@ header[role=banner] {
     text-align: right;
     font-size: (12/14) * 1em;
     >div>a,>a {
-      color: #666;
+      color: #555555;
       text-transform: uppercase;
       font-weight: bold;
     }
@@ -836,6 +842,7 @@ button.panel-heading {
   clear: both;
   font-size: (14/18) * 1em;
   &[aria-expanded=true] {
+    display: block;
 		@include mq($medium) {
 	    display: flex;
 	    flex-wrap: wrap;
@@ -843,6 +850,10 @@ button.panel-heading {
 	    align-items: space-beteen;
 		}
   }
+}
+
+#pageinfo a {
+  text-decoration: underline;
 }
 
 .pibox {
@@ -1000,6 +1011,12 @@ ul.notes {
   .navrow &{
     margin: 0 5px;
   }
+}
+
+.newin21 {
+  color: #656565;
+  font-size: 1rem;
+  margin-left: .4rem;
 }
 
 @import "footer";

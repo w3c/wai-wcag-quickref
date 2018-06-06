@@ -8,15 +8,15 @@ $bootstrap-sass-asset-helper: false !default;
 //
 //## Gray and brand colors for use across Bootstrap.
 
-$gray-base:              #000 !default;
-$gray-darker:            lighten($gray-base, 13.5%) !default; // #222
-$gray-dark:              lighten($gray-base, 20%) !default;   // #333
-$gray:                   lighten($gray-base, 33.5%) !default; // #555
-$gray-light:             lighten($gray-base, 46.7%) !default; // #777
-$gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
+$gray-base:              #1d1d1d !default;
+$gray-darker:            #1d1d1d !default; // #222
+$gray-dark:              #3b3b3b !default;   // #333
+$gray:                   #555 !default;
+$gray-light:             #777 !default;
+$gray-lighter:           #eee !default;
 
-$brand-primary:         #336AA7 !default; // #003366 !default; // #337ab7
-$brand-primary-light:   #0066CC !default;
+$brand-primary:         #005A9C !default; // #003366 !default; // #337ab7
+$brand-primary-light:   #196cac !default;
 $brand-success:         #398639 !default;
 $brand-info:            $gray-lighter !default;
 $brand-warning:         #f0ad4e !default;
@@ -44,8 +44,8 @@ $link-hover-decoration: underline !default;
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif:  "Trebuchet MS", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$font-family-serif:       "Vollkorn", Georgia, "Times New Roman", Times, serif !default;
+$font-family-sans-serif:  "Noto Sans", sans-serif !default;
+$font-family-serif:       $font-family-sans-serif !default;
 
 /* Change to Noto later:
 
@@ -57,7 +57,7 @@ $font-family-serif:       $font-family-sans-serif;
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base:        $font-family-sans-serif !default;
 
-$font-size-base:          14px !default;
+$font-size-base:          15px !default;
 $font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
 $font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
 
@@ -69,7 +69,7 @@ $font-size-h5:            ceil(($font-size-base * 1.15)) !default; // ~18px
 $font-size-h6:            $font-size-base !default;
 
 //** Unit-less `line-height` for use in components like buttons.
-$line-height-base:        1.428571429 !default; // 20/14
+$line-height-base:        1.55 !default; // 20/14
 //** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
 $line-height-computed:    floor(($font-size-base * $line-height-base)) !default; // ~20px
 
