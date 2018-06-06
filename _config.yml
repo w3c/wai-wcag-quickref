@@ -9,7 +9,7 @@ url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: yatil
 github_username:  yatil
 status: draft
-version: "2.5"
+version: "3.0.0"
 
 techniqueurl: https://www.w3.org/TR/WCAG21-TECHS/
 understandingurl: https://www.w3.org/WAI/WCAG21/Understanding/
