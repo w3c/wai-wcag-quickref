@@ -834,6 +834,7 @@
                 "2.0",
                 "2.1"
               ],
+              "level":"A",
               "handle":"Audio-only and Video-only (Prerecorded)",
               "title":"For prerecorded audio-only and prerecorded video-only media, the following are true, except when the audio or video is a media alternative for text and is clearly labeled as such:",
               "details":[
