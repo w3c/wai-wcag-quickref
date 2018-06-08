@@ -4140,6 +4140,7 @@
                 "2.0",
                 "2.1"
               ],
+              "level": "A",
               "handle":"Three Flashes or Below Threshold",
               "title":"Web pages do not contain anything that flashes more than three times in any one second period, or the flash is below the general flash and red flash thresholds.",
               "details":[
