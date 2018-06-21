@@ -109,7 +109,6 @@ jQuery(document).ready(function($) {
       $('#filter-techniques input[value="' + data.techniques.split(',').join('"], #filter-techniques input[value="') + '"]').prop('checked', false);
     }
     if (data.versions) {
-      console.log('#wcagver [value="'+ data.versions +'"]');
       $('#wcagver [value="'+ data.versions +'"]').prop('selected', true);
     }
     if (data.showtechniques) {
@@ -339,6 +338,7 @@ jQuery(document).ready(function($) {
     $('#tags .btn').removeAttr('disabled');
     $('.sc-wrapper.current').removeClass('current');
     applyTechnologies();
+    applyVersions();
     applyTagsAndLevelsToSC();
     statustext();
     scrollto($('#top'));
