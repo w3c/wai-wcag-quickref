@@ -3265,7 +3265,24 @@
               ],
               "level":"AA",
               "handle":"Reflow",
-              "title":"Content can be presented without loss of information or functionality, and without requiring scrolling in two dimensions for:"
+              "title":"Content can be presented without loss of information or functionality, and without requiring scrolling in two dimensions for:",
+              "details":[
+                {
+                  "type":"ulist",
+                  "items":[
+                    {
+                      "text":"Vertical scrolling content at a width equivalent to 320 CSS pixels;"
+                    },
+                    {
+                      "text":"Horizontal scrolling content at a height equivalent to 256 CSS pixels;"
+                    }
+                  ]
+                },
+                {
+                  "type": "p",
+                  "text":"Except for parts of the content which require two-dimensional layout for usage or meaning."
+                }
+              ]
             },
             {
               "id":"WCAG2:non-text-contrast",

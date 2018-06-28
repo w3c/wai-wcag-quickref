@@ -29,6 +29,9 @@
           <hr>
           <ol>{% for li in detail.items %}<li><p>{% if li.handle %}{% unless li.handle == "" %}<strong>{{li.handle}}:</strong> {% endunless %}{% endif %}{{li.text}}</p></li>{% endfor %}</ol>
         {% endif%}
+        {% if detail.type == 'p' %}
+          <p>{{detail.text}}</p>
+        {% endif%}
       {% endfor%}
     </div>
     <div class="understanding">
