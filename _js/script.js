@@ -321,11 +321,13 @@ jQuery(document).ready(function($) {
 
   $('#filter-technologies').on('change', 'input[type=checkbox]', function(e) {
     statusanimation();
+    applyVersions();
     applyTechnologies();
   });
 
   $('#filter-levels').on('change', 'input[type=checkbox]', function(e) {
     statusanimation();
+    applyVersions();
     applyTagsAndLevelsToSC();
   });
 
@@ -350,6 +352,7 @@ jQuery(document).ready(function($) {
       $(this).prop('checked', 'checked');
     });
     applyTechnologies();
+    applyVersions();
     applyTagsAndLevelsToSC();
   });
 
