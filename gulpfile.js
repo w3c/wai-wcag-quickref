@@ -34,8 +34,8 @@ gulp.task('lint', function() {
     .pipe(jshint.reporter('default'));
 });
 
-gulp.task('js', ['lint'], function () {
-    return gulp.src(['_js/jquery.min.js', '_js/svg4everybody.js', '_js/bootstrap.js', '_js/uri.js', '_js/history.js', '_js/fixedsticky.jquery.js', '_js/sharebox.js', '_js/loadcss.js', '_js/script.js'])
+gulp.task('js', gulp.series('lint', function () {
+    return gulp.src(['_js/jquery.min.js', '_js/svg4everybody.js', '_js/bootstrap.js', '_js/uri.js', '_js/history.js', '_js/fixedsticky.jquery.js', '_js/sharebox.js', '_js/script.js'])
         .pipe(plumber())
         //.pipe(sourcemaps.init())
         .pipe(concat('script.js', {newline: ';'}))
@@ -44,11 +44,15 @@ gulp.task('js', ['lint'], function () {
         }))
         //.pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('./js/'));
-});
+}));
 
 gulp.task('watch', function() {
-  var watcher = gulp.watch([sassdir, jsdir], ['scss', 'js']);
-  watcher.on('change', function(event) {
-    console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
+  var watcher = gulp.watch([sassdir, jsdir], gulp.parallel('scss', 'js'));
+  watcher.on('change', function(path, stats) {
+    console.log('File ' + path + ' was changed');
+  });
+
+  watcher.on('unlink', function(path) {
+    console.log('File ' + path + ' was removed');
   });
 });
