@@ -68,8 +68,7 @@ jQuery(document).ready(function($) {
   }
 
   function updateuri(uri) {
-
-    if (!window.firstrun) {
+    if (!window.noAddToHistory) {
       history.pushState(null, null, uri);
       uri.fragment("");
       localStorage.setItem('url-' + uri.filename(), uri);
@@ -111,12 +110,12 @@ jQuery(document).ready(function($) {
     if (data.versions) {
       $('#wcagver [value="'+ data.versions +'"]').prop('selected', true);
     }
+    $('.btn-techniques').each(function(index, el) {
+      var btn = $(el);
+      btn.attr('aria-expanded', false);
+      $('#'+btn.attr('aria-controls')).removeClass('in');
+    });
     if (data.showtechniques) {
-      $('.btn-techniques').each(function(index, el) {
-        var btn = $(el);
-        btn.attr('aria-expanded', false);
-        $('#'+btn.attr('aria-controls')).removeClass('in');
-      });
       $('.btn-techniques[aria-controls="techniques-' + data.showtechniques.split(',').join('"], .btn-techniques[aria-controls="techniques-') + '"]').each(function(index, el) {
         var btn = $(el);
         btn.attr('aria-expanded', true);
@@ -754,13 +753,15 @@ jQuery(document).ready(function($) {
   });
 
   $(window).on('popstate', function(event) {
+    window.noAddToHistory = true;
     applyurl();
+    window.noAddToHistory = false;
   });
 
   init();
 
-  window.firstrun = true;
+  window.noAddToHistory = true;
   applyurl();
-  window.firstrun = false;
+  window.noAddToHistory = false;
 
 });
