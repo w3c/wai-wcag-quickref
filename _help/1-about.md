@@ -3,7 +3,7 @@ title: About
 ---
 This tool provides a customizable view of WCAG 2 resources:
 
--   Web Content Accessibility Guidelines web standard — [WCAG 2.1](http://www.w3.org/TR/WCAG21/), [WCAG 2.0](http://www.w3.org/TR/WCAG20/)
+-   Web Content Accessibility Guidelines web standard — [WCAG 2.1](https://www.w3.org/TR/WCAG21/), [WCAG 2.0](https://www.w3.org/TR/WCAG20/)
 -   Techniques for WCAG 2 implementation guidance
 -   Understanding WCAG 2 supporting information
 
