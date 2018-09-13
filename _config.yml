@@ -2,10 +2,8 @@
 title: "How to Meet WCAG 2 (Quickref Reference)"
 email: ee@w3.org
 description: ""
-baseurl: "/wai-wcag-quickref/" # the subpath of your site, e.g. /blog
-#baseurl: "/WAI/WCAG20/quickref/" # For publication
-#baseurl: /
-url: "http://yourdomain.com" # the base hostname & protocol for your site
+baseurl: "/wai-wcag-quickref" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
 twitter_username: yatil
 github_username:  yatil
 status: draft
