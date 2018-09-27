@@ -225,11 +225,11 @@ jQuery(document).ready(function($) {
     });
     if($('.sc-wrapper:not(.current)').length > 0) {
       $('#hiddensc').empty();
-      $('<div class="panel-heading"><h2 style="margin: 0;">Filtered-Out Success Criteria <button class="clearall btn btn-info btn-sm" hidden="" style="display: inline-block;"><span class="glyphicon glyphicon-refresh"></span> Clear filters</button></h2></div><div class="panel-body"><p><strong>The following success critera are not shown based on the selected tags and/or filters:</strong></p></div>').appendTo('#hiddensc');
+      $('<div class="panel-heading"><h2 style="margin: 0;">Filtered-Out Success Criteria <button class="clearall btn btn-info btn-sm" hidden="" style="display: inline-block;"><span class="glyphicon glyphicon-refresh"></span> Clear filters</button></h2></div><div class="panel-body"><p><strong>The following success critera are not shown based on the selected version, tags, and/or filters:</strong></p></div>').appendTo('#hiddensc');
       $('<div class="panel-body hiddensc-inner">').appendTo('#hiddensc');
       var hiddenscul = $('<ul>');
       $('.sc-wrapper:not(.current) h4'). each(function(index, el) {
-        hiddenscul.append('<li>' + $(el).find('> strong').text() + ' ' + $(el).find('> span').text() + '</li>').appendTo('#hiddensc .hiddensc-inner');
+        hiddenscul.append('<li>' + $(el).find('> strong').text() + ' ' + $(el).find('> span').text() + ' ' + $(el).parent().find('.newin21').text() + '</li>').appendTo('#hiddensc .hiddensc-inner');
       });
       $('#hiddensc, #hiddennav').show();
     } else {
