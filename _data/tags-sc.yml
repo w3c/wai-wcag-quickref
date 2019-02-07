@@ -63,6 +63,21 @@ sensory-characteristics:
   int: buttons controls errors navigation
   vis: color layout structure
   con: audio consistent-experience content messaging visual-cues
+orientation:
+  dev: 1-needs-dev-tags
+  int: 1-needs-int-tags
+  vis: 1-needs-vis-tags
+  con: 1-needs-con-tags
+identify-input-purpose:
+  dev: 1-needs-dev-tags
+  int: 1-needs-int-tags
+  vis: 1-needs-vis-tags
+  con: 1-needs-con-tags
+identify-purpose:
+  dev: 1-needs-dev-tags
+  int: 1-needs-int-tags
+  vis: 1-needs-vis-tags
+  con: 1-needs-con-tags
 use-of-color:
   int: buttons controls errors focus forms navigation
   vis: color text
@@ -100,6 +115,26 @@ images-of-text-no-exception:
   int: buttons
   vis: contrast images images-of-text text text-alternatives
   con: consistent-experience structure text
+reflow:
+  dev: 1-needs-dev-tags
+  int: 1-needs-int-tags
+  vis: 1-needs-vis-tags
+  con: 1-needs-con-tags
+non-text-contrast:
+  dev: 1-needs-dev-tags
+  int: 1-needs-int-tags
+  vis: 1-needs-vis-tags
+  con: 1-needs-con-tags
+text-spacing:
+  dev: 1-needs-dev-tags
+  int: 1-needs-int-tags
+  vis: 1-needs-vis-tags
+  con: 1-needs-con-tags
+content-on-hover-or-focus:
+  dev: 1-needs-dev-tags
+  int: 1-needs-int-tags
+  vis: 1-needs-vis-tags
+  con: 1-needs-con-tags
 keyboard:
   dev: controls focus keyboard events video
   int: autoplay buttons carousels controls errors focus forms events navigation streaming video tab-order skip-to-content
@@ -110,6 +145,11 @@ no-keyboard-trap:
 keyboard-no-exception:
   dev: controls focus keyboard events video
   int: autoplay buttons carousels controls errors focus forms events navigation streaming video tab-order skip-to-content
+character-key-shortcuts:
+  dev: 1-needs-dev-tags
+  int: 1-needs-int-tags
+  vis: 1-needs-vis-tags
+  con: 1-needs-con-tags
 timing-adjustable:
   dev: controls
   int: controls time-limits
@@ -127,12 +167,22 @@ interruptions:
 re-authenticating:
   int: forms time-limits
   vis: text
+timeouts:
+  dev: 1-needs-dev-tags
+  int: 1-needs-int-tags
+  vis: 1-needs-vis-tags
+  con: 1-needs-con-tags
 three-flashes-or-below-threshold:
   vis: flashing animation
   con: content video moving-content
 three-flashes:
   vis: flashing animation
   con: content video moving-content
+animation-from-interactions:
+  dev: 1-needs-dev-tags
+  int: 1-needs-int-tags
+  vis: 1-needs-vis-tags
+  con: 1-needs-con-tags
 bypass-blocks:
   dev: headings menus markup structure iframes
   int: navigation skip-to-content
@@ -177,6 +227,36 @@ section-headings:
   dev: headings markup structure
   vis: structure text
   con: content headings progress-steps
+pointer-gestures:
+  dev: 1-needs-dev-tags
+  int: 1-needs-int-tags
+  vis: 1-needs-vis-tags
+  con: 1-needs-con-tags
+pointer-cancellation:
+  dev: 1-needs-dev-tags
+  int: 1-needs-int-tags
+  vis: 1-needs-vis-tags
+  con: 1-needs-con-tags
+label-in-name:
+  dev: 1-needs-dev-tags
+  int: 1-needs-int-tags
+  vis: 1-needs-vis-tags
+  con: 1-needs-con-tags
+motion-actuation:
+  dev: 1-needs-dev-tags
+  int: 1-needs-int-tags
+  vis: 1-needs-vis-tags
+  con: 1-needs-con-tags
+target-size:
+  dev: 1-needs-dev-tags
+  int: 1-needs-int-tags
+  vis: 1-needs-vis-tags
+  con: 1-needs-con-tags
+concurrent-input-mechanisms:
+  dev: 1-needs-dev-tags
+  int: 1-needs-int-tags
+  vis: 1-needs-vis-tags
+  con: 1-needs-con-tags
 language-of-page:
   dev: language text
   vis: text
@@ -246,3 +326,8 @@ parsing:
 name-role-value:
   dev: markup structure forms labels menus video
   con: messaging moving-content
+status-messages:
+  dev: 1-needs-dev-tags
+  int: 1-needs-int-tags
+  vis: 1-needs-vis-tags
+  con: 1-needs-con-tags
