@@ -5,6 +5,6 @@
 
   <title>{%if site.status == "draft" %}[Draft] {% endif %}{% if page.title %}{{ page.title }} &bull; {{ site.title }} {% else %}{{ site.title }}{% endif %}</title>
 
-  <link rel="stylesheet" href="{{ "css/styles.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "css/styles.css" | relative_url }}">
   <link rel="canonical" href="https://www.w3.org/WAI/WCAG21/quickref/">
 </head>
