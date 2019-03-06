@@ -64,20 +64,17 @@ sensory-characteristics:
   vis: color layout structure
   con: audio consistent-experience content messaging visual-cues
 orientation:
-  dev: 1-needs-dev-tags
-  int: 1-needs-int-tags
-  vis: 1-needs-vis-tags
-  con: 1-needs-con-tags
+  dev: meta-tag viewport mobile
+  int: meta-tag viewport mobile
+  vis: user-interface orientation mobile layout
 identify-input-purpose:
-  dev: 1-needs-dev-tags
-  int: 1-needs-int-tags
-  vis: 1-needs-vis-tags
-  con: 1-needs-con-tags
+  dev: forms controls auto-complete
+  int: forms controls auto-complete
 identify-purpose:
-  dev: 1-needs-dev-tags
-  int: 1-needs-int-tags
-  vis: 1-needs-vis-tags
-  con: 1-needs-con-tags
+  dev: regions icons components controls forms
+  int: regions icons components controls forms
+  vis: regions icons
+  con: regions icons
 use-of-color:
   int: buttons controls errors focus forms navigation
   vis: color text
@@ -116,25 +113,23 @@ images-of-text-no-exception:
   vis: contrast images images-of-text text text-alternatives
   con: consistent-experience structure text
 reflow:
-  dev: 1-needs-dev-tags
-  int: 1-needs-int-tags
-  vis: 1-needs-vis-tags
-  con: 1-needs-con-tags
+  dev: media-queries screen-size orientation mobile zoom
+  int: media-queries screen-size orientation mobile zoom
+  vis: text screen-size orientation layout mobile reflow
+  con: text screen-size orientation reflow
 non-text-contrast:
-  dev: 1-needs-dev-tags
-  int: 1-needs-int-tags
-  vis: 1-needs-vis-tags
-  con: 1-needs-con-tags
+  int: contrast graphical-objects
+  vis: color controls contrast graphical-objects
+  con: contrast graphical-objects
 text-spacing:
-  dev: 1-needs-dev-tags
-  int: 1-needs-int-tags
-  vis: 1-needs-vis-tags
-  con: 1-needs-con-tags
+  dev: reflow layout text
+  int: reflow layout text
+  vis: refow text readability
+  con: refow text readability
 content-on-hover-or-focus:
-  dev: 1-needs-dev-tags
-  int: 1-needs-int-tags
-  vis: 1-needs-vis-tags
-  con: 1-needs-con-tags
+  dev: interaction pop-up keyboard hover focus navigation
+  int: interaction pop-up keyboard hover focus navigation
+  vis: interaction pop-up hover focus navigation
 keyboard:
   dev: controls focus keyboard events video
   int: autoplay buttons carousels controls errors focus forms events navigation streaming video tab-order skip-to-content
@@ -146,10 +141,8 @@ keyboard-no-exception:
   dev: controls focus keyboard events video
   int: autoplay buttons carousels controls errors focus forms events navigation streaming video tab-order skip-to-content
 character-key-shortcuts:
-  dev: 1-needs-dev-tags
-  int: 1-needs-int-tags
-  vis: 1-needs-vis-tags
-  con: 1-needs-con-tags
+  dev: focus keyboard
+  int: focus keyboard
 timing-adjustable:
   dev: controls
   int: controls time-limits
@@ -168,10 +161,9 @@ re-authenticating:
   int: forms time-limits
   vis: text
 timeouts:
-  dev: 1-needs-dev-tags
-  int: 1-needs-int-tags
-  vis: 1-needs-vis-tags
-  con: 1-needs-con-tags
+  dev: controls errors changing-content time-limits
+  int: controls errors changing-content time-limits notifications
+  vis: content visual-cues notifications
 three-flashes-or-below-threshold:
   vis: flashing animation
   con: content video moving-content
@@ -179,10 +171,9 @@ three-flashes:
   vis: flashing animation
   con: content video moving-content
 animation-from-interactions:
-  dev: 1-needs-dev-tags
-  int: 1-needs-int-tags
-  vis: 1-needs-vis-tags
-  con: 1-needs-con-tags
+  dev: controls animation keyboard focus interaction
+  int: controls animation keyboard focus interaction
+  vis: consistent-experience visual-cues controls animation interaction
 bypass-blocks:
   dev: headings menus markup structure iframes
   int: navigation skip-to-content
@@ -228,35 +219,24 @@ section-headings:
   vis: structure text
   con: content headings progress-steps
 pointer-gestures:
-  dev: 1-needs-dev-tags
-  int: 1-needs-int-tags
-  vis: 1-needs-vis-tags
-  con: 1-needs-con-tags
+  dev: controls events mobile
+  int: controls events mobile
 pointer-cancellation:
-  dev: 1-needs-dev-tags
-  int: 1-needs-int-tags
-  vis: 1-needs-vis-tags
-  con: 1-needs-con-tags
+  dev: controls events mobile
+  int: controls events mobile
 label-in-name:
-  dev: 1-needs-dev-tags
-  int: 1-needs-int-tags
-  vis: 1-needs-vis-tags
-  con: 1-needs-con-tags
+  dev: controls buttons forms labels links
+  int: controls buttons forms labels links
+  vis: consistent-experience content visual-cues controls buttons forms labels
+  con: consistent-experience content visual-cues controls buttons forms labels
 motion-actuation:
-  dev: 1-needs-dev-tags
-  int: 1-needs-int-tags
-  vis: 1-needs-vis-tags
-  con: 1-needs-con-tags
+  dev: controls keyboard mobile
+  int: controls keyboard mobile
 target-size:
-  dev: 1-needs-dev-tags
-  int: 1-needs-int-tags
-  vis: 1-needs-vis-tags
-  con: 1-needs-con-tags
+  int: buttons controls forms mobile
+  vis: buttons controls forms mobile
 concurrent-input-mechanisms:
-  dev: 1-needs-dev-tags
-  int: 1-needs-int-tags
-  vis: 1-needs-vis-tags
-  con: 1-needs-con-tags
+  dev: navigation links controls events mobile keyboard
 language-of-page:
   dev: language text
   vis: text
@@ -327,7 +307,7 @@ name-role-value:
   dev: markup structure forms labels menus video
   con: messaging moving-content
 status-messages:
-  dev: 1-needs-dev-tags
-  int: 1-needs-int-tags
-  vis: 1-needs-vis-tags
-  con: 1-needs-con-tags
+  dev: forms errors
+  int: errors forms messaging
+  vis: content messaging progress-steps visual-cues
+  con: content messaging
