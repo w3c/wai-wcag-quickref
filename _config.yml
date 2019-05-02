@@ -1,5 +1,5 @@
 # Site settings
-title: "How to Meet WCAG 2 (Quickref Reference)"
+title: "How to Meet WCAG (Quickref Reference)"
 email: ee@w3.org
 description: ""
 baseurl: "/wai-wcag-quickref" # the subpath of your site, e.g. /blog
@@ -7,7 +7,7 @@ url: "" # the base hostname & protocol for your site
 twitter_username: yatil
 github_username:  yatil
 status: draft
-version: "3.0.0"
+version: "3.1.0"
 
 techniqueurl: https://www.w3.org/TR/WCAG20-TECHS/
 understandingurl: https://www.w3.org/WAI/WCAG21/Understanding/
