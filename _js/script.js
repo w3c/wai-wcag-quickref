@@ -123,6 +123,7 @@ jQuery(document).ready(function($) {
       });
     }
     applyTechnologies();
+    applyTechniques();
     applyVersions();
     applyTagsAndLevelsToSC();
     $('#tags button:disabled').first().addClass('first');
