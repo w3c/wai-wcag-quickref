@@ -137,7 +137,7 @@ jQuery(document).ready(function($) {
         var altid = $('[data-alt-id~="' + gotohash.replace('#', '') + '"]');
         if (altid.length) {
           scrollto(altid);
-          window.location.hash = '#' + altid.attr('id');
+          history.replaceState(null, null, '#' + altid.attr('id'));
         } else {
           scrollto($(gotohash));
         }
