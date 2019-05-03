@@ -1554,7 +1554,7 @@
                       "title":"Using metadata to associate text transcriptions with audio-only content",
                       "using":[
                         {
-                          "id":"TECH:text1",
+                          "id":"TECH:future1",
                           "title":"<em>Example:</em> Providing, in metadata, URI(s) that point to several text transcripts (English, French, Dutch) of an audio file."
                         }
                       ]
@@ -2566,7 +2566,7 @@
                       "title":"Scaling form elements which contain text"
                     },
                     {
-                      "id":"TECH:future10",
+                      "id":"TECH:future5",
                       "title":"Ensuring that text in raster images is at least 18pt"
                     },
                     {
