@@ -1,5 +1,35 @@
 {% assign shortname = include.technique.id | replace:'TECH:','' | replace:'1','' | replace:'2','' | replace:'3','' | replace:'4','' | replace:'5','' | replace:'6','' | replace:'7','' | replace:'8','' | replace:'9','' | replace:'0','' | trim %}
 
+{% case shortname %}
+  {% when 'ARIA' %}
+    {% assign techslug = "aria"%}
+  {% when 'SCR' %}
+    {% assign techslug = "client-side-script"%}
+  {% when 'C' %}
+    {% assign techslug = "css"%}
+  {% when 'F' %}
+    {% assign techslug = "failures"%}
+  {% when 'FLASH' %}
+    {% assign techslug = "flash"%}
+  {% when 'G' %}
+    {% assign techslug = "general"%}
+  {% when 'H' %}
+    {% assign techslug = "html"%}
+  {% when 'PDF' %}
+    {% assign techslug = "pdf"%}
+  {% when 'SVR' %}
+    {% assign techslug = "server-side-script"%}
+  {% when 'SL' %}
+    {% assign techslug = "silverlight"%}
+  {% when 'SM' %}
+    {% assign techslug = "smil"%}
+  {% when 'T' %}
+    {% assign techslug = "text"%}
+  {% else %}
+    {% comment %}Non of the known shortnames? I use the shortname as a slug.{% endcomment%}
+    {% assign techslug = shortname%}
+{% endcase %}
+
 {% assign techid = include.technique.id | replace:'TECH:','' %}
 
 {% if include.technique.and %}
@@ -55,7 +85,7 @@
           {% if forloop.last %}</ul>{% endif %}
         {% endfor %}
       {% else %}
-        {{ include.technique.prepend }} <a href="{{techid | append: '.html' | prepend: site.techniqueurl}}">{{ techid }}: {{include.technique.title}} </a> {{ include.technique.append }}
+        {{ include.technique.prepend }} <a href="{{techid | append: '.html' | prepend: "/" | prepend: techslug | prepend: site.techniqueurl}}">{{ techid }}: {{include.technique.title}} </a> {{ include.technique.append }}
         {% for note in technique.notes %}
           {% if forloop.first %}<ul class="notes">{% endif %}
             <li>
