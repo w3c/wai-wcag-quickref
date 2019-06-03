@@ -181,6 +181,7 @@ jQuery(document).ready(function($) {
       $(selector).addClass('current');
       $('#deselecttags').prop('disabled', false);
     } else {
+      $('.sc-wrapper').addClass('current');
       $('#deselecttags').prop('disabled', true);
     }
 
