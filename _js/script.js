@@ -91,8 +91,8 @@ jQuery(document).ready(function($) {
     }
 
     if (data.tags) {
-      $('#tags .btn').removeClass('btn-primary').addClass('btn-default').removeAttr('aria-selected');
-      $('#tags .btn[data-tag="' + data.tags.split(',').join('"], #tags .btn[data-tag="') + '"]').addClass('btn-primary').removeClass('btn-default').attr('aria-selected', true);
+      $('#tags .btn').removeClass('btn-primary').addClass('btn-default').removeAttr('aria-pressed');
+      $('#tags .btn[data-tag="' + data.tags.split(',').join('"], #tags .btn[data-tag="') + '"]').addClass('btn-primary').removeClass('btn-default').attr('aria-pressed', true);
     }
 
     if (data.levels) {
@@ -616,7 +616,7 @@ jQuery(document).ready(function($) {
     $('#deselecttags').on('click', function(event) {
       event.preventDefault();
       /* Act on the event */
-      $('#tags .btn-primary').removeClass('btn-primary').addClass('btn-default').removeAttr('aria-selected');
+      $('#tags .btn-primary').removeClass('btn-primary').addClass('btn-default').removeAttr('aria-pressed');
       applyTechnologies();
       applyTagsAndLevelsToSC();
       statustext();
