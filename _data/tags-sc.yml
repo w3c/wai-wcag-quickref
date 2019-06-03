@@ -63,6 +63,18 @@ sensory-characteristics:
   int: buttons controls errors navigation
   vis: color layout structure
   con: audio consistent-experience content messaging visual-cues
+orientation:
+  dev: meta-tag viewport mobile
+  int: meta-tag viewport mobile
+  vis: user-interface orientation mobile layout
+identify-input-purpose:
+  dev: forms controls auto-complete
+  int: forms controls auto-complete
+identify-purpose:
+  dev: regions icons components controls forms
+  int: regions icons components controls forms
+  vis: regions icons
+  con: regions icons
 use-of-color:
   int: buttons controls errors focus forms navigation
   vis: color text
@@ -100,6 +112,24 @@ images-of-text-no-exception:
   int: buttons
   vis: contrast images images-of-text text text-alternatives
   con: consistent-experience structure text
+reflow:
+  dev: media-queries screen-size orientation mobile zoom
+  int: media-queries screen-size orientation mobile zoom
+  vis: text screen-size orientation layout mobile reflow
+  con: text screen-size orientation reflow
+non-text-contrast:
+  int: contrast graphical-objects
+  vis: color controls contrast graphical-objects
+  con: contrast graphical-objects
+text-spacing:
+  dev: reflow layout text
+  int: reflow layout text
+  vis: refow text readability
+  con: refow text readability
+content-on-hover-or-focus:
+  dev: interaction pop-up keyboard hover focus navigation
+  int: interaction pop-up keyboard hover focus navigation
+  vis: interaction pop-up hover focus navigation
 keyboard:
   dev: controls focus keyboard events video
   int: autoplay buttons carousels controls errors focus forms events navigation streaming video tab-order skip-to-content
@@ -110,6 +140,9 @@ no-keyboard-trap:
 keyboard-no-exception:
   dev: controls focus keyboard events video
   int: autoplay buttons carousels controls errors focus forms events navigation streaming video tab-order skip-to-content
+character-key-shortcuts:
+  dev: focus keyboard
+  int: focus keyboard
 timing-adjustable:
   dev: controls
   int: controls time-limits
@@ -127,12 +160,20 @@ interruptions:
 re-authenticating:
   int: forms time-limits
   vis: text
+timeouts:
+  dev: controls errors changing-content time-limits
+  int: controls errors changing-content time-limits notifications
+  vis: content visual-cues notifications
 three-flashes-or-below-threshold:
   vis: flashing animation
   con: content video moving-content
 three-flashes:
   vis: flashing animation
   con: content video moving-content
+animation-from-interactions:
+  dev: controls animation keyboard focus interaction
+  int: controls animation keyboard focus interaction
+  vis: consistent-experience visual-cues controls animation interaction
 bypass-blocks:
   dev: headings menus markup structure iframes
   int: navigation skip-to-content
@@ -177,6 +218,25 @@ section-headings:
   dev: headings markup structure
   vis: structure text
   con: content headings progress-steps
+pointer-gestures:
+  dev: controls events mobile
+  int: controls events mobile
+pointer-cancellation:
+  dev: controls events mobile
+  int: controls events mobile
+label-in-name:
+  dev: controls buttons forms labels links
+  int: controls buttons forms labels links
+  vis: consistent-experience content visual-cues controls buttons forms labels
+  con: consistent-experience content visual-cues controls buttons forms labels
+motion-actuation:
+  dev: controls keyboard mobile
+  int: controls keyboard mobile
+target-size:
+  int: buttons controls forms mobile
+  vis: buttons controls forms mobile
+concurrent-input-mechanisms:
+  dev: navigation links controls events mobile keyboard
 language-of-page:
   dev: language text
   vis: text
@@ -246,3 +306,8 @@ parsing:
 name-role-value:
   dev: markup structure forms labels menus video
   con: messaging moving-content
+status-messages:
+  dev: forms errors
+  int: errors forms messaging
+  vis: content messaging progress-steps visual-cues
+  con: content messaging
