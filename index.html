@@ -8,7 +8,7 @@ button: 1
   <button id="showhidesbsmall" data-target="#sidebar" type="button" data-toggle="collapse" aria-expanded="true" aria-controls="#sidebar" class="btn btn-default"><span class="word-show"><svg aria-hidden="true" class="i-chevron-right"><use xlink:href="{{ "img/icons.svg" | relative_url }}#i-chevron-right"></use></svg> Show</span><span class="word-hide"><svg aria-hidden="true" class="i-chevron-down"><use xlink:href="{{ "img/icons.svg" | relative_url }}#i-chevron-down"></use></svg> Hide</span> in-page navigation and filter options</button>
 
   <div class="sidebar" id="sidebar">
-    <div class="fixedsticky" style="top:0;">
+    <div>
       <nav>
         <ul class="nav nav-tabs buttons" id="navtabs">
           <li>
@@ -40,7 +40,7 @@ button: 1
     </div>
   </div>
   <main>
-    <div class="navrow fixedsticky with-expandcollapseallbutton" style="top:0;">
+    <div class="navrow with-expandcollapseallbutton" style="top:0;">
       <button id="showsidebars" aria-expanded="false" hidden type="button" class="btn btn-default btn-sm"><span><svg aria-hidden="true" class="i-chevron-right"><use xlink:href="{{ "img/icons.svg" | relative_url }}#i-chevron-right"></use></svg> Show Sidebar</span></button>
       {% include filter-status.html button="true" %}
     </div>

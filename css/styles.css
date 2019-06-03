@@ -1642,21 +1642,6 @@ tbody.collapse.in {
   font-weight: 600;
   font-style: italic; }
 
-/* When position: sticky is supported but native behavior is ignored */
-.fixedsticky-withoutfixedfixed .fixedsticky-off,
-.fixed-supported .fixedsticky-off {
-  position: static; }
-
-.fixedsticky-withoutfixedfixed .fixedsticky-on,
-.fixed-supported .fixedsticky-on {
-  position: fixed; }
-
-.fixedsticky-dummy {
-  display: none; }
-
-.fixedsticky-on + .fixedsticky-dummy {
-  display: block; }
-
 [disabled] + span {
   color: #777; }
 
@@ -1787,8 +1772,13 @@ header[role=banner] {
 
 .sc-wrapper {
   border-top: 1px solid #005A9C;
-  padding: 30px 5px 10px;
+  border-left: 5px solid transparent;
+  padding: 30px 5px 10px 0;
   clear: both; }
+  .sc-wrapper:focus-within {
+    border-left-color: #005A9C; }
+  .sc-wrapper:focus {
+    border-left-color: #005A9C; }
   @media screen and (min-width: 43em) {
     .sc-wrapper {
       padding-left: 20px;
@@ -2040,22 +2030,25 @@ svg.icon {
       color: #005A9C; }
 
 @media screen and (min-width: 43em) {
-  .mainrow {
-    display: table-row; }
-    .mainrow main, .mainrow .sidebar {
-      display: table-cell;
-      vertical-align: top;
-      transition: all .1s linear; }
-    .mainrow main {
-      padding: 0 0 0 15px; }
-    .mainrow .sidebar, .mainrow .sidebar > div {
-      width: 300px; }
-    .mainrow .sidebar > div.fixedsticky-on {
-      width: 300px;
-      bottom: 0; }
-      .mainrow .sidebar > div.fixedsticky-on .tab-content {
-        height: calc(100% - 3em);
-        overflow-y: scroll; } }
+  .mainrow main, .mainrow .sidebar {
+    transition: all .1s linear; }
+  .mainrow main {
+    padding: 0 0 0 15px;
+    margin-left: 300px; }
+  .mainrow.sidebar-hidden main {
+    margin-left: 0; }
+  .mainrow .sidebar {
+    width: 300px;
+    will-change: transform;
+    position: -webkit-sticky;
+    position: sticky;
+    display: block;
+    top: 0;
+    float: left;
+    max-height: 100vh; }
+    .mainrow .sidebar .tab-content {
+      height: calc(100vh - 3em);
+      overflow-y: scroll; } }
 
 .sbbox {
   color: #333;
@@ -2093,9 +2086,14 @@ svg.icon {
     margin-bottom: 0; }
 
 .navrow {
+  will-change: transform;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   z-index: 999;
   background-color: #eee;
-  transition: all 1s linear; }
+  border-bottom: 1px solid #005A9C;
+  box-shadow: 0 4px 4px -4px #555; }
   @media screen and (min-width: 43em) {
     .navrow {
       display: -ms-flexbox;
@@ -2111,16 +2109,6 @@ svg.icon {
     -ms-flex: 6;
         flex: 6;
     padding: 0; }
-  .navrow.fixedsticky-on {
-    left: 0;
-    right: 0;
-    border-bottom: 1px solid #005A9C;
-    box-shadow: 0 4px 4px -4px #555; }
-    @media screen and (min-width: 43em) {
-      .navrow.fixedsticky-on {
-        left: 315px; }
-        .navrow.fixedsticky-on.sidebar-hidden {
-          left: 15px; } }
 
 #hidesidebars {
   padding: 2px;
@@ -2426,7 +2414,8 @@ button.panel-heading {
        columns: 250px; }
 
 .maininner {
-  padding: 0 5px; }
+  padding: 0 5px;
+  overflow: hidden; }
   @media screen and (min-width: 43em) {
     .maininner {
       padding: 0 15px 0 0; } }

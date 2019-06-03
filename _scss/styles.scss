@@ -13,22 +13,6 @@ $large:  81em; //* 1300px */
 @font-face{font-family:Noto Sans;src:url(https://www.w3.org/WAI/assets/fonts/notosans-bold.woff2) format("woff2"),url(https://www.w3.org/WAI/assets/fonts/notosans-bold.woff) format("woff");font-weight:600;font-style:normal}
 @font-face{font-family:Noto Sans;src:url(https://www.w3.org/WAI/assets/fonts/notosans-bolditalic.woff2) format("woff2"),url(https://www.w3.org/WAI/assets/fonts/notosans-bolditalic.woff) format("woff");font-weight:600;font-style:italic}
 
-/* When position: sticky is supported but native behavior is ignored */
-.fixedsticky-withoutfixedfixed .fixedsticky-off,
-.fixed-supported .fixedsticky-off {
-  position: static;
-}
-.fixedsticky-withoutfixedfixed .fixedsticky-on,
-.fixed-supported .fixedsticky-on {
-  position: fixed;
-}
-.fixedsticky-dummy {
-  display: none;
-}
-.fixedsticky-on + .fixedsticky-dummy {
-  display: block;
-}
-
 [disabled] + span{
   color:#777;
 }
@@ -189,7 +173,16 @@ header[role=banner] {
 
 .sc-wrapper {
   border-top: 1px solid $brand-primary;
-  padding: 30px 5px 10px;
+  border-left: 5px solid transparent;
+  padding: 30px 5px 10px 0;
+
+  &:focus-within {
+    border-left-color: $brand-primary;
+  }
+
+  &:focus {
+    border-left-color: $brand-primary;
+  }
 
    @include mq($medium) {
      padding-left: 20px;
@@ -503,23 +496,27 @@ svg.icon {
 
 @include mq($medium) {
   .mainrow {
-    display:table-row;
     main, .sidebar {
-      display: table-cell;
-      vertical-align:top;
       transition: all .1s linear;
     }
     main {
       padding: 0 0 0 15px;
+      margin-left: 300px
     }
-    .sidebar, .sidebar > div {
-      width: 300px;
+    &.sidebar-hidden main {
+      margin-left: 0;
     }
-    .sidebar > div.fixedsticky-on {
+    .sidebar {
       width: 300px;
-      bottom:0;
+      will-change: transform;
+      position: sticky;
+      display: block;
+      top:0;
+      float:left;
+      max-height: 100vh;
+
       .tab-content {
-        height: calc(100% - 3em);
+        height: calc(100vh - 3em);
         overflow-y:scroll;
       }
     }
@@ -567,6 +564,9 @@ svg.icon {
 }
 
 .navrow {
+  will-change: transform;
+  position: sticky;
+  top:0;
   @include mq($medium) {
     display:flex;
     flex-direction: row;
@@ -575,7 +575,9 @@ svg.icon {
   z-index: 999;
   background-color: $gray-lighter;
 
-  transition: all 1s linear;
+  border-bottom: 1px solid $brand-primary;
+  box-shadow: 0 4px 4px -4px $gray;
+
 
   @include mq($medium) {
     margin-right: 15px;
@@ -583,18 +585,6 @@ svg.icon {
   > div {
     flex:6;
     padding: 0;
-  }
-  &.fixedsticky-on {
-    left:0;
-    right:0;
-    border-bottom: 1px solid $brand-primary;
-    box-shadow: 0 4px 4px -4px $gray;
-    @include mq($medium) {
-      left: 315px;
-      &.sidebar-hidden {
-        left: 15px;
-      }
-    }
   }
 }
 
@@ -928,6 +918,7 @@ button.panel-heading {
 
 .maininner {
   padding: 0 5px;
+  overflow:hidden;
   @include mq($medium) {
     padding: 0 15px 0 0;
   }
