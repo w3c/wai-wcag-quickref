@@ -2275,16 +2275,17 @@ div.understanding {
       -moz-break-before: always;
            break-before: always;
       page-break-before: always; }
+  #tags .btn-primary {
+    font-weight: bold; }
   #tags .btn-primary:after {
-    content: "";
-    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNDQ4Ij48cGF0aCBmaWxsPSIjZmZmIiBkPSJNNDE3Ljc1IDE0MS41cTAgMTAtNyAxN2wtMjE1IDIxNXEtNyA3LTE3IDd0LTE3LTdMMzcuMjUgMjQ5cS03LTctNy0xN3Q3LTE3bDM0LTM0cTctNyAxNy03dDE3IDdsNzMuNSA3My43NSAxNjQtMTY0LjI1cTctNyAxNy03dDE3IDdsMzQgMzRxNyA3IDcgMTd6Ii8+PC9zdmc+");
-    background-size: contain;
+    content: "✓";
     display: block;
     position: absolute;
-    top: 1px;
-    right: 1px;
+    top: 0px;
+    right: 3px;
     height: 10px;
-    width: 10px; }
+    width: 10px;
+    font-size: 0.625rem; }
 
 button.panel-heading {
   display: block;
