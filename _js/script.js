@@ -363,14 +363,14 @@ jQuery(document).ready(function($) {
   });
 
   function scrollto(target) {
+    // console.log(target);
     var location = window.history.location || window.location,
         uri = new URI(location),
         scrolldiff = 60;
         if ($('.navrow').outerHeight() > 0) {
           scrolldiff = $('.navrow').outerHeight() + 5;
         }
-    var scrollpos = target.offset().top - scrolldiff;
-    window.scrollTo(0, scrollpos);
+    setTimeout(function () { window.scrollTo(0, target.offset().top - scrolldiff)}, 100);
     uri.fragment('#' + $(target).attr('id'));
     updateuri(uri);
     target.attr('tabindex', '-1').focus();
@@ -547,7 +547,6 @@ jQuery(document).ready(function($) {
 
   function init() {
     $('html').addClass('has-js');
-    // $('.fixedsticky').fixedsticky();
     if ($( window ).width() > 896) {
       $('html').addClass('large');
     } else {
