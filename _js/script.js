@@ -185,6 +185,11 @@ jQuery(document).ready(function($) {
       $('#deselecttags').prop('disabled', true);
     }
 
+    if (uncheckedLevels.length==2){
+      $('#filter-levels input:checked').prop('disabled', true);
+    } else {
+      $('#filter-levels input:checked').prop('disabled', false);
+    }
 
     if (uncheckedLevels.length>0) {
       $('#filter-levels button.filters').prop('disabled', false);
