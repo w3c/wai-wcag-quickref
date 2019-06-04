@@ -73,6 +73,7 @@ jQuery(document).ready(function($) {
       uri.fragment("");
       localStorage.setItem('url-' + uri.filename(), uri);
     }
+    setScrollSpy();
   }
 
   function applyurl() {
@@ -362,6 +363,13 @@ jQuery(document).ready(function($) {
     applyTagsAndLevelsToSC();
   });
 
+  function setScrollSpy() {
+    $('body').scrollspy({
+      target: '.overview.spy-active',
+      offset: $('.navrow').outerHeight() + 5
+    });
+  }
+
   function scrollto(target) {
     // console.log(target);
     var location = window.history.location || window.location,
@@ -637,11 +645,6 @@ jQuery(document).ready(function($) {
       applyTagsAndLevelsToSC();
       statustext();
       updateuri(uri);
-    });
-
-    $('body').scrollspy({
-      target: '.overview.spy-active',
-      offset: 60
     });
 
     svg4everybody();
