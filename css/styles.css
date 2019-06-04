@@ -1700,8 +1700,7 @@ header[role=banner] {
     width: auto; }
     @media screen and (min-width: 25em) {
       header[role=banner] img {
-        height: auto;
-        max-width: 90px; } }
+        height: auto; } }
   header[role=banner] a {
     text-decoration: none; }
     header[role=banner] a:hover, header[role=banner] a:focus {
