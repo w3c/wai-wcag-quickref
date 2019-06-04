@@ -250,7 +250,6 @@ header[role=banner] {
     font-size: 12/14 * 1em;
   }
   &:not(.current) {
-    display:none;
     padding: 5px;
     border: none;
     div, footer {

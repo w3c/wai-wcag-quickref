@@ -1833,7 +1833,6 @@ header[role=banner] {
   .sc-wrapper .note {
     font-size: 0.85714em; }
   .sc-wrapper:not(.current) {
-    display: none;
     padding: 5px;
     border: none; }
     .sc-wrapper:not(.current) div, .sc-wrapper:not(.current) footer {
