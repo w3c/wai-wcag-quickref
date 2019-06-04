@@ -7,7 +7,7 @@ url: "" # the base hostname & protocol for your site
 twitter_username: yatil
 github_username:  yatil
 status: draft
-version: "3.1.0"
+version: "3.5"
 
 techniqueurl: https://www.w3.org/WAI/WCAG21/Techniques/
 understandingurl: https://www.w3.org/WAI/WCAG21/Understanding/
