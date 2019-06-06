@@ -378,7 +378,9 @@ jQuery(document).ready(function($) {
         if ($('.navrow').outerHeight() > 0) {
           scrolldiff = $('.navrow').outerHeight() + 5;
         }
-    setTimeout(function () { window.scrollTo(0, target.offset().top - scrolldiff)}, 100);
+    setTimeout(function () {
+      window.scrollTo(0, target.offset().top - scrolldiff);
+      }, 100);
     uri.fragment('#' + $(target).attr('id'));
     updateuri(uri);
     target.attr('tabindex', '-1').focus();
