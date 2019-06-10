@@ -366,7 +366,7 @@ jQuery(document).ready(function($) {
   function setScrollSpy() {
     $('body').scrollspy({
       target: '.overview.spy-active',
-      offset: $('.navrow').outerHeight() + 5
+      offset: $('.navrow').outerHeight() + 10
     });
   }
 
