@@ -3079,6 +3079,9 @@
                     "text": "Word spacing to at least 0.16 times the font size."
                   }
                 ]
+              },{
+                "type": "p",
+                "text": "Exception: Human languages and scripts that do not make use of one or more of these text style properties in written text can conform using only the properties that exist for that combination of language and script."
               }]
             },
             {
@@ -3108,6 +3111,10 @@
                     "text": "The additional content remains visible until the hover or focus trigger is removed, the user dismisses it, or its information is no longer valid."
                   }
                 ]
+              },
+              {
+                "type": "p",
+                "text":"Exception: The visual presentation of the additional content is controlled by the user agent and is not modified by the author."
               }]
             }
           ]
