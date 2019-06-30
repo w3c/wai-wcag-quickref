@@ -1,7 +1,7 @@
 {% assign g = g | plus: 1 %}
 {% assign s = 0 %}
 {% assign g_id = guideline.id | replace:'WCAG2:','' %}
-<div class="guideline panel panel-primary panel-borderless">
+<section class="guideline panel panel-primary panel-borderless" aria-roledescription="guideline" aria-labelledby="{{g_id}}">
 	<div class="panel-heading">
 		<h3 id="{{g_id}}" data-alt-id="{% for aid in guideline.alt_id %}{{aid}} {% endfor %}">Guideline <strong>{{ guideline.num }}</strong> – {{guideline.handle}}</h3>
 		{{guideline.title}}
@@ -60,4 +60,4 @@
 				{% include sc.html sc=currentsc %}
 			{% endfor %}
 		{% endif %}
-</div>
+</section>
