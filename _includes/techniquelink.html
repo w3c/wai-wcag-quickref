@@ -96,7 +96,7 @@
       {% endif %}
     {% endif %}
     {% if include.technique.using %}
-      <i>using one of the following techniques:</i>
+      {% comment %}<i>using one of the following techniques:</i>{% endcomment %}
       {% for gr in include.technique.using %}
         {% if gr.group %}
           <p role="heading" aria-level="7">{{gr.group.title}}</p>
