@@ -29,5 +29,8 @@
     "gulp-sourcemaps": "^1.5.2",
     "gulp-uglify": "^1.4.1",
     "jshint": "^2.10.1"
+  },
+  "dependencies": {
+    "netlify-cli": "^2.11.29"
   }
 }
