@@ -343,7 +343,7 @@ jQuery(document).ready(function($) {
     unchecked.each(function(){
       $(this).prop('checked', 'checked');
     });
-    $('#tags .btn-primary').removeClass('btn-primary').addClass('btn-default').removeAttr('aria-selected');
+    $('#tags .btn-primary').removeClass('btn-primary').addClass('btn-default').removeAttr('aria-pressed');
     $('#tags .btn').removeAttr('disabled');
     $('.sc-wrapper.current').removeClass('current');
     applyTechnologies();
@@ -520,9 +520,9 @@ jQuery(document).ready(function($) {
     statusanimation();
     var button = $(e.target), tags = [];
     if (button.hasClass('btn-primary')) {
-      button.removeClass('btn-primary').addClass('btn-default').removeAttr('aria-selected');
+      button.removeClass('btn-primary').addClass('btn-default').removeAttr('aria-pressed');
     } else {
-      button.removeClass('btn-default').addClass('btn-primary').attr('aria-selected','true');
+      button.removeClass('btn-default').addClass('btn-primary').attr('aria-pressed','true');
     }
     applyTagsAndLevelsToSC();
     saveURL();
