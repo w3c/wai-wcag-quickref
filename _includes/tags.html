@@ -123,7 +123,7 @@
                 {% assign tagcountInt = tagcountInt | plus: 1 %}
               {% endif %}
             {% endfor %}
-            <button data-tag="{{tag}}" class="btn btn-sm btn-default" data-countcon="{{tagcountCon}}" data-countdev="{{tagcountDev}}" data-countvis="{{tagcountVis}}" data-countint="{{tagcountInt}}">{{tag | replace: '-',' ' }}</button>
+            <button aria-pressed="false" data-tag="{{tag}}" class="btn btn-sm btn-default" data-countcon="{{tagcountCon}}" data-countdev="{{tagcountDev}}" data-countvis="{{tagcountVis}}" data-countint="{{tagcountInt}}">{{tag | replace: '-',' ' }}</button>
             {% assign tagcount = 0 %}
             {% assign firsttag = false %}
           {% endunless %}
