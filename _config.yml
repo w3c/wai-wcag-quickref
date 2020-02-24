@@ -48,3 +48,10 @@ exclude:
   - npm-debug.log
   - package.json
   - questions.md
+  - w3c.json
+  - package-lock.json
+  - text.html
+  - README.md
+  - pnpm-lock.yaml
+  - CHANGELOG.md
+  - CODE_OF_CONDUCT.md
