@@ -1,10 +1,10 @@
 ---
 title: About
 ---
-This tool provides a customizable view of WCAG 2.0 resources, including:
+This tool provides a customizable view of WCAG 2 resources:
 
--   [Web Content Accessibility Guidelines (WCAG) 2.0](http://www.w3.org/TR/WCAG20/) web standard
--   [Techniques for WCAG 2.0](http://www.w3.org/TR/WCAG20-TECHS/) implementation guidance
--   [Understanding WCAG 2.0](http://www.w3.org/TR/UNDERSTANDING-WCAG20/) supporting information
+-   Web Content Accessibility Guidelines web standard — [WCAG 2.1](https://www.w3.org/TR/WCAG21/), [WCAG 2.0](https://www.w3.org/TR/WCAG20/)
+-   Techniques for WCAG 2 implementation guidance
+-   Understanding WCAG 2 supporting information
 
-Background on these resources is provided in the [WCAG Overview](http://www.w3.org/WAI/intro/wcag.php) and [The WCAG 2.0 Documents](http://www.w3.org/WAI/intro/wcag20). For important information about techniques, see [Understanding Techniques for WCAG Success Criteria](http://www.w3.org/TR/2014/NOTE-UNDERSTANDING-WCAG20-20140916/understanding-techniques.html#understanding-techniques).
+Background on these resources is provided in the [WCAG Overview](https://www.w3.org/WAI/standards-guidelines/wcag/) and [The WCAG 2 documents](https://www.w3.org/WAI/standards-guidelines/wcag/docs/). For important information about techniques, see [Understanding Techniques for WCAG Success Criteria](https://www.w3.org/WAI/WCAG21/Understanding/understanding-techniques.html#understanding-techniques).

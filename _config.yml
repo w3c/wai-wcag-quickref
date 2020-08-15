@@ -1,15 +1,16 @@
 # Site settings
-title: How to Meet WCAG 2.0
+title: "How to Meet WCAG (Quickref Reference)"
 email: ee@w3.org
 description: ""
-baseurl: "/wai-wcag-quickref/" # the subpath of your site, e.g. /blog/
-url: "http://yourdomain.com" # the base hostname & protocol for your site
+baseurl: "/wai-wcag-quickref" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
 twitter_username: yatil
 github_username:  yatil
 status: draft
-version: "2.1.1"
+version: "3.5.1"
 
-techniqueurl: http://www.w3.org/TR/WCAG20-TECHS/
+techniqueurl: https://www.w3.org/WAI/WCAG21/Techniques/
+understandingurl: https://www.w3.org/WAI/WCAG21/Understanding/
 
 port: 4099
 
@@ -19,7 +20,7 @@ lsi: false
 # Build settings
 markdown: kramdown
 
-gems: ['jekyll-github-metadata']
+repository: 'w3c/wai-wcag-quickref'
 
 compress_html:
   clippings: all
@@ -34,6 +35,10 @@ collections:
   help:
     output: false
 
+
+plugins:
+  - jekyll-github-metadata
+
 exclude:
   - node_modules
   - .sass-cache
@@ -43,3 +48,10 @@ exclude:
   - npm-debug.log
   - package.json
   - questions.md
+  - w3c.json
+  - package-lock.json
+  - text.html
+  - README.md
+  - pnpm-lock.yaml
+  - CHANGELOG.md
+  - CODE_OF_CONDUCT.md

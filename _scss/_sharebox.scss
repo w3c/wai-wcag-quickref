@@ -49,7 +49,7 @@
       text-align: right;
     }
     button {
-      @extend .btn-small;
+      @extend .btn-small !optional;
       position:absolute;
       bottom:0;
       right:0;

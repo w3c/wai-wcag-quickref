@@ -1,5 +1,5 @@
 <div class="sbbox sbbox-default">
-<div class="sbbox-heading"><span>Tags</span> <button class="btn btn-info btn-sm" id="deselecttags" disabled><svg aria-hidden="true" class="i-close"><use xlink:href="{{ "img/icons.svg" | prepend: site.baseurl }}#i-close"></use></svg> Clear tags</button></div>
+<div class="sbbox-heading"><span>Tags</span> <button class="btn btn-info btn-sm" id="deselecttags" disabled><svg aria-hidden="true" class="i-close"><use xlink:href="{{ "img/icons.svg" | relative_url }}#i-close"></use></svg> Clear tags</button></div>
 <div class="sbbox-body" id="audiences">
   <div class="checkbox">
     <label>
@@ -35,7 +35,7 @@
         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour" data-scope="developing">
           Developing
         </a>
-        <button class="cleartags btn btn-info btn-xsm" disabled><svg aria-hidden="true" class="i-close"><use xlink:href="{{ "img/icons.svg" | prepend: site.baseurl }}#i-close"></use></svg> Clear tags</button>
+        <button class="cleartags btn btn-info btn-xsm" disabled><svg aria-hidden="true" class="i-close"><use xlink:href="{{ "img/icons.svg" | relative_url }}#i-close"></use></svg> Clear tags</button>
       </h4>
     </div>
     <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
@@ -123,7 +123,7 @@
                 {% assign tagcountInt = tagcountInt | plus: 1 %}
               {% endif %}
             {% endfor %}
-            <button data-tag="{{tag}}" class="btn btn-sm btn-default" data-countcon="{{tagcountCon}}" data-countdev="{{tagcountDev}}" data-countvis="{{tagcountVis}}" data-countint="{{tagcountInt}}">{{tag | replace: '-',' ' }}</button>
+            <button aria-pressed="false" data-tag="{{tag}}" class="btn btn-sm btn-default" data-countcon="{{tagcountCon}}" data-countdev="{{tagcountDev}}" data-countvis="{{tagcountVis}}" data-countint="{{tagcountInt}}">{{tag | replace: '-',' ' }}</button>
             {% assign tagcount = 0 %}
             {% assign firsttag = false %}
           {% endunless %}
@@ -138,7 +138,7 @@
         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree" data-scope="interaction">
           Interaction Design
         </a>
-        <button class="cleartags btn btn-info btn-xsm" disabled><svg aria-hidden="true" class="i-close"><use xlink:href="{{ "img/icons.svg" | prepend: site.baseurl }}#i-close"></use></svg> Clear tags</button>
+        <button class="cleartags btn btn-info btn-xsm" disabled><svg aria-hidden="true" class="i-close"><use xlink:href="{{ "img/icons.svg" | relative_url }}#i-close"></use></svg> Clear tags</button>
       </h4>
     </div>
     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
@@ -177,7 +177,7 @@
         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" data-scope="visual">
           Visual Design
         </a>
-        <button class="cleartags btn btn-info btn-xsm" disabled><svg aria-hidden="true" class="i-close"><use xlink:href="{{ "img/icons.svg" | prepend: site.baseurl }}#i-close"></use></svg> Clear tags</button>
+        <button class="cleartags btn btn-info btn-xsm" disabled><svg aria-hidden="true" class="i-close"><use xlink:href="{{ "img/icons.svg" | relative_url }}#i-close"></use></svg> Clear tags</button>
       </h4>
     </div>
     <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
@@ -216,7 +216,7 @@
         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" data-scope="content">
           Content Authoring
         </a>
-        <button class="cleartags btn btn-info btn-xsm" disabled><svg aria-hidden="true" class="i-close"><use xlink:href="{{ "img/icons.svg" | prepend: site.baseurl }}#i-close"></use></svg> Clear tags</button>
+        <button class="cleartags btn btn-info btn-xsm" disabled><svg aria-hidden="true" class="i-close"><use xlink:href="{{ "img/icons.svg" | relative_url }}#i-close"></use></svg> Clear tags</button>
       </h4>
     </div>
     <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">

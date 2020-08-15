@@ -8,21 +8,10 @@ $medium: 43em; //* 700px */
 $big:    56em; //* 900px */
 $large:  81em; //* 1300px */
 
-/* When position: sticky is supported but native behavior is ignored */
-.fixedsticky-withoutfixedfixed .fixedsticky-off,
-.fixed-supported .fixedsticky-off {
-  position: static;
-}
-.fixedsticky-withoutfixedfixed .fixedsticky-on,
-.fixed-supported .fixedsticky-on {
-  position: fixed;
-}
-.fixedsticky-dummy {
-  display: none;
-}
-.fixedsticky-on + .fixedsticky-dummy {
-  display: block;
-}
+@font-face{font-family:Noto Sans;src:url(https://www.w3.org/WAI/assets/fonts/notosans-regular.woff2) format("woff2"),url(https://www.w3.org/WAI/assets/fonts/notosans-regular.woff) format("woff");font-weight:400;font-style:normal;font-display:fallback;}
+@font-face{font-family:Noto Sans;src:url(https://www.w3.org/WAI/assets/fonts/notosans-italic.woff2) format("woff2"),url(https://www.w3.org/WAI/assets/fonts/notosans-italic.woff) format("woff");font-weight:400;font-style:italic;font-display:fallback;}
+@font-face{font-family:Noto Sans;src:url(https://www.w3.org/WAI/assets/fonts/notosans-bold.woff2) format("woff2"),url(https://www.w3.org/WAI/assets/fonts/notosans-bold.woff) format("woff");font-weight:600;font-style:normal;font-display:fallback;}
+@font-face{font-family:Noto Sans;src:url(https://www.w3.org/WAI/assets/fonts/notosans-bolditalic.woff2) format("woff2"),url(https://www.w3.org/WAI/assets/fonts/notosans-bolditalic.woff) format("woff");font-weight:600;font-style:italic;font-display:fallback;}
 
 [disabled] + span{
   color:#777;
@@ -75,7 +64,7 @@ h1 {
 header[role=banner] {
   overflow:hidden;
   font-size: (18/14) * 1em;
-  border-top: 5px solid #930;
+  border-top: 5px solid $brand-primary;
   div {
     margin: 0 auto;
     @include mq($small) {
@@ -95,7 +84,6 @@ header[role=banner] {
     width: auto;
     @include mq($small) {
       height: auto;
-      max-width: 90px;
     }
   }
   a {
@@ -184,7 +172,16 @@ header[role=banner] {
 
 .sc-wrapper {
   border-top: 1px solid $brand-primary;
-  padding: 30px 5px 10px;
+  border-left: 5px solid transparent;
+  padding: 30px 5px 10px 0;
+
+  &:focus-within {
+    border-left-color: $brand-primary;
+  }
+
+  &:focus {
+    border-left-color: $brand-primary;
+  }
 
    @include mq($medium) {
      padding-left: 20px;
@@ -209,7 +206,7 @@ header[role=banner] {
       display:inline;
       @include mq($medium) {
         display: flex;
-        align-items: stretch;
+        align-items: center;
       }
       margin: 0;
     }
@@ -229,7 +226,7 @@ header[role=banner] {
       font-family: $font-family-serif;
       margin-left: 5px;
       background-color: inherit;
-      color: #656565;
+      color: #555555;
       &::before {
         content:'— ';
       }
@@ -244,16 +241,15 @@ header[role=banner] {
     text-align: right;
     font-size: (12/14) * 1em;
     >div>a,>a {
-      color: #666;
+      color: #555555;
       text-transform: uppercase;
       font-weight: bold;
     }
   }
-  aside {
+  .note {
     font-size: 12/14 * 1em;
   }
   &:not(.current) {
-    display:none;
     padding: 5px;
     border: none;
     div, footer {
@@ -498,23 +494,27 @@ svg.icon {
 
 @include mq($medium) {
   .mainrow {
-    display:table-row;
     main, .sidebar {
-      display: table-cell;
-      vertical-align:top;
       transition: all .1s linear;
     }
     main {
       padding: 0 0 0 15px;
+      margin-left: 300px
     }
-    .sidebar, .sidebar > div {
-      width: 300px;
+    &.sidebar-hidden main {
+      margin-left: 0;
     }
-    .sidebar > div.fixedsticky-on {
+    .sidebar {
       width: 300px;
-      bottom:0;
+      will-change: transform;
+      position: sticky;
+      display: block;
+      top:0;
+      float:left;
+      max-height: 100vh;
+
       .tab-content {
-        height: calc(100% - 3em);
+        height: calc(100vh - 3em);
         overflow-y:scroll;
       }
     }
@@ -562,6 +562,9 @@ svg.icon {
 }
 
 .navrow {
+  will-change: transform;
+  position: sticky;
+  top:0;
   @include mq($medium) {
     display:flex;
     flex-direction: row;
@@ -570,7 +573,9 @@ svg.icon {
   z-index: 999;
   background-color: $gray-lighter;
 
-  transition: all 1s linear;
+  border-bottom: 1px solid $brand-primary;
+  box-shadow: 0 4px 4px -4px $gray;
+
 
   @include mq($medium) {
     margin-right: 15px;
@@ -578,18 +583,6 @@ svg.icon {
   > div {
     flex:6;
     padding: 0;
-  }
-  &.fixedsticky-on {
-    left:0;
-    right:0;
-    border-bottom: 1px solid $brand-primary;
-    box-shadow: 0 4px 4px -4px $gray;
-    @include mq($medium) {
-      left: 315px;
-      &.sidebar-hidden {
-        left: 15px;
-      }
-    }
   }
 }
 
@@ -773,16 +766,18 @@ div.understanding {
       page-break-before: always;
     }
   }
+  .btn-primary {
+    font-weight: bold;
+  }
   .btn-primary:after {
-    content: "";
-    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNDQ4Ij48cGF0aCBmaWxsPSIjZmZmIiBkPSJNNDE3Ljc1IDE0MS41cTAgMTAtNyAxN2wtMjE1IDIxNXEtNyA3LTE3IDd0LTE3LTdMMzcuMjUgMjQ5cS03LTctNy0xN3Q3LTE3bDM0LTM0cTctNyAxNy03dDE3IDdsNzMuNSA3My43NSAxNjQtMTY0LjI1cTctNyAxNy03dDE3IDdsMzQgMzRxNyA3IDcgMTd6Ii8+PC9zdmc+');
-    background-size: contain;
+    content: "✓";
     display:block;
     position: absolute;
-    top:1px;
-    right:1px;
+    top:0px;
+    right:3px;
     height:10px;
     width:10px;
+    font-size: 10px;
   }
 }
 
@@ -836,6 +831,7 @@ button.panel-heading {
   clear: both;
   font-size: (14/18) * 1em;
   &[aria-expanded=true] {
+    display: block;
 		@include mq($medium) {
 	    display: flex;
 	    flex-wrap: wrap;
@@ -843,6 +839,10 @@ button.panel-heading {
 	    align-items: space-beteen;
 		}
   }
+}
+
+#pageinfo a {
+  text-decoration: underline;
 }
 
 .pibox {
@@ -918,6 +918,7 @@ button.panel-heading {
 
 .maininner {
   padding: 0 5px;
+  overflow:hidden;
   @include mq($medium) {
     padding: 0 15px 0 0;
   }
@@ -1000,6 +1001,12 @@ ul.notes {
   .navrow &{
     margin: 0 5px;
   }
+}
+
+.newin21 {
+  color: #656565;
+  font-size: 1rem;
+  margin-left: .4rem;
 }
 
 @import "footer";

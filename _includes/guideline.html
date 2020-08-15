@@ -1,9 +1,9 @@
 {% assign g = g | plus: 1 %}
 {% assign s = 0 %}
 {% assign g_id = guideline.id | replace:'WCAG2:','' %}
-<div class="guideline panel panel-primary panel-borderless">
+<section class="guideline panel panel-primary panel-borderless" aria-roledescription="guideline" aria-labelledby="{{g_id}}">
 	<div class="panel-heading">
-		<h3 id="{{g_id}}">Guideline <strong>{{ guideline.num }}</strong> – {{guideline.handle}}</h3>
+		<h3 id="{{g_id}}" data-alt-id="{% for aid in guideline.alt_id %}{{aid}} {% endfor %}">Guideline <strong>{{ guideline.num }}</strong> – {{guideline.handle}}</h3>
 		{{guideline.title}}
 	</div>
 		{% assign tsize = guideline.techniques | size %}
@@ -19,7 +19,7 @@
 
 		<div class="panel-body panel-body-guideline">
 	    <div class="techniques-button btn-group" role="group">
-	      <button data-target="#techniques-{{ p }}{{ g }}" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="techniques-{{ p }}{{ g }}" class="btn btn-info btn-techniques"><span class="word-show"><svg aria-hidden="true" class="i-chevron-right"><use xlink:href="{{ "img/icons.svg" | prepend: site.baseurl }}#i-chevron-right"></use></svg> Show</span><span class="word-hide"><svg aria-hidden="true" class="i-chevron-down"><use xlink:href="{{ "img/icons.svg" | prepend: site.baseurl }}#i-chevron-down"></use></svg> Hide</span> techniques and failures for {{ p }}.{{ g }}</button>
+	      <button data-target="#techniques-{{ p }}{{ g }}" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="techniques-{{ p }}{{ g }}" class="btn btn-info btn-techniques"><span class="word-show"><svg aria-hidden="true" class="i-chevron-right"><use xlink:href="{{ "img/icons.svg" | relative_url }}#i-chevron-right"></use></svg> Show</span><span class="word-hide"><svg aria-hidden="true" class="i-chevron-down"><use xlink:href="{{ "img/icons.svg" | relative_url }}#i-chevron-down"></use></svg> Hide</span> techniques and failures for {{ p }}.{{ g }}</button>
 	      <label class="btn btn-default {% unless ssize >= 1 %}disabled{% endunless %}"><input type="checkbox" name="sc-{{ p }}{{ g }}-sufficient" {% if ssize >= 1 %}checked{% else %}disabled{% endif %}> Sufficient</label>
 	      <label class="btn btn-default {% unless asize >= 1 %}disabled{% endunless %}"><input type="checkbox" name="sc-{{ p }}{{ g }}-advisory" {% if asize >= 1 %}checked{% else %}disabled{% endif %}> Advisory</label>
 	      <label class="btn btn-default {% unless fsize >= 1 %}disabled{% endunless %}"><input type="checkbox" name="sc-{{ p }}{{ g }}-failures" {% if fsize >= 1 %}checked{% else %}disabled{% endif %}> Failures</label>
@@ -60,4 +60,4 @@
 				{% include sc.html sc=currentsc %}
 			{% endfor %}
 		{% endif %}
-</div>
+</section>

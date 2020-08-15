@@ -6,19 +6,19 @@
     </div>
   </div>
   <div class="filter-status-row">
-    <div class="text"><span id="status" aria-live="polite" aria-atomic="true">Selected Filters: <span class="sc">all success criteria</span> and <span class="tech">all techniques.</span></span> <a id="hiddennav" href="#hiddensc">(What did the filter remove?)</a></div>
+    <div class="text"><span id="status" aria-live="polite" aria-atomic="true">Selected Filters: <strong class="ver">WCAG 2.1:</strong> <span class="sc">all success criteria</span> and <span class="tech">all techniques.</span></span> <a id="hiddennav" href="#hiddensc">(What did the filter remove?)</a></div>
     <div class="clear">
-    <button class="clearall btn btn-info btn-sm" hidden><svg class="i-refresh"><use xlink:href="{{ "img/icons.svg" | prepend: site.baseurl }}#i-refresh"></use></svg> Clear filters</button>
+    <button class="clearall btn btn-info btn-sm" hidden><svg class="i-refresh"><use xlink:href="{{ "img/icons.svg" | relative_url }}#i-refresh"></use></svg> Clear filters</button>
     </div>
     {% if include.button %}
     <div>
       <button class="btn btn-default btn-sm" id="expandcollapsalltechniques" aria-expanded="false">
-        <svg aria-hidden="true" class="i-plus"><use xlink:href="{{ "img/icons.svg" | prepend: site.baseurl }}#i-plus"></use></svg>
-        <svg aria-hidden="true" class="i-minus"><use xlink:href="{{ "img/icons.svg" | prepend: site.baseurl }}#i-minus"></use></svg>
+        <svg aria-hidden="true" class="i-plus"><use xlink:href="{{ "img/icons.svg" | relative_url }}#i-plus"></use></svg>
+        <svg aria-hidden="true" class="i-minus"><use xlink:href="{{ "img/icons.svg" | relative_url }}#i-minus"></use></svg>
         <span>Expand <strong>all</strong> sections</span>
       </button>
     </div>
     {% endif %}
-    <div class="permalink"><button class="btn btn-default btn-sm" id="sharethisviewbutton"><svg aria-hidden="true" class="i-share"><use xlink:href="{{ "img/icons.svg" | prepend: site.baseurl }}#i-share"></use></svg> Share</button><div class="sharebox"><p><label>Link to this view, with the filters you have selected:<input id="sharethisviewinput" value="" type="url" readonly> Shortcut to copy the link: <kbd>ctrl</kbd>+<kbd>C</kbd> <em>or</em> <kbd>⌘</kbd><kbd>C</kbd></label></p><p><button>Close</button></p></div></div>
+    <div class="permalink"><button class="btn btn-default btn-sm" id="sharethisviewbutton"><svg aria-hidden="true" class="i-share"><use xlink:href="{{ "img/icons.svg" | relative_url }}#i-share"></use></svg> Share</button><div class="sharebox"><p><label>Link to this view, with the filters you have selected:<input id="sharethisviewinput" value="" type="url" readonly> Shortcut to copy the link: <kbd>ctrl</kbd>+<kbd>C</kbd> <em>or</em> <kbd>⌘</kbd><kbd>C</kbd></label></p><p><button>Close</button></p></div></div>
   </div>
 </div>

@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
   var sharebox = document.createElement('div');
   addclass(sharebox, 'sharebox');
-  var shareboxtext = '<p><label>Link to this section:<input type="url" value="%s" readonly> Shortcut to copy the link: <kbd>ctrl</kbd>+<kbd>C</kbd> <em>or</em> <kbd>⌘</kbd><kbd>C</kbd></label></p><p><a href="mailto:?subject=Web%20Accessibility%20Tutorials&body=Hi!%0AYou%20might%20be%20interested%20in%20this%20section%20of%20W3C%20WAI%E2%80%99s%20Web%20Accessibility%20Tutorials%3A%0A%0A%s">E-mail a link to this section</a><button>Close</button></p>';
+  var shareboxtext = '<p><label>Link to this section:<input type="url" value="%s" readonly> Shortcut to copy the link: <kbd>ctrl</kbd>+<kbd>C</kbd> <em>or</em> <kbd>⌘</kbd><kbd>C</kbd></label></p><p><a href="mailto:?subject=Web%20Accessibility%20–%20How%20to%20Meet%20WCAG&body=Hi!%0AYou%20might%20be%20interested%20in%20this%20section%20of%20the%20Web%20Content%20Accessibility%20Guidelines%20(WCAG)%3A%0A%0A%s">E-mail a link to this section</a><button>Close</button></p>';
 
   var url = window.location.origin + window.location.pathname;
 
@@ -37,9 +37,9 @@ document.addEventListener('DOMContentLoaded', function(){
   Array.prototype.forEach.call(elements, function(el, i){ // … .each(…)
 
     var cplel = plel.cloneNode(true);
-    var theid = el.parentNode.parentNode.querySelector('h4[id]').id;
+    var theid = el.parentNode.parentNode.id;
     cplel.setAttribute('href', '#' + theid);
-    cplel.setAttribute('aria-label', 'Share Link to the section “' + el.textContent + '”');
+    cplel.setAttribute('aria-label', 'Share Link to the section “' + el.parentNode.parentNode.querySelector('h4[id]').textContent + '”');
 
     var csbtext = shareboxtext.replace("%s", url + '#' + theid).replace("%s", url + '#' + theid);
     var csb = sharebox.cloneNode(true);
