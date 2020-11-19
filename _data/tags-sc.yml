@@ -124,8 +124,8 @@ non-text-contrast:
 text-spacing:
   dev: reflow layout text
   int: reflow layout text
-  vis: refow text readability
-  con: refow text readability
+  vis: reflow text readability
+  con: reflow text readability
 content-on-hover-or-focus:
   dev: interaction pop-up keyboard hover focus navigation
   int: interaction pop-up keyboard hover focus navigation
