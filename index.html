@@ -5,20 +5,20 @@ button: 1
 {% include header.html %}
 
 <div class="mainrow">
-  <button id="showhidesbsmall" data-target="#sidebar" type="button" data-toggle="collapse" aria-expanded="true" aria-controls="#sidebar" class="btn btn-default"><span class="word-show"><svg aria-hidden="true" class="i-chevron-right"><use xlink:href="{{ "img/icons.svg" | relative_url }}#i-chevron-right"></use></svg> Show</span><span class="word-hide"><svg aria-hidden="true" class="i-chevron-down"><use xlink:href="{{ "img/icons.svg" | relative_url }}#i-chevron-down"></use></svg> Hide</span> in-page navigation and filter options</button>
+  <button id="showhidesbsmall" data-target="#sidebar" type="button" data-toggle="collapse" data-expanded="true" aria-controls="#sidebar" class="btn btn-default"><span class="word-show"><svg aria-hidden="true" class="i-chevron-right"><use xlink:href="{{ "img/icons.svg" | relative_url }}#i-chevron-right"></use></svg> Show</span><span class="word-hide"><svg aria-hidden="true" class="i-chevron-down"><use xlink:href="{{ "img/icons.svg" | relative_url }}#i-chevron-down"></use></svg> Hide</span> in-page navigation and filter options</button>
 
   <div class="sidebar" id="sidebar">
     <div>
       <nav>
         <ul class="nav nav-tabs buttons" id="navtabs">
           <li>
-            <button id="hidesidebars" aria-expanded="true" type="button" class="btn btn-default btn-sm" aria-label="Hide Sidebar"><span><span class="word-hide"><svg aria-hidden="true" class="i-chevron-left"><use xlink:href="{{ "img/icons.svg" | relative_url }}#i-chevron-left"></use></svg> Hide</span></span></button>
+            <button id="hidesidebars" type="button" class="btn btn-default btn-sm" aria-label="Hide Sidebar"><span><span class="word-hide"><svg aria-hidden="true" class="i-chevron-left"><use xlink:href="{{ "img/icons.svg" | relative_url }}#i-chevron-left"></use></svg> Hide</span></span></button>
           </li>
           <li class="active">
-            <a href="#col_overview" aria-expanded="true" data-toggle="tab" data-toggle="tab" aria-controls="col_overview"><span><svg aria-hidden="true" class="i-menu"><use xlink:href="{{ "img/icons.svg" | relative_url }}#i-menu"></use></svg> Contents</span></a>
+            <a href="#col_overview" aria-expanded="true" data-toggle="tab" aria-controls="col_overview"><span><svg aria-hidden="true" class="i-menu"><use xlink:href="{{ "img/icons.svg" | relative_url }}#i-menu"></use></svg> Contents</span></a>
           </li>
           <li>
-            <a href="#col_customize"  aria-expanded="false" data-toggle="tab" data-toggle="tab" aria-controls="col_customize"><span><svg aria-hidden="true" class="i-settings"><use xlink:href="{{ "img/icons.svg" | relative_url }}#i-settings"></use></svg> Filter</span></a>
+            <a href="#col_customize"  aria-expanded="false" data-toggle="tab" aria-controls="col_customize"><span><svg aria-hidden="true" class="i-settings"><use xlink:href="{{ "img/icons.svg" | relative_url }}#i-settings"></use></svg> Filter</span></a>
           </li>
         </ul>
       </nav>
@@ -41,7 +41,7 @@ button: 1
   </div>
   <main>
     <div class="navrow with-expandcollapseallbutton" style="top:0;">
-      <button id="showsidebars" aria-expanded="false" hidden type="button" class="btn btn-default btn-sm"><span><svg aria-hidden="true" class="i-chevron-right"><use xlink:href="{{ "img/icons.svg" | relative_url }}#i-chevron-right"></use></svg> Show Sidebar</span></button>
+      <button id="showsidebars" hidden type="button" class="btn btn-default btn-sm"><span><svg aria-hidden="true" class="i-chevron-right"><use xlink:href="{{ "img/icons.svg" | relative_url }}#i-chevron-right"></use></svg> Show Sidebar</span></button>
       {% include filter-status.html button="true" %}
     </div>
       <div class="maininner">
