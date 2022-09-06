@@ -2770,10 +2770,7 @@
 		{
 			"id": "WCAG2:operable",
 			"num": "2",
-			"versions": [
-				"2.0",
-				"2.1"
-			],
+			"versions": ["2.0", "2.1", "2.2"],
 			"handle": "Operable",
 			"title": "User interface components and navigation must be operable.",
 			"guidelines": [
@@ -4215,11 +4212,7 @@
 							"id": "WCAG2:focus-appearance",
 							"alt_id": [],
 							"num": "2.4.11",
-							"versions": [
-								"2.0",
-								"2.1",
-								"2.2"
-							],
+			"versions": ["2.2"],
 							"level": "AA",
 							"handle": "Focus Appearance",
 							"title": "When the keyboard focus indicator is visible, one or both of the following is true:",
@@ -4257,11 +4250,7 @@
 							"id": "WCAG2:focus-not-obscured-minimum",
 							"alt_id": [],
 							"num": "2.4.12",
-							"versions": [
-								"2.0",
-								"2.1",
-								"2.2"
-							],
+			"versions": ["2.2"],
 							"level": "AA",
 							"handle": "Focus Not Obscured (Minimum)",
 							"title": "When a user interface component receives keyboard focus, the component is not entirely hidden due to author-created content.",
@@ -4291,11 +4280,7 @@
 							"id": "WCAG2:focus-not-obscured-enhanced",
 							"alt_id": [],
 							"num": "2.4.13",
-							"versions": [
-								"2.0",
-								"2.1",
-								"2.2"
-							],
+			"versions": ["2.2"],
 							"level": "AAA",
 							"handle": "Focus Not Obscured (Enhanced)",
 							"title": "When a user interface component receives keyboard focus, no part of the focus indicator is hidden by author-created content.",
@@ -4632,11 +4617,7 @@
 							"id": "WCAG2:dragging-movements",
 							"alt_id": [],
 							"num": "2.5.7",
-							"versions": [
-								"2.0",
-								"2.1",
-								"2.2"
-							],
+			"versions": ["2.2"],
 							"level": "AA",
 							"handle": "Dragging Movements",
 							"title": "All functionality that uses a dragging movement for operation can be achieved by a single pointer without dragging, unless dragging is essential or the functionality is determined by the user agent and not modified by the author.",
@@ -4666,11 +4647,7 @@
 							"id": "WCAG2:target-size-minimum",
 							"alt_id": [],
 							"num": "2.5.8",
-							"versions": [
-								"2.0",
-								"2.1",
-								"2.2"
-							],
+			"versions": ["2.2"],
 							"level": "AA",
 							"handle": "Target Size (Minimum)",
 							"title": "The size of the target for pointer inputs is at least 24 by 24 CSS pixels, except where:",
@@ -4699,10 +4676,7 @@
 		{
 			"id": "WCAG2:understandable",
 			"num": "3",
-			"versions": [
-				"2.0",
-				"2.1"
-			],
+			"versions": ["2.0", "2.1", "2.2"],
 			"handle": "Understandable",
 			"title": "Information and the operation of the user interface must be understandable.",
 			"guidelines": [
@@ -5452,11 +5426,7 @@
 							"id": "WCAG2:consistent-help",
 							"alt_id": [],
 							"num": "3.2.6",
-							"versions": [
-								"2.0",
-								"2.1",
-								"2.2"
-							],
+			"versions": ["2.2"],
 							"level": "A",
 							"handle": "Consistent Help",
 							"title": "If a web page contains any of the following help mechanisms, and those mechanisms are repeated on multiple web pages within a set of web pages, they occur in the same relative order to other page content, unless a change is initiated by the user:",
@@ -6019,11 +5989,7 @@
 							"id": "WCAG2:accessible-authentication",
 							"alt_id": [],
 							"num": "3.3.7",
-							"versions": [
-								"2.0",
-								"2.1",
-								"2.2"
-							],
+			"versions": ["2.2"],
 							"level": "AA",
 							"handle": "Accessible Authentication",
 							"title": "For each step in an authentication process that relies on a cognitive function test, at least one other authentication method is available that does not rely on a cognitive function test, or a mechanism is available to assist the user in completing the cognitive function test.",
@@ -6064,11 +6030,7 @@
 							"id": "WCAG2:accessible-authentication-no-exception",
 							"alt_id": [],
 							"num": "3.3.8",
-							"versions": [
-								"2.0",
-								"2.1",
-								"2.2"
-							],
+			"versions": ["2.2"],
 							"level": "AAA",
 							"handle": "Accessible Authentication (No Exception)",
 							"title": "For each step in an authentication process that relies on a cognitive function test, at least one other authentication method is available that does not rely on a cognitive function test, or a mechanism is available to assist the user in completing the cognitive function test.",
@@ -6109,11 +6071,7 @@
 							"id": "WCAG2:redundant-entry",
 							"alt_id": [],
 							"num": "3.3.9",
-							"versions": [
-								"2.0",
-								"2.1",
-								"2.2"
-							],
+			"versions": ["2.2"],
 							"level": "A",
 							"handle": "Redundant Entry",
 							"title": "Information previously entered by or provided to the user that is required to be entered again in the same process is either:",
@@ -6146,10 +6104,7 @@
 		{
 			"id": "WCAG2:robust",
 			"num": "4",
-			"versions": [
-				"2.0",
-				"2.1"
-			],
+			"versions": ["2.0", "2.1", "2.2"],
 			"handle": "Robust",
 			"title": "Content must be robust enough that it can be interpreted by a wide variety of user agents, including assistive technologies.",
 			"guidelines": [
