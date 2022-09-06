@@ -271,6 +271,8 @@ jQuery(document).ready(function($) {
     var ver = $('#wcagver').val();
     if (ver == "2.1only") {
       $('[data-versions="2.1 "]').show().addClass('current');
+    } else if (ver == "2.2only") {
+      $('[data-versions="2.2 "]').show().addClass('current');
     } else {
       $('[data-versions*="' + ver + '"]').show().addClass('current');
     }
@@ -432,6 +434,8 @@ jQuery(document).ready(function($) {
     var vertxt = $('#wcagver').val();
     if (vertxt == "2.1only") {
       version = 'Only what’s added in WCAG 2.1:';
+    } else if (vertxt == "2.2only") {
+      version = 'Only what’s added in WCAG 2.2:';
     } else {
       version = 'WCAG ' + vertxt + ':';
     }
