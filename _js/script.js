@@ -524,7 +524,7 @@ jQuery(document).ready(function($) {
     statusanimation();
     var button = $(e.target), tags = [];
     if (button.hasClass('btn-primary')) {
-      button.removeClass('btn-primary').addClass('btn-default').attr('aria-pressed', 'false')
+      button.removeClass('btn-primary').addClass('btn-default').attr('aria-pressed', 'false');
     } else {
       button.removeClass('btn-default').addClass('btn-primary').attr('aria-pressed','true');
     }
@@ -634,7 +634,7 @@ jQuery(document).ready(function($) {
     $('#deselecttags').on('click', function(event) {
       event.preventDefault();
       /* Act on the event */
-      $('#tags .btn-primary').removeClass('btn-primary').addClass('btn-default').attr('aria-pressed', 'false')
+      $('#tags .btn-primary').removeClass('btn-primary').addClass('btn-default').attr('aria-pressed', 'false');
       applyTechnologies();
       applyTagsAndLevelsToSC();
       statustext();
