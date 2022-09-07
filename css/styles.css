@@ -1671,9 +1671,8 @@ mark.current {
 
 h1, h2, h3, h4 {
   font-family: "Noto Sans", sans-serif;
-  -webkit-font-feature-settings: "lnum", "tnum";
-     -moz-font-feature-settings: "lnum", "tnum";
-          font-feature-settings: "lnum", "tnum"; }
+  -moz-font-feature-settings: "lnum", "tnum";
+       font-feature-settings: "lnum", "tnum"; }
   h1 strong:first-child, h2 strong:first-child, h3 strong:first-child, h4 strong:first-child {
     font-weight: inherit; }
 
@@ -2496,7 +2495,7 @@ ul.notes {
 .navrow #expandcollapsalltechniques {
   margin: 0 5px; }
 
-.newin21 {
+.newin21, .newin22 {
   color: #656565;
   font-size: 1rem;
   margin-left: .4rem; }
