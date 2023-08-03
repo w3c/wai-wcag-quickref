@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var sass = require('gulp-sass');
+var sass = require('gulp-sass')(require('sass'));
 var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
 var concat = require('gulp-concat');
@@ -39,9 +39,7 @@ gulp.task('js', gulp.series('lint', function () {
         .pipe(plumber())
         //.pipe(sourcemaps.init())
         .pipe(concat('script.js', {newline: ';'}))
-        .pipe(uglify({
-            "preserveComments": "some"
-        }))
+        .pipe(uglify())
         //.pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('./js/'));
 }));
