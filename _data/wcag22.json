@@ -4678,14 +4678,46 @@
 							"level": "AA",
 							"handle": "Target Size (Minimum)",
 							"title": "The size of the target for pointer inputs is at least 24 by 24 CSS pixels, except where:",
-							"techniques": [
+              "details": [
 								{
-									"sufficient": [
+                  "type": "ulist",
+                  "items": [
+                    {
+                      "handle": "Spacing",
+                      "text": "Undersized targets (those less than 24 by 24 CSS pixels) are positioned so that if a 24 CSS pixel diameter circle is centered on the bounding box of each, the circles do not intersect another target or the circle for another undersized target;"
+                    },
+                    {
+                      "handle": "Equivalent",
+                      "text": "The function can be achieved through a different control on the same page that meets this criterion;"
+                    },
+                    {
+                      "handle": "Inline",
+                      "text": "The target is in a sentence or its size is otherwise constrained by the line-height of non-target text;"
+                    },
+                    {
+                      "handle": "User agent control",
+                      "text": "The size of the target is determined by the user agent and is not modified by the author;"
+                    },
 										{
-											"id": "TECH:C42",
-											"title": "Using min-height and min-width to ensure sufficient target spacing"
+                      "handle": "Essential",
+                      "text": "A particular presentation of the target is essential or is legally required for the information being conveyed."
 										}
 									]
+								},
+                {
+                  "type": "note",
+                  "handle": "Note 1",
+                  "text": "Targets that allow for values to be selected spatially based on position within the target are considered one target for the purpose of the success criterion. Examples include sliders, color pickers displaying a gradient of colors, or editable areas where you position the cursor."
+                },
+                {
+                  "type": "note",
+                  "handle": "Note 2",
+                  "text": "For inline targets the line-height should be interpreted as perpendicular to the flow of text. For example, in a language displayed vertically, the line-height would be horizontal."
+                }
+              ],
+							"techniques": [
+								{
+									"sufficient": []
 								},
 								{
 									"advisory": []
