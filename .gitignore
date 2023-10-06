@@ -6,3 +6,4 @@ npm-debug.log
 .DS_Store
 /.jekyll-metadata
 Gemfile.lock
+/vendor
