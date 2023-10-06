@@ -18,8 +18,4 @@ filters:
   title: <abbr title="Synchronized Multimedia Integration Language (SMIL)">SMIL</abbr>
 - short: pdf
   title: PDF
-- short: flash
-  title: Flash
-- short: sl
-  title: Silverlight
 ---

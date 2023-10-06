@@ -12,10 +12,11 @@
 {% else %}
   {% assign qrid = sc_id | prepend: "qr-" %}
 {% endif%}
+{% assign versions = sc.versions | join: " " %}
 <article role="region" id="{{sc_id}}" data-alt-id="{% for aid in sc.alt_id %}{{aid}} {% endfor %}" class="sc-wrapper current filter-levels-{{sc.level | downcase}} filter-hideversion-{{sc_ver}}" data-tags-con="{{keywordscontent}}" data-tags-dev="{{keywordsdeveloping}}" data-tags-int="{{keywordsinteraction}}" data-tags-vis="{{keywordsvisual}}" data-versions="{% for v in sc.versions %}{{v}} {% endfor %}" aria-labelledby="{{ qrid }}" aria-roledescription="success criterion">
   <header>
     <h4 id="{{ qrid }}"><strong>{{ p }}.{{ g }}.{{ s }}</strong> <span>{{sc.handle}}</span></h4>
-    <p class="h4"><span class="level-{{sc.level | downcase}}">Level {{sc.level}}</span>{% unless (sc.versions contains "2.0") %}<span class="newin21">(Added in 2.1)</span>{% endunless %}</p>
+    <p class="h4"><span class="level-{{sc.level | downcase}}">Level {{sc.level}}{% if (versions == "2.1 2.2") %}<span class="newin21">(Added in 2.1)</span>{% endif %}{% if (versions == "2.2") %}<span class="newin22">(Added in 2.2)</span>{% endif %}</p>
   </header>
   <div class="sc-content">
     <div class="sc-text">

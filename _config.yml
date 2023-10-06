@@ -9,8 +9,8 @@ github_username:  yatil
 status: draft
 version: "3.5.1"
 
-techniqueurl: https://www.w3.org/WAI/WCAG21/Techniques/
-understandingurl: https://www.w3.org/WAI/WCAG21/Understanding/
+techniqueurl: https://www.w3.org/WAI/WCAG22/Techniques/
+understandingurl: https://www.w3.org/WAI/WCAG22/Understanding/
 
 port: 4099
 
