@@ -4268,34 +4268,67 @@
 							]
 						},
 						{
-							"id": "WCAG2:focus-not-obscured-enhanced",
+							"id": "WCAG2:focus-appearance",
 							"alt_id": [],
 							"num": "2.4.13",
 							"versions": [
 								"2.2"
 							],
 							"level": "AAA",
-							"handle": "Focus Not Obscured (Enhanced)",
-							"title": "When a user interface component receives keyboard focus, no part of the focus indicator is hidden by author-created content.",
-							"techniques": [
+							"handle": "Focus Appearance",
+							"title": "When the keyboard focus indicator is visible, an area of the focus indicator meets all the following:",
+              "details": [
 								{
-									"sufficient": [
+                  "type": "ulist",
+                  "items": [
 										{
-											"id": "TECH:future-focus-not-obscured-enhanced-1",
-											"title": "CSS: Using scroll-padding to ensure a sticky header does not obscure the focused item (Potential future technique)."
+                      "text": "is at least as large as the area of a 2 CSS pixel thick perimeter of the unfocused component or sub-component, and"
+                    },
+                    {
+                      "text": "has a contrast ratio of at least 3:1 between the same pixels in the focused and unfocused states."
 										}
 									]
+								},
+								{
+                  "type": "p",
+                  "text": "Exceptions:"
+								},
+								{
+                  "type": "ulist",
+                  "items": [
+                    {
+                      "text": "The focus indicator is determined by the user agent and cannot be adjusted by the author, or"
+                    },
+										{
+                      "text": "The focus indicator and the indicator’s background color are not modified by the author."
+										}
+									]
+                },
+                {
+                  "type": "note",
+                  "handle": "Note 1",
+                  "text": "What is perceived as the user interface component or sub-component (to determine enclosure or size) depends on its visual presentation. The visual presentation includes the component's visible content, border, and component-specific background. It does not include shadow and glow effects outside the component's content, background, or border."
+                },
+                {
+                  "type": "note",
+                  "handle": "Note 2",
+                  "text": "Examples of sub-components that may receive a focus indicator are menu items in an opened drop-down menu, or focusable cells in a grid."
+                },
+                {
+                  "type": "note",
+                  "handle": "Note 3",
+                  "text": "Contrast calculations can be based on colors defined within the technology (such as HTML, CSS and SVG). Pixels modified by user agent resolution enhancements and anti-aliasing can be ignored."
+                },
+              ],
+							"techniques": [
+								{
+									"sufficient": []
 								},
 								{
 									"advisory": []
 								},
 								{
-									"failure": [
-										{
-											"id": "TECH:future-focus-not-obscured-enhanced-1",
-											"title": ""
-										}
-									]
+									"failure": []
 								}
 							]
 						}
