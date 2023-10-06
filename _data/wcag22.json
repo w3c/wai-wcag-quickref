@@ -4679,7 +4679,7 @@
 							"handle": "Target Size (Minimum)",
 							"title": "The size of the target for pointer inputs is at least 24 by 24 CSS pixels, except where:",
               "details": [
-								{
+                {
                   "type": "ulist",
                   "items": [
                     {
@@ -4698,12 +4698,12 @@
                       "handle": "User agent control",
                       "text": "The size of the target is determined by the user agent and is not modified by the author;"
                     },
-										{
+                    {
                       "handle": "Essential",
                       "text": "A particular presentation of the target is essential or is legally required for the information being conveyed."
-										}
-									]
-								},
+                    }
+                  ]
+                },
                 {
                   "type": "note",
                   "handle": "Note 1",
@@ -5493,26 +5493,45 @@
 							],
 							"level": "A",
 							"handle": "Consistent Help",
-							"title": "If a web page contains any of the following help mechanisms, and those mechanisms are repeated on multiple web pages within a set of web pages, they occur in the same relative order to other page content, unless a change is initiated by the user:",
+							"title": "If a Web page contains any of the following help mechanisms, and those mechanisms are repeated on multiple Web pages within a set of Web pages, they occur in the same order relative to other page content, unless a change is initiated by the user:",
+              "details": [
+                {
+                  "type": "ulist",
+                  "items": [
+                    {
+                      "text": "Human contact details;"
+                    },
+                    {
+                      "text": "Human contact mechanism;"
+                    },
+                    {
+                      "text": "Self-help option;"
+                    },
+                    {
+                      "text": "A fully automated contact mechanism."
+                    }
+                  ]
+                },
+                {
+                  "type": "note",
+                  "handle": "Note 1",
+                  "text": "A fully automated contact mechanism."
+                },
+                {
+                  "type": "note",
+                  "handle": "Note 2",
+                  "text": "For this Success Criterion, “the same order relative to other page content” can be thought of as how the content is ordered when the page is serialized. The visual position of a help mechanism is likely to be consistent across pages for the same page variation (e.g., CSS break-point). The user can initiate a change, such as changing the page’s zoom or orientation, which may trigger a different page variation. This criterion is concerned with relative order across pages displayed in the same page variation (e.g., same zoom level and orientation)."
+                }
+              ],
 							"techniques": [
 								{
-									"sufficient": [
-										{
-											"id": "TECH:G220",
-											"title": "Provide a contact-us link in a consistent location"
-										}
-									]
+									"sufficient": []
 								},
 								{
 									"advisory": []
 								},
 								{
-									"failure": [
-										{
-											"id": "TECH:future-consistent-help-1",
-											"title": "Inconsistent Help Location"
-										}
-									]
+									"failure": []
 								}
 							]
 						}
