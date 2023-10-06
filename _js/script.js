@@ -399,7 +399,7 @@ jQuery(document).ready(function($) {
 
   // More buttons in Success Criteria
   function excolsc() {
-    var hr = $('.sc-content hr');
+    var hr = $('.sc-content hr:first-of-type');
     hr.hide(); // hide horizontal rule
     hr.prev().append(' <button type="button" data-expanded="false" class="btn btn-info btn-xs"><span class="word-show"><svg aria-hidden="true" class="i-chevron-right"><use xlink:href="img/icons.svg#i-chevron-right"></use></svg> Show</span><span class="word-hide"><svg aria-hidden="true" class="i-chevron-down"><use xlink:href="img/icons.svg#i-chevron-down"></use></svg> Hide</span> full description</button>'); // Append button
     hr.find('~ *').hide();
