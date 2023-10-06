@@ -4212,42 +4212,36 @@
 							]
 						},
 						{
-							"id": "WCAG2:focus-appearance",
+							"id": "WCAG2:focus-not-obscured-minimum",
 							"alt_id": [],
 							"num": "2.4.11",
 							"versions": [
 								"2.2"
 							],
 							"level": "AA",
-							"handle": "Focus Appearance",
-							"title": "When the keyboard focus indicator is visible, one or both of the following is true:",
+							"handle": "Focus Not Obscured (Minimum)",
+							"title": "When a user interface component receives keyboard focus, the component is not entirely hidden due to author-created content.",
+              "details": [
+                {
+                  "type": "note",
+                  "handle": "Note 1",
+                  "text": "Where content in a configurable interface can be repositioned by the user, then only the initial positions of user-movable content are considered for testing and conformance of this Success Criterion."
+                },
+                {
+                  "type": "note",
+                  "handle": "Note 2",
+                  "text": "Content opened by the user may obscure the component receiving focus. If the user can reveal the focused component without advancing the keyboard focus, the component with focus is not considered hidden due to author-created content."
+                },
+              ],
 							"techniques": [
 								{
-									"sufficient": [
-										{
-											"id": "TECH:G195",
-											"title": "Using an author-supplied, visible focus indicator"
-										},
-										{
-											"id": "TECH:C40",
-											"title": "Creating a two-color focus indicator to ensure sufficient contrast with all components"
-										},
-										{
-											"id": "TECH:C41",
-											"title": "Creating a strong focus indicator within the component"
-										}
-									]
+									"sufficient": []
 								},
 								{
 									"advisory": []
 								},
 								{
-									"failure": [
-										{
-											"id": "TECH:future-focus-appearance-1",
-											"title": "Using a CSS border for inline text which can wrap (Potential future technique)"
-										}
-									]
+									"failure": []
 								}
 							]
 						},
