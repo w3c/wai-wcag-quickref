@@ -4278,31 +4278,31 @@
 							"handle": "Focus Appearance",
 							"title": "When the keyboard focus indicator is visible, an area of the focus indicator meets all the following:",
               "details": [
-								{
+                {
                   "type": "ulist",
                   "items": [
-										{
+                    {
                       "text": "is at least as large as the area of a 2 CSS pixel thick perimeter of the unfocused component or sub-component, and"
                     },
                     {
                       "text": "has a contrast ratio of at least 3:1 between the same pixels in the focused and unfocused states."
-										}
-									]
-								},
-								{
+                    }
+                  ]
+                },
+                {
                   "type": "p",
                   "text": "Exceptions:"
-								},
-								{
+                },
+                {
                   "type": "ulist",
                   "items": [
                     {
                       "text": "The focus indicator is determined by the user agent and cannot be adjusted by the author, or"
                     },
-										{
+                    {
                       "text": "The focus indicator and the indicator’s background color are not modified by the author."
-										}
-									]
+                    }
+                  ]
                 },
                 {
                   "type": "note",
@@ -4649,25 +4649,22 @@
 							"level": "AA",
 							"handle": "Dragging Movements",
 							"title": "All functionality that uses a dragging movement for operation can be achieved by a single pointer without dragging, unless dragging is essential or the functionality is determined by the user agent and not modified by the author.",
+              "details": [
+                {
+                  "type": "note",
+                  "handle": "Note",
+                  "text": "This requirement applies to web content that interprets pointer actions (i.e. this does not apply to actions that are required to operate the user agent or assistive technology)."
+                }
+              ],
 							"techniques": [
 								{
-									"sufficient": [
-										{
-											"id": "TECH:G219",
-											"title": "Ensuring that a single pointer alternative is available for dragging movements that operate on content"
-										}
-									]
+									"sufficient": []
 								},
 								{
 									"advisory": []
 								},
 								{
-									"failure": [
-										{
-											"id": "TECH:F108",
-											"title": "Failure of Success Criterion 2.5.X Dragging due to not providing a single pointer method for the user to operate a function that does not require a dragging movement"
-										}
-									]
+									"failure": []
 								}
 							]
 						},
