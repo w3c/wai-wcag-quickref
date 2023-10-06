@@ -4246,34 +4246,24 @@
 							]
 						},
 						{
-							"id": "WCAG2:focus-not-obscured-minimum",
+							"id": "WCAG2:focus-not-obscured-enhanced",
 							"alt_id": [],
 							"num": "2.4.12",
 							"versions": [
 								"2.2"
 							],
-							"level": "AA",
-							"handle": "Focus Not Obscured (Minimum)",
-							"title": "When a user interface component receives keyboard focus, the component is not entirely hidden due to author-created content.",
+							"level": "AAA",
+							"handle": "Focus Not Obscured (Enhanced)",
+							"title": "When a user interface component receives keyboard focus, no part of the component is hidden by author-created content.",
 							"techniques": [
 								{
-									"sufficient": [
-										{
-											"id": "TECH:future-focus-not-obscured-minimum-1",
-											"title": "CSS: Using scroll-padding to ensure a sticky header does not obscure the focused item (Potential future technique)."
-										}
-									]
+									"sufficient": []
 								},
 								{
 									"advisory": []
 								},
 								{
-									"failure": [
-										{
-											"id": "TECH:future-focus-not-obscured-minimum-1",
-											"title": ""
-										}
-									]
+									"failure": []
 								}
 							]
 						},
