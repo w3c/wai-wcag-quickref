@@ -4235,13 +4235,23 @@
               ],
 							"techniques": [
 								{
-									"sufficient": []
+									"sufficient": [
+                    {
+                      "id": "TECH:C43",
+                      "title": "Using CSS scroll-padding to un-obscure content"
+                    }
+                  ]
 								},
 								{
 									"advisory": []
 								},
 								{
-									"failure": []
+									"failure": [
+                    {
+                      "id": "TECH:F110",
+                      "title": "Failure of Success Criterion 2.4.12 Focus Not Obscured (Minimum) due to a sticky footer or header completely hiding focused elements"
+                    }
+                  ]
 								}
 							]
 						},
@@ -4257,13 +4267,27 @@
 							"title": "When a user interface component receives keyboard focus, no part of the component is hidden by author-created content.",
 							"techniques": [
 								{
-									"sufficient": []
+									"sufficient": [
+                    {
+                      "id": "TECH:C43",
+                      "title": "Using CSS scroll-padding to un-obscure content"
+                    }
+                  ]
 								},
 								{
 									"advisory": []
 								},
 								{
-									"failure": []
+									"failure": [
+                    {
+                      "id": "TECH:text",
+                      "title": "An interaction that causes content to appear over the component with keyboard focus, visually covering part of the focus indicator. This behavior might be encountered with advertising or promotional material meant to provide more information about a product as the user navigates through a catalogue."
+                    },
+                    {
+                      "id": "TECH:text",
+                      "title": "A page has a sticky footer (attached to the bottom of the viewport). When tabbing down the page, a focused item is partially hidden by the footer because content in the viewport scrolls without sufficient <a href='https://www.w3.org/TR/css-scroll-snap/#propdef-scroll-padding'>scroll padding</a>."
+                    }
+                  ]
 								}
 							]
 						},
@@ -4322,13 +4346,31 @@
               ],
 							"techniques": [
 								{
-									"sufficient": []
+									"sufficient": [
+                    {
+                      "id": "TECH:G159",
+                      "title": "Using an author-supplied, visible focus indicator"
+                    },
+                    {
+                      "id": "TECH:C40",
+                      "title": "Creating a two-color focus indicator to ensure sufficient contrast with all components"
+                    },
+                    {
+                      "id": "TECH:C41",
+                      "title": "Creating a strong focus indicator within the component"
+                    }
+                  ]
 								},
 								{
 									"advisory": []
 								},
 								{
-									"failure": []
+									"failure": [
+                    {
+                      "id": "TECH:text",
+                      "title": "Using a CSS border for inline text which can wrap (Potential future technique)"
+                    }
+                  ]
 								}
 							]
 						}
@@ -4658,13 +4700,23 @@
               ],
 							"techniques": [
 								{
-									"sufficient": []
+									"sufficient": [
+                    {
+                      "id": "TECH:G219",
+                      "title": "Ensuring that an alternative is available for dragging movements that operate on content"
+                    }
+                  ]
 								},
 								{
 									"advisory": []
 								},
 								{
-									"failure": []
+									"failure": [
+                    {
+                      "id": "TECH:F108",
+                      "title": "Failure of Success Criterion 2.5.7 Dragging Movements due to not providing a single pointer method for the user to operate a function that does not require a dragging movement"
+                    },
+                  ]
 								}
 							]
 						},
@@ -4717,7 +4769,12 @@
               ],
 							"techniques": [
 								{
-									"sufficient": []
+									"sufficient": [
+                    {
+                      "id": "TECH:C42",
+                      "title": "Using min-height and min-width to ensure sufficient target spacing"
+                    }
+                  ]
 								},
 								{
 									"advisory": []
@@ -5525,13 +5582,23 @@
               ],
 							"techniques": [
 								{
-									"sufficient": []
+									"sufficient": [
+                    {
+                      "id": "TECH:G220",
+                      "title": "Provide a contact-us link in a consistent location"
+                    }
+                  ]
 								},
 								{
 									"advisory": []
 								},
 								{
-									"failure": []
+									"failure": [
+                    {
+                      "id": "TECH:text",
+                      "title": "Inconsistent Help Location"
+                    }
+                  ]
 								}
 							]
 						}
@@ -6111,7 +6178,16 @@
               ],
               "techniques": [
                 {
-                  "sufficient": []
+                  "sufficient": [
+                    {
+                      "id": "TECH:G221",
+                      "title": "Provide data from a previous step in a process"
+                    },
+                    {
+                      "id": "TECH:text",
+                      "title": "Not requesting the same information twice (Potential future technique)"
+                    }
+                  ]
                 },
                 {
                   "advisory": []
@@ -6166,13 +6242,39 @@
               ],
 							"techniques": [
 								{
-									"sufficient": []
+									"sufficient": [
+                    {
+                      "id": "TECH:G218",
+                      "title": "Email link authentication"
+                    },
+                    {
+                      "id": "TECH:H100",
+                      "title": "Providing properly marked up email and password inputs"
+                    },
+										{
+											"id": "TECH:text",
+											"title": "Providing WebAuthn as an alternative to username/password (Potential future technique)"
+										},
+										{
+											"id": "TECH:text",
+											"title": "Providing a 3rd party login using oAuth (Potential future technique)"
+										},
+										{
+											"id": "TECH:text",
+											"title": "Using two techniques to provide 2 factor authentication (Potential future technique)"
+										}
+                  ]
 								},
 								{
 									"advisory": []
 								},
 								{
-									"failure": []
+									"failure": [
+										{
+											"id": "TECH:F109",
+											"title": "Failure of Success Criterion 3.3.8 and 3.3.9 due to preventing password or code re-entry in the same format"
+										}
+									]
 								}
 							]
 						},
@@ -6203,13 +6305,39 @@
               ],
 							"techniques": [
 								{
-									"sufficient": []
+									"sufficient": [
+										{
+											"id": "TECH:G218",
+											"title": "Email link authentication"
+										},
+										{
+											"id": "TECH:H100",
+											"title": "Providing properly marked up email and password inputs"
+										},
+										{
+											"id": "TECH:text",
+											"title": "Providing WebAuthn as an alternative to username/password (Potential future technique)"
+										},
+										{
+											"id": "TECH:text",
+											"title": "Providing a 3rd party login using oAuth (Potential future technique)"
+										},
+										{
+											"id": "TECH:text",
+											"title": "Using two techniques to provide 2 factor authentication (Potential future technique)"
+										}
+									]
 								},
 								{
 									"advisory": []
 								},
 								{
-									"failure": []
+									"failure": [
+										{
+											"id": "TECH:F109",
+											"title": "Failure of Success Criterion 3.3.8 and 3.3.9 due to preventing password or code re-entry in the same format"
+										}
+									]
 								}
 							]
 						},
