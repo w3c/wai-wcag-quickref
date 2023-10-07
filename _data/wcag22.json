@@ -309,14 +309,6 @@
 															]
 														},
 														{
-															"id": "TECH:ARIA6",
-															"title": "Using aria-label to provide labels for objects"
-														},
-														{
-															"id": "TECH:ARIA10",
-															"title": "Using aria-labelledby to provide a text alternative for non-text content"
-														},
-														{
 															"id": "TECH:G68",
 															"title": "Providing a short text alternative that describes the purpose of live audio-only and live video-only content",
 															"using": [
@@ -438,7 +430,7 @@
 													"techniques": [
 														{
 															"id": "TECH:text",
-															"title": "Implementing or marking the non-text content so that it will be ignored by assistive technology",
+															"title": "Implementing or marking the non-text content so that it will be ignored by assistive technology using one of the following techniques:",
 															"using": [
 																{
 																	"group": {
@@ -701,7 +693,7 @@
 											]
 										},
 										{
-											"id": "TECH:future-audio-description-or-media-alternative-prerecorded-1",
+											"id": "TECH:text",
 											"title": "Linking to the alternative for time-based media using one of the following techniques",
 											"using": [
 												{
@@ -727,7 +719,7 @@
 													"title": "Providing audio description in SMIL 2.0"
 												},
 												{
-													"id": "TECH:future-audio-description-or-media-alternative-prerecorded-1",
+													"id": "TECH:text",
 													"title": "Using any player that supports audio and video"
 												}
 											]
@@ -745,7 +737,7 @@
 													"title": "Adding extended audio description in SMIL 2.0"
 												},
 												{
-													"id": "TECH:future-audio-description-or-media-alternative-prerecorded-1",
+													"id": "TECH:text",
 													"title": "Using any player that supports audio and video"
 												}
 											]
