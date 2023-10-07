@@ -460,7 +460,12 @@
 									]
 								},
 								{
-									"advisory": []
+									"advisory": [
+                    {
+                      "id" : "TECH:C18",
+                      "title" : "Using CSS margin and padding rules instead of spacer images for layout design"
+                    }
+                  ]
 								},
 								{
 									"failure": [
@@ -624,11 +629,13 @@
 										},
 										{
 											"id": "TECH:G87",
-											"title": "Providing closed captions"
+											"title": "Providing closed captions",
+                      "append": "using any readily available media format that has a video player that supports closed captioning"
 										},
 										{
 											"id": "TECH:G87",
 											"title": "Providing closed captions",
+                      "append": "using any of the technology-specific techniques below",
 											"using": [
 												{
 													"id": "TECH:SM11",
@@ -685,6 +692,7 @@
 										{
 											"id": "TECH:G69",
 											"title": "Providing an alternative for time based media",
+                      "append": "using one of the following techniques",
 											"using": [
 												{
 													"id": "TECH:G58",
@@ -874,7 +882,7 @@
 													"title": "Providing audio description in SMIL 2.0"
 												},
 												{
-													"id": "TECH:future-audio-description-prerecorded-1",
+													"id": "TECH:text",
 													"title": "Using any player that supports audio and video"
 												}
 											]
@@ -892,7 +900,7 @@
 													"title": "Adding extended audio description in SMIL 2.0"
 												},
 												{
-													"id": "TECH:future-audio-description-prerecorded-1",
+													"id": "TECH:text",
 													"title": "Using any player that supports audio and video"
 												}
 											]
@@ -987,7 +995,7 @@
 													"title": "Adding extended audio description in SMIL 2.0"
 												},
 												{
-													"id": "TECH:future-extended-audio-description-prerecorded-1",
+													"id": "TECH:text",
 													"title": "Using any player that supports audio and video"
 												}
 											]
@@ -1038,7 +1046,7 @@
 															]
 														},
 														{
-															"id": "TECH:future-media-alternative-prerecorded-1",
+															"id": "TECH:text",
 															"title": "Linking to the alternative for time-based media using one of the following techniques",
 															"using": [
 																{
@@ -1201,7 +1209,7 @@
 															"title": "Semantically identifying a font icon with role=\"img\""
 														},
 														{
-															"id": "TECH:future-info-and-relationships-1",
+															"id": "TECH:text",
 															"title": "Making information and relationships conveyed through presentation programmatically determinable using the following techniques:",
 															"using": [
 																{
@@ -1304,7 +1312,7 @@
 															"title": "Using text to convey information that is conveyed by variations in presentation of text"
 														},
 														{
-															"id": "TECH:future-info-and-relationships-1",
+															"id": "TECH:text",
 															"title": "Making information and relationships conveyed through presentation programmatically determinable or available in text using the following techniques:",
 															"using": [
 																{
@@ -1590,7 +1598,7 @@
 								{
 									"sufficient": [
 										{
-											"id": "TECH:future-identify-purpose-1",
+											"id": "TECH:text",
 											"title": "Programmatically indicating the purpose of icons, regions and user interface components"
 										},
 										{
@@ -1598,7 +1606,7 @@
 											"title": "Using ARIA landmarks to identify regions of a page"
 										},
 										{
-											"id": "TECH:future-identify-purpose-1",
+											"id": "TECH:text",
 											"title": "Using microdata to markup user interface components (future link)"
 										}
 									]
@@ -1606,15 +1614,15 @@
 								{
 									"advisory": [
 										{
-											"id": "TECH:future-identify-purpose-1",
+											"id": "TECH:text",
 											"title": "Enabling user agents to find the version of the content that best fits their needs"
 										},
 										{
-											"id": "TECH:future-identify-purpose-1",
+											"id": "TECH:text",
 											"title": "Using semantics to identify important features (e.g., coga-simplification=\"simplest\")"
 										},
 										{
-											"id": "TECH:future-identify-purpose-1",
+											"id": "TECH:text",
 											"title": "Using aria-invalid and aria-required"
 										}
 									]
@@ -1889,7 +1897,7 @@
 											"title": "Using a technology that has commonly-available user agents that support zoom"
 										},
 										{
-											"id": "TECH:future-resize-text-1",
+											"id": "TECH:text",
 											"title": "Ensuring that text containers resize when the text resizes AND using measurements that are relative to other measurements in the content by using one or more of the following techniques:",
 											"using": [
 												{
@@ -1897,7 +1905,7 @@
 													"title": "Specifying the size of text containers using em units"
 												},
 												{
-													"id": "TECH:future-resize-text-1",
+													"id": "TECH:text",
 													"title": "Techniques for relative measurements",
 													"using": [
 														{
@@ -1915,7 +1923,7 @@
 													]
 												},
 												{
-													"id": "TECH:future-resize-text-1",
+													"id": "TECH:text",
 													"title": "Techniques for text container resizing",
 													"using": [
 														{
@@ -2505,7 +2513,7 @@
 											"title": "Providing options within the content to switch to a layout that does not require the user to scroll horizontally to read a line of text"
 										},
 										{
-											"id": "TECH:future-reflow-1",
+											"id": "TECH:text",
 											"title": "Using PDF/UA when creating PDFs (Potential future technique)"
 										}
 									]
@@ -2521,15 +2529,15 @@
 											"title": "Using CSS max-width and height to fit images"
 										},
 										{
-											"id": "TECH:future-reflow-1",
+											"id": "TECH:text",
 											"title": "CSS, Reflowing simple data tables (Potential future technique)"
 										},
 										{
-											"id": "TECH:future-reflow-1",
+											"id": "TECH:text",
 											"title": "CSS, Fitting data cells within the width of the viewport (Potential future technique)"
 										},
 										{
-											"id": "TECH:future-reflow-1",
+											"id": "TECH:text",
 											"title": "Mechanism to allow mobile view at any time (Potential future technique)"
 										}
 									]
@@ -2724,11 +2732,11 @@
 											"title": "Making content on focus or hover hoverable, dismissible, and persistent"
 										},
 										{
-											"id": "TECH:future-content-on-hover-or-focus-1",
+											"id": "TECH:text",
 											"title": "ARIA: Using role=\"tooltip\" (Potential future technique)"
 										},
 										{
-											"id": "TECH:future-content-on-hover-or-focus-1",
+											"id": "TECH:text",
 											"title": "CSS: Using hover and focus pseudo classes (Potential future technique)"
 										}
 									]
@@ -2743,11 +2751,11 @@
 											"title": "Failure of Success Criterion 1.4.13 due to content shown on hover not being hoverable"
 										},
 										{
-											"id": "TECH:future-content-on-hover-or-focus-1",
+											"id": "TECH:text",
 											"title": "Failure to make content dismissable without moving pointer hover or keyboard focus (Potential future technique)"
 										},
 										{
-											"id": "TECH:future-content-on-hover-or-focus-1",
+											"id": "TECH:text",
 											"title": "Failure to meet by content on hover or focus not remaining visible until dismissed or invalid (Potential future technique)"
 										}
 									]
@@ -2813,7 +2821,7 @@
 											"title": "Ensuring keyboard control for all functionality"
 										},
 										{
-											"id": "TECH:future-keyboard-1",
+											"id": "TECH:text",
 											"title": "Ensuring keyboard control by using one of the following techniques.",
 											"using": [
 												{
@@ -3345,7 +3353,7 @@
 								{
 									"sufficient": [
 										{
-											"id": "TECH:future-re-authenticating-1",
+											"id": "TECH:text",
 											"title": "Providing options to continue without loss of data using one of the following techniques:",
 											"using": [
 												{
@@ -3385,15 +3393,15 @@
 								{
 									"sufficient": [
 										{
-											"id": "TECH:future-timeouts-1",
+											"id": "TECH:text",
 											"title": "Setting a session timeout to occur following at least 20 hours of inactivity."
 										},
 										{
-											"id": "TECH:future-timeouts-1",
+											"id": "TECH:text",
 											"title": "Store user data for more than 20 hours."
 										},
 										{
-											"id": "TECH:future-timeouts-1",
+											"id": "TECH:text",
 											"title": "Provide a warning of the duration of user inactivity at the start of a process."
 										}
 									]
@@ -3506,7 +3514,7 @@
 											"title": "Using the CSS reduce-motion query to prevent motion"
 										},
 										{
-											"id": "TECH:future-animation-from-interactions-1",
+											"id": "TECH:text",
 											"title": "Gx: Allowing users to set a preference that prevents animation."
 										}
 									]
@@ -3550,7 +3558,7 @@
 								{
 									"sufficient": [
 										{
-											"id": "TECH:future-bypass-blocks-1",
+											"id": "TECH:text",
 											"title": "Creating links to skip blocks of repeated material using one of the following techniques:",
 											"using": [
 												{
@@ -3568,7 +3576,7 @@
 											]
 										},
 										{
-											"id": "TECH:future-bypass-blocks-1",
+											"id": "TECH:text",
 											"title": "Grouping blocks of repeated material in a way that can be skipped, using one of the following techniques:",
 											"using": [
 												{
@@ -3689,7 +3697,7 @@
 											"title": "Placing the interactive elements in an order that follows sequences and relationships within the content"
 										},
 										{
-											"id": "TECH:future-focus-order-1",
+											"id": "TECH:text",
 											"title": "Giving focus to elements in an order that follows sequences and relationships within the content using one of the following techniques:",
 											"using": [
 												{
@@ -3703,7 +3711,7 @@
 											]
 										},
 										{
-											"id": "TECH:future-focus-order-1",
+											"id": "TECH:text",
 											"title": "Changing a Web page dynamically using one of the following techniques:",
 											"using": [
 												{
@@ -3767,7 +3775,7 @@
 											"title": "Providing text alternatives for the area elements of image maps"
 										},
 										{
-											"id": "TECH:future-link-purpose-in-context-1",
+											"id": "TECH:text",
 											"title": "Allowing the user to choose short or long link text using one of the techniques below:",
 											"using": [
 												{
@@ -3785,7 +3793,7 @@
 											"title": "Identifying the purpose of a link using link text combined with the text of the enclosing sentence"
 										},
 										{
-											"id": "TECH:future-link-purpose-in-context-1",
+											"id": "TECH:text",
 											"title": "Providing a supplemental description of the purpose of a link using one of the following techniques:",
 											"using": [
 												{
@@ -3799,7 +3807,7 @@
 											]
 										},
 										{
-											"id": "TECH:future-link-purpose-in-context-1",
+											"id": "TECH:text",
 											"title": "Identifying the purpose of a link using link text combined with programmatically determined link context using one of the following techniques:",
 											"using": [
 												{
@@ -3886,7 +3894,7 @@
 								{
 									"sufficient": [
 										{
-											"id": "TECH:future-multiple-ways-1",
+											"id": "TECH:text",
 											"title": "Using two or more of the following techniques:",
 											"using": [
 												{
@@ -4113,7 +4121,7 @@
 											"title": "Providing text alternatives for the area elements of image maps"
 										},
 										{
-											"id": "TECH:future-link-purpose-link-only-1",
+											"id": "TECH:text",
 											"title": "Allowing the user to choose short or long link text using one of the techniques below:",
 											"using": [
 												{
@@ -4127,7 +4135,7 @@
 											]
 										},
 										{
-											"id": "TECH:future-link-purpose-link-only-1",
+											"id": "TECH:text",
 											"title": "Providing a supplemental description of the purpose of a link using one of the following techniques:",
 											"using": [
 												{
@@ -4137,7 +4145,7 @@
 											]
 										},
 										{
-											"id": "TECH:future-link-purpose-link-only-1",
+											"id": "TECH:text",
 											"title": "Semantically indicating links using one of the following techniques:",
 											"using": [
 												{
@@ -4412,7 +4420,7 @@
 											"title": "Using native controls to ensure functionality is triggered on the up-event."
 										},
 										{
-											"id": "TECH:future-pointer-cancellation-1",
+											"id": "TECH:text",
 											"title": "Touch events are only triggered when touch is removed from a control (Potential future technique)"
 										}
 									]
@@ -4454,7 +4462,7 @@
 								{
 									"advisory": [
 										{
-											"id": "TECH:future-label-in-name-1",
+											"id": "TECH:text",
 											"title": "If an icon has no accompanying text, consider using its hover text as its accessible name (Potential future technique)"
 										}
 									]
@@ -4466,11 +4474,11 @@
 											"title": "Failure due to the accessible name not containing the visible label text"
 										},
 										{
-											"id": "TECH:future-label-in-name-1",
+											"id": "TECH:text",
 											"title": "Accessible name contains the visible label text, but the words of the visible label are not in the same order as they are in the visible label text (Potential future technique)"
 										},
 										{
-											"id": "TECH:future-label-in-name-1",
+											"id": "TECH:text",
 											"title": "Accessible name contains the visible label text, but one or more other words are interspersed in the label (Potential future technique)"
 										}
 									]
@@ -4508,7 +4516,7 @@
 											"title": "Provide conventional controls and an application setting for motion activated input"
 										},
 										{
-											"id": "TECH:future-motion-actuation-1",
+											"id": "TECH:text",
 											"title": "GXXX: Supporting system level features which allow the user to disable motion actuation"
 										}
 									]
@@ -4523,7 +4531,7 @@
 											"title": "Failure due to inability to deactivate motion actuation"
 										},
 										{
-											"id": "TECH:future-motion-actuation-1",
+											"id": "TECH:text",
 											"title": "FXXX: Failure of Success Criterion 2.5.4 due to disrupting or disabling system level features which allow the user to disable motion actuation"
 										}
 									]
@@ -4570,11 +4578,11 @@
 													"title": "",
 													"techniques": [
 														{
-															"id": "TECH:future-target-size-enhanced-1",
+															"id": "TECH:text",
 															"title": "Ensuring that targets are at least 44 by 44 CSS pixels."
 														},
 														{
-															"id": "TECH:future-target-size-enhanced-1",
+															"id": "TECH:text",
 															"title": "Ensuring inline links provide sufficiently large activation target."
 														}
 													]
@@ -4586,7 +4594,7 @@
 								{
 									"advisory": [
 										{
-											"id": "TECH:future-target-size-enhanced-1",
+											"id": "TECH:text",
 											"title": "none documented"
 										}
 									]
@@ -4594,7 +4602,7 @@
 								{
 									"failure": [
 										{
-											"id": "TECH:future-target-size-enhanced-1",
+											"id": "TECH:text",
 											"title": "Failure of success criterion 2.5.5 due to target being less than 44 by 44 CSS pixels."
 										}
 									]
@@ -4613,7 +4621,7 @@
 								{
 									"sufficient": [
 										{
-											"id": "TECH:future-concurrent-input-mechanisms-1",
+											"id": "TECH:text",
 											"title": "Only using high-level, input-agnostic event handlers, such as focus, blur, click, in Javascript (Potential future technique)."
 										}
 									]
@@ -5406,7 +5414,7 @@
 													"title": "Situation C: If the Web page uses pop-up windows:",
 													"techniques": [
 														{
-															"id": "TECH:future-change-on-request-1",
+															"id": "TECH:text",
 															"title": "Including pop-up windows using one of the following techniques:",
 															"using": [
 																{
@@ -6271,7 +6279,7 @@
 											"title": "Using HTML according to spec"
 										},
 										{
-											"id": "TECH:future-parsing-1",
+											"id": "TECH:text",
 											"title": "Ensuring that Web pages can be parsed by using one of the following techniques:",
 											"using": [
 												{
@@ -6382,7 +6390,7 @@
 													"title": "Situation B: If using script or code to re-purpose a standard user interface component in a markup language:",
 													"techniques": [
 														{
-															"id": "TECH:future-name-role-value-1",
+															"id": "TECH:text",
 															"title": "Exposing the names and roles, allowing user-settable properties to be directly set, and providing notification of changes using one of the following techniques:",
 															"using": [
 																{
@@ -6543,7 +6551,7 @@
 															"title": "Using role=log to identify sequential information updates"
 														},
 														{
-															"id": "TECH:future-status-messages-1",
+															"id": "TECH:text",
 															"title": "Using role=\"progressbar\" (future link)"
 														},
 														{
@@ -6567,15 +6575,15 @@
 								{
 									"advisory": [
 										{
-											"id": "TECH:future-status-messages-1",
+											"id": "TECH:text",
 											"title": "Using aria-live regions with chat clients (future link)"
 										},
 										{
-											"id": "TECH:future-status-messages-1",
+											"id": "TECH:text",
 											"title": "Using role=\"marquee\" (future link)"
 										},
 										{
-											"id": "TECH:future-status-messages-1",
+											"id": "TECH:text",
 											"title": "Using role=\"timer\" (future link)"
 										},
 										{
@@ -6595,7 +6603,7 @@
 											"title": "Failure of Success Criterion 4.1.3 due to providing status messages that cannot be programmatically determined through role or properties"
 										},
 										{
-											"id": "TECH:future-status-messages-1",
+											"id": "TECH:text",
 											"title": "Using role=\"alert\" or aria-live=\"assertive\" on content which is not important and time-sensitive (future link)"
 										}
 									]
