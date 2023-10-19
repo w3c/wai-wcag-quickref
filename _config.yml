@@ -55,3 +55,4 @@ exclude:
   - pnpm-lock.yaml
   - CHANGELOG.md
   - CODE_OF_CONDUCT.md
+  - vendor

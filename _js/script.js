@@ -113,13 +113,13 @@ jQuery(document).ready(function($) {
     }
     $('.btn-techniques').each(function(index, el) {
       var btn = $(el);
-      btn.attr('aria-expanded', false);
+      btn.attr('data-expanded', "false");
       $('#'+btn.attr('aria-controls')).removeClass('in');
     });
     if (data.showtechniques) {
       $('.btn-techniques[aria-controls="techniques-' + data.showtechniques.split(',').join('"], .btn-techniques[aria-controls="techniques-') + '"]').each(function(index, el) {
         var btn = $(el);
-        btn.attr('aria-expanded', true);
+        btn.attr('data-expanded', "true");
         $('#'+btn.attr('aria-controls')).addClass('in');
       });
     }
@@ -399,15 +399,15 @@ jQuery(document).ready(function($) {
 
   // More buttons in Success Criteria
   function excolsc() {
-    var hr = $('.sc-content hr');
+    var hr = $('.sc-content hr:first-of-type');
     hr.hide(); // hide horizontal rule
-    hr.prev().append(' <button type="button" aria-expanded="false" class="btn btn-info btn-xs"><span class="word-show"><svg aria-hidden="true" class="i-chevron-right"><use xlink:href="img/icons.svg#i-chevron-right"></use></svg> Show</span><span class="word-hide"><svg aria-hidden="true" class="i-chevron-down"><use xlink:href="img/icons.svg#i-chevron-down"></use></svg> Hide</span> full description</button>'); // Append button
+    hr.prev().append(' <button type="button" data-expanded="false" class="btn btn-info btn-xs"><span class="word-show"><svg aria-hidden="true" class="i-chevron-right"><use xlink:href="img/icons.svg#i-chevron-right"></use></svg> Show</span><span class="word-hide"><svg aria-hidden="true" class="i-chevron-down"><use xlink:href="img/icons.svg#i-chevron-down"></use></svg> Hide</span> full description</button>'); // Append button
     hr.find('~ *').hide();
     hr.prev().find('button').on('click', function(event) {
       event.preventDefault();
       /* Act on the event */
-      $(this).attr('aria-expanded', function(idx, oldAttr) {
-          if(oldAttr==='true') {
+      $(this).attr('data-expanded', function(idx, oldAttr) {
+          if(oldAttr=='true') {
             return 'false';
           } else {
             return 'true';
@@ -684,11 +684,11 @@ jQuery(document).ready(function($) {
         location = window.history.location || window.location,
         uri = new URI(location),
         urltags = [];
-    $('.btn-techniques[aria-expanded="true"]').each(function(index, el) {
+    $('.btn-techniques[data-expanded="true"]').each(function(index, el) {
       urltags.push($(el).attr('aria-controls'));
     });
-    // attribute aria-expanded is false when clicked on the button when the associated area is currently hidden. So if the following returns 'false' the panel is/will be open.
-    if (target.attr('aria-expanded') == "false") {
+    // attribute data-expanded is false when clicked on the button when the associated area is currently hidden. So if the following returns 'false' the panel is/will be open.
+    if (target.attr('data-expanded') == "false") {
       urltags.push(cntrls);
     } else {
       for (var i = urltags.length - 1; i >= 0; i--) {
@@ -725,14 +725,14 @@ jQuery(document).ready(function($) {
   });
 
   $('#expandcollapsalltechniques').on('click', function (e) {
-    if($(this).attr('aria-expanded') != 'true') {
+    if($(this).attr('data-expanded') != 'true') {
       $('.collapse').collapse('show');
-      $('.sc-text button').attr('aria-expanded', true).parent().find('~ *:not(hr)').toggle();
-      $(this).attr('aria-expanded', true).find('span').html('Collapse <strong>all</strong> sections');
+      $('.sc-text button').attr('data-expanded', true).parent().find('~ *:not(hr)').toggle();
+      $(this).attr('data-expanded', true).find('span').html('Collapse <strong>all</strong> sections');
     } else {
       $('.collapse').collapse('hide');
-      $('.sc-text button').attr('aria-expanded', false).parent().find('~ *:not(hr)').toggle();
-      $(this).attr('aria-expanded', false).find('span').html('Expand <strong>all</strong> sections');
+      $('.sc-text button').attr('data-expanded', false).parent().find('~ *:not(hr)').toggle();
+      $(this).attr('data-expanded', false).find('span').html('Expand <strong>all</strong> sections');
     }
   });
 

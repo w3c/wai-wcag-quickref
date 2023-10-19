@@ -311,10 +311,10 @@ header[role=banner] {
   .btn {
     text-align: left;
   }
-  [aria-expanded="false"] ~ label {
+  [data-expanded="false"] ~ label {
     display: none;
   }
-  [aria-expanded] + label {
+  [data-expanded] + label {
     clear:both;
   }
 }
@@ -669,12 +669,12 @@ svg.icon {
   }
 }
 
-[aria-expanded], [aria-expanded=true] [aria-expanded] {
+[data-expanded], [data-expanded=true] [data-expanded] {
   .word-show { display: inline; }
   .word-hide { display: none; }
 }
 
-[aria-expanded=true], [aria-expanded=true] [aria-expanded=true] {
+[data-expanded=true], [data-expanded=true] [data-expanded=true] {
   .word-show { display: none; }
   .word-hide { display: inline; }
 }
@@ -830,7 +830,7 @@ button.panel-heading {
   display:none;
   clear: both;
   font-size: (14/18) * 1em;
-  &[aria-expanded=true] {
+  &[data-expanded=true] {
     display: block;
 		@include mq($medium) {
 	    display: flex;
@@ -991,7 +991,7 @@ ul.notes {
 #expandcollapsalltechniques {
   .i-minus { display: none; }
   .i-plus  { display: inline-block; }
-  &[aria-expanded=true] {
+  &[data-expanded=true] {
     .i-minus { display: inline-block; }
     .i-plus  { display: none; }
   }

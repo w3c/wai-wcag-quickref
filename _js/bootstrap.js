@@ -595,11 +595,11 @@ if (typeof jQuery === 'undefined') {
     this.$element
       .removeClass('collapse')
       .addClass('collapsing')[dimension](0)
-      .attr('aria-expanded', true)
+      .attr('data-expanded', true)
 
     this.$trigger
       .removeClass('collapsed')
-      .attr('aria-expanded', true)
+      .attr('data-expanded', true)
 
     this.transitioning = 1
 
@@ -635,11 +635,11 @@ if (typeof jQuery === 'undefined') {
     this.$element
       .addClass('collapsing')
       .removeClass('collapse in')
-      .attr('aria-expanded', false)
+      .attr('data-expanded', false)
 
     this.$trigger
       .addClass('collapsed')
-      .attr('aria-expanded', false)
+      .attr('data-expanded', false)
 
     this.transitioning = 1
 
@@ -676,10 +676,10 @@ if (typeof jQuery === 'undefined') {
   Collapse.prototype.addAriaAndCollapsedClass = function ($element, $trigger) {
     var isOpen = $element.hasClass('in')
 
-    $element.attr('aria-expanded', isOpen)
+    $element.attr('data-expanded', isOpen)
     $trigger
       .toggleClass('collapsed', !isOpen)
-      .attr('aria-expanded', isOpen)
+      .attr('data-expanded', isOpen)
   }
 
   function getTargetFromTrigger($trigger) {
