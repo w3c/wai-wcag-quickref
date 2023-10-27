@@ -4268,7 +4268,7 @@
 			},
 			{
 				"id": "WCAG2:target-size-enhanced",
-				"alt_id": [],
+				"alt_id": ["target-size"],
 				"num": "2.5.5",
 				"versions": ["2.1", "2.2"],
 				"level": "AAA",

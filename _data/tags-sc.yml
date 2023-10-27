@@ -218,6 +218,19 @@ section-headings:
   dev: headings markup structure
   vis: structure text
   con: content headings progress-steps
+focus-not-obscured-minimum:
+  dev: positioning focus sticky fixed keyboard controls menus
+  int: positioning focus sticky fixed navigation tab-order
+  vis: focus sticky fixed
+focus-not-obscured-enhanced:
+  dev: positioning focus sticky fixed keyboard controls menus
+  int: positioning focus sticky fixed navigation tab-order
+  vis: focus sticky fixed
+focus-appearance:
+  dev: controls focus keyboard menus
+  int: controls focus navigation skip-to-content tab-order
+  vis: color contrast progress-steps
+  con: buttons  
 pointer-gestures:
   dev: controls events mobile
   int: controls events mobile
@@ -232,11 +245,17 @@ label-in-name:
 motion-actuation:
   dev: controls keyboard mobile
   int: controls keyboard mobile
-target-size:
+target-size-enhanced:
   int: buttons controls forms mobile
   vis: buttons controls forms mobile
 concurrent-input-mechanisms:
   dev: navigation links controls events mobile keyboard
+dragging-movements:
+  dev: controls events drag-and-drop
+  int: controls events drag-and-drop
+target-size-minimum:
+  int: buttons controls forms mobile
+  vis: buttons controls forms mobile    
 language-of-page:
   dev: language text
   vis: text
@@ -276,6 +295,10 @@ consistent-identification:
 change-on-request:
   dev:  controls forms menus events
   int: controls forms events navigation
+consistent-help:
+  vis: help
+  int: help
+  con: content
 error-identification:
   dev: controls errors focus forms labels
   int: controls errors focus forms
@@ -301,6 +324,21 @@ error-prevention-all:
   dev: errors forms
   int: errors forms
   con: content
+redundant-entry:
+  dev: forms
+  int: forms
+  vis: forms
+  con: forms
+accessible-authentication-minimum:
+  dev: forms logins
+  int: forms logins
+  vis: forms logins
+  con: forms logins
+accessible-authentication-enhanced:
+  dev: forms logins
+  int: forms logins
+  vis: forms logins
+  con: forms logins
 parsing:
   dev: markup structure
 name-role-value:
