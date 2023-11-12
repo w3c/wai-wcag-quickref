@@ -3716,7 +3716,7 @@
 					"2.1",
 					"2.2"
 				],
-				"level": "A",
+				"level": "AA",
 				"handle": "Focus Visible",
 				"title": "Any keyboard operable user interface has a mode of operation where the keyboard focus indicator is visible.",
 				"techniques": [
