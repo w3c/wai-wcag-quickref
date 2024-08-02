@@ -2718,7 +2718,11 @@
 				"title": "All functionality of the content is operable through a keyboard interface without requiring specific timings for individual keystrokes.",
 				"techniques": [
 				{
-					"sufficient": []
+					"sufficient": [
+					{
+						"id": "TECH:text",
+						"title": "No additional techniques exist for this Success Criterion. Follow <a href=\"#keyboard\">techniques for Success Criterion 2.1.1</a>. If that is not possible because there is a requirement for path-dependent input, then it is not possible to meet this Level AAA Success Criterion."
+					}]
 				},
 				{
 					"advisory": []
@@ -3877,6 +3881,24 @@
 					"type": "note",
 					"handle": "Note 2",
 					"text": "This success criterion covers sections within writing, not user interface components. User Interface components are covered under Success Criterion 4.1.2."
+				}],
+				"techniques": [
+				{
+					"sufficient": [
+					{
+						"id": "TECH:G141",
+						"title": "Organizing a page using headings"
+					},
+					{
+						"id": "TECH:H69",
+						"title": "Providing heading elements at the beginning of each section of content"
+					}]
+				},
+				{
+					"advisory": []
+				},
+				{
+					"failure": []
 				}]
 			},
 			{
@@ -5625,13 +5647,21 @@
 				}],
 				"techniques": [
 				{
-					"sufficient": []
+					"sufficient": [
+					{
+						"id": "TECH:G220",
+						"title": "Provide a contact-us link in a consistent location"
+					}]
 				},
 				{
 					"advisory": []
 				},
 				{
-					"failure": []
+					"failure": [
+					{
+						"id": "TECH:text",
+						"title": "Inconsistent Help Location"
+					}]
 				}]
 			},
 			{
