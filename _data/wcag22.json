@@ -2414,6 +2414,18 @@
 					{
 						"situations": [
 						{
+							"title": "Situation A: Color is used to identify user interface components or used to identify user interface component states",
+							"techniques": [
+							{
+								"id": "TECH:G195",
+								"title": "Using an author-supplied, visible focus indicator"
+							},
+							{
+								"id": "TECH:G174",
+								"title": "Providing a control with a sufficient contrast ratio that allows users to switch to a presentation that uses sufficient contrast"
+							}]
+						},
+						{
 							"title": "Situation B: Color is required to understand graphical content",
 							"techniques": [
 							{
@@ -2423,26 +2435,6 @@
 							{
 								"id": "TECH:G209",
 								"title": "Provide sufficient contrast at the boundaries between adjoining colors"
-							}]
-						},
-						{
-							"title": "Text in or over graphics",
-							"techniques": [
-							{
-								"id": "TECH:text",
-								"title": "@@ Include labels and values with the graphic (TBD)"
-							},
-							{
-								"id": "TECH:G18",
-								"title": "Ensuring that a contrast ratio of at least 4.5:1 exists between text (and images of text) and background behind the text"
-							},
-							{
-								"id": "TECH:G145",
-								"title": "Ensuring that a contrast ratio of at least 3:1 exists between text (and images of text) and background behind the text"
-							},
-							{
-								"id": "TECH:G174",
-								"title": "Providing a control with a sufficient contrast ratio that allows users to switch to a presentation that uses sufficient contrast"
 							}]
 						}]
 					}]
