@@ -98,10 +98,6 @@
 											"title": "Combining adjacent image and text links for the same resource"
 										},
 										{
-											"id": "TECH:H35",
-											"title": "Providing text alternatives on applet elements"
-										},
-										{
 											"id": "TECH:H37",
 											"title": "Using alt attributes on img elements"
 										},
@@ -150,10 +146,6 @@
 											"title": "Combining adjacent image and text links for the same resource"
 										},
 										{
-											"id": "TECH:H35",
-											"title": "Providing text alternatives on applet elements"
-										},
-										{
 											"id": "TECH:H37",
 											"title": "Using alt attributes on img elements"
 										},
@@ -191,10 +183,6 @@
 										{
 											"id": "TECH:G92",
 											"title": "Providing long description for non-text content that serves the same purpose and presents the same information"
-										},
-										{
-											"id": "TECH:H45",
-											"title": "Using longdesc"
 										},
 										{
 											"id": "TECH:H53",
@@ -277,10 +265,6 @@
 											"title": "Combining adjacent image and text links for the same resource"
 										},
 										{
-											"id": "TECH:H35",
-											"title": "Providing text alternatives on applet elements"
-										},
-										{
 											"id": "TECH:H37",
 											"title": "Using alt attributes on img elements"
 										},
@@ -325,10 +309,6 @@
 											"title": "Combining adjacent image and text links for the same resource"
 										},
 										{
-											"id": "TECH:H35",
-											"title": "Providing text alternatives on applet elements"
-										},
-										{
 											"id": "TECH:H37",
 											"title": "Using alt attributes on img elements"
 										},
@@ -371,10 +351,6 @@
 										{
 											"id": "TECH:H2",
 											"title": "Combining adjacent image and text links for the same resource"
-										},
-										{
-											"id": "TECH:H35",
-											"title": "Providing text alternatives on applet elements"
 										},
 										{
 											"id": "TECH:H37",
@@ -1004,13 +980,6 @@
 					}]
 				},
 				{
-					"advisory": [
-					{
-						"id": "TECH:H46",
-						"title": "Using noembed with embed"
-					}]
-				},
-				{
 					"failure": [
 					{
 						"id": "TECH:F74",
@@ -1159,10 +1128,6 @@
 									"title": "Using caption elements to associate data table captions with data tables"
 								},
 								{
-									"id": "TECH:H73",
-									"title": "Using the summary attribute of the table element to give an overview of data tables"
-								},
-								{
 									"id": "TECH:H63",
 									"title": "Using the scope attribute to associate header cells and data cells in data tables"
 								},
@@ -1307,10 +1272,6 @@
 					{
 						"id": "TECH:F48",
 						"title": "Failure of Success Criterion 1.3.1 due to using the pre element to markup tabular information"
-					},
-					{
-						"id": "TECH:F87",
-						"title": "Failure of Success Criterion 1.3.1 due to inserting non-decorative content by using ::before and ::after pseudo-elements and the 'content' property in CSS"
 					},
 					{
 						"id": "TECH:F90",
@@ -2989,10 +2950,6 @@
 						"title": "Creating content that blinks for less than 5 seconds"
 					},
 					{
-						"id": "TECH:G187",
-						"title": "Using a technology to include blinking content that can be turned off via the user agent"
-					},
-					{
 						"id": "TECH:G152",
 						"title": "Setting animated gif images to stop blinking after n cycles (within 5 seconds)"
 					},
@@ -3345,15 +3302,8 @@
 							"title": "Providing headings by marking content with heading tags in PDF documents"
 						},
 						{
-							"and": [
-							{
-								"id": "TECH:H70",
-								"title": "Using frame elements to group blocks of repeated material"
-							},
-							{
-								"id": "TECH:H64",
-								"title": "Using the title attribute of the frame and iframe elements"
-							}]
+							"id": "TECH:H64",
+							"title": "Using the title attribute of the frame and iframe elements"
 						},
 						{
 							"id": "TECH:SCR28",
@@ -3461,8 +3411,8 @@
 							"title": "Inserting dynamic content into the Document Object Model immediately following its trigger element"
 						},
 						{
-							"id": "TECH:SCR37",
-							"title": "Creating Custom Dialogs in a Device Independent Way"
+							"id": "TECH:H102",
+							"title": "Creating modal dialogs with the HTML dialog element"
 						},
 						{
 							"id": "TECH:SCR27",
@@ -3656,10 +3606,6 @@
 				{
 					"advisory": [
 					{
-						"id": "TECH:H59",
-						"title": "Using the link element and navigation tools"
-					},
-					{
 						"id": "TECH:PDF2",
 						"title": "Creating bookmarks in PDF documents"
 					}]
@@ -3783,12 +3729,7 @@
 					},
 					{
 						"id": "TECH:G127",
-						"title": "Identifying a Web page's relationship to a larger collection of Web pages",
-						"using": [
-						{
-							"id": "TECH:H59",
-							"title": "Using the link element and navigation tools"
-						}]
+						"title": "Identifying a Web page's relationship to a larger collection of Web pages"
 					}]
 				},
 				{
@@ -4569,10 +4510,6 @@
 									{
 										"id": "TECH:H40",
 										"title": "Using description lists"
-									},
-									{
-										"id": "TECH:H60",
-										"title": "Using the link element to link to a glossary"
 									}]
 								},
 								{
@@ -4596,10 +4533,6 @@
 									{
 										"id": "TECH:H40",
 										"title": "Using description lists"
-									},
-									{
-										"id": "TECH:H60",
-										"title": "Using the link element to link to a glossary"
 									}]
 								},
 								{
@@ -4626,10 +4559,6 @@
 									{
 										"id": "TECH:H40",
 										"title": "Using description lists"
-									},
-									{
-										"id": "TECH:H60",
-										"title": "Using the link element to link to a glossary"
 									}]
 								},
 								{
@@ -4704,10 +4633,6 @@
 								{
 									"id": "TECH:G62",
 									"title": "Providing a glossary"
-								},
-								{
-									"id": "TECH:H60",
-									"title": "Using the link element to link to a glossary"
 								},
 								{
 									"id": "TECH:G70",
@@ -5907,83 +5832,6 @@
 			"handle": "Compatible",
 			"title": "Maximize compatibility with current and future user agents, including assistive technologies.",
 			"successcriteria": [
-			{
-				"id": "WCAG2:parsing",
-				"alt_id": ["ensure-compat-parses"],
-				"num": "4.1.1",
-				"versions": [
-					"2.0",
-					"2.1"
-				],
-				"level": "A",
-				"handle": "Parsing",
-				"title": "In content implemented using markup languages, elements have complete start and end tags, elements are nested according to their specifications, elements do not contain duplicate attributes, and any IDs are unique, except where the specifications allow these features.",
-				"details": [
-				{
-					"type": "note",
-					"handle": "Note 1",
-					"text": "This Success Criterion should be considered as always satisfied for any content using HTML or XML."
-				},
-				{
-					"type": "note",
-					"handle": "Note 2",
-					"text": "Since this criterion was written, the HTML Living Standard has adopted specific requirements governing how user agents must handle incomplete tags, incorrect element nesting, duplicate attributes, and non-unique IDs. [HTML]<br><br>Although the HTML Standard treats some of these cases as non-conforming for authors, it is considered to “allow these features” for the purposes of this Success Criterion because the specification requires that user agents support handling these cases consistently. In practice, this criterion no longer provides any benefit to people with disabilities in itself.<br><br>Issues such as missing roles due to inappropriately nested elements or incorrect states or names due to a duplicate ID are covered by different Success Criteria and should be reported under those criteria rather than as issues with 4.1.1."
-				}, ],
-				"techniques": [
-				{
-					"sufficient": [
-					{
-						"id": "TECH:G134",
-						"title": "Validating Web pages"
-					},
-					{
-						"id": "TECH:G192",
-						"title": "Fully conforming to specifications"
-					},
-					{
-						"id": "TECH:H88",
-						"title": "Using HTML according to spec"
-					},
-					{
-						"id": "TECH:text",
-						"title": "Ensuring that Web pages can be parsed by using one of the following techniques:",
-						"using": [
-						{
-							"and": [
-							{
-								"id": "TECH:H74",
-								"title": "Ensuring that opening and closing tags are used according to specification"
-							},
-							{
-								"id": "TECH:H93",
-								"title": "Ensuring that id attributes are unique on a Web page"
-							},
-							{
-								"id": "TECH:H94",
-								"title": "Ensuring that elements do not contain duplicate attributes"
-							}]
-						},
-						{
-							"id": "TECH:H75",
-							"title": "Ensuring that Web pages are well-formed"
-						}]
-					}]
-				},
-				{
-					"advisory": []
-				},
-				{
-					"failure": [
-					{
-						"id": "TECH:F70",
-						"title": "Failure of Success Criterion 4.1.1 due to incorrect use of start and end tags or attribute markup"
-					},
-					{
-						"id": "TECH:F77",
-						"title": "Failure of Success Criterion 4.1.1 due to duplicate values of type ID"
-					}]
-				}]
-			},
 			{
 				"id": "WCAG2:name-role-value",
 				"alt_id": ["ensure-compat-rsv"],
