@@ -45,14 +45,11 @@ button: 1
       {% include filter-status.html button="true" %}
     </div>
       <div class="maininner">
-      {% assign p = 0 %}
       {% for principle in site.data.wcag22.principles %}
-        {% assign p = p | plus: 1 %}
-        {% assign g = 0 %}
         <section class="principle" aria-labelledby="principle{{ principle.num }}" aria-roledescription="principle">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h2 id="principle{{ principle.num }}"><strong>Principle {{ p }}</strong> – {{principle.handle}}</h2>
+              <h2 id="principle{{ principle.num }}"><strong>Principle {{ principle.num }}</strong> – {{principle.handle}}</h2>
             </div>
             <div class="panel-body panel-body-principle">
               <p>{{principle.title}}</p>

@@ -5881,6 +5881,30 @@
 			"title": "Maximize compatibility with current and future user agents, including assistive technologies.",
 			"successcriteria": [
 			{
+				"id": "WCAG2:parsing",
+				"alt_id": ["ensure-compat-parses"],
+				"num": "4.1.1",
+				"versions": [
+					"2.0",
+					"2.1"
+				],
+				"level": "A",
+				"handle": "Parsing",
+				"title": "In content implemented using markup languages, elements have complete start and end tags, elements are nested according to their specifications, elements do not contain duplicate attributes, and any IDs are unique, except where the specifications allow these features.",
+				"details": [
+				{
+					"type": "note",
+					"handle": "Note 1",
+					"text": "This criterion has been removed from WCAG 2.2. In WCAG 2.1 and 2.0 this Success Criterion should be considered as always satisfied for any content using HTML or XML."
+				},
+				{
+					"type": "note",
+					"handle": "Note 2",
+					"text": "Since this criterion was written, the HTML Standard has adopted specific requirements governing how user agents must handle incomplete tags, incorrect element nesting, duplicate attributes, and non-unique IDs.</p><p>Although the HTML Standard treats some of these cases as non-conforming for authors, it is considered to \"allow these features\" for the purposes of this Success Criterion because the specification requires that user agents support handling these cases consistently. In practice, this criterion no longer provides any benefit to people with disabilities in itself.</p><p>Issues such as missing roles due to inappropriately nested elements or incorrect states or names due to a duplicate ID are covered by different Success Criteria and should be reported under those criteria rather than as issues with 4.1.1."
+				}],
+				"techniques": []
+			},
+			{
 				"id": "WCAG2:name-role-value",
 				"alt_id": ["ensure-compat-rsv"],
 				"num": "4.1.2",
