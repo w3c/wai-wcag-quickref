@@ -171,9 +171,9 @@ three-flashes:
   vis: flashing animation
   con: content video moving-content
 animation-from-interactions:
-  dev: controls animation keyboard focus interaction
-  int: controls animation keyboard focus interaction
-  vis: consistent-experience visual-cues controls animation interaction
+  dev: controls animation keyboard focus interaction carousels
+  int: controls animation keyboard focus interaction carousels
+  vis: consistent-experience visual-cues controls animation interaction carousels
 bypass-blocks:
   dev: headings menus markup structure iframes
   int: navigation skip-to-content
