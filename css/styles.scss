@@ -673,12 +673,12 @@ svg.icon {
   }
 }
 
-[data-expanded], [data-expanded=true] [data-expanded] {
+[aria-expanded=false] {
   .word-show { display: inline; }
   .word-hide { display: none; }
 }
 
-[data-expanded=true], [data-expanded=true] [data-expanded=true] {
+[aria-expanded=true] {
   .word-show { display: none; }
   .word-hide { display: inline; }
 }
@@ -834,7 +834,7 @@ button.panel-heading {
   display:none;
   clear: both;
   font-size: (14/18) * 1em;
-  &[data-expanded=true] {
+  &[data-expanded=true], &[aria-expanded=true] {
     display: block;
 		@include mq($medium) {
 	    display: flex;
