@@ -1,6 +1,23 @@
 # How to Meet WCAG (Quick Reference)
 
-Like most of the WAI Website, the Quick Reference is a [Jekyll][0001] project, with a [Gulp][0002] component that creates JS & CSS. Follow the [Jekyll Installation Instructions][0003] to install Jekyll. Unless you need to edit CSS or JS, you can ignore Gulp.
+Like most of the WAI Website, the Quick Reference is a [Jekyll][0001] project, with a [Gulp][0002] component that creates JS & CSS.
+
+## Setup
+
+1. If you have never used Jekyll before: Follow the [Jekyll Installation Instructions](https://jekyllrb.com/docs/installation/) to install prerequisites
+2. Run `bundle install` in the repo's root folder
+
+Additionally, if you will need to edit CSS or JS:
+
+3. If you have never used Node.js before: [Install Node.js LTS](https://nodejs.org/en/download)
+4. Run `npm i` in the repo's root folder
+
+### Linux Troubleshooting
+
+If `bundle install` encounters an error while installing nokogiri, related to libxml2's `config.sub`:
+
+1. Install `pkg-config` and development files for libxml2 and libxslt (e.g. `libxml2-dev` and `libxslt-dev` on Debian or Ubuntu)
+1. Run `NOKOGIRI_USE_SYSTEM_LIBRARIES=1 bundle install`
 
 ## Data
 
@@ -32,7 +49,6 @@ After adding the directory and changing the `.htaccess` file, commit all files a
 
 [0001]: https://jekyllrb.com/
 [0002]: https://gulpjs.com/
-[0003]: https://jekyllrb.com/docs/installation/
 
 
 <!-- Report:
