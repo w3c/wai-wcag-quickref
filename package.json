@@ -15,7 +15,11 @@
   "bugs": {
     "url": "https://github.com/w3c/wai-wcag-quickref/issues"
   },
-  "scripts": {},
+  "scripts": {
+    "js": "gulp js",
+    "scss": "gulp scss",
+    "watch": "gulp watch"
+  },
   "engines": {},
   "devDependencies": {
     "gulp": "^4.0.2",
