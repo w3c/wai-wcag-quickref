@@ -25,10 +25,11 @@
     "gulp-jshint": "^2.1.0",
     "gulp-plumber": "^1.2.1",
     "gulp-pxtorem": "^1.0.1",
-    "gulp-sass": "^4.0.0",
+    "gulp-sass": "^6.0.0",
     "gulp-sourcemaps": "^2.0.0",
     "gulp-uglify": "^3.0.0",
-    "jshint": "^2.10.2"
+    "jshint": "^2.10.2",
+    "sass": "^1.83.4"
   },
   "dependencies": {
     "netlify-cli": "^2.59.1"
