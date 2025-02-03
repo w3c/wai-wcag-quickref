@@ -2452,7 +2452,6 @@ svg.icon {
   .mainrow .sidebar {
     width: 300px;
     will-change: transform;
-    position: -webkit-sticky;
     position: sticky;
     display: block;
     top: 0;
@@ -2506,7 +2505,6 @@ svg.icon {
 
 .navrow {
   will-change: transform;
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 999;
@@ -2602,21 +2600,9 @@ svg.icon {
 }
 
 .loading {
-  -webkit-animation-name: backgroundanim;
-          animation-name: backgroundanim;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-}
-
-@-webkit-keyframes backgroundanim {
-  from {
-    background-color: #FFF176;
-  }
-  to {
-    background-color: #fff;
-  }
+  animation-name: backgroundanim;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
 }
 
 @keyframes backgroundanim {
