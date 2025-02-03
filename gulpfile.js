@@ -15,7 +15,15 @@ gulp.task('scss', function () {
     return gulp.src(sassdir)
         .pipe(plumber())
         .pipe(sourcemaps.init())
-        .pipe(sass())
+        .pipe(sass({
+          silenceDeprecations: [
+            "color-functions",
+            "global-builtin",
+            "import",
+            "mixed-decls",
+            "slash-div"
+          ]
+        }).on("error", sass.logError))
         .pipe(autoprefixer())
         .pipe(pxtorem())
         .pipe(concat('styles.css'))
