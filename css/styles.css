@@ -2616,17 +2616,17 @@ svg.icon {
     background-color: #fff;
   }
 }
-[aria-expanded=false] .word-show {
+[data-expanded=false] .word-show {
   display: inline;
 }
-[aria-expanded=false] .word-hide {
+[data-expanded=false] .word-hide {
   display: none;
 }
 
-[aria-expanded=true] .word-show {
+[data-expanded=true] .word-show {
   display: none;
 }
-[aria-expanded=true] .word-hide {
+[data-expanded=true] .word-hide {
   display: inline;
 }
 
