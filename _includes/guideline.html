@@ -6,55 +6,6 @@
 		<h3 id="{{g_id}}" data-alt-id="{% for aid in guideline.alt_id %}{{aid}} {% endfor %}">Guideline <strong>{{ guideline.num }}</strong> – {{guideline.handle}}</h3>
 		{{guideline.title}}
 	</div>
-		{% assign tsize = guideline.techniques | size %}
-		{% assign stech = guideline.techniques[0].sufficient %}
-		{% assign ssize = stech | size %}
-		{% assign atech = guideline.techniques[0].advisory %}
-		{% assign asize = atech | size %}
-		{% assign ftech = guideline.techniques[0].failures %}
-		{% assign fsize = ftech | size %}
-		{% assign completesize = ssize | plus: asize | plus: fsize %}
-
-		{% if completesize >= 1 %}
-
-		<div class="panel-body panel-body-guideline">
-	    <div class="techniques-button btn-group" role="group">
-	      <button data-target="#techniques-{{ g_number }}" type="button" data-toggle="collapse" data-expanded="false" aria-controls="techniques-{{ g_number }}" class="btn btn-info btn-techniques"><span class="word-show"><svg aria-hidden="true" class="i-chevron-right"><use xlink:href="{{ "img/icons.svg" | relative_url }}#i-chevron-right"></use></svg> Show</span><span class="word-hide"><svg aria-hidden="true" class="i-chevron-down"><use xlink:href="{{ "img/icons.svg" | relative_url }}#i-chevron-down"></use></svg> Hide</span> techniques and failures for {{ p }}.{{ g }}</button>
-	      <label class="btn btn-default {% unless ssize >= 1 %}disabled{% endunless %}"><input type="checkbox" name="sc-{{ g_number }}-sufficient" {% if ssize >= 1 %}checked{% else %}disabled{% endif %}> Sufficient</label>
-	      <label class="btn btn-default {% unless asize >= 1 %}disabled{% endunless %}"><input type="checkbox" name="sc-{{ g_number }}-advisory" {% if asize >= 1 %}checked{% else %}disabled{% endif %}> Advisory</label>
-	      <label class="btn btn-default {% unless fsize >= 1 %}disabled{% endunless %}"><input type="checkbox" name="sc-{{ g_number }}-failures" {% if fsize >= 1 %}checked{% else %}disabled{% endif %}> Failures</label>
-	    </div>
-
-		  <div class="collapse" id="techniques-{{ g_number }}">
-		    <div>
-		      <div class="tab-wrap">
-
-		        <div class="tab-content">
-
-		          {% if ssize >= 1 %}
-		            <div role="tabpanel" class="tbox tbox-sufficient tab-pane active" id="sc-{{ g_number }}-sufficient">
-		              {% include techlist.html techtitle="Sufficient Techniques" techniques=stech ttype="sufficient" %}
-		            </div>
-		          {% endif %}
-
-		          {% if asize >= 1 %}
-		            <div role="tabpanel" class="tbox tbox-advisory tab-pane active" id="sc-{{ g_number }}-advisory">
-		          {% include techlist.html techtitle="Advisory Techniques" techniques=atech ttype="advisory" %}
-		            </div>
-		          {% endif %}
-
-		          {% if fsize >= 1 %}
-		            <div role="tabpanel" class="tbox tbox-failure tab-pane active" id="sc-{{ g_number }}-failures">
-		              {% include techlist.html techtitle="Failures" techniques=ftech ttype="failure" %}
-		            </div>
-		          {% endif %}
-		        </div>
-
-		      </div>
-		    </div>
-		  </div>
-		  </div>
-		{% endif %}
 		{% if guideline.successcriteria %}
 			{% for currentsc in guideline.successcriteria %}
 				{% include sc.html sc=currentsc %}
