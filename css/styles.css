@@ -2205,6 +2205,10 @@ header[role=banner] a:hover, header[role=banner] a:focus {
 .sc-wrapper .note {
   font-size: 0.8571428571em;
 }
+.sc-wrapper .note-title {
+  /* For compatibility with Understanding output */
+  font-style: italic;
+}
 .sc-wrapper:not(.current) {
   padding: 5px;
   border: none;
@@ -2792,7 +2796,7 @@ button.panel-heading {
   }
 }
 
-#pageinfo a, p > a, #contribute a {
+#pageinfo a, p > a, .sc-wrapper li > a, #contribute a {
   text-decoration: underline;
 }
 

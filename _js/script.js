@@ -248,14 +248,17 @@ jQuery(document).ready(function($) {
   }
 
   function applyTechnologies() {
-    $('[class*=filter-tech]').show();
+    $('.panel-body li:has(a[href*="/Techniques/"])').show();
     var technologies = [];
     var uncheckedTechnologies = $('#filter-technologies input:not(:checked)');
     if (uncheckedTechnologies.length>0) {
       uncheckedTechnologies.each(function(index, el) {
         technologies.push($(el).val());
       });
-      var selector = '.filter-tech-' + technologies.join(', .filter-tech-') + '';
+      var selector = technologies.map(function (tech) {
+        return '.panel-body li:has(a[href*="/' + tech + '/"])';
+      }).join(", ");
+      console.log("selector to hide:", selector);
       $(selector).hide();
       saveURL();
       statustext();

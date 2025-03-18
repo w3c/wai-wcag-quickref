@@ -249,6 +249,10 @@ header[role=banner] {
   .note {
     font-size: 12/14 * 1em;
   }
+  .note-title {
+    /* For compatibility with Understanding output */
+    font-style: italic;
+  }
   &:not(.current) {
     padding: 5px;
     border: none;
@@ -841,7 +845,7 @@ button.panel-heading {
   }
 }
 
-#pageinfo a, p > a, #contribute a {
+#pageinfo a, p > a, .sc-wrapper li > a, #contribute a {
   text-decoration: underline;
 }
 

@@ -8,11 +8,11 @@ filters:
   title: <abbr title="Hypertext Markup Language">HTML</abbr>
 - short: css
   title: <abbr title="Cascading Style Sheets (CSS)">CSS</abbr>
-- short: wai-aria
+- short: aria
   title: <abbr title="Accessible Rich Internet Applications">ARIA</abbr>
-- short: js
+- short: client-side-script
   title: Client-side Scripting
-- short: server
+- short: server-side-script
   title: Server-side Scripting
 - short: smil
   title: <abbr title="Synchronized Multimedia Integration Language (SMIL)">SMIL</abbr>
