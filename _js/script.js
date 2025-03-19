@@ -659,28 +659,6 @@ jQuery(document).ready(function($) {
     svg4everybody();
   }
 
-  $('main').on('change', '.techniques-button input', function(event) {
-    event.preventDefault();
-    var target = $(event.target);
-    var type = target.attr('name').match(/sc-[0-9]{2,3}-(.*)/)[1];
-    if (($('.techniques-button input[name$="' + type + '"]:checked').length > 0) && ($('.techniques-button input[name$="' + type + '"]:not(:checked)').length > 0)) {
-      $('[name="filter-techniques"][value="' + type + '"]').prop('indeterminate', true);
-    } else {
-      $('[name="filter-techniques"][value="' + type + '"]').prop('indeterminate', false);
-      if ($('.techniques-button input[name$="' + type + '"]:checked').length === 0) {
-        $('[name="filter-techniques"][value="' + type + '"]').removeProp('checked');
-      }
-      if ($('.techniques-button input[name$="' + type + '"]:not(:checked)').length === 0) {
-        $('[name="filter-techniques"][value="' + type + '"]').prop('checked', "checked");
-      }
-    }
-    if(target.is(':checked')) {
-      $('#' + target.prop('name')).addClass('active');
-    } else {
-      $('#' + target.prop('name')).removeClass('active');
-    }
-  });
-
   $('main').on('click', '.techniques-button .btn-techniques', function(event) {
     var target = $(event.target),
         cntrls = target.attr('aria-controls'),
