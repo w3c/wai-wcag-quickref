@@ -29,6 +29,12 @@ CSS and JS are built via gulp tasks, which are exposed as npm scripts for conven
   - This can be run in a separate terminal alongside `bundle exec jekyll serve --incremental`
     for development; note that Jekyll will need to run a rebuild pass after gulp)
 
+## Updating wcag.json
+
+Run `npm run json`.
+
+This requires Node.js v20 or higher, for the built-in `fetch` global.
+
 ## Data
 
 The data is saved as [wcag21.json](https://github.com/w3c/wai-wcag-quickref/blob/gh-pages/_data/wcag21.json) in the `_data` directory. Due to the complexity of the WCAG standard, the JSON file format is also quite complex. The data is exported from the [WCAG source code](https://github.com/w3c/wcag) and handed over to this repository.

@@ -17,11 +17,13 @@
   },
   "scripts": {
     "js": "gulp js",
+    "json": "node _scripts/update-wcag-json.mjs",
     "scss": "gulp scss",
     "watch": "gulp watch"
   },
   "engines": {},
   "devDependencies": {
+    "@types/node": "^20.17.24",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.0",
     "gulp-concat": "^2.6.1",
