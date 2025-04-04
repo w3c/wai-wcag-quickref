@@ -250,7 +250,7 @@ header[role=banner] {
     font-size: 12/14 * 1em;
   }
   .note-title {
-    /* For compatibility with Understanding output */
+    // For compatibility with Understanding output
     font-style: italic;
   }
   &:not(.current) {

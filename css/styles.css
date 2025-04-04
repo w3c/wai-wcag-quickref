@@ -2206,7 +2206,6 @@ header[role=banner] a:hover, header[role=banner] a:focus {
   font-size: 0.8571428571em;
 }
 .sc-wrapper .note-title {
-  /* For compatibility with Understanding output */
   font-style: italic;
 }
 .sc-wrapper:not(.current) {

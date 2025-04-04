@@ -258,7 +258,6 @@ jQuery(document).ready(function($) {
       var selector = technologies.map(function (tech) {
         return '.panel-body li:has(a[href*="/' + tech + '/"])';
       }).join(", ");
-      console.log("selector to hide:", selector);
       $(selector).hide();
       saveURL();
       statustext();
@@ -376,7 +375,6 @@ jQuery(document).ready(function($) {
   }
 
   function scrollto(target) {
-    // console.log(target);
     var location = window.history.location || window.location,
         uri = new URI(location),
         scrolldiff = 60;
