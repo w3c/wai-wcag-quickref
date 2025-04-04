@@ -1,11 +1,11 @@
 import { writeFile } from "fs/promises";
 import { join } from "path";
 
-const wcagUrl = `https://kfranqueiro.github.io/wcag/VERSION/wcag.json`;
+const wcagUrl = "https://www.w3.org/WAI/WCAG$VERSION/wcag.json";
 
 const [wcag21, wcag22] = await Promise.all(
   ["21", "22"].map((version) =>
-    fetch(wcagUrl.replace("VERSION", version)).then((response) => {
+    fetch(wcagUrl.replace("$VERSION", version)).then((response) => {
       if (response.status >= 400)
         throw new Error(`HTTP error code received: ${response.status}`);
       return response.json();
@@ -32,4 +32,4 @@ for (const principle of data.principles) {
   }
 }
 
-await writeFile(join("_data", "wcag22.json"), JSON.stringify(data, null, "  "));
+await writeFile(join("_data", "wcag22.json"), JSON.stringify(data, null, "  ") + "\n");
