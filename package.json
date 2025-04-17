@@ -38,6 +38,6 @@
     "sass": "^1.83.4"
   },
   "dependencies": {
-    "netlify-cli": "^2.59.1"
+    "netlify-cli": "^20.0.2"
   }
 }
