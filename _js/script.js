@@ -664,6 +664,7 @@ jQuery(document).ready(function($) {
     } else {
       uri.removeSearch('showtechniques');
     }
+    updateExpandAllButton(urltags.length > 0);
     updateuri(uri);
   });
 
