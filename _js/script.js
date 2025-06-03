@@ -52,6 +52,8 @@ jQuery(document).ready(function($) {
     return new URI(window.history.location || window.location);
   }
 
+  var skipPushState = false;
+
   function array2prose(array, andor) {
     if (array.length < 3) {
       return array.join(' '+andor+' ');
@@ -71,7 +73,7 @@ jQuery(document).ready(function($) {
   }
 
   function updateuri(uri) {
-    if (!window.noAddToHistory) {
+    if (!skipPushState) {
       history.pushState(null, null, uri);
       uri.fragment("");
     }
@@ -709,21 +711,21 @@ jQuery(document).ready(function($) {
     }
     else uri.removeSearch('showtechniques');
     updateuri(uri);
-    window.noAddToHistory = true;
+    skipPushState = true;
     applyurl();
-    window.noAddToHistory = false;
+    skipPushState = false;
   });
 
   $(window).on('popstate', function(event) {
-    window.noAddToHistory = true;
+    skipPushState = true;
     applyurl();
-    window.noAddToHistory = false;
+    skipPushState = false;
   });
 
   init();
 
-  window.noAddToHistory = true;
+  skipPushState = true;
   applyurl();
-  window.noAddToHistory = false;
+  skipPushState = false;
 
 });
