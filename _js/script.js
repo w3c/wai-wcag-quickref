@@ -48,7 +48,9 @@ if (!window.matchMedia) {
 }
 
 jQuery(document).ready(function($) {
-  const getCurrentUri = () => new URI(window.history.location || window.location);
+  function getCurrentUri() {
+    return new URI(window.history.location || window.location);
+  }
 
   function array2prose(array, andor) {
     if (array.length < 3) {
@@ -687,21 +689,21 @@ jQuery(document).ready(function($) {
     $('#sharethisviewbutton').focus();
   });
 
-  const $expandAllButton = $('#expandcollapsalltechniques');
+  var $expandAllButton = $('#expandcollapsalltechniques');
   function updateExpandAllButton(expanded) {
     $expandAllButton.attr('data-expanded', expanded);
     $expandAllButton.find('span').html((expanded ? 'Collapse' : 'Expand') + ' <strong>all</strong> sections');
   }
   
   $expandAllButton.on('click', function () {
-    const shouldExpand = $(this).attr('data-expanded') != 'true';
+    var shouldExpand = $(this).attr('data-expanded') != 'true';
     $('.sc-text button').attr('data-expanded', shouldExpand).parent().find('~ *:not(hr)').toggle();
     // Synchronize URL with expanded state (this also handles .collapse state updates)
-    const uri = getCurrentUri();
+    var uri = getCurrentUri();
     if (shouldExpand) {
       uri.setSearch('showtechniques',
         $('.btn-techniques[data-expanded]').toArray()
-          .map(el => el.getAttribute("aria-controls").replace(/^techniques-/, ""))
+          .map(function (el) { return el.getAttribute("aria-controls").replace(/^techniques-/, ""); })
           .join(',')
       );
     }
