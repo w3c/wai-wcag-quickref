@@ -48,6 +48,7 @@ if (!window.matchMedia) {
 }
 
 jQuery(document).ready(function($) {
+  const getCurrentUri = () => new URI(window.history.location || window.location);
 
   function array2prose(array, andor) {
     if (array.length < 3) {
@@ -71,14 +72,12 @@ jQuery(document).ready(function($) {
     if (!window.noAddToHistory) {
       history.pushState(null, null, uri);
       uri.fragment("");
-      localStorage.setItem('url-' + uri.filename(), uri);
     }
     setScrollSpy();
   }
 
   function applyurl() {
-    var location = window.history.location || window.location;
-    var uri = new URI(location);
+    var uri = getCurrentUri();
     var data = uri.search(true);
 
     if(data.hidesidebar) {
@@ -123,6 +122,7 @@ jQuery(document).ready(function($) {
         $('#'+btn.attr('aria-controls')).addClass('in');
       });
     }
+    updateExpandAllButton(!!data.showtechniques);
     applyTechnologies();
     applyTechniques();
     applyVersions();
@@ -144,16 +144,6 @@ jQuery(document).ready(function($) {
         }
       }
     }
-  }
-
-  function geturi() {
-    var location = window.history.location || window.location;
-    var uri = new URI(location);
-    var url = localStorage.getItem('url-' + uri.filename());
-    if ((uri.search()==="") && (url!=="")) {
-      history.replaceState(null, null, url);
-    }
-    applyurl();
   }
 
   function applyTagsAndLevelsToSC() {
@@ -307,8 +297,7 @@ jQuery(document).ready(function($) {
   }
 
   function saveURL() {
-    var location = window.history.location || window.location,
-        uri = new URI(location),
+    var uri = getCurrentUri(),
         tags = [];
         uri.removeSearch('tags');
     $('#tags .btn-primary').each(function(index, elm){
@@ -375,8 +364,7 @@ jQuery(document).ready(function($) {
   }
 
   function scrollto(target) {
-    var location = window.history.location || window.location,
-        uri = new URI(location),
+    var uri = getCurrentUri(),
         scrolldiff = 60;
         if ($('.navrow').outerHeight() > 0) {
           scrolldiff = $('.navrow').outerHeight() + 5;
@@ -574,8 +562,7 @@ jQuery(document).ready(function($) {
     $('.mainrow aside > div').css('top', $('.navrow').height()); //Applies top to make fixedsticky work in sidebars
 
     $('#hidesidebars').on('click', function () {
-        var location = window.history.location || window.location;
-        var uri = new URI(location);
+        var uri = getCurrentUri();
         uri.addSearch("hidesidebar", true);
         $('.sidebar').hide();
         $('.mainrow').addClass('sidebar-hidden');
@@ -584,8 +571,7 @@ jQuery(document).ready(function($) {
     });
 
     $('#showsidebars').on('click', function () {
-      var location = window.history.location || window.location;
-      var uri = new URI(location);
+      var uri = getCurrentUri();
       uri.removeSearch("hidesidebar");
       $('.sidebar').show();
       $('.mainrow').removeClass('sidebar-hidden');
@@ -595,8 +581,7 @@ jQuery(document).ready(function($) {
     });
 
     $('#navtabs a').on('click', function (e) {
-      var location = window.history.location || window.location;
-      var uri = new URI(location);
+      var uri = getCurrentUri();
       uri.setSearch("currentsidebar", $(this).attr('href'));
       updateuri(uri);
     });
@@ -644,8 +629,7 @@ jQuery(document).ready(function($) {
 
     $('#wcagver').on('change', function(event) {
       event.preventDefault();
-      var location = window.history.location || window.location;
-      var uri = new URI(location);
+      var uri = getCurrentUri();
       uri.setSearch("versions", $('#wcagver').val());
       applyTechnologies();
       applyVersions();
@@ -660,8 +644,7 @@ jQuery(document).ready(function($) {
   $('main').on('click', '.techniques-button .btn-techniques', function(event) {
     var target = $(event.target),
         cntrls = target.attr('aria-controls'),
-        location = window.history.location || window.location,
-        uri = new URI(location),
+        uri = getCurrentUri(),
         urltags = [];
     $('.btn-techniques[data-expanded="true"]').each(function(index, el) {
       urltags.push($(el).attr('aria-controls'));
@@ -703,16 +686,29 @@ jQuery(document).ready(function($) {
     $('#sharethisviewbutton').focus();
   });
 
-  $('#expandcollapsalltechniques').on('click', function (e) {
-    if($(this).attr('data-expanded') != 'true') {
-      $('.collapse').collapse('show');
-      $('.sc-text button').attr('data-expanded', true).parent().find('~ *:not(hr)').toggle();
-      $(this).attr('data-expanded', true).find('span').html('Collapse <strong>all</strong> sections');
-    } else {
-      $('.collapse').collapse('hide');
-      $('.sc-text button').attr('data-expanded', false).parent().find('~ *:not(hr)').toggle();
-      $(this).attr('data-expanded', false).find('span').html('Expand <strong>all</strong> sections');
+  const $expandAllButton = $('#expandcollapsalltechniques');
+  function updateExpandAllButton(expanded) {
+    $expandAllButton.attr('data-expanded', expanded);
+    $expandAllButton.find('span').html((expanded ? 'Collapse' : 'Expand') + ' <strong>all</strong> sections');
+  }
+  
+  $expandAllButton.on('click', function () {
+    const shouldExpand = $(this).attr('data-expanded') != 'true';
+    $('.sc-text button').attr('data-expanded', shouldExpand).parent().find('~ *:not(hr)').toggle();
+    // Synchronize URL with expanded state (this also handles .collapse state updates)
+    const uri = getCurrentUri();
+    if (shouldExpand) {
+      uri.setSearch('showtechniques',
+        $('.btn-techniques[data-expanded]').toArray()
+          .map(el => el.getAttribute("aria-controls").replace(/^techniques-/, ""))
+          .join(',')
+      );
     }
+    else uri.removeSearch('showtechniques');
+    updateuri(uri);
+    window.noAddToHistory = true;
+    applyurl();
+    window.noAddToHistory = false;
   });
 
   $(window).on('popstate', function(event) {
