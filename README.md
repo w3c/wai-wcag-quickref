@@ -1,6 +1,6 @@
 # How to Meet WCAG (Quick Reference)
 
-Like most of the WAI Website, the Quick Reference is a [Jekyll][0001] project, with a [Gulp][0002] component that creates JS & CSS.
+Like most of the WAI Website, the Quick Reference is a [Jekyll](https://jekyllrb.com/) project, with a [Gulp](https://gulpjs.com/) component that creates JS & CSS.
 
 ## Setup
 
@@ -49,27 +49,10 @@ After checking out/updating this repository and installing Jekyll dependencies, 
 bundle exec jekyll build --config "_config.yml,_config_prod.yml" --profile
 ```
 
-This RewriteRule "^([cij].+)" "20191004/$1"command generates a `_site` folder with the generated page and associated JS/CSS files and graphics. On a fast computer, this takes a few seconds.
+Copy the contents of the `_site` folder to the quickref folder in CVS. For example, from within the CVS `quickref` folder, run the following:
 
-Rename the `_site` folder to the current date in the format `YYYYMMDD`, for example `20210110` for January 10, 2021. Then move the folder to the W3C CVS inside the folder [`/WWW/WAI/WCAG21/quickref/`](https://cvs.w3.org/Team/WWW/WAI/WCAG21/quickref/). Edit the [`.htaccess` in the same folder](https://cvs.w3.org/Team/WWW/WAI/WCAG21/quickref/.htaccess) and replace the previous date in the following two lines with the new date:
-
-```text
-RewriteRule "^$" "YYYYMMDD/index.html"
-```
-and
-```text
-RewriteRule "^([cij].+)" "YYYYMMDD/$1"
+```bash
+cp -r path/to/_site/* .
 ```
 
-After adding the directory and changing the `.htaccess` file, commit all files and the new version of the quick reference is online.
-
-[0001]: https://jekyllrb.com/
-[0002]: https://gulpjs.com/
-
-
-<!-- Report:
-(2:55:14): [Jekyll]() => https://jekyllrb.com/
-(2:86:12): [Gulp](!g gulpjs) => https://gulpjs.com/
-(2:143:40): [Jekyll Installation Instructions]() => https://jekyllrb.com/docs/installation/
-(): Processed: 7 links, 1 errors.
--->
+Commit all files and the new version of the quick reference is online.
