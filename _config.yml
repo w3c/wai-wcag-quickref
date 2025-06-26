@@ -17,6 +17,7 @@ lsi: false
 
 # Build settings
 markdown: kramdown
+theme: null # See https://github.com/github/pages-gem/issues/613#issuecomment-478707278
 
 repository: 'w3c/wai-wcag-quickref'
 
