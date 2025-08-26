@@ -242,7 +242,7 @@ jQuery(document).ready(function($) {
   }
 
   function applyTechnologies() {
-    $('.panel-body li:has(a[href*="/Techniques/"])').show();
+    $('.panel-body li:has(> a[href*="/Techniques/"])').show();
     var technologies = [];
     var uncheckedTechnologies = $('#filter-technologies input:not(:checked)');
     if (uncheckedTechnologies.length>0) {
@@ -250,7 +250,7 @@ jQuery(document).ready(function($) {
         technologies.push($(el).val());
       });
       var selector = technologies.map(function (tech) {
-        return '.panel-body li:has(a[href*="/' + tech + '/"])';
+        return '.panel-body li:has(> a[href*="/' + tech + '/"])';
       }).join(", ");
       $(selector).hide();
       saveURL();
