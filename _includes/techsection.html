@@ -1,0 +1,22 @@
+{%- comment -%}
+Expected inputs:
+- techniques = Array of top-level technique objects / shorthand strings, or subsections
+{%- endcomment -%}
+
+{% if include.techniques[0].techniques %}
+  {% for section in include.techniques %}
+    <div class="panel panel-default">
+      <div class="panel-heading"><h6>{{ section.title }}</h6></div>
+      <div class="panel-body">
+        {% include techlist.html techniques=section.techniques groups=section.groups %}
+        {% for group in section.groups %}
+          <p role="heading" aria-level="7">{{ group.title }}:</p>
+          {% include techlist.html techniques=group.techniques %}
+        {% endfor %}
+        {% if section.note %}{% include technote.html note=section.note %}{% endif %}
+      </div>
+    </div>
+  {% endfor %}
+{% else %}
+  {% include techlist.html techniques=include.techniques %}
+{% endif %}

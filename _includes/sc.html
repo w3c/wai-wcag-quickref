@@ -43,9 +43,9 @@
       <a href="{{site.understandingurl}}{{sc_id}}.html" class="btn btn-default btn-sm"><svg aria-hidden="true" class="i-info"><use xlink:href="{{ "img/icons.svg" | relative_url }}#i-info"></use></svg> Understanding {{ sc.num }}</a>
     </div>
   </div>
-  {% assign stech = sc.techniquesHtml.sufficient %}
-  {% assign atech = sc.techniquesHtml.advisory %}
-  {% assign ftech = sc.techniquesHtml.failure %}
+  {% assign stech = sc.techniques.sufficient %}
+  {% assign atech = sc.techniques.advisory %}
+  {% assign ftech = sc.techniques.failure %}
   {% if stech or atech or ftech %}
     <div class="techniques-button btn-group" role="group">
       <button data-target="#techniques-{{ sc_number }}" type="button" data-toggle="collapse" data-expanded="false" aria-controls="techniques-{{ sc_number }}" class="btn btn-info btn-techniques"><span class="word-show"><svg aria-hidden="true" class="i-chevron-right"><use xlink:href="{{ "img/icons.svg" | relative_url }}#i-chevron-right"></use></svg> Show</span><span class="word-hide"><svg aria-hidden="true" class="i-chevron-down"><use xlink:href="{{ "img/icons.svg" | relative_url }}#i-chevron-down"></use></svg> Hide</span> techniques and failures for {{ sc.num }}</button>
@@ -55,24 +55,46 @@
         <div class="tab-wrap">
           <div class="tab-content">
             {% if stech %}
-              {% assign theadid = "sc-" |append: sc_number | append: "-sufficient-head" %}
+              {% assign theadid = "sc-" | append: sc_number | append: "-sufficient-head" %}
               {% assign theadtitle = "Sufficient Techniques <span class='sr-only'>for Success Criterion " | append: sc.num | append: "</span>" %}
               <section class="tbox tbox-sufficient tab-pane active" id="sc-{{ sc_number }}-sufficient" data-historicalid="{% for aid in sc.alt_id %}{{aid}}-sufficient-head {% endfor %}" aria-labelledby="{{ theadid }}">
-                {% include techlist.html techtitle=theadtitle techheadid=theadid  techniques=stech ttype="sufficient" %}
+                <div class="panel panel-default">
+                  <div class="panel-heading"><h5 id="{{techheadid}}">{{theadtitle}}</h5></div>
+                  <div class="panel-body">
+                    <p>
+                      Note: Other techniques may also be sufficient if they meet the success criterion.
+                      See <a href="https://www.w3.org/WAI/WCAG22/Understanding/understanding-techniques" class="abouttech">Understanding Techniques.</a>
+                    </p>
+                    {% include techsection.html techniques=stech %}
+                    {% if sc.techniques.sufficientNote -%}
+                      {% include technote.html note=sc.techniques.sufficientNote %}
+                    {%- endif %}
+                  </div>
+                </div>
               </section>
             {% endif %}
             {% if atech %}
-              {% assign theadid = "sc-" |append: sc_number | append: "-advisory-head" %}
+              {% assign theadid = "sc-" | append: sc_number | append: "-advisory-head" %}
               {% assign theadtitle = "Advisory Techniques <span class='sr-only'>for Success Criterion " | append: sc.num | append: "</span>" %}
               <section class="tbox tbox-advisory tab-pane active" id="sc-{{ sc_number }}-advisory" data-historicalid="{% for aid in sc.alt_id %}{{aid}}-tech-optional-head {% endfor %}" aria-labelledby="{{ theadid }}">
-                {% include techlist.html techtitle=theadtitle techheadid=theadid techniques=atech ttype="advisory" %}
+                <div class="panel panel-default">
+                  <div class="panel-heading"><h5 id="{{techheadid}}">{{theadtitle}}</h5></div>
+                  <div class="panel-body">
+                    {% include techsection.html techniques=atech %}
+                  </div>
+                </div>
               </section>
             {% endif %}
             {% if ftech %}
-              {% assign theadid = "sc-" |append: sc_number | append: "-failures-head" %}
+              {% assign theadid = "sc-" | append: sc_number | append: "-failures-head" %}
               {% assign theadtitle = "Failures <span class='sr-only'>for Success Criterion " | append: sc.num | append: "</span>" %}
               <section class="tbox tbox-failures tab-pane active" id="sc-{{ sc_number }}-failures" data-historicalid="{% for aid in sc.alt_id %}{{aid}}-failures-head {% endfor %}" aria-labelledby="{{ theadid }}">
-                {% include techlist.html techtitle=theadtitle techheadid=theadid techniques=ftech ttype="failure" %}
+                <div class="panel panel-default">
+                  <div class="panel-heading"><h5 id="{{techheadid}}">{{theadtitle}}</h5></div>
+                  <div class="panel-body">
+                    {% include techsection.html techniques=ftech %}
+                  </div>
+                </div>
               </section>
             {% endif %}
           </div>

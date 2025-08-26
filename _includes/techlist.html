@@ -1,20 +1,22 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h5 id="{{include.techheadid}}">
-      {{include.techtitle}}
-    </h5>
-  </div>
-  {% if include.ttype == 'sufficient' %}
-    <div class="panel-body">
-      <p>Note: Other techniques may also be sufficient if they meet the success criterion. See <a href="https://www.w3.org/WAI/WCAG22/Understanding/understanding-techniques" class="abouttech">Understanding Techniques.</a></p>
-    </div>
-  {% endif %}
-  <div class="panel-body">
-    {% if include.techniques[0] %}{% for situation in include.techniques %}
-      <div class="panel panel-default">
-        <div class="panel-heading"><h6>{{situation.title}}</h6></div>
-        <div class="panel-body">{{situation.content}}</div>
-      </div>
-    {% endfor %}{% else %}{{include.techniques}}{% endif %}
-  </div>
-</div>
+{%- comment -%}
+Expected inputs:
+- techniques = Array of technique objects or shorthand strings
+{%- endcomment -%}
+
+<ul>
+{% for technique in include.techniques %}
+  <li>
+    {%- if technique.and -%}
+      {%- for andEntry in technique.and %}
+        {% unless forloop.first %} <strong>AND</strong> {% endunless %}
+        {% include techentry.html technique=andEntry %}
+      {%- endfor -%}
+    {%- else -%}
+      {% include techentry.html technique=technique %}
+    {%- endif -%}
+    {%- if technique.using %}
+      {% include techlist.html techniques=technique.using %}
+    {% endif -%}
+  </li>
+{% endfor %}
+</ul>

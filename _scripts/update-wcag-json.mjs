@@ -19,7 +19,7 @@ const data = { principles: wcag22.principles };
 // Incorporate 2.1's version of 4.1.1 Parsing, but remove techniques
 data.principles[3].guidelines[0].successcriteria[0] =
   wcag21.principles[3].guidelines[0].successcriteria[0];
-data.principles[3].guidelines[0].successcriteria[0].techniquesHtml = {};
+data.principles[3].guidelines[0].successcriteria[0].techniques = {};
 
 // Prune unneeded fields
 for (const principle of data.principles) {
