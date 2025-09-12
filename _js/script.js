@@ -700,7 +700,7 @@ jQuery(document).ready(function($) {
   $expandAllButton.on('click', function () {
     var shouldExpand = $(this).attr('data-expanded') != 'true';
     $('main .collapse').collapse(shouldExpand ? 'show' : 'hide');
-    $('.sc-text button').attr('data-expanded', shouldExpand).parent().find('~ *:not(hr)').toggle();
+    $('.sc-text button').attr('data-expanded', shouldExpand).parent().find('~ *:not(hr)')[shouldExpand ? 'show' : 'hide']();
 
     // Synchronize URL with expanded state
     var uri = getCurrentUri();
