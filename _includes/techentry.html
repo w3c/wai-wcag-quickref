@@ -4,37 +4,9 @@ Expected input:
 - technique = technique object
 {%- endcomment -%}
 
-{%- assign code = include.technique.id | replace: "1" , "" | replace:"2","" | replace:"3","" | replace:"4","" | replace:"5","" | replace:"6","" | replace:"7","" | replace:"8","" | replace:"9","" | replace:"0","" -%}
-{%- case code -%}
-  {%- when 'ARIA' %}
-    {%- assign techslug = "aria" -%}
-  {%- when 'SCR' %}
-    {%- assign techslug = "client-side-script" -%}
-  {%- when 'C' %}
-    {%- assign techslug = "css" -%}
-  {%- when 'F' %}
-    {%- assign techslug = "failures" -%}
-  {%- when 'FLASH' %}
-    {%- assign techslug = "flash" -%}
-  {%- when 'G' %}
-    {%- assign techslug = "general" -%}
-  {%- when 'H' %}
-    {%- assign techslug = "html" -%}
-  {%- when 'PDF' %}
-    {%- assign techslug = "pdf" -%}
-  {%- when 'SVR' %}
-    {%- assign techslug = "server-side-script" -%}
-  {%- when 'SL' %}
-    {%- assign techslug = "silverlight" -%}
-  {%- when 'SM' %}
-    {%- assign techslug = "smil" -%}
-  {%- when 'T' %}
-    {%- assign techslug = "text" -%}
-{%- endcase -%}
-
 {%- if include.technique.prefix %}{{ include.technique.prefix }} {% endif -%}
 {%- if include.technique.id -%}
-  <a href="{{ site.techniqueurl }}{{ techslug }}/{{ include.technique.id }}">
+  <a href="{{ site.techniqueurl }}{{ include.technique.technology }}/{{ include.technique.id }}">
     {{- include.technique.id }}: {{ include.technique.title -}}
   </a>
 {%- else -%}
