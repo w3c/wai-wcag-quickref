@@ -37,7 +37,7 @@ This requires Node.js v20 or higher, for the built-in `fetch` global.
 
 ## Data
 
-The data is saved as [wcag21.json](https://github.com/w3c/wai-wcag-quickref/blob/gh-pages/_data/wcag21.json) in the `_data` directory. Due to the complexity of the WCAG standard, the JSON file format is also quite complex. The data is exported from the [WCAG source code](https://github.com/w3c/wcag) and handed over to this repository.
+The data is saved as [wcag22.json](https://github.com/w3c/wai-wcag-quickref/blob/gh-pages/_data/wcag22.json) in the `_data` directory. Due to the complexity of the WCAG standard, the JSON file format is also quite complex. The data is exported from the [WCAG source code](https://github.com/w3c/wcag) and handed over to this repository.
 
 **Note:** In the past SC text or techniques have been missing from the export. Unfortunately due to the complex nature and different formatting of the export, it was impossible to spot potential gaps in the new files. Usually the public is quick to inform us about missing data.
 
