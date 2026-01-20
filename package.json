@@ -24,7 +24,7 @@
   "engines": {},
   "devDependencies": {
     "@types/node": "^20.17.24",
-    "gulp": "^4.0.2",
+    "gulp": "^5.0.0",
     "gulp-autoprefixer": "^7.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-cssnano": "^2.1.3",
